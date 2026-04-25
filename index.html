@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Salário - PMESP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tipografia e estilos limpos */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #222222; color: #ffffff; }
+        
+        /* Inputs minimalistas arredondados */
+        .form-input {
+            width: 100%;
+            background-color: #333333;
+            border: 1px solid #444;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: white;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+        }
+        .form-input:focus { border-color: #1f3b60; box-shadow: 0 0 0 2px rgba(31, 59, 96, 0.5); }
+        .form-label { display: block; font-size: 0.75rem; color: #aaa; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        /* Checkbox customizado */
+        .custom-checkbox { width: 1.25rem; height: 1.25rem; border-radius: 0.25rem; accent-color: #ce2029; }
+        
+        /* Barra de resultados flutuante e suave */
+        .sticky-footer {
+            position: sticky;
+            bottom: 0;
+            background: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #444;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="antialiased pb-40">
+
+    <div class="bg-black text-white text-center py-2 flex justify-center items-center gap-2">
+        <div class="w-10 h-8 bg-white rounded-sm flex items-center justify-center">
+            <div class="w-6 h-6 bg-red-600 rounded-tr-xl rounded-bl-xl"></div>
+        </div>
+        <div class="text-left leading-tight">
+            <h1 class="font-bold text-sm">SÃO PAULO</h1>
+            <p class="text-[0.6rem]">GOVERNO DO ESTADO</p>
+        </div>
+    </div>
+
+    <div class="bg-[#2a2a2a] px-4 py-4 flex justify-between items-center border-b-2 border-red-600">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-white rounded-full p-1 border-2 border-gray-400 flex items-center justify-center relative">
+                <div class="w-8 h-8 rounded-full border border-gray-800 flex items-center justify-center">
+                    <div class="text-red-600 text-xs font-bold">PM</div>
+                </div>
+            </div>
+            <span class="font-semibold">Serviços ao PM</span>
+        </div>
+        <div>
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </div>
+    </div>
+
+    <div class="bg-[#222] py-2 flex justify-center gap-2 border-b border-gray-700">
+        <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-xs font-bold">f</div>
+        <div class="w-6 h-6 bg-black rounded flex items-center justify-center text-xs font-bold">𝕏</div>
+        <div class="w-6 h-6 bg-gradient-to-r from-red-500 to-pink-500 rounded flex items-center justify-center text-xs font-bold">▶</div>
+    </div>
+
+    <div class="max-w-md mx-auto p-4 space-y-6 mt-2">
+        
+        <h2 class="text-xl font-bold text-center border-b border-gray-700 pb-2">Simulador de Vencimentos</h2>
+
+        <div class="bg-[#2c2c2e] p-5 rounded-2xl shadow-lg space-y-4">
+            <h3 class="font-semibold text-[#0a84ff] border-l-4 border-[#0a84ff] pl-2">DADOS DO POLICIAL</h3>
+            
+            <div>
+                <label class="form-label">Posto / Graduação</label>
+                <select id="posto" class="form-input" onchange="calcular()">
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="CMT G">Comandante Geral</option>
+                    <option value="CEL">Coronel</option>
+                    <option value="TEN CEL">Tenente Coronel</option>
+                    <option value="MAJ">Major</option>
+                    <option value="CAP">Capitão</option>
+                    <option value="1º TEN">1º Tenente</option>
+                    <option value="2º TEN">2º Tenente</option>
+                    <option value="ASP OF">Aspirante a Oficial</option>
+                    <option value="SUBTEN">Subtenente</option>
+                    <option value="1º SGT">1º Sargento</option>
+                    <option value="2º SGT">2º Sargento</option>
+                    <option value="3º SGT">3º Sargento</option>
+                    <option value="CABO">Cabo</option>
+                    <option value="SD 1ª CL">Soldado 1ª Classe</option>
+                    <option value="SD 2ª CL">Soldado 2ª Classe</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="form-label">Dias Trabalhados</label>
+                    <input type="number" id="dias_trabalhados" class="form-input" value="30" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Quinquênios (Qtd)</label>
+                    <input type="number" id="quinquenios" class="form-input" value="0" min="0" oninput="calcular()">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="sexta_parte" class="custom-checkbox" onchange="calcular()">
+                <label class="text-sm">Adicional Sexta Parte (20+ anos)</label>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="insalubridade" class="custom-checkbox" checked onchange="calcular()">
+                <label class="text-sm">Insalubridade (Padrão)</label>
+            </div>
+        </div>
+
+        <div class="bg-[#2c2c2e] p-5 rounded-2xl shadow-lg space-y-4">
+            <h3 class="font-semibold text-green-500 border-l-4 border-green-500 pl-2">ATIVIDADES EXTRAS (2026)</h3>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="form-label">Turnos DEJEM</label>
+                    <input type="number" id="qtd_dejem" class="form-input" value="0" min="0" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Turnos Delegada</label>
+                    <input type="number" id="qtd_del" class="form-input" value="0" min="0" oninput="calcular()">
+                </div>
+            </div>
+            <div>
+                <label class="form-label">Região (Atividade Delegada)</label>
+                <select id="regiao_del" class="form-input" onchange="calcular()">
+                    <option value="1">Interior / Padrão</option>
+                    <option value="1.3">Capital (Estratégico +30%)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="bg-[#2c2c2e] p-5 rounded-2xl shadow-lg space-y-4">
+            <h3 class="font-semibold text-[#0a84ff] border-l-4 border-[#0a84ff] pl-2">VANTAGENS & AFASTAMENTOS</h3>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="form-label">Dependentes (IRRF)</label>
+                    <input type="number" id="dependentes" class="form-input" value="0" min="0" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Dias de Férias</label>
+                    <input type="number" id="dias_ferias" class="form-input" value="0" min="0" oninput="calcular()">
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="aniversario" class="custom-checkbox" onchange="calcular()">
+                <label class="text-sm">Mês de Aniversário</label>
+            </div>
+
+            <div>
+                <label class="form-label">13º Salário</label>
+                <select id="decimo_terceiro" class="form-input" onchange="calcular()">
+                    <option value="0">Não Aplicar</option>
+                    <option value="1">1ª Parcela (Adiantamento)</option>
+                    <option value="2">2ª Parcela (Acerto)</option>
+                    <option value="3">Integral</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="form-label">Substituição</label>
+                    <select id="sub_funcao" class="form-input" onchange="calcular()">
+                        <option value="">Nenhuma</option>
+                        <option value="SGT">Sargento</option>
+                        <option value="1º TEN">1º Tenente</option>
+                        <option value="CAP">Capitão</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Dias Subst.</label>
+                    <input type="number" id="sub_dias" class="form-input" value="0" min="0" oninput="calcular()">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="form-label">Ação Insalubridade</label>
+                    <input type="number" id="acao_insal" class="form-input" placeholder="R$ 0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Licença Prêmio</label>
+                    <input type="number" id="lic_premio" class="form-input" placeholder="R$ 0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Abono Transf.</label>
+                    <input type="number" id="abono_transf" class="form-input" placeholder="R$ 0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Ret. Ensino</label>
+                    <input type="number" id="ret_ensino" class="form-input" placeholder="R$ 0,00" oninput="calcular()">
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#2c2c2e] p-5 rounded-2xl shadow-lg space-y-4">
+            <h3 class="font-semibold text-red-500 border-l-4 border-red-500 pl-2">DESCONTOS (INFORME R$)</h3>
+            
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="cbpm" class="custom-checkbox" checked onchange="calcular()">
+                <label class="text-sm">CBPM (Assistência Médica 2%)</label>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="form-label">Empréstimos/Assoc.</label>
+                    <input type="number" id="emprestimos" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Pensão Alimentícia</label>
+                    <input type="number" id="pensao" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">Pró-Saúde PMESP</label>
+                    <input type="number" id="pro_saude" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">D.A. XV de Dezembro</label>
+                    <input type="number" id="da_xv" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">FEPOM Rancho</label>
+                    <input type="number" id="fepom_rancho" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">FEPOM Alojamento</label>
+                    <input type="number" id="fepom_aloj" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+                <div>
+                    <label class="form-label">FEPOM Prog. Copa</label>
+                    <input type="number" id="fepom_copa" class="form-input" placeholder="0,00" oninput="calcular()">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center text-xs text-gray-500 pb-6 pt-4">
+            <p>Desenvolvido por Erwin Klein</p>
+            <p class="mt-1">Protótipo de Simulação Rápida</p>
+        </div>
+
+    </div>
+
+    <div class="sticky-footer w-full p-4 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+        <div class="max-w-md mx-auto grid grid-cols-2 gap-x-4 gap-y-2">
+            <div class="text-sm text-gray-400">Total Bruto:</div>
+            <div class="text-sm font-semibold text-right text-white" id="lbl_bruto">R$ 0,00</div>
+            
+            <div class="text-sm text-gray-400">Extras (DEJEM/Del):</div>
+            <div class="text-sm font-semibold text-right text-green-400" id="lbl_extras">+ R$ 0,00</div>
+
+            <div class="text-sm text-gray-400">Descontos Fixos:</div>
+            <div class="text-sm font-semibold text-right text-red-400" id="lbl_descontos">- R$ 0,00</div>
+
+            <div class="col-span-2 border-t border-gray-600 mt-1 pt-2 flex justify-between items-center">
+                <div class="text-lg font-bold text-white">LÍQUIDO A RECEBER</div>
+                <div class="text-xl font-bold text-[#0a84ff]" id="lbl_liquido">R$ 0,00</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const PATENTES = {
+            "CMT G": { base: 11524.04, oficial: true },
+            "CEL": { base: 9495.92, oficial: true },
+            "TEN CEL": { base: 8892.20, oficial: true },
+            "MAJ": { base: 8370.88, oficial: true },
+            "CAP": { base: 7911.55, oficial: true },
+            "1º TEN": { base: 7332.73, oficial: true },
+            "2º TEN": { base: 4975.71, oficial: true },
+            "ASP OF": { base: 4766.58, oficial: true },
+            "SUBTEN": { base: 4050.13, oficial: false },
+            "1º SGT": { base: 3507.49, oficial: false },
+            "2º SGT": { base: 3158.78, oficial: false },
+            "3º SGT": { base: 2772.19, oficial: false },
+            "CABO": { base: 2686.30, oficial: false },
+            "SD 1ª CL": { base: 2486.11, oficial: false },
+            "SD 2ª CL": { base: 2348.42, oficial: false }
+        };
+
+        const UFESP_2026 = 38.42;
+
+        function formatBRL(value) {
+            return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function v(id) {
+            let val = document.getElementById(id).value;
+            return parseFloat(val) || 0;
+        }
+
+        function calcular() {
+            let postoId = document.getElementById('posto').value;
+            if (!postoId) return;
+
+            let rank = PATENTES[postoId];
+            let padrao_retp = rank.base * 2; // Padrão + RETP
+            
+            // Proporcionalidade de dias
+            let diasTrabalhados = v('dias_trabalhados');
+            if(diasTrabalhados <= 0) diasTrabalhados = 30;
+            let salarioBase = (padrao_retp / 30) * diasTrabalhados;
+
+            let quinquenios = v('quinquenios') * (salarioBase * 0.05);
+            let sextaParte = document.getElementById('sexta_parte').checked ? (salarioBase + quinquenios) / 6 : 0;
+            let insalubridade = document.getElementById('insalubridade').checked ? 785.67 : 0;
+            
+            // Férias e 13º
+            let ferias = v('dias_ferias') > 0 ? (salarioBase / 30 * v('dias_ferias')) / 3 : 0;
+            let decimoTerceiro = document.getElementById('decimo_terceiro').value;
+            let val13 = 0;
+            if(decimoTerceiro === '1' || document.getElementById('aniversario').checked && decimoTerceiro === '0') val13 = salarioBase / 2; // Adiantamento
+            if(decimoTerceiro === '2') val13 = salarioBase / 2; 
+            if(decimoTerceiro === '3') val13 = salarioBase; 
+
+            // Substituição
+            let subVal = 0;
+            let subFuncao = document.getElementById('sub_funcao').value;
+            if(subFuncao && PATENTES[subFuncao]) {
+                let diff = (PATENTES[subFuncao].base * 2) - padrao_retp;
+                if(diff > 0) subVal = (diff / 30) * v('sub_dias');
+            }
+
+            // EXTRAS (DEJEM / DELEGADA)
+            let dejemQtd = v('qtd_dejem');
+            let delQtd = v('qtd_del');
+            let delRegiao = v('regiao_del');
+
+            // Fórmulas baseadas na UFESP de 2026
+            let valTurnoDejem = rank.oficial ? (9.6 * UFESP_2026) : (8.0 * UFESP_2026);
+            let valTurnoDel = rank.oficial ? (15.41 * UFESP_2026) : (12.84 * UFESP_2026);
+
+            let totalDejem = dejemQtd * valTurnoDejem;
+            let totalDel = delQtd * (valTurnoDel * delRegiao);
+            let totalExtras = totalDejem + totalDel;
+
+            // Outros Proventos
+            let outros = v('acao_insal') + v('lic_premio') + v('abono_transf') + v('ret_ensino');
+
+            let brutoCalculo = salarioBase + quinquenios + sextaParte; // Base de descontos SPPREV/CBPM
+            let vencimentoBruto = brutoCalculo + insalubridade + ferias + val13 + subVal + totalExtras + outros;
+
+            // DESCONTOS
+            let spprev = brutoCalculo * 0.105;
+            let cbpm = document.getElementById('cbpm').checked ? brutoCalculo * 0.02 : 0;
+            
+            // IRRF (Base deduzida do SPPREV e dependentes)
+            let baseIRRF = brutoCalculo + ferias + subVal - spprev - (v('dependentes') * 189.59);
+            let irrf = 0;
+            if(baseIRRF > 4664.68) irrf = (baseIRRF * 0.275) - 896.00;
+            else if(baseIRRF > 3751.05) irrf = (baseIRRF * 0.225) - 662.77;
+            else if(baseIRRF > 2826.65) irrf = (baseIRRF * 0.15) - 381.44;
+            else if(baseIRRF > 2259.20) irrf = (baseIRRF * 0.075) - 169.44;
+            if(irrf < 0) irrf = 0;
+
+            let outrosDescontos = v('emprestimos') + v('pensao') + v('pro_saude') + v('da_xv') + v('fepom_rancho') + v('fepom_aloj') + v('fepom_copa');
+            
+            let totalDescontos = spprev + cbpm + irrf + outrosDescontos;
+            let liquido = vencimentoBruto - totalDescontos;
+
+            // Update UI
+            document.getElementById('lbl_bruto').innerText = formatBRL(vencimentoBruto);
+            document.getElementById('lbl_extras').innerText = "+ " + formatBRL(totalExtras);
+            document.getElementById('lbl_descontos').innerText = "- " + formatBRL(totalDescontos);
+            document.getElementById('lbl_liquido').innerText = formatBRL(liquido);
+        }
+    </script>
+</body>
+</html>
