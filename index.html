@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Simulador e Direitos SegPub - SP/RJ/MG</title>
+<title>Universo Segurança Pública - Simulador e Direitos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -51,26 +51,11 @@
   }
 
   /* Variáveis dinâmicas de cor baseadas na Instituição */
-  body[data-inst="pcsp"] {
-    --vermelho: #4f4f4f; /* Tom cinza/branco/preto da PCSP */
-    --vermelho-escuro: #2b2b2b;
-  }
-  body[data-inst="pmerj"] {
-    --vermelho: #1E3084; /* Azul tradicional da PMERJ */
-    --vermelho-escuro: #142057;
-  }
-  body[data-inst="pcerj"] {
-    --vermelho: #6B7280; /* Cinza-azulado representando PCERJ */
-    --vermelho-escuro: #4B5563;
-  }
-  body[data-inst="pmmg"] {
-    --vermelho: #7c1a1a; /* Vermelho mais fechado/Caqui da PMMG */
-    --vermelho-escuro: #4a0f0f;
-  }
-  body[data-inst="pcmg"] {
-    --vermelho: #b58d3d; /* Dourado/Preto representando a PCMG */
-    --vermelho-escuro: #7a5f28;
-  }
+  body[data-inst="pcsp"] { --vermelho: #4f4f4f; --vermelho-escuro: #2b2b2b; }
+  body[data-inst="pmerj"] { --vermelho: #1E3084; --vermelho-escuro: #142057; }
+  body[data-inst="pcerj"] { --vermelho: #6B7280; --vermelho-escuro: #4B5563; }
+  body[data-inst="pmmg"] { --vermelho: #7c1a1a; --vermelho-escuro: #4a0f0f; }
+  body[data-inst="pcmg"] { --vermelho: #b58d3d; --vermelho-escuro: #7a5f28; }
   
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -157,13 +142,12 @@
   /* SEÇÕES E LAYOUT */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; } 
-  #page-direitos.active { display: block; } 
-  #page-acoes.active { display: block; } 
+  #page-direitos.active, #page-acoes.active, #page-associacoes.active { display: block; } 
   
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
-  #page-direitos, #page-acoes { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-acoes, #page-associacoes { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
 
@@ -246,19 +230,21 @@
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
-  /* LISTAS E ITENS (Direitos e Ações) */
+  /* LISTAS E ITENS (Direitos, Ações e Associações) */
   .result-list { display: flex; flex-direction: column; gap: 16px; }
   .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); transition: background-color 0.3s ease; }
   .direito-item.sim { border-left-color: #208E4E; background-color: rgba(32, 142, 78, 0.05); }
   .direito-item.nao { border-left-color: #e60000; background-color: rgba(230, 0, 0, 0.05); }
-  .direito-item.acao { border-left-color: var(--vermelho); background-color: var(--bg-card); border-top: 1px solid var(--border-card); border-right: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card); }
-  .direito-item.acao:hover { border-color: var(--vermelho); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .direito-item.acao, .direito-item.associacao { border-left-color: var(--vermelho); background-color: var(--bg-card); border-top: 1px solid var(--border-card); border-right: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card); }
+  .direito-item.acao:hover, .direito-item.associacao:hover { border-color: var(--vermelho); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
   
   .direito-nome { font-weight: 700; color: var(--text-main); font-size: 16px; text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 0.5px;}
   .direito-status { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
   .sim .direito-status { color: #208E4E; }
   .nao .direito-status { color: #e60000; }
   .direito-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  
+  .badge-acao { display: inline-block; padding: 4px 8px; border-radius: 3px; background-color: rgba(230, 0, 0, 0.1); color: var(--vermelho); font-size: 12px; font-weight: 700; text-transform: uppercase; margin-top: 8px; border: 1px solid var(--vermelho); align-self: flex-start;}
 
   .alerta { background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5; }
   .alerta strong { color: var(--vermelho) !important; font-weight: 700; transition: color 0.4s ease;}
@@ -287,7 +273,7 @@
       <span></span><span></span><span></span>
     </button>
     <div class="header-text" id="header-text">
-      <h1>Simulador de <span id="header-span">Soldo</span></h1>
+      <h1>Universo <span>Segurança Pública</span></h1>
       <p id="header-desc">Descubra quanto você vai receber (valor atualizado 2026)</p>
     </div>
   </div>
@@ -327,6 +313,7 @@
     <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Vencimentos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos">Direitos e Vantagens</a>
     <a onclick="switchPage('acoes')" id="menu-acoes">Ações Judiciais</a>
+    <a onclick="switchPage('associacoes')" id="menu-associacoes">Associações e Sindicatos</a>
   </nav>
 
   <div class="theme-toggle-container">
@@ -834,16 +821,26 @@
   <div class="card">
     <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      <strong>Aviso Legal:</strong> As informações abaixo são resumos informativos sobre as principais teses jurídicas e ações coletivas/individuais em andamento. Procure o departamento jurídico da sua associação, sindicato ou um advogado especialista para análise do seu caso concreto.
+      <strong>Aviso Legal:</strong> As informações abaixo são resumos informativos sobre as principais teses jurídicas em andamento. Procure o departamento jurídico da sua associação para análise do seu caso concreto.
     </div>
-    
     <div class="result-list" id="lista-acoes">
       </div>
   </div>
 </main>
 
+<main id="page-associacoes" class="page-section">
+  <div class="card">
+    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Abaixo estão as principais entidades representativas da sua instituição e as batalhas jurídicas que elas vêm liderando em defesa da tropa e dos associados.
+    </div>
+    <div class="result-list" id="lista-associacoes">
+      </div>
+  </div>
+</main>
+
 <footer>
-  <p>Desenvolvido por <strong>LockStage</strong> - O site é um mero consultor de informações públicas</p>
+  <p>Desenvolvido por <strong>LOCKSTAGE</strong> - O site contém apenas informações públicas.</p>
 </footer>
 
 <script>
@@ -874,7 +871,7 @@ const CARGOS_PM = [
   { val: "sd2", text: "SD 2ª CL — Soldado PM 2ª Classe", padrao: 2348.42, gratif: 0, oficial: false, retpFator: 1.0 }
 ];
 
-/* PCSP - retpFator implícito = 1.0 (RETP = 100% padrão) */
+/* PCSP */
 const CARGOS_PC = [
   { val: "del_esp", text: "Delegado de Polícia - Especial", padrao: 9385.00, gratif: 0, oficial: true, delegado: true, retpFator: 1.0 },
   { val: "del_1", text: "Delegado de Polícia - 1ª Classe", padrao: 8650.00, gratif: 0, oficial: true, delegado: true, retpFator: 1.0 },
@@ -962,130 +959,77 @@ const CARGOS_PCMG = [
 ];
 
 /* ============================================================ */
-/* === BANCO DE DADOS DE AÇÕES JUDICIAIS POR INSTITUIÇÃO ====== */
+/* === BANCO DE DADOS: AÇÕES JUDICIAIS ======================== */
 /* ============================================================ */
 const ACOES_JUDICIAIS = {
   pmesp: [
-    {
-      titulo: "Recálculo de Quinquênio e Sexta-Parte (Base Integral)",
-      status: "Tese Consolidada (Ativa/Reserva)",
-      desc: "Busca que o cálculo dos adicionais temporais (quinquênios e sexta-parte) incida sobre os vencimentos integrais (Padrão + RETP + gratificações incorporadas) e não apenas sobre o salário-base. Tese com excelente aceitação no Tribunal de Justiça de SP."
-    },
-    {
-      titulo: "Incorporação do ALE (Adicional de Local de Exercício)",
-      status: "Ação de Cobrança Retroativa",
-      desc: "Embora o ALE tenha sido absorvido pelo salário-base e RETP em 2013, muitos policiais que estavam na ativa naquela época têm direito a diferenças retroativas devido a falhas no cálculo de incorporação realizado pelo Estado."
-    },
-    {
-      titulo: "Insalubridade no Curso de Formação (Soldado 2ª Classe)",
-      status: "Tese Favorável",
-      desc: "Reconhecimento do direito ao recebimento do Adicional de Insalubridade desde o primeiro dia no curso de formação, não apenas após a formatura. Possibilidade de recebimento dos valores retroativos referentes a este período."
-    },
-    {
-      titulo: "Conversão de Licença-Prêmio em Pecúnia",
-      status: "Direito Adquirido na Aposentadoria",
-      desc: "Para policiais que foram para a inatividade sem gozar os blocos de licença-prêmio. O Estado é obrigado a indenizar esses meses em dinheiro (pecúnia), sem incidência de Imposto de Renda e contribuição previdenciária."
-    }
+    { titulo: "Recálculo de Quinquênio e Sexta-Parte (Base Integral)", status: "Tese Consolidada (Ativa/Reserva)", desc: "Busca que o cálculo dos adicionais incida sobre os vencimentos integrais (Padrão + RETP + gratificações incorporadas) e não apenas sobre o salário-base." },
+    { titulo: "Incorporação do ALE (Adicional de Local de Exercício)", status: "Ação de Cobrança Retroativa", desc: "Muitos policiais que estavam na ativa em 2013 têm direito a diferenças retroativas devido a falhas no cálculo de incorporação realizado pelo Estado." },
+    { titulo: "Insalubridade no Curso de Formação (Sd 2ª Cl)", status: "Tese Favorável", desc: "Reconhecimento do direito ao recebimento do Adicional de Insalubridade desde o primeiro dia no curso de formação, com pagamento de retroativos." },
+    { titulo: "Conversão de Licença-Prêmio em Pecúnia", status: "Direito Adquirido na Aposentadoria", desc: "Para policiais inativos. O Estado é obrigado a indenizar meses de licença-prêmio não gozadas em dinheiro, sem IR e previdência." }
   ],
   pcsp: [
-    {
-      titulo: "Base de Cálculo do Adicional de Insalubridade",
-      status: "Tema em Discussão",
-      desc: "Ação visando a alteração da base de cálculo do adicional de insalubridade pago aos policiais civis, pleiteando que o valor não seja congelado ou vinculado a salários mínimos defasados, mas sim atualizado de forma justa."
-    },
-    {
-      titulo: "Paridade e Integralidade (Tema 1019 STF)",
-      status: "Repercussão Geral Julgada",
-      desc: "O STF garantiu o direito à aposentadoria especial com integralidade (último salário) e paridade (reajustes iguais aos da ativa) para policiais civis que ingressaram até a EC 103/2019, desde que cumpridos os requisitos da LC 51/85."
-    },
-    {
-      titulo: "Cobrança do GAT (Gratificação por Acúmulo de Titularidade)",
-      status: "Delegados de Polícia",
-      desc: "Ação para garantir o pagamento correto ou cobrar diferenças atrasadas do GAT para Delegados de Polícia que responderam por mais de uma unidade cumulativamente ou acumularam funções de plantão."
-    },
-    {
-      titulo: "Abono de Permanência Retroativo",
-      status: "Ação de Cobrança",
-      desc: "Direito de restituição dos valores descontados a título de contribuição previdenciária desde a data em que o policial civil completou os requisitos para a aposentadoria voluntária, mas decidiu continuar na ativa."
-    }
+    { titulo: "Base de Cálculo do Adicional de Insalubridade", status: "Tema em Discussão", desc: "Ação visando a alteração da base de cálculo do adicional, pleiteando que o valor não seja vinculado a salários mínimos defasados." },
+    { titulo: "Paridade e Integralidade (Tema 1019 STF)", status: "Repercussão Geral Julgada", desc: "O STF garantiu a aposentadoria especial com integralidade e paridade para policiais civis que ingressaram até a EC 103/2019." },
+    { titulo: "Cobrança do GAT", status: "Delegados de Polícia", desc: "Ação para cobrar diferenças atrasadas da Gratificação por Acúmulo de Titularidade para Delegados que responderam por mais de uma unidade." },
+    { titulo: "Abono de Permanência Retroativo", status: "Ação de Cobrança", desc: "Restituição de contribuição previdenciária descontada indevidamente após o policial ter completado os requisitos para aposentadoria voluntária." }
   ],
   pmerj: [
-    {
-      titulo: "Revisão e Incidência da GRAM",
-      status: "Tese em Ascensão",
-      desc: "Ação que discute a natureza da Gratificação de Risco de Atividade Militar (GRAM), buscando sua incorporação correta na base de cálculo de outras vantagens, como férias e 13º salário, além da correção de seus reflexos para inativos."
-    },
-    {
-      titulo: "Indenização por Férias não Gozadas (Pecúnia)",
-      status: "Direito Adquirido (Inativos)",
-      desc: "Militares que foram para a inatividade sem gozar todas as suas férias têm o direito de receber esses períodos em pecúnia (dinheiro), com base no último soldo recebido na ativa, sem incidência de imposto de renda."
-    },
-    {
-      titulo: "Revisão do Auxílio-Moradia",
-      status: "Ação Histórica/Retroativos",
-      desc: "Tese que busca o ressarcimento das diferenças salariais geradas pelo congelamento ou pagamento a menor do auxílio-moradia em anos passados, pleiteando a equiparação com valores pagos a outras categorias."
-    },
-    {
-      titulo: "Promoção por Tempo de Serviço (Retroação)",
-      status: "Ação Individual",
-      desc: "Ações movidas por praças (Cabos e Sargentos) que sofreram atrasos na promoção por tempo de serviço. O objetivo é retroagir a data da promoção, recebendo as diferenças salariais acumuladas nesse período."
-    }
+    { titulo: "Revisão e Incidência da GRAM", status: "Tese em Ascensão", desc: "Busca a incorporação correta da Gratificação de Risco de Atividade Militar na base de cálculo do 13º salário e férias." },
+    { titulo: "Indenização por Férias não Gozadas (Pecúnia)", status: "Direito Adquirido (Inativos)", desc: "Militares que foram para a inatividade sem gozar todas as suas férias têm o direito de receber em dinheiro, sem incidência de imposto." },
+    { titulo: "Revisão do Auxílio-Moradia", status: "Ação Histórica/Retroativos", desc: "Ressarcimento das diferenças geradas pelo pagamento a menor do auxílio-moradia em anos passados." },
+    { titulo: "Promoção por Tempo de Serviço", status: "Ação Individual", desc: "Retroação da data de promoção para praças que sofreram atrasos por parte do Estado, cobrando as diferenças salariais." }
   ],
   pcerj: [
-    {
-      titulo: "Adicional de Periculosidade (Retroativos)",
-      status: "Pós Lei 11.003/2025",
-      desc: "Ação para cobrança de valores devidos a título de insalubridade/periculosidade referentes a períodos anteriores à implementação efetiva da nova Lei Orgânica, considerando o risco inerente à função policial."
-    },
-    {
-      titulo: "Paridade e Integralidade na Aposentadoria",
-      status: "Direito Constitucional",
-      desc: "Garantia de que os policiais civis aposentados recebam os mesmos reajustes e o último vencimento da ativa, com base na LC 51/1985 e no Tema 1019 do STF, combatendo enquadramentos errôneos da RioPrevidência."
-    },
-    {
-      titulo: "Reenquadramento de Classe (Promoção)",
-      status: "Ação de Obrigação de Fazer",
-      desc: "Investigadores, Inspetores e Peritos que preencheram os requisitos temporais e meritórios para mudança de classe, mas que foram prejudicados por inércia do Estado. Busca a promoção e as diferenças salariais retroativas."
-    }
+    { titulo: "Adicional de Periculosidade (Retroativos)", status: "Pós Lei 11.003/2025", desc: "Cobrança de insalubridade/periculosidade referentes a períodos anteriores à implementação da nova Lei Orgânica." },
+    { titulo: "Paridade e Integralidade na Aposentadoria", status: "Direito Constitucional", desc: "Garantia de reajustes iguais aos da ativa para policiais civis aposentados, combatendo erros da RioPrevidência." },
+    { titulo: "Reenquadramento de Classe (Promoção)", status: "Ação de Obrigação de Fazer", desc: "Busca promoção e diferenças retroativas para policiais prejudicados pela inércia do Estado nas avaliações." }
   ],
   pmmg: [
-    {
-      titulo: "Ação da URV (Unidade Real de Valor)",
-      status: "Ação Indenizatória Histórica",
-      desc: "Tese que cobra as perdas salariais decorrentes da conversão da moeda de Cruzeiro Real para URV no ano de 1994 (defasagem de 11,98%). Muitos militares e associações ainda buscam a execução desses valores contra o Estado."
-    },
-    {
-      titulo: "Revisão da Alíquota do IPSM",
-      status: "Discussão Jurídica Ativa",
-      desc: "Ações questionando descontos previdenciários indevidos ou a majoração da alíquota do Instituto de Previdência dos Servidores Militares, buscando adequação aos limites do Sistema de Proteção Social dos Militares (Lei Federal 13.954)."
-    },
-    {
-      titulo: "Promoção Retroativa (Ressarcimento de Preterição)",
-      status: "Ação Individual",
-      desc: "Voltada para militares que tiveram sua promoção atrasada por erro da administração, demora na publicação, ou sindicâncias/processos que resultaram em absolvição posterior. Garante o recebimento da diferença de soldo retroativa."
-    },
-    {
-      titulo: "Férias Prêmio em Pecúnia",
-      status: "Garantia na Transferência para a Reserva",
-      desc: "Conversão em espécie das férias-prêmio adquiridas e não gozadas na ativa, quando da passagem para a reserva remunerada. O pagamento deve ser imediato e com base no valor do último subsídio."
-    }
+    { titulo: "Ação da URV (Unidade Real de Valor)", status: "Ação Indenizatória Histórica", desc: "Cobra as perdas salariais decorrentes da conversão da moeda em 1994 (defasagem de 11,98%)." },
+    { titulo: "Revisão da Alíquota do IPSM", status: "Discussão Jurídica Ativa", desc: "Questiona descontos indevidos e majoração da alíquota do Instituto de Previdência dos Servidores Militares." },
+    { titulo: "Promoção Retroativa (Ressarcimento de Preterição)", status: "Ação Individual", desc: "Para militares que tiveram promoção atrasada por erro administrativo ou absolvição em processos, garantindo o soldo retroativo." },
+    { titulo: "Férias Prêmio em Pecúnia", status: "Garantia na Transferência para a Reserva", desc: "Conversão em espécie das férias-prêmio não gozadas na ativa ao passar para a inatividade." }
   ],
   pcmg: [
-    {
-      titulo: "Restituição do IPSEMG (Assistência à Saúde)",
-      status: "Tese Consolidada",
-      desc: "Ação para interromper o desconto compulsório do IPSEMG (assistência médica) para quem não tem interesse em utilizar a rede, e devolução dos valores descontados indevidamente nos últimos 5 anos."
-    },
-    {
-      titulo: "Inclusão do ADE na Aposentadoria",
-      status: "Ação de Inativos",
-      desc: "Busca garantir que o Adicional de Desempenho (ADE), recebido por longos anos na ativa, seja incorporado integralmente aos proventos de aposentadoria da Polícia Civil, evitando perdas bruscas de renda."
-    },
-    {
-      titulo: "Pagamento de Progressão e Promoção Atrasada",
-      status: "Ação de Cobrança",
-      desc: "Policiais civis que preencheram os requisitos de tempo e avaliação, mas que a chefia do Estado não publicou o ato de promoção/progressão no tempo certo. Ação para cobrar todo o retroativo devido."
-    }
+    { titulo: "Restituição do IPSEMG", status: "Tese Consolidada", desc: "Ação para interromper desconto compulsório do IPSEMG saúde para não interessados, e devolução dos valores dos últimos 5 anos." },
+    { titulo: "Inclusão do ADE na Aposentadoria", status: "Ação de Inativos", desc: "Garantir que o Adicional de Desempenho recebido na ativa seja incorporado aos proventos de aposentadoria." },
+    { titulo: "Pagamento de Progressão e Promoção Atrasada", status: "Ação de Cobrança", desc: "Ação para cobrar valores retroativos devidos pela demora do Estado em publicar o ato de promoção." }
+  ]
+};
+
+/* ============================================================ */
+/* === BANCO DE DADOS: ASSOCIAÇÕES E SINDICATOS =============== */
+/* ============================================================ */
+const ASSOCIACOES = {
+  pmesp: [
+    { nome: "ACS (Associação dos Cabos e Soldados da PMESP)", foco: "Defesa Jurídica, Assistência e Política de Classe", acao: "Ação do ALE 100%, Insalubridade e Recálculo de Quinquênio." },
+    { nome: "AFAM (Associação Fundo de Auxílio Mútuo)", foco: "Assistência Social, Saúde e Jurídica", acao: "Defesa em processos administrativos disciplinares e ações de pecúnia (licença-prêmio)." },
+    { nome: "AOMESP (Assoc. dos Oficiais Militares Estaduais)", foco: "Defesa de Oficiais e Pensionistas", acao: "Atua forte na defesa da paridade remuneratória para pensionistas e proteção do SPSM." }
+  ],
+  pcsp: [
+    { nome: "SINDPOL-SP", foco: "Representação Sindical da PCSP", acao: "Reestruturação das carreiras, defasagem salarial e cobrança da base de insalubridade." },
+    { nome: "ADPESP (Assoc. dos Delegados de Polícia SP)", foco: "Defesa das Prerrogativas dos Delegados", acao: "Cumprimento do Tema 1019 do STF (Integralidade/Paridade) e GAT." },
+    { nome: "SIPESP (Sindicato dos Investigadores de Polícia)", foco: "Defesa específica dos Investigadores", acao: "Nível superior para a carreira e ações de abono de permanência." }
+  ],
+  pmerj: [
+    { nome: "AME-RJ (Associação de Militares Estaduais)", foco: "Representatividade Plena", acao: "Protagonista nas ações de incidência da GRAM e revisão do Auxílio-Moradia histórico." },
+    { nome: "ACS PM/BM RJ", foco: "Apoio ao Praça Policial e Bombeiro", acao: "Foco na cobrança de promoções atrasadas, triênios e assistência habitacional." }
+  ],
+  pcerj: [
+    { nome: "SINPOL-RJ", foco: "Sindicato Único dos Policiais Civis", acao: "Pioneiros na luta pela Lei Orgânica 11.003/2025 e agora cobram pagamentos retroativos de periculosidade." },
+    { nome: "ADPERJ", foco: "Associação dos Delegados do RJ", acao: "Luta pela manutenção da Verba de Representação (212%) e autonomia da Polícia Judiciária." },
+    { nome: "COLPOL-RJ", foco: "Coligação dos Policiais Civis", acao: "Ações de reenquadramento de classes e paridade para inativos." }
+  ],
+  pmmg: [
+    { nome: "CSCS (Centro Social de Cabos e Soldados)", foco: "Suporte Total ao Praça", acao: "Principal entidade cobrando a tese da URV (11,98%) e revisão da alíquota do IPSM." },
+    { nome: "ASPRA-MG", foco: "Representação de Classe e Assistência", acao: "Forte atuação nas ações de ressarcimento por preterição em promoções e direito a férias-prêmio." },
+    { nome: "AOPMBM (Assoc. dos Oficiais da PMMG e CBMMG)", foco: "Oficiais e Comando", acao: "Defesa do regime de subsídio e da paridade integral no Tribunal de Justiça." }
+  ],
+  pcmg: [
+    { nome: "SINDPOL-MG", foco: "Sindicato dos Servidores da PCMG", acao: "Lidera as ações de restituição de descontos indevidos ao IPSEMG (Assistência Médica)." },
+    { nome: "ADEPOL-MG", foco: "Sindicato dos Delegados MG", acao: "Ações voltadas ao cumprimento integral das datas de promoção e defesa de prerrogativas funcionais." },
+    { nome: "AESPOL-MG", foco: "Assoc. dos Escrivães", acao: "Luta pela manutenção do ADE na aposentadoria e paridade." }
   ]
 };
 
@@ -1119,35 +1063,13 @@ function popularCargos(inst) {
     select.appendChild(opt);
   });
 
-  // Popular select de Direitos
   const opcoesDireitos = {
-    pmesp: [
-      { v: 'oficial', t: 'Oficial (Tenente a Coronel)' },
-      { v: 'praca', t: 'Praça (Soldado a Subtenente)', selected: true }
-    ],
-    pcsp: [
-      { v: 'delegado', t: 'Autoridade Policial (Delegado)' },
-      { v: 'agente', t: 'Agente / Investigador / Escrivão / Outros', selected: true }
-    ],
-    pmerj: [
-      { v: 'oficial_rj', t: 'Oficial PMERJ (Tenente a Coronel)' },
-      { v: 'praca_rj', t: 'Praça PMERJ (Soldado a Subtenente)', selected: true }
-    ],
-    pcerj: [
-      { v: 'delegado_rj', t: 'Autoridade Policial (Delegado)' },
-      { v: 'perito_rj', t: 'Perito Criminal / Legista' },
-      { v: 'oficialpc_rj', t: 'Oficial de Polícia Civil', selected: true },
-      { v: 'agentepc_rj', t: 'Agente de Polícia Científica' }
-    ],
-    pmmg: [
-      { v: 'oficial_mg', t: 'Oficial PMMG (Tenente a Coronel)' },
-      { v: 'praca_mg', t: 'Praça PMMG (Soldado a Subtenente)', selected: true }
-    ],
-    pcmg: [
-      { v: 'delegado_mg', t: 'Autoridade Policial (Delegado)' },
-      { v: 'perito_mg', t: 'Perito Criminal / Legista' },
-      { v: 'policial_mg', t: 'Investigador / Escrivão', selected: true }
-    ]
+    pmesp: [ { v: 'oficial', t: 'Oficial (Tenente a Coronel)' }, { v: 'praca', t: 'Praça (Soldado a Subtenente)', selected: true } ],
+    pcsp: [ { v: 'delegado', t: 'Autoridade Policial (Delegado)' }, { v: 'agente', t: 'Agente / Investigador / Escrivão / Outros', selected: true } ],
+    pmerj: [ { v: 'oficial_rj', t: 'Oficial PMERJ (Tenente a Coronel)' }, { v: 'praca_rj', t: 'Praça PMERJ (Soldado a Subtenente)', selected: true } ],
+    pcerj: [ { v: 'delegado_rj', t: 'Autoridade Policial (Delegado)' }, { v: 'perito_rj', t: 'Perito Criminal / Legista' }, { v: 'oficialpc_rj', t: 'Oficial de Polícia Civil', selected: true }, { v: 'agentepc_rj', t: 'Agente de Polícia Científica' } ],
+    pmmg: [ { v: 'oficial_mg', t: 'Oficial PMMG (Tenente a Coronel)' }, { v: 'praca_mg', t: 'Praça PMMG (Soldado a Subtenente)', selected: true } ],
+    pcmg: [ { v: 'delegado_mg', t: 'Autoridade Policial (Delegado)' }, { v: 'perito_mg', t: 'Perito Criminal / Legista' }, { v: 'policial_mg', t: 'Investigador / Escrivão', selected: true } ]
   };
 
   (opcoesDireitos[inst] || []).forEach(o => {
@@ -1171,52 +1093,16 @@ function mudarInstituicao() {
   const rodapeAlerta = document.getElementById('rodape_alerta');
 
   const config = {
-    pmesp: {
-      span: 'Soldo',
-      desc: 'Descubra quanto você vai receber como PMESP (valor 2026)',
-      dir: 'PMESP',
-      prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.',
-      rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.'
-    },
-    pcsp: {
-      span: 'Subsídio',
-      desc: 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)',
-      dir: 'PCSP',
-      prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.',
-      rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.'
-    },
-    pmerj: {
-      span: 'Soldo',
-      desc: 'Descubra seus vencimentos na PMERJ (valor 2026)',
-      dir: 'PMERJ',
-      prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre soldo + gratificações sujeitas a contribuição. RAS é indenizatório (não incide previdência).',
-      rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.'
-    },
-    pcerj: {
-      span: 'Subsídio',
-      desc: 'Descubra seus vencimentos na Polícia Civil RJ (Lei 11.003/2025)',
-      dir: 'PCERJ',
-      prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre vencimento-base + adicionais (incluindo periculosidade ou verba de representação dos delegados).',
-      rodape: 'Cálculos baseados na legislação atual (Lei 11.003/2025) com projeção/ajustes 2026.'
-    },
-    pmmg: {
-      span: 'Subsídio',
-      desc: 'Descubra quanto você vai receber na PMMG (valor 2026)',
-      dir: 'PMMG',
-      prev: 'IPSM (10,5% previdência militar e saúde) é descontado automaticamente sobre o subsídio e adicionais.',
-      rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.'
-    },
-    pcmg: {
-      span: 'Subsídio',
-      desc: 'Descubra seus vencimentos na Polícia Civil MG (valor 2026)',
-      dir: 'PCMG',
-      prev: 'Previdência Estadual (~14%) é descontada automaticamente. IPSEMG saúde (3,2%) é opcional.',
-      rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.'
-    }
+    pmesp: { span: 'Soldo', desc: 'Descubra quanto você vai receber como PMESP (valor 2026)', dir: 'PMESP', prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.' },
+    pcsp: { span: 'Subsídio', desc: 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)', dir: 'PCSP', prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.' },
+    pmerj: { span: 'Soldo', desc: 'Descubra seus vencimentos na PMERJ (valor 2026)', dir: 'PMERJ', prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre soldo + gratificações sujeitas a contribuição. RAS é indenizatório (não incide previdência).', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
+    pcerj: { span: 'Subsídio', desc: 'Descubra seus vencimentos na Polícia Civil RJ (Lei 11.003/2025)', dir: 'PCERJ', prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre vencimento-base + adicionais (incluindo periculosidade ou verba de representação dos delegados).', rodape: 'Cálculos baseados na legislação atual (Lei 11.003/2025) com projeção/ajustes 2026.' },
+    pmmg: { span: 'Subsídio', desc: 'Descubra quanto você vai receber na PMMG (valor 2026)', dir: 'PMMG', prev: 'IPSM (10,5% previdência militar e saúde) é descontado automaticamente sobre o subsídio e adicionais.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
+    pcmg: { span: 'Subsídio', desc: 'Descubra seus vencimentos na Polícia Civil MG (valor 2026)', dir: 'PCMG', prev: 'Previdência Estadual (~14%) é descontada automaticamente. IPSEMG saúde (3,2%) é opcional.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' }
   };
 
   const c = config[inst] || config.pmesp;
-  headerSpan.innerText = c.span;
+  // headerSpan.innerText = c.span; <- Removido para manter "Segurança Pública" fixo
   headerDesc.innerText = c.desc;
   txtInstDir.innerText = c.dir;
   alertaPrev.innerText = c.prev;
@@ -1225,33 +1111,20 @@ function mudarInstituicao() {
   popularCargos(inst);
   calcular();
   analisarDireitos();
-  carregarAcoes(); // Atualiza a aba de Ações Judiciais
+  carregarAcoes();
+  carregarAssociacoes();
 }
 
-/* === FUNÇÃO: CARREGAR AÇÕES JUDICIAIS === */
 function carregarAcoes() {
   const inst = document.getElementById("instituicao").value;
   const container = document.getElementById("lista-acoes");
-  const tituloSpan = document.getElementById("txt-inst-acoes");
-
-  const nomesInst = { 
-    pmesp: "PMESP", pcsp: "PCSP", 
-    pmerj: "PMERJ", pcerj: "PCERJ", 
-    pmmg: "PMMG", pcmg: "PCMG" 
-  };
+  document.getElementById("txt-inst-acoes").innerText = inst.toUpperCase();
   
-  tituloSpan.innerText = nomesInst[inst] || "Instituição";
   container.innerHTML = "";
-  
   const acoes = ACOES_JUDICIAIS[inst] || [];
 
   if (acoes.length === 0) {
-    container.innerHTML = `
-      <div class="direito-item nao">
-        <div class="direito-nome">Nenhuma ação cadastrada no momento</div>
-        <div class="direito-desc">Não encontramos teses ativas no banco de dados para esta instituição.</div>
-      </div>
-    `;
+    container.innerHTML = `<div class="direito-item nao"><div class="direito-nome">Nenhuma ação</div><div class="direito-desc">Não encontramos teses para esta instituição.</div></div>`;
     return;
   }
 
@@ -1266,7 +1139,31 @@ function carregarAcoes() {
   });
 }
 
-/* === CONTROLE DE TEMA === */
+function carregarAssociacoes() {
+  const inst = document.getElementById("instituicao").value;
+  const container = document.getElementById("lista-associacoes");
+  document.getElementById("txt-inst-assoc").innerText = inst.toUpperCase();
+  
+  container.innerHTML = "";
+  const assocList = ASSOCIACOES[inst] || [];
+
+  if (assocList.length === 0) {
+    container.innerHTML = `<div class="direito-item nao"><div class="direito-nome">Nenhuma associação</div><div class="direito-desc">Não encontramos associações para esta instituição no banco de dados.</div></div>`;
+    return;
+  }
+
+  assocList.forEach(assoc => {
+    container.innerHTML += `
+      <div class="direito-item associacao">
+        <div class="direito-nome">${assoc.nome}</div>
+        <div class="direito-desc"><strong>Foco:</strong> ${assoc.foco}</div>
+        <div class="badge-acao">⚖️ Principais Ações: ${assoc.acao}</div>
+      </div>
+    `;
+  });
+}
+
+/* === CONTROLE DE NAVEGAÇÃO E TEMA === */
 function initTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const btn = document.getElementById('theme-toggle');
@@ -1288,7 +1185,6 @@ function toggleTheme() {
   }
 }
 
-/* === CONTROLE DE MENU === */
 function toggleMenu() {
   document.getElementById('sidebar').classList.toggle('active');
   document.getElementById('menuOverlay').classList.toggle('active');
@@ -1308,7 +1204,7 @@ function switchPage(page) {
 /* === LÓGICA DA CALCULADORA === */
 const UFESP_2026 = 38.42;
 const ALIQ_PREV = 0.14;
-const ALIQ_IPSM = 0.105; // 10,5% PMMG
+const ALIQ_IPSM = 0.105; 
 const fmt = v => "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
 function valEl(id, num) {
@@ -1375,24 +1271,17 @@ function calcular() {
   const dias = parseFloat(document.getElementById("dias").value) || 0;
   const fator = Math.min(dias / 30, 1.0333);
   const deps = parseInt(document.getElementById("dependentes").value) || 0;
-  const retpFator = c.retpFator || 0; // PMMG/PCMG = 0
+  const retpFator = c.retpFator || 0; 
   const retpLabel = c.retpLabel || "RETP (100%)";
   
-  // Padrão (Subsídio em MG) e RETP (se existir)
   const padrao = c.padrao * fator;
   const retp = c.padrao * retpFator * fator;
   const gratifRepres = (c.gratif || 0) * fator;
   
-  let quinq = 0, valQuinq = 0;
-  let valSexta = 0;
-  let valDS = 0, ensino = 0;
-  let insal = 0, acaoInsal = 0;
-  let valGat = 0;
-  let valLotacao = 0, valGHP = 0;
-  let valAuxAlim = 0, valAuxTransp = 0;
-  let valDejem = 0, valDel = 0, valDejec = 0, valRAS = 0, valPlantao = 0;
-  let valGTC = 0;
-  let valADE = 0, valFardamento = 0;
+  let quinq = 0, valQuinq = 0, valSexta = 0, valDS = 0, ensino = 0;
+  let insal = 0, acaoInsal = 0, valGat = 0, valLotacao = 0, valGHP = 0;
+  let valAuxAlim = 0, valAuxTransp = 0, valDejem = 0, valDel = 0, valDejec = 0, valRAS = 0, valPlantao = 0;
+  let valGTC = 0, valADE = 0, valFardamento = 0;
 
   const baseQuinquenio = padrao + retp; 
   
@@ -1413,9 +1302,7 @@ function calcular() {
     valSexta = (parseInt(document.getElementById("sextaparte_sp_pc").value) || 0) ? baseQuinquenio / 6 : 0;
     insal = parseFloat(document.getElementById("insalubridade_sp_pc").value) || 0;
     acaoInsal = parseFloat(document.getElementById("acaoinsal_sp_pc").value) || 0;
-    if (c.delegado) {
-      valGat = ((c.padrao + c.padrao) / 3) * ((parseInt(document.getElementById("gat_dias").value) || 0) / 30);
-    }
+    if (c.delegado) valGat = ((c.padrao + c.padrao) / 3) * ((parseInt(document.getElementById("gat_dias").value) || 0) / 30);
     valDejec = (parseInt(document.getElementById("qtddejec").value) || 0) * valorDejec(document.getElementById("tipodejec").value, c.oficial);
   }
   else if (inst === 'pmerj') {
@@ -1431,16 +1318,14 @@ function calcular() {
   else if (inst === 'pcerj') {
     quinq = parseInt(document.getElementById("quinquenios_rj_pc").value) || 0;
     valQuinq = baseQuinquenio * 0.05 * quinq;
-    if (c.perito && (parseInt(document.getElementById("gtc_rj").value) || 0)) {
-      valGTC = c.padrao * fator * 1.0;
-    }
+    if (c.perito && (parseInt(document.getElementById("gtc_rj").value) || 0)) valGTC = c.padrao * fator * 1.0;
     valAuxAlim = parseFloat(document.getElementById("auxalim_rj_pc").value) || 0;
     valAuxTransp = parseFloat(document.getElementById("auxtransp_rj_pc").value) || 0;
     valPlantao = (parseInt(document.getElementById("qtdplantao_rj").value) || 0) * (parseFloat(document.getElementById("valplantao_rj").value) || 0);
   }
   else if (inst === 'pmmg') {
     quinq = parseInt(document.getElementById("quinquenios_mg_pm").value) || 0;
-    valQuinq = baseQuinquenio * 0.10 * quinq; // Quinquênio MG é 10%
+    valQuinq = baseQuinquenio * 0.10 * quinq; 
     const ade = parseFloat(document.getElementById("ade_mg_pm").value) || 0;
     valADE = padrao * (ade / 100);
     valFardamento = parseFloat(document.getElementById("fardamento_mg_pm").value) || 0;
@@ -1448,7 +1333,7 @@ function calcular() {
   }
   else if (inst === 'pcmg') {
     quinq = parseInt(document.getElementById("quinquenios_mg_pc").value) || 0;
-    valQuinq = baseQuinquenio * 0.10 * quinq; // Quinquênio MG é 10%
+    valQuinq = baseQuinquenio * 0.10 * quinq; 
     const ade = parseFloat(document.getElementById("ade_mg_pc").value) || 0;
     valADE = padrao * (ade / 100);
     valFardamento = parseFloat(document.getElementById("vestimenta_mg_pc").value) || 0;
@@ -1468,7 +1353,6 @@ function calcular() {
   const abonoT = parseFloat(document.getElementById("abonotransf").value) || 0;
 
   let proventosHTML = '';
-  
   if (inst === 'pmerj') {
     proventosHTML += linha("Soldo", padrao, "provento");
     proventosHTML += linha(retpLabel, retpAjustado, "provento");
@@ -1482,11 +1366,7 @@ function calcular() {
     proventosHTML += linha("RETP (100%)", retpAjustado, "provento");
   }
 
-  if (valQuinq) {
-    let lblQ = `Quinquênios (${quinq})`;
-    if (inst === 'pmerj') lblQ = `Triênios (${quinq})`;
-    proventosHTML += linha(lblQ, valQuinq, "provento");
-  }
+  if (valQuinq) proventosHTML += linha(inst === 'pmerj' ? `Triênios (${quinq})` : `Quinquênios (${quinq})`, valQuinq, "provento");
   if (valSexta) proventosHTML += linha("Sexta-parte", valSexta, "provento");
   if (insal) proventosHTML += linha("Insalubridade", insal, "provento");
   if (gratifRepres) proventosHTML += linha("Representação", gratifRepres, "provento");
@@ -1530,26 +1410,18 @@ function calcular() {
   if (valLP) proventosHTML += linha("Licença-prêmio", valLP, "provento");
   if (abonoT) proventosHTML += linha("Abono Transf.", abonoT, "provento");
 
-  const baseFolha = padrao + retpAjustado + valQuinq + valSexta + insal + gratifRepres + 
-                    valDS + valGat + acaoInsal + val13 + valFerias + valLP + abonoT + ensino +
-                    valGHP + valLotacao + valGTC + valADE;
-  
+  const baseFolha = padrao + retpAjustado + valQuinq + valSexta + insal + gratifRepres + valDS + valGat + acaoInsal + val13 + valFerias + valLP + abonoT + ensino + valGHP + valLotacao + valGTC + valADE;
   const indenizatorios = valAuxAlim + valAuxTransp + valDejem + valDel + valDejec + valRAS + valPlantao + valFardamento;
-  
   const bruto = baseFolha + indenizatorios;
   proventosHTML += subtotal("Total Bruto", bruto);
 
   // Descontos
   const basePrev = padrao + retpAjustado + valQuinq + valSexta + valDS + valGat + valGHP + valGTC + valLotacao + valADE;
   
-  let sprev = 0;
-  let nomePrev = "Previdência";
-
-  if (inst === 'pmmg') {
-    sprev = basePrev * ALIQ_IPSM; // 10,5% PMMG
-    nomePrev = "IPSM (10,5% Prev+Saúde)";
-  } else {
-    sprev = basePrev * ALIQ_PREV; // 14% Regra geral SP/RJ/MG Civil
+  let sprev = 0, nomePrev = "Previdência";
+  if (inst === 'pmmg') { sprev = basePrev * ALIQ_IPSM; nomePrev = "IPSM (10,5% Prev+Saúde)"; } 
+  else {
+    sprev = basePrev * ALIQ_PREV; 
     if (inst === 'pmesp' || inst === 'pcsp') nomePrev = "SPPREV (14%)";
     if (inst === 'pmerj' || inst === 'pcerj') nomePrev = "RioPrevidência (14%)";
     if (inst === 'pcmg') nomePrev = "Previdência MG (~14%)";
@@ -1557,9 +1429,7 @@ function calcular() {
 
   const irrf = calcularIRRF(baseFolha - sprev, deps);
   const empr = parseFloat(document.getElementById("emprestimo").value) || 0;
-  
-  let descEspecificos = 0;
-  let descHTML = "";
+  let descEspecificos = 0, descHTML = "";
 
   if (inst === 'pmesp') {
     const fepomCopa = parseFloat(document.getElementById("fepomcopa").value) || 0;
@@ -1569,7 +1439,6 @@ function calcular() {
     const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
     const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
     descEspecificos = fepomCopa + fepomAlo + fepomRan + daxv + prosaude + cbpm;
-    
     if (fepomCopa) descHTML += linha("FEPOM COPA", fepomCopa, "desconto");
     if (fepomAlo) descHTML += linha("FEPOM Alojamento", fepomAlo, "desconto");
     if (fepomRan) descHTML += linha("FEPOM Rancho", fepomRan, "desconto");
@@ -1579,13 +1448,9 @@ function calcular() {
   } 
   else if (inst === 'pcsp') {
     const iamspeOpt = parseInt(document.getElementById("opt_iamspe").value) || 0;
-    let iamspeVal = 0;
-    if (iamspeOpt === 1) {
-      iamspeVal = (padrao + retpAjustado + valQuinq + valSexta) * 0.02 * (1 + deps);
-    }
+    let iamspeVal = iamspeOpt === 1 ? (padrao + retpAjustado + valQuinq + valSexta) * 0.02 * (1 + deps) : 0;
     const sind = parseFloat(document.getElementById("sindicato").value) || 0;
     descEspecificos = iamspeVal + sind;
-
     if (iamspeVal) descHTML += linha("IAMSPE (2% + dep)", iamspeVal, "desconto");
     if (sind) descHTML += linha("Sindicato / Assoc.", sind, "desconto");
   }
@@ -1595,7 +1460,6 @@ function calcular() {
     const hcpm = parseFloat(document.getElementById("hcpm").value) || 0;
     const coopm = parseFloat(document.getElementById("coopm").value) || 0;
     descEspecificos = fuspom + familiazul + hcpm + coopm;
-
     if (fuspom) descHTML += linha("FUSPOM", fuspom, "desconto");
     if (familiazul) descHTML += linha("Família Azul", familiazul, "desconto");
     if (hcpm) descHTML += linha("HCPM", hcpm, "desconto");
@@ -1605,7 +1469,6 @@ function calcular() {
     const fuspol = parseFloat(document.getElementById("fuspol").value) || 0;
     const sindRj = parseFloat(document.getElementById("sindicato_rj").value) || 0;
     descEspecificos = fuspol + sindRj;
-
     if (fuspol) descHTML += linha("FUSPOL", fuspol, "desconto");
     if (sindRj) descHTML += linha("Sindicato / Assoc.", sindRj, "desconto");
   }
@@ -1613,19 +1476,14 @@ function calcular() {
     const ipsmCopart = parseFloat(document.getElementById("ipsm_copart").value) || 0;
     const assocMg = parseFloat(document.getElementById("assoc_mg_pm").value) || 0;
     descEspecificos = ipsmCopart + assocMg;
-
     if (ipsmCopart) descHTML += linha("IPSM (Coparticipação)", ipsmCopart, "desconto");
     if (assocMg) descHTML += linha("Associação / CSCS", assocMg, "desconto");
   }
   else if (inst === 'pcmg') {
     const ipsemgOpt = parseInt(document.getElementById("opt_ipsemg").value) || 0;
-    let ipsemgVal = 0;
-    if (ipsemgOpt === 1) {
-      ipsemgVal = basePrev * 0.032; // 3.2%
-    }
+    let ipsemgVal = ipsemgOpt === 1 ? basePrev * 0.032 : 0;
     const sindMg = parseFloat(document.getElementById("sindicato_mg_pc").value) || 0;
     descEspecificos = ipsemgVal + sindMg;
-
     if (ipsemgVal) descHTML += linha("IPSEMG (Saúde 3,2%)", ipsemgVal, "desconto");
     if (sindMg) descHTML += linha("Sindicato (SINDPOL)", sindMg, "desconto");
   }
@@ -1655,207 +1513,56 @@ function analisarDireitos() {
   const tempo = parseInt(document.getElementById('tempo_dir').value) || 0;
   const inativo = (situacao === 'reserva' || situacao === 'reforma');
   const cargoDir = document.getElementById('cargo_dir').value;
-  
   let direitos = [];
 
-  // === DIREITOS COMUNS / SP ===
   if (inst === 'pmesp' || inst === 'pcsp') {
-    direitos.push({
-      nome: "RETP (Regime Especial de Trabalho Policial)",
-      tem: true,
-      desc: "Adicional de 100% sobre o valor base. Integrado aos proventos tanto na ativa quanto na inatividade."
-    });
-
+    direitos.push({ nome: "RETP (Regime Especial de Trabalho Policial)", tem: true, desc: "Adicional de 100% sobre o valor base. Integrado aos proventos." });
     const q = Math.floor(tempo / 5);
-    direitos.push({
-      nome: "Adicional por Tempo de Serviço (Quinquênio)",
-      tem: q > 0,
-      desc: q > 0 ? `Você possui direito a ${q} quinquênio(s). Cada um representa 5% de acréscimo sobre os vencimentos totais.` : "Adquirido a cada 5 anos de efetivo serviço."
-    });
-
-    direitos.push({
-      nome: "Sexta-Parte",
-      tem: tempo >= 20,
-      desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos totais) por ter completado 20 anos de serviço." : "Adquirido ao completar 20 anos de efetivo serviço público."
-    });
-
-    direitos.push({
-      nome: "Adicional de Insalubridade",
-      tem: !inativo,
-      desc: !inativo ? "Pago aos policiais da ativa sob risco / condições insalubres." : "Não se incorpora automaticamente aos proventos da inatividade, salvo ingresso judicial ou regra de transição específica."
-    });
-
+    direitos.push({ nome: "Adicional por Tempo de Serviço (Quinquênio)", tem: q > 0, desc: q > 0 ? `Você possui direito a ${q} quinquênio(s).` : "Adquirido a cada 5 anos." });
+    direitos.push({ nome: "Sexta-Parte", tem: tempo >= 20, desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos)." : "Adquirido ao completar 20 anos." });
+    direitos.push({ nome: "Adicional de Insalubridade", tem: !inativo, desc: !inativo ? "Pago aos policiais da ativa sob risco." : "Não se incorpora automaticamente aos proventos." });
     if (inst === 'pmesp') {
-      if (inativo) {
-        direitos.push({
-          nome: "Sistema de Proteção Social dos Militares (SPSM)",
-          tem: true,
-          desc: "Militares possuem regras próprias. Aqueles que cumpriram os requisitos mantêm o direito à integralidade do último soldo e paridade plena."
-        });
-      }
-      direitos.push({
-        nome: "Auxílio Fardamento",
-        tem: !inativo,
-        desc: !inativo ? "Abono pago anualmente na data do aniversário para manutenção do fardamento militar." : "Verba indenizatória restrita ao pessoal da ativa."
-      });
+      if (inativo) direitos.push({ nome: "Sistema de Proteção Social", tem: true, desc: "Mantêm o direito à integralidade do último soldo e paridade plena." });
+      direitos.push({ nome: "Auxílio Fardamento", tem: !inativo, desc: !inativo ? "Abono pago anualmente na data do aniversário." : "Verba indenizatória restrita à ativa." });
     } else {
-      if (inativo) {
-        direitos.push({
-          nome: "Aposentadoria Policial Civil (LC 1354/2020)",
-          tem: true,
-          desc: "Para a paridade e integralidade, a nova lei exige 55 anos de idade, 30 anos de contribuição (sendo 20 estritamente policiais para homens; 25/15 para mulheres). Regras de transição garantem direitos anteriores à reforma da previdência estadual."
-        });
-      }
+      if (inativo) direitos.push({ nome: "Aposentadoria Policial Civil", tem: true, desc: "Paridade e integralidade garantidas por regras de transição." });
     }
   }
 
-  // === DIREITOS PMERJ ===
   if (inst === 'pmerj') {
-    direitos.push({
-      nome: "GRET — Gratif. Regime Esp. Trabalho Policial-Militar",
-      tem: true,
-      desc: "Adicional de 150% sobre o soldo. Integrado aos vencimentos do militar estadual do RJ na ativa e na inatividade."
-    });
-    direitos.push({
-      nome: "IHP — Indenização de Habilitação Policial-Militar",
-      tem: true,
-      desc: "Adicional de 75% sobre o soldo, devido ao militar habilitado em curso de formação."
-    });
-    direitos.push({
-      nome: "GRAM — Gratif. Risco da Atividade Militar",
-      tem: true,
-      desc: "Calculada em 62,5% sobre o soldo + IHP."
-    });
-    
+    direitos.push({ nome: "GRET — Gratif. Regime Esp. Trabalho Policial-Militar", tem: true, desc: "Adicional de 150% sobre o soldo." });
+    direitos.push({ nome: "IHP — Indenização de Habilitação Policial-Militar", tem: true, desc: "Adicional de 75% sobre o soldo." });
+    direitos.push({ nome: "GRAM — Gratif. Risco da Atividade Militar", tem: true, desc: "Calculada em 62,5% sobre o soldo + IHP." });
     const tri = Math.floor(tempo / 3);
-    direitos.push({
-      nome: "Triênio (10% por triênio)",
-      tem: tri > 0,
-      desc: tri > 0 ? `Você possui direito a ${tri} triênio(s). Cada um representa 10% de acréscimo sobre o soldo.` : "Adquirido a cada 3 anos de efetivo serviço."
-    });
-
-    direitos.push({
-      nome: "RAS — Regime Adicional de Serviço",
-      tem: !inativo,
-      desc: !inativo ? "Permite a realização voluntária de turnos extras (12h). Tem natureza indenizatória." : "Restrito ao pessoal da ativa."
-    });
-
-    if (inativo) {
-      direitos.push({
-        nome: "Sistema de Proteção Social Militares Estaduais",
-        tem: true,
-        desc: "Militares estaduais do RJ se aposentam com integralidade do último soldo e paridade plena."
-      });
-    }
+    direitos.push({ nome: "Triênio (10% por triênio)", tem: tri > 0, desc: tri > 0 ? `Você possui direito a ${tri} triênio(s).` : "Adquirido a cada 3 anos." });
+    direitos.push({ nome: "RAS — Regime Adicional de Serviço", tem: !inativo, desc: !inativo ? "Permite a realização voluntária de turnos extras (12h)." : "Restrito à ativa." });
+    if (inativo) direitos.push({ nome: "Sistema de Proteção Social", tem: true, desc: "Integralidade do último soldo e paridade plena." });
   }
 
-  // === DIREITOS PCERJ ===
   if (inst === 'pcerj') {
-    if (cargoDir === 'delegado_rj') {
-      direitos.push({
-        nome: "Verba de Representação Delegado (212%)",
-        tem: true,
-        desc: "Adicional de 212% sobre o vencimento-base, exclusivo da carreira de Delegado de Polícia."
-      });
-    } else {
-      direitos.push({
-        nome: "Adicional de Periculosidade (230%)",
-        tem: true,
-        desc: "Adicional de 230% sobre o vencimento-base para todas as carreiras da PC RJ, exceto Delegado."
-      });
-    }
-
-    if (cargoDir === 'perito_rj') {
-      direitos.push({
-        nome: "Gratificação Técnico-Científica (Peritos)",
-        tem: true,
-        desc: "Acréscimo de 100% sobre o vencimento-base destinado a Peritos Criminais e Legistas."
-      });
-    }
+    if (cargoDir === 'delegado_rj') direitos.push({ nome: "Verba de Representação Delegado", tem: true, desc: "Adicional de 212% sobre o vencimento-base." });
+    else direitos.push({ nome: "Adicional de Periculosidade (230%)", tem: true, desc: "Para todas as carreiras da PC RJ, exceto Delegado." });
+    if (cargoDir === 'perito_rj') direitos.push({ nome: "Gratificação Técnico-Científica (Peritos)", tem: true, desc: "Acréscimo de 100% sobre o vencimento-base." });
   }
 
-  // === DIREITOS PMMG ===
   if (inst === 'pmmg') {
-    direitos.push({
-      nome: "Subsídio (Parcela Única)",
-      tem: true,
-      desc: "Remuneração em parcela única, sendo vedado o acréscimo de qualquer gratificação ou adicional genérico (com exceção dos previstos em lei como ADE, quinquênios adquiridos, etc)."
-    });
-
-    direitos.push({
-      nome: "ADE — Adicional de Desempenho",
-      tem: true,
-      desc: "Vantagem remuneratória concedida mensalmente com base nos resultados das Avaliações de Desempenho Individual. O percentual varia conforme o tempo de serviço e as notas anuais, podendo chegar até 70%."
-    });
-
+    direitos.push({ nome: "Subsídio (Parcela Única)", tem: true, desc: "Remuneração em parcela única." });
+    direitos.push({ nome: "ADE — Adicional de Desempenho", tem: true, desc: "Concedido com base nos resultados das Avaliações de Desempenho." });
     const q = Math.floor(tempo / 5);
-    direitos.push({
-      nome: "Quinquênios (10%) / Trintenário",
-      tem: q > 0,
-      desc: q > 0 ? `Acumulado de ${q} quinquênio(s). Em MG, benefícios adquiridos de tempo de serviço passados representam aumento considerável (10% por período de 5 anos até o limite legal da época).` : "Adicionais temporais antigos adquiridos antes da reestruturação."
-    });
-
-    direitos.push({
-      nome: "IPSM — Instituto de Previdência dos Servidores Militares",
-      tem: true,
-      desc: "Desconto compulsório de 10,5% que engloba a previdência e o sistema de saúde exclusivo para os militares mineiros e seus dependentes."
-    });
-
-    direitos.push({
-      nome: "Abono Fardamento",
-      tem: !inativo,
-      desc: !inativo ? "Auxílio anual de caráter indenizatório para custeio de uniformes e apetrechos militares." : "Apenas para o efetivo serviço."
-    });
-
-    if (inativo) {
-      direitos.push({
-        nome: "Integralidade e Paridade PMMG",
-        tem: true,
-        desc: "Direito mantido pelo SPSM (Sistema de Proteção Social dos Militares). Ao ir para a reserva remunerada cumprindo os requisitos de tempo, o militar de MG leva a remuneração integral do último posto/graduação."
-      });
-    }
+    direitos.push({ nome: "Quinquênios (10%) / Trintenário", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Adicionais temporais antigos." });
+    direitos.push({ nome: "IPSM", tem: true, desc: "Desconto compulsório de 10,5% que engloba a previdência e saúde." });
+    direitos.push({ nome: "Abono Fardamento", tem: !inativo, desc: !inativo ? "Auxílio anual de caráter indenizatório." : "Apenas para o efetivo serviço." });
+    if (inativo) direitos.push({ nome: "Integralidade e Paridade PMMG", tem: true, desc: "Mantido pelo SPSM." });
   }
 
-  // === DIREITOS PCMG ===
   if (inst === 'pcmg') {
-    direitos.push({
-      nome: "Subsídio",
-      tem: true,
-      desc: "A Polícia Civil de Minas Gerais também atua mediante regime de Subsídio (parcela única), resguardados direitos adquiridos (como ADE e quinquênios antigos)."
-    });
-
-    direitos.push({
-      nome: "ADE — Adicional de Desempenho",
-      tem: true,
-      desc: "O ADE é pago em função do resultado da Avaliação de Desempenho Individual, convertendo as boas avaliações em progressão financeira mensal."
-    });
-
-    direitos.push({
-      nome: "IPSEMG (Saúde do Servidor)",
-      tem: true,
-      desc: "Sistema de saúde do servidor estadual civil de Minas Gerais. O desconto é de 3,2% sobre a remuneração, limitado a um teto, garantindo acesso à rede credenciada e hospitais próprios em BH."
-    });
-
+    direitos.push({ nome: "Subsídio", tem: true, desc: "Regime de Subsídio, resguardados direitos adquiridos." });
+    direitos.push({ nome: "ADE — Adicional de Desempenho", tem: true, desc: "Pago em função do resultado da Avaliação de Desempenho." });
+    direitos.push({ nome: "IPSEMG (Saúde do Servidor)", tem: true, desc: "Desconto opcional de 3,2% sobre a remuneração." });
     const q = Math.floor(tempo / 5);
-    direitos.push({
-      nome: "Quinquênios (10%) / Trintenário",
-      tem: q > 0,
-      desc: q > 0 ? `Acumulado de ${q} quinquênio(s). Regras antigas garantiam 10% de adicional a cada 5 anos prestados.` : "Benefício histórico atrelado a ingresso anterior a 2003."
-    });
-
-    direitos.push({
-      nome: "Auxílio Vestimenta / Indenizações Específicas",
-      tem: !inativo,
-      desc: !inativo ? "O policial civil ativo pode receber ajuda de custo para despesas e vestimentas conforme determinações em lei orgânica." : "As parcelas indenizatórias não se projetam para inatividade."
-    });
-
-    if (inativo) {
-      direitos.push({
-        nome: "Aposentadoria Policial Especial",
-        tem: true,
-        desc: "Garantia de integralidade e paridade para quem ingressou antes da reforma da previdência (LC 156/2020) desde que atenda ao pedágio ou critérios de transição do Estado."
-      });
-    }
+    direitos.push({ nome: "Quinquênios (10%)", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Garantia atrelada a ingressos antigos." });
+    direitos.push({ nome: "Auxílio Vestimenta", tem: !inativo, desc: !inativo ? "Ajuda de custo conforme lei." : "Não se projeta para inatividade." });
+    if (inativo) direitos.push({ nome: "Aposentadoria Policial Especial", tem: true, desc: "Garantia de integralidade e paridade (regras de transição)." });
   }
 
   const container = document.getElementById('resultados_dir');
@@ -1866,31 +1573,18 @@ function analisarDireitos() {
         <div class="direito-nome">${d.nome}</div>
         <div class="direito-status">${d.tem ? '✓ Tem Direito' : '✕ Não se Aplica'}</div>
         <div class="direito-desc">${d.desc}</div>
-      </div>
-    `;
+      </div>`;
   });
 }
 
 // Event Listeners Globais
-document.addEventListener('input', (e) => {
-  if (e.target.matches('input, select')) {
-    calcular();
-    analisarDireitos();
-  }
-});
-document.addEventListener('change', (e) => {
-  if (e.target.matches('input, select')) {
-    calcular();
-    analisarDireitos();
-  }
-});
+document.addEventListener('input', (e) => { if (e.target.matches('input, select')) { calcular(); analisarDireitos(); } });
+document.addEventListener('change', (e) => { if (e.target.matches('input, select')) { calcular(); analisarDireitos(); } });
 
 // Inicialização
 initTheme();
 popularCargos('pmesp');
-calcular();
-analisarDireitos();
-carregarAcoes();
+mudarInstituicao();
 </script>
 
 </body>
