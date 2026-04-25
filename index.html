@@ -9,39 +9,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Cores extraídas do brasão da PMESP */
+    /* Cores extraídas do brasão */
     --vermelho: #D1242A;
     --vermelho-escuro: #8B161B;
     --azul: #1E3084;
     --azul-escuro: #101B4D;
     --preto: #000000;
-    --cinza-escuro: #111111;
-    --cinza: #222222;
-    --cinza-claro: #333333;
-    --branco: #FFFFFF;
-    --texto: #FFFFFF;
-    --texto-secundario: #C0C0C0;
     --dourado: #DFB63E;
-    --dourado-escuro: #A6852A;
+    
+    /* Cores para o layout claro e minimalista */
+    --fundo-site: #F5F5F7;
+    --fundo-card: #FFFFFF;
+    --fundo-input: #F2F2F7;
+    --borda-input: #D1D1D6;
+    --borda-card: #E5E5EA;
+    --texto-principal: #1D1D1F;
+    --texto-secundario: #86868B;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     font-family: 'Roboto', sans-serif;
-    background: var(--preto); /* Fundo preto puro igual à imagem */
-    color: var(--texto);
+    background: var(--fundo-site);
+    color: var(--texto-principal);
     min-height: 100vh;
     background-image:
-      radial-gradient(circle at 20% 10%, rgba(209, 36, 42, 0.12) 0%, transparent 55%),
-      radial-gradient(circle at 80% 80%, rgba(30, 48, 132, 0.12) 0%, transparent 55%);
+      radial-gradient(circle at 20% 10%, rgba(209, 36, 42, 0.03) 0%, transparent 55%),
+      radial-gradient(circle at 80% 80%, rgba(30, 48, 132, 0.03) 0%, transparent 55%);
   }
 
   /* ===== HEADER ===== */
   header {
     background: #080808;
     border-bottom: 4px solid var(--vermelho);
-    padding: 20px 0;
+    padding: 24px 0;
     position: relative;
     overflow: hidden;
   }
@@ -77,7 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 25px rgba(209, 36, 42, 0.4), inset 0 0 15px rgba(0,0,0,0.8);
+    box-shadow: 0 0 20px rgba(209, 36, 42, 0.4);
     position: relative;
   }
   .brasao::after {
@@ -93,9 +95,9 @@
     font-family: 'Oswald', sans-serif;
     font-size: 28px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--texto);
+    color: #FFFFFF;
     line-height: 1.1;
   }
   .header-text h1 span { color: var(--dourado); }
@@ -103,7 +105,7 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
     letter-spacing: 3px;
-    color: var(--texto-secundario);
+    color: #A0A0A5;
     text-transform: uppercase;
     margin-top: 4px;
   }
@@ -115,59 +117,57 @@
     height: 4px;
     background: linear-gradient(90deg, var(--azul) 0%, var(--azul-escuro) 50%, var(--azul) 100%);
   }
-  .stripe-dark { height: 3px; background: var(--preto); }
+  .stripe-dark { height: 3px; background: #000000; }
 
   /* ===== MAIN ===== */
   main {
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 40px auto;
     padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 420px;
-    gap: 25px;
+    gap: 30px;
   }
   @media (max-width: 968px) {
-    main { grid-template-columns: 1fr; }
+    main { grid-template-columns: 1fr; margin: 20px auto; }
     .resumo { position: static !important; }
   }
 
   /* ===== CARDS ===== */
   .card {
-    background: linear-gradient(145deg, #151515 0%, #0a0a0a 100%);
-    border: 1px solid var(--cinza-claro);
-    border-left: 4px solid var(--vermelho);
-    border-radius: 4px;
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    background: var(--fundo-card);
+    border: 1px solid var(--borda-card);
+    border-radius: 16px; /* Cantos mais arredondados */
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 5px;
+    background: var(--vermelho);
   }
   .card h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--texto);
-    margin-bottom: 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--cinza);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .card h2::before {
-    content: "";
-    width: 6px;
-    height: 18px;
-    background: var(--vermelho);
-    display: inline-block;
+    color: var(--texto-principal);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borda-card);
   }
 
   /* ===== FORM ===== */
   .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 16px;
   }
   .form-grid.full { grid-template-columns: 1fr; }
 
@@ -178,92 +178,61 @@
   .field.span-2 { grid-column: span 2; }
 
   label {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
     color: var(--texto-secundario);
-    text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
 
   input[type="number"],
   input[type="text"],
   input[type="date"],
   select {
-    background: #0d0d0d;
-    border: 1px solid var(--cinza-claro);
-    color: var(--texto);
-    padding: 10px 12px;
+    background: var(--fundo-input);
+    border: 1px solid transparent;
+    color: var(--texto-principal);
+    padding: 12px 14px;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    border-radius: 2px;
-    transition: all 0.2s;
+    border-radius: 10px;
+    transition: all 0.2s ease;
     width: 100%;
   }
   input:focus, select:focus {
     outline: none;
-    border-color: var(--vermelho);
-    box-shadow: 0 0 0 2px rgba(209, 36, 42, 0.3);
+    background: #FFFFFF;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(30, 48, 132, 0.15);
   }
-  input::placeholder { color: #666; }
-
-  .checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #0d0d0d;
-    border: 1px solid var(--cinza-claro);
-    padding: 10px 12px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .checkbox-row:hover { border-color: var(--vermelho); }
-  .checkbox-row input[type="checkbox"] {
-    width: 16px; height: 16px;
-    accent-color: var(--vermelho);
-    cursor: pointer;
-  }
-  .checkbox-row label {
-    margin: 0; cursor: pointer;
-    font-size: 12px;
-    color: var(--texto);
-    text-transform: none;
-    letter-spacing: 0.3px;
-    font-weight: 500;
-  }
+  input::placeholder { color: #A0A0A5; }
 
   /* ===== RESUMO LATERAL ===== */
   .resumo {
     position: sticky;
-    top: 20px;
+    top: 24px;
     align-self: start;
   }
-  .resumo .card {
-    background: linear-gradient(145deg, #181818 0%, #050505 100%);
-    border-left: 4px solid var(--vermelho);
+  .resumo .card::before {
+    background: var(--azul);
   }
-  .resumo h2 { color: var(--texto); }
-  .resumo h2::before { background: var(--vermelho); }
 
   .total-bloco {
     background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%);
-    padding: 20px;
-    border-radius: 3px;
-    margin-bottom: 12px;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 16px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(209, 36, 42, 0.25);
+    box-shadow: 0 8px 20px rgba(209, 36, 42, 0.2);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(223, 182, 62, 0.3);
   }
   .total-bloco::before {
     content: "";
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
     animation: shine 4s infinite;
   }
   @keyframes shine {
@@ -271,80 +240,98 @@
     100% { transform: translateX(100%); }
   }
   .total-bloco .label {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
     text-transform: uppercase;
-    opacity: 0.9;
+    letter-spacing: 1px;
   }
   .total-bloco .valor {
     font-family: 'Oswald', sans-serif;
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
-    color: #fff;
+    color: #FFF;
     margin-top: 4px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
   .total-bloco.liquido {
     background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
-    border: 1px solid var(--dourado);
-    box-shadow: 0 4px 15px rgba(30, 48, 132, 0.35);
+    box-shadow: 0 8px 20px rgba(30, 48, 132, 0.2);
   }
   .total-bloco.liquido .valor { color: var(--dourado); }
 
   .breakdown {
-    margin-top: 18px;
-    border-top: 1px dashed var(--cinza-claro);
-    padding-top: 14px;
+    margin-top: 24px;
+    border-top: 1px dashed var(--borda-card);
+    padding-top: 20px;
   }
   .breakdown h3 {
     font-family: 'Oswald', sans-serif;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    color: var(--branco);
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--texto-principal);
     text-transform: uppercase;
-    margin-bottom: 10px;
-    border-left: 3px solid var(--vermelho);
-    padding-left: 8px;
+    margin-bottom: 12px;
   }
   .linha {
     display: flex;
     justify-content: space-between;
-    padding: 6px 0;
-    font-size: 13px;
-    border-bottom: 1px dotted var(--cinza-claro);
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--fundo-site);
   }
   .linha:last-child { border-bottom: none; }
   .linha .desc {
-    color: var(--texto);
-    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--texto-secundario);
+    font-family: 'Roboto', sans-serif;
   }
   .linha .val {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    color: var(--texto);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: var(--texto-principal);
     font-variant-numeric: tabular-nums;
   }
-  .linha.desconto .val { color: #ff6b6b; }
-  .linha.provento .val { color: #69d981; }
+  .linha.desconto .val { color: var(--vermelho); }
+  .linha.provento .val { color: #208E4E; }
+  
   .linha.subtotal {
-    background: rgba(209, 36, 42, 0.15);
-    margin: 6px -10px;
-    padding: 8px 10px;
-    border-bottom: none;
-    border-radius: 2px;
-    border-left: 2px solid var(--vermelho);
+    background: rgba(209, 36, 42, 0.05);
+    margin: 10px -16px 0 -16px;
+    padding: 12px 16px;
+    border-radius: 8px;
   }
-  .linha.subtotal .desc { color: var(--texto); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
-  .linha.subtotal .val { color: var(--dourado); font-size: 15px; }
+  .linha.subtotal .desc { 
+    color: var(--texto-principal); 
+    font-weight: 700; 
+  }
+  .linha.subtotal .val { 
+    color: var(--vermelho-escuro); 
+    font-size: 15px; 
+  }
+  
+  /* Variantes de cores pro subtotal de descontos para não ficar tudo vermelho */
+  #descontos .linha.subtotal { background: var(--fundo-input); }
+  #descontos .linha.subtotal .val { color: var(--texto-principal); }
+
+  /* ===== ALERTA ===== */
+  .alerta {
+    background: #E8EAF6;
+    border-left: 4px solid var(--azul);
+    padding: 14px 16px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--texto-principal);
+    border-radius: 0 8px 8px 0;
+    line-height: 1.5;
+  }
+  .alerta strong { color: var(--azul-escuro) !important; font-weight: 600; }
 
   /* ===== FOOTER ===== */
   footer {
     background: #080808;
     border-top: 4px solid var(--vermelho);
-    margin-top: 40px;
-    padding: 25px 20px;
+    margin-top: 60px;
+    padding: 30px 20px;
     text-align: center;
     position: relative;
   }
@@ -356,33 +343,20 @@
     background: var(--azul);
   }
   footer p {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 13px;
-    color: var(--texto-secundario);
-    letter-spacing: 1px;
+    color: #A0A0A5;
   }
-  footer p strong { color: var(--dourado); }
-
-  /* ===== ALERTA ===== */
-  .alerta {
-    background: rgba(30, 48, 132, 0.2);
-    border-left: 3px solid var(--azul);
-    padding: 10px 14px;
-    margin-top: 14px;
-    font-size: 12px;
-    color: var(--texto);
-    line-height: 1.5;
-  }
-  .alerta strong { color: var(--dourado) !important; }
+  footer p strong { color: #FFFFFF; font-weight: 600; }
 
   @media (max-width: 600px) {
-    .form-grid { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; gap: 12px; }
     .field.span-2 { grid-column: span 1; }
-    .header-text h1 { font-size: 20px; letter-spacing: 1px; }
-    .header-text p { font-size: 10px; letter-spacing: 1.5px; }
-    .brasao { width: 50px; height: 50px; }
-    .brasao svg { width: 35px; height: 35px; }
-    .total-bloco .valor { font-size: 26px; }
+    .header-text h1 { font-size: 22px; }
+    .brasao { width: 54px; height: 54px; }
+    .brasao svg { width: 40px; height: 40px; }
+    .total-bloco .valor { font-size: 28px; }
+    .card { padding: 20px; }
   }
 </style>
 </head>
@@ -564,8 +538,8 @@
         </div>
         <div class="field span-2">
           <div class="alerta">
-            <strong style="color:var(--dourado)">DEJEM:</strong> diária paga pelo Estado, base UFESP 2026 (R$ 38,42), limite 10/mês conforme LC 1.227/2013.
-            <br><strong style="color:var(--dourado)">Atividade Delegada:</strong> paga pelo município (Lei 18.038/2023, capital SP), coeficiente 1,2 UFESP (praças) ou 1,44 UFESP (oficiais) por hora × 8h.
+            <strong>DEJEM:</strong> diária paga pelo Estado, base UFESP 2026 (R$ 38,42), limite 10/mês conforme LC 1.227/2013.
+            <br><strong>Atividade Delegada:</strong> paga pelo município (Lei 18.038/2023, capital SP), coeficiente 1,2 UFESP (praças) ou 1,44 UFESP (oficiais) por hora × 8h.
           </div>
         </div>
       </div>
@@ -608,7 +582,7 @@
         </div>
       </div>
       <div class="alerta">
-        <strong style="color:var(--dourado)">Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte (não incide sobre DEJEM/Delegada/Insalubridade).
+        <strong>Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte (não incide sobre DEJEM/Delegada/Insalubridade).
       </div>
     </div>
   </div>
