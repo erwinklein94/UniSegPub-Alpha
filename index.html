@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -686,16 +686,15 @@
           <input type="number" id="vestimenta_mg_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
-        <!-- PMBA - GAP DETALHADO + AUXÍLIO ALIMENTAÇÃO -->
+        <!-- PMBA - GAP DETALHADA + AUXÍLIO ALIMENTAÇÃO -->
         <div class="field pmba-only">
-          <label for="gap_ba_nivel">Nível da GAP (Gratif. Atividade Policial) <span class="tip" data-tip="A GAP é dividida em níveis I (entrada) a V (mais antigo). Cada nível tem percentual próprio sobre o soldo.">?</span></label>
+          <label for="gap_ba_nivel">Referência da GAP (Lei BA 14.890/2025) <span class="tip" data-tip="A GAP da PMBA não é percentual sobre o soldo. Ela possui valor fixo por posto/graduação e referência. Base: tabela 2026 da Lei Estadual 14.890/2025.">?</span></label>
           <select id="gap_ba_nivel">
-            <option value="0">Sem GAP</option>
-            <option value="0.30" selected>GAP I (30%)</option>
-            <option value="0.50">GAP II (50%)</option>
-            <option value="0.70">GAP III (70%)</option>
-            <option value="0.90">GAP IV (90%)</option>
-            <option value="1.10">GAP V (110%)</option>
+            <option value="0" selected>Referência I</option>
+            <option value="1">Referência II</option>
+            <option value="2">Referência III</option>
+            <option value="3">Referência IV</option>
+            <option value="4">Referência V</option>
           </select>
         </div>
         <div class="field pmba-only">
@@ -703,13 +702,23 @@
           <input type="number" id="auxalim_ba" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
-        <!-- PCBA - GIP + GRAT NÍVEL EDUCACIONAL -->
+        <!-- PCBA - GAJ/GAPJ + GIP + GRAT NÍVEL EDUCACIONAL -->
         <div class="field pcba-only">
-          <label for="gip_ba_pc">GIP - Incentivo à Produtividade (R$) <span class="tip" data-tip="Gratificação de Incentivo à Produtividade da PCBA, vinculada a metas e indicadores.">?</span></label>
+          <label for="grat_ba_pc_ref">Referência da GAJ/GAPJ (Lei BA 14.891/2025) <span class="tip" data-tip="A GAJ/GAPJ da PCBA não é percentual sobre o vencimento. Ela possui valor fixo por carreira, classe e referência. Base: tabela 2026 da Lei Estadual 14.891/2025.">?</span></label>
+          <select id="grat_ba_pc_ref">
+            <option value="0" selected>Referência I</option>
+            <option value="1">Referência II</option>
+            <option value="2">Referência III</option>
+            <option value="3">Referência IV</option>
+            <option value="4">Referência V</option>
+          </select>
+        </div>
+        <div class="field pcba-only">
+          <label for="gip_ba_pc">GIP / Verba variável informada no contracheque (R$) <span class="tip" data-tip="Campo manual para verbas variáveis, metas, produtividade ou valores específicos que apareçam no contracheque e não estejam na tabela fixa de vencimento + GAJ/GAPJ.">?</span></label>
           <input type="number" id="gip_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
-          <label for="gqual_ba_pc">Gratif. Qualif. Profissional (%) <span class="tip" data-tip="5% (graduação), 10% (especialização), 20% (mestrado), 30% (doutorado).">?</span></label>
+          <label for="gqual_ba_pc">Gratif. Qualif. Profissional (%) <span class="tip" data-tip="Informe somente quando constar no contracheque ou quando houver enquadramento legal. O percentual é aplicado sobre o vencimento-base do cargo selecionado.">?</span></label>
           <select id="gqual_ba_pc">
             <option value="0">Sem qualificação</option>
             <option value="0.05">Graduação (+5%)</option>
@@ -864,16 +873,16 @@
             <strong>Plantões Extras (PCERJ):</strong> a Polícia Civil RJ não tem DEJEC formal, mas servidores podem ser convocados para escalas extraordinárias remuneradas conforme regulamento interno.
           </div>
           <div class="alerta pmmg-only">
-            <strong>Jornada Extraordinária (PMMG):</strong> Verba indenizatória que pode variar dependendo do convênio do município ou chamamento para grandes eventos.
+            <strong>PMMG 2026:</strong> valores-base revisados com a recomposição geral de 5,4% de 2026. ADE, VPNI, abono e jornada extra devem ser informados conforme o contracheque.
           </div>
           <div class="alerta pcmg-only">
-            <strong>Plantão Extra (PCMG):</strong> Adicional indenizatório por cumprimento de escalas complementares e plantões operacionais.
+            <strong>PCMG 2026:</strong> valores-base revisados com a recomposição geral de 5,4% de 2026. ADE, GAP, auxílio-vestimenta e plantões extras permanecem como campos manuais.
           </div>
           <div class="alerta pmba-only">
-            <strong>Hora Extra / Serviço Extraordinário (PMBA):</strong> Remuneração por serviço extraordinário em grandes eventos oficiais ou convênios.
+            <strong>PMBA 2026:</strong> soldo e GAP foram corrigidos para a estrutura da Lei Estadual 14.890/2025. A GAP agora é valor fixo por posto/graduação e referência, não percentual. Auxílio-fardamento 2026 de R$ 256,18 aplicado automaticamente.
           </div>
           <div class="alerta pcba-only">
-            <strong>Plantão Extra (PCBA):</strong> Indenização por plantões e operações além da escala normal de trabalho regulamentada.
+            <strong>PCBA 2026:</strong> vencimento e GAJ/GAPJ foram corrigidos para a estrutura da Lei Estadual 14.891/2025. A gratificação agora é valor fixo por carreira, classe e referência, não percentual.
           </div>
         </div>
       </div>
@@ -1252,52 +1261,69 @@ const CARGOS_PCERJ = [
   { val: "agpc_3_rj",      text: "Agente Polícia Científica - 3ª",   padrao: 2550.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" }
 ];
 
+const MG_REAJUSTE_2026 = 1.054; // Lei Estadual MG 25.804/2026 — revisão geral de 5,4% a partir de jan/2026.
+const PMBA_AUX_FARDAMENTO_2026 = 256.18; // Lei Estadual BA 14.890/2025 — valor mensal a partir de maio/2026.
+
 const CARGOS_PMMG = [
-  { val: "cel_mg",     text: "CEL PM — Coronel PMMG",                padrao: 21250.00, oficial: true,  retpFator: 0 },
-  { val: "tencel_mg",  text: "TEN CEL PM — Tenente Coronel PMMG",    padrao: 18500.00, oficial: true,  retpFator: 0 },
-  { val: "maj_mg",     text: "MAJ PM — Major PMMG",                  padrao: 16200.00, oficial: true,  retpFator: 0 },
-  { val: "cap_mg",     text: "CAP PM — Capitão PMMG",                padrao: 13500.00, oficial: true,  retpFator: 0 },
-  { val: "1ten_mg",    text: "1º TEN PM — 1º Tenente PMMG",          padrao: 11000.00, oficial: true,  retpFator: 0 },
-  { val: "2ten_mg",    text: "2º TEN PM — 2º Tenente PMMG",          padrao: 9500.00,  oficial: true,  retpFator: 0 },
-  { val: "subten_mg",  text: "SUBTEN PM — Subtenente PMMG",          padrao: 8600.00,  oficial: false, retpFator: 0 },
-  { val: "1sgt_mg",    text: "1º SGT PM — 1º Sargento PMMG",         padrao: 7800.00,  oficial: false, retpFator: 0 },
-  { val: "2sgt_mg",    text: "2º SGT PM — 2º Sargento PMMG",         padrao: 6900.00,  oficial: false, retpFator: 0 },
-  { val: "3sgt_mg",    text: "3º SGT PM — 3º Sargento PMMG",         padrao: 6100.00,  oficial: false, retpFator: 0 },
-  { val: "cabo_mg",    text: "CABO PM — Cabo PMMG",                  padrao: 5500.00,  oficial: false, retpFator: 0 },
-  { val: "sd1_mg",     text: "SD 1ª CL — Soldado 1ª Classe PMMG",    padrao: 5097.11,  oficial: false, selected: true, retpFator: 0 },
-  { val: "sd2_mg",     text: "SD 2ª CL — Soldado 2ª Classe PMMG",    padrao: 4360.83,  oficial: false, retpFator: 0 }
+  // Valores-base revisados em 5,4% sobre a base anterior usada no simulador. Conferir adicionais individuais no contracheque.
+  { val: "cel_mg",     text: "CEL PM — Coronel PMMG",                padrao: 22397.50, oficial: true,  retpFator: 0 },
+  { val: "tencel_mg",  text: "TEN CEL PM — Tenente Coronel PMMG",    padrao: 19499.00, oficial: true,  retpFator: 0 },
+  { val: "maj_mg",     text: "MAJ PM — Major PMMG",                  padrao: 17074.80, oficial: true,  retpFator: 0 },
+  { val: "cap_mg",     text: "CAP PM — Capitão PMMG",                padrao: 14229.00, oficial: true,  retpFator: 0 },
+  { val: "1ten_mg",    text: "1º TEN PM — 1º Tenente PMMG",          padrao: 11594.00, oficial: true,  retpFator: 0 },
+  { val: "2ten_mg",    text: "2º TEN PM — 2º Tenente PMMG",          padrao: 10013.00, oficial: true,  retpFator: 0 },
+  { val: "subten_mg",  text: "SUBTEN PM — Subtenente PMMG",          padrao: 9064.40,  oficial: false, retpFator: 0 },
+  { val: "1sgt_mg",    text: "1º SGT PM — 1º Sargento PMMG",         padrao: 8221.20,  oficial: false, retpFator: 0 },
+  { val: "2sgt_mg",    text: "2º SGT PM — 2º Sargento PMMG",         padrao: 7272.60,  oficial: false, retpFator: 0 },
+  { val: "3sgt_mg",    text: "3º SGT PM — 3º Sargento PMMG",         padrao: 6429.40,  oficial: false, retpFator: 0 },
+  { val: "cabo_mg",    text: "CABO PM — Cabo PMMG",                  padrao: 5797.00,  oficial: false, retpFator: 0 },
+  { val: "sd1_mg",     text: "SD 1ª CL — Soldado 1ª Classe PMMG",    padrao: 5372.35,  oficial: false, selected: true, retpFator: 0 },
+  { val: "sd2_mg",     text: "SD 2ª CL — Soldado 2ª Classe PMMG",    padrao: 4596.31,  oficial: false, retpFator: 0 }
 ];
 
 const CARGOS_PCMG = [
-  { val: "del_geral_mg", text: "Delegado Geral de Polícia",       padrao: 21500.00, oficial: true,  delegado: true, retpFator: 0 },
-  { val: "del_esp_mg",   text: "Delegado Especial",                padrao: 18500.00, oficial: true,  delegado: true, retpFator: 0 },
-  { val: "del_mg",       text: "Delegado de Polícia",              padrao: 14200.00, oficial: true,  delegado: true, retpFator: 0 },
-  { val: "perito_esp_mg",text: "Perito Criminal Especial",         padrao: 14200.00, oficial: true,  perito: true,  retpFator: 0 },
-  { val: "perito_mg",    text: "Perito Criminal",                  padrao: 11500.00, oficial: true,  perito: true,  retpFator: 0 },
-  { val: "medleg_mg",    text: "Médico Legista",                   padrao: 11500.00, oficial: true,  perito: true,  retpFator: 0 },
-  { val: "inv_esp_mg",   text: "Investigador / Escrivão Especial", padrao: 8800.00,  oficial: false,                 retpFator: 0 },
-  { val: "inv_mg",       text: "Investigador / Escrivão",          padrao: 5097.11,  oficial: false, selected: true, retpFator: 0 }
+  // Valores-base 2026: revisão geral de 5,4%. Investigador, Perito e Médico Legista usam bases de edital público atualizadas pela revisão.
+  { val: "del_geral_mg", text: "Delegado Geral de Polícia",       padrao: 22661.00, oficial: true,  delegado: true, retpFator: 0 },
+  { val: "del_esp_mg",   text: "Delegado Especial",                padrao: 19499.00, oficial: true,  delegado: true, retpFator: 0 },
+  { val: "del_mg",       text: "Delegado de Polícia",              padrao: 14966.80, oficial: true,  delegado: true, retpFator: 0 },
+  { val: "perito_esp_mg",text: "Perito Criminal Especial",         padrao: 14966.80, oficial: true,  perito: true,  retpFator: 0 },
+  { val: "perito_mg",    text: "Perito Criminal",                  padrao: 12170.61, oficial: true,  perito: true,  retpFator: 0 },
+  { val: "medleg_mg",    text: "Médico Legista",                   padrao: 12170.61, oficial: true,  perito: true,  retpFator: 0 },
+  { val: "inv_esp_mg",   text: "Investigador / Escrivão Especial", padrao: 9275.20,  oficial: false,                 retpFator: 0 },
+  { val: "inv_mg",       text: "Investigador / Escrivão",          padrao: 5620.58,  oficial: false, selected: true, retpFator: 0 }
 ];
 
 const CARGOS_PMBA = [
-  { val: "cel_ba",     text: "CEL PM — Coronel PMBA",            padrao: 18500.00, oficial: true,  retpFator: 0 },
-  { val: "tencel_ba",  text: "TEN CEL PM — Tenente Coronel PMBA", padrao: 16200.00, oficial: true,  retpFator: 0 },
-  { val: "maj_ba",     text: "MAJ PM — Major PMBA",               padrao: 14500.00, oficial: true,  retpFator: 0 },
-  { val: "cap_ba",     text: "CAP PM — Capitão PMBA",             padrao: 12500.00, oficial: true,  retpFator: 0 },
-  { val: "1ten_ba",    text: "1º TEN PM — 1º Tenente PMBA",       padrao: 10500.00, oficial: true,  retpFator: 0 },
-  { val: "subten_ba",  text: "SUBTEN PM — Subtenente PMBA",       padrao: 8500.00,  oficial: false, retpFator: 0 },
-  { val: "1sgt_ba",    text: "1º SGT PM — 1º Sargento PMBA",      padrao: 7200.00,  oficial: false, retpFator: 0 },
-  { val: "cabo_ba",    text: "CABO PM — Cabo PMBA",               padrao: 5800.00,  oficial: false, retpFator: 0 },
-  { val: "sd1_ba",     text: "SD 1ª CL — Soldado 1ª Classe PMBA", padrao: 4800.00,  oficial: false, selected: true, retpFator: 0 },
-  { val: "sdaluno_ba", text: "SD ALUNO — Aluno a Soldado",        padrao: 1412.00,  oficial: false, retpFator: 0 }
+  // Lei Estadual BA 14.890/2025 — soldo a partir de maio/2026 e GAP a partir de junho/2026.
+  { val: "cel_ba",     text: "CEL PM — Coronel PMBA",              padrao: 2561.83, oficial: true,  retpFator: 0, gapBa: [8628.67, 9772.71, 11143.21, 12857.73, 14833.48] },
+  { val: "tencel_ba",  text: "TEN CEL PM — Tenente Coronel PMBA",  padrao: 2430.97, oficial: true,  retpFator: 0, gapBa: [7787.90, 8822.62, 10060.34, 11610.88, 13395.22] },
+  { val: "maj_ba",     text: "MAJ PM — Major PMBA",                padrao: 2325.81, oficial: true,  retpFator: 0, gapBa: [7001.17, 7961.69, 9113.51, 10566.47, 12229.81] },
+  { val: "cap_ba",     text: "CAP PM — Capitão PMBA",              padrao: 2148.53, oficial: true,  retpFator: 0, gapBa: [6319.59, 6963.95, 7737.21, 8731.99, 9844.64] },
+  { val: "1ten_ba",    text: "1º TEN PM — 1º Tenente PMBA",        padrao: 1810.30, oficial: true,  retpFator: 0, gapBa: [4321.05, 5036.39, 5900.16, 7000.55, 8237.76] },
+  { val: "asp_ba",     text: "ASP OF PM — Aspirante PMBA",         padrao: 1772.26, oficial: true,  retpFator: 0, gapBa: [2289.28, 2609.02, 3036.66, 3629.53, 4261.70] },
+  { val: "subten_ba",  text: "SUBTEN PM — Subtenente PMBA",        padrao: 1673.94, oficial: false, retpFator: 0, gapBa: [2278.84, 2598.57, 3026.12, 3618.90, 4250.97] },
+  { val: "1sgt_ba",    text: "1º SGT PM — 1º Sargento PMBA",       padrao: 1660.84, oficial: false, retpFator: 0, gapBa: [1970.61, 2275.84, 2647.05, 3218.85, 3830.06] },
+  { val: "cabo_ba",    text: "CABO PM — Cabo PMBA",                padrao: 1647.44, oficial: false, retpFator: 0, gapBa: [1719.67, 2000.36, 2340.49, 2823.16, 3380.64] },
+  { val: "sd1_ba",     text: "SD 1ª CL — Soldado 1ª Classe PMBA",  padrao: 1633.88, oficial: false, selected: true, retpFator: 0, gapBa: [1500.56, 1773.73, 2102.42, 2558.01, 3085.14] },
+  { val: "sdaluno_ba", text: "SD ALUNO — Aluno a Soldado",         padrao: 1412.00, oficial: false, retpFator: 0, gapBa: [0, 0, 0, 0, 0] }
 ];
 
 const CARGOS_PCBA = [
-  { val: "del_esp_ba", text: "Delegado Especial",               padrao: 19500.00, oficial: true,  delegado: true, retpFator: 0 },
-  { val: "del_ba",     text: "Delegado de Polícia",             padrao: 14500.00, oficial: true,  delegado: true, retpFator: 0 },
-  { val: "perito_ba",  text: "Perito Criminal / Legista",        padrao: 12500.00, oficial: true,  perito: true,  retpFator: 0 },
-  { val: "inv_esp_ba", text: "Investigador / Escrivão Especial", padrao: 8500.00,  oficial: false,                 retpFator: 0 },
-  { val: "inv_ba",     text: "Investigador / Escrivão",          padrao: 5500.00,  oficial: false, selected: true, retpFator: 0 }
+  // Lei Estadual BA 14.891/2025 — vencimento e GAJ/GAPJ a partir de junho/2026.
+  { val: "del_esp_ba", text: "Delegado de Polícia — Classe Especial",   padrao: 7539.46, oficial: true,  delegado: true, retpFator: 0, gratBaLabel: "GAJ — Gratificação de Atividade Jurídica", gratBa: [1429.09, 2678.00, 4174.15, 5972.90, 8129.72] },
+  { val: "del_1_ba",   text: "Delegado de Polícia — 1ª Classe",         padrao: 7100.36, oficial: true,  delegado: true, retpFator: 0, gratBaLabel: "GAJ — Gratificação de Atividade Jurídica", gratBa: [1058.42, 2183.73, 3534.93, 5158.89, 7106.86] },
+  { val: "del_2_ba",   text: "Delegado de Polícia — 2ª Classe",         padrao: 6701.20, oficial: true,  delegado: true, retpFator: 0, gratBaLabel: "GAJ — Gratificação de Atividade Jurídica", gratBa: [904.00, 1956.87, 3214.26, 4727.41, 6543.22] },
+  { val: "del_3_ba",   text: "Delegado de Polícia — 3ª Classe",         padrao: 6449.78, oficial: true,  delegado: true, retpFator: 0, gratBaLabel: "GAJ — Gratificação de Atividade Jurídica", gratBa: [529.46, 1190.47, 1983.66, 2935.55, 4076.87] },
+
+  { val: "perito_esp_ba", text: "Perito Criminal/Legista/Odonto — Classe Especial", padrao: 6336.30, oficial: true, perito: true, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [2234.75, 3483.65, 4979.76, 6778.54, 8935.35] },
+  { val: "perito_1_ba",   text: "Perito Criminal/Legista/Odonto — 1ª Classe",       padrao: 5948.96, oficial: true, perito: true, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1864.09, 2989.35, 4340.55, 5964.56, 7912.49] },
+  { val: "perito_2_ba",   text: "Perito Criminal/Legista/Odonto — 2ª Classe",       padrao: 5596.40, oficial: true, perito: true, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1709.65, 2762.50, 4019.93, 5533.09, 7348.88] },
+  { val: "perito_3_ba",   text: "Perito Criminal/Legista/Odonto — 3ª Classe",       padrao: 5374.89, oficial: true, perito: true, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1335.05, 1996.11, 2789.31, 3741.18, 4882.52] },
+
+  { val: "inv_esp_ba", text: "Investigador/Escrivão/Perito Técnico — Classe Especial", padrao: 2651.24, oficial: false, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1771.76, 2197.00, 2704.18, 3314.06, 4046.29] },
+  { val: "inv_1_ba",   text: "Investigador/Escrivão/Perito Técnico — 1ª Classe",       padrao: 1970.78, oficial: false, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1677.61, 2102.89, 2610.09, 3222.08, 3952.19] },
+  { val: "inv_2_ba",   text: "Investigador/Escrivão/Perito Técnico — 2ª Classe",       padrao: 1957.83, oficial: false, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1393.70, 1756.44, 2208.58, 2757.62, 3407.80] },
+  { val: "inv_3_ba",   text: "Investigador/Escrivão/Perito Técnico — 3ª Classe",       padrao: 1944.74, oficial: false, selected: true, retpFator: 0, gratBaLabel: "GAPJ — Gratificação de Atividade de Polícia Judiciária", gratBa: [1270.45, 1627.71, 2057.39, 2569.05, 3186.96] }
 ];
 
 
@@ -1561,6 +1587,9 @@ let currInst = 'pmesp';
 
 const fmt = v => `R$ ${(+v || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 const valEl = id => parseFloat(document.getElementById(id)?.value) || 0;
+const BA_REFS = ['I', 'II', 'III', 'IV', 'V'];
+const refBa = i => BA_REFS[Math.max(0, Math.min(4, parseInt(i, 10) || 0))] || 'I';
+const idxRefBa = id => Math.max(0, Math.min(4, parseInt(document.getElementById(id)?.value || '0', 10) || 0));
 
 function debounce(fn, ms = 150) {
   let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
@@ -1874,20 +1903,30 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     vestimentaMgPc = valEl('vestimenta_mg_pc');
   }
 
-  // PMBA
-  let cetBaPm = 0, gapBaNivel = 0, auxalimBa = 0;
+  // Bahia PM - CET + GAP fixa por referência + auxílio alimentação + auxílio fardamento
+  let cetBaPm = 0, gapBaValor = 0, auxalimBa = 0, auxfardBaPm = 0;
+  let gapBaRefLabel = 'I';
   if (inst === 'pmba') {
     cetBaPm = padrao * (valEl('cet_ba_pm') / 100);
-    gapBaNivel = padrao * parseFloat(document.getElementById('gap_ba_nivel').value || 0);
+    const idx = idxRefBa('gap_ba_nivel');
+    gapBaRefLabel = refBa(idx);
+    gapBaValor = ((c.gapBa || [])[idx] || 0) * fatorDias;
     auxalimBa = valEl('auxalim_ba');
+    auxfardBaPm = PMBA_AUX_FARDAMENTO_2026 * fatorDias;
   }
 
-  // PCBA
-  let cetBaPc = 0, gipBaPc = 0, gqualBaPc = 0;
+  // Bahia PC - CET + GAJ/GAPJ fixa por referência + verbas manuais + qualificação
+  let cetBaPc = 0, gipBaPc = 0, gqualBaPc = 0, gratBaPc = 0;
+  let gratBaPcLabel = 'GAJ/GAPJ';
+  let gratBaPcRefLabel = 'I';
   if (inst === 'pcba') {
     cetBaPc = padrao * (valEl('cet_ba_pc') / 100);
     gipBaPc = valEl('gip_ba_pc');
-    gqualBaPc = padrao * parseFloat(document.getElementById('gqual_ba_pc').value || 0);
+    const idx = idxRefBa('grat_ba_pc_ref');
+    gratBaPcRefLabel = refBa(idx);
+    gratBaPc = ((c.gratBa || [])[idx] || 0) * fatorDias;
+    gratBaPcLabel = c.gratBaLabel || 'GAJ/GAPJ';
+    gqualBaPc = padrao * parseFloat(document.getElementById('gqual_ba_pc')?.value || 0);
   }
 
   // ===== Trabalho extra =====
@@ -1941,13 +1980,13 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
                             gatVal + gas_pc + ale_pm + ensino + adicNoturno_pm +
                             ghpRj + lotacaoRj + pericRj + gtcRj + locespRj +
                             adeMgPm + vpniMgPm + adeMgPc + gapMgPc +
-                            cetBaPm + gapBaNivel + cetBaPc + gqualBaPc +
+                            cetBaPm + gapBaValor + cetBaPc + gratBaPc + gqualBaPc +
                             decimoVal + feriasVal;
 
   // Verbas indenizatórias (sem previdência nem IRRF)
   const baseIndenizatoria = auxfard_pm + auxalimRj + auxtranspRj + auxfardRj +
                             auxalimRjPc + auxtranspRjPc + adictransfRj +
-                            fardamentoMgPm + vestimentaMgPc + auxalimBa +
+                            fardamentoMgPm + vestimentaMgPc + auxalimBa + auxfardBaPm +
                             qualif_pc + acaoInsalVal + abonoTransfVal + lpremioVal +
                             extraVal + gipBaPc;
 
@@ -2036,10 +2075,12 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (gapMgPc > 0) proventos += linha("Gratif. Aprimoramento Profissional", gapMgPc, "provento");
   if (vestimentaMgPc > 0) proventos += linha("Auxílio Vestimenta", vestimentaMgPc, "provento");
   if (cetBaPm > 0) proventos += linha("CET (Cond. Especial Trabalho)", cetBaPm, "provento");
-  if (gapBaNivel > 0) proventos += linha(`GAP — Gratificação Atividade Policial`, gapBaNivel, "provento");
+  if (gapBaValor > 0) proventos += linha(`GAP PMBA — Referência ${gapBaRefLabel}`, gapBaValor, "provento");
+  if (auxfardBaPm > 0) proventos += linha("Auxílio-Fardamento PMBA", auxfardBaPm, "provento");
   if (auxalimBa > 0) proventos += linha("Auxílio-Alimentação", auxalimBa, "provento");
-  if (cetBaPc > 0) proventos += linha("CET (Cond. Especial Trabalho)", cetBaPc, "provento");
-  if (gipBaPc > 0) proventos += linha("GIP (Incentivo Produtividade)", gipBaPc, "provento");
+  if (cetBaPc > 0) proventos += linha("CET / Verba percentual informada", cetBaPc, "provento");
+  if (gratBaPc > 0) proventos += linha(`${gratBaPcLabel} — Referência ${gratBaPcRefLabel}`, gratBaPc, "provento");
+  if (gipBaPc > 0) proventos += linha("GIP / Verba variável informada", gipBaPc, "provento");
   if (gqualBaPc > 0) proventos += linha("Gratif. Qualificação Profissional", gqualBaPc, "provento");
   if (extraVal > 0) proventos += linha(extraLabel, extraVal, "provento");
   if (decimoVal > 0) proventos += linha("13º Salário", decimoVal, "provento");
@@ -2302,7 +2343,7 @@ function limparFormulario() {
     periculosidade_rj: '1', gtc_rj: '0',
     regdejem: 'capital', regdel: 'capital',
     tipodejec: 'normal', tiporas: 'normal',
-    gap_ba_nivel: '0.30', gqual_ba_pc: '0',
+    gap_ba_nivel: '0', grat_ba_pc_ref: '0', gqual_ba_pc: '0',
     opt_iamspe: '0', opt_ipsemg: '0'
   };
   Object.keys(defs).forEach(id => { const el = document.getElementById(id); if (el) el.value = defs[id]; });
