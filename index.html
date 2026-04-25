@@ -72,28 +72,7 @@
     gap: 20px;
     position: relative;
   }
-  .brasao {
-    width: 70px;
-    height: 70px;
-    flex-shrink: 0;
-    background: var(--preto);
-    border: 3px solid var(--vermelho);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 20px rgba(209, 36, 42, 0.4);
-    position: relative;
-  }
-  .brasao::after {
-    content: "";
-    position: absolute;
-    inset: -8px;
-    border: 2px solid var(--dourado);
-    border-radius: 50%;
-    opacity: 0.6;
-  }
-  .brasao svg { width: 56px; height: 56px; }
+  
   .header-text h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 28px;
@@ -104,14 +83,7 @@
     line-height: 1.1;
   }
   .header-text h1 span { color: var(--dourado); }
-  .header-text p {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: #A0A0A5;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
+  
   .stripe { height: 6px; background: linear-gradient(90deg, var(--vermelho) 0%, var(--vermelho-escuro) 50%, var(--vermelho) 100%); }
   .stripe-blue { height: 4px; background: linear-gradient(90deg, var(--azul) 0%, var(--azul-escuro) 50%, var(--azul) 100%); }
 
@@ -278,8 +250,6 @@
     .form-grid { grid-template-columns: 1fr; gap: 12px; }
     .field.span-2 { grid-column: span 1; }
     .header-text h1 { font-size: 22px; }
-    .brasao { width: 54px; height: 54px; }
-    .brasao svg { width: 40px; height: 40px; }
     .total-bloco .valor { font-size: 28px; }
     .card { padding: 20px; }
   }
@@ -292,23 +262,8 @@
     <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
-    <div class="brasao">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="#ffffff" stroke-linecap="square" fill="#ffffff">
-          <polygon points="49.5,8 50.5,8 51.5,28 48.5,28" />
-          <rect x="42" y="27" width="16" height="2.5" />
-          <rect x="48.5" y="68" width="3" height="22" />
-          <rect x="46.5" y="89" width="7" height="3" />
-        </g>
-        <g fill="#ffffff"><path d="M30,42 Q30,28 50,28 Q70,28 70,42 L70,58 Q70,64 65,66 L60,66 L58,72 L42,72 L40,66 L35,66 Q30,64 30,58 Z"/></g>
-        <ellipse cx="40" cy="48" rx="4" ry="5" fill="#000000"/><ellipse cx="60" cy="48" rx="4" ry="5" fill="#000000"/>
-        <polygon points="50,54 47,60 53,60" fill="#000000"/>
-        <rect x="42" y="64" width="16" height="1.5" fill="#000000"/><rect x="44" y="64" width="1" height="6" fill="#000000"/><rect x="47" y="64" width="1" height="6" fill="#000000"/><rect x="50" y="64" width="1" height="6" fill="#000000"/><rect x="53" y="64" width="1" height="6" fill="#000000"/><rect x="56" y="64" width="1" height="6" fill="#000000"/>
-      </svg>
-    </div>
     <div class="header-text" id="header-text">
       <h1>Simulador de <span>Soldo</span> SP</h1>
-      <p>Calculadora de remuneração · 2026</p>
     </div>
   </div>
 </header>
@@ -596,14 +551,6 @@ function switchPage(page) {
   // Mostrar a selecionada
   document.getElementById('page-' + page).classList.add('active');
   document.getElementById('menu-' + page).classList.add('active');
-  
-  // Alterar Header
-  const headerText = document.getElementById('header-text');
-  if(page === 'calculadora') {
-    headerText.innerHTML = '<h1>Simulador de <span>Soldo</span> SP</h1><p>Calculadora de remuneração · 2026</p>';
-  } else {
-    headerText.innerHTML = '<h1>Direitos e <span>Vantagens</span></h1><p>Análise de Benefícios PMESP</p>';
-  }
   
   // Fechar menu no mobile
   document.getElementById('sidebar').classList.remove('active');
