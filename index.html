@@ -144,12 +144,12 @@
   /* SEÇÕES E LAYOUT */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; } 
-  #page-direitos.active, #page-acoes.active, #page-associacoes.active { display: block; } 
+  #page-direitos.active, #page-concursos.active, #page-acoes.active, #page-associacoes.active { display: block; } 
   
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
-  #page-direitos, #page-acoes, #page-associacoes { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-concursos, #page-acoes, #page-associacoes { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
 
@@ -238,7 +238,7 @@
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
-  /* LISTAS E ITENS (Direitos, Ações e Associações) */
+  /* LISTAS E ITENS (Direitos, Ações, Associações e Concursos) */
   .result-list { display: flex; flex-direction: column; gap: 16px; }
   .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); transition: background-color 0.3s ease; }
   .direito-item.sim { border-left-color: #208E4E; background-color: rgba(32, 142, 78, 0.05); }
@@ -324,6 +324,7 @@
   <nav class="sidebar-nav">
     <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Vencimentos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos">Direitos e Vantagens</a>
+    <a onclick="switchPage('concursos')" id="menu-concursos">Concursos</a>
     <a onclick="switchPage('acoes')" id="menu-acoes">Ações Judiciais</a>
     <a onclick="switchPage('associacoes')" id="menu-associacoes">Associações e Sindicatos</a>
   </nav>
@@ -888,6 +889,17 @@
   </div>
 </main>
 
+<main id="page-concursos" class="page-section">
+  <div class="card">
+    <h2>Informações de Concursos (<span id="txt-inst-concursos">PMESP</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Abaixo estão os dados do último edital de referência e as previsões atualizadas para 2026.
+    </div>
+    <div class="result-list" id="lista-concursos">
+      </div>
+  </div>
+</main>
+
 <main id="page-acoes" class="page-section">
   <div class="card">
     <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
@@ -1148,6 +1160,76 @@ const ASSOCIACOES = {
   ]
 };
 
+/* ============================================================ */
+/* === BANCO DE DADOS: CONCURSOS ============================== */
+/* ============================================================ */
+const CONCURSOS = {
+  pmesp: {
+    edital: "Soldado PM 2ª Classe (2024)",
+    salario: "R$ 4.852,21 (após formação)",
+    materias: "Língua Portuguesa, Matemática, Conhecimentos Gerais, Noções de Informática e Noções de Administração Pública.",
+    banca: "Vunesp",
+    inscritos: "~ 110.000 candidatos",
+    previsao: "Novo edital previsto para o segundo semestre de 2026, com cerca de 2.700 vagas esperadas."
+  },
+  pcsp: {
+    edital: "Investigador e Escrivão (2023)",
+    salario: "R$ 5.879,68 (inicial)",
+    materias: "Português, Noções de Direito, Criminologia, Lógica e Informática.",
+    banca: "Vunesp",
+    inscritos: "~ 70.000 candidatos (somados)",
+    previsao: "Possibilidade de novos editais a partir do final de 2026 para suprir déficit, após encerramento do chamamento atual."
+  },
+  pmerj: {
+    edital: "Soldado PM (2023/2024)",
+    salario: "R$ 5.233,88 (após o CFSD)",
+    materias: "Língua Portuguesa, Matemática Básica, Direitos Humanos, Direito Administrativo e Legislação Aplicada à PMERJ.",
+    banca: "FGV",
+    inscritos: "~ 119.000 candidatos",
+    previsao: "Expectativa de novo edital apenas para o final de 2026, focando primeiro no chamamento de remanescentes."
+  },
+  pcerj: {
+    edital: "Inspetor e Investigador (2021)",
+    salario: "R$ 5.800,00 a R$ 6.300,00 (inicial aproximado)",
+    materias: "Língua Portuguesa, Direito Penal/Processual Penal, Direito Administrativo, Direito Constitucional e Informática.",
+    banca: "FGV",
+    inscritos: "~ 130.000 candidatos (somados)",
+    previsao: "Forte pressão sindical para novo concurso de Agente e Inspetor ao longo de 2026 devido ao déficit no quadro operacional."
+  },
+  pmmg: {
+    edital: "Soldado (2024)",
+    salario: "R$ 5.097,11",
+    materias: "Língua Portuguesa/Literatura, Noções de Direito/Direitos Humanos, Raciocínio Lógico-Matemático e Estatística.",
+    banca: "CRS / PMMG (Centro de Recrutamento)",
+    inscritos: "~ 50.000 candidatos",
+    previsao: "Edital padrão com histórico anual. Fortíssima chance de novo edital já no início de 2026."
+  },
+  pcmg: {
+    edital: "Investigador de Polícia (2024)",
+    salario: "R$ 5.097,11",
+    materias: "Língua Portuguesa, Lei Orgânica da PCMG, Noções de Direito, Direitos Humanos e Noções de Medicina Legal.",
+    banca: "Fumarc / Fundep",
+    inscritos: "~ 60.000 candidatos",
+    previsao: "Concurso vigente em andamento. Não há previsão imediata de novo edital de carreiras policiais em 2026."
+  },
+  pmba: {
+    edital: "Soldado PM e BM (2022)",
+    salario: "R$ 4.012,11 (Soldo + GAP)",
+    materias: "Língua Portuguesa, Raciocínio Lógico, História, Geografia, Atualidades, Informática e Noções de Direito.",
+    banca: "FCC (Fundação Carlos Chagas)",
+    inscritos: "~ 80.000 candidatos",
+    previsao: "Promessa do executivo estadual de um novo certame para recomposição de tropas previsto para o 2º semestre de 2026."
+  },
+  pcba: {
+    edital: "Investigador e Escrivão (2022)",
+    salario: "R$ 4.873,18",
+    materias: "Língua Portuguesa, Raciocínio Lógico, Informática, Atualidades e Conhecimentos Específicos (Direito).",
+    banca: "IBFC",
+    inscritos: "~ 45.000 candidatos",
+    previsao: "Novo concurso muito provável no decorrer de 2026 devido ao término do prazo de validade do último edital."
+  }
+};
+
 let currTabela = {};
 let currCargos = [];
 
@@ -1232,6 +1314,37 @@ function mudarInstituicao() {
   analisarDireitos();
   carregarAcoes();
   carregarAssociacoes();
+  carregarConcursos();
+}
+
+function carregarConcursos() {
+  const inst = document.getElementById("instituicao").value;
+  const container = document.getElementById("lista-concursos");
+  document.getElementById("txt-inst-concursos").innerText = inst.toUpperCase();
+  
+  container.innerHTML = "";
+  const concurso = CONCURSOS[inst];
+
+  if (!concurso) {
+    container.innerHTML = `<div class="direito-item nao"><div class="direito-nome">Informação Indisponível</div><div class="direito-desc">Não localizamos dados de concurso para esta instituição no momento.</div></div>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="direito-item acao" style="border-left-color: var(--dourado);">
+      <div class="direito-nome" style="color: var(--dourado);">Raio-X do Último Edital</div>
+      <div class="direito-desc">
+        <strong>📝 Edital:</strong> ${concurso.edital}<br>
+        <strong>💰 Salário Oferecido:</strong> ${concurso.salario}<br>
+        <strong>📚 Matérias Cobradas:</strong> ${concurso.materias}<br>
+        <strong>🏢 Banca Examinadora:</strong> ${concurso.banca}<br>
+        <strong>👥 Inscritos:</strong> ${concurso.inscritos}<br>
+      </div>
+      <div class="badge-acao" style="background-color: rgba(223, 182, 62, 0.1); color: var(--dourado); border-color: var(--dourado); margin-top: 12px; font-size: 13px;">
+        📅 PREVISÃO 2026: ${concurso.previsao}
+      </div>
+    </div>
+  `;
 }
 
 function carregarAcoes() {
@@ -1663,7 +1776,8 @@ function calcular() {
 function analisarDireitos() {
   const inst = document.getElementById("instituicao").value;
   const situacao = document.getElementById('situacao_dir').value;
-  const tempo = parseInt(document.getElementById('tempo_dir').value) || 0;
+  // Correção de extração do valor do tempo da tela atual (Aba Direitos)
+  const tempo = Math.max(0, parseInt(document.getElementById('tempo_dir').value) || 0);
   const inativo = (situacao === 'reserva' || situacao === 'reforma');
   const cargoDir = document.getElementById('cargo_dir').value;
   let direitos = [];
@@ -1671,7 +1785,7 @@ function analisarDireitos() {
   if (inst === 'pmesp' || inst === 'pcsp') {
     direitos.push({ nome: "RETP (Regime Especial de Trabalho Policial)", tem: true, desc: "Adicional de 100% sobre o valor base. Integrado aos proventos." });
     const q = Math.floor(tempo / 5);
-    direitos.push({ nome: "Adicional por Tempo de Serviço (Quinquênio)", tem: q > 0, desc: q > 0 ? `Você possui direito a ${q} quinquênio(s).` : "Adquirido a cada 5 anos." });
+    direitos.push({ nome: "Adicional por Tempo de Serviço (Quinquênio)", tem: q > 0, desc: q > 0 ? `Você possui direito a ${q} quinquênio(s).` : "Adquirido a cada 5 anos de efetivo serviço." });
     direitos.push({ nome: "Sexta-Parte", tem: tempo >= 20, desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos)." : "Adquirido ao completar 20 anos." });
     direitos.push({ nome: "Adicional de Insalubridade", tem: !inativo, desc: !inativo ? "Pago aos policiais da ativa sob risco." : "Não se incorpora automaticamente aos proventos." });
     if (inst === 'pmesp') {
@@ -1687,7 +1801,7 @@ function analisarDireitos() {
     direitos.push({ nome: "IHP — Indenização de Habilitação Policial-Militar", tem: true, desc: "Adicional de 75% sobre o soldo." });
     direitos.push({ nome: "GRAM — Gratif. Risco da Atividade Militar", tem: true, desc: "Calculada em 62,5% sobre o soldo + IHP." });
     const tri = Math.floor(tempo / 3);
-    direitos.push({ nome: "Triênio (10% por triênio)", tem: tri > 0, desc: tri > 0 ? `Você possui direito a ${tri} triênio(s).` : "Adquirido a cada 3 anos." });
+    direitos.push({ nome: "Triênio (10% por triênio)", tem: tri > 0, desc: tri > 0 ? `Você possui direito a ${tri} triênio(s).` : "Adquirido a cada 3 anos de efetivo serviço." });
     direitos.push({ nome: "RAS — Regime Adicional de Serviço", tem: !inativo, desc: !inativo ? "Permite a realização voluntária de turnos extras (12h)." : "Restrito à ativa." });
     if (inativo) direitos.push({ nome: "Sistema de Proteção Social", tem: true, desc: "Integralidade do último soldo e paridade plena." });
   }
@@ -1696,13 +1810,17 @@ function analisarDireitos() {
     if (cargoDir === 'delegado_rj') direitos.push({ nome: "Verba de Representação Delegado", tem: true, desc: "Adicional de 212% sobre o vencimento-base." });
     else direitos.push({ nome: "Adicional de Periculosidade (230%)", tem: true, desc: "Para todas as carreiras da PC RJ, exceto Delegado." });
     if (cargoDir === 'perito_rj') direitos.push({ nome: "Gratificação Técnico-Científica (Peritos)", tem: true, desc: "Acréscimo de 100% sobre o vencimento-base." });
+    
+    // Inclusão da regra de Adicional por Tempo de Serviço para PCERJ
+    const q = Math.floor(tempo / 5);
+    direitos.push({ nome: "Adicional de Tempo de Serviço (Quinquênio)", tem: q > 0, desc: q > 0 ? `Você possui direito a ${q} quinquênio(s) (5% cada).` : "Adquirido a cada 5 anos de efetivo serviço." });
   }
 
   if (inst === 'pmmg') {
     direitos.push({ nome: "Subsídio (Parcela Única)", tem: true, desc: "Remuneração em parcela única." });
     direitos.push({ nome: "ADE — Adicional de Desempenho", tem: true, desc: "Concedido com base nos resultados das Avaliações de Desempenho." });
     const q = Math.floor(tempo / 5);
-    direitos.push({ nome: "Quinquênios (10%) / Trintenário", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Adicionais temporais antigos." });
+    direitos.push({ nome: "Quinquênios (10%) / Trintenário", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Adicionais temporais antigos (direito adquirido a cada 5 anos)." });
     direitos.push({ nome: "IPSM", tem: true, desc: "Desconto compulsório de 10,5% que engloba a previdência e saúde." });
     direitos.push({ nome: "Abono Fardamento", tem: !inativo, desc: !inativo ? "Auxílio anual de caráter indenizatório." : "Apenas para o efetivo serviço." });
     if (inativo) direitos.push({ nome: "Integralidade e Paridade PMMG", tem: true, desc: "Mantido pelo SPSM." });
@@ -1713,7 +1831,7 @@ function analisarDireitos() {
     direitos.push({ nome: "ADE — Adicional de Desempenho", tem: true, desc: "Pago em função do resultado da Avaliação de Desempenho." });
     direitos.push({ nome: "IPSEMG (Saúde do Servidor)", tem: true, desc: "Desconto opcional de 3,2% sobre a remuneração." });
     const q = Math.floor(tempo / 5);
-    direitos.push({ nome: "Quinquênios (10%)", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Garantia atrelada a ingressos antigos." });
+    direitos.push({ nome: "Quinquênios (10%)", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Garantia atrelada a ingressos antigos (adquirido a cada 5 anos)." });
     direitos.push({ nome: "Auxílio Vestimenta", tem: !inativo, desc: !inativo ? "Ajuda de custo conforme lei." : "Não se projeta para inatividade." });
     if (inativo) direitos.push({ nome: "Aposentadoria Policial Especial", tem: true, desc: "Garantia de integralidade e paridade (regras de transição)." });
   }
@@ -1721,7 +1839,8 @@ function analisarDireitos() {
   if (inst === 'pmba') {
     direitos.push({ nome: "Soldo + GAP", tem: true, desc: "A remuneração base é composta pelo Soldo e pela Gratificação de Atividade Policial (GAP)." });
     direitos.push({ nome: "CET (Condição Especial de Trabalho)", tem: true, desc: "Gratificação que pode variar percentualmente de acordo com a função e local de trabalho." });
-    const anu = document.getElementById("anuenios_ba_pm") ? parseInt(document.getElementById("anuenios_ba_pm").value) : 0;
+    // Correção: Puxando o "tempo" da variável local e não do input da calculadora
+    const anu = tempo;
     direitos.push({ nome: "Anuênios (1% ao ano)", tem: anu > 0, desc: anu > 0 ? `Acumulado de ${anu} anuênio(s).` : "Adquirido a cada ano de efetivo serviço." });
     direitos.push({ nome: "PLANSERV", tem: true, desc: "Assistência à saúde do servidor estadual da Bahia (opcional)." });
     if (inativo) direitos.push({ nome: "Sistema de Proteção Social", tem: true, desc: "Garantia de paridade e integralidade para militares estaduais." });
@@ -1730,7 +1849,8 @@ function analisarDireitos() {
   if (inst === 'pcba') {
     direitos.push({ nome: "Vencimento Básico", tem: true, desc: "A remuneração da Polícia Civil é composta por Vencimento e gratificações atreladas." });
     direitos.push({ nome: "CET (Condição Especial de Trabalho)", tem: true, desc: "Gratificação de atividade aplicada sobre o vencimento." });
-    const anu = document.getElementById("anuenios_ba_pc") ? parseInt(document.getElementById("anuenios_ba_pc").value) : 0;
+    // Correção: Puxando o "tempo" da variável local e não do input da calculadora
+    const anu = tempo;
     direitos.push({ nome: "Anuênios (1% ao ano)", tem: anu > 0, desc: anu > 0 ? `Acumulado de ${anu} anuênio(s).` : "Adquirido a cada ano de efetivo serviço." });
     if (inativo) direitos.push({ nome: "Aposentadoria Policial Especial", tem: true, desc: "Garantia de integralidade e paridade com base nas regras constitucionais e de transição." });
   }
