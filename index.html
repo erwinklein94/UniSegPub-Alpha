@@ -144,12 +144,12 @@
   /* SEÇÕES E LAYOUT */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; } 
-  #page-direitos.active, #page-concursos.active, #page-acoes.active, #page-associacoes.active { display: block; } 
+  #page-direitos.active, #page-concursos.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; } 
   
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
-  #page-direitos, #page-concursos, #page-acoes, #page-associacoes { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-concursos, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
 
@@ -206,9 +206,13 @@
 
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
 
-  input[type="number"], input[type="text"], input[type="date"], select { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
-  input:focus, select:focus { outline: none; border-color: var(--vermelho); box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.15); }
-  input::placeholder { color: var(--text-muted); }
+  input[type="number"], input[type="text"], input[type="email"], input[type="date"], select, textarea { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--vermelho); box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.15); }
+  input::placeholder, textarea::placeholder { color: var(--text-muted); }
+  textarea { resize: vertical; min-height: 100px; }
+  
+  .btn-submit { background-color: var(--vermelho); color: #ffffff; border: none; padding: 14px 20px; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease; width: 100%; margin-top: 8px; }
+  .btn-submit:hover { background-color: var(--vermelho-escuro); }
 
   /* RESUMO LATERAL */
   .resumo { position: sticky; top: 24px; align-self: start; }
@@ -327,6 +331,7 @@
     <a onclick="switchPage('concursos')" id="menu-concursos">Concursos</a>
     <a onclick="switchPage('acoes')" id="menu-acoes">Ações Judiciais</a>
     <a onclick="switchPage('associacoes')" id="menu-associacoes">Associações e Sindicatos</a>
+    <a onclick="switchPage('parceiros')" id="menu-parceiros">Parceiros</a>
   </nav>
 
   <div class="theme-toggle-container">
@@ -919,6 +924,42 @@
     </div>
     <div class="result-list" id="lista-associacoes">
       </div>
+  </div>
+</main>
+
+<main id="page-parceiros" class="page-section">
+  <div class="card">
+    <h2>Parceiros e Contato</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Esta área é destinada a empresas interessadas em parcerias comerciais, anúncios, ou para usuários que desejam sugerir alterações, correções e melhorias no site.
+    </div>
+    <form class="form-grid" style="margin-bottom: 0;" onsubmit="enviarEmailContato(event)">
+      <div class="field span-2">
+        <label>Nome da Empresa ou Usuário</label>
+        <input type="text" id="contato_nome" required placeholder="Digite o nome..." />
+      </div>
+      <div class="field span-2">
+        <label>E-mail para Retorno</label>
+        <input type="email" id="contato_email" required placeholder="seuemail@exemplo.com" />
+      </div>
+      <div class="field span-2">
+        <label>Assunto</label>
+        <select id="contato_assunto" required>
+          <option value="" disabled selected>Selecione o motivo...</option>
+          <option value="Parceria Comercial / Anúncio">Parceria Comercial / Anúncio</option>
+          <option value="Sugestão de Melhoria">Sugestão de Melhoria</option>
+          <option value="Correção de Informação errada">Correção de Informação errada</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+      <div class="field span-2">
+        <label>Descrição do Interesse / Mensagem</label>
+        <textarea id="contato_mensagem" required placeholder="Escreva sua mensagem detalhada aqui..."></textarea>
+      </div>
+      <div class="field span-2">
+        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+      </div>
+    </form>
   </div>
 </main>
 
@@ -1865,6 +1906,25 @@ function analisarDireitos() {
         <div class="direito-desc">${d.desc}</div>
       </div>`;
   });
+}
+
+function enviarEmailContato(event) {
+  event.preventDefault();
+  const nome = document.getElementById('contato_nome').value;
+  const email = document.getElementById('contato_email').value;
+  const assuntoSelecionado = document.getElementById('contato_assunto').value;
+  const mensagem = document.getElementById('contato_mensagem').value;
+
+  const destinatario = "erwinklein1994@gmail.com";
+  const assunto = encodeURIComponent(`[Universo SP] ${assuntoSelecionado} - ${nome}`);
+  const corpo = encodeURIComponent(
+    `Nome ou Empresa: ${nome}\n` +
+    `E-mail para retorno: ${email}\n\n` +
+    `Mensagem:\n${mensagem}`
+  );
+
+  // Abre o cliente de e-mail padrão do dispositivo do usuário
+  window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`;
 }
 
 // Event Listeners Globais
