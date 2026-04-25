@@ -158,11 +158,12 @@
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; } 
   #page-direitos.active { display: block; } 
+  #page-acoes.active { display: block; } 
   
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
-  #page-direitos { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-acoes { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
 
@@ -178,15 +179,13 @@
   .field.span-2 { grid-column: span 2; }
   
   /* ============================================================== */
-  /* CONTROLE DE EXIBIÇÃO POR INSTITUIÇÃO (CORREÇÃO DEFINITIVA)   */
+  /* CONTROLE DE EXIBIÇÃO POR INSTITUIÇÃO                           */
   /* ============================================================== */
   
-  /* 1. Oculta tudo que é específico de instituição por padrão */
   .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only { 
     display: none !important; 
   }
 
-  /* 2. Restaura display FLEX para as divs de form-field (.field) e Títulos (.card h2) */
   body[data-inst="pmesp"] .field.pm-only, body[data-inst="pmesp"] h2.pm-only { display: flex !important; }
   body[data-inst="pcsp"] .field.pc-only, body[data-inst="pcsp"] h2.pc-only { display: flex !important; }
   body[data-inst="pmerj"] .field.pmerj-only, body[data-inst="pmerj"] h2.pmerj-only { display: flex !important; }
@@ -194,7 +193,6 @@
   body[data-inst="pmmg"] .field.pmmg-only, body[data-inst="pmmg"] h2.pmmg-only { display: flex !important; }
   body[data-inst="pcmg"] .field.pcmg-only, body[data-inst="pcmg"] h2.pcmg-only { display: flex !important; }
 
-  /* 3. Restaura display BLOCK para os alertas (div.alerta) para não quebrar o layout do texto */
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
   body[data-inst="pmerj"] div.alerta.pmerj-only { display: block !important; }
@@ -202,7 +200,6 @@
   body[data-inst="pmmg"] div.alerta.pmmg-only { display: block !important; }
   body[data-inst="pcmg"] div.alerta.pcmg-only { display: block !important; }
 
-  /* 4. Classes auxiliares para combinações (Militar vs Civil) */
   .militar-only { display: none !important; }
   body[data-inst="pmesp"] .militar-only,
   body[data-inst="pmerj"] .militar-only,
@@ -249,11 +246,14 @@
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
-  /* LISTA DE DIREITOS */
+  /* LISTAS E ITENS (Direitos e Ações) */
   .result-list { display: flex; flex-direction: column; gap: 16px; }
-  .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }
+  .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); transition: background-color 0.3s ease; }
   .direito-item.sim { border-left-color: #208E4E; background-color: rgba(32, 142, 78, 0.05); }
   .direito-item.nao { border-left-color: #e60000; background-color: rgba(230, 0, 0, 0.05); }
+  .direito-item.acao { border-left-color: var(--vermelho); background-color: var(--bg-card); border-top: 1px solid var(--border-card); border-right: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card); }
+  .direito-item.acao:hover { border-color: var(--vermelho); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  
   .direito-nome { font-weight: 700; color: var(--text-main); font-size: 16px; text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 0.5px;}
   .direito-status { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
   .sim .direito-status { color: #208E4E; }
@@ -326,6 +326,7 @@
   <nav class="sidebar-nav">
     <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Vencimentos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos">Direitos e Vantagens</a>
+    <a onclick="switchPage('acoes')" id="menu-acoes">Ações Judiciais</a>
   </nav>
 
   <div class="theme-toggle-container">
@@ -829,8 +830,20 @@
   </div>
 </main>
 
+<main id="page-acoes" class="page-section">
+  <div class="card">
+    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      <strong>Aviso Legal:</strong> As informações abaixo são resumos informativos sobre as principais teses jurídicas e ações coletivas/individuais em andamento. Procure o departamento jurídico da sua associação, sindicato ou um advogado especialista para análise do seu caso concreto.
+    </div>
+    
+    <div class="result-list" id="lista-acoes">
+      </div>
+  </div>
+</main>
+
 <footer>
-  <p>Desenvolvido por <strong>EK ex-Mike</strong> - O site é um mero simulador e pode conter erros</p>
+  <p>Desenvolvido por <strong>LockStage</strong> - O site é um mero consultor de informações públicas</p>
 </footer>
 
 <script>
@@ -948,6 +961,134 @@ const CARGOS_PCMG = [
   { val: "inv_mg", text: "Investigador / Escrivão", padrao: 5097.11, oficial: false, selected: true, retpFator: 0 }
 ];
 
+/* ============================================================ */
+/* === BANCO DE DADOS DE AÇÕES JUDICIAIS POR INSTITUIÇÃO ====== */
+/* ============================================================ */
+const ACOES_JUDICIAIS = {
+  pmesp: [
+    {
+      titulo: "Recálculo de Quinquênio e Sexta-Parte (Base Integral)",
+      status: "Tese Consolidada (Ativa/Reserva)",
+      desc: "Busca que o cálculo dos adicionais temporais (quinquênios e sexta-parte) incida sobre os vencimentos integrais (Padrão + RETP + gratificações incorporadas) e não apenas sobre o salário-base. Tese com excelente aceitação no Tribunal de Justiça de SP."
+    },
+    {
+      titulo: "Incorporação do ALE (Adicional de Local de Exercício)",
+      status: "Ação de Cobrança Retroativa",
+      desc: "Embora o ALE tenha sido absorvido pelo salário-base e RETP em 2013, muitos policiais que estavam na ativa naquela época têm direito a diferenças retroativas devido a falhas no cálculo de incorporação realizado pelo Estado."
+    },
+    {
+      titulo: "Insalubridade no Curso de Formação (Soldado 2ª Classe)",
+      status: "Tese Favorável",
+      desc: "Reconhecimento do direito ao recebimento do Adicional de Insalubridade desde o primeiro dia no curso de formação, não apenas após a formatura. Possibilidade de recebimento dos valores retroativos referentes a este período."
+    },
+    {
+      titulo: "Conversão de Licença-Prêmio em Pecúnia",
+      status: "Direito Adquirido na Aposentadoria",
+      desc: "Para policiais que foram para a inatividade sem gozar os blocos de licença-prêmio. O Estado é obrigado a indenizar esses meses em dinheiro (pecúnia), sem incidência de Imposto de Renda e contribuição previdenciária."
+    }
+  ],
+  pcsp: [
+    {
+      titulo: "Base de Cálculo do Adicional de Insalubridade",
+      status: "Tema em Discussão",
+      desc: "Ação visando a alteração da base de cálculo do adicional de insalubridade pago aos policiais civis, pleiteando que o valor não seja congelado ou vinculado a salários mínimos defasados, mas sim atualizado de forma justa."
+    },
+    {
+      titulo: "Paridade e Integralidade (Tema 1019 STF)",
+      status: "Repercussão Geral Julgada",
+      desc: "O STF garantiu o direito à aposentadoria especial com integralidade (último salário) e paridade (reajustes iguais aos da ativa) para policiais civis que ingressaram até a EC 103/2019, desde que cumpridos os requisitos da LC 51/85."
+    },
+    {
+      titulo: "Cobrança do GAT (Gratificação por Acúmulo de Titularidade)",
+      status: "Delegados de Polícia",
+      desc: "Ação para garantir o pagamento correto ou cobrar diferenças atrasadas do GAT para Delegados de Polícia que responderam por mais de uma unidade cumulativamente ou acumularam funções de plantão."
+    },
+    {
+      titulo: "Abono de Permanência Retroativo",
+      status: "Ação de Cobrança",
+      desc: "Direito de restituição dos valores descontados a título de contribuição previdenciária desde a data em que o policial civil completou os requisitos para a aposentadoria voluntária, mas decidiu continuar na ativa."
+    }
+  ],
+  pmerj: [
+    {
+      titulo: "Revisão e Incidência da GRAM",
+      status: "Tese em Ascensão",
+      desc: "Ação que discute a natureza da Gratificação de Risco de Atividade Militar (GRAM), buscando sua incorporação correta na base de cálculo de outras vantagens, como férias e 13º salário, além da correção de seus reflexos para inativos."
+    },
+    {
+      titulo: "Indenização por Férias não Gozadas (Pecúnia)",
+      status: "Direito Adquirido (Inativos)",
+      desc: "Militares que foram para a inatividade sem gozar todas as suas férias têm o direito de receber esses períodos em pecúnia (dinheiro), com base no último soldo recebido na ativa, sem incidência de imposto de renda."
+    },
+    {
+      titulo: "Revisão do Auxílio-Moradia",
+      status: "Ação Histórica/Retroativos",
+      desc: "Tese que busca o ressarcimento das diferenças salariais geradas pelo congelamento ou pagamento a menor do auxílio-moradia em anos passados, pleiteando a equiparação com valores pagos a outras categorias."
+    },
+    {
+      titulo: "Promoção por Tempo de Serviço (Retroação)",
+      status: "Ação Individual",
+      desc: "Ações movidas por praças (Cabos e Sargentos) que sofreram atrasos na promoção por tempo de serviço. O objetivo é retroagir a data da promoção, recebendo as diferenças salariais acumuladas nesse período."
+    }
+  ],
+  pcerj: [
+    {
+      titulo: "Adicional de Periculosidade (Retroativos)",
+      status: "Pós Lei 11.003/2025",
+      desc: "Ação para cobrança de valores devidos a título de insalubridade/periculosidade referentes a períodos anteriores à implementação efetiva da nova Lei Orgânica, considerando o risco inerente à função policial."
+    },
+    {
+      titulo: "Paridade e Integralidade na Aposentadoria",
+      status: "Direito Constitucional",
+      desc: "Garantia de que os policiais civis aposentados recebam os mesmos reajustes e o último vencimento da ativa, com base na LC 51/1985 e no Tema 1019 do STF, combatendo enquadramentos errôneos da RioPrevidência."
+    },
+    {
+      titulo: "Reenquadramento de Classe (Promoção)",
+      status: "Ação de Obrigação de Fazer",
+      desc: "Investigadores, Inspetores e Peritos que preencheram os requisitos temporais e meritórios para mudança de classe, mas que foram prejudicados por inércia do Estado. Busca a promoção e as diferenças salariais retroativas."
+    }
+  ],
+  pmmg: [
+    {
+      titulo: "Ação da URV (Unidade Real de Valor)",
+      status: "Ação Indenizatória Histórica",
+      desc: "Tese que cobra as perdas salariais decorrentes da conversão da moeda de Cruzeiro Real para URV no ano de 1994 (defasagem de 11,98%). Muitos militares e associações ainda buscam a execução desses valores contra o Estado."
+    },
+    {
+      titulo: "Revisão da Alíquota do IPSM",
+      status: "Discussão Jurídica Ativa",
+      desc: "Ações questionando descontos previdenciários indevidos ou a majoração da alíquota do Instituto de Previdência dos Servidores Militares, buscando adequação aos limites do Sistema de Proteção Social dos Militares (Lei Federal 13.954)."
+    },
+    {
+      titulo: "Promoção Retroativa (Ressarcimento de Preterição)",
+      status: "Ação Individual",
+      desc: "Voltada para militares que tiveram sua promoção atrasada por erro da administração, demora na publicação, ou sindicâncias/processos que resultaram em absolvição posterior. Garante o recebimento da diferença de soldo retroativa."
+    },
+    {
+      titulo: "Férias Prêmio em Pecúnia",
+      status: "Garantia na Transferência para a Reserva",
+      desc: "Conversão em espécie das férias-prêmio adquiridas e não gozadas na ativa, quando da passagem para a reserva remunerada. O pagamento deve ser imediato e com base no valor do último subsídio."
+    }
+  ],
+  pcmg: [
+    {
+      titulo: "Restituição do IPSEMG (Assistência à Saúde)",
+      status: "Tese Consolidada",
+      desc: "Ação para interromper o desconto compulsório do IPSEMG (assistência médica) para quem não tem interesse em utilizar a rede, e devolução dos valores descontados indevidamente nos últimos 5 anos."
+    },
+    {
+      titulo: "Inclusão do ADE na Aposentadoria",
+      status: "Ação de Inativos",
+      desc: "Busca garantir que o Adicional de Desempenho (ADE), recebido por longos anos na ativa, seja incorporado integralmente aos proventos de aposentadoria da Polícia Civil, evitando perdas bruscas de renda."
+    },
+    {
+      titulo: "Pagamento de Progressão e Promoção Atrasada",
+      status: "Ação de Cobrança",
+      desc: "Policiais civis que preencheram os requisitos de tempo e avaliação, mas que a chefia do Estado não publicou o ato de promoção/progressão no tempo certo. Ação para cobrar todo o retroativo devido."
+    }
+  ]
+};
+
 let currTabela = {};
 let currCargos = [];
 
@@ -1018,7 +1159,7 @@ function popularCargos(inst) {
   });
 }
 
-/* === CONTROLE INSTITUIÇÃO === */
+/* === CONTROLE INSTITUIÇÃO E RENDERIZAÇÃO === */
 function mudarInstituicao() {
   const inst = document.getElementById('instituicao').value;
   document.body.setAttribute('data-inst', inst);
@@ -1084,6 +1225,45 @@ function mudarInstituicao() {
   popularCargos(inst);
   calcular();
   analisarDireitos();
+  carregarAcoes(); // Atualiza a aba de Ações Judiciais
+}
+
+/* === FUNÇÃO: CARREGAR AÇÕES JUDICIAIS === */
+function carregarAcoes() {
+  const inst = document.getElementById("instituicao").value;
+  const container = document.getElementById("lista-acoes");
+  const tituloSpan = document.getElementById("txt-inst-acoes");
+
+  const nomesInst = { 
+    pmesp: "PMESP", pcsp: "PCSP", 
+    pmerj: "PMERJ", pcerj: "PCERJ", 
+    pmmg: "PMMG", pcmg: "PCMG" 
+  };
+  
+  tituloSpan.innerText = nomesInst[inst] || "Instituição";
+  container.innerHTML = "";
+  
+  const acoes = ACOES_JUDICIAIS[inst] || [];
+
+  if (acoes.length === 0) {
+    container.innerHTML = `
+      <div class="direito-item nao">
+        <div class="direito-nome">Nenhuma ação cadastrada no momento</div>
+        <div class="direito-desc">Não encontramos teses ativas no banco de dados para esta instituição.</div>
+      </div>
+    `;
+    return;
+  }
+
+  acoes.forEach(acao => {
+    container.innerHTML += `
+      <div class="direito-item acao">
+        <div class="direito-nome" style="color: var(--vermelho);">${acao.titulo}</div>
+        <div class="direito-status" style="color: var(--text-main); margin-bottom: 4px;">📌 ${acao.status}</div>
+        <div class="direito-desc">${acao.desc}</div>
+      </div>
+    `;
+  });
 }
 
 /* === CONTROLE DE TEMA === */
@@ -1710,6 +1890,7 @@ initTheme();
 popularCargos('pmesp');
 calcular();
 analisarDireitos();
+carregarAcoes();
 </script>
 
 </body>
