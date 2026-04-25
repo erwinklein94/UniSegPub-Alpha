@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Simulador e Direitos PMESP</title>
+<title>Simulador e Direitos SegPub SP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
   }
 
   [data-theme="dark"] {
-    /* Tema Escuro (Inspirado nas imagens anexadas) */
+    /* Tema Escuro */
     --bg-site: #0a0a0c;
     --bg-card: #141518;
     --bg-input: #1e1f24;
@@ -50,6 +50,12 @@
     --item-hover: #23252a;
   }
 
+  /* Variáveis dinâmicas de cor baseadas na Instituição */
+  body[data-inst="pcsp"] {
+    --vermelho: #4f4f4f; /* Tom cinza/branco/preto da PCSP */
+    --vermelho-escuro: #2b2b2b;
+  }
+  
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -62,14 +68,13 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /* Textura de fundo sutil para o Modo Escuro (estilo colmeia/tecnológico) */
   [data-theme="dark"] body {
     background-image: 
       radial-gradient(circle at 15% 50%, rgba(230, 0, 0, 0.04), transparent 25%),
       radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
   }
 
-  /* ===== HEADER TÁTICO ===== */
+  /* HEADER */
   header {
     background-color: var(--header-bg);
     border-bottom: 4px solid var(--vermelho);
@@ -78,236 +83,106 @@
     overflow: hidden;
     flex-shrink: 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: border-color 0.4s ease;
   }
-  
-  /* Efeito de listras diagonais no header (referência imagens 3, 4 e 6) */
   header::before {
-    content: "";
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 20px,
-      rgba(255,255,255,0.01) 20px,
-      rgba(255,255,255,0.01) 40px
-    );
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.01) 20px, rgba(255,255,255,0.01) 40px);
     pointer-events: none;
   }
   
-  .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-  }
+  .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; position: relative; }
   
-  .header-text h1 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--header-text);
-    line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
-  .header-text h1 span { color: var(--vermelho); }
-  .header-text p {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #a0a0a5;
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
+  .header-text h1 { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--header-text); line-height: 1.1; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+  .header-text h1 span { color: var(--vermelho); transition: color 0.4s ease; }
+  .header-text p { font-family: 'Roboto Condensed', sans-serif; font-size: 14px; font-weight: 400; color: #a0a0a5; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
   
-  /* Listras estilo SP (Vermelho, Branco, Preto) */
   .stripe-container { display: flex; flex-direction: column; }
-  .stripe { height: 4px; background: var(--vermelho); }
+  .stripe { height: 4px; background: var(--vermelho); transition: background 0.4s ease; }
   .stripe-white { height: 2px; background: #ffffff; }
   .stripe-black { height: 4px; background: #111; }
 
-  /* ===== MENU LATERAL ===== */
-  .menu-btn {
-    background: none; border: none; cursor: pointer;
-    display: flex; flex-direction: column; gap: 6px;
-    padding: 10px; z-index: 101;
-  }
-  .menu-btn span {
-    width: 26px; height: 3px; background: var(--header-text);
-    border-radius: 2px; transition: 0.3s;
-  }
-  .menu-overlay {
-    position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px); opacity: 0; pointer-events: none;
-    transition: 0.3s ease; z-index: 100;
-  }
+  /* MENU LATERAL */
+  .menu-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 10px; z-index: 101; }
+  .menu-btn span { width: 26px; height: 3px; background: var(--header-text); border-radius: 2px; transition: 0.3s; }
+  .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: 0.3s ease; z-index: 100; }
   .menu-overlay.active { opacity: 1; pointer-events: auto; }
   
-  .sidebar {
-    position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
-    background-color: var(--bg-card); z-index: 102;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 5px 0 30px rgba(0,0,0,0.5); 
-    display: flex; flex-direction: column;
-    overflow-y: auto;
-    border-right: 1px solid var(--border-card);
-  }
+  .sidebar { position: fixed; top: 0; left: -320px; width: 300px; height: 100vh; background-color: var(--bg-card); z-index: 102; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 5px 0 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; overflow-y: auto; border-right: 1px solid var(--border-card); }
   .sidebar.active { left: 0; }
-  .sidebar-header {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 24px; border-bottom: 1px solid var(--border-card);
-    background-color: var(--header-bg);
-  }
+  .sidebar-header { display: flex; justify-content: space-between; align-items: center; padding: 24px; border-bottom: 1px solid var(--border-card); background-color: var(--header-bg); }
   .sidebar-header h2 { font-family: 'Oswald', sans-serif; font-size: 20px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
   .close-btn { background: none; border: none; font-size: 22px; color: #fff; cursor: pointer; transition: 0.2s; }
   .close-btn:hover { color: var(--vermelho); }
   
-  .sidebar-nav { display: flex; flex-direction: column; padding: 20px 0; flex-shrink: 0; }
-  .sidebar-nav a {
-    padding: 16px 24px; text-decoration: none; color: var(--text-main);
-    font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 14px;
-    border-left: 4px solid transparent; transition: 0.2s; cursor: pointer;
-    text-transform: uppercase; letter-spacing: 0.5px;
-  }
-  .sidebar-nav a:hover { background-color: var(--item-hover); }
-  .sidebar-nav a.active { border-left-color: var(--vermelho); background-color: rgba(230, 0, 0, 0.05); color: var(--vermelho); }
+  /* INSTITUIÇÃO SELECTOR (NOVO) */
+  .inst-selector { padding: 20px 24px; border-bottom: 1px solid var(--border-card); background-color: var(--item-bg); }
+  .inst-selector label { display: block; font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+  .inst-selector select { width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; border-radius: 4px; cursor: pointer; outline: none; }
+  .inst-selector select:focus { border-color: var(--vermelho); }
 
-  /* Botão de Tema */
+  .sidebar-nav { display: flex; flex-direction: column; padding: 20px 0; flex-shrink: 0; }
+  .sidebar-nav a { padding: 16px 24px; text-decoration: none; color: var(--text-main); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 14px; border-left: 4px solid transparent; transition: 0.2s; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
+  .sidebar-nav a:hover { background-color: var(--item-hover); }
+  .sidebar-nav a.active { border-left-color: var(--vermelho); background-color: rgba(100, 100, 100, 0.05); color: var(--vermelho); }
+
   .theme-toggle-container { padding: 0 24px 20px 24px; border-bottom: 1px solid var(--border-card); margin-bottom: 20px; }
-  .btn-theme {
-    width: 100%; padding: 12px; border: 1px solid var(--border-input);
-    background-color: var(--bg-input); color: var(--text-main);
-    font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 13px;
-    border-radius: 6px; cursor: pointer; transition: 0.2s;
-    display: flex; justify-content: center; align-items: center; gap: 8px;
-    text-transform: uppercase; letter-spacing: 1px;
-  }
+  .btn-theme { width: 100%; padding: 12px; border: 1px solid var(--border-input); background-color: var(--bg-input); color: var(--text-main); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 13px; border-radius: 6px; cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px; }
   .btn-theme:hover { border-color: var(--vermelho); color: var(--vermelho); }
 
-  /* ===== ANÚNCIOS DE AFILIADO NO MENU ===== */
-  .sidebar-ad {
-    margin: auto 24px 24px 24px; 
-    display: flex; flex-direction: column; gap: 15px;
-  }
-  .sidebar-ad p {
-    font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--text-main);
-    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0px;
-    line-height: 1.2; text-align: center; border-bottom: 2px solid var(--vermelho);
-    padding-bottom: 8px; display: inline-block; align-self: center;
-  }
-  .sidebar-ad a {
-    display: block; text-decoration: none; background-color: var(--item-bg);
-    border-radius: 8px; overflow: hidden; transition: 0.2s;
-    border: 1px solid var(--border-input);
-  }
-  .sidebar-ad a:hover { border-color: var(--vermelho); transform: translateY(-3px); box-shadow: 0 8px 15px rgba(230, 0, 0, 0.15); }
+  .sidebar-ad { margin: auto 24px 24px 24px; display: flex; flex-direction: column; gap: 15px; }
+  .sidebar-ad p { font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0px; line-height: 1.2; text-align: center; border-bottom: 2px solid var(--vermelho); padding-bottom: 8px; display: inline-block; align-self: center; }
+  .sidebar-ad a { display: block; text-decoration: none; background-color: var(--item-bg); border-radius: 8px; overflow: hidden; transition: 0.2s; border: 1px solid var(--border-input); }
+  .sidebar-ad a:hover { border-color: var(--vermelho); transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
   .sidebar-ad img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border-input); }
-  .sidebar-ad span {
-    display: block; padding: 12px; font-family: 'Roboto', sans-serif;
-    font-size: 13px; font-weight: 700; color: var(--text-main);
-    text-align: center; text-transform: uppercase;
-  }
+  .sidebar-ad span { display: block; padding: 12px; font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; color: var(--text-main); text-align: center; text-transform: uppercase; }
 
-  /* ===== SEÇÕES DA PÁGINA (SPA) ===== */
+  /* SEÇÕES E LAYOUT */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; } 
   #page-direitos.active { display: block; } 
   
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ===== LAYOUT ===== */
-  #page-calculadora {
-    max-width: 1200px; margin: 40px auto; padding: 0 20px;
-    grid-template-columns: 1fr 420px; gap: 30px;
-  }
+  #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
   #page-direitos { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
-  @media (max-width: 968px) {
-    #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; }
-    .resumo { position: static !important; }
-  }
+  @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
 
-  /* ===== CARDS ESTILO CYBER/TÁTICO ===== */
-  .card {
-    background-color: var(--bg-card); 
-    border: 1px solid var(--border-card);
-    padding: 28px; margin-bottom: 24px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); 
-    position: relative; 
-    /* Corte diagonal no canto inferior direito (Inspirado nas imagens 4 e 8) */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-  }
-  /* Linha vermelha superior forte */
-  .card::before { 
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; 
-    background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro)); 
-  }
+  /* CARDS E FORMS */
+  .card { background-color: var(--bg-card); border: 1px solid var(--border-card); padding: 28px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); position: relative; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); transition: border-color 0.3s ease; }
+  .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro)); transition: background 0.4s ease;}
   
-  .card h2 {
-    font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600;
-    letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main);
-    margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-input);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .card h2::before {
-    content: ""; display: block; width: 6px; height: 20px; background-color: var(--vermelho);
-    transform: skewX(-15deg); /* Corte angular */
-  }
+  .card h2 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-input); display: flex; align-items: center; gap: 10px; }
+  .card h2::before { content: ""; display: block; width: 6px; height: 20px; background-color: var(--vermelho); transform: skewX(-15deg); transition: background-color 0.4s ease;}
 
   .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .field { display: flex; flex-direction: column; }
   .field.span-2 { grid-column: span 2; }
   
-  label { 
-    font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; 
-    color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; 
-    letter-spacing: 1px;
-  }
+  /* CONTROLE DE EXIBIÇÃO POR INSTITUIÇÃO */
+  .pm-only { display: flex; }
+  .pc-only { display: none; }
+  body[data-inst="pcsp"] .pm-only { display: none !important; }
+  body[data-inst="pcsp"] .pc-only { display: flex !important; }
 
-  input[type="number"], input[type="text"], input[type="date"], select {
-    background-color: var(--bg-input); border: 1px solid var(--border-input); 
-    color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; 
-    font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%;
-  }
-  input:focus, select:focus {
-    outline: none; border-color: var(--vermelho);
-    box-shadow: 0 0 0 3px rgba(230, 0, 0, 0.15);
-  }
+  label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+  input[type="number"], input[type="text"], input[type="date"], select { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
+  input:focus, select:focus { outline: none; border-color: var(--vermelho); box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.15); }
   input::placeholder { color: var(--text-muted); }
 
-  /* ===== RESUMO LATERAL ===== */
+  /* RESUMO LATERAL */
   .resumo { position: sticky; top: 24px; align-self: start; }
   
-  .total-bloco {
-    background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%);
-    padding: 24px; border-radius: 6px; margin-bottom: 16px; text-align: center;
-    box-shadow: 0 8px 20px rgba(230, 0, 0, 0.25); position: relative; overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
-  }
-  .total-bloco::before {
-    content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-    animation: shine 4s infinite;
-  }
+  .total-bloco { background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%); padding: 24px; border-radius: 6px; margin-bottom: 16px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%); transition: background 0.4s ease;}
+  .total-bloco::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); animation: shine 4s infinite; }
   @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
   .total-bloco .label { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 2px; }
   .total-bloco .valor { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; color: #FFF; margin-top: 4px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
   
-  .total-bloco.liquido { 
-    background: linear-gradient(135deg, #111 0%, #222 100%); 
-    border: 1px solid var(--border-card); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); 
-  }
-  .total-bloco.liquido .valor { color: var(--vermelho); }
+  .total-bloco.liquido { background: linear-gradient(135deg, #111 0%, #222 100%); border: 1px solid var(--border-card); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+  .total-bloco.liquido .valor { color: var(--vermelho); transition: color 0.4s ease;}
 
   .breakdown { margin-top: 24px; border-top: 1px dashed var(--border-input); padding-top: 20px; }
   .breakdown h3 { font-family: 'Oswald', sans-serif; font-size: 15px; letter-spacing: 1.5px; color: var(--text-main); text-transform: uppercase; margin-bottom: 12px; }
@@ -316,38 +191,30 @@
   .linha .desc { color: var(--text-muted); font-family: 'Roboto', sans-serif; }
   .linha .val { font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
   
-  .linha.desconto .val { color: var(--vermelho); }
+  .linha.desconto .val { color: #e60000; }
   .linha.provento .val { color: #208E4E; }
   
-  .linha.subtotal { background-color: var(--item-bg); margin: 10px -16px 0 -16px; padding: 12px 16px; border-left: 3px solid var(--vermelho); }
+  .linha.subtotal { background-color: var(--item-bg); margin: 10px -16px 0 -16px; padding: 12px 16px; border-left: 3px solid var(--vermelho); transition: border-color 0.4s ease;}
   .linha.subtotal .desc { color: var(--text-main); font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;}
   .linha.subtotal .val { color: var(--vermelho); font-size: 16px; font-family: 'Oswald', sans-serif; }
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
-  /* ===== LISTA DE DIREITOS ===== */
+  /* LISTA DE DIREITOS */
   .result-list { display: flex; flex-direction: column; gap: 16px; }
   .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }
   .direito-item.sim { border-left-color: #208E4E; background-color: rgba(32, 142, 78, 0.05); }
-  .direito-item.nao { border-left-color: var(--vermelho); background-color: rgba(230, 0, 0, 0.05); }
+  .direito-item.nao { border-left-color: #e60000; background-color: rgba(230, 0, 0, 0.05); }
   .direito-nome { font-weight: 700; color: var(--text-main); font-size: 16px; text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 0.5px;}
   .direito-status { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
   .sim .direito-status { color: #208E4E; }
-  .nao .direito-status { color: var(--vermelho); }
+  .nao .direito-status { color: #e60000; }
   .direito-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
-  /* ===== ALERTA ===== */
-  .alerta {
-    background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px;
-    margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5;
-  }
-  .alerta strong { color: var(--vermelho) !important; font-weight: 700; }
+  .alerta { background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5; }
+  .alerta strong { color: var(--vermelho) !important; font-weight: 700; transition: color 0.4s ease;}
 
-  /* ===== FOOTER ===== */
-  footer {
-    background-color: var(--header-bg); border-top: 4px solid var(--vermelho); margin-top: auto;
-    padding: 30px 20px; text-align: center; position: relative;
-  }
+  footer { background-color: var(--header-bg); border-top: 4px solid var(--vermelho); margin-top: auto; padding: 30px 20px; text-align: center; position: relative; transition: border-color 0.4s ease;}
   footer::before { content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 4px; background: #111; }
   footer p { font-family: 'Roboto Condensed', sans-serif; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px;}
   footer p strong { color: #fff; font-weight: 700; }
@@ -362,7 +229,7 @@
   }
 </style>
 </head>
-<body>
+<body data-inst="pmesp">
 
 <header>
   <div class="header-content">
@@ -370,8 +237,8 @@
       <span></span><span></span><span></span>
     </button>
     <div class="header-text" id="header-text">
-      <h1>Simulador de <span>Soldo</span> SP</h1>
-      <p>Descubra quanto você realmente vai receber como PMESP (valor atualizado 2026)</p>
+      <h1>Simulador de <span>Soldo</span></h1>
+      <p id="header-desc">Descubra quanto você vai receber (valor atualizado 2026)</p>
     </div>
   </div>
 </header>
@@ -388,8 +255,16 @@
     <button class="close-btn" onclick="toggleMenu()">✕</button>
   </div>
   
+  <div class="inst-selector">
+    <label for="instituicao">Instituição</label>
+    <select id="instituicao" onchange="mudarInstituicao()">
+      <option value="pmesp" selected>PMESP - Polícia Militar</option>
+      <option value="pcsp">PCSP - Polícia Civil</option>
+    </select>
+  </div>
+
   <nav class="sidebar-nav">
-    <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Soldo</a>
+    <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Vencimentos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos">Direitos e Vantagens</a>
   </nav>
 
@@ -401,12 +276,10 @@
 
   <div class="sidebar-ad">
     <p>Policial padrão precisa de<br>equipamento padrão!</p>
-    
     <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
       <img src="IMG_0868.jpeg" alt="Coldre Tático">
       <span>Ver na Shopee</span>
     </a>
-
     <a href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
       <img src="IMG_0865.jpeg" alt="Suporte Articulado 3D">
       <span>Ver na Shopee</span>
@@ -417,38 +290,18 @@
 <main id="page-calculadora" class="page-section active">
   <div>
     <div class="card">
-      <h2>Identificação do Militar</h2>
+      <h2>Identificação do Servidor</h2>
       <div class="form-grid">
         <div class="field span-2">
-          <label>Posto / Graduação</label>
-          <select id="cargo">
-            <option value="cmtg">CMT G — Comandante Geral PM</option>
-            <option value="cel">CEL — Coronel PM</option>
-            <option value="tencel">TEN CEL — Tenente Coronel PM</option>
-            <option value="maj">MAJ — Major PM</option>
-            <option value="cap">CAP — Capitão PM</option>
-            <option value="1ten">1º TEN — 1º Tenente PM</option>
-            <option value="2ten">2º TEN — 2º Tenente PM</option>
-            <option value="aspof">ASP OF — Aspirante a Oficial PM</option>
-            <option value="alof4">AL OF 4º CFO</option>
-            <option value="alof3">AL OF 3º CFO</option>
-            <option value="alof2">AL OF 2º CFO</option>
-            <option value="alof1">AL OF 1º CFO</option>
-            <option value="subten">SUBTEN — Subtenente PM</option>
-            <option value="1sgt">1º SGT — 1º Sargento PM</option>
-            <option value="2sgt">2º SGT — 2º Sargento PM</option>
-            <option value="3sgt">3º SGT — 3º Sargento PM</option>
-            <option value="cabo">CABO PM</option>
-            <option value="sd1" selected>SD 1ª CL — Soldado PM 1ª Classe</option>
-            <option value="sd2">SD 2ª CL — Soldado PM 2ª Classe</option>
-          </select>
+          <label>Posto / Graduação / Cargo</label>
+          <select id="cargo"></select>
         </div>
         <div class="field">
           <label>Dias trabalhados (mês)</label>
           <input type="number" id="dias" value="30" min="0" max="31"/>
         </div>
         <div class="field">
-          <label>Dependentes (IRRF)</label>
+          <label>Dependentes (IRRF / IAMSPE)</label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
         </div>
       </div>
@@ -481,7 +334,8 @@
           <label>Ação de Insalubridade (retroativo)</label>
           <input type="number" id="acaoinsal" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
-        <div class="field">
+        
+        <div class="field pm-only">
           <label>Designação em Substituição [Função]</label>
           <select id="dsfuncao">
             <option value="0">Não tem</option>
@@ -491,10 +345,20 @@
             <option value="0.50">Coronel (50%)</option>
           </select>
         </div>
-        <div class="field">
+        <div class="field pm-only">
           <label>Designação em Substituição [Dias]</label>
           <input type="number" id="dsdias" value="0" min="0" max="31"/>
         </div>
+        <div class="field pm-only">
+          <label>Retribuição Função Ensino (SD PM)</label>
+          <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+
+        <div class="field pc-only">
+          <label>GAT - Acúmulo de Titularidade (Dias)</label>
+          <input type="number" id="gat_dias" value="0" min="0" max="31"/>
+        </div>
+
         <div class="field">
           <label>13º Salário (proporcional)</label>
           <select id="decimo">
@@ -515,21 +379,19 @@
           <label>Licença-Prêmio em Pecúnia (meses)</label>
           <input type="number" id="lpremio" value="0" min="0" max="12"/>
         </div>
-        <div class="field">
-          <label>Retribuição Função Ensino (SD PM)</label>
-          <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>Trabalho Extra — DEJEM e Atividade Delegada</h2>
+      <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
+      <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
+      
       <div class="form-grid">
-        <div class="field">
-          <label>Quantidade de DEJEM (diárias 8h)</label>
+        <div class="field pm-only">
+          <label>Qtd. de DEJEM (diárias 8h)</label>
           <input type="number" id="qtddejem" value="0" min="0" max="20"/>
         </div>
-        <div class="field">
+        <div class="field pm-only">
           <label>Região da DEJEM</label>
           <select id="regdejem">
             <option value="capital" selected>Capital / Grande SP</option>
@@ -537,23 +399,39 @@
             <option value="litoral">Litoral / RMVale</option>
           </select>
         </div>
-        <div class="field">
-          <label>Quantidade de DELEGADAS (diárias 8h)</label>
+        <div class="field pm-only">
+          <label>Qtd. de DELEGADAS (diárias 8h)</label>
           <input type="number" id="qtddel" value="0" min="0" max="20"/>
         </div>
-        <div class="field">
+        <div class="field pm-only">
           <label>Região da DELEGADA</label>
           <select id="regdel">
             <option value="capital" selected>Capital — SP (Lei 18.038/2023)</option>
-            <option value="estrategica">Capital — Região Estratégica (+30%)</option>
-            <option value="noturna">Capital — Período Noturno (+20%)</option>
-            <option value="interior">Outros municípios (UFESP base)</option>
+            <option value="estrategica">Capital — Estratégica (+30%)</option>
+            <option value="noturna">Capital — Noturno (+20%)</option>
+            <option value="interior">Outros (UFESP base)</option>
           </select>
         </div>
+
+        <div class="field pc-only">
+          <label>Qtd. de DEJEC (diárias 8h)</label>
+          <input type="number" id="qtddejec" value="0" min="0" max="10"/>
+        </div>
+        <div class="field pc-only">
+          <label>Tipo de Escala DEJEC</label>
+          <select id="tipodejec">
+            <option value="normal" selected>Convencional</option>
+            <option value="especial">Operação Especial</option>
+          </select>
+        </div>
+
         <div class="field span-2">
-          <div class="alerta">
-            <strong>DEJEM:</strong> diária paga pelo Estado, base UFESP 2026 (R$ 38,42), limite 10/mês.
-            <br><strong>Atividade Delegada:</strong> paga pelo município, coeficiente 1,2 UFESP (praças) ou 1,44 UFESP (oficiais) por hora × 8h.
+          <div class="alerta pm-only">
+            <strong>DEJEM:</strong> base UFESP 2026 (R$ 38,42), limite 10/mês.<br>
+            <strong>Atividade Delegada:</strong> coeficiente 1,2 UFESP (praças) ou 1,44 (oficiais).
+          </div>
+          <div class="alerta pc-only">
+            <strong>DEJEC:</strong> Diária Especial por Jornada Extraordinária de Trabalho Policial Civil. Limitada a 10 plantões mensais. Calculada sob a UFESP 2026 (R$ 38,42).
           </div>
         </div>
       </div>
@@ -563,37 +441,51 @@
       <h2>Descontos e Contribuições</h2>
       <div class="form-grid">
         <div class="field">
-          <label>Empréstimos / Associação</label>
+          <label>Empréstimos / Consignados</label>
           <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field">
-          <label>Pensão Alimentícia (% sobre líquido)</label>
+          <label>Pensão Alimentícia (% líquido)</label>
           <input type="number" id="pensao" value="0" min="0" max="100" step="0.01" placeholder="0%"/>
         </div>
-        <div class="field">
-          <label>FEPOM — Programa COPA</label>
-          <input type="number" id="fepomcopa" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        
+        <div class="field pm-only">
+          <label>FEPOM — P. COPA</label>
+          <input type="number" id="fepomcopa" value="0" min="0" step="0.01"/>
         </div>
-        <div class="field">
-          <label>FEPOM — Conservação Alojamento</label>
-          <input type="number" id="fepomalo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        <div class="field pm-only">
+          <label>FEPOM — Alojamento</label>
+          <input type="number" id="fepomalo" value="0" min="0" step="0.01"/>
         </div>
-        <div class="field">
+        <div class="field pm-only">
           <label>FEPOM — Rancho</label>
-          <input type="number" id="fepomran" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+          <input type="number" id="fepomran" value="0" min="0" step="0.01"/>
         </div>
-        <div class="field">
+        <div class="field pm-only">
           <label>D.A. XV Dezembro</label>
-          <input type="number" id="daxv" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+          <input type="number" id="daxv" value="0" min="0" step="0.01"/>
         </div>
-        <div class="field">
+        <div class="field pm-only">
           <label>Pró-Saúde PMESP</label>
-          <input type="number" id="prosaude" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+          <input type="number" id="prosaude" value="0" min="0" step="0.01"/>
         </div>
-        <div class="field">
-          <label>CBPM — Assist. Médica</label>
-          <input type="number" id="cbpm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        <div class="field pm-only">
+          <label>CBPM — Assistência</label>
+          <input type="number" id="cbpm" value="0" min="0" step="0.01"/>
         </div>
+
+        <div class="field pc-only">
+          <label>IAMSPE (Contribuição Médica)</label>
+          <select id="opt_iamspe">
+            <option value="1">Sim (2% titular + 2% dep.)</option>
+            <option value="0" selected>Não optante</option>
+          </select>
+        </div>
+        <div class="field pc-only">
+          <label>Sindicato / Associação</label>
+          <input type="number" id="sindicato" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+
       </div>
       <div class="alerta">
         <strong>Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.
@@ -624,8 +516,8 @@
         <div id="descontos"></div>
       </div>
 
-      <div class="alerta">
-        Cálculos baseados na LC 546/88 + reajuste de 10% (PL 226/2026) vigente desde 01/04/2026, e na UFESP 2026 (R$ 38,42).
+      <div class="alerta" id="rodape_alerta">
+        Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.
       </div>
     </div>
   </aside>
@@ -636,29 +528,31 @@
     <h2>Informações do Profissional</h2>
     <div class="form-grid" style="margin-bottom: 0;">
       <div class="field">
-        <label>Posto / Graduação</label>
+        <label>Nível da Carreira</label>
         <select id="cargo_dir">
-            <option value="oficial">Oficial (Tenente a Coronel)</option>
-            <option value="praca" selected>Praça (Soldado a Subtenente)</option>
+            <option value="oficial" class="pm-only">Oficial (Tenente a Coronel)</option>
+            <option value="praca" class="pm-only" selected>Praça (Soldado a Subtenente)</option>
+            <option value="delegado" class="pc-only">Autoridade Policial (Delegado)</option>
+            <option value="agente" class="pc-only" selected>Agente / Investigador / Escrivão / Outros</option>
         </select>
       </div>
       <div class="field">
         <label>Situação Atual</label>
         <select id="situacao_dir">
           <option value="ativa" selected>Serviço Ativo</option>
-          <option value="reserva">Reserva Remunerada / Aposentado</option>
-          <option value="reforma">Reforma (Invalidez/Idade)</option>
+          <option value="reserva">Inatividade (Reserva / Aposentado)</option>
+          <option value="reforma">Reforma / Invalidez</option>
         </select>
       </div>
       <div class="field span-2">
-        <label>Tempo de Serviço Militar (Anos)</label>
+        <label>Tempo de Contribuição Policial (Anos)</label>
         <input type="number" id="tempo_dir" value="10" min="0" max="40"/>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h2>Parecer de Direitos</h2>
+    <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
     <div class="result-list" id="resultados_dir">
       </div>
   </div>
@@ -669,21 +563,111 @@
 </footer>
 
 <script>
-/* === CONTROLE DE TEMA (DARK/LIGHT) === */
+/* === DADOS: PMESP E PCSP === */
+const CARGOS_PM = [
+  { val: "cmtg", text: "CMT G — Comandante Geral PM", padrao: 11524.04, gratif: 1798.01, oficial: true },
+  { val: "cel", text: "CEL — Coronel PM", padrao: 9495.92, gratif: 899.00, oficial: true },
+  { val: "tencel", text: "TEN CEL — Tenente Coronel PM", padrao: 8892.20, gratif: 480.85, oficial: true },
+  { val: "maj", text: "MAJ — Major PM", padrao: 8370.88, gratif: 0, oficial: true },
+  { val: "cap", text: "CAP — Capitão PM", padrao: 7911.55, gratif: 0, oficial: true },
+  { val: "1ten", text: "1º TEN — 1º Tenente PM", padrao: 7332.73, gratif: 0, oficial: true },
+  { val: "2ten", text: "2º TEN — 2º Tenente PM", padrao: 4975.71, gratif: 0, oficial: true },
+  { val: "aspof", text: "ASP OF — Aspirante a Oficial PM", padrao: 4766.58, gratif: 0, oficial: true },
+  { val: "alof4", text: "AL OF 4º CFO", padrao: 2757.47, gratif: 0, oficial: false },
+  { val: "alof3", text: "AL OF 3º CFO", padrao: 2662.21, gratif: 0, oficial: false },
+  { val: "alof2", text: "AL OF 2º CFO", padrao: 2452.34, gratif: 0, oficial: false },
+  { val: "alof1", text: "AL OF 1º CFO", padrao: 2337.49, gratif: 0, oficial: false },
+  { val: "subten", text: "SUBTEN — Subtenente PM", padrao: 4050.13, gratif: 0, oficial: false },
+  { val: "1sgt", text: "1º SGT — 1º Sargento PM", padrao: 3507.49, gratif: 0, oficial: false },
+  { val: "2sgt", text: "2º SGT — 2º Sargento PM", padrao: 3158.78, gratif: 0, oficial: false },
+  { val: "3sgt", text: "3º SGT — 3º Sargento PM", padrao: 2772.19, gratif: 0, oficial: false },
+  { val: "cabo", text: "CABO PM", padrao: 2686.30, gratif: 0, oficial: false },
+  { val: "sd1", text: "SD 1ª CL — Soldado PM 1ª Classe", padrao: 2486.11, gratif: 0, oficial: false, selected: true },
+  { val: "sd2", text: "SD 2ª CL — Soldado PM 2ª Classe", padrao: 2348.42, gratif: 0, oficial: false }
+];
+
+/* Projeções de valores base PCSP (Padrão s/ RETP) */
+const CARGOS_PC = [
+  { val: "del_esp", text: "Delegado de Polícia - Especial", padrao: 9385.00, gratif: 0, oficial: true, delegado: true },
+  { val: "del_1", text: "Delegado de Polícia - 1ª Classe", padrao: 8650.00, gratif: 0, oficial: true, delegado: true },
+  { val: "del_2", text: "Delegado de Polícia - 2ª Classe", padrao: 7950.00, gratif: 0, oficial: true, delegado: true },
+  { val: "del_3", text: "Delegado de Polícia - 3ª Classe", padrao: 7420.00, gratif: 0, oficial: true, delegado: true },
+  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8100.00, gratif: 0, oficial: true },
+  { val: "med_1", text: "Médico Legista / Perito - 1ª Classe", padrao: 7450.00, gratif: 0, oficial: true },
+  { val: "med_2", text: "Médico Legista / Perito - 2ª Classe", padrao: 6850.00, gratif: 0, oficial: true },
+  { val: "med_3", text: "Médico Legista / Perito - 3ª Classe", padrao: 6450.00, gratif: 0, oficial: true },
+  { val: "inv_esp", text: "Investigador / Escrivão - Especial", padrao: 4200.00, gratif: 0, oficial: false },
+  { val: "inv_1", text: "Investigador / Escrivão - 1ª Classe", padrao: 3820.00, gratif: 0, oficial: false },
+  { val: "inv_2", text: "Investigador / Escrivão - 2ª Classe", padrao: 3450.00, gratif: 0, oficial: false },
+  { val: "inv_3", text: "Investigador / Escrivão - 3ª Classe", padrao: 3120.00, gratif: 0, oficial: false, selected: true },
+  { val: "age_esp", text: "Agente / Aux. / Papi - Especial", padrao: 3550.00, gratif: 0, oficial: false },
+  { val: "age_1", text: "Agente / Aux. / Papi - 1ª Classe", padrao: 3150.00, gratif: 0, oficial: false },
+  { val: "age_2", text: "Agente / Aux. / Papi - 2ª Classe", padrao: 2850.00, gratif: 0, oficial: false },
+  { val: "age_3", text: "Agente / Aux. / Papi - 3ª Classe", padrao: 2600.00, gratif: 0, oficial: false }
+];
+
+let currTabela = {};
+
+function popularCargos(inst) {
+  const select = document.getElementById('cargo');
+  const dirSelect = document.getElementById('cargo_dir');
+  select.innerHTML = '';
+  currTabela = {};
+  
+  const lista = inst === 'pmesp' ? CARGOS_PM : CARGOS_PC;
+  
+  lista.forEach(c => {
+    currTabela[c.val] = c;
+    const opt = document.createElement('option');
+    opt.value = c.val;
+    opt.textContent = c.text;
+    if(c.selected) opt.selected = true;
+    select.appendChild(opt);
+  });
+
+  // Atualiza campo na aba de direitos para evitar seleções invisíveis
+  if (inst === 'pmesp') {
+    dirSelect.value = 'praca';
+  } else {
+    dirSelect.value = 'agente';
+  }
+}
+
+/* === CONTROLE INSTITUIÇÃO === */
+function mudarInstituicao() {
+  const inst = document.getElementById('instituicao').value;
+  document.body.setAttribute('data-inst', inst);
+  
+  const headerSpan = document.querySelector('.header-text h1 span');
+  const headerDesc = document.getElementById('header-desc');
+  document.getElementById('txt-inst-dir').innerText = inst.toUpperCase();
+
+  if(inst === 'pmesp') {
+    headerSpan.innerText = 'Soldo';
+    headerSpan.style.color = '#e60000';
+    headerDesc.innerText = 'Descubra quanto você vai receber como PMESP (valor 2026)';
+  } else {
+    headerSpan.innerText = 'Subsídio';
+    headerSpan.style.color = '#4f4f4f';
+    headerDesc.innerText = 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)';
+  }
+
+  popularCargos(inst);
+  calcular();
+  analisarDireitos();
+}
+
+/* === CONTROLE DE TEMA === */
 function initTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const btn = document.getElementById('theme-toggle');
-  if(currentTheme === 'dark') {
-    btn.innerHTML = '☀️ Modo Claro';
-  } else {
-    btn.innerHTML = '🌙 Modo Escuro';
-  }
+  if(currentTheme === 'dark') btn.innerHTML = '☀️ Modo Claro';
+  else btn.innerHTML = '🌙 Modo Escuro';
 }
 
 function toggleTheme() {
   const html = document.documentElement;
   const btn = document.getElementById('theme-toggle');
-  
   if (html.getAttribute('data-theme') === 'dark') {
     html.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
@@ -695,9 +679,7 @@ function toggleTheme() {
   }
 }
 
-initTheme();
-
-/* === CONTROLE DE MENU E PÁGINAS === */
+/* === CONTROLE DE MENU === */
 function toggleMenu() {
   document.getElementById('sidebar').classList.toggle('active');
   document.getElementById('menuOverlay').classList.toggle('active');
@@ -710,40 +692,11 @@ function switchPage(page) {
   document.getElementById('page-' + page).classList.add('active');
   document.getElementById('menu-' + page).classList.add('active');
   
-  const headerText = document.getElementById('header-text');
-  if(page === 'calculadora') {
-    headerText.innerHTML = '<h1>Simulador de <span>Soldo</span> SP</h1><p>Descubra quanto você realmente vai receber como PMESP (valor atualizado 2026)</p>';
-  } else {
-    headerText.innerHTML = '<h1>Direitos e <span>Vantagens</span></h1><p>Análise detalhada de benefícios da PMESP</p>';
-  }
-  
   document.getElementById('sidebar').classList.remove('active');
   document.getElementById('menuOverlay').classList.remove('active');
 }
 
 /* === LÓGICA DA CALCULADORA === */
-const TABELA = {
-  cmtg:   { padrao: 11524.04, gratif: 1798.01, oficial: true },
-  cel:    { padrao: 9495.92,  gratif: 899.00,  oficial: true },
-  tencel: { padrao: 8892.20,  gratif: 480.85,  oficial: true },
-  maj:    { padrao: 8370.88,  gratif: 0,       oficial: true },
-  cap:    { padrao: 7911.55,  gratif: 0,       oficial: true },
-  "1ten": { padrao: 7332.73,  gratif: 0,       oficial: true },
-  "2ten": { padrao: 4975.71,  gratif: 0,       oficial: true },
-  aspof:  { padrao: 4766.58,  gratif: 0,       oficial: true },
-  alof4:  { padrao: 2757.47,  gratif: 0,       oficial: false },
-  alof3:  { padrao: 2662.21,  gratif: 0,       oficial: false },
-  alof2:  { padrao: 2452.34,  gratif: 0,       oficial: false },
-  alof1:  { padrao: 2337.49,  gratif: 0,       oficial: false },
-  subten: { padrao: 4050.13,  gratif: 0,       oficial: false },
-  "1sgt": { padrao: 3507.49,  gratif: 0,       oficial: false },
-  "2sgt": { padrao: 3158.78,  gratif: 0,       oficial: false },
-  "3sgt": { padrao: 2772.19,  gratif: 0,       oficial: false },
-  cabo:   { padrao: 2686.30,  gratif: 0,       oficial: false },
-  sd1:    { padrao: 2486.11,  gratif: 0,       oficial: false },
-  sd2:    { padrao: 2348.42,  gratif: 0,       oficial: false }
-};
-
 const UFESP_2026 = 38.42;
 const ALIQ_PREV = 0.14;
 const fmt = v => "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
@@ -751,6 +704,12 @@ const fmt = v => "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, ma
 function valorDejem(regiao, oficial) {
   const base = oficial ? 1.2 : 1.0;
   let coef = regiao === "interior" ? 0.95 : (regiao === "litoral" ? 0.97 : 1.0);
+  return UFESP_2026 * 8 * base * coef;
+}
+
+function valorDejec(tipo, oficial) {
+  const base = oficial ? 1.2 : 1.0;
+  let coef = tipo === "especial" ? 1.20 : 1.0; // Exemplo de acréscimo operacional
   return UFESP_2026 * 8 * base * coef;
 }
 
@@ -784,7 +743,11 @@ function subtotal(desc, val) {
 }
 
 function calcular() {
-  const c = TABELA[document.getElementById("cargo").value];
+  const inst = document.getElementById("instituicao").value;
+  const cargoID = document.getElementById("cargo").value;
+  if(!currTabela[cargoID]) return;
+  
+  const c = currTabela[cargoID];
   const dias = parseFloat(document.getElementById("dias").value) || 0;
   const fator = Math.min(dias / 30, 1.0333);
   const quinq = parseInt(document.getElementById("quinquenios").value) || 0;
@@ -793,69 +756,109 @@ function calcular() {
   const insal = parseFloat(document.getElementById("insalubridade").value) || 0;
   
   const padrao = c.padrao * fator;
-  const retp = c.padrao * fator;
-  const gratifRepres = c.gratif * fator;
+  const retp = c.padrao * fator; // Ambos têm RETP de 100%
+  const gratifRepres = (c.gratif || 0) * fator;
   const valQuinq = (c.padrao + c.padrao) * 0.05 * quinq;
   const valSexta = sexta ? (c.padrao + c.padrao) / 6 : 0;
   
-  const valDS = (parseFloat(document.getElementById("dsfuncao").value) || 0) * c.padrao * ((parseInt(document.getElementById("dsdias").value) || 0) / 30);
   const val13 = (parseFloat(document.getElementById("decimo").value) || 0) * (c.padrao + c.padrao);
   const feriasD = parseInt(document.getElementById("ferias").value) || 0;
   const valFerias = feriasD > 0 ? ((c.padrao + c.padrao) / 30) * feriasD * (4/3) : 0;
   
   const valLP = (parseInt(document.getElementById("lpremio").value) || 0) * (c.padrao + c.padrao);
   const abonoT = parseFloat(document.getElementById("abonotransf").value) || 0;
-  const ensino = parseFloat(document.getElementById("ensino").value) || 0;
   const acaoInsal = parseFloat(document.getElementById("acaoinsal").value) || 0;
 
-  const valDejem = (parseInt(document.getElementById("qtddejem").value) || 0) * valorDejem(document.getElementById("regdejem").value, c.oficial);
-  const valDel = (parseInt(document.getElementById("qtddel").value) || 0) * valorDelegada(document.getElementById("regdel").value, c.oficial);
+  // Variáveis específicas
+  let valDS = 0, ensino = 0, valDejem = 0, valDel = 0;
+  let valGat = 0, valDejec = 0;
 
-  let proventosHTML = linha("Padrão", padrao, "provento") + linha("RETP", retp, "provento");
+  if (inst === 'pmesp') {
+    valDS = (parseFloat(document.getElementById("dsfuncao").value) || 0) * c.padrao * ((parseInt(document.getElementById("dsdias").value) || 0) / 30);
+    ensino = parseFloat(document.getElementById("ensino").value) || 0;
+    valDejem = (parseInt(document.getElementById("qtddejem").value) || 0) * valorDejem(document.getElementById("regdejem").value, c.oficial);
+    valDel = (parseInt(document.getElementById("qtddel").value) || 0) * valorDelegada(document.getElementById("regdel").value, c.oficial);
+  } else {
+    if (c.delegado) {
+        // GAT aprox 1/3 do salário para acúmulo de DP
+        valGat = ((c.padrao + c.padrao) / 3) * ((parseInt(document.getElementById("gat_dias").value) || 0) / 30);
+    }
+    valDejec = (parseInt(document.getElementById("qtddejec").value) || 0) * valorDejec(document.getElementById("tipodejec").value, c.oficial);
+  }
+
+  let proventosHTML = linha(inst==='pmesp' ? "Padrão" : "Salário Base", padrao, "provento") + linha("RETP (100%)", retp, "provento");
   if(valQuinq) proventosHTML += linha(`Quinquênios (${quinq})`, valQuinq, "provento");
   if(valSexta) proventosHTML += linha("Sexta-parte", valSexta, "provento");
   if(insal) proventosHTML += linha("Insalubridade", insal, "provento");
   if(gratifRepres) proventosHTML += linha("Representação", gratifRepres, "provento");
-  if(valDS) proventosHTML += linha("Desig. Substituição", valDS, "provento");
+  
+  if(inst === 'pmesp') {
+      if(valDS) proventosHTML += linha("Desig. Substituição", valDS, "provento");
+      if(ensino) proventosHTML += linha("Retrib. Ensino", ensino, "provento");
+      if(valDejem) proventosHTML += linha("DEJEM", valDejem, "provento");
+      if(valDel) proventosHTML += linha("Ativ. Delegada", valDel, "provento");
+  } else {
+      if(valGat) proventosHTML += linha("GAT (Acúmulo Tit.)", valGat, "provento");
+      if(valDejec) proventosHTML += linha("DEJEC", valDejec, "provento");
+  }
+
   if(acaoInsal) proventosHTML += linha("Ação Insalub.", acaoInsal, "provento");
   if(val13) proventosHTML += linha("13º Salário", val13, "provento");
   if(valFerias) proventosHTML += linha("Férias + 1/3", valFerias, "provento");
   if(valLP) proventosHTML += linha("Licença-prêmio", valLP, "provento");
   if(abonoT) proventosHTML += linha("Abono Transf.", abonoT, "provento");
-  if(ensino) proventosHTML += linha("Retrib. Ensino", ensino, "provento");
-  if(valDejem) proventosHTML += linha("DEJEM", valDejem, "provento");
-  if(valDel) proventosHTML += linha("Ativ. Delegada", valDel, "provento");
 
-  const baseFolha = padrao + retp + valQuinq + valSexta + insal + gratifRepres + valDS + acaoInsal + val13 + valFerias + valLP + abonoT + ensino;
-  const bruto = baseFolha + valDejem + valDel;
+  const baseFolha = padrao + retp + valQuinq + valSexta + insal + gratifRepres + valDS + valGat + acaoInsal + val13 + valFerias + valLP + abonoT + ensino;
+  const bruto = baseFolha + valDejem + valDel + valDejec;
   proventosHTML += subtotal("Total Bruto", bruto);
 
-  const sprev = (padrao + retp + valQuinq + valSexta + valDS) * ALIQ_PREV;
+  // Descontos
+  const sprev = (padrao + retp + valQuinq + valSexta + valDS + valGat) * ALIQ_PREV;
   const irrf = calcularIRRF(baseFolha - sprev, deps);
   
   const empr = parseFloat(document.getElementById("emprestimo").value) || 0;
-  const fepomCopa = parseFloat(document.getElementById("fepomcopa").value) || 0;
-  const fepomAlo = parseFloat(document.getElementById("fepomalo").value) || 0;
-  const fepomRan = parseFloat(document.getElementById("fepomran").value) || 0;
-  const daxv = parseFloat(document.getElementById("daxv").value) || 0;
-  const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
-  const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
   
+  let descEspecificos = 0;
+  let descHTML = "";
+
+  if(inst === 'pmesp') {
+      const fepomCopa = parseFloat(document.getElementById("fepomcopa").value) || 0;
+      const fepomAlo = parseFloat(document.getElementById("fepomalo").value) || 0;
+      const fepomRan = parseFloat(document.getElementById("fepomran").value) || 0;
+      const daxv = parseFloat(document.getElementById("daxv").value) || 0;
+      const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
+      const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
+      descEspecificos = fepomCopa + fepomAlo + fepomRan + daxv + prosaude + cbpm;
+      
+      if(fepomCopa) descHTML += linha("FEPOM COPA", fepomCopa, "desconto");
+      if(fepomAlo) descHTML += linha("FEPOM Alojamento", fepomAlo, "desconto");
+      if(fepomRan) descHTML += linha("FEPOM Rancho", fepomRan, "desconto");
+      if(daxv) descHTML += linha("D.A. XV Dezembro", daxv, "desconto");
+      if(prosaude) descHTML += linha("Pró-Saúde PMESP", prosaude, "desconto");
+      if(cbpm) descHTML += linha("CBPM Assist.", cbpm, "desconto");
+  } else {
+      const iamspeOpt = parseInt(document.getElementById("opt_iamspe").value) || 0;
+      let iamspeVal = 0;
+      if(iamspeOpt === 1) {
+          iamspeVal = (padrao + retp + valQuinq + valSexta) * 0.02 * (1 + deps);
+      }
+      const sindicato = parseFloat(document.getElementById("sindicato").value) || 0;
+      descEspecificos = iamspeVal + sindicato;
+
+      if(iamspeVal) descHTML += linha("IAMSPE (2% + dep)", iamspeVal, "desconto");
+      if(sindicato) descHTML += linha("Sindicato / Assoc.", sindicato, "desconto");
+  }
+
   const pensaoPct = parseFloat(document.getElementById("pensao").value) || 0;
-  const pensao = (bruto - sprev - irrf - empr - fepomCopa - fepomAlo - fepomRan - daxv - prosaude - cbpm) * (pensaoPct / 100);
+  const pensao = (bruto - sprev - irrf - empr - descEspecificos) * (pensaoPct / 100);
 
   let descontosHTML = linha("SPPREV (14%)", sprev, "desconto");
   if(irrf) descontosHTML += linha("IRRF", irrf, "desconto");
   if(pensao) descontosHTML += linha(`Pensão (${pensaoPct}%)`, pensao, "desconto");
-  if(empr) descontosHTML += linha("Empréstimos", empr, "desconto");
-  if(fepomCopa) descontosHTML += linha("FEPOM COPA", fepomCopa, "desconto");
-  if(fepomAlo) descontosHTML += linha("FEPOM Alojamento", fepomAlo, "desconto");
-  if(fepomRan) descontosHTML += linha("FEPOM Rancho", fepomRan, "desconto");
-  if(daxv) descontosHTML += linha("D.A. XV Dezembro", daxv, "desconto");
-  if(prosaude) descontosHTML += linha("Pró-Saúde PMESP", prosaude, "desconto");
-  if(cbpm) descontosHTML += linha("CBPM Assist.", cbpm, "desconto");
+  if(empr) descontosHTML += linha("Empréstimos / Consig.", empr, "desconto");
+  descontosHTML += descHTML;
 
-  const totalDesc = sprev + irrf + pensao + empr + fepomCopa + fepomAlo + fepomRan + daxv + prosaude + cbpm;
+  const totalDesc = sprev + irrf + pensao + empr + descEspecificos;
   descontosHTML += subtotal("Total Descontos", totalDesc);
 
   document.getElementById("bruto").textContent = fmt(bruto);
@@ -864,13 +867,9 @@ function calcular() {
   document.getElementById("descontos").innerHTML = descontosHTML;
 }
 
-document.querySelectorAll("#page-calculadora input, #page-calculadora select").forEach(el => {
-  el.addEventListener("input", calcular); el.addEventListener("change", calcular);
-});
-calcular();
-
-/* === LÓGICA DE DIREITOS E VANTAGENS === */
+/* === LÓGICA DE DIREITOS === */
 function analisarDireitos() {
+  const inst = document.getElementById("instituicao").value;
   const situacao = document.getElementById('situacao_dir').value;
   const tempo = parseInt(document.getElementById('tempo_dir').value) || 0;
   const inativo = (situacao === 'reserva' || situacao === 'reforma');
@@ -880,41 +879,58 @@ function analisarDireitos() {
   direitos.push({
     nome: "RETP (Regime Especial de Trabalho Policial)",
     tem: true,
-    desc: "Adicional de 100% sobre o valor do Padrão. Integrado aos proventos tanto na ativa quanto na inatividade."
+    desc: "Adicional de 100% sobre o valor base. Integrado aos proventos tanto na ativa quanto na inatividade."
   });
 
   const q = Math.floor(tempo / 5);
   direitos.push({
     nome: "Adicional por Tempo de Serviço (Quinquênio)",
     tem: q > 0,
-    desc: q > 0 ? `Você possui direito a ${q} quinquênio(s). Cada um representa 5% de acréscimo sobre o vencimento base + RETP.` : "Adquirido a cada 5 anos de efetivo serviço. Você ainda não completou o 1º período."
+    desc: q > 0 ? `Você possui direito a ${q} quinquênio(s). Cada um representa 5% de acréscimo sobre os vencimentos totais.` : "Adquirido a cada 5 anos de efetivo serviço."
   });
 
   direitos.push({
     nome: "Sexta-Parte",
     tem: tempo >= 20,
-    desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos totais) por ter completado 20 anos de serviço." : "Direito adquirido apenas ao completar 20 anos de efetivo serviço."
+    desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos totais) por ter completado 20 anos de serviço." : "Adquirido ao completar 20 anos de efetivo serviço público."
   });
 
   direitos.push({
     nome: "Adicional de Insalubridade",
     tem: !inativo,
-    desc: !inativo ? "Pago aos militares do serviço ativo que exercem atividades em condições insalubres." : "O adicional de insalubridade é uma vantagem pro labore faciendo, não se incorporando aos proventos de aposentadoria (Reserva/Reforma), salvo em regras de transição judicializadas."
+    desc: !inativo ? "Pago aos policiais da ativa sob risco / condições insalubres." : "Não se incorpora automaticamente aos proventos da inatividade, salvo ingresso judicial ou regra de transição específica."
   });
 
-  if (inativo) {
-    direitos.push({
-      nome: "Paridade e Integralidade",
-      tem: true,
-      desc: "Militares estaduais possuem regras próprias de inatividade (SPSM). Aqueles que cumpriram os requisitos mantêm o direito à integralidade do último soldo e paridade com a ativa."
-    });
+  if (inst === 'pmesp') {
+      if (inativo) {
+        direitos.push({
+          nome: "Sistema de Proteção Social dos Militares (SPSM)",
+          tem: true,
+          desc: "Militares possuem regras próprias. Aqueles que cumpriram os requisitos mantêm o direito à integralidade do último soldo e paridade plena."
+        });
+      }
+      direitos.push({
+        nome: "Auxílio Fardamento",
+        tem: !inativo,
+        desc: !inativo ? "Abono pago anualmente na data do aniversário para manutenção do fardamento militar." : "Verba indenizatória restrita ao pessoal da ativa."
+      });
+  } else {
+      if (inativo) {
+        direitos.push({
+          nome: "Aposentadoria Policial Civil (LC 1354/2020)",
+          tem: true,
+          desc: "Para a paridade e integralidade, a nova lei exige 55 anos de idade, 30 anos de contribuição (sendo 20 estritamente policiais para homens; 25/15 para mulheres). Regras de transição garantem direitos anteriores à reforma da previdência estadual."
+        });
+      }
+      const cargoPc = document.getElementById("cargo_dir").value;
+      if (cargoPc === 'delegado') {
+          direitos.push({
+            nome: "ADPJ (Direção da Ativ. Polícia Judiciária)",
+            tem: !inativo, // Simplificação, na prática pode incorporar proporcionalmente
+            desc: !inativo ? "Gratificação específica da carreira de Delegado de Polícia para funções de comando e direção judiciária." : "Na inatividade o cálculo de incorporação segue as regras de contribuição previdenciária incidentes."
+          });
+      }
   }
-
-  direitos.push({
-    nome: "Auxílio Fardamento",
-    tem: !inativo,
-    desc: !inativo ? "Abono pago anualmente na data do aniversário para manutenção do fardamento militar." : "Verba indenizatória restrita ao pessoal do serviço ativo."
-  });
 
   const container = document.getElementById('resultados_dir');
   container.innerHTML = '';
@@ -929,9 +945,16 @@ function analisarDireitos() {
   });
 }
 
-document.querySelectorAll("#page-direitos input, #page-direitos select").forEach(el => {
-  el.addEventListener("input", analisarDireitos); el.addEventListener("change", analisarDireitos);
+// Event Listeners Globais
+document.querySelectorAll("input, select").forEach(el => {
+  el.addEventListener("input", () => { calcular(); analisarDireitos(); }); 
+  el.addEventListener("change", () => { calcular(); analisarDireitos(); });
 });
+
+// Inicialização
+initTheme();
+popularCargos('pmesp');
+calcular();
 analisarDireitos();
 </script>
 
