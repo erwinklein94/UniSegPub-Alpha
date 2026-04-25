@@ -1764,21 +1764,32 @@ function calcular() {
   const dependentes = valEl('dependentes');
 
   // Padrão e RETP/Verba representação
-  const padrao = c.padrao * fatorDias;
-  const retpFator = c.retpFator || 1.0;
-  const retp = (c.retpFator && c.retpFator !== 1) ? padrao * (c.retpFator - 0) : 0;
-  // Para PMESP/PCSP: gratif fixa + RETP=padrao*1
-  // Para PMERJ/PCERJ: padrao alta carga gratificada
-  let gratif = (c.gratif || 0) * fatorDias;
-  let retpOuVerba = 0;
-  let retpLabel = "RETP";
-  if (inst === 'pmerj' || inst === 'pcerj') {
-    retpOuVerba = padrao * (c.retpFator - 1); // ex: 3.344 - 1 = 2.344x sobre padrao
-    retpLabel = c.retpLabel || "Gratificações Adicionais";
-  } else {
-    retpOuVerba = padrao; // RETP base SP é igual ao padrão (proporção 1:1 vencimento×representação)
-    retpLabel = (inst === 'pmesp') ? "RETP (Representação Patrimonial)" : "Verba Representação";
-  }
+const padrao = c.padrao * fatorDias;
+const retpFator = c.retpFator || 0;
+
+// Gratificação fixa do cargo, quando existir
+let gratif = (c.gratif || 0) * fatorDias;
+
+let retpOuVerba = 0;
+let retpLabel = "RETP";
+
+// SP: mantém a lógica atual de RETP/Verba Representação
+if (inst === 'pmesp' || inst === 'pcsp') {
+  retpOuVerba = padrao;
+  retpLabel = (inst === 'pmesp') ? "RETP (Representação Patrimonial)" : "Verba Representação";
+}
+
+// RJ: usa o fator próprio já cadastrado no cargo
+else if (inst === 'pmerj' || inst === 'pcerj') {
+  retpOuVerba = retpFator > 1 ? padrao * (retpFator - 1) : 0;
+  retpLabel = c.retpLabel || "Gratificações Adicionais";
+}
+
+// MG e BA: não possuem Verba Representação automática neste simulador
+else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
+  retpOuVerba = 0;
+  retpLabel = "";
+}
 
   // ===== Tempo de serviço =====
   let tempoVal = 0, tempoLabel = "";
