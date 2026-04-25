@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Simulador SegPub - Sudeste</title>
+<title>Simulador e Direitos SegPub SP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -15,43 +15,94 @@
 
 <style>
   :root {
+    /* Paleta Tática e Tons Base */
     --vermelho: #e60000;
     --vermelho-escuro: #a30000; 
-    --bg-site: #f0f2f5; --bg-card: #ffffff; --bg-input: #f3f4f6;
-    --border-card: #e5e7eb; --border-input: #d1d5db;
-    --text-main: #111827; --text-muted: #6b7280;
-    --header-bg: #111827; --header-text: #ffffff;
-    --item-bg: #f9fafb; --item-hover: #f3f4f6;
+    --azul: #1E3084;
+    --dourado: #DFB63E;
+
+    /* Tema Claro */
+    --bg-site: #f0f2f5;
+    --bg-card: #ffffff;
+    --bg-input: #f3f4f6;
+    --border-card: #e5e7eb;
+    --border-input: #d1d5db;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --header-bg: #111827;
+    --header-text: #ffffff;
+    --item-bg: #f9fafb;
+    --item-hover: #f3f4f6;
   }
 
   [data-theme="dark"] {
-    --bg-site: #0a0a0c; --bg-card: #141518; --bg-input: #1e1f24;
-    --border-card: #2c2f36; --border-input: #373a43;
-    --text-main: #f3f4f6; --text-muted: #9ca3af;
-    --header-bg: #050506; --header-text: #ffffff;
-    --item-bg: #1a1b1f; --item-hover: #23252a;
+    /* Tema Escuro */
+    --bg-site: #0a0a0c;
+    --bg-card: #141518;
+    --bg-input: #1e1f24;
+    --border-card: #2c2f36;
+    --border-input: #373a43;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --header-bg: #050506;
+    --header-text: #ffffff;
+    --item-bg: #1a1b1f;
+    --item-hover: #23252a;
   }
 
-  /* Cores Dinâmicas por Instituição */
-  body[data-inst="pm"] { --cor-destaque: #e60000; --cor-destaque-escuro: #a30000; }
-  body[data-inst="pc"] { --cor-destaque: #4f4f4f; --cor-destaque-escuro: #2b2b2b; }
+  /* Variáveis dinâmicas de cor baseadas na Instituição */
+  body[data-inst="pcsp"] {
+    --vermelho: #4f4f4f; /* Tom cinza/branco/preto da PCSP */
+    --vermelho-escuro: #2b2b2b;
+  }
   
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Roboto', sans-serif; background-color: var(--bg-site); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; transition: 0.3s ease; }
-  [data-theme="dark"] body { background-image: radial-gradient(circle at 15% 50%, rgba(230, 0, 0, 0.04), transparent 25%), radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%); }
 
-  header { background-color: var(--header-bg); border-bottom: 4px solid var(--cor-destaque); padding: 24px 0; position: relative; overflow: hidden; flex-shrink: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: border-color 0.4s ease; }
-  header::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.01) 20px, rgba(255,255,255,0.01) 40px); pointer-events: none; }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-site);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  [data-theme="dark"] body {
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(230, 0, 0, 0.04), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
+  }
+
+  /* HEADER */
+  header {
+    background-color: var(--header-bg);
+    border-bottom: 4px solid var(--vermelho);
+    padding: 24px 0;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    transition: border-color 0.4s ease;
+  }
+  header::before {
+    content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.01) 20px, rgba(255,255,255,0.01) 40px);
+    pointer-events: none;
+  }
+  
   .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; position: relative; }
+  
   .header-text h1 { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--header-text); line-height: 1.1; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-  .header-text h1 span { color: var(--cor-destaque); transition: color 0.4s ease; }
+  .header-text h1 span { color: var(--vermelho); transition: color 0.4s ease; }
   .header-text p { font-family: 'Roboto Condensed', sans-serif; font-size: 14px; font-weight: 400; color: #a0a0a5; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
   
   .stripe-container { display: flex; flex-direction: column; }
-  .stripe { height: 4px; background: var(--cor-destaque); transition: background 0.4s ease; }
+  .stripe { height: 4px; background: var(--vermelho); transition: background 0.4s ease; }
   .stripe-white { height: 2px; background: #ffffff; }
   .stripe-black { height: 4px; background: #111; }
 
+  /* MENU LATERAL */
   .menu-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 10px; z-index: 101; }
   .menu-btn span { width: 26px; height: 3px; background: var(--header-text); border-radius: 2px; transition: 0.3s; }
   .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: 0.3s ease; z-index: 100; }
@@ -62,63 +113,76 @@
   .sidebar-header { display: flex; justify-content: space-between; align-items: center; padding: 24px; border-bottom: 1px solid var(--border-card); background-color: var(--header-bg); }
   .sidebar-header h2 { font-family: 'Oswald', sans-serif; font-size: 20px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
   .close-btn { background: none; border: none; font-size: 22px; color: #fff; cursor: pointer; transition: 0.2s; }
-  .close-btn:hover { color: var(--cor-destaque); }
+  .close-btn:hover { color: var(--vermelho); }
   
-  .inst-selector { padding: 20px 24px; border-bottom: 1px solid var(--border-card); background-color: var(--item-bg); display: flex; flex-direction: column; gap: 12px;}
-  .inst-selector label { display: block; font-family: 'Oswald', sans-serif; font-size: 13px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; letter-spacing: 1px; }
-  .inst-selector select { width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; border-radius: 4px; cursor: pointer; outline: none; transition: 0.2s; }
-  .inst-selector select:focus { border-color: var(--cor-destaque); }
+  /* INSTITUIÇÃO SELECTOR (NOVO) */
+  .inst-selector { padding: 20px 24px; border-bottom: 1px solid var(--border-card); background-color: var(--item-bg); }
+  .inst-selector label { display: block; font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
+  .inst-selector select { width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; border-radius: 4px; cursor: pointer; outline: none; }
+  .inst-selector select:focus { border-color: var(--vermelho); }
 
   .sidebar-nav { display: flex; flex-direction: column; padding: 20px 0; flex-shrink: 0; }
   .sidebar-nav a { padding: 16px 24px; text-decoration: none; color: var(--text-main); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 14px; border-left: 4px solid transparent; transition: 0.2s; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
   .sidebar-nav a:hover { background-color: var(--item-hover); }
-  .sidebar-nav a.active { border-left-color: var(--cor-destaque); background-color: rgba(100, 100, 100, 0.05); color: var(--cor-destaque); }
+  .sidebar-nav a.active { border-left-color: var(--vermelho); background-color: rgba(100, 100, 100, 0.05); color: var(--vermelho); }
 
-  .theme-toggle-container { padding: 0 24px 20px 24px; margin-bottom: 20px; }
+  .theme-toggle-container { padding: 0 24px 20px 24px; border-bottom: 1px solid var(--border-card); margin-bottom: 20px; }
   .btn-theme { width: 100%; padding: 12px; border: 1px solid var(--border-input); background-color: var(--bg-input); color: var(--text-main); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 13px; border-radius: 6px; cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .btn-theme:hover { border-color: var(--vermelho); color: var(--vermelho); }
 
+  .sidebar-ad { margin: auto 24px 24px 24px; display: flex; flex-direction: column; gap: 15px; }
+  .sidebar-ad p { font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0px; line-height: 1.2; text-align: center; border-bottom: 2px solid var(--vermelho); padding-bottom: 8px; display: inline-block; align-self: center; }
+  .sidebar-ad a { display: block; text-decoration: none; background-color: var(--item-bg); border-radius: 8px; overflow: hidden; transition: 0.2s; border: 1px solid var(--border-input); }
+  .sidebar-ad a:hover { border-color: var(--vermelho); transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
+  .sidebar-ad img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border-input); }
+  .sidebar-ad span { display: block; padding: 12px; font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; color: var(--text-main); text-align: center; text-transform: uppercase; }
+
+  /* SEÇÕES E LAYOUT */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; } 
   #page-direitos.active { display: block; } 
+  
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
   #page-direitos { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
   @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
 
+  /* CARDS E FORMS */
   .card { background-color: var(--bg-card); border: 1px solid var(--border-card); padding: 28px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); position: relative; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); transition: border-color 0.3s ease; }
-  .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--cor-destaque), var(--cor-destaque-escuro)); transition: background 0.4s ease;}
+  .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro)); transition: background 0.4s ease;}
+  
   .card h2 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-input); display: flex; align-items: center; gap: 10px; }
-  .card h2::before { content: ""; display: block; width: 6px; height: 20px; background-color: var(--cor-destaque); transform: skewX(-15deg); transition: background-color 0.4s ease;}
+  .card h2::before { content: ""; display: block; width: 6px; height: 20px; background-color: var(--vermelho); transform: skewX(-15deg); transition: background-color 0.4s ease;}
 
   .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .field { display: flex; flex-direction: column; }
   .field.span-2 { grid-column: span 2; }
   
-  /* LÓGICA CSS PARA FILTRAR CAMPOS POR ESTADO E INSTITUIÇÃO */
-  .pm-only, .pc-only, .sp-only, .rj-only, .mg-only, .es-only { display: none; }
-  
-  body[data-inst="pm"] .pm-only { display: flex; }
-  body[data-inst="pc"] .pc-only { display: flex; }
-  
-  body[data-estado="sp"] .sp-only { display: flex; }
-  body[data-estado="rj"] .rj-only { display: flex; }
-  body[data-estado="mg"] .mg-only { display: flex; }
-  body[data-estado="es"] .es-only { display: flex; }
+  /* CONTROLE DE EXIBIÇÃO POR INSTITUIÇÃO */
+  .pm-only { display: flex; }
+  .pc-only { display: none; }
+  body[data-inst="pcsp"] .pm-only { display: none !important; }
+  body[data-inst="pcsp"] .pc-only { display: flex !important; }
 
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
-  input[type="number"], input[type="text"], select { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
-  input:focus, select:focus { outline: none; border-color: var(--cor-destaque); box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.15); }
 
+  input[type="number"], input[type="text"], input[type="date"], select { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
+  input:focus, select:focus { outline: none; border-color: var(--vermelho); box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.15); }
+  input::placeholder { color: var(--text-muted); }
+
+  /* RESUMO LATERAL */
   .resumo { position: sticky; top: 24px; align-self: start; }
-  .total-bloco { background: linear-gradient(135deg, var(--cor-destaque) 0%, var(--cor-destaque-escuro) 100%); padding: 24px; border-radius: 6px; margin-bottom: 16px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%); transition: background 0.4s ease;}
+  
+  .total-bloco { background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%); padding: 24px; border-radius: 6px; margin-bottom: 16px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%); transition: background 0.4s ease;}
   .total-bloco::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%); animation: shine 4s infinite; }
   @keyframes shine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
   .total-bloco .label { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 2px; }
   .total-bloco .valor { font-family: 'Oswald', sans-serif; font-size: 36px; font-weight: 700; color: #FFF; margin-top: 4px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
   
   .total-bloco.liquido { background: linear-gradient(135deg, #111 0%, #222 100%); border: 1px solid var(--border-card); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
-  .total-bloco.liquido .valor { color: var(--cor-destaque); transition: color 0.4s ease;}
+  .total-bloco.liquido .valor { color: var(--vermelho); transition: color 0.4s ease;}
 
   .breakdown { margin-top: 24px; border-top: 1px dashed var(--border-input); padding-top: 20px; }
   .breakdown h3 { font-family: 'Oswald', sans-serif; font-size: 15px; letter-spacing: 1.5px; color: var(--text-main); text-transform: uppercase; margin-bottom: 12px; }
@@ -126,33 +190,55 @@
   .linha:last-child { border-bottom: none; }
   .linha .desc { color: var(--text-muted); font-family: 'Roboto', sans-serif; }
   .linha .val { font-family: 'Roboto Condensed', sans-serif; font-weight: 700; color: var(--text-main); font-variant-numeric: tabular-nums; }
+  
   .linha.desconto .val { color: #e60000; }
   .linha.provento .val { color: #208E4E; }
-  .linha.subtotal { background-color: var(--item-bg); margin: 10px -16px 0 -16px; padding: 12px 16px; border-left: 3px solid var(--cor-destaque); transition: border-color 0.4s ease;}
+  
+  .linha.subtotal { background-color: var(--item-bg); margin: 10px -16px 0 -16px; padding: 12px 16px; border-left: 3px solid var(--vermelho); transition: border-color 0.4s ease;}
   .linha.subtotal .desc { color: var(--text-main); font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;}
-  .linha.subtotal .val { color: var(--cor-destaque); font-size: 16px; font-family: 'Oswald', sans-serif; }
+  .linha.subtotal .val { color: var(--vermelho); font-size: 16px; font-family: 'Oswald', sans-serif; }
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
-  .alerta { background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5; }
-  .alerta strong { color: var(--cor-destaque) !important; font-weight: 700; transition: color 0.4s ease;}
+  /* LISTA DE DIREITOS */
+  .result-list { display: flex; flex-direction: column; gap: 16px; }
+  .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); }
+  .direito-item.sim { border-left-color: #208E4E; background-color: rgba(32, 142, 78, 0.05); }
+  .direito-item.nao { border-left-color: #e60000; background-color: rgba(230, 0, 0, 0.05); }
+  .direito-nome { font-weight: 700; color: var(--text-main); font-size: 16px; text-transform: uppercase; font-family: 'Oswald', sans-serif; letter-spacing: 0.5px;}
+  .direito-status { font-family: 'Roboto Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .sim .direito-status { color: #208E4E; }
+  .nao .direito-status { color: #e60000; }
+  .direito-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
 
-  footer { background-color: var(--header-bg); border-top: 4px solid var(--cor-destaque); margin-top: auto; padding: 30px 20px; text-align: center; position: relative; transition: border-color 0.4s ease;}
+  .alerta { background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5; }
+  .alerta strong { color: var(--vermelho) !important; font-weight: 700; transition: color 0.4s ease;}
+
+  footer { background-color: var(--header-bg); border-top: 4px solid var(--vermelho); margin-top: auto; padding: 30px 20px; text-align: center; position: relative; transition: border-color 0.4s ease;}
   footer::before { content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 4px; background: #111; }
   footer p { font-family: 'Roboto Condensed', sans-serif; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px;}
   footer p strong { color: #fff; font-weight: 700; }
+
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; gap: 12px; }
+    .field.span-2 { grid-column: span 1; }
+    .header-text h1 { font-size: 22px; }
+    .header-text p { font-size: 11px; }
+    .total-bloco .valor { font-size: 28px; }
+    .card { padding: 20px; }
+  }
 </style>
 </head>
-<body data-estado="sp" data-inst="pm">
+<body data-inst="pmesp">
 
 <header>
   <div class="header-content">
-    <button class="menu-btn" onclick="toggleMenu()">
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
     <div class="header-text" id="header-text">
-      <h1>Simulador <span id="txt-header-inst">PM</span> <span id="txt-header-uf">SP</span></h1>
-      <p id="header-desc">Simulação de vencimentos atualizada 2026</p>
+      <h1>Simulador de <span>Soldo</span></h1>
+      <p id="header-desc">Descubra quanto você vai receber (valor atualizado 2026)</p>
     </div>
   </div>
 </header>
@@ -170,31 +256,34 @@
   </div>
   
   <div class="inst-selector">
-    <div>
-      <label>Estado (Sudeste)</label>
-      <select id="estado" onchange="atualizarInterface()">
-        <option value="sp" selected>São Paulo (SP)</option>
-        <option value="rj">Rio de Janeiro (RJ)</option>
-        <option value="mg">Minas Gerais (MG)</option>
-        <option value="es">Espírito Santo (ES)</option>
-      </select>
-    </div>
-    <div>
-      <label>Instituição</label>
-      <select id="instituicao" onchange="atualizarInterface()">
-        <option value="pm" selected>Polícia Militar / Bombeiro</option>
-        <option value="pc">Polícia Civil / Científica</option>
-      </select>
-    </div>
+    <label for="instituicao">Instituição</label>
+    <select id="instituicao" onchange="mudarInstituicao()">
+      <option value="pmesp" selected>PMESP - Polícia Militar</option>
+      <option value="pcsp">PCSP - Polícia Civil</option>
+    </select>
   </div>
 
   <nav class="sidebar-nav">
-    <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Salário</a>
+    <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Vencimentos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos">Direitos e Vantagens</a>
   </nav>
 
   <div class="theme-toggle-container">
-    <button class="btn-theme" onclick="toggleTheme()" id="theme-toggle">☀️ Modo Claro</button>
+    <button class="btn-theme" onclick="toggleTheme()" id="theme-toggle">
+      ☀️ Modo Claro
+    </button>
+  </div>
+
+  <div class="sidebar-ad">
+    <p>Policial padrão precisa de<br>equipamento padrão!</p>
+    <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
+      <img src="IMG_0868.jpeg" alt="Coldre Tático">
+      <span>Ver na Shopee</span>
+    </a>
+    <a href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
+      <img src="IMG_0865.jpeg" alt="Suporte Articulado 3D">
+      <span>Ver na Shopee</span>
+    </a>
   </div>
 </aside>
 
@@ -204,7 +293,7 @@
       <h2>Identificação do Servidor</h2>
       <div class="form-grid">
         <div class="field span-2">
-          <label>Cargo / Graduação</label>
+          <label>Posto / Graduação / Cargo</label>
           <select id="cargo"></select>
         </div>
         <div class="field">
@@ -212,109 +301,194 @@
           <input type="number" id="dias" value="30" min="0" max="31"/>
         </div>
         <div class="field">
-          <label>Dependentes (IRRF)</label>
+          <label>Dependentes (IRRF / IAMSPE)</label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>Adicionais por Tempo e Risco</h2>
+      <h2>Adicionais e Vantagens</h2>
       <div class="form-grid">
-        
-        <div class="field sp-only mg-only">
+        <div class="field">
           <label>Quinquênios (5% cada)</label>
-          <input type="number" id="quinquenios" value="0" min="0" max="7"/>
+          <input type="number" id="quinquenios" value="0" min="0" max="6"/>
         </div>
-        <div class="field sp-only">
+        <div class="field">
           <label>Sexta-parte (após 20 anos)</label>
           <select id="sextaparte">
             <option value="0">Não</option>
-            <option value="1">Sim (1/6 sobre vencimentos)</option>
+            <option value="1">Sim — 1/6 sobre vencimentos</option>
           </select>
         </div>
-        <div class="field sp-only mg-only">
-          <label>Insalubridade / Periculosidade</label>
-          <input type="number" id="insalubridade" value="785.67" step="0.01"/>
+        <div class="field">
+          <label>Insalubridade (grau)</label>
+          <select id="insalubridade">
+            <option value="785.67" selected>Máximo — R$ 785,67</option>
+            <option value="392.81">Médio — R$ 392,81</option>
+            <option value="196.38">Mínimo — R$ 196,38</option>
+            <option value="0">Sem insalubridade</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Ação de Insalubridade (retroativo)</label>
+          <input type="number" id="acaoinsal" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        
+        <div class="field pm-only">
+          <label>Designação em Substituição [Função]</label>
+          <select id="dsfuncao">
+            <option value="0">Não tem</option>
+            <option value="0.20">Capitão (20%)</option>
+            <option value="0.30">Major (30%)</option>
+            <option value="0.40">Tenente Coronel (40%)</option>
+            <option value="0.50">Coronel (50%)</option>
+          </select>
+        </div>
+        <div class="field pm-only">
+          <label>Designação em Substituição [Dias]</label>
+          <input type="number" id="dsdias" value="0" min="0" max="31"/>
+        </div>
+        <div class="field pm-only">
+          <label>Retribuição Função Ensino (SD PM)</label>
+          <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
-        <div class="field rj-only">
-          <label>Triênios (10% no 1º, 5% nos demais)</label>
-          <input type="number" id="trienios_rj" value="0" min="0" max="11"/>
-        </div>
-        <div class="field rj-only">
-          <label>Indenização Auxílio Moradia</label>
-          <input type="number" id="moradia_rj" value="0" step="0.01" placeholder="Ex: R$ 800,00"/>
+        <div class="field pc-only">
+          <label>GAT - Acúmulo de Titularidade (Dias)</label>
+          <input type="number" id="gat_dias" value="0" min="0" max="31"/>
         </div>
 
-        <div class="field es-only">
-          <label>Escala Especial / Risco</label>
-          <input type="number" id="risco_es" value="0" step="0.01"/>
+        <div class="field">
+          <label>13º Salário (proporcional)</label>
+          <select id="decimo">
+            <option value="0">Não computar</option>
+            <option value="0.5">Adiantamento 50%</option>
+            <option value="1">Integral</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Dias de Férias (1/3 constitucional)</label>
+          <input type="number" id="ferias" value="0" min="0" max="60"/>
+        </div>
+        <div class="field">
+          <label>Abono de Transferência</label>
+          <input type="number" id="abonotransf" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>Licença-Prêmio em Pecúnia (meses)</label>
+          <input type="number" id="lpremio" value="0" min="0" max="12"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
+      <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
+      
+      <div class="form-grid">
+        <div class="field pm-only">
+          <label>Qtd. de DEJEM (diárias 8h)</label>
+          <input type="number" id="qtddejem" value="0" min="0" max="20"/>
+        </div>
+        <div class="field pm-only">
+          <label>Região da DEJEM</label>
+          <select id="regdejem">
+            <option value="capital" selected>Capital / Grande SP</option>
+            <option value="interior">Interior</option>
+            <option value="litoral">Litoral / RMVale</option>
+          </select>
+        </div>
+        <div class="field pm-only">
+          <label>Qtd. de DELEGADAS (diárias 8h)</label>
+          <input type="number" id="qtddel" value="0" min="0" max="20"/>
+        </div>
+        <div class="field pm-only">
+          <label>Região da DELEGADA</label>
+          <select id="regdel">
+            <option value="capital" selected>Capital — SP (Lei 18.038/2023)</option>
+            <option value="estrategica">Capital — Estratégica (+30%)</option>
+            <option value="noturna">Capital — Noturno (+20%)</option>
+            <option value="interior">Outros (UFESP base)</option>
+          </select>
+        </div>
+
+        <div class="field pc-only">
+          <label>Qtd. de DEJEC (diárias 8h)</label>
+          <input type="number" id="qtddejec" value="0" min="0" max="10"/>
+        </div>
+        <div class="field pc-only">
+          <label>Tipo de Escala DEJEC</label>
+          <select id="tipodejec">
+            <option value="normal" selected>Convencional</option>
+            <option value="especial">Operação Especial</option>
+          </select>
         </div>
 
         <div class="field span-2">
-          <label>Outras Gratificações / Retroativos</label>
-          <input type="number" id="outros_prov" value="0" step="0.01" placeholder="R$ 0,00"/>
+          <div class="alerta pm-only">
+            <strong>DEJEM:</strong> base UFESP 2026 (R$ 38,42), limite 10/mês.<br>
+            <strong>Atividade Delegada:</strong> coeficiente 1,2 UFESP (praças) ou 1,44 (oficiais).
+          </div>
+          <div class="alerta pc-only">
+            <strong>DEJEC:</strong> Diária Especial por Jornada Extraordinária de Trabalho Policial Civil. Limitada a 10 plantões mensais. Calculada sob a UFESP 2026 (R$ 38,42).
+          </div>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>Escala Extra / Trabalho Voluntário</h2>
-      <div class="form-grid">
-        
-        <div class="field sp-only pm-only">
-          <label>Qtd. DEJEM (diárias)</label>
-          <input type="number" id="dejem_sp" value="0" min="0" max="10"/>
-        </div>
-        <div class="field sp-only pc-only">
-          <label>Qtd. DEJEC (diárias)</label>
-          <input type="number" id="dejec_sp" value="0" min="0" max="10"/>
-        </div>
-        <div class="field sp-only pm-only">
-          <label>Qtd. Ativ. Delegada (diárias)</label>
-          <input type="number" id="del_sp" value="0" min="0" max="15"/>
-        </div>
-
-        <div class="field rj-only">
-          <label>Qtd. RAS (Regime Adicional Serviço)</label>
-          <input type="number" id="ras_rj" value="0" min="0" max="12"/>
-        </div>
-        <div class="field rj-only">
-          <label>Tipo de RAS</label>
-          <select id="tipo_ras_rj">
-            <option value="6">Turno 6h</option>
-            <option value="8" selected>Turno 8h</option>
-            <option value="12">Turno 12h</option>
-          </select>
-        </div>
-
-        <div class="field mg-only es-only span-2">
-          <label>Valor Plantão Extraordinário / Escala Extra</label>
-          <input type="number" id="extra_generico" value="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Descontos</h2>
+      <h2>Descontos e Contribuições</h2>
       <div class="form-grid">
         <div class="field">
           <label>Empréstimos / Consignados</label>
-          <input type="number" id="emprestimo" value="0" step="0.01" placeholder="R$ 0,00"/>
+          <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field">
           <label>Pensão Alimentícia (% líquido)</label>
-          <input type="number" id="pensao" value="0" max="100" step="0.01" placeholder="0%"/>
+          <input type="number" id="pensao" value="0" min="0" max="100" step="0.01" placeholder="0%"/>
         </div>
-        <div class="field span-2">
-          <label>Fundo de Saúde / Associações (Mensalidade)</label>
-          <input type="number" id="assoc" value="0" step="0.01" placeholder="R$ 0,00"/>
+        
+        <div class="field pm-only">
+          <label>FEPOM — P. COPA</label>
+          <input type="number" id="fepomcopa" value="0" min="0" step="0.01"/>
         </div>
+        <div class="field pm-only">
+          <label>FEPOM — Alojamento</label>
+          <input type="number" id="fepomalo" value="0" min="0" step="0.01"/>
+        </div>
+        <div class="field pm-only">
+          <label>FEPOM — Rancho</label>
+          <input type="number" id="fepomran" value="0" min="0" step="0.01"/>
+        </div>
+        <div class="field pm-only">
+          <label>D.A. XV Dezembro</label>
+          <input type="number" id="daxv" value="0" min="0" step="0.01"/>
+        </div>
+        <div class="field pm-only">
+          <label>Pró-Saúde PMESP</label>
+          <input type="number" id="prosaude" value="0" min="0" step="0.01"/>
+        </div>
+        <div class="field pm-only">
+          <label>CBPM — Assistência</label>
+          <input type="number" id="cbpm" value="0" min="0" step="0.01"/>
+        </div>
+
+        <div class="field pc-only">
+          <label>IAMSPE (Contribuição Médica)</label>
+          <select id="opt_iamspe">
+            <option value="1">Sim (2% titular + 2% dep.)</option>
+            <option value="0" selected>Não optante</option>
+          </select>
+        </div>
+        <div class="field pc-only">
+          <label>Sindicato / Associação</label>
+          <input type="number" id="sindicato" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+
       </div>
       <div class="alerta">
-        <strong>Atenção Previdência:</strong> A alíquota é calculada automaticamente conforme o Estado (ex: SPPREV 14%, Rioprevidência 14% ou 10.5% militar, etc).
+        <strong>Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.
       </div>
     </div>
   </div>
@@ -341,14 +515,46 @@
         <h3>Descontos</h3>
         <div id="descontos"></div>
       </div>
+
+      <div class="alerta" id="rodape_alerta">
+        Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.
+      </div>
     </div>
   </aside>
 </main>
 
 <main id="page-direitos" class="page-section">
   <div class="card">
-    <h2>Direitos e Vantagens (<span id="txt-dir-uf">SP</span>)</h2>
-    <p style="color: var(--text-muted); font-size: 14px; margin-top:10px;">Consulte a legislação vigente do estado para regras de inatividade e promoções.</p>
+    <h2>Informações do Profissional</h2>
+    <div class="form-grid" style="margin-bottom: 0;">
+      <div class="field">
+        <label>Nível da Carreira</label>
+        <select id="cargo_dir">
+            <option value="oficial" class="pm-only">Oficial (Tenente a Coronel)</option>
+            <option value="praca" class="pm-only" selected>Praça (Soldado a Subtenente)</option>
+            <option value="delegado" class="pc-only">Autoridade Policial (Delegado)</option>
+            <option value="agente" class="pc-only" selected>Agente / Investigador / Escrivão / Outros</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Situação Atual</label>
+        <select id="situacao_dir">
+          <option value="ativa" selected>Serviço Ativo</option>
+          <option value="reserva">Inatividade (Reserva / Aposentado)</option>
+          <option value="reforma">Reforma / Invalidez</option>
+        </select>
+      </div>
+      <div class="field span-2">
+        <label>Tempo de Contribuição Policial (Anos)</label>
+        <input type="number" id="tempo_dir" value="10" min="0" max="40"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
+    <div class="result-list" id="resultados_dir">
+      </div>
   </div>
 </main>
 
@@ -357,244 +563,399 @@
 </footer>
 
 <script>
-/* === BANCO DE DADOS (DADOS) === */
-// Estrutura pronta para escalabilidade. SP e RJ preenchidos com projeções, MG e ES prontos para injeção.
-const DADOS = {
-  sp: {
-    uf_nome: "São Paulo",
-    previdencia_militar: 0.14,
-    previdencia_civil: 0.14,
-    pm: [
-      { val: "cel", text: "Coronel PM", padrao: 9495.92, retp: 1.0 },
-      { val: "cap", text: "Capitão PM", padrao: 7911.55, retp: 1.0 },
-      { val: "1ten", text: "1º Tenente PM", padrao: 7332.73, retp: 1.0 },
-      { val: "1sgt", text: "1º Sargento PM", padrao: 3507.49, retp: 1.0 },
-      { val: "sd1", text: "Soldado PM 1ª Classe", padrao: 2486.11, retp: 1.0, selected: true }
-    ],
-    pc: [
-      { val: "del", text: "Delegado de Polícia (3ª Cl)", padrao: 7420.00, retp: 1.0 },
-      { val: "inv", text: "Investigador / Escrivão (3ª Cl)", padrao: 3120.00, retp: 1.0, selected: true }
-    ]
-  },
-  rj: {
-    uf_nome: "Rio de Janeiro",
-    previdencia_militar: 0.105, // Lei federal para militares
-    previdencia_civil: 0.14,
-    pm: [
-      { val: "cel", text: "Coronel PM", padrao: 18500.00, retp: 0 },
-      { val: "cap", text: "Capitão PM", padrao: 11200.00, retp: 0 },
-      { val: "1ten", text: "1º Tenente PM", padrao: 9500.00, retp: 0 },
-      { val: "1sgt", text: "1º Sargento PM", padrao: 6200.00, retp: 0 },
-      { val: "sd", text: "Soldado PM", padrao: 4500.00, retp: 0, selected: true }
-    ],
-    pc: [
-      { val: "del", text: "Delegado de Polícia", padrao: 19500.00, retp: 0 },
-      { val: "insp", text: "Inspetor de Polícia", padrao: 6800.00, retp: 0, selected: true }
-    ]
-  },
-  mg: {
-    uf_nome: "Minas Gerais", previdencia_militar: 0.105, previdencia_civil: 0.11,
-    pm: [{ val: "sd", text: "Soldado PMMG", padrao: 5100.00, retp: 0, selected: true }],
-    pc: [{ val: "inv", text: "Investigador PCMG", padrao: 5100.00, retp: 0, selected: true }]
-  },
-  es: {
-    uf_nome: "Espírito Santo", previdencia_militar: 0.105, previdencia_civil: 0.14,
-    pm: [{ val: "sd", text: "Soldado PMES", padrao: 4300.00, retp: 0, selected: true }],
-    pc: [{ val: "inv", text: "Investigador PCES", padrao: 5900.00, retp: 0, selected: true }]
-  }
-};
+/* === DADOS: PMESP E PCSP === */
+const CARGOS_PM = [
+  { val: "cmtg", text: "CMT G — Comandante Geral PM", padrao: 11524.04, gratif: 1798.01, oficial: true },
+  { val: "cel", text: "CEL — Coronel PM", padrao: 9495.92, gratif: 899.00, oficial: true },
+  { val: "tencel", text: "TEN CEL — Tenente Coronel PM", padrao: 8892.20, gratif: 480.85, oficial: true },
+  { val: "maj", text: "MAJ — Major PM", padrao: 8370.88, gratif: 0, oficial: true },
+  { val: "cap", text: "CAP — Capitão PM", padrao: 7911.55, gratif: 0, oficial: true },
+  { val: "1ten", text: "1º TEN — 1º Tenente PM", padrao: 7332.73, gratif: 0, oficial: true },
+  { val: "2ten", text: "2º TEN — 2º Tenente PM", padrao: 4975.71, gratif: 0, oficial: true },
+  { val: "aspof", text: "ASP OF — Aspirante a Oficial PM", padrao: 4766.58, gratif: 0, oficial: true },
+  { val: "alof4", text: "AL OF 4º CFO", padrao: 2757.47, gratif: 0, oficial: false },
+  { val: "alof3", text: "AL OF 3º CFO", padrao: 2662.21, gratif: 0, oficial: false },
+  { val: "alof2", text: "AL OF 2º CFO", padrao: 2452.34, gratif: 0, oficial: false },
+  { val: "alof1", text: "AL OF 1º CFO", padrao: 2337.49, gratif: 0, oficial: false },
+  { val: "subten", text: "SUBTEN — Subtenente PM", padrao: 4050.13, gratif: 0, oficial: false },
+  { val: "1sgt", text: "1º SGT — 1º Sargento PM", padrao: 3507.49, gratif: 0, oficial: false },
+  { val: "2sgt", text: "2º SGT — 2º Sargento PM", padrao: 3158.78, gratif: 0, oficial: false },
+  { val: "3sgt", text: "3º SGT — 3º Sargento PM", padrao: 2772.19, gratif: 0, oficial: false },
+  { val: "cabo", text: "CABO PM", padrao: 2686.30, gratif: 0, oficial: false },
+  { val: "sd1", text: "SD 1ª CL — Soldado PM 1ª Classe", padrao: 2486.11, gratif: 0, oficial: false, selected: true },
+  { val: "sd2", text: "SD 2ª CL — Soldado PM 2ª Classe", padrao: 2348.42, gratif: 0, oficial: false }
+];
 
-let currCargos = {};
+/* Projeções de valores base PCSP (Padrão s/ RETP) */
+const CARGOS_PC = [
+  { val: "del_esp", text: "Delegado de Polícia - Especial", padrao: 9385.00, gratif: 0, oficial: true, delegado: true },
+  { val: "del_1", text: "Delegado de Polícia - 1ª Classe", padrao: 8650.00, gratif: 0, oficial: true, delegado: true },
+  { val: "del_2", text: "Delegado de Polícia - 2ª Classe", padrao: 7950.00, gratif: 0, oficial: true, delegado: true },
+  { val: "del_3", text: "Delegado de Polícia - 3ª Classe", padrao: 7420.00, gratif: 0, oficial: true, delegado: true },
+  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8100.00, gratif: 0, oficial: true },
+  { val: "med_1", text: "Médico Legista / Perito - 1ª Classe", padrao: 7450.00, gratif: 0, oficial: true },
+  { val: "med_2", text: "Médico Legista / Perito - 2ª Classe", padrao: 6850.00, gratif: 0, oficial: true },
+  { val: "med_3", text: "Médico Legista / Perito - 3ª Classe", padrao: 6450.00, gratif: 0, oficial: true },
+  { val: "inv_esp", text: "Investigador / Escrivão - Especial", padrao: 4200.00, gratif: 0, oficial: false },
+  { val: "inv_1", text: "Investigador / Escrivão - 1ª Classe", padrao: 3820.00, gratif: 0, oficial: false },
+  { val: "inv_2", text: "Investigador / Escrivão - 2ª Classe", padrao: 3450.00, gratif: 0, oficial: false },
+  { val: "inv_3", text: "Investigador / Escrivão - 3ª Classe", padrao: 3120.00, gratif: 0, oficial: false, selected: true },
+  { val: "age_esp", text: "Agente / Aux. / Papi - Especial", padrao: 3550.00, gratif: 0, oficial: false },
+  { val: "age_1", text: "Agente / Aux. / Papi - 1ª Classe", padrao: 3150.00, gratif: 0, oficial: false },
+  { val: "age_2", text: "Agente / Aux. / Papi - 2ª Classe", padrao: 2850.00, gratif: 0, oficial: false },
+  { val: "age_3", text: "Agente / Aux. / Papi - 3ª Classe", padrao: 2600.00, gratif: 0, oficial: false }
+];
 
-function atualizarInterface() {
-  const estado = document.getElementById('estado').value;
-  const inst = document.getElementById('instituicao').value;
-  
-  // Atualiza HTML attributes para o CSS trabalhar
-  document.body.setAttribute('data-estado', estado);
-  document.body.setAttribute('data-inst', inst);
-  
-  // Atualiza Textos
-  document.getElementById('txt-header-inst').innerText = inst.toUpperCase();
-  document.getElementById('txt-header-uf').innerText = estado.toUpperCase();
-  document.getElementById('txt-dir-uf').innerText = estado.toUpperCase();
+let currTabela = {};
 
-  // Popular Select de Cargos
-  const selectCargo = document.getElementById('cargo');
-  selectCargo.innerHTML = '';
-  currCargos = {};
+function popularCargos(inst) {
+  const select = document.getElementById('cargo');
+  const dirSelect = document.getElementById('cargo_dir');
+  select.innerHTML = '';
+  currTabela = {};
   
-  const lista = DADOS[estado][inst];
+  const lista = inst === 'pmesp' ? CARGOS_PM : CARGOS_PC;
+  
   lista.forEach(c => {
-    currCargos[c.val] = c;
+    currTabela[c.val] = c;
     const opt = document.createElement('option');
-    opt.value = c.val; opt.textContent = c.text;
+    opt.value = c.val;
+    opt.textContent = c.text;
     if(c.selected) opt.selected = true;
-    selectCargo.appendChild(opt);
+    select.appendChild(opt);
   });
 
-  calcular();
+  // Atualiza campo na aba de direitos para evitar seleções invisíveis
+  if (inst === 'pmesp') {
+    dirSelect.value = 'praca';
+  } else {
+    dirSelect.value = 'agente';
+  }
 }
 
+/* === CONTROLE INSTITUIÇÃO === */
+function mudarInstituicao() {
+  const inst = document.getElementById('instituicao').value;
+  document.body.setAttribute('data-inst', inst);
+  
+  const headerSpan = document.querySelector('.header-text h1 span');
+  const headerDesc = document.getElementById('header-desc');
+  document.getElementById('txt-inst-dir').innerText = inst.toUpperCase();
+
+  if(inst === 'pmesp') {
+    headerSpan.innerText = 'Soldo';
+    headerSpan.style.color = '#e60000';
+    headerDesc.innerText = 'Descubra quanto você vai receber como PMESP (valor 2026)';
+  } else {
+    headerSpan.innerText = 'Subsídio';
+    headerSpan.style.color = '#4f4f4f';
+    headerDesc.innerText = 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)';
+  }
+
+  popularCargos(inst);
+  calcular();
+  analisarDireitos();
+}
+
+/* === CONTROLE DE TEMA === */
 function initTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
-  document.getElementById('theme-toggle').innerHTML = currentTheme === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+  const btn = document.getElementById('theme-toggle');
+  if(currentTheme === 'dark') btn.innerHTML = '☀️ Modo Claro';
+  else btn.innerHTML = '🌙 Modo Escuro';
 }
+
 function toggleTheme() {
   const html = document.documentElement;
   const btn = document.getElementById('theme-toggle');
   if (html.getAttribute('data-theme') === 'dark') {
-    html.setAttribute('data-theme', 'light'); localStorage.setItem('theme', 'light'); btn.innerHTML = '🌙 Modo Escuro';
+    html.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    btn.innerHTML = '🌙 Modo Escuro';
   } else {
-    html.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark'); btn.innerHTML = '☀️ Modo Claro';
+    html.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    btn.innerHTML = '☀️ Modo Claro';
   }
 }
+
+/* === CONTROLE DE MENU === */
 function toggleMenu() {
   document.getElementById('sidebar').classList.toggle('active');
   document.getElementById('menuOverlay').classList.toggle('active');
 }
+
 function switchPage(page) {
   document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.sidebar-nav a').forEach(el => el.classList.remove('active'));
+  
   document.getElementById('page-' + page).classList.add('active');
   document.getElementById('menu-' + page).classList.add('active');
+  
   document.getElementById('sidebar').classList.remove('active');
   document.getElementById('menuOverlay').classList.remove('active');
 }
 
-/* === LÓGICA DE CÁLCULO GERAL === */
+/* === LÓGICA DA CALCULADORA === */
+const UFESP_2026 = 38.42;
+const ALIQ_PREV = 0.14;
 const fmt = v => "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
+function valorDejem(regiao, oficial) {
+  const base = oficial ? 1.2 : 1.0;
+  let coef = regiao === "interior" ? 0.95 : (regiao === "litoral" ? 0.97 : 1.0);
+  return UFESP_2026 * 8 * base * coef;
+}
+
+function valorDejec(tipo, oficial) {
+  const base = oficial ? 1.2 : 1.0;
+  let coef = tipo === "especial" ? 1.20 : 1.0; // Exemplo de acréscimo operacional
+  return UFESP_2026 * 8 * base * coef;
+}
+
+function valorDelegada(regiao, oficial) {
+  const coef = oficial ? 1.44 : 1.20;
+  let base = UFESP_2026 * coef * 8; 
+  if (regiao === "estrategica") base *= 1.30;
+  else if (regiao === "noturna") base *= 1.20;
+  else if (regiao === "interior") base *= 0.85; 
+  return base;
+}
+
+function calcularIRRF(base, deps) {
+  const deducaoDep = 189.59 * deps;
+  const baseAjust = Math.max(0, base - deducaoDep);
+  let aliq = 0, ded = 0;
+  if (baseAjust <= 2428.80)        { aliq = 0;     ded = 0; }
+  else if (baseAjust <= 2826.65)   { aliq = 0.075; ded = 182.16; }
+  else if (baseAjust <= 3751.05)   { aliq = 0.15;  ded = 394.16; }
+  else if (baseAjust <= 4664.68)   { aliq = 0.225; ded = 675.49; }
+  else                             { aliq = 0.275; ded = 908.73; }
+  return Math.max(0, baseAjust * aliq - ded);
+}
+
 function linha(desc, val, tipo) {
-  if (!val || val <= 0) return "";
+  if (!val || val === 0) return "";
   return `<div class="linha ${tipo||''}"><span class="desc">${desc}</span><span class="val">${fmt(val)}</span></div>`;
 }
 function subtotal(desc, val) {
   return `<div class="linha subtotal"><span class="desc">${desc}</span><span class="val">${fmt(val)}</span></div>`;
 }
 
-function calcularIRRF(base, deps) {
-  const deducao = Math.max(0, base - (189.59 * deps));
-  if (deducao <= 2428.80) return 0;
-  if (deducao <= 2826.65) return (deducao * 0.075) - 182.16;
-  if (deducao <= 3751.05) return (deducao * 0.15) - 394.16;
-  if (deducao <= 4664.68) return (deducao * 0.225) - 675.49;
-  return (deducao * 0.275) - 908.73;
-}
-
 function calcular() {
-  const estado = document.getElementById("estado").value;
   const inst = document.getElementById("instituicao").value;
   const cargoID = document.getElementById("cargo").value;
-  if(!currCargos[cargoID]) return;
+  if(!currTabela[cargoID]) return;
   
-  const c = currCargos[cargoID];
-  const configEstado = DADOS[estado];
-  
+  const c = currTabela[cargoID];
   const dias = parseFloat(document.getElementById("dias").value) || 0;
-  const fatorDias = Math.min(dias / 30, 1.0);
-  const deps = parseInt(document.getElementById("dependentes").value) || 0;
+  const fator = Math.min(dias / 30, 1.0333);
+  const quinq = parseInt(document.getElementById("quinquenios").value) || 0;
+  const sexta = parseInt(document.getElementById("sextaparte").value) || 0;
+  const deps  = parseInt(document.getElementById("dependentes").value) || 0;
+  const insal = parseFloat(document.getElementById("insalubridade").value) || 0;
   
-  // Base
-  const baseSalario = c.padrao * fatorDias;
-  const retp = (c.padrao * (c.retp || 0)) * fatorDias;
-  const vencimentoBase = baseSalario + retp;
+  const padrao = c.padrao * fator;
+  const retp = c.padrao * fator; // Ambos têm RETP de 100%
+  const gratifRepres = (c.gratif || 0) * fator;
+  const valQuinq = (c.padrao + c.padrao) * 0.05 * quinq;
+  const valSexta = sexta ? (c.padrao + c.padrao) / 6 : 0;
+  
+  const val13 = (parseFloat(document.getElementById("decimo").value) || 0) * (c.padrao + c.padrao);
+  const feriasD = parseInt(document.getElementById("ferias").value) || 0;
+  const valFerias = feriasD > 0 ? ((c.padrao + c.padrao) / 30) * feriasD * (4/3) : 0;
+  
+  const valLP = (parseInt(document.getElementById("lpremio").value) || 0) * (c.padrao + c.padrao);
+  const abonoT = parseFloat(document.getElementById("abonotransf").value) || 0;
+  const acaoInsal = parseFloat(document.getElementById("acaoinsal").value) || 0;
 
-  let proventosHTML = linha(inst==='pm' ? "Soldo / Padrão" : "Salário Base", baseSalario, "provento");
-  if(retp) proventosHTML += linha("RETP", retp, "provento");
+  // Variáveis específicas
+  let valDS = 0, ensino = 0, valDejem = 0, valDel = 0;
+  let valGat = 0, valDejec = 0;
 
-  // Adicionais Específicos por Estado
-  let valTempo = 0, valRisco = 0, valExtra = 0;
-
-  if (estado === 'sp') {
-      const quinq = parseInt(document.getElementById("quinquenios").value) || 0;
-      valTempo = vencimentoBase * 0.05 * quinq;
-      if(quinq) proventosHTML += linha(`Quinquênios (${quinq})`, valTempo, "provento");
-      
-      if(parseInt(document.getElementById("sextaparte").value)) {
-          const sexta = vencimentoBase / 6;
-          valTempo += sexta;
-          proventosHTML += linha("Sexta-parte", sexta, "provento");
-      }
-      
-      valRisco = parseFloat(document.getElementById("insalubridade").value) || 0;
-      if(valRisco) proventosHTML += linha("Insalubridade", valRisco, "provento");
-
-      if (inst === 'pm') {
-          valExtra = (parseInt(document.getElementById("dejem_sp").value) || 0) * (38.42 * 8); // Simplificado UFESP
-          if(valExtra) proventosHTML += linha("DEJEM", valExtra, "provento");
-      } else {
-          valExtra = (parseInt(document.getElementById("dejec_sp").value) || 0) * (38.42 * 8);
-          if(valExtra) proventosHTML += linha("DEJEC", valExtra, "provento");
-      }
-  } 
-  else if (estado === 'rj') {
-      const trienios = parseInt(document.getElementById("trienios_rj").value) || 0;
-      if (trienios > 0) {
-          valTempo = vencimentoBase * (0.10 + (0.05 * (trienios - 1)));
-          proventosHTML += linha(`Triênios (${trienios})`, valTempo, "provento");
-      }
-      
-      const moradia = parseFloat(document.getElementById("moradia_rj").value) || 0;
-      if(moradia) proventosHTML += linha("Auxílio Moradia", moradia, "provento");
-
-      const rasQtd = parseInt(document.getElementById("ras_rj").value) || 0;
-      const rasHoras = parseInt(document.getElementById("tipo_ras_rj").value) || 8;
-      // Valor base fictício para RAS
-      valExtra = rasQtd * (rasHoras * 35.00); 
-      if(valExtra) proventosHTML += linha(`RAS (${rasHoras}h)`, valExtra, "provento");
-  }
-  else {
-      // MG e ES (Usa o campo genérico de extra/risco para compor)
-      valRisco = parseFloat(document.getElementById(estado === 'mg' ? 'insalubridade' : 'risco_es').value) || 0;
-      if(valRisco) proventosHTML += linha("Adicional Risco", valRisco, "provento");
-      
-      valExtra = parseFloat(document.getElementById("extra_generico").value) || 0;
-      if(valExtra) proventosHTML += linha("Escala Extra", valExtra, "provento");
+  if (inst === 'pmesp') {
+    valDS = (parseFloat(document.getElementById("dsfuncao").value) || 0) * c.padrao * ((parseInt(document.getElementById("dsdias").value) || 0) / 30);
+    ensino = parseFloat(document.getElementById("ensino").value) || 0;
+    valDejem = (parseInt(document.getElementById("qtddejem").value) || 0) * valorDejem(document.getElementById("regdejem").value, c.oficial);
+    valDel = (parseInt(document.getElementById("qtddel").value) || 0) * valorDelegada(document.getElementById("regdel").value, c.oficial);
+  } else {
+    if (c.delegado) {
+        // GAT aprox 1/3 do salário para acúmulo de DP
+        valGat = ((c.padrao + c.padrao) / 3) * ((parseInt(document.getElementById("gat_dias").value) || 0) / 30);
+    }
+    valDejec = (parseInt(document.getElementById("qtddejec").value) || 0) * valorDejec(document.getElementById("tipodejec").value, c.oficial);
   }
 
-  const outros = parseFloat(document.getElementById("outros_prov").value) || 0;
-  if(outros) proventosHTML += linha("Outros Proventos", outros, "provento");
+  let proventosHTML = linha(inst==='pmesp' ? "Padrão" : "Salário Base", padrao, "provento") + linha("RETP (100%)", retp, "provento");
+  if(valQuinq) proventosHTML += linha(`Quinquênios (${quinq})`, valQuinq, "provento");
+  if(valSexta) proventosHTML += linha("Sexta-parte", valSexta, "provento");
+  if(insal) proventosHTML += linha("Insalubridade", insal, "provento");
+  if(gratifRepres) proventosHTML += linha("Representação", gratifRepres, "provento");
+  
+  if(inst === 'pmesp') {
+      if(valDS) proventosHTML += linha("Desig. Substituição", valDS, "provento");
+      if(ensino) proventosHTML += linha("Retrib. Ensino", ensino, "provento");
+      if(valDejem) proventosHTML += linha("DEJEM", valDejem, "provento");
+      if(valDel) proventosHTML += linha("Ativ. Delegada", valDel, "provento");
+  } else {
+      if(valGat) proventosHTML += linha("GAT (Acúmulo Tit.)", valGat, "provento");
+      if(valDejec) proventosHTML += linha("DEJEC", valDejec, "provento");
+  }
 
-  // Fechamento Bruto
-  const basePrevidencia = vencimentoBase + valTempo;
-  const brutoTotal = basePrevidencia + valRisco + valExtra + outros;
-  proventosHTML += subtotal("Total Bruto", brutoTotal);
+  if(acaoInsal) proventosHTML += linha("Ação Insalub.", acaoInsal, "provento");
+  if(val13) proventosHTML += linha("13º Salário", val13, "provento");
+  if(valFerias) proventosHTML += linha("Férias + 1/3", valFerias, "provento");
+  if(valLP) proventosHTML += linha("Licença-prêmio", valLP, "provento");
+  if(abonoT) proventosHTML += linha("Abono Transf.", abonoT, "provento");
+
+  const baseFolha = padrao + retp + valQuinq + valSexta + insal + gratifRepres + valDS + valGat + acaoInsal + val13 + valFerias + valLP + abonoT + ensino;
+  const bruto = baseFolha + valDejem + valDel + valDejec;
+  proventosHTML += subtotal("Total Bruto", bruto);
 
   // Descontos
-  const aliqPrev = inst === 'pm' ? configEstado.previdencia_militar : configEstado.previdencia_civil;
-  const previdencia = basePrevidencia * aliqPrev;
-  const irrf = calcularIRRF(brutoTotal - previdencia - valRisco, deps); // Risco e Moradia costumam ser isentos
+  const sprev = (padrao + retp + valQuinq + valSexta + valDS + valGat) * ALIQ_PREV;
+  const irrf = calcularIRRF(baseFolha - sprev, deps);
   
   const empr = parseFloat(document.getElementById("emprestimo").value) || 0;
-  const assoc = parseFloat(document.getElementById("assoc").value) || 0;
   
-  let descontosHTML = linha(`Previdência (${(aliqPrev*100).toFixed(1)}%)`, previdencia, "desconto");
-  if(irrf > 0) descontosHTML += linha("IRRF", irrf, "desconto");
-  if(empr) descontosHTML += linha("Consignados", empr, "desconto");
-  if(assoc) descontosHTML += linha("Associações/Saúde", assoc, "desconto");
+  let descEspecificos = 0;
+  let descHTML = "";
+
+  if(inst === 'pmesp') {
+      const fepomCopa = parseFloat(document.getElementById("fepomcopa").value) || 0;
+      const fepomAlo = parseFloat(document.getElementById("fepomalo").value) || 0;
+      const fepomRan = parseFloat(document.getElementById("fepomran").value) || 0;
+      const daxv = parseFloat(document.getElementById("daxv").value) || 0;
+      const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
+      const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
+      descEspecificos = fepomCopa + fepomAlo + fepomRan + daxv + prosaude + cbpm;
+      
+      if(fepomCopa) descHTML += linha("FEPOM COPA", fepomCopa, "desconto");
+      if(fepomAlo) descHTML += linha("FEPOM Alojamento", fepomAlo, "desconto");
+      if(fepomRan) descHTML += linha("FEPOM Rancho", fepomRan, "desconto");
+      if(daxv) descHTML += linha("D.A. XV Dezembro", daxv, "desconto");
+      if(prosaude) descHTML += linha("Pró-Saúde PMESP", prosaude, "desconto");
+      if(cbpm) descHTML += linha("CBPM Assist.", cbpm, "desconto");
+  } else {
+      const iamspeOpt = parseInt(document.getElementById("opt_iamspe").value) || 0;
+      let iamspeVal = 0;
+      if(iamspeOpt === 1) {
+          iamspeVal = (padrao + retp + valQuinq + valSexta) * 0.02 * (1 + deps);
+      }
+      const sindicato = parseFloat(document.getElementById("sindicato").value) || 0;
+      descEspecificos = iamspeVal + sindicato;
+
+      if(iamspeVal) descHTML += linha("IAMSPE (2% + dep)", iamspeVal, "desconto");
+      if(sindicato) descHTML += linha("Sindicato / Assoc.", sindicato, "desconto");
+  }
 
   const pensaoPct = parseFloat(document.getElementById("pensao").value) || 0;
-  const pensao = (brutoTotal - previdencia - irrf - empr - assoc) * (pensaoPct / 100);
-  if(pensao) descontosHTML += linha(`Pensão (${pensaoPct}%)`, pensao, "desconto");
+  const pensao = (bruto - sprev - irrf - empr - descEspecificos) * (pensaoPct / 100);
 
-  const totalDesc = previdencia + irrf + pensao + empr + assoc;
+  let descontosHTML = linha("SPPREV (14%)", sprev, "desconto");
+  if(irrf) descontosHTML += linha("IRRF", irrf, "desconto");
+  if(pensao) descontosHTML += linha(`Pensão (${pensaoPct}%)`, pensao, "desconto");
+  if(empr) descontosHTML += linha("Empréstimos / Consig.", empr, "desconto");
+  descontosHTML += descHTML;
+
+  const totalDesc = sprev + irrf + pensao + empr + descEspecificos;
   descontosHTML += subtotal("Total Descontos", totalDesc);
 
-  // Totais
-  document.getElementById("bruto").textContent = fmt(brutoTotal);
-  document.getElementById("liquido").textContent = fmt(brutoTotal - totalDesc);
+  document.getElementById("bruto").textContent = fmt(bruto);
+  document.getElementById("liquido").textContent = fmt(bruto - totalDesc);
   document.getElementById("proventos").innerHTML = proventosHTML;
   document.getElementById("descontos").innerHTML = descontosHTML;
 }
 
-// Inicialização
+/* === LÓGICA DE DIREITOS === */
+function analisarDireitos() {
+  const inst = document.getElementById("instituicao").value;
+  const situacao = document.getElementById('situacao_dir').value;
+  const tempo = parseInt(document.getElementById('tempo_dir').value) || 0;
+  const inativo = (situacao === 'reserva' || situacao === 'reforma');
+  
+  let direitos = [];
+
+  direitos.push({
+    nome: "RETP (Regime Especial de Trabalho Policial)",
+    tem: true,
+    desc: "Adicional de 100% sobre o valor base. Integrado aos proventos tanto na ativa quanto na inatividade."
+  });
+
+  const q = Math.floor(tempo / 5);
+  direitos.push({
+    nome: "Adicional por Tempo de Serviço (Quinquênio)",
+    tem: q > 0,
+    desc: q > 0 ? `Você possui direito a ${q} quinquênio(s). Cada um representa 5% de acréscimo sobre os vencimentos totais.` : "Adquirido a cada 5 anos de efetivo serviço."
+  });
+
+  direitos.push({
+    nome: "Sexta-Parte",
+    tem: tempo >= 20,
+    desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos totais) por ter completado 20 anos de serviço." : "Adquirido ao completar 20 anos de efetivo serviço público."
+  });
+
+  direitos.push({
+    nome: "Adicional de Insalubridade",
+    tem: !inativo,
+    desc: !inativo ? "Pago aos policiais da ativa sob risco / condições insalubres." : "Não se incorpora automaticamente aos proventos da inatividade, salvo ingresso judicial ou regra de transição específica."
+  });
+
+  if (inst === 'pmesp') {
+      if (inativo) {
+        direitos.push({
+          nome: "Sistema de Proteção Social dos Militares (SPSM)",
+          tem: true,
+          desc: "Militares possuem regras próprias. Aqueles que cumpriram os requisitos mantêm o direito à integralidade do último soldo e paridade plena."
+        });
+      }
+      direitos.push({
+        nome: "Auxílio Fardamento",
+        tem: !inativo,
+        desc: !inativo ? "Abono pago anualmente na data do aniversário para manutenção do fardamento militar." : "Verba indenizatória restrita ao pessoal da ativa."
+      });
+  } else {
+      if (inativo) {
+        direitos.push({
+          nome: "Aposentadoria Policial Civil (LC 1354/2020)",
+          tem: true,
+          desc: "Para a paridade e integralidade, a nova lei exige 55 anos de idade, 30 anos de contribuição (sendo 20 estritamente policiais para homens; 25/15 para mulheres). Regras de transição garantem direitos anteriores à reforma da previdência estadual."
+        });
+      }
+      const cargoPc = document.getElementById("cargo_dir").value;
+      if (cargoPc === 'delegado') {
+          direitos.push({
+            nome: "ADPJ (Direção da Ativ. Polícia Judiciária)",
+            tem: !inativo, // Simplificação, na prática pode incorporar proporcionalmente
+            desc: !inativo ? "Gratificação específica da carreira de Delegado de Polícia para funções de comando e direção judiciária." : "Na inatividade o cálculo de incorporação segue as regras de contribuição previdenciária incidentes."
+          });
+      }
+  }
+
+  const container = document.getElementById('resultados_dir');
+  container.innerHTML = '';
+  direitos.forEach(d => {
+    container.innerHTML += `
+      <div class="direito-item ${d.tem ? 'sim' : 'nao'}">
+        <div class="direito-nome">${d.nome}</div>
+        <div class="direito-status">${d.tem ? '✓ Tem Direito' : '✕ Não se Aplica'}</div>
+        <div class="direito-desc">${d.desc}</div>
+      </div>
+    `;
+  });
+}
+
+// Event Listeners Globais
 document.querySelectorAll("input, select").forEach(el => {
-  el.addEventListener("input", calcular); 
-  el.addEventListener("change", calcular);
+  el.addEventListener("input", () => { calcular(); analisarDireitos(); }); 
+  el.addEventListener("change", () => { calcular(); analisarDireitos(); });
 });
+
+// Inicialização
 initTheme();
-atualizarInterface();
+popularCargos('pmesp');
+calcular();
+analisarDireitos();
 </script>
 
 </body>
