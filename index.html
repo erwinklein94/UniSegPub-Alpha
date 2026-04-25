@@ -1032,7 +1032,7 @@
       </div>
 
       <div class="alerta" id="rodape_alerta">
-        Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42 · Salário-mínimo: R$ 1.621,00 · IRRF: tabela progressiva + redutor da Lei 15.270/2025.
+        Cálculos baseados na legislação atual com projeção/ajustes 2026. <span id="rodape_ufesp">UFESP: R$ 38,42 · </span>Salário-mínimo: R$ 1.621,00 · IRRF: tabela progressiva + redutor da Lei 15.270/2025.
       </div>
     </div>
   </aside>
@@ -1671,6 +1671,10 @@ function mudarInstituicao() {
   document.getElementById('txt-inst-acoes').textContent = config.titulo;
   document.getElementById('txt-inst-assoc').textContent = config.titulo;
   document.getElementById('alerta-prev').textContent = config.alertaPrev;
+
+  // UFESP é referência apenas do estado de São Paulo
+  const spanUfesp = document.getElementById('rodape_ufesp');
+  if (spanUfesp) spanUfesp.style.display = (inst === 'pmesp' || inst === 'pcsp') ? '' : 'none';
 
   popularCargos(inst);
   calcular();
