@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
@@ -10,383 +9,382 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --vermelho: #e63946;
-    --vermelho-escuro: #b71c2c;
-    --azul: #1e5fbf;
-    --azul-escuro: #0d3a82;
-    --preto: #1a1a1a;
-    --cinza-escuro: #242424;
-    --cinza: #353535;
-    --cinza-claro: #4a4a4a;
-    --branco: #f5f5f5;
-    --texto: #ffffff;
-    --texto-secundario: #d0d0d0;
-    --dourado: #f5b800;
-    --dourado-escuro: #c89400;
+    /* Cores extraídas do brasão da PMESP */
+    --vermelho: #D1242A;
+    --vermelho-escuro: #8B161B;
+    --azul: #1E3084;
+    --azul-escuro: #101B4D;
+    --preto: #000000;
+    --cinza-escuro: #111111;
+    --cinza: #222222;
+    --cinza-claro: #333333;
+    --branco: #FFFFFF;
+    --texto: #FFFFFF;
+    --texto-secundario: #C0C0C0;
+    --dourado: #DFB63E;
+    --dourado-escuro: #A6852A;
   }
 
-- { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-font-family: ‘Roboto’, sans-serif;
-background: #1a1a1a;
-color: var(–texto);
-min-height: 100vh;
-background-image:
-radial-gradient(circle at 20% 10%, rgba(230,57,70,0.18) 0%, transparent 55%),
-radial-gradient(circle at 80% 80%, rgba(30,95,191,0.15) 0%, transparent 55%),
-linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-}
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--preto); /* Fundo preto puro igual à imagem */
+    color: var(--texto);
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(209, 36, 42, 0.12) 0%, transparent 55%),
+      radial-gradient(circle at 80% 80%, rgba(30, 48, 132, 0.12) 0%, transparent 55%);
+  }
 
-/* ===== HEADER ===== */
-header {
-background: linear-gradient(180deg, #1a1a1a 0%, #2a2a3a 100%);
-border-bottom: 4px solid var(–vermelho);
-padding: 20px 0;
-position: relative;
-overflow: hidden;
-}
-header::before {
-content: “”;
-position: absolute;
-top: 0; right: 0; bottom: 0; left: 0;
-background: repeating-linear-gradient(
-90deg,
-transparent,
-transparent 60px,
-rgba(255,255,255,0.04) 60px,
-rgba(255,255,255,0.04) 64px
-);
-pointer-events: none;
-}
-.header-content {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-display: flex;
-align-items: center;
-gap: 20px;
-position: relative;
-}
-.brasao {
-width: 70px;
-height: 70px;
-flex-shrink: 0;
-background: #000;
-border: 3px solid var(–vermelho);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 0 25px rgba(213,32,39,0.4), inset 0 0 15px rgba(0,0,0,0.6);
-position: relative;
-}
-.brasao::after {
-content: “”;
-position: absolute;
-inset: -8px;
-border: 2px solid var(–dourado);
-border-radius: 50%;
-opacity: 0.4;
-}
-.brasao svg { width: 56px; height: 56px; }
-.header-text h1 {
-font-family: ‘Oswald’, sans-serif;
-font-size: 28px;
-font-weight: 700;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–texto);
-line-height: 1.1;
-}
-.header-text h1 span { color: var(–dourado); }
-.header-text p {
-font-family: ‘Roboto Condensed’, sans-serif;
-font-size: 13px;
-letter-spacing: 3px;
-color: var(–texto-secundario);
-text-transform: uppercase;
-margin-top: 4px;
-}
-.stripe {
-height: 6px;
-background: linear-gradient(90deg, var(–vermelho) 0%, var(–vermelho-escuro) 50%, var(–vermelho) 100%);
-}
-.stripe-blue {
-height: 4px;
-background: linear-gradient(90deg, var(–azul) 0%, var(–azul-escuro) 50%, var(–azul) 100%);
-}
-.stripe-dark { height: 3px; background: #1a1a1a; }
+  /* ===== HEADER ===== */
+  header {
+    background: #080808;
+    border-bottom: 4px solid var(--vermelho);
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.02) 60px,
+      rgba(255,255,255,0.02) 64px
+    );
+    pointer-events: none;
+  }
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .brasao {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    background: var(--preto);
+    border: 3px solid var(--vermelho);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(209, 36, 42, 0.4), inset 0 0 15px rgba(0,0,0,0.8);
+    position: relative;
+  }
+  .brasao::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border: 2px solid var(--dourado);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  .brasao svg { width: 56px; height: 56px; }
+  .header-text h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto);
+    line-height: 1.1;
+  }
+  .header-text h1 span { color: var(--dourado); }
+  .header-text p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .stripe {
+    height: 6px;
+    background: linear-gradient(90deg, var(--vermelho) 0%, var(--vermelho-escuro) 50%, var(--vermelho) 100%);
+  }
+  .stripe-blue {
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul) 0%, var(--azul-escuro) 50%, var(--azul) 100%);
+  }
+  .stripe-dark { height: 3px; background: var(--preto); }
 
-/* ===== MAIN ===== */
-main {
-max-width: 1200px;
-margin: 30px auto;
-padding: 0 20px;
-display: grid;
-grid-template-columns: 1fr 420px;
-gap: 25px;
-}
-@media (max-width: 968px) {
-main { grid-template-columns: 1fr; }
-.resumo { position: static !important; }
-}
+  /* ===== MAIN ===== */
+  main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 25px;
+  }
+  @media (max-width: 968px) {
+    main { grid-template-columns: 1fr; }
+    .resumo { position: static !important; }
+  }
 
-/* ===== CARDS ===== */
-.card {
-background: linear-gradient(145deg, #2e2e2e 0%, #262626 100%);
-border: 1px solid #404040;
-border-left: 4px solid var(–vermelho);
-border-radius: 4px;
-padding: 24px;
-margin-bottom: 20px;
-box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-}
-.card h2 {
-font-family: ‘Oswald’, sans-serif;
-font-size: 18px;
-font-weight: 600;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: var(–texto);
-margin-bottom: 18px;
-padding-bottom: 10px;
-border-bottom: 1px solid #4a4a4a;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-.card h2::before {
-content: “”;
-width: 6px;
-height: 18px;
-background: var(–vermelho);
-display: inline-block;
-}
+  /* ===== CARDS ===== */
+  .card {
+    background: linear-gradient(145deg, #151515 0%, #0a0a0a 100%);
+    border: 1px solid var(--cinza-claro);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  }
+  .card h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--texto);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cinza);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card h2::before {
+    content: "";
+    width: 6px;
+    height: 18px;
+    background: var(--vermelho);
+    display: inline-block;
+  }
 
-/* ===== FORM ===== */
-.form-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 14px;
-}
-.form-grid.full { grid-template-columns: 1fr; }
+  /* ===== FORM ===== */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .form-grid.full { grid-template-columns: 1fr; }
 
-.field {
-display: flex;
-flex-direction: column;
-}
-.field.span-2 { grid-column: span 2; }
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  .field.span-2 { grid-column: span 2; }
 
-label {
-font-family: ‘Roboto Condensed’, sans-serif;
-font-size: 11px;
-font-weight: 700;
-letter-spacing: 1.2px;
-color: var(–texto-secundario);
-text-transform: uppercase;
-margin-bottom: 5px;
-}
+  label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
 
-input[type=“number”],
-input[type=“text”],
-input[type=“date”],
-select {
-background: #1f1f1f;
-border: 1px solid #555;
-color: var(–texto);
-padding: 10px 12px;
-font-family: ‘Roboto’, sans-serif;
-font-size: 14px;
-border-radius: 2px;
-transition: all 0.2s;
-width: 100%;
-}
-input:focus, select:focus {
-outline: none;
-border-color: var(–vermelho);
-box-shadow: 0 0 0 2px rgba(230,57,70,0.3);
-}
-input::placeholder { color: #888; }
+  input[type="number"],
+  input[type="text"],
+  input[type="date"],
+  select {
+    background: #0d0d0d;
+    border: 1px solid var(--cinza-claro);
+    color: var(--texto);
+    padding: 10px 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 0.2s;
+    width: 100%;
+  }
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--vermelho);
+    box-shadow: 0 0 0 2px rgba(209, 36, 42, 0.3);
+  }
+  input::placeholder { color: #666; }
 
-.checkbox-row {
-display: flex;
-align-items: center;
-gap: 8px;
-background: #1f1f1f;
-border: 1px solid #555;
-padding: 10px 12px;
-border-radius: 2px;
-cursor: pointer;
-transition: all 0.2s;
-}
-.checkbox-row:hover { border-color: var(–vermelho); }
-.checkbox-row input[type=“checkbox”] {
-width: 16px; height: 16px;
-accent-color: var(–vermelho);
-cursor: pointer;
-}
-.checkbox-row label {
-margin: 0; cursor: pointer;
-font-size: 12px;
-color: var(–texto);
-text-transform: none;
-letter-spacing: 0.3px;
-font-weight: 500;
-}
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0d0d0d;
+    border: 1px solid var(--cinza-claro);
+    padding: 10px 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .checkbox-row:hover { border-color: var(--vermelho); }
+  .checkbox-row input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: var(--vermelho);
+    cursor: pointer;
+  }
+  .checkbox-row label {
+    margin: 0; cursor: pointer;
+    font-size: 12px;
+    color: var(--texto);
+    text-transform: none;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+  }
 
-/* ===== RESUMO LATERAL ===== */
-.resumo {
-position: sticky;
-top: 20px;
-align-self: start;
-}
-.resumo .card {
-background: linear-gradient(145deg, #2e2e2e 0%, #1f1f1f 100%);
-border-left: 4px solid var(–vermelho);
-}
-.resumo h2 { color: var(–texto); }
-.resumo h2::before { background: var(–vermelho); }
+  /* ===== RESUMO LATERAL ===== */
+  .resumo {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+  }
+  .resumo .card {
+    background: linear-gradient(145deg, #181818 0%, #050505 100%);
+    border-left: 4px solid var(--vermelho);
+  }
+  .resumo h2 { color: var(--texto); }
+  .resumo h2::before { background: var(--vermelho); }
 
-.total-bloco {
-background: linear-gradient(135deg, var(–vermelho) 0%, var(–vermelho-escuro) 100%);
-padding: 20px;
-border-radius: 3px;
-margin-bottom: 12px;
-text-align: center;
-box-shadow: 0 4px 15px rgba(213,32,39,0.35);
-position: relative;
-overflow: hidden;
-border: 1px solid rgba(245,184,0,0.3);
-}
-.total-bloco::before {
-content: “”;
-position: absolute;
-top: -50%; left: -50%;
-width: 200%; height: 200%;
-background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
-animation: shine 4s infinite;
-}
-@keyframes shine {
-0% { transform: translateX(-100%); }
-100% { transform: translateX(100%); }
-}
-.total-bloco .label {
-font-family: ‘Roboto Condensed’, sans-serif;
-font-size: 12px;
-letter-spacing: 2px;
-color: #fff;
-text-transform: uppercase;
-opacity: 0.9;
-}
-.total-bloco .valor {
-font-family: ‘Oswald’, sans-serif;
-font-size: 32px;
-font-weight: 700;
-color: #fff;
-margin-top: 4px;
-text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-.total-bloco.liquido {
-background: linear-gradient(135deg, var(–azul) 0%, var(–azul-escuro) 100%);
-border: 1px solid var(–dourado);
-box-shadow: 0 4px 15px rgba(0,60,143,0.35);
-}
-.total-bloco.liquido .valor { color: var(–dourado); }
+  .total-bloco {
+    background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%);
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(209, 36, 42, 0.25);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(223, 182, 62, 0.3);
+  }
+  .total-bloco::before {
+    content: "";
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+    animation: shine 4s infinite;
+  }
+  @keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .total-bloco .label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .total-bloco .valor {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .total-bloco.liquido {
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
+    border: 1px solid var(--dourado);
+    box-shadow: 0 4px 15px rgba(30, 48, 132, 0.35);
+  }
+  .total-bloco.liquido .valor { color: var(--dourado); }
 
-.breakdown {
-margin-top: 18px;
-border-top: 1px dashed var(–cinza);
-padding-top: 14px;
-}
-.breakdown h3 {
-font-family: ‘Oswald’, sans-serif;
-font-size: 13px;
-letter-spacing: 1.5px;
-color: var(–branco);
-text-transform: uppercase;
-margin-bottom: 10px;
-border-left: 3px solid var(–vermelho);
-padding-left: 8px;
-}
-.linha {
-display: flex;
-justify-content: space-between;
-padding: 6px 0;
-font-size: 13px;
-border-bottom: 1px dotted #444;
-}
-.linha:last-child { border-bottom: none; }
-.linha .desc {
-color: var(–texto);
-font-family: ‘Roboto Condensed’, sans-serif;
-}
-.linha .val {
-font-family: ‘Roboto Condensed’, sans-serif;
-font-weight: 700;
-color: var(–texto);
-font-variant-numeric: tabular-nums;
-}
-.linha.desconto .val { color: #ff8a8a; }
-.linha.provento .val { color: #8ee69e; }
-.linha.subtotal {
-background: rgba(230,57,70,0.18);
-margin: 6px -10px;
-padding: 8px 10px;
-border-bottom: none;
-border-radius: 2px;
-border-left: 2px solid var(–vermelho);
-}
-.linha.subtotal .desc { color: var(–texto); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
-.linha.subtotal .val { color: var(–dourado); font-size: 15px; }
+  .breakdown {
+    margin-top: 18px;
+    border-top: 1px dashed var(--cinza-claro);
+    padding-top: 14px;
+  }
+  .breakdown h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--branco);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--vermelho);
+    padding-left: 8px;
+  }
+  .linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+    border-bottom: 1px dotted var(--cinza-claro);
+  }
+  .linha:last-child { border-bottom: none; }
+  .linha .desc {
+    color: var(--texto);
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  .linha .val {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: var(--texto);
+    font-variant-numeric: tabular-nums;
+  }
+  .linha.desconto .val { color: #ff6b6b; }
+  .linha.provento .val { color: #69d981; }
+  .linha.subtotal {
+    background: rgba(209, 36, 42, 0.15);
+    margin: 6px -10px;
+    padding: 8px 10px;
+    border-bottom: none;
+    border-radius: 2px;
+    border-left: 2px solid var(--vermelho);
+  }
+  .linha.subtotal .desc { color: var(--texto); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+  .linha.subtotal .val { color: var(--dourado); font-size: 15px; }
 
-/* ===== FOOTER ===== */
-footer {
-background: var(–preto);
-border-top: 4px solid var(–vermelho);
-margin-top: 40px;
-padding: 25px 20px;
-text-align: center;
-position: relative;
-}
-footer::before {
-content: “”;
-position: absolute;
-top: -8px; left: 0; right: 0;
-height: 4px;
-background: var(–azul);
-}
-footer p {
-font-family: ‘Roboto Condensed’, sans-serif;
-font-size: 13px;
-color: var(–texto-secundario);
-letter-spacing: 1px;
-}
-footer p strong { color: var(–dourado); }
+  /* ===== FOOTER ===== */
+  footer {
+    background: #080808;
+    border-top: 4px solid var(--vermelho);
+    margin-top: 40px;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+  }
+  footer::before {
+    content: "";
+    position: absolute;
+    top: -8px; left: 0; right: 0;
+    height: 4px;
+    background: var(--azul);
+  }
+  footer p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: var(--texto-secundario);
+    letter-spacing: 1px;
+  }
+  footer p strong { color: var(--dourado); }
 
-/* ===== ALERTA ===== */
-.alerta {
-background: rgba(30,95,191,0.18);
-border-left: 3px solid var(–azul);
-padding: 10px 14px;
-margin-top: 14px;
-font-size: 12px;
-color: var(–texto);
-line-height: 1.5;
-}
-.alerta strong { color: var(–dourado) !important; }
+  /* ===== ALERTA ===== */
+  .alerta {
+    background: rgba(30, 48, 132, 0.2);
+    border-left: 3px solid var(--azul);
+    padding: 10px 14px;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--texto);
+    line-height: 1.5;
+  }
+  .alerta strong { color: var(--dourado) !important; }
 
-@media (max-width: 600px) {
-.form-grid { grid-template-columns: 1fr; }
-.field.span-2 { grid-column: span 1; }
-.header-text h1 { font-size: 20px; letter-spacing: 1px; }
-.header-text p { font-size: 10px; letter-spacing: 1.5px; }
-.brasao { width: 50px; height: 50px; }
-.brasao svg { width: 35px; height: 35px; }
-.total-bloco .valor { font-size: 26px; }
-}
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .field.span-2 { grid-column: span 1; }
+    .header-text h1 { font-size: 20px; letter-spacing: 1px; }
+    .header-text p { font-size: 10px; letter-spacing: 1.5px; }
+    .brasao { width: 50px; height: 50px; }
+    .brasao svg { width: 35px; height: 35px; }
+    .total-bloco .valor { font-size: 26px; }
+  }
 </style>
-
 </head>
 <body>
 
@@ -394,35 +392,24 @@ line-height: 1.5;
   <div class="header-content">
     <div class="brasao">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Adaga vertical atrás da caveira -->
-        <g stroke="#f5f5f5" stroke-linecap="square" fill="#f5f5f5">
-          <!-- Lâmina superior -->
+        <g stroke="#ffffff" stroke-linecap="square" fill="#ffffff">
           <polygon points="49.5,8 50.5,8 51.5,28 48.5,28" />
-          <!-- Guarda (cross-guard) -->
           <rect x="42" y="27" width="16" height="2.5" />
-          <!-- Cabo -->
           <rect x="48.5" y="68" width="3" height="22" />
-          <!-- Pommel -->
           <rect x="46.5" y="89" width="7" height="3" />
         </g>
-        <!-- Caveira estilizada -->
-        <g fill="#f5f5f5">
-          <!-- Crânio (formato arredondado superior) -->
+        <g fill="#ffffff">
           <path d="M30,42 Q30,28 50,28 Q70,28 70,42 L70,58 Q70,64 65,66 L60,66 L58,72 L42,72 L40,66 L35,66 Q30,64 30,58 Z"/>
         </g>
-        <!-- Olhos (vazios = preto) -->
-        <ellipse cx="40" cy="48" rx="4" ry="5" fill="#0a0a0a"/>
-        <ellipse cx="60" cy="48" rx="4" ry="5" fill="#0a0a0a"/>
-        <!-- Cavidade nasal -->
-        <polygon points="50,54 47,60 53,60" fill="#0a0a0a"/>
-        <!-- Linha dos dentes -->
-        <rect x="42" y="64" width="16" height="1.5" fill="#0a0a0a"/>
-        <!-- Dentes verticais -->
-        <rect x="44" y="64" width="1" height="6" fill="#0a0a0a"/>
-        <rect x="47" y="64" width="1" height="6" fill="#0a0a0a"/>
-        <rect x="50" y="64" width="1" height="6" fill="#0a0a0a"/>
-        <rect x="53" y="64" width="1" height="6" fill="#0a0a0a"/>
-        <rect x="56" y="64" width="1" height="6" fill="#0a0a0a"/>
+        <ellipse cx="40" cy="48" rx="4" ry="5" fill="#000000"/>
+        <ellipse cx="60" cy="48" rx="4" ry="5" fill="#000000"/>
+        <polygon points="50,54 47,60 53,60" fill="#000000"/>
+        <rect x="42" y="64" width="16" height="1.5" fill="#000000"/>
+        <rect x="44" y="64" width="1" height="6" fill="#000000"/>
+        <rect x="47" y="64" width="1" height="6" fill="#000000"/>
+        <rect x="50" y="64" width="1" height="6" fill="#000000"/>
+        <rect x="53" y="64" width="1" height="6" fill="#000000"/>
+        <rect x="56" y="64" width="1" height="6" fill="#000000"/>
       </svg>
     </div>
     <div class="header-text">
@@ -436,234 +423,223 @@ line-height: 1.5;
 <div class="stripe" style="height:3px;"></div>
 
 <main>
-  <!-- COLUNA ESQUERDA: FORM -->
   <div>
+    <div class="card">
+      <h2>Identificação do Militar</h2>
+      <div class="form-grid">
+        <div class="field span-2">
+          <label>Posto / Graduação</label>
+          <select id="cargo">
+            <option value="cmtg">CMT G — Comandante Geral PM</option>
+            <option value="cel">CEL — Coronel PM</option>
+            <option value="tencel">TEN CEL — Tenente Coronel PM</option>
+            <option value="maj">MAJ — Major PM</option>
+            <option value="cap">CAP — Capitão PM</option>
+            <option value="1ten">1º TEN — 1º Tenente PM</option>
+            <option value="2ten">2º TEN — 2º Tenente PM</option>
+            <option value="aspof">ASP OF — Aspirante a Oficial PM</option>
+            <option value="alof4">AL OF 4º CFO</option>
+            <option value="alof3">AL OF 3º CFO</option>
+            <option value="alof2">AL OF 2º CFO</option>
+            <option value="alof1">AL OF 1º CFO</option>
+            <option value="subten">SUBTEN — Subtenente PM</option>
+            <option value="1sgt">1º SGT — 1º Sargento PM</option>
+            <option value="2sgt">2º SGT — 2º Sargento PM</option>
+            <option value="3sgt">3º SGT — 3º Sargento PM</option>
+            <option value="cabo">CABO PM</option>
+            <option value="sd1" selected>SD 1ª CL — Soldado PM 1ª Classe</option>
+            <option value="sd2">SD 2ª CL — Soldado PM 2ª Classe</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Dias trabalhados (mês)</label>
+          <input type="number" id="dias" value="30" min="0" max="31"/>
+        </div>
+        <div class="field">
+          <label>Dependentes (IRRF)</label>
+          <input type="number" id="dependentes" value="0" min="0" max="20"/>
+        </div>
+        <div class="field">
+          <label>Aniversário (dd/mm)</label>
+          <input type="text" id="aniversario" placeholder="01/01"/>
+        </div>
+      </div>
+    </div>
 
-```
-<div class="card">
-  <h2>Identificação do Militar</h2>
-  <div class="form-grid">
-    <div class="field span-2">
-      <label>Posto / Graduação</label>
-      <select id="cargo">
-        <option value="cmtg">CMT G — Comandante Geral PM</option>
-        <option value="cel">CEL — Coronel PM</option>
-        <option value="tencel">TEN CEL — Tenente Coronel PM</option>
-        <option value="maj">MAJ — Major PM</option>
-        <option value="cap">CAP — Capitão PM</option>
-        <option value="1ten">1º TEN — 1º Tenente PM</option>
-        <option value="2ten">2º TEN — 2º Tenente PM</option>
-        <option value="aspof">ASP OF — Aspirante a Oficial PM</option>
-        <option value="alof4">AL OF 4º CFO</option>
-        <option value="alof3">AL OF 3º CFO</option>
-        <option value="alof2">AL OF 2º CFO</option>
-        <option value="alof1">AL OF 1º CFO</option>
-        <option value="subten">SUBTEN — Subtenente PM</option>
-        <option value="1sgt">1º SGT — 1º Sargento PM</option>
-        <option value="2sgt">2º SGT — 2º Sargento PM</option>
-        <option value="3sgt">3º SGT — 3º Sargento PM</option>
-        <option value="cabo">CABO PM</option>
-        <option value="sd1" selected>SD 1ª CL — Soldado PM 1ª Classe</option>
-        <option value="sd2">SD 2ª CL — Soldado PM 2ª Classe</option>
-      </select>
+    <div class="card">
+      <h2>Adicionais e Vantagens</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label>Quinquênios (5% cada)</label>
+          <input type="number" id="quinquenios" value="0" min="0" max="6"/>
+        </div>
+        <div class="field">
+          <label>Sexta-parte (após 20 anos)</label>
+          <select id="sextaparte">
+            <option value="0">Não</option>
+            <option value="1">Sim — 1/6 sobre vencimentos</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Insalubridade (grau)</label>
+          <select id="insalubridade">
+            <option value="785.67" selected>Máximo — R$ 785,67</option>
+            <option value="392.81">Médio — R$ 392,81</option>
+            <option value="196.38">Mínimo — R$ 196,38</option>
+            <option value="0">Sem insalubridade</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Ação de Insalubridade (retroativo)</label>
+          <input type="number" id="acaoinsal" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>Designação em Substituição [Função]</label>
+          <select id="dsfuncao">
+            <option value="0">Não tem</option>
+            <option value="0.20">Capitão (20%)</option>
+            <option value="0.30">Major (30%)</option>
+            <option value="0.40">Tenente Coronel (40%)</option>
+            <option value="0.50">Coronel (50%)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Designação em Substituição [Dias]</label>
+          <input type="number" id="dsdias" value="0" min="0" max="31"/>
+        </div>
+        <div class="field">
+          <label>13º Salário (proporcional)</label>
+          <select id="decimo">
+            <option value="0">Não computar</option>
+            <option value="0.5">Adiantamento 50%</option>
+            <option value="1">Integral</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Dias de Férias (1/3 constitucional)</label>
+          <input type="number" id="ferias" value="0" min="0" max="60"/>
+        </div>
+        <div class="field">
+          <label>Abono de Transferência</label>
+          <input type="number" id="abonotransf" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>Licença-Prêmio em Pecúnia (meses)</label>
+          <input type="number" id="lpremio" value="0" min="0" max="12"/>
+        </div>
+        <div class="field">
+          <label>Retribuição Função Ensino (SD PM)</label>
+          <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <label>Dias trabalhados (mês)</label>
-      <input type="number" id="dias" value="30" min="0" max="31"/>
-    </div>
-    <div class="field">
-      <label>Dependentes (IRRF)</label>
-      <input type="number" id="dependentes" value="0" min="0" max="20"/>
-    </div>
-    <div class="field">
-      <label>Aniversário (dd/mm)</label>
-      <input type="text" id="aniversario" placeholder="01/01"/>
-    </div>
-  </div>
-</div>
 
-<div class="card">
-  <h2>Adicionais e Vantagens</h2>
-  <div class="form-grid">
-    <div class="field">
-      <label>Quinquênios (5% cada)</label>
-      <input type="number" id="quinquenios" value="0" min="0" max="6"/>
+    <div class="card">
+      <h2>Trabalho Extra — DEJEM e Atividade Delegada</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label>Quantidade de DEJEM (diárias 8h)</label>
+          <input type="number" id="qtddejem" value="0" min="0" max="20"/>
+        </div>
+        <div class="field">
+          <label>Região da DEJEM</label>
+          <select id="regdejem">
+            <option value="capital" selected>Capital / Grande SP</option>
+            <option value="interior">Interior</option>
+            <option value="litoral">Litoral / RMVale</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Quantidade de DELEGADAS (diárias 8h)</label>
+          <input type="number" id="qtddel" value="0" min="0" max="20"/>
+        </div>
+        <div class="field">
+          <label>Região da DELEGADA</label>
+          <select id="regdel">
+            <option value="capital" selected>Capital — SP (Lei 18.038/2023)</option>
+            <option value="estrategica">Capital — Região Estratégica (+30%)</option>
+            <option value="noturna">Capital — Período Noturno (+20%)</option>
+            <option value="interior">Outros municípios (UFESP base)</option>
+          </select>
+        </div>
+        <div class="field span-2">
+          <div class="alerta">
+            <strong style="color:var(--dourado)">DEJEM:</strong> diária paga pelo Estado, base UFESP 2026 (R$ 38,42), limite 10/mês conforme LC 1.227/2013.
+            <br><strong style="color:var(--dourado)">Atividade Delegada:</strong> paga pelo município (Lei 18.038/2023, capital SP), coeficiente 1,2 UFESP (praças) ou 1,44 UFESP (oficiais) por hora × 8h.
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <label>Sexta-parte (após 20 anos)</label>
-      <select id="sextaparte">
-        <option value="0">Não</option>
-        <option value="1">Sim — 1/6 sobre vencimentos</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Insalubridade (grau)</label>
-      <select id="insalubridade">
-        <option value="785.67" selected>Máximo — R$ 785,67</option>
-        <option value="392.81">Médio — R$ 392,81</option>
-        <option value="196.38">Mínimo — R$ 196,38</option>
-        <option value="0">Sem insalubridade</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Ação de Insalubridade (retroativo)</label>
-      <input type="number" id="acaoinsal" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>Designação em Substituição [Função]</label>
-      <select id="dsfuncao">
-        <option value="0">Não tem</option>
-        <option value="0.20">Capitão (20%)</option>
-        <option value="0.30">Major (30%)</option>
-        <option value="0.40">Tenente Coronel (40%)</option>
-        <option value="0.50">Coronel (50%)</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Designação em Substituição [Dias]</label>
-      <input type="number" id="dsdias" value="0" min="0" max="31"/>
-    </div>
-    <div class="field">
-      <label>13º Salário (proporcional)</label>
-      <select id="decimo">
-        <option value="0">Não computar</option>
-        <option value="0.5">Adiantamento 50%</option>
-        <option value="1">Integral</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Dias de Férias (1/3 constitucional)</label>
-      <input type="number" id="ferias" value="0" min="0" max="60"/>
-    </div>
-    <div class="field">
-      <label>Abono de Transferência</label>
-      <input type="number" id="abonotransf" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>Licença-Prêmio em Pecúnia (meses)</label>
-      <input type="number" id="lpremio" value="0" min="0" max="12"/>
-    </div>
-    <div class="field">
-      <label>Retribuição Função Ensino (SD PM)</label>
-      <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-  </div>
-</div>
 
-<div class="card">
-  <h2>Trabalho Extra — DEJEM e Atividade Delegada</h2>
-  <div class="form-grid">
-    <div class="field">
-      <label>Quantidade de DEJEM (diárias 8h)</label>
-      <input type="number" id="qtddejem" value="0" min="0" max="20"/>
-    </div>
-    <div class="field">
-      <label>Região da DEJEM</label>
-      <select id="regdejem">
-        <option value="capital" selected>Capital / Grande SP</option>
-        <option value="interior">Interior</option>
-        <option value="litoral">Litoral / RMVale</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Quantidade de DELEGADAS (diárias 8h)</label>
-      <input type="number" id="qtddel" value="0" min="0" max="20"/>
-    </div>
-    <div class="field">
-      <label>Região da DELEGADA</label>
-      <select id="regdel">
-        <option value="capital" selected>Capital — SP (Lei 18.038/2023)</option>
-        <option value="estrategica">Capital — Região Estratégica (+30%)</option>
-        <option value="noturna">Capital — Período Noturno (+20%)</option>
-        <option value="interior">Outros municípios (UFESP base)</option>
-      </select>
-    </div>
-    <div class="field span-2">
+    <div class="card">
+      <h2>Descontos e Contribuições</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label>Empréstimos em Folha / Associação</label>
+          <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>Pensão Alimentícia (% sobre líquido)</label>
+          <input type="number" id="pensao" value="0" min="0" max="100" step="0.01" placeholder="0%"/>
+        </div>
+        <div class="field">
+          <label>FEPOM — Programa COPA</label>
+          <input type="number" id="fepomcopa" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>FEPOM — Conservação Alojamento</label>
+          <input type="number" id="fepomalo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>FEPOM — Rancho</label>
+          <input type="number" id="fepomran" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>D.A. XV Dezembro</label>
+          <input type="number" id="daxv" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>Ass. Benef. Pró-Saúde PMESP</label>
+          <input type="number" id="prosaude" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field">
+          <label>CBPM — Contribuição Assist. Médica</label>
+          <input type="number" id="cbpm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+      </div>
       <div class="alerta">
-        <strong style="color:#d4af37">DEJEM:</strong> diária paga pelo Estado, base UFESP 2026 (R$ 38,42), limite 10/mês conforme LC 1.227/2013.
-        <br><strong style="color:#d4af37">Atividade Delegada:</strong> paga pelo município (Lei 18.038/2023, capital SP), coeficiente 1,2 UFESP (praças) ou 1,44 UFESP (oficiais) por hora × 8h.
+        <strong style="color:var(--dourado)">Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte (não incide sobre DEJEM/Delegada/Insalubridade).
       </div>
     </div>
   </div>
-</div>
-
-<div class="card">
-  <h2>Descontos e Contribuições</h2>
-  <div class="form-grid">
-    <div class="field">
-      <label>Empréstimos em Folha / Associação</label>
-      <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>Pensão Alimentícia (% sobre líquido)</label>
-      <input type="number" id="pensao" value="0" min="0" max="100" step="0.01" placeholder="0%"/>
-    </div>
-    <div class="field">
-      <label>FEPOM — Programa COPA</label>
-      <input type="number" id="fepomcopa" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>FEPOM — Conservação Alojamento</label>
-      <input type="number" id="fepomalo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>FEPOM — Rancho</label>
-      <input type="number" id="fepomran" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>D.A. XV Dezembro</label>
-      <input type="number" id="daxv" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>Ass. Benef. Pró-Saúde PMESP</label>
-      <input type="number" id="prosaude" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-    <div class="field">
-      <label>CBPM — Contribuição Assist. Médica</label>
-      <input type="number" id="cbpm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-    </div>
-  </div>
-  <div class="alerta">
-    <strong style="color:#d4af37">Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte (não incide sobre DEJEM/Delegada/Insalubridade).
-  </div>
-</div>
-```
-
-  </div>
-
-  <!-- COLUNA DIREITA: RESUMO -->
 
   <aside class="resumo">
     <div class="card">
       <h2>Holerite Simulado</h2>
+      <div class="total-bloco">
+        <div class="label">Salário Bruto</div>
+        <div class="valor" id="bruto">R$ 0,00</div>
+      </div>
 
-```
-  <div class="total-bloco">
-    <div class="label">Salário Bruto</div>
-    <div class="valor" id="bruto">R$ 0,00</div>
-  </div>
+      <div class="total-bloco liquido">
+        <div class="label">Salário Líquido</div>
+        <div class="valor" id="liquido">R$ 0,00</div>
+      </div>
 
-  <div class="total-bloco liquido">
-    <div class="label">Salário Líquido</div>
-    <div class="valor" id="liquido">R$ 0,00</div>
-  </div>
+      <div class="breakdown">
+        <h3>Proventos</h3>
+        <div id="proventos"></div>
+      </div>
 
-  <div class="breakdown">
-    <h3>Proventos</h3>
-    <div id="proventos"></div>
-  </div>
+      <div class="breakdown">
+        <h3>Descontos</h3>
+        <div id="descontos"></div>
+      </div>
 
-  <div class="breakdown">
-    <h3>Descontos</h3>
-    <div id="descontos"></div>
-  </div>
-
-  <div class="alerta">
-    Cálculos baseados na LC 546/88 + reajuste de 10% (PL 226/2026) vigente desde 01/04/2026, e na UFESP 2026 (R$ 38,42).
-  </div>
-</div>
-```
-
+      <div class="alerta">
+        Cálculos baseados na LC 546/88 + reajuste de 10% (PL 226/2026) vigente desde 01/04/2026, e na UFESP 2026 (R$ 38,42).
+      </div>
+    </div>
   </aside>
 </main>
 
@@ -672,11 +648,6 @@ line-height: 1.5;
 </footer>
 
 <script>
-/* =========================================================
-   DADOS BASE — Tabela PMESP abril/2026
-   (Tabela jul/2025 SGGD-SP × 1,10 — reajuste linear PL 226/2026)
-   Valores: [PADRÃO, GRATIF.REPRESENTAÇÃO]
-========================================================= */
 const TABELA = {
   cmtg:   { nome: "CMT G",     padrao: 11524.04, gratif: 1798.01, oficial: true },
   cel:    { nome: "CEL",       padrao: 9495.92,  gratif: 899.00,  oficial: true },
@@ -699,13 +670,9 @@ const TABELA = {
   sd2:    { nome: "SD 2ª CL",  padrao: 2348.42,  gratif: 0,       oficial: false }
 };
 
-/* UFESP 2026 (DOE-SP dez/2025) */
 const UFESP_2026 = 38.42;
 
-/* DEJEM 2026 (LC 1.227/2013, base UFESP 2026 + ajustes regionais) */
 function valorDejem(regiao, oficial) {
-  // Valor base por diária (8h). Estimativa para 2026 com base em UFESP × coef.
-  // Capital ~ 8 × UFESP × (1,0 ou 1,2); ajustes regionais
   const base = oficial ? 1.2 : 1.0;
   let coef = 1.0;
   if (regiao === "capital") coef = 1.0;
@@ -714,18 +681,15 @@ function valorDejem(regiao, oficial) {
   return UFESP_2026 * 8 * base * coef;
 }
 
-/* Atividade Delegada — Lei 18.038/2023 (capital SP) */
 function valorDelegada(regiao, oficial) {
-  // Coef. UFESP por hora: 1,2 (praças/PC geral) ou 1,44 (oficiais/delegados)
   const coef = oficial ? 1.44 : 1.20;
-  let base = UFESP_2026 * coef * 8; // 8h por diária
+  let base = UFESP_2026 * coef * 8; 
   if (regiao === "estrategica") base *= 1.30;
   else if (regiao === "noturna") base *= 1.20;
-  else if (regiao === "interior") base *= 0.85; // outros municípios costumam pagar menos
+  else if (regiao === "interior") base *= 0.85; 
   return base;
 }
 
-/* Tabela IRRF 2026 (mensal) */
 function calcularIRRF(base, deps) {
   const deducaoDep = 189.59 * deps;
   const baseAjust = Math.max(0, base - deducaoDep);
@@ -738,13 +702,10 @@ function calcularIRRF(base, deps) {
   return Math.max(0, baseAjust * aliq - ded);
 }
 
-/* SPPREV — 14% (Lei 14.653/11) */
 const ALIQ_PREV = 0.14;
 
-/* ===== FORMAT ===== */
 const fmt = v => "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
-/* ===== RENDER LINHA ===== */
 function linha(desc, val, tipo) {
   if (!val || val === 0) return "";
   return `<div class="linha ${tipo||''}">
@@ -759,7 +720,6 @@ function subtotal(desc, val) {
   </div>`;
 }
 
-/* ===== CALCULAR ===== */
 function calcular() {
   const cargoKey = document.getElementById("cargo").value;
   const c = TABELA[cargoKey];
@@ -792,37 +752,19 @@ function calcular() {
   const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
   const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
 
-  /* === PROVENTOS === */
   const padrao = c.padrao * fator;
-  const retp = c.padrao * fator;  // RETP = 100% padrão
+  const retp = c.padrao * fator;
   const gratifRepres = c.gratif * fator;
-
-  // Quinquênio — 5% sobre (Padrão + RETP)
   const valQuinq = (c.padrao + c.padrao) * 0.05 * quinq;
-
-  // Sexta-parte — 1/6 sobre (Padrão + RETP) — após 20 anos
   const valSexta = sexta ? (c.padrao + c.padrao) / 6 : 0;
-
-  // Designação em Substituição
   const valDS = dsFunc * c.padrao * (dsDias / 30);
-
-  // 13º proporcional sobre (Padrão + RETP)
   const val13 = decimo * (c.padrao + c.padrao);
-
-  // Férias + 1/3 — proporcional aos dias
   const baseDiaria = (c.padrao + c.padrao) / 30;
   const valFerias = feriasD > 0 ? baseDiaria * feriasD * (4/3) : 0;
-
-  // Licença-prêmio em pecúnia (meses)
   const valLP = lpremio * (c.padrao + c.padrao);
-
-  // DEJEM (paga pelo Estado, isenta de IR/Prev conforme jurisprudência majoritária; mantemos no bruto sem incidência)
   const valDejem = qtdDejem * valorDejem(regDejem, c.oficial);
-
-  // Atividade Delegada (paga pelo Município, sem incidência de prev. estadual)
   const valDel = qtdDel * valorDelegada(regDel, c.oficial);
 
-  // === MONTAGEM PROVENTOS ===
   let proventosHTML = "";
   proventosHTML += linha("Padrão", padrao, "provento");
   proventosHTML += linha("RETP", retp, "provento");
@@ -840,24 +782,16 @@ function calcular() {
   if (valDejem) proventosHTML += linha(`DEJEM (${qtdDejem} diárias)`, valDejem, "provento");
   if (valDel)   proventosHTML += linha(`Delegadas (${qtdDel} diárias)`, valDel, "provento");
 
-  // BASE PARA CÁLCULOS
   const baseFolha = padrao + retp + valQuinq + valSexta + insal + gratifRepres
                   + valDS + acaoInsal + val13 + valFerias + valLP + abonoT + ensino;
   const bruto = baseFolha + valDejem + valDel;
 
   proventosHTML += subtotal("Total Bruto", bruto);
 
-  /* === DESCONTOS === */
-  // SPPREV 14% sobre Padrão + RETP + Quinquênios + Sexta-parte (não DEJEM/Delegada/Insal)
   const baseSPPREV = padrao + retp + valQuinq + valSexta + valDS;
   const sprev = baseSPPREV * ALIQ_PREV;
-
-  // IRRF — base = bruto - SPPREV - DEJEM (não tributada conforme jurisprudência majoritária)
-  // Aqui adotamos cálculo conservador: IR sobre folha (sem DEJEM/Delegada)
   const baseIR = baseFolha - sprev;
   const irrf = calcularIRRF(baseIR, deps);
-
-  // Pensão sobre líquido após prev e IR
   const liqAntesPensao = bruto - sprev - irrf - empr - fepomCopa - fepomAlo - fepomRan - daxv - prosaude - cbpm;
   const pensao = liqAntesPensao * (pensaoPct / 100);
 
@@ -878,20 +812,17 @@ function calcular() {
 
   const liquido = bruto - totalDesc;
 
-  /* === RENDER === */
   document.getElementById("bruto").textContent = fmt(bruto);
   document.getElementById("liquido").textContent = fmt(liquido);
   document.getElementById("proventos").innerHTML = proventosHTML;
   document.getElementById("descontos").innerHTML = descontosHTML;
 }
 
-/* ===== EVENTOS ===== */
 document.querySelectorAll("input, select").forEach(el => {
   el.addEventListener("input", calcular);
   el.addEventListener("change", calcular);
 });
 calcular();
 </script>
-
 </body>
 </html>
