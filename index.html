@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Simulador e Direitos SegPub SP</title>
+<title>Simulador e Direitos SegPub - SP/RJ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -54,6 +55,14 @@
   body[data-inst="pcsp"] {
     --vermelho: #4f4f4f; /* Tom cinza/branco/preto da PCSP */
     --vermelho-escuro: #2b2b2b;
+  }
+  body[data-inst="pmerj"] {
+    --vermelho: #1E3084; /* Azul tradicional da PMERJ */
+    --vermelho-escuro: #142057;
+  }
+  body[data-inst="pcerj"] {
+    --vermelho: #6B7280; /* Cinza-azulado representando PCERJ */
+    --vermelho-escuro: #4B5563;
   }
   
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -115,11 +124,12 @@
   .close-btn { background: none; border: none; font-size: 22px; color: #fff; cursor: pointer; transition: 0.2s; }
   .close-btn:hover { color: var(--vermelho); }
   
-  /* INSTITUIÇÃO SELECTOR (NOVO) */
+  /* INSTITUIÇÃO SELECTOR */
   .inst-selector { padding: 20px 24px; border-bottom: 1px solid var(--border-card); background-color: var(--item-bg); }
   .inst-selector label { display: block; font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; }
   .inst-selector select { width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 10px; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; border-radius: 4px; cursor: pointer; outline: none; }
   .inst-selector select:focus { border-color: var(--vermelho); }
+  .inst-selector optgroup { font-style: normal; font-weight: 700; color: var(--vermelho); background-color: var(--bg-input); }
 
   .sidebar-nav { display: flex; flex-direction: column; padding: 20px 0; flex-shrink: 0; }
   .sidebar-nav a { padding: 16px 24px; text-decoration: none; color: var(--text-main); font-family: 'Roboto', sans-serif; font-weight: 600; font-size: 14px; border-left: 4px solid transparent; transition: 0.2s; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -161,10 +171,37 @@
   .field.span-2 { grid-column: span 2; }
   
   /* CONTROLE DE EXIBIÇÃO POR INSTITUIÇÃO */
-  .pm-only { display: flex; }
+  .pm-only, .pmerj-only, .pcerj-only { display: none; }
+
+  body[data-inst="pmesp"] .pm-only { display: flex; }
+  body[data-inst="pcsp"] .pc-only { display: flex; }
+  body[data-inst="pmerj"] .pmerj-only { display: flex; }
+  body[data-inst="pcerj"] .pcerj-only { display: flex; }
+
+  /* Esconder pc-only por default e mostrar somente em pcsp */
   .pc-only { display: none; }
-  body[data-inst="pcsp"] .pm-only { display: none !important; }
   body[data-inst="pcsp"] .pc-only { display: flex !important; }
+
+  /* Para títulos h2 (que tem pm-only/pc-only) */
+  body[data-inst="pmesp"] h2.pm-only { display: flex; }
+  body[data-inst="pcsp"] h2.pc-only { display: flex; }
+  body[data-inst="pmerj"] h2.pmerj-only { display: flex; }
+  body[data-inst="pcerj"] h2.pcerj-only { display: flex; }
+
+  /* Para alertas div */
+  body[data-inst="pmesp"] div.pm-only { display: block; }
+  body[data-inst="pcsp"] div.pc-only { display: block; }
+  body[data-inst="pmerj"] div.pmerj-only { display: block; }
+  body[data-inst="pcerj"] div.pcerj-only { display: block; }
+
+  /* Class auxiliares para combinações */
+  .militar-only { display: none; }
+  body[data-inst="pmesp"] .militar-only,
+  body[data-inst="pmerj"] .militar-only { display: flex; }
+
+  .civil-only { display: none; }
+  body[data-inst="pcsp"] .civil-only,
+  body[data-inst="pcerj"] .civil-only { display: flex; }
 
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -228,6 +265,7 @@
     .card { padding: 20px; }
   }
 </style>
+
 </head>
 <body data-inst="pmesp">
 
@@ -237,7 +275,7 @@
       <span></span><span></span><span></span>
     </button>
     <div class="header-text" id="header-text">
-      <h1>Simulador de <span>Soldo</span></h1>
+      <h1>Simulador de <span id="header-span">Soldo</span></h1>
       <p id="header-desc">Descubra quanto você vai receber (valor atualizado 2026)</p>
     </div>
   </div>
@@ -254,12 +292,18 @@
     <h2>Menu</h2>
     <button class="close-btn" onclick="toggleMenu()">✕</button>
   </div>
-  
+
   <div class="inst-selector">
     <label for="instituicao">Instituição</label>
     <select id="instituicao" onchange="mudarInstituicao()">
-      <option value="pmesp" selected>PMESP - Polícia Militar</option>
-      <option value="pcsp">PCSP - Polícia Civil</option>
+      <optgroup label="São Paulo">
+        <option value="pmesp" selected>PMESP - Polícia Militar</option>
+        <option value="pcsp">PCSP - Polícia Civil</option>
+      </optgroup>
+      <optgroup label="Rio de Janeiro">
+        <option value="pmerj">PMERJ - Polícia Militar</option>
+        <option value="pcerj">PCERJ - Polícia Civil</option>
+      </optgroup>
     </select>
   </div>
 
@@ -301,196 +345,358 @@
           <input type="number" id="dias" value="30" min="0" max="31"/>
         </div>
         <div class="field">
-          <label>Dependentes (IRRF / IAMSPE)</label>
+          <label>Dependentes (IRRF / Saúde)</label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
         </div>
       </div>
     </div>
 
-    <div class="card">
-      <h2>Adicionais e Vantagens</h2>
-      <div class="form-grid">
-        <div class="field">
-          <label>Quinquênios (5% cada)</label>
-          <input type="number" id="quinquenios" value="0" min="0" max="6"/>
-        </div>
-        <div class="field">
-          <label>Sexta-parte (após 20 anos)</label>
-          <select id="sextaparte">
-            <option value="0">Não</option>
-            <option value="1">Sim — 1/6 sobre vencimentos</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Insalubridade (grau)</label>
-          <select id="insalubridade">
-            <option value="785.67" selected>Máximo — R$ 785,67</option>
-            <option value="392.81">Médio — R$ 392,81</option>
-            <option value="196.38">Mínimo — R$ 196,38</option>
-            <option value="0">Sem insalubridade</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Ação de Insalubridade (retroativo)</label>
-          <input type="number" id="acaoinsal" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
-        
-        <div class="field pm-only">
-          <label>Designação em Substituição [Função]</label>
-          <select id="dsfuncao">
-            <option value="0">Não tem</option>
-            <option value="0.20">Capitão (20%)</option>
-            <option value="0.30">Major (30%)</option>
-            <option value="0.40">Tenente Coronel (40%)</option>
-            <option value="0.50">Coronel (50%)</option>
-          </select>
-        </div>
-        <div class="field pm-only">
-          <label>Designação em Substituição [Dias]</label>
-          <input type="number" id="dsdias" value="0" min="0" max="31"/>
-        </div>
-        <div class="field pm-only">
-          <label>Retribuição Função Ensino (SD PM)</label>
-          <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
-
-        <div class="field pc-only">
-          <label>GAT - Acúmulo de Titularidade (Dias)</label>
-          <input type="number" id="gat_dias" value="0" min="0" max="31"/>
-        </div>
-
-        <div class="field">
-          <label>13º Salário (proporcional)</label>
-          <select id="decimo">
-            <option value="0">Não computar</option>
-            <option value="0.5">Adiantamento 50%</option>
-            <option value="1">Integral</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Dias de Férias (1/3 constitucional)</label>
-          <input type="number" id="ferias" value="0" min="0" max="60"/>
-        </div>
-        <div class="field">
-          <label>Abono de Transferência</label>
-          <input type="number" id="abonotransf" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
-        <div class="field">
-          <label>Licença-Prêmio em Pecúnia (meses)</label>
-          <input type="number" id="lpremio" value="0" min="0" max="12"/>
-        </div>
-      </div>
+```
+<div class="card">
+  <h2>Adicionais e Vantagens</h2>
+  <div class="form-grid">
+    <!-- Quinquênios SP / Triênios RJ -->
+    <div class="field pm-only">
+      <label>Quinquênios (5% cada)</label>
+      <input type="number" id="quinquenios" value="0" min="0" max="6"/>
+    </div>
+    <div class="field pc-only">
+      <label>Quinquênios (5% cada)</label>
+      <input type="number" id="quinquenios_sp_pc" value="0" min="0" max="6"/>
+    </div>
+    <div class="field pmerj-only">
+      <label>Triênios PMERJ (10% cada)</label>
+      <input type="number" id="trienios" value="0" min="0" max="13"/>
+    </div>
+    <div class="field pcerj-only">
+      <label>Adicional de Tempo de Serviço (5% cada qq.)</label>
+      <input type="number" id="quinquenios_rj_pc" value="0" min="0" max="6"/>
     </div>
 
-    <div class="card">
-      <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
-      <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
-      
-      <div class="form-grid">
-        <div class="field pm-only">
-          <label>Qtd. de DEJEM (diárias 8h)</label>
-          <input type="number" id="qtddejem" value="0" min="0" max="20"/>
-        </div>
-        <div class="field pm-only">
-          <label>Região da DEJEM</label>
-          <select id="regdejem">
-            <option value="capital" selected>Capital / Grande SP</option>
-            <option value="interior">Interior</option>
-            <option value="litoral">Litoral / RMVale</option>
-          </select>
-        </div>
-        <div class="field pm-only">
-          <label>Qtd. de DELEGADAS (diárias 8h)</label>
-          <input type="number" id="qtddel" value="0" min="0" max="20"/>
-        </div>
-        <div class="field pm-only">
-          <label>Região da DELEGADA</label>
-          <select id="regdel">
-            <option value="capital" selected>Capital — SP (Lei 18.038/2023)</option>
-            <option value="estrategica">Capital — Estratégica (+30%)</option>
-            <option value="noturna">Capital — Noturno (+20%)</option>
-            <option value="interior">Outros (UFESP base)</option>
-          </select>
-        </div>
-
-        <div class="field pc-only">
-          <label>Qtd. de DEJEC (diárias 8h)</label>
-          <input type="number" id="qtddejec" value="0" min="0" max="10"/>
-        </div>
-        <div class="field pc-only">
-          <label>Tipo de Escala DEJEC</label>
-          <select id="tipodejec">
-            <option value="normal" selected>Convencional</option>
-            <option value="especial">Operação Especial</option>
-          </select>
-        </div>
-
-        <div class="field span-2">
-          <div class="alerta pm-only">
-            <strong>DEJEM:</strong> base UFESP 2026 (R$ 38,42), limite 10/mês.<br>
-            <strong>Atividade Delegada:</strong> coeficiente 1,2 UFESP (praças) ou 1,44 (oficiais).
-          </div>
-          <div class="alerta pc-only">
-            <strong>DEJEC:</strong> Diária Especial por Jornada Extraordinária de Trabalho Policial Civil. Limitada a 10 plantões mensais. Calculada sob a UFESP 2026 (R$ 38,42).
-          </div>
-        </div>
-      </div>
+    <!-- Sexta-parte (apenas SP) -->
+    <div class="field pm-only">
+      <label>Sexta-parte (após 20 anos)</label>
+      <select id="sextaparte">
+        <option value="0">Não</option>
+        <option value="1">Sim — 1/6 sobre vencimentos</option>
+      </select>
+    </div>
+    <div class="field pc-only">
+      <label>Sexta-parte (após 20 anos)</label>
+      <select id="sextaparte_sp_pc">
+        <option value="0">Não</option>
+        <option value="1">Sim — 1/6 sobre vencimentos</option>
+      </select>
     </div>
 
-    <div class="card">
-      <h2>Descontos e Contribuições</h2>
-      <div class="form-grid">
-        <div class="field">
-          <label>Empréstimos / Consignados</label>
-          <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
-        <div class="field">
-          <label>Pensão Alimentícia (% líquido)</label>
-          <input type="number" id="pensao" value="0" min="0" max="100" step="0.01" placeholder="0%"/>
-        </div>
-        
-        <div class="field pm-only">
-          <label>FEPOM — P. COPA</label>
-          <input type="number" id="fepomcopa" value="0" min="0" step="0.01"/>
-        </div>
-        <div class="field pm-only">
-          <label>FEPOM — Alojamento</label>
-          <input type="number" id="fepomalo" value="0" min="0" step="0.01"/>
-        </div>
-        <div class="field pm-only">
-          <label>FEPOM — Rancho</label>
-          <input type="number" id="fepomran" value="0" min="0" step="0.01"/>
-        </div>
-        <div class="field pm-only">
-          <label>D.A. XV Dezembro</label>
-          <input type="number" id="daxv" value="0" min="0" step="0.01"/>
-        </div>
-        <div class="field pm-only">
-          <label>Pró-Saúde PMESP</label>
-          <input type="number" id="prosaude" value="0" min="0" step="0.01"/>
-        </div>
-        <div class="field pm-only">
-          <label>CBPM — Assistência</label>
-          <input type="number" id="cbpm" value="0" min="0" step="0.01"/>
-        </div>
+    <!-- Adicional Periculosidade PCERJ -->
+    <div class="field pcerj-only">
+      <label>Adicional Periculosidade (auto: 230%)</label>
+      <select id="periculosidade_rj">
+        <option value="1" selected>Sim — 230% sobre vencimento</option>
+        <option value="0">Não optante</option>
+      </select>
+    </div>
+    <!-- Gratificação Técnico-Científica (Peritos PCERJ) -->
+    <div class="field pcerj-only">
+      <label>Gratif. Técnico-Científica (Peritos)</label>
+      <select id="gtc_rj">
+        <option value="0" selected>Não se aplica</option>
+        <option value="1">Sim — +100% sobre venc.</option>
+      </select>
+    </div>
 
-        <div class="field pc-only">
-          <label>IAMSPE (Contribuição Médica)</label>
-          <select id="opt_iamspe">
-            <option value="1">Sim (2% titular + 2% dep.)</option>
-            <option value="0" selected>Não optante</option>
-          </select>
-        </div>
-        <div class="field pc-only">
-          <label>Sindicato / Associação</label>
-          <input type="number" id="sindicato" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
-        </div>
+    <!-- Insalubridade (apenas SP) -->
+    <div class="field pm-only">
+      <label>Insalubridade (grau)</label>
+      <select id="insalubridade">
+        <option value="785.67" selected>Máximo — R$ 785,67</option>
+        <option value="392.81">Médio — R$ 392,81</option>
+        <option value="196.38">Mínimo — R$ 196,38</option>
+        <option value="0">Sem insalubridade</option>
+      </select>
+    </div>
+    <div class="field pc-only">
+      <label>Insalubridade (grau)</label>
+      <select id="insalubridade_sp_pc">
+        <option value="785.67" selected>Máximo — R$ 785,67</option>
+        <option value="392.81">Médio — R$ 392,81</option>
+        <option value="196.38">Mínimo — R$ 196,38</option>
+        <option value="0">Sem insalubridade</option>
+      </select>
+    </div>
+    <div class="field pm-only">
+      <label>Ação de Insalubridade (retroativo)</label>
+      <input type="number" id="acaoinsal" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field pc-only">
+      <label>Ação de Insalubridade (retroativo)</label>
+      <input type="number" id="acaoinsal_sp_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    
+    <!-- Designação substituição PMESP -->
+    <div class="field pm-only">
+      <label>Designação em Substituição [Função]</label>
+      <select id="dsfuncao">
+        <option value="0">Não tem</option>
+        <option value="0.20">Capitão (20%)</option>
+        <option value="0.30">Major (30%)</option>
+        <option value="0.40">Tenente Coronel (40%)</option>
+        <option value="0.50">Coronel (50%)</option>
+      </select>
+    </div>
+    <div class="field pm-only">
+      <label>Designação em Substituição [Dias]</label>
+      <input type="number" id="dsdias" value="0" min="0" max="31"/>
+    </div>
+    <div class="field pm-only">
+      <label>Retribuição Função Ensino (SD PM)</label>
+      <input type="number" id="ensino" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
 
+    <!-- GAT PCSP -->
+    <div class="field pc-only">
+      <label>GAT - Acúmulo de Titularidade (Dias)</label>
+      <input type="number" id="gat_dias" value="0" min="0" max="31"/>
+    </div>
+
+    <!-- Auxílios PMERJ -->
+    <div class="field pmerj-only">
+      <label>Auxílio-Alimentação (R$ 433,80)</label>
+      <select id="auxalim_rj">
+        <option value="433.80" selected>Receber R$ 433,80</option>
+        <option value="0">Não recebe</option>
+      </select>
+    </div>
+    <div class="field pmerj-only">
+      <label>Auxílio-Transporte</label>
+      <select id="auxtransp_rj">
+        <option value="100" selected>Receber R$ 100,00</option>
+        <option value="0">Não recebe</option>
+      </select>
+    </div>
+    <div class="field pmerj-only">
+      <label>Gratif. Lotação Especial (UPP/BOPE/Choque)</label>
+      <input type="number" id="lotacao_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field pmerj-only">
+      <label>Gratif. Habilit. Profissional (10% por especialização)</label>
+      <select id="ghp_rj">
+        <option value="0" selected>Não tem</option>
+        <option value="0.10">CFC/CFAP (+10%)</option>
+        <option value="0.20">CAS/CASES (+20%)</option>
+        <option value="0.30">CAO/CSP (+30%)</option>
+      </select>
+    </div>
+
+    <!-- Auxílios PCERJ -->
+    <div class="field pcerj-only">
+      <label>Auxílio-Alimentação</label>
+      <input type="number" id="auxalim_rj_pc" value="433.80" min="0" step="0.01"/>
+    </div>
+    <div class="field pcerj-only">
+      <label>Auxílio-Transporte</label>
+      <input type="number" id="auxtransp_rj_pc" value="100" min="0" step="0.01"/>
+    </div>
+
+    <div class="field">
+      <label>13º Salário (proporcional)</label>
+      <select id="decimo">
+        <option value="0">Não computar</option>
+        <option value="0.5">Adiantamento 50%</option>
+        <option value="1">Integral</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Dias de Férias (1/3 constitucional)</label>
+      <input type="number" id="ferias" value="0" min="0" max="60"/>
+    </div>
+    <div class="field">
+      <label>Abono de Transferência</label>
+      <input type="number" id="abonotransf" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field">
+      <label>Licença-Prêmio em Pecúnia (meses)</label>
+      <input type="number" id="lpremio" value="0" min="0" max="12"/>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
+  <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
+  <h2 class="pmerj-only">Trabalho Extra — RAS (Regime Adicional de Serviço)</h2>
+  <h2 class="pcerj-only">Trabalho Extra — Serviço Voluntário Gratificado</h2>
+  
+  <div class="form-grid">
+    <!-- DEJEM/Delegada (PMESP) -->
+    <div class="field pm-only">
+      <label>Qtd. de DEJEM (diárias 8h)</label>
+      <input type="number" id="qtddejem" value="0" min="0" max="20"/>
+    </div>
+    <div class="field pm-only">
+      <label>Região da DEJEM</label>
+      <select id="regdejem">
+        <option value="capital" selected>Capital / Grande SP</option>
+        <option value="interior">Interior</option>
+        <option value="litoral">Litoral / RMVale</option>
+      </select>
+    </div>
+    <div class="field pm-only">
+      <label>Qtd. de DELEGADAS (diárias 8h)</label>
+      <input type="number" id="qtddel" value="0" min="0" max="20"/>
+    </div>
+    <div class="field pm-only">
+      <label>Região da DELEGADA</label>
+      <select id="regdel">
+        <option value="capital" selected>Capital — SP (Lei 18.038/2023)</option>
+        <option value="estrategica">Capital — Estratégica (+30%)</option>
+        <option value="noturna">Capital — Noturno (+20%)</option>
+        <option value="interior">Outros (UFESP base)</option>
+      </select>
+    </div>
+
+    <!-- DEJEC (PCSP) -->
+    <div class="field pc-only">
+      <label>Qtd. de DEJEC (diárias 8h)</label>
+      <input type="number" id="qtddejec" value="0" min="0" max="10"/>
+    </div>
+    <div class="field pc-only">
+      <label>Tipo de Escala DEJEC</label>
+      <select id="tipodejec">
+        <option value="normal" selected>Convencional</option>
+        <option value="especial">Operação Especial</option>
+      </select>
+    </div>
+
+    <!-- RAS (PMERJ) -->
+    <div class="field pmerj-only">
+      <label>Qtd. de RAS (turnos 12h)</label>
+      <input type="number" id="qtdras" value="0" min="0" max="15"/>
+    </div>
+    <div class="field pmerj-only">
+      <label>Tipo de RAS</label>
+      <select id="tiporas">
+        <option value="normal" selected>Padrão (capital)</option>
+        <option value="especial">Operações Especiais (+25%)</option>
+        <option value="interior">Interior (-10%)</option>
+      </select>
+    </div>
+
+    <!-- Serviço Voluntário (PCERJ) -->
+    <div class="field pcerj-only">
+      <label>Qtd. Plantões Extras (12h)</label>
+      <input type="number" id="qtdplantao_rj" value="0" min="0" max="15"/>
+    </div>
+    <div class="field pcerj-only">
+      <label>Valor Médio Plantão Extra (R$)</label>
+      <input type="number" id="valplantao_rj" value="350" min="0" step="0.01"/>
+    </div>
+
+    <div class="field span-2">
+      <div class="alerta pm-only">
+        <strong>DEJEM:</strong> base UFESP 2026 (R$ 38,42), limite 10/mês.<br>
+        <strong>Atividade Delegada:</strong> coeficiente 1,2 UFESP (praças) ou 1,44 (oficiais).
       </div>
-      <div class="alerta">
-        <strong>Observação:</strong> SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.
+      <div class="alerta pc-only">
+        <strong>DEJEC:</strong> Diária Especial por Jornada Extraordinária de Trabalho Policial Civil. Limitada a 10 plantões mensais. Calculada sob a UFESP 2026 (R$ 38,42).
+      </div>
+      <div class="alerta pmerj-only">
+        <strong>RAS:</strong> Regime Adicional de Serviço (PMERJ). Natureza indenizatória. Pode acrescer mais de R$ 3.800 líquidos/mês conforme escala. Não incide previdência. Estimativa por turno: praças R$ 280, oficiais R$ 410.
+      </div>
+      <div class="alerta pcerj-only">
+        <strong>Plantões Extras (PCERJ):</strong> a Polícia Civil RJ não tem DEJEC, mas servidores podem ser convocados para escalas extraordinárias remuneradas conforme regulamento interno.
       </div>
     </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Descontos e Contribuições</h2>
+  <div class="form-grid">
+    <div class="field">
+      <label>Empréstimos / Consignados</label>
+      <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field">
+      <label>Pensão Alimentícia (% líquido)</label>
+      <input type="number" id="pensao" value="0" min="0" max="100" step="0.01" placeholder="0%"/>
+    </div>
+    
+    <!-- Descontos PMESP -->
+    <div class="field pm-only">
+      <label>FEPOM — P. COPA</label>
+      <input type="number" id="fepomcopa" value="0" min="0" step="0.01"/>
+    </div>
+    <div class="field pm-only">
+      <label>FEPOM — Alojamento</label>
+      <input type="number" id="fepomalo" value="0" min="0" step="0.01"/>
+    </div>
+    <div class="field pm-only">
+      <label>FEPOM — Rancho</label>
+      <input type="number" id="fepomran" value="0" min="0" step="0.01"/>
+    </div>
+    <div class="field pm-only">
+      <label>D.A. XV Dezembro</label>
+      <input type="number" id="daxv" value="0" min="0" step="0.01"/>
+    </div>
+    <div class="field pm-only">
+      <label>Pró-Saúde PMESP</label>
+      <input type="number" id="prosaude" value="0" min="0" step="0.01"/>
+    </div>
+    <div class="field pm-only">
+      <label>CBPM — Assistência</label>
+      <input type="number" id="cbpm" value="0" min="0" step="0.01"/>
+    </div>
+
+    <!-- Descontos PCSP -->
+    <div class="field pc-only">
+      <label>IAMSPE (Contribuição Médica)</label>
+      <select id="opt_iamspe">
+        <option value="1">Sim (2% titular + 2% dep.)</option>
+        <option value="0" selected>Não optante</option>
+      </select>
+    </div>
+    <div class="field pc-only">
+      <label>Sindicato / Associação</label>
+      <input type="number" id="sindicato" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+
+    <!-- Descontos PMERJ -->
+    <div class="field pmerj-only">
+      <label>FUSPOM (Fundo Saúde Militar)</label>
+      <input type="number" id="fuspom" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field pmerj-only">
+      <label>Família Azul (Plano Saúde Familiares)</label>
+      <input type="number" id="familiazul" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field pmerj-only">
+      <label>HCPM (Hospital Central PM)</label>
+      <input type="number" id="hcpm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field pmerj-only">
+      <label>Cooperativa / Associação PM</label>
+      <input type="number" id="coopm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+
+    <!-- Descontos PCERJ -->
+    <div class="field pcerj-only">
+      <label>FUSPOL / Saúde Policial Civil</label>
+      <input type="number" id="fuspol" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+    <div class="field pcerj-only">
+      <label>Sindicato / Associação (SinPol/ADPERJ)</label>
+      <input type="number" id="sindicato_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+    </div>
+
+  </div>
+  <div class="alerta">
+    <strong>Observação:</strong> <span id="alerta-prev">SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.</span>
+  </div>
+</div>
+```
+
   </div>
 
   <aside class="resumo">
@@ -501,25 +707,28 @@
         <div class="valor" id="bruto">R$ 0,00</div>
       </div>
 
-      <div class="total-bloco liquido">
-        <div class="label">Salário Líquido</div>
-        <div class="valor" id="liquido">R$ 0,00</div>
-      </div>
+```
+  <div class="total-bloco liquido">
+    <div class="label">Salário Líquido</div>
+    <div class="valor" id="liquido">R$ 0,00</div>
+  </div>
 
-      <div class="breakdown">
-        <h3>Proventos</h3>
-        <div id="proventos"></div>
-      </div>
+  <div class="breakdown">
+    <h3>Proventos</h3>
+    <div id="proventos"></div>
+  </div>
 
-      <div class="breakdown">
-        <h3>Descontos</h3>
-        <div id="descontos"></div>
-      </div>
+  <div class="breakdown">
+    <h3>Descontos</h3>
+    <div id="descontos"></div>
+  </div>
 
-      <div class="alerta" id="rodape_alerta">
-        Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.
-      </div>
-    </div>
+  <div class="alerta" id="rodape_alerta">
+    Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.
+  </div>
+</div>
+```
+
   </aside>
 </main>
 
@@ -529,12 +738,7 @@
     <div class="form-grid" style="margin-bottom: 0;">
       <div class="field">
         <label>Nível da Carreira</label>
-        <select id="cargo_dir">
-            <option value="oficial" class="pm-only">Oficial (Tenente a Coronel)</option>
-            <option value="praca" class="pm-only" selected>Praça (Soldado a Subtenente)</option>
-            <option value="delegado" class="pc-only">Autoridade Policial (Delegado)</option>
-            <option value="agente" class="pc-only" selected>Agente / Investigador / Escrivão / Outros</option>
-        </select>
+        <select id="cargo_dir"></select>
       </div>
       <div class="field">
         <label>Situação Atual</label>
@@ -563,58 +767,119 @@
 </footer>
 
 <script>
-/* === DADOS: PMESP E PCSP === */
+/* ============================================================ */
+/* === DADOS: PMESP, PCSP, PMERJ E PCERJ ===================== */
+/* ============================================================ */
+
+/* PMESP - retpFator implícito = 1.0 (RETP = 100% padrão) */
 const CARGOS_PM = [
-  { val: "cmtg", text: "CMT G — Comandante Geral PM", padrao: 11524.04, gratif: 1798.01, oficial: true },
-  { val: "cel", text: "CEL — Coronel PM", padrao: 9495.92, gratif: 899.00, oficial: true },
-  { val: "tencel", text: "TEN CEL — Tenente Coronel PM", padrao: 8892.20, gratif: 480.85, oficial: true },
-  { val: "maj", text: "MAJ — Major PM", padrao: 8370.88, gratif: 0, oficial: true },
-  { val: "cap", text: "CAP — Capitão PM", padrao: 7911.55, gratif: 0, oficial: true },
-  { val: "1ten", text: "1º TEN — 1º Tenente PM", padrao: 7332.73, gratif: 0, oficial: true },
-  { val: "2ten", text: "2º TEN — 2º Tenente PM", padrao: 4975.71, gratif: 0, oficial: true },
-  { val: "aspof", text: "ASP OF — Aspirante a Oficial PM", padrao: 4766.58, gratif: 0, oficial: true },
-  { val: "alof4", text: "AL OF 4º CFO", padrao: 2757.47, gratif: 0, oficial: false },
-  { val: "alof3", text: "AL OF 3º CFO", padrao: 2662.21, gratif: 0, oficial: false },
-  { val: "alof2", text: "AL OF 2º CFO", padrao: 2452.34, gratif: 0, oficial: false },
-  { val: "alof1", text: "AL OF 1º CFO", padrao: 2337.49, gratif: 0, oficial: false },
-  { val: "subten", text: "SUBTEN — Subtenente PM", padrao: 4050.13, gratif: 0, oficial: false },
-  { val: "1sgt", text: "1º SGT — 1º Sargento PM", padrao: 3507.49, gratif: 0, oficial: false },
-  { val: "2sgt", text: "2º SGT — 2º Sargento PM", padrao: 3158.78, gratif: 0, oficial: false },
-  { val: "3sgt", text: "3º SGT — 3º Sargento PM", padrao: 2772.19, gratif: 0, oficial: false },
-  { val: "cabo", text: "CABO PM", padrao: 2686.30, gratif: 0, oficial: false },
-  { val: "sd1", text: "SD 1ª CL — Soldado PM 1ª Classe", padrao: 2486.11, gratif: 0, oficial: false, selected: true },
-  { val: "sd2", text: "SD 2ª CL — Soldado PM 2ª Classe", padrao: 2348.42, gratif: 0, oficial: false }
+  { val: "cmtg", text: "CMT G — Comandante Geral PM", padrao: 11524.04, gratif: 1798.01, oficial: true, retpFator: 1.0 },
+  { val: "cel", text: "CEL — Coronel PM", padrao: 9495.92, gratif: 899.00, oficial: true, retpFator: 1.0 },
+  { val: "tencel", text: "TEN CEL — Tenente Coronel PM", padrao: 8892.20, gratif: 480.85, oficial: true, retpFator: 1.0 },
+  { val: "maj", text: "MAJ — Major PM", padrao: 8370.88, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "cap", text: "CAP — Capitão PM", padrao: 7911.55, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "1ten", text: "1º TEN — 1º Tenente PM", padrao: 7332.73, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "2ten", text: "2º TEN — 2º Tenente PM", padrao: 4975.71, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "aspof", text: "ASP OF — Aspirante a Oficial PM", padrao: 4766.58, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "alof4", text: "AL OF 4º CFO", padrao: 2757.47, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "alof3", text: "AL OF 3º CFO", padrao: 2662.21, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "alof2", text: "AL OF 2º CFO", padrao: 2452.34, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "alof1", text: "AL OF 1º CFO", padrao: 2337.49, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "subten", text: "SUBTEN — Subtenente PM", padrao: 4050.13, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "1sgt", text: "1º SGT — 1º Sargento PM", padrao: 3507.49, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "2sgt", text: "2º SGT — 2º Sargento PM", padrao: 3158.78, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "3sgt", text: "3º SGT — 3º Sargento PM", padrao: 2772.19, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "cabo", text: "CABO PM", padrao: 2686.30, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "sd1", text: "SD 1ª CL — Soldado PM 1ª Classe", padrao: 2486.11, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
+  { val: "sd2", text: "SD 2ª CL — Soldado PM 2ª Classe", padrao: 2348.42, gratif: 0, oficial: false, retpFator: 1.0 }
 ];
 
-/* Projeções de valores base PCSP (Padrão s/ RETP) */
+/* PCSP - retpFator implícito = 1.0 (RETP = 100% padrão) */
 const CARGOS_PC = [
-  { val: "del_esp", text: "Delegado de Polícia - Especial", padrao: 9385.00, gratif: 0, oficial: true, delegado: true },
-  { val: "del_1", text: "Delegado de Polícia - 1ª Classe", padrao: 8650.00, gratif: 0, oficial: true, delegado: true },
-  { val: "del_2", text: "Delegado de Polícia - 2ª Classe", padrao: 7950.00, gratif: 0, oficial: true, delegado: true },
-  { val: "del_3", text: "Delegado de Polícia - 3ª Classe", padrao: 7420.00, gratif: 0, oficial: true, delegado: true },
-  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8100.00, gratif: 0, oficial: true },
-  { val: "med_1", text: "Médico Legista / Perito - 1ª Classe", padrao: 7450.00, gratif: 0, oficial: true },
-  { val: "med_2", text: "Médico Legista / Perito - 2ª Classe", padrao: 6850.00, gratif: 0, oficial: true },
-  { val: "med_3", text: "Médico Legista / Perito - 3ª Classe", padrao: 6450.00, gratif: 0, oficial: true },
-  { val: "inv_esp", text: "Investigador / Escrivão - Especial", padrao: 4200.00, gratif: 0, oficial: false },
-  { val: "inv_1", text: "Investigador / Escrivão - 1ª Classe", padrao: 3820.00, gratif: 0, oficial: false },
-  { val: "inv_2", text: "Investigador / Escrivão - 2ª Classe", padrao: 3450.00, gratif: 0, oficial: false },
-  { val: "inv_3", text: "Investigador / Escrivão - 3ª Classe", padrao: 3120.00, gratif: 0, oficial: false, selected: true },
-  { val: "age_esp", text: "Agente / Aux. / Papi - Especial", padrao: 3550.00, gratif: 0, oficial: false },
-  { val: "age_1", text: "Agente / Aux. / Papi - 1ª Classe", padrao: 3150.00, gratif: 0, oficial: false },
-  { val: "age_2", text: "Agente / Aux. / Papi - 2ª Classe", padrao: 2850.00, gratif: 0, oficial: false },
-  { val: "age_3", text: "Agente / Aux. / Papi - 3ª Classe", padrao: 2600.00, gratif: 0, oficial: false }
+  { val: "del_esp", text: "Delegado de Polícia - Especial", padrao: 9385.00, gratif: 0, oficial: true, delegado: true, retpFator: 1.0 },
+  { val: "del_1", text: "Delegado de Polícia - 1ª Classe", padrao: 8650.00, gratif: 0, oficial: true, delegado: true, retpFator: 1.0 },
+  { val: "del_2", text: "Delegado de Polícia - 2ª Classe", padrao: 7950.00, gratif: 0, oficial: true, delegado: true, retpFator: 1.0 },
+  { val: "del_3", text: "Delegado de Polícia - 3ª Classe", padrao: 7420.00, gratif: 0, oficial: true, delegado: true, retpFator: 1.0 },
+  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8100.00, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_1", text: "Médico Legista / Perito - 1ª Classe", padrao: 7450.00, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_2", text: "Médico Legista / Perito - 2ª Classe", padrao: 6850.00, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_3", text: "Médico Legista / Perito - 3ª Classe", padrao: 6450.00, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "inv_esp", text: "Investigador / Escrivão - Especial", padrao: 4200.00, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_1", text: "Investigador / Escrivão - 1ª Classe", padrao: 3820.00, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_2", text: "Investigador / Escrivão - 2ª Classe", padrao: 3450.00, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_3", text: "Investigador / Escrivão - 3ª Classe", padrao: 3120.00, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
+  { val: "age_esp", text: "Agente / Aux. / Papi - Especial", padrao: 3550.00, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_1", text: "Agente / Aux. / Papi - 1ª Classe", padrao: 3150.00, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_2", text: "Agente / Aux. / Papi - 2ª Classe", padrao: 2850.00, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_3", text: "Agente / Aux. / Papi - 3ª Classe", padrao: 2600.00, gratif: 0, oficial: false, retpFator: 1.0 }
+];
+
+/* === PMERJ ===
+ * Estrutura: padrao = SOLDO base; gratif rotulada como "Gratif. Militares" (GRET 150% + IHP 75% + GRAM 62,5% s/ soldo+IHP)
+ * O fator combinado é aproximadamente 3,344 sobre o soldo. Mantido como retpFator.
+ * Soldo base estimado a partir de fontes públicas (último concurso).
+ */
+const CARGOS_PMERJ = [
+  { val: "cel_rj", text: "CEL PM — Coronel PMERJ", padrao: 4700.00, gratif: 1850.00, oficial: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "tencel_rj", text: "TEN CEL PM — Tenente Coronel PMERJ", padrao: 4250.00, gratif: 950.00, oficial: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "maj_rj", text: "MAJ PM — Major PMERJ", padrao: 3800.00, gratif: 600.00, oficial: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "cap_rj", text: "CAP PM — Capitão PMERJ", padrao: 3200.00, gratif: 0, oficial: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "1ten_rj", text: "1º TEN PM — 1º Tenente PMERJ", padrao: 2750.00, gratif: 0, oficial: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "2ten_rj", text: "2º TEN PM — 2º Tenente PMERJ", padrao: 2400.00, gratif: 0, oficial: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "subten_rj", text: "SUBTEN PM — Subtenente PMERJ", padrao: 1900.00, gratif: 0, oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "1sgt_rj", text: "1º SGT PM — 1º Sargento PMERJ", padrao: 1750.00, gratif: 0, oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "2sgt_rj", text: "2º SGT PM — 2º Sargento PMERJ", padrao: 1620.00, gratif: 0, oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "3sgt_rj", text: "3º SGT PM — 3º Sargento PMERJ", padrao: 1500.00, gratif: 0, oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "cabo_rj", text: "CABO PM — Cabo PMERJ", padrao: 1141.30, gratif: 0, oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "sd_rj", text: "SD PM — Soldado PMERJ", padrao: 991.03, gratif: 0, oficial: false, selected: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
+  { val: "sdaluno_rj", text: "SD ALUNO — Soldado-Aluno (CFAP)", padrao: 740.00, gratif: 0, oficial: false, retpFator: 3.0, retpLabel: "Auxílios formação" }
+];
+
+/* === PCERJ ===
+ * Lei nº 11.003/2025 - reestruturação da PC RJ.
+ * Adicional de Periculosidade: 230% sobre vencimento (exceto Delegado)
+ * Verba de Representação Delegado: 212% sobre vencimento
+ * Gratif. Técnico-Científica (Peritos): +100% adicional
+ * Vencimento-base estimado: Delegado 3ª Cl R$ 8.648 (deduzido de 26.981,77 / 3,12)
+ */
+const CARGOS_PCERJ = [
+  { val: "del_esp_rj", text: "Delegado de Polícia - Especial", padrao: 11200.00, gratif: 0, oficial: true, delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
+  { val: "del_1_rj", text: "Delegado de Polícia - 1ª Classe", padrao: 10100.00, gratif: 0, oficial: true, delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
+  { val: "del_2_rj", text: "Delegado de Polícia - 2ª Classe", padrao: 9300.00, gratif: 0, oficial: true, delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
+  { val: "del_3_rj", text: "Delegado de Polícia - 3ª Classe", padrao: 8648.00, gratif: 0, oficial: true, delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)", selected: false },
+  { val: "perito_esp_rj", text: "Perito Criminal/Legista - Especial", padrao: 7100.00, gratif: 0, oficial: true, perito: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "perito_1_rj", text: "Perito Criminal/Legista - 1ª Cl", padrao: 6450.00, gratif: 0, oficial: true, perito: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "perito_2_rj", text: "Perito Criminal/Legista - 2ª Cl", padrao: 5950.00, gratif: 0, oficial: true, perito: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "perito_3_rj", text: "Perito Criminal/Legista - 3ª Cl", padrao: 5500.00, gratif: 0, oficial: true, perito: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "piloto_rj", text: "Piloto Policial", padrao: 6800.00, gratif: 0, oficial: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "ofpc_esp_rj", text: "Oficial de PC (Insp/Inv/Cart) - Especial", padrao: 4250.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "ofpc_1_rj", text: "Oficial de PC - 1ª Classe", padrao: 3850.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "ofpc_2_rj", text: "Oficial de PC - 2ª Classe", padrao: 3500.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "ofpc_3_rj", text: "Oficial de PC - 3ª Classe", padrao: 3200.00, gratif: 0, oficial: false, selected: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "agpc_esp_rj", text: "Agente Polícia Científica - Especial", padrao: 3450.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "agpc_1_rj", text: "Agente Polícia Científica - 1ª Cl", padrao: 3100.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "agpc_2_rj", text: "Agente Polícia Científica - 2ª Cl", padrao: 2800.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
+  { val: "agpc_3_rj", text: "Agente Polícia Científica - 3ª Cl", padrao: 2550.00, gratif: 0, oficial: false, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" }
 ];
 
 let currTabela = {};
+let currCargos = [];
 
 function popularCargos(inst) {
   const select = document.getElementById('cargo');
   const dirSelect = document.getElementById('cargo_dir');
   select.innerHTML = '';
+  dirSelect.innerHTML = '';
   currTabela = {};
   
-  const lista = inst === 'pmesp' ? CARGOS_PM : CARGOS_PC;
+  let lista;
+  if (inst === 'pmesp') lista = CARGOS_PM;
+  else if (inst === 'pcsp') lista = CARGOS_PC;
+  else if (inst === 'pmerj') lista = CARGOS_PMERJ;
+  else if (inst === 'pcerj') lista = CARGOS_PCERJ;
+  else lista = CARGOS_PM;
+
+  currCargos = lista;
   
   lista.forEach(c => {
     currTabela[c.val] = c;
@@ -625,12 +890,35 @@ function popularCargos(inst) {
     select.appendChild(opt);
   });
 
-  // Atualiza campo na aba de direitos para evitar seleções invisíveis
-  if (inst === 'pmesp') {
-    dirSelect.value = 'praca';
-  } else {
-    dirSelect.value = 'agente';
-  }
+  // Popular select de Direitos
+  const opcoesDireitos = {
+    pmesp: [
+      { v: 'oficial', t: 'Oficial (Tenente a Coronel)' },
+      { v: 'praca', t: 'Praça (Soldado a Subtenente)', selected: true }
+    ],
+    pcsp: [
+      { v: 'delegado', t: 'Autoridade Policial (Delegado)' },
+      { v: 'agente', t: 'Agente / Investigador / Escrivão / Outros', selected: true }
+    ],
+    pmerj: [
+      { v: 'oficial_rj', t: 'Oficial PMERJ (Tenente a Coronel)' },
+      { v: 'praca_rj', t: 'Praça PMERJ (Soldado a Subtenente)', selected: true }
+    ],
+    pcerj: [
+      { v: 'delegado_rj', t: 'Autoridade Policial (Delegado)' },
+      { v: 'perito_rj', t: 'Perito Criminal / Legista' },
+      { v: 'oficialpc_rj', t: 'Oficial de Polícia Civil', selected: true },
+      { v: 'agentepc_rj', t: 'Agente de Polícia Científica' }
+    ]
+  };
+
+  (opcoesDireitos[inst] || []).forEach(o => {
+    const opt = document.createElement('option');
+    opt.value = o.v;
+    opt.textContent = o.t;
+    if (o.selected) opt.selected = true;
+    dirSelect.appendChild(opt);
+  });
 }
 
 /* === CONTROLE INSTITUIÇÃO === */
@@ -638,19 +926,43 @@ function mudarInstituicao() {
   const inst = document.getElementById('instituicao').value;
   document.body.setAttribute('data-inst', inst);
   
-  const headerSpan = document.querySelector('.header-text h1 span');
+  const headerSpan = document.getElementById('header-span');
   const headerDesc = document.getElementById('header-desc');
-  document.getElementById('txt-inst-dir').innerText = inst.toUpperCase();
+  const txtInstDir = document.getElementById('txt-inst-dir');
+  const alertaPrev = document.getElementById('alerta-prev');
 
-  if(inst === 'pmesp') {
-    headerSpan.innerText = 'Soldo';
-    headerSpan.style.color = '#e60000';
-    headerDesc.innerText = 'Descubra quanto você vai receber como PMESP (valor 2026)';
-  } else {
-    headerSpan.innerText = 'Subsídio';
-    headerSpan.style.color = '#4f4f4f';
-    headerDesc.innerText = 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)';
-  }
+  const config = {
+    pmesp: {
+      span: 'Soldo',
+      desc: 'Descubra quanto você vai receber como PMESP (valor 2026)',
+      dir: 'PMESP',
+      prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.'
+    },
+    pcsp: {
+      span: 'Subsídio',
+      desc: 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)',
+      dir: 'PCSP',
+      prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.'
+    },
+    pmerj: {
+      span: 'Soldo',
+      desc: 'Descubra seus vencimentos na PMERJ (valor 2026)',
+      dir: 'PMERJ',
+      prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre soldo + gratificações sujeitas a contribuição. RAS é indenizatório (não incide previdência).'
+    },
+    pcerj: {
+      span: 'Subsídio',
+      desc: 'Descubra seus vencimentos na Polícia Civil RJ (Lei 11.003/2025)',
+      dir: 'PCERJ',
+      prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre vencimento-base + adicionais (incluindo periculosidade ou verba de representação dos delegados).'
+    }
+  };
+
+  const c = config[inst] || config.pmesp;
+  headerSpan.innerText = c.span;
+  headerDesc.innerText = c.desc;
+  txtInstDir.innerText = c.dir;
+  alertaPrev.innerText = c.prev;
 
   popularCargos(inst);
   calcular();
@@ -701,6 +1013,13 @@ const UFESP_2026 = 38.42;
 const ALIQ_PREV = 0.14;
 const fmt = v => "R$ " + v.toLocaleString("pt-BR", {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
+function valEl(id, num) {
+  const el = document.getElementById(id);
+  if (!el) return 0;
+  if (num) return parseFloat(el.value) || 0;
+  return el.value;
+}
+
 function valorDejem(regiao, oficial) {
   const base = oficial ? 1.2 : 1.0;
   let coef = regiao === "interior" ? 0.95 : (regiao === "litoral" ? 0.97 : 1.0);
@@ -709,7 +1028,7 @@ function valorDejem(regiao, oficial) {
 
 function valorDejec(tipo, oficial) {
   const base = oficial ? 1.2 : 1.0;
-  let coef = tipo === "especial" ? 1.20 : 1.0; // Exemplo de acréscimo operacional
+  let coef = tipo === "especial" ? 1.20 : 1.0;
   return UFESP_2026 * 8 * base * coef;
 }
 
@@ -719,6 +1038,14 @@ function valorDelegada(regiao, oficial) {
   if (regiao === "estrategica") base *= 1.30;
   else if (regiao === "noturna") base *= 1.20;
   else if (regiao === "interior") base *= 0.85; 
+  return base;
+}
+
+function valorRAS(tipo, oficial) {
+  // Estimativa RAS PMERJ por turno 12h: praça R$ 280, oficial R$ 410
+  let base = oficial ? 410 : 280;
+  if (tipo === "especial") base *= 1.25;
+  else if (tipo === "interior") base *= 0.90;
   return base;
 }
 
@@ -750,112 +1077,231 @@ function calcular() {
   const c = currTabela[cargoID];
   const dias = parseFloat(document.getElementById("dias").value) || 0;
   const fator = Math.min(dias / 30, 1.0333);
-  const quinq = parseInt(document.getElementById("quinquenios").value) || 0;
-  const sexta = parseInt(document.getElementById("sextaparte").value) || 0;
-  const deps  = parseInt(document.getElementById("dependentes").value) || 0;
-  const insal = parseFloat(document.getElementById("insalubridade").value) || 0;
+  const deps = parseInt(document.getElementById("dependentes").value) || 0;
+  const retpFator = c.retpFator || 1.0;
+  const retpLabel = c.retpLabel || "RETP (100%)";
   
+  // Padrão e RETP/Gratificação principal
   const padrao = c.padrao * fator;
-  const retp = c.padrao * fator; // Ambos têm RETP de 100%
+  const retp = c.padrao * retpFator * fator;
   const gratifRepres = (c.gratif || 0) * fator;
-  const valQuinq = (c.padrao + c.padrao) * 0.05 * quinq;
-  const valSexta = sexta ? (c.padrao + c.padrao) / 6 : 0;
   
-  const val13 = (parseFloat(document.getElementById("decimo").value) || 0) * (c.padrao + c.padrao);
-  const feriasD = parseInt(document.getElementById("ferias").value) || 0;
-  const valFerias = feriasD > 0 ? ((c.padrao + c.padrao) / 30) * feriasD * (4/3) : 0;
+  // Quinquênios/Triênios e Sexta-parte (variam por instituição)
+  let quinq = 0, valQuinq = 0;
+  let valSexta = 0;
+  let valDS = 0, ensino = 0;
+  let insal = 0, acaoInsal = 0;
+  let valGat = 0;
+  let valLotacao = 0, valGHP = 0;
+  let valAuxAlim = 0, valAuxTransp = 0;
+  let valDejem = 0, valDel = 0, valDejec = 0, valRAS = 0, valPlantao = 0;
+  let valGTC = 0;
+
+  const baseQuinquenio = padrao + retp; // base: padrão + retp
   
-  const valLP = (parseInt(document.getElementById("lpremio").value) || 0) * (c.padrao + c.padrao);
-  const abonoT = parseFloat(document.getElementById("abonotransf").value) || 0;
-  const acaoInsal = parseFloat(document.getElementById("acaoinsal").value) || 0;
-
-  // Variáveis específicas
-  let valDS = 0, ensino = 0, valDejem = 0, valDel = 0;
-  let valGat = 0, valDejec = 0;
-
   if (inst === 'pmesp') {
+    quinq = parseInt(document.getElementById("quinquenios").value) || 0;
+    valQuinq = baseQuinquenio * 0.05 * quinq;
+    valSexta = (parseInt(document.getElementById("sextaparte").value) || 0) ? baseQuinquenio / 6 : 0;
+    insal = parseFloat(document.getElementById("insalubridade").value) || 0;
+    acaoInsal = parseFloat(document.getElementById("acaoinsal").value) || 0;
     valDS = (parseFloat(document.getElementById("dsfuncao").value) || 0) * c.padrao * ((parseInt(document.getElementById("dsdias").value) || 0) / 30);
     ensino = parseFloat(document.getElementById("ensino").value) || 0;
     valDejem = (parseInt(document.getElementById("qtddejem").value) || 0) * valorDejem(document.getElementById("regdejem").value, c.oficial);
     valDel = (parseInt(document.getElementById("qtddel").value) || 0) * valorDelegada(document.getElementById("regdel").value, c.oficial);
-  } else {
+  } 
+  else if (inst === 'pcsp') {
+    quinq = parseInt(document.getElementById("quinquenios_sp_pc").value) || 0;
+    valQuinq = baseQuinquenio * 0.05 * quinq;
+    valSexta = (parseInt(document.getElementById("sextaparte_sp_pc").value) || 0) ? baseQuinquenio / 6 : 0;
+    insal = parseFloat(document.getElementById("insalubridade_sp_pc").value) || 0;
+    acaoInsal = parseFloat(document.getElementById("acaoinsal_sp_pc").value) || 0;
     if (c.delegado) {
-        // GAT aprox 1/3 do salário para acúmulo de DP
-        valGat = ((c.padrao + c.padrao) / 3) * ((parseInt(document.getElementById("gat_dias").value) || 0) / 30);
+      valGat = ((c.padrao + c.padrao) / 3) * ((parseInt(document.getElementById("gat_dias").value) || 0) / 30);
     }
     valDejec = (parseInt(document.getElementById("qtddejec").value) || 0) * valorDejec(document.getElementById("tipodejec").value, c.oficial);
   }
-
-  let proventosHTML = linha(inst==='pmesp' ? "Padrão" : "Salário Base", padrao, "provento") + linha("RETP (100%)", retp, "provento");
-  if(valQuinq) proventosHTML += linha(`Quinquênios (${quinq})`, valQuinq, "provento");
-  if(valSexta) proventosHTML += linha("Sexta-parte", valSexta, "provento");
-  if(insal) proventosHTML += linha("Insalubridade", insal, "provento");
-  if(gratifRepres) proventosHTML += linha("Representação", gratifRepres, "provento");
-  
-  if(inst === 'pmesp') {
-      if(valDS) proventosHTML += linha("Desig. Substituição", valDS, "provento");
-      if(ensino) proventosHTML += linha("Retrib. Ensino", ensino, "provento");
-      if(valDejem) proventosHTML += linha("DEJEM", valDejem, "provento");
-      if(valDel) proventosHTML += linha("Ativ. Delegada", valDel, "provento");
-  } else {
-      if(valGat) proventosHTML += linha("GAT (Acúmulo Tit.)", valGat, "provento");
-      if(valDejec) proventosHTML += linha("DEJEC", valDejec, "provento");
+  else if (inst === 'pmerj') {
+    // Triênios PMERJ: 10% por triênio sobre soldo
+    const tri = parseInt(document.getElementById("trienios").value) || 0;
+    valQuinq = c.padrao * fator * 0.10 * tri; // exibido como "Triênios"
+    quinq = tri; // reaproveita variável
+    valAuxAlim = parseFloat(document.getElementById("auxalim_rj").value) || 0;
+    valAuxTransp = parseFloat(document.getElementById("auxtransp_rj").value) || 0;
+    valLotacao = parseFloat(document.getElementById("lotacao_rj").value) || 0;
+    valGHP = (parseFloat(document.getElementById("ghp_rj").value) || 0) * c.padrao * fator;
+    valRAS = (parseInt(document.getElementById("qtdras").value) || 0) * valorRAS(document.getElementById("tiporas").value, c.oficial);
+  }
+  else if (inst === 'pcerj') {
+    quinq = parseInt(document.getElementById("quinquenios_rj_pc").value) || 0;
+    valQuinq = baseQuinquenio * 0.05 * quinq;
+    // Ajuste: Periculosidade já está em retpFator. GTC adicional só para peritos.
+    if (c.perito && (parseInt(document.getElementById("gtc_rj").value) || 0)) {
+      valGTC = c.padrao * fator * 1.0;
+    }
+    // Se selecionar "Não optante" para periculosidade, remove o RETP
+    const optPeric = parseInt(document.getElementById("periculosidade_rj").value);
+    if (!c.delegado && optPeric === 0) {
+      // Anula o RETP de periculosidade
+      // (não dá pra alterar retp diretamente, mas reduzimos via flag)
+      // Faremos o ajuste abaixo
+    }
+    valAuxAlim = parseFloat(document.getElementById("auxalim_rj_pc").value) || 0;
+    valAuxTransp = parseFloat(document.getElementById("auxtransp_rj_pc").value) || 0;
+    valPlantao = (parseInt(document.getElementById("qtdplantao_rj").value) || 0) * (parseFloat(document.getElementById("valplantao_rj").value) || 0);
   }
 
-  if(acaoInsal) proventosHTML += linha("Ação Insalub.", acaoInsal, "provento");
-  if(val13) proventosHTML += linha("13º Salário", val13, "provento");
-  if(valFerias) proventosHTML += linha("Férias + 1/3", valFerias, "provento");
-  if(valLP) proventosHTML += linha("Licença-prêmio", valLP, "provento");
-  if(abonoT) proventosHTML += linha("Abono Transf.", abonoT, "provento");
+  // Ajuste de Periculosidade não-optante PCERJ
+  let retpAjustado = retp;
+  if (inst === 'pcerj' && !c.delegado) {
+    const optPeric = parseInt(document.getElementById("periculosidade_rj").value);
+    if (optPeric === 0) retpAjustado = 0;
+  }
 
-  const baseFolha = padrao + retp + valQuinq + valSexta + insal + gratifRepres + valDS + valGat + acaoInsal + val13 + valFerias + valLP + abonoT + ensino;
-  const bruto = baseFolha + valDejem + valDel + valDejec;
+  const val13 = (parseFloat(document.getElementById("decimo").value) || 0) * (padrao + retpAjustado);
+  const feriasD = parseInt(document.getElementById("ferias").value) || 0;
+  const valFerias = feriasD > 0 ? ((padrao + retpAjustado) / 30) * feriasD * (4/3) : 0;
+  const valLP = (parseInt(document.getElementById("lpremio").value) || 0) * (padrao + retpAjustado);
+  const abonoT = parseFloat(document.getElementById("abonotransf").value) || 0;
+
+  // Montagem proventos
+  let proventosHTML = '';
+  
+  if (inst === 'pmerj') {
+    proventosHTML += linha("Soldo", padrao, "provento");
+    proventosHTML += linha(retpLabel, retpAjustado, "provento");
+  } else if (inst === 'pcerj') {
+    proventosHTML += linha("Vencimento-Base", padrao, "provento");
+    if (retpAjustado > 0) proventosHTML += linha(retpLabel, retpAjustado, "provento");
+  } else {
+    proventosHTML += linha(inst === 'pmesp' ? "Padrão" : "Salário Base", padrao, "provento");
+    proventosHTML += linha("RETP (100%)", retpAjustado, "provento");
+  }
+
+  // Quinquênios / Triênios
+  if (valQuinq) {
+    const lblQ = inst === 'pmerj' ? `Triênios (${quinq})` : `Quinquênios (${quinq})`;
+    proventosHTML += linha(lblQ, valQuinq, "provento");
+  }
+  if (valSexta) proventosHTML += linha("Sexta-parte", valSexta, "provento");
+  if (insal) proventosHTML += linha("Insalubridade", insal, "provento");
+  if (gratifRepres) proventosHTML += linha("Representação", gratifRepres, "provento");
+  
+  // PMESP
+  if (inst === 'pmesp') {
+    if (valDS) proventosHTML += linha("Desig. Substituição", valDS, "provento");
+    if (ensino) proventosHTML += linha("Retrib. Ensino", ensino, "provento");
+    if (valDejem) proventosHTML += linha("DEJEM", valDejem, "provento");
+    if (valDel) proventosHTML += linha("Ativ. Delegada", valDel, "provento");
+  }
+  // PCSP
+  if (inst === 'pcsp') {
+    if (valGat) proventosHTML += linha("GAT (Acúmulo Tit.)", valGat, "provento");
+    if (valDejec) proventosHTML += linha("DEJEC", valDejec, "provento");
+  }
+  // PMERJ
+  if (inst === 'pmerj') {
+    if (valGHP) proventosHTML += linha("Gratif. Habilit. Profissional", valGHP, "provento");
+    if (valLotacao) proventosHTML += linha("Gratif. Lotação Especial", valLotacao, "provento");
+    if (valAuxAlim) proventosHTML += linha("Auxílio-Alimentação", valAuxAlim, "provento");
+    if (valAuxTransp) proventosHTML += linha("Auxílio-Transporte", valAuxTransp, "provento");
+    if (valRAS) proventosHTML += linha("RAS (Reg. Adic. Serviço)", valRAS, "provento");
+  }
+  // PCERJ
+  if (inst === 'pcerj') {
+    if (valGTC) proventosHTML += linha("Gratif. Técnico-Científica (100%)", valGTC, "provento");
+    if (valAuxAlim) proventosHTML += linha("Auxílio-Alimentação", valAuxAlim, "provento");
+    if (valAuxTransp) proventosHTML += linha("Auxílio-Transporte", valAuxTransp, "provento");
+    if (valPlantao) proventosHTML += linha("Plantões Extras", valPlantao, "provento");
+  }
+
+  if (acaoInsal) proventosHTML += linha("Ação Insalub.", acaoInsal, "provento");
+  if (val13) proventosHTML += linha("13º Salário", val13, "provento");
+  if (valFerias) proventosHTML += linha("Férias + 1/3", valFerias, "provento");
+  if (valLP) proventosHTML += linha("Licença-prêmio", valLP, "provento");
+  if (abonoT) proventosHTML += linha("Abono Transf.", abonoT, "provento");
+
+  // Cálculo do bruto e da base previdenciária
+  const baseFolha = padrao + retpAjustado + valQuinq + valSexta + insal + gratifRepres + 
+                    valDS + valGat + acaoInsal + val13 + valFerias + valLP + abonoT + ensino +
+                    valGHP + valLotacao + valGTC;
+  
+  // Auxílios e indenizações (não previdência)
+  const indenizatorios = valAuxAlim + valAuxTransp + valDejem + valDel + valDejec + valRAS + valPlantao;
+  
+  const bruto = baseFolha + indenizatorios;
   proventosHTML += subtotal("Total Bruto", bruto);
 
   // Descontos
-  const sprev = (padrao + retp + valQuinq + valSexta + valDS + valGat) * ALIQ_PREV;
+  // Base previdenciária: padrão + retp + quinquênios + sexta + DS + GAT + GHP + GTC + Lotação
+  const basePrev = padrao + retpAjustado + valQuinq + valSexta + valDS + valGat + valGHP + valGTC + valLotacao;
+  const sprev = basePrev * ALIQ_PREV;
   const irrf = calcularIRRF(baseFolha - sprev, deps);
   
   const empr = parseFloat(document.getElementById("emprestimo").value) || 0;
   
   let descEspecificos = 0;
   let descHTML = "";
+  let nomePrev = "SPPREV (14%)";
 
-  if(inst === 'pmesp') {
-      const fepomCopa = parseFloat(document.getElementById("fepomcopa").value) || 0;
-      const fepomAlo = parseFloat(document.getElementById("fepomalo").value) || 0;
-      const fepomRan = parseFloat(document.getElementById("fepomran").value) || 0;
-      const daxv = parseFloat(document.getElementById("daxv").value) || 0;
-      const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
-      const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
-      descEspecificos = fepomCopa + fepomAlo + fepomRan + daxv + prosaude + cbpm;
-      
-      if(fepomCopa) descHTML += linha("FEPOM COPA", fepomCopa, "desconto");
-      if(fepomAlo) descHTML += linha("FEPOM Alojamento", fepomAlo, "desconto");
-      if(fepomRan) descHTML += linha("FEPOM Rancho", fepomRan, "desconto");
-      if(daxv) descHTML += linha("D.A. XV Dezembro", daxv, "desconto");
-      if(prosaude) descHTML += linha("Pró-Saúde PMESP", prosaude, "desconto");
-      if(cbpm) descHTML += linha("CBPM Assist.", cbpm, "desconto");
-  } else {
-      const iamspeOpt = parseInt(document.getElementById("opt_iamspe").value) || 0;
-      let iamspeVal = 0;
-      if(iamspeOpt === 1) {
-          iamspeVal = (padrao + retp + valQuinq + valSexta) * 0.02 * (1 + deps);
-      }
-      const sindicato = parseFloat(document.getElementById("sindicato").value) || 0;
-      descEspecificos = iamspeVal + sindicato;
+  if (inst === 'pmesp') {
+    const fepomCopa = parseFloat(document.getElementById("fepomcopa").value) || 0;
+    const fepomAlo = parseFloat(document.getElementById("fepomalo").value) || 0;
+    const fepomRan = parseFloat(document.getElementById("fepomran").value) || 0;
+    const daxv = parseFloat(document.getElementById("daxv").value) || 0;
+    const prosaude = parseFloat(document.getElementById("prosaude").value) || 0;
+    const cbpm = parseFloat(document.getElementById("cbpm").value) || 0;
+    descEspecificos = fepomCopa + fepomAlo + fepomRan + daxv + prosaude + cbpm;
+    
+    if (fepomCopa) descHTML += linha("FEPOM COPA", fepomCopa, "desconto");
+    if (fepomAlo) descHTML += linha("FEPOM Alojamento", fepomAlo, "desconto");
+    if (fepomRan) descHTML += linha("FEPOM Rancho", fepomRan, "desconto");
+    if (daxv) descHTML += linha("D.A. XV Dezembro", daxv, "desconto");
+    if (prosaude) descHTML += linha("Pró-Saúde PMESP", prosaude, "desconto");
+    if (cbpm) descHTML += linha("CBPM Assist.", cbpm, "desconto");
+  } 
+  else if (inst === 'pcsp') {
+    const iamspeOpt = parseInt(document.getElementById("opt_iamspe").value) || 0;
+    let iamspeVal = 0;
+    if (iamspeOpt === 1) {
+      iamspeVal = (padrao + retpAjustado + valQuinq + valSexta) * 0.02 * (1 + deps);
+    }
+    const sind = parseFloat(document.getElementById("sindicato").value) || 0;
+    descEspecificos = iamspeVal + sind;
 
-      if(iamspeVal) descHTML += linha("IAMSPE (2% + dep)", iamspeVal, "desconto");
-      if(sindicato) descHTML += linha("Sindicato / Assoc.", sindicato, "desconto");
+    if (iamspeVal) descHTML += linha("IAMSPE (2% + dep)", iamspeVal, "desconto");
+    if (sind) descHTML += linha("Sindicato / Assoc.", sind, "desconto");
+  }
+  else if (inst === 'pmerj') {
+    nomePrev = "RioPrevidência (14%)";
+    const fuspom = parseFloat(document.getElementById("fuspom").value) || 0;
+    const familiazul = parseFloat(document.getElementById("familiazul").value) || 0;
+    const hcpm = parseFloat(document.getElementById("hcpm").value) || 0;
+    const coopm = parseFloat(document.getElementById("coopm").value) || 0;
+    descEspecificos = fuspom + familiazul + hcpm + coopm;
+
+    if (fuspom) descHTML += linha("FUSPOM", fuspom, "desconto");
+    if (familiazul) descHTML += linha("Família Azul", familiazul, "desconto");
+    if (hcpm) descHTML += linha("HCPM", hcpm, "desconto");
+    if (coopm) descHTML += linha("Cooperativa PM", coopm, "desconto");
+  }
+  else if (inst === 'pcerj') {
+    nomePrev = "RioPrevidência (14%)";
+    const fuspol = parseFloat(document.getElementById("fuspol").value) || 0;
+    const sindRj = parseFloat(document.getElementById("sindicato_rj").value) || 0;
+    descEspecificos = fuspol + sindRj;
+
+    if (fuspol) descHTML += linha("FUSPOL", fuspol, "desconto");
+    if (sindRj) descHTML += linha("Sindicato / Assoc.", sindRj, "desconto");
   }
 
   const pensaoPct = parseFloat(document.getElementById("pensao").value) || 0;
   const pensao = (bruto - sprev - irrf - empr - descEspecificos) * (pensaoPct / 100);
 
-  let descontosHTML = linha("SPPREV (14%)", sprev, "desconto");
-  if(irrf) descontosHTML += linha("IRRF", irrf, "desconto");
-  if(pensao) descontosHTML += linha(`Pensão (${pensaoPct}%)`, pensao, "desconto");
-  if(empr) descontosHTML += linha("Empréstimos / Consig.", empr, "desconto");
+  let descontosHTML = linha(nomePrev, sprev, "desconto");
+  if (irrf) descontosHTML += linha("IRRF", irrf, "desconto");
+  if (pensao) descontosHTML += linha(`Pensão (${pensaoPct}%)`, pensao, "desconto");
+  if (empr) descontosHTML += linha("Empréstimos / Consig.", empr, "desconto");
   descontosHTML += descHTML;
 
   const totalDesc = sprev + irrf + pensao + empr + descEspecificos;
@@ -873,35 +1319,38 @@ function analisarDireitos() {
   const situacao = document.getElementById('situacao_dir').value;
   const tempo = parseInt(document.getElementById('tempo_dir').value) || 0;
   const inativo = (situacao === 'reserva' || situacao === 'reforma');
+  const cargoDir = document.getElementById('cargo_dir').value;
   
   let direitos = [];
 
-  direitos.push({
-    nome: "RETP (Regime Especial de Trabalho Policial)",
-    tem: true,
-    desc: "Adicional de 100% sobre o valor base. Integrado aos proventos tanto na ativa quanto na inatividade."
-  });
+  // === DIREITOS COMUNS / SP ===
+  if (inst === 'pmesp' || inst === 'pcsp') {
+    direitos.push({
+      nome: "RETP (Regime Especial de Trabalho Policial)",
+      tem: true,
+      desc: "Adicional de 100% sobre o valor base. Integrado aos proventos tanto na ativa quanto na inatividade."
+    });
 
-  const q = Math.floor(tempo / 5);
-  direitos.push({
-    nome: "Adicional por Tempo de Serviço (Quinquênio)",
-    tem: q > 0,
-    desc: q > 0 ? `Você possui direito a ${q} quinquênio(s). Cada um representa 5% de acréscimo sobre os vencimentos totais.` : "Adquirido a cada 5 anos de efetivo serviço."
-  });
+    const q = Math.floor(tempo / 5);
+    direitos.push({
+      nome: "Adicional por Tempo de Serviço (Quinquênio)",
+      tem: q > 0,
+      desc: q > 0 ? `Você possui direito a ${q} quinquênio(s). Cada um representa 5% de acréscimo sobre os vencimentos totais.` : "Adquirido a cada 5 anos de efetivo serviço."
+    });
 
-  direitos.push({
-    nome: "Sexta-Parte",
-    tem: tempo >= 20,
-    desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos totais) por ter completado 20 anos de serviço." : "Adquirido ao completar 20 anos de efetivo serviço público."
-  });
+    direitos.push({
+      nome: "Sexta-Parte",
+      tem: tempo >= 20,
+      desc: tempo >= 20 ? "Direito adquirido (1/6 sobre os vencimentos totais) por ter completado 20 anos de serviço." : "Adquirido ao completar 20 anos de efetivo serviço público."
+    });
 
-  direitos.push({
-    nome: "Adicional de Insalubridade",
-    tem: !inativo,
-    desc: !inativo ? "Pago aos policiais da ativa sob risco / condições insalubres." : "Não se incorpora automaticamente aos proventos da inatividade, salvo ingresso judicial ou regra de transição específica."
-  });
+    direitos.push({
+      nome: "Adicional de Insalubridade",
+      tem: !inativo,
+      desc: !inativo ? "Pago aos policiais da ativa sob risco / condições insalubres." : "Não se incorpora automaticamente aos proventos da inatividade, salvo ingresso judicial ou regra de transição específica."
+    });
 
-  if (inst === 'pmesp') {
+    if (inst === 'pmesp') {
       if (inativo) {
         direitos.push({
           nome: "Sistema de Proteção Social dos Militares (SPSM)",
@@ -914,7 +1363,7 @@ function analisarDireitos() {
         tem: !inativo,
         desc: !inativo ? "Abono pago anualmente na data do aniversário para manutenção do fardamento militar." : "Verba indenizatória restrita ao pessoal da ativa."
       });
-  } else {
+    } else {
       if (inativo) {
         direitos.push({
           nome: "Aposentadoria Policial Civil (LC 1354/2020)",
@@ -922,14 +1371,142 @@ function analisarDireitos() {
           desc: "Para a paridade e integralidade, a nova lei exige 55 anos de idade, 30 anos de contribuição (sendo 20 estritamente policiais para homens; 25/15 para mulheres). Regras de transição garantem direitos anteriores à reforma da previdência estadual."
         });
       }
-      const cargoPc = document.getElementById("cargo_dir").value;
-      if (cargoPc === 'delegado') {
-          direitos.push({
-            nome: "ADPJ (Direção da Ativ. Polícia Judiciária)",
-            tem: !inativo, // Simplificação, na prática pode incorporar proporcionalmente
-            desc: !inativo ? "Gratificação específica da carreira de Delegado de Polícia para funções de comando e direção judiciária." : "Na inatividade o cálculo de incorporação segue as regras de contribuição previdenciária incidentes."
-          });
+      if (cargoDir === 'delegado') {
+        direitos.push({
+          nome: "ADPJ (Direção da Ativ. Polícia Judiciária)",
+          tem: !inativo,
+          desc: !inativo ? "Gratificação específica da carreira de Delegado de Polícia para funções de comando e direção judiciária." : "Na inatividade o cálculo de incorporação segue as regras de contribuição previdenciária incidentes."
+        });
       }
+    }
+  }
+
+  // === DIREITOS PMERJ ===
+  if (inst === 'pmerj') {
+    direitos.push({
+      nome: "GRET — Gratif. Regime Esp. Trabalho Policial-Militar",
+      tem: true,
+      desc: "Adicional de 150% sobre o soldo. Integrado aos vencimentos do militar estadual do RJ na ativa e na inatividade (com paridade)."
+    });
+    direitos.push({
+      nome: "IHP — Indenização de Habilitação Policial-Militar",
+      tem: true,
+      desc: "Adicional de 75% sobre o soldo, devido ao militar habilitado em curso de formação. Compõe a base de cálculo da GRAM."
+    });
+    direitos.push({
+      nome: "GRAM — Gratif. Risco da Atividade Militar",
+      tem: true,
+      desc: "Calculada em 62,5% sobre o soldo + IHP. É a vantagem pecuniária pelo risco inerente da atividade."
+    });
+    
+    const tri = Math.floor(tempo / 3);
+    direitos.push({
+      nome: "Triênio (10% por triênio)",
+      tem: tri > 0,
+      desc: tri > 0 ? `Você possui direito a ${tri} triênio(s). Cada um representa 10% de acréscimo sobre o soldo. Limite: 6 triênios (ou 13 conforme regulamento atual).` : "Adquirido a cada 3 anos de efetivo serviço (Lei nº 443/1981 e alterações)."
+    });
+
+    direitos.push({
+      nome: "RAS — Regime Adicional de Serviço",
+      tem: !inativo,
+      desc: !inativo ? "Permite a realização voluntária de turnos extras (12h). Tem natureza indenizatória (sem incidência de previdência ou IR sobre seu valor base) e pode ultrapassar R$ 3.800 mensais conforme escala." : "Restrito ao pessoal da ativa por sua natureza indenizatória de prestação efetiva de serviço."
+    });
+
+    direitos.push({
+      nome: "Auxílio-Alimentação (R$ 433,80)",
+      tem: !inativo,
+      desc: !inativo ? "Reajustado em 166% recentemente. Verba indenizatória mensal." : "Não se estende à inatividade por sua natureza indenizatória."
+    });
+
+    direitos.push({
+      nome: "Família Azul (Plano Saúde Familiar)",
+      tem: true,
+      desc: "Programa exclusivo da PMERJ que oferece convênios para dependentes do policial militar."
+    });
+
+    direitos.push({
+      nome: "Atendimento HCPM e PMERJSAÚDE",
+      tem: true,
+      desc: "Acesso à rede hospitalar própria da Polícia Militar (Hospital Central da PM) e clínicas conveniadas."
+    });
+
+    if (inativo) {
+      direitos.push({
+        nome: "Sistema de Proteção Social Militares Estaduais",
+        tem: true,
+        desc: "Militares estaduais do RJ se aposentam com integralidade do último soldo e paridade plena, conforme regras especiais aplicáveis aos militares."
+      });
+    }
+
+    direitos.push({
+      nome: "Gratif. Lotação Especial (UPP/BOPE/Choque/Coordenadoria)",
+      tem: !inativo,
+      desc: !inativo ? "Concedida ao militar que serve em unidades especiais da Corporação." : "Não incorporada à inatividade salvo regra de transição específica."
+    });
+  }
+
+  // === DIREITOS PCERJ ===
+  if (inst === 'pcerj') {
+    if (cargoDir === 'delegado_rj') {
+      direitos.push({
+        nome: "Verba de Representação Delegado (212%)",
+        tem: true,
+        desc: "Adicional de 212% sobre o vencimento-base, exclusivo da carreira de Delegado de Polícia (Lei nº 11.003/2025)."
+      });
+    } else {
+      direitos.push({
+        nome: "Adicional de Periculosidade (230%)",
+        tem: true,
+        desc: "Adicional de 230% sobre o vencimento-base para todas as carreiras da PC RJ, exceto Delegado (Lei nº 11.003/2025)."
+      });
+    }
+
+    if (cargoDir === 'perito_rj') {
+      direitos.push({
+        nome: "Gratificação Técnico-Científica (Peritos)",
+        tem: true,
+        desc: "Acréscimo de 100% sobre o vencimento-base destinado a Peritos Criminais e Legistas (Lei nº 11.003/2025)."
+      });
+    }
+
+    const q = Math.floor(tempo / 5);
+    direitos.push({
+      nome: "Adicional por Tempo de Serviço (Quinquênio)",
+      tem: q > 0,
+      desc: q > 0 ? `Você possui direito a ${q} quinquênio(s) ou adicional por tempo conforme regulamento.` : "Adquirido a cada 5 anos de efetivo serviço (regra geral do servidor estadual RJ)."
+    });
+
+    direitos.push({
+      nome: "Promoções por Bravura e Post Mortem",
+      tem: true,
+      desc: "Previstas na Lei nº 11.003/2025. Promoção excepcional reconhecida por atos de bravura ou em caso de morte em serviço."
+    });
+
+    direitos.push({
+      nome: "Vantagens 21 de Abril e 29 de Setembro (Delegados)",
+      tem: cargoDir === 'delegado_rj',
+      desc: cargoDir === 'delegado_rj' ? "Verbas devidas duas vezes ao ano (21/04 e 29/09) à carreira de Delegado de Polícia, conforme legislação." : "Verba específica da carreira de Delegado."
+    });
+
+    direitos.push({
+      nome: "Auxílio-Alimentação e Auxílio-Transporte",
+      tem: !inativo,
+      desc: !inativo ? "Verbas de natureza indenizatória, devidas mensalmente ao policial civil em atividade." : "Restritos à atividade — não se incorporam aos proventos."
+    });
+
+    direitos.push({
+      nome: "FUSPOL — Saúde Policial Civil",
+      tem: true,
+      desc: "Sistema de assistência à saúde do policial civil do RJ. Disponível na ativa e inatividade."
+    });
+
+    if (inativo) {
+      direitos.push({
+        nome: "Aposentadoria Especial Policial Civil RJ",
+        tem: true,
+        desc: "Lei nº 11.003/2025 e regras de transição da Reforma Previdenciária Estadual: integralidade e paridade preservadas para quem cumprir os critérios estabelecidos. Tempo mínimo policial conforme legislação vigente."
+      });
+    }
   }
 
   const container = document.getElementById('resultados_dir');
@@ -946,9 +1523,17 @@ function analisarDireitos() {
 }
 
 // Event Listeners Globais
-document.querySelectorAll("input, select").forEach(el => {
-  el.addEventListener("input", () => { calcular(); analisarDireitos(); }); 
-  el.addEventListener("change", () => { calcular(); analisarDireitos(); });
+document.addEventListener('input', (e) => {
+  if (e.target.matches('input, select')) {
+    calcular();
+    analisarDireitos();
+  }
+});
+document.addEventListener('change', (e) => {
+  if (e.target.matches('input, select')) {
+    calcular();
+    analisarDireitos();
+  }
 });
 
 // Inicialização
