@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,7 +159,8 @@
   .field { display: flex; flex-direction: column; }
   .field.span-2 { grid-column: span 2; }
 
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only,
+  .sp-only, .mg-only, .ba-only {
     display: none !important;
   }
 
@@ -171,6 +172,13 @@
   body[data-inst="pcmg"] .field.pcmg-only, body[data-inst="pcmg"] h2.pcmg-only { display: flex !important; }
   body[data-inst="pmba"] .field.pmba-only, body[data-inst="pmba"] h2.pmba-only { display: flex !important; }
   body[data-inst="pcba"] .field.pcba-only, body[data-inst="pcba"] h2.pcba-only { display: flex !important; }
+
+  body[data-inst="pmesp"] .field.sp-only,
+  body[data-inst="pcsp"] .field.sp-only,
+  body[data-inst="pmmg"] .field.mg-only,
+  body[data-inst="pcmg"] .field.mg-only,
+  body[data-inst="pmba"] .field.ba-only,
+  body[data-inst="pcba"] .field.ba-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -452,12 +460,30 @@
           <label for="dependentes">Dependentes (IRRF) <span class="tip" data-tip="Filhos até 21 anos (24 se universitários), cônjuge ou pais com renda baixa. Cada dependente reduz R$ 189,59 da base de cálculo do IRRF.">?</span></label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
         </div>
+        <div class="field">
+          <label for="dias_va">Dias VA/VR / Aux. alimentação <span class="tip" data-tip="Quantidade de dias efetivamente trabalhados ou úteis considerados para vale-alimentação, diária alimentação ou ajuda de custo. Para verbas fixas mensais, o campo não altera o valor.">?</span></label>
+          <input type="number" id="dias_va" value="22" min="0" max="31"/>
+        </div>
       </div>
     </div>
 
     <div class="card">
       <h2>Adicionais e Vantagens</h2>
       <div class="form-grid">
+
+        <!-- VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
+        <div class="field sp-only">
+          <label for="auxalim_sp_dia">SP — VA/VR por dia (UFESP 2026) <span class="tip" data-tip="Valor indenizatório por dia efetivamente trabalhado. Por padrão, o simulador usa 1 UFESP de 2026 (R$ 38,42) por dia. Ajuste se o holerite/órgão usar regra diferente.">?</span></label>
+          <input type="number" id="auxalim_sp_dia" value="38.42" min="0" step="0.01"/>
+        </div>
+        <div class="field mg-only">
+          <label for="auxalim_mg_dia">MG — Auxílio-alimentação por dia <span class="tip" data-tip="Ajuda de custo para alimentação das forças de segurança de MG. Valor-base: R$ 50 por dia efetivamente trabalhado, conforme Decreto MG nº 49.006/2025.">?</span></label>
+          <input type="number" id="auxalim_mg_dia" value="50" min="0" step="0.01"/>
+        </div>
+        <div class="field mg-only">
+          <label for="auxalim_mg_meta_dia">MG — Adicional por metas/dia (opcional) <span class="tip" data-tip="Campo opcional para parcela adicional vinculada a metas regionais. Use R$ 25,00 quando efetivamente aplicável.">?</span></label>
+          <input type="number" id="auxalim_mg_meta_dia" value="0" min="0" step="0.01"/>
+        </div>
 
         <!-- TEMPO DE SERVIÇO -->
         <div class="field pm-only">
@@ -698,8 +724,8 @@
           </select>
         </div>
         <div class="field pmba-only">
-          <label for="auxalim_ba">Auxílio-Alimentação (R$)</label>
-          <input type="number" id="auxalim_ba" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+          <label for="auxalim_ba">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Ajuste se o contracheque trouxer outro valor.">?</span></label>
+          <input type="number" id="auxalim_ba" value="440" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
         <!-- PCBA - GAJ/GAPJ + GIP + GRAT NÍVEL EDUCACIONAL -->
@@ -716,6 +742,10 @@
         <div class="field pcba-only">
           <label for="gip_ba_pc">GIP / Verba variável informada no contracheque (R$) <span class="tip" data-tip="Campo manual para verbas variáveis, metas, produtividade ou valores específicos que apareçam no contracheque e não estejam na tabela fixa de vencimento + GAJ/GAPJ.">?</span></label>
           <input type="number" id="gip_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pcba-only">
+          <label for="auxalim_ba_pc">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Ajuste se o contracheque trouxer outro valor.">?</span></label>
+          <input type="number" id="auxalim_ba_pc" value="440" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
           <label for="gqual_ba_pc">Gratif. Qualif. Profissional (%) <span class="tip" data-tip="Informe somente quando constar no contracheque ou quando houver enquadramento legal. O percentual é aplicado sobre o vencimento-base do cargo selecionado.">?</span></label>
@@ -1152,14 +1182,19 @@
 
 <footer role="contentinfo">
   <p>Desenvolvido por <strong>LOCKSTAGE</strong> — Conteúdo informativo baseado em fontes públicas.</p>
-  <p class="small-note">Os valores são estimativas e referência. Confira sempre o seu holerite oficial e o regulamento institucional.</p>
+  <p class="small-note">Os valores são estimativas e referência. VA/VR e auxílios são tratados como verbas indenizatórias no bruto, sem previdência/IRRF. Confira sempre o holerite oficial e o regulamento institucional.</p>
 </footer>
 
 <script>
 /* ============================================================ */
 /* === CONSTANTES OFICIAIS 2026 ================================ */
 /* ============================================================ */
-const UFESP_2026 = 38.42;            // Decreto Sefaz-SP 18/12/2025
+const UFESP_2026 = 38.42;            // Comunicado DICAR-88/2025 - Sefaz-SP
+const AUX_ALIM_SP_DIA_PADRAO = UFESP_2026; // Padrão adotado: 1 UFESP por dia efetivamente trabalhado
+const AUX_ALIM_MG_DIA_PADRAO = 50.00;      // Decreto MG 49.006/2025
+const AUX_ALIM_BA_40H = 440.00;            // Decreto BA 22.863/2024
+const AUX_ALIM_BA_30H = 286.00;            // Decreto BA 22.863/2024
+const AUX_ALIM_RJ_PM = 433.80;             // Decreto RJ 50.081/2026 (PMERJ)
 const SAL_MIN_2026 = 1621.00;        // Decreto 12.797/2025
 const ALIQ_PREV = 0.14;
 const ALIQ_IPSM = 0.105;
@@ -1789,6 +1824,7 @@ function calcular() {
 
   const inst = currInst;
   const dias = Math.min(31, Math.max(0, valEl('dias')));
+  const diasVA = Math.min(31, Math.max(0, valEl('dias_va')));
   const fatorDias = dias / 30;
   const dependentes = valEl('dependentes');
 
@@ -1863,6 +1899,12 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     qualif_pc = valEl('qualif_pc');
   }
 
+  // SP - VA/VR / Ajuda de custo alimentação (indenizatória)
+  let auxalimSp = 0;
+  if (inst === 'pmesp' || inst === 'pcsp') {
+    auxalimSp = valEl('auxalim_sp_dia') * diasVA;
+  }
+
   // PMERJ
   let auxalimRj = 0, auxtranspRj = 0, lotacaoRj = 0, ghpRj = 0, auxfardRj = 0;
   if (inst === 'pmerj') {
@@ -1888,19 +1930,21 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (inst === 'pcerj' && retpFator > 1) pericRj = 0;
 
   // PMMG
-  let adeMgPm = 0, vpniMgPm = 0, fardamentoMgPm = 0;
+  let adeMgPm = 0, vpniMgPm = 0, fardamentoMgPm = 0, auxalimMgPm = 0;
   if (inst === 'pmmg') {
     adeMgPm = padrao * (valEl('ade_mg_pm') / 100);
     vpniMgPm = valEl('vpni_mg_pm');
     fardamentoMgPm = valEl('fardamento_mg_pm');
+    auxalimMgPm = (valEl('auxalim_mg_dia') + valEl('auxalim_mg_meta_dia')) * diasVA;
   }
 
   // PCMG
-  let adeMgPc = 0, gapMgPc = 0, vestimentaMgPc = 0;
+  let adeMgPc = 0, gapMgPc = 0, vestimentaMgPc = 0, auxalimMgPc = 0;
   if (inst === 'pcmg') {
     adeMgPc = padrao * (valEl('ade_mg_pc') / 100);
     gapMgPc = padrao * (valEl('gap_mg_pc') / 100);
     vestimentaMgPc = valEl('vestimenta_mg_pc');
+    auxalimMgPc = (valEl('auxalim_mg_dia') + valEl('auxalim_mg_meta_dia')) * diasVA;
   }
 
   // Bahia PM - CET + GAP fixa por referência + auxílio alimentação + auxílio fardamento
@@ -1915,13 +1959,14 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     auxfardBaPm = PMBA_AUX_FARDAMENTO_2026 * fatorDias;
   }
 
-  // Bahia PC - CET + GAJ/GAPJ fixa por referência + verbas manuais + qualificação
-  let cetBaPc = 0, gipBaPc = 0, gqualBaPc = 0, gratBaPc = 0;
+  // Bahia PC - CET + GAJ/GAPJ fixa por referência + verbas manuais + qualificação + auxílio-alimentação
+  let cetBaPc = 0, gipBaPc = 0, gqualBaPc = 0, gratBaPc = 0, auxalimBaPc = 0;
   let gratBaPcLabel = 'GAJ/GAPJ';
   let gratBaPcRefLabel = 'I';
   if (inst === 'pcba') {
     cetBaPc = padrao * (valEl('cet_ba_pc') / 100);
     gipBaPc = valEl('gip_ba_pc');
+    auxalimBaPc = valEl('auxalim_ba_pc');
     const idx = idxRefBa('grat_ba_pc_ref');
     gratBaPcRefLabel = refBa(idx);
     gratBaPc = ((c.gratBa || [])[idx] || 0) * fatorDias;
@@ -1984,9 +2029,10 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
                             decimoVal + feriasVal;
 
   // Verbas indenizatórias (sem previdência nem IRRF)
-  const baseIndenizatoria = auxfard_pm + auxalimRj + auxtranspRj + auxfardRj +
+  const baseIndenizatoria = auxalimSp + auxfard_pm + auxalimRj + auxtranspRj + auxfardRj +
                             auxalimRjPc + auxtranspRjPc + adictransfRj +
-                            fardamentoMgPm + vestimentaMgPc + auxalimBa + auxfardBaPm +
+                            fardamentoMgPm + auxalimMgPm + vestimentaMgPc + auxalimMgPc +
+                            auxalimBa + auxfardBaPm + auxalimBaPc +
                             qualif_pc + acaoInsalVal + abonoTransfVal + lpremioVal +
                             extraVal + gipBaPc;
 
@@ -2053,6 +2099,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (gatVal > 0) proventos += linha("GAT (Acúmulo Titularidade)", gatVal, "provento");
   if (gas_pc > 0) proventos += linha("GAS (Atividade Específica)", gas_pc, "provento");
   if (qualif_pc > 0) proventos += linha("Adic. Qualificação (PC)", qualif_pc, "provento");
+  if (auxalimSp > 0) proventos += linha(`VA/VR SP (${diasVA} dias × ${fmt(valEl('auxalim_sp_dia'))})`, auxalimSp, "provento");
   if (ale_pm > 0) proventos += linha("ALE (Adic. Local Exercício)", ale_pm, "provento");
   if (ensino > 0) proventos += linha("Retribuição Função Ensino", ensino, "provento");
   if (auxfard_pm > 0) proventos += linha("Auxílio-Fardamento", auxfard_pm, "provento");
@@ -2071,15 +2118,18 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (adeMgPm > 0) proventos += linha("ADE (Adic. Desempenho)", adeMgPm, "provento");
   if (vpniMgPm > 0) proventos += linha("VPNI", vpniMgPm, "provento");
   if (fardamentoMgPm > 0) proventos += linha("Abono Fardamento", fardamentoMgPm, "provento");
+  if (auxalimMgPm > 0) proventos += linha(`Auxílio-Alimentação MG (${diasVA} dias)`, auxalimMgPm, "provento");
   if (adeMgPc > 0) proventos += linha("ADE (Adic. Desempenho PC)", adeMgPc, "provento");
   if (gapMgPc > 0) proventos += linha("Gratif. Aprimoramento Profissional", gapMgPc, "provento");
   if (vestimentaMgPc > 0) proventos += linha("Auxílio Vestimenta", vestimentaMgPc, "provento");
+  if (auxalimMgPc > 0) proventos += linha(`Auxílio-Alimentação MG (${diasVA} dias)`, auxalimMgPc, "provento");
   if (cetBaPm > 0) proventos += linha("CET (Cond. Especial Trabalho)", cetBaPm, "provento");
   if (gapBaValor > 0) proventos += linha(`GAP PMBA — Referência ${gapBaRefLabel}`, gapBaValor, "provento");
   if (auxfardBaPm > 0) proventos += linha("Auxílio-Fardamento PMBA", auxfardBaPm, "provento");
   if (auxalimBa > 0) proventos += linha("Auxílio-Alimentação", auxalimBa, "provento");
   if (cetBaPc > 0) proventos += linha("CET / Verba percentual informada", cetBaPc, "provento");
   if (gratBaPc > 0) proventos += linha(`${gratBaPcLabel} — Referência ${gratBaPcRefLabel}`, gratBaPc, "provento");
+  if (auxalimBaPc > 0) proventos += linha("Auxílio-Alimentação BA", auxalimBaPc, "provento");
   if (gipBaPc > 0) proventos += linha("GIP / Verba variável informada", gipBaPc, "provento");
   if (gqualBaPc > 0) proventos += linha("Gratif. Qualificação Profissional", gqualBaPc, "provento");
   if (extraVal > 0) proventos += linha(extraLabel, extraVal, "provento");
@@ -2323,6 +2373,12 @@ function limparFormulario() {
   const calc = document.getElementById('page-calculadora');
   calc.querySelectorAll('input[type="number"]').forEach(el => {
     if (el.id === 'dias') el.value = 30;
+    else if (el.id === 'dias_va') el.value = 22;
+    else if (el.id === 'auxalim_sp_dia') el.value = AUX_ALIM_SP_DIA_PADRAO;
+    else if (el.id === 'auxalim_mg_dia') el.value = AUX_ALIM_MG_DIA_PADRAO;
+    else if (el.id === 'auxalim_mg_meta_dia') el.value = 0;
+    else if (el.id === 'auxalim_ba') el.value = AUX_ALIM_BA_40H;
+    else if (el.id === 'auxalim_ba_pc') el.value = AUX_ALIM_BA_40H;
     else if (el.id === 'auxalim_rj_pc') el.value = 433.80;
     else if (el.id === 'auxtransp_rj_pc') el.value = 100;
     else if (el.id === 'cet_ba_pm' || el.id === 'cet_ba_pc') el.value = 25;
