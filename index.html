@@ -108,7 +108,9 @@
     position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
     background: var(--fundo-card); z-index: 102;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 4px 0 24px rgba(0,0,0,0.1); display: flex; flex-direction: column;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.1); 
+    display: flex; flex-direction: column;
+    overflow-y: auto; /* Permite rolar o menu se os anúncios ocuparem muito espaço */
   }
   .sidebar.active { left: 0; }
   .sidebar-header {
@@ -117,7 +119,7 @@
   }
   .sidebar-header h2 { font-family: 'Oswald', sans-serif; font-size: 20px; color: var(--texto-principal); }
   .close-btn { background: none; border: none; font-size: 20px; color: var(--texto-secundario); cursor: pointer; }
-  .sidebar-nav { display: flex; flex-direction: column; padding: 20px 0; }
+  .sidebar-nav { display: flex; flex-direction: column; padding: 20px 0; flex-shrink: 0; }
   .sidebar-nav a {
     padding: 16px 24px; text-decoration: none; color: var(--texto-principal);
     font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 15px;
@@ -126,14 +128,14 @@
   .sidebar-nav a:hover { background: var(--fundo-input); color: var(--azul); }
   .sidebar-nav a.active { border-left-color: var(--vermelho); background: rgba(209, 36, 42, 0.05); color: var(--vermelho); }
 
-  /* ===== ANÚNCIO DE AFILIADO NO MENU ===== */
+  /* ===== ANÚNCIOS DE AFILIADO NO MENU ===== */
   .sidebar-ad {
     margin: auto 24px 24px 24px; /* O 'auto' empurra para o fundo do menu */
     padding-top: 20px;
     border-top: 1px solid var(--borda-card);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
   .sidebar-ad p {
     font-family: 'Roboto', sans-serif;
@@ -141,6 +143,7 @@
     color: var(--texto-secundario);
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: -5px;
   }
   .sidebar-ad a {
     display: block;
@@ -327,7 +330,13 @@
   </nav>
 
   <div class="sidebar-ad">
-    <p>Recomendado</p>
+    <p>Recomendados</p>
+    
+    <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
+      <img src="IMG_0868.jpeg" alt="Coldre Tático">
+      <span>Ver na Shopee</span>
+    </a>
+
     <a href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
       <img src="IMG_0865.jpeg" alt="Suporte Articulado 3D">
       <span>Ver na Shopee</span>
