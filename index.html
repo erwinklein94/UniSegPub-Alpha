@@ -10,15 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --vermelho: #d52027;
-    --vermelho-escuro: #9e1820;
-    --azul: #003c8f;
-    --azul-escuro: #002966;
-    --preto: #0a0a0a;
-    --cinza-escuro: #161616;
-    --cinza: #252525;
-    --cinza-claro: #3a3a3a;
-    --branco: #f8f8f8;
+    --vermelho: #e63946;
+    --vermelho-escuro: #b71c2c;
+    --azul: #1e5fbf;
+    --azul-escuro: #0d3a82;
+    --preto: #1a1a1a;
+    --cinza-escuro: #242424;
+    --cinza: #353535;
+    --cinza-claro: #4a4a4a;
+    --branco: #f5f5f5;
+    --texto: #ffffff;
+    --texto-secundario: #d0d0d0;
     --dourado: #f5b800;
     --dourado-escuro: #c89400;
   }
@@ -27,18 +29,18 @@
 
 body {
 font-family: ‘Roboto’, sans-serif;
-background: var(–preto);
-color: var(–branco);
+background: #1a1a1a;
+color: var(–texto);
 min-height: 100vh;
 background-image:
-radial-gradient(circle at 20% 10%, rgba(213,32,39,0.15) 0%, transparent 55%),
-radial-gradient(circle at 80% 80%, rgba(0,60,143,0.12) 0%, transparent 55%),
-linear-gradient(135deg, #0a0a0a 0%, #161616 100%);
+radial-gradient(circle at 20% 10%, rgba(230,57,70,0.18) 0%, transparent 55%),
+radial-gradient(circle at 80% 80%, rgba(30,95,191,0.15) 0%, transparent 55%),
+linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
 }
 
 /* ===== HEADER ===== */
 header {
-background: linear-gradient(180deg, #000 0%, #0a1530 100%);
+background: linear-gradient(180deg, #1a1a1a 0%, #2a2a3a 100%);
 border-bottom: 4px solid var(–vermelho);
 padding: 20px 0;
 position: relative;
@@ -94,7 +96,7 @@ font-size: 28px;
 font-weight: 700;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–branco);
+color: var(–texto);
 line-height: 1.1;
 }
 .header-text h1 span { color: var(–dourado); }
@@ -102,7 +104,7 @@ line-height: 1.1;
 font-family: ‘Roboto Condensed’, sans-serif;
 font-size: 13px;
 letter-spacing: 3px;
-color: #aaa;
+color: var(–texto-secundario);
 text-transform: uppercase;
 margin-top: 4px;
 }
@@ -114,7 +116,7 @@ background: linear-gradient(90deg, var(–vermelho) 0%, var(–vermelho-escuro) 
 height: 4px;
 background: linear-gradient(90deg, var(–azul) 0%, var(–azul-escuro) 50%, var(–azul) 100%);
 }
-.stripe-dark { height: 3px; background: var(–preto); }
+.stripe-dark { height: 3px; background: #1a1a1a; }
 
 /* ===== MAIN ===== */
 main {
@@ -132,13 +134,13 @@ main { grid-template-columns: 1fr; }
 
 /* ===== CARDS ===== */
 .card {
-background: linear-gradient(145deg, #1c1c1c 0%, #141414 100%);
-border: 1px solid #2a2a2a;
-border-left: 4px solid var(–azul);
+background: linear-gradient(145deg, #2e2e2e 0%, #262626 100%);
+border: 1px solid #404040;
+border-left: 4px solid var(–vermelho);
 border-radius: 4px;
 padding: 24px;
 margin-bottom: 20px;
-box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 .card h2 {
 font-family: ‘Oswald’, sans-serif;
@@ -146,10 +148,10 @@ font-size: 18px;
 font-weight: 600;
 letter-spacing: 1.5px;
 text-transform: uppercase;
-color: var(–branco);
+color: var(–texto);
 margin-bottom: 18px;
 padding-bottom: 10px;
-border-bottom: 1px solid var(–cinza);
+border-bottom: 1px solid #4a4a4a;
 display: flex;
 align-items: center;
 gap: 10px;
@@ -181,7 +183,7 @@ font-family: ‘Roboto Condensed’, sans-serif;
 font-size: 11px;
 font-weight: 700;
 letter-spacing: 1.2px;
-color: #999;
+color: var(–texto-secundario);
 text-transform: uppercase;
 margin-bottom: 5px;
 }
@@ -190,9 +192,9 @@ input[type=“number”],
 input[type=“text”],
 input[type=“date”],
 select {
-background: var(–preto);
-border: 1px solid #333;
-color: var(–branco);
+background: #1f1f1f;
+border: 1px solid #555;
+color: var(–texto);
 padding: 10px 12px;
 font-family: ‘Roboto’, sans-serif;
 font-size: 14px;
@@ -203,16 +205,16 @@ width: 100%;
 input:focus, select:focus {
 outline: none;
 border-color: var(–vermelho);
-box-shadow: 0 0 0 2px rgba(200,16,46,0.25);
+box-shadow: 0 0 0 2px rgba(230,57,70,0.3);
 }
-input::placeholder { color: #555; }
+input::placeholder { color: #888; }
 
 .checkbox-row {
 display: flex;
 align-items: center;
 gap: 8px;
-background: var(–preto);
-border: 1px solid #333;
+background: #1f1f1f;
+border: 1px solid #555;
 padding: 10px 12px;
 border-radius: 2px;
 cursor: pointer;
@@ -227,7 +229,7 @@ cursor: pointer;
 .checkbox-row label {
 margin: 0; cursor: pointer;
 font-size: 12px;
-color: #ccc;
+color: var(–texto);
 text-transform: none;
 letter-spacing: 0.3px;
 font-weight: 500;
@@ -240,10 +242,10 @@ top: 20px;
 align-self: start;
 }
 .resumo .card {
-background: linear-gradient(145deg, #1f1f1f 0%, #0a0a0a 100%);
+background: linear-gradient(145deg, #2e2e2e 0%, #1f1f1f 100%);
 border-left: 4px solid var(–vermelho);
 }
-.resumo h2 { color: var(–branco); }
+.resumo h2 { color: var(–texto); }
 .resumo h2::before { background: var(–vermelho); }
 
 .total-bloco {
@@ -312,30 +314,30 @@ display: flex;
 justify-content: space-between;
 padding: 6px 0;
 font-size: 13px;
-border-bottom: 1px dotted #2a2a2a;
+border-bottom: 1px dotted #444;
 }
 .linha:last-child { border-bottom: none; }
 .linha .desc {
-color: #ccc;
+color: var(–texto);
 font-family: ‘Roboto Condensed’, sans-serif;
 }
 .linha .val {
 font-family: ‘Roboto Condensed’, sans-serif;
 font-weight: 700;
-color: var(–branco);
+color: var(–texto);
 font-variant-numeric: tabular-nums;
 }
-.linha.desconto .val { color: #ff6b6b; }
-.linha.provento .val { color: #6dd97c; }
+.linha.desconto .val { color: #ff8a8a; }
+.linha.provento .val { color: #8ee69e; }
 .linha.subtotal {
-background: rgba(213,32,39,0.12);
+background: rgba(230,57,70,0.18);
 margin: 6px -10px;
 padding: 8px 10px;
 border-bottom: none;
 border-radius: 2px;
 border-left: 2px solid var(–vermelho);
 }
-.linha.subtotal .desc { color: var(–branco); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+.linha.subtotal .desc { color: var(–texto); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
 .linha.subtotal .val { color: var(–dourado); font-size: 15px; }
 
 /* ===== FOOTER ===== */
@@ -357,19 +359,19 @@ background: var(–azul);
 footer p {
 font-family: ‘Roboto Condensed’, sans-serif;
 font-size: 13px;
-color: #888;
+color: var(–texto-secundario);
 letter-spacing: 1px;
 }
 footer p strong { color: var(–dourado); }
 
 /* ===== ALERTA ===== */
 .alerta {
-background: rgba(0,60,143,0.12);
+background: rgba(30,95,191,0.18);
 border-left: 3px solid var(–azul);
 padding: 10px 14px;
 margin-top: 14px;
 font-size: 12px;
-color: #ccc;
+color: var(–texto);
 line-height: 1.5;
 }
 .alerta strong { color: var(–dourado) !important; }
