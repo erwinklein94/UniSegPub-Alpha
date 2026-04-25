@@ -126,10 +126,55 @@
   .sidebar-nav a:hover { background: var(--fundo-input); color: var(--azul); }
   .sidebar-nav a.active { border-left-color: var(--vermelho); background: rgba(209, 36, 42, 0.05); color: var(--vermelho); }
 
+  /* ===== ANÚNCIO DE AFILIADO NO MENU ===== */
+  .sidebar-ad {
+    margin: auto 24px 24px 24px; /* O 'auto' empurra para o fundo do menu */
+    padding-top: 20px;
+    border-top: 1px solid var(--borda-card);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sidebar-ad p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .sidebar-ad a {
+    display: block;
+    text-decoration: none;
+    background: var(--fundo-input);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.2s;
+    border: 1px solid transparent;
+  }
+  .sidebar-ad a:hover {
+    border-color: var(--vermelho);
+    box-shadow: 0 4px 12px rgba(209, 36, 42, 0.1);
+  }
+  .sidebar-ad img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid var(--borda-input);
+  }
+  .sidebar-ad span {
+    display: block;
+    padding: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--texto-principal);
+    text-align: center;
+  }
+
   /* ===== SEÇÕES DA PÁGINA (SPA) ===== */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
-  .page-section.active { display: grid; } /* Calculadora usa grid */
-  #page-direitos.active { display: block; } /* Direitos usa block */
+  .page-section.active { display: grid; } 
+  #page-direitos.active { display: block; } 
   
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -280,6 +325,14 @@
     <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active">Calculadora de Soldo</a>
     <a onclick="switchPage('direitos')" id="menu-direitos">Direitos e Vantagens</a>
   </nav>
+
+  <div class="sidebar-ad">
+    <p>Recomendado</p>
+    <a href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
+      <img src="suporte.png" alt="Suporte Articulado 3D">
+      <span>Ver na Shopee</span>
+    </a>
+  </div>
 </aside>
 
 <main id="page-calculadora" class="page-section active">
