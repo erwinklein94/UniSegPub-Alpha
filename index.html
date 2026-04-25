@@ -56,6 +56,8 @@
   body[data-inst="pcerj"] { --vermelho: #6B7280; --vermelho-escuro: #4B5563; }
   body[data-inst="pmmg"] { --vermelho: #7c1a1a; --vermelho-escuro: #4a0f0f; }
   body[data-inst="pcmg"] { --vermelho: #b58d3d; --vermelho-escuro: #7a5f28; }
+  body[data-inst="pmba"] { --vermelho: #967117; --vermelho-escuro: #5c4308; }
+  body[data-inst="pcba"] { --vermelho: #333333; --vermelho-escuro: #111111; }
   
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -166,7 +168,7 @@
   /* CONTROLE DE EXIBIÇÃO POR INSTITUIÇÃO                           */
   /* ============================================================== */
   
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only { 
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only { 
     display: none !important; 
   }
 
@@ -176,6 +178,8 @@
   body[data-inst="pcerj"] .field.pcerj-only, body[data-inst="pcerj"] h2.pcerj-only { display: flex !important; }
   body[data-inst="pmmg"] .field.pmmg-only, body[data-inst="pmmg"] h2.pmmg-only { display: flex !important; }
   body[data-inst="pcmg"] .field.pcmg-only, body[data-inst="pcmg"] h2.pcmg-only { display: flex !important; }
+  body[data-inst="pmba"] .field.pmba-only, body[data-inst="pmba"] h2.pmba-only { display: flex !important; }
+  body[data-inst="pcba"] .field.pcba-only, body[data-inst="pcba"] h2.pcba-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -183,16 +187,20 @@
   body[data-inst="pcerj"] div.alerta.pcerj-only { display: block !important; }
   body[data-inst="pmmg"] div.alerta.pmmg-only { display: block !important; }
   body[data-inst="pcmg"] div.alerta.pcmg-only { display: block !important; }
+  body[data-inst="pmba"] div.alerta.pmba-only { display: block !important; }
+  body[data-inst="pcba"] div.alerta.pcba-only { display: block !important; }
 
   .militar-only { display: none !important; }
   body[data-inst="pmesp"] .militar-only,
   body[data-inst="pmerj"] .militar-only,
-  body[data-inst="pmmg"] .militar-only { display: flex !important; }
+  body[data-inst="pmmg"] .militar-only,
+  body[data-inst="pmba"] .militar-only { display: flex !important; }
 
   .civil-only { display: none !important; }
   body[data-inst="pcsp"] .civil-only,
   body[data-inst="pcerj"] .civil-only,
-  body[data-inst="pcmg"] .civil-only { display: flex !important; }
+  body[data-inst="pcmg"] .civil-only,
+  body[data-inst="pcba"] .civil-only { display: flex !important; }
   
   /* ============================================================== */
 
@@ -306,6 +314,10 @@
         <option value="pmmg">PMMG - Polícia Militar</option>
         <option value="pcmg">PCMG - Polícia Civil</option>
       </optgroup>
+      <optgroup label="Bahia">
+        <option value="pmba">PMBA - Polícia Militar</option>
+        <option value="pcba">PCBA - Polícia Civil</option>
+      </optgroup>
     </select>
   </div>
 
@@ -381,6 +393,23 @@
         <div class="field pcmg-only">
           <label>Quinquênios PCMG (10% cada)</label>
           <input type="number" id="quinquenios_mg_pc" value="0" min="0" max="6"/>
+        </div>
+        
+        <div class="field pmba-only">
+          <label>Anuênios (1% ao ano)</label>
+          <input type="number" id="anuenios_ba_pm" value="0" min="0" max="35"/>
+        </div>
+        <div class="field pmba-only">
+          <label>CET - Condição Especial de Trabalho (%)</label>
+          <input type="number" id="cet_ba_pm" value="25" min="0" max="125" step="1"/>
+        </div>
+        <div class="field pcba-only">
+          <label>Anuênios (1% ao ano)</label>
+          <input type="number" id="anuenios_ba_pc" value="0" min="0" max="35"/>
+        </div>
+        <div class="field pcba-only">
+          <label>CET - Condição Especial de Trabalho (%)</label>
+          <input type="number" id="cet_ba_pc" value="25" min="0" max="125" step="1"/>
         </div>
 
         <div class="field pm-only">
@@ -549,6 +578,8 @@
       <h2 class="pcerj-only">Trabalho Extra — Serviço Voluntário Gratificado</h2>
       <h2 class="pmmg-only">Trabalho Extra — Escala / Jornada Extraordinária</h2>
       <h2 class="pcmg-only">Trabalho Extra — Plantão Extraordinário</h2>
+      <h2 class="pmba-only">Trabalho Extra — Serviço Extraordinário</h2>
+      <h2 class="pcba-only">Trabalho Extra — Plantão Extraordinário</h2>
       
       <div class="form-grid">
         <div class="field pm-only">
@@ -629,6 +660,23 @@
           <input type="number" id="valextra_mg_pc" value="300" min="0" step="0.01"/>
         </div>
 
+        <div class="field pmba-only">
+          <label>Horas Extras / Plantões (Qtd)</label>
+          <input type="number" id="qtdextra_ba_pm" value="0" min="0" max="40"/>
+        </div>
+        <div class="field pmba-only">
+          <label>Valor da Hora/Plantão Extra (R$)</label>
+          <input type="number" id="valextra_ba_pm" value="150" min="0" step="0.01"/>
+        </div>
+        <div class="field pcba-only">
+          <label>Plantões Extras (Qtd)</label>
+          <input type="number" id="qtdextra_ba_pc" value="0" min="0" max="15"/>
+        </div>
+        <div class="field pcba-only">
+          <label>Valor do Plantão Extra (R$)</label>
+          <input type="number" id="valextra_ba_pc" value="200" min="0" step="0.01"/>
+        </div>
+
         <div class="field span-2">
           <div class="alerta pm-only">
             <strong>DEJEM:</strong> base UFESP 2026 (R$ 38,42), limite 10/mês.<br>
@@ -648,6 +696,12 @@
           </div>
           <div class="alerta pcmg-only">
             <strong>Plantão Extra (PCMG):</strong> Adicional indenizatório por cumprimento de escalas complementares e plantões operacionais.
+          </div>
+          <div class="alerta pmba-only">
+            <strong>Hora Extra / Serviço Extraordinário (PMBA):</strong> Remuneração por serviço extraordinário prestado em grandes eventos oficiais ou convênios.
+          </div>
+          <div class="alerta pcba-only">
+            <strong>Plantão Extra (PCBA):</strong> Indenização por plantões e operações além da escala normal de trabalho regulamentada.
           </div>
         </div>
       </div>
@@ -749,6 +803,23 @@
           <input type="number" id="sindicato_mg_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
+        <div class="field pmba-only">
+          <label>PLANSERV (Saúde Titular + Dep)</label>
+          <input type="number" id="planserv_ba_pm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pmba-only">
+          <label>Associação (ASPRA / Força Invicta)</label>
+          <input type="number" id="assoc_ba_pm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pcba-only">
+          <label>PLANSERV (Saúde Titular + Dep)</label>
+          <input type="number" id="planserv_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pcba-only">
+          <label>Sindicato (SINDPOC / ADPEB etc)</label>
+          <input type="number" id="sindicato_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+
       </div>
       <div class="alerta">
         <strong>Observação:</strong> <span id="alerta-prev">SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.</span>
@@ -845,7 +916,7 @@
 
 <script>
 /* ============================================================ */
-/* === DADOS: PMESP, PCSP, PMERJ, PCERJ, PMMG E PCMG ===================== */
+/* === DADOS: PMESP, PCSP, PMERJ, PCERJ, PMMG, PCMG, PMBA, PCBA ===================== */
 /* ============================================================ */
 
 /* PMESP - retpFator implícito = 1.0 (RETP = 100% padrão) */
@@ -958,6 +1029,29 @@ const CARGOS_PCMG = [
   { val: "inv_mg", text: "Investigador / Escrivão", padrao: 5097.11, oficial: false, selected: true, retpFator: 0 }
 ];
 
+/* === PMBA === */
+const CARGOS_PMBA = [
+  { val: "cel_ba", text: "CEL PM — Coronel PMBA", padrao: 18500.00, oficial: true, retpFator: 0 },
+  { val: "tencel_ba", text: "TEN CEL PM — Tenente Coronel PMBA", padrao: 16200.00, oficial: true, retpFator: 0 },
+  { val: "maj_ba", text: "MAJ PM — Major PMBA", padrao: 14500.00, oficial: true, retpFator: 0 },
+  { val: "cap_ba", text: "CAP PM — Capitão PMBA", padrao: 12500.00, oficial: true, retpFator: 0 },
+  { val: "1ten_ba", text: "1º TEN PM — 1º Tenente PMBA", padrao: 10500.00, oficial: true, retpFator: 0 },
+  { val: "subten_ba", text: "SUBTEN PM — Subtenente PMBA", padrao: 8500.00, oficial: false, retpFator: 0 },
+  { val: "1sgt_ba", text: "1º SGT PM — 1º Sargento PMBA", padrao: 7200.00, oficial: false, retpFator: 0 },
+  { val: "cabo_ba", text: "CABO PM — Cabo PMBA", padrao: 5800.00, oficial: false, retpFator: 0 },
+  { val: "sd1_ba", text: "SD 1ª CL — Soldado 1ª Classe PMBA", padrao: 4800.00, oficial: false, selected: true, retpFator: 0 },
+  { val: "sdaluno_ba", text: "SD ALUNO — Aluno a Soldado", padrao: 1412.00, oficial: false, retpFator: 0 }
+];
+
+/* === PCBA === */
+const CARGOS_PCBA = [
+  { val: "del_esp_ba", text: "Delegado Especial", padrao: 19500.00, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_ba", text: "Delegado de Polícia", padrao: 14500.00, oficial: true, delegado: true, retpFator: 0 },
+  { val: "perito_ba", text: "Perito Criminal / Legista", padrao: 12500.00, oficial: true, perito: true, retpFator: 0 },
+  { val: "inv_esp_ba", text: "Investigador / Escrivão Especial", padrao: 8500.00, oficial: false, retpFator: 0 },
+  { val: "inv_ba", text: "Investigador / Escrivão", padrao: 5500.00, oficial: false, selected: true, retpFator: 0 }
+];
+
 /* ============================================================ */
 /* === BANCO DE DADOS: AÇÕES JUDICIAIS ======================== */
 /* ============================================================ */
@@ -995,6 +1089,17 @@ const ACOES_JUDICIAIS = {
     { titulo: "Restituição do IPSEMG", status: "Tese Consolidada", desc: "Ação para interromper desconto compulsório do IPSEMG saúde para não interessados, e devolução dos valores dos últimos 5 anos." },
     { titulo: "Inclusão do ADE na Aposentadoria", status: "Ação de Inativos", desc: "Garantir que o Adicional de Desempenho recebido na ativa seja incorporado aos proventos de aposentadoria." },
     { titulo: "Pagamento de Progressão e Promoção Atrasada", status: "Ação de Cobrança", desc: "Ação para cobrar valores retroativos devidos pela demora do Estado em publicar o ato de promoção." }
+  ],
+  pmba: [
+    { titulo: "Implantação e Retroativos da GAP V", status: "Tese Consolidada", desc: "Pagamento de valores retroativos referentes a atrasos na implantação da Gratificação de Atividade Policial nível V." },
+    { titulo: "Revisão da URV (11,98%)", status: "Ação de Cobrança", desc: "Ação visando a recomposição salarial devido às perdas geradas na transição da moeda em 1994." },
+    { titulo: "Adicional Noturno", status: "Direito Reconhecido", desc: "Cobrança do adicional noturno para militares que trabalharam em escalas noturnas sem a devida remuneração específica." },
+    { titulo: "Base de Cálculo da CET", status: "Tese em Ascensão", desc: "Revisão da base de cálculo da Condição Especial de Trabalho para que incida sobre outras gratificações fixas." }
+  ],
+  pcba: [
+    { titulo: "Paridade e Integralidade para Aposentados", status: "Repercussão Geral (STF)", desc: "Garantia de que os inativos recebam os mesmos reajustes e benefícios dos policiais da ativa." },
+    { titulo: "Promoções em Atraso (Ressarcimento)", status: "Ação de Cobrança", desc: "Pagamento de diferenças salariais geradas pelo atraso na publicação de promoções de classe." },
+    { titulo: "Adicional de Insalubridade", status: "Discussão Jurídica", desc: "Cobrança de insalubridade para servidores que atuam em ambientes nocivos sem o repasse correto do Estado." }
   ]
 };
 
@@ -1030,6 +1135,16 @@ const ASSOCIACOES = {
     { nome: "SINDPOL-MG", foco: "Sindicato dos Servidores da PCMG", acao: "Lidera as ações de restituição de descontos indevidos ao IPSEMG (Assistência Médica)." },
     { nome: "ADEPOL-MG", foco: "Sindicato dos Delegados MG", acao: "Ações voltadas ao cumprimento integral das datas de promoção e defesa de prerrogativas funcionais." },
     { nome: "AESPOL-MG", foco: "Assoc. dos Escrivães", acao: "Luta pela manutenção do ADE na aposentadoria e paridade." }
+  ],
+  pmba: [
+    { nome: "ASPRA-BA (Assoc. dos Policiais e Bombeiros e Seus Familiares)", foco: "Representação de Praças", acao: "Defesa forte em ações de GAP V retroativa e melhorias nas escalas." },
+    { nome: "APPM-BA (Assoc. de Praças da Polícia e Bombeiro Militar)", foco: "Defesa Jurídica e Política de Praças", acao: "Luta pela revisão da URV e pagamento de Adicional Noturno." },
+    { nome: "Força Invicta", foco: "Associação dos Oficiais Militares", acao: "Defesa das prerrogativas dos Oficiais e simetria de vencimentos." }
+  ],
+  pcba: [
+    { nome: "SINDPOC", foco: "Sindicato dos Policiais Civis", acao: "Protagonista nas lutas por reestruturação salarial, pagamento de promoções e nível superior." },
+    { nome: "ADPEB", foco: "Sindicato dos Delegados de Polícia", acao: "Defesa das prerrogativas do Delegado, paridade para aposentados e simetria jurídica." },
+    { nome: "AEPEB", foco: "Associação dos Escrivães", acao: "Foco nas demandas específicas dos Escrivães de Polícia e valorização da carreira." }
   ]
 };
 
@@ -1050,6 +1165,8 @@ function popularCargos(inst) {
   else if (inst === 'pcerj') lista = CARGOS_PCERJ;
   else if (inst === 'pmmg') lista = CARGOS_PMMG;
   else if (inst === 'pcmg') lista = CARGOS_PCMG;
+  else if (inst === 'pmba') lista = CARGOS_PMBA;
+  else if (inst === 'pcba') lista = CARGOS_PCBA;
   else lista = CARGOS_PM;
 
   currCargos = lista;
@@ -1069,7 +1186,9 @@ function popularCargos(inst) {
     pmerj: [ { v: 'oficial_rj', t: 'Oficial PMERJ (Tenente a Coronel)' }, { v: 'praca_rj', t: 'Praça PMERJ (Soldado a Subtenente)', selected: true } ],
     pcerj: [ { v: 'delegado_rj', t: 'Autoridade Policial (Delegado)' }, { v: 'perito_rj', t: 'Perito Criminal / Legista' }, { v: 'oficialpc_rj', t: 'Oficial de Polícia Civil', selected: true }, { v: 'agentepc_rj', t: 'Agente de Polícia Científica' } ],
     pmmg: [ { v: 'oficial_mg', t: 'Oficial PMMG (Tenente a Coronel)' }, { v: 'praca_mg', t: 'Praça PMMG (Soldado a Subtenente)', selected: true } ],
-    pcmg: [ { v: 'delegado_mg', t: 'Autoridade Policial (Delegado)' }, { v: 'perito_mg', t: 'Perito Criminal / Legista' }, { v: 'policial_mg', t: 'Investigador / Escrivão', selected: true } ]
+    pcmg: [ { v: 'delegado_mg', t: 'Autoridade Policial (Delegado)' }, { v: 'perito_mg', t: 'Perito Criminal / Legista' }, { v: 'policial_mg', t: 'Investigador / Escrivão', selected: true } ],
+    pmba: [ { v: 'oficial_ba', t: 'Oficial PMBA (Tenente a Coronel)' }, { v: 'praca_ba', t: 'Praça PMBA (Soldado a Subtenente)', selected: true } ],
+    pcba: [ { v: 'delegado_ba', t: 'Autoridade Policial (Delegado)' }, { v: 'perito_ba', t: 'Perito Criminal / Legista' }, { v: 'policial_ba', t: 'Investigador / Escrivão', selected: true } ]
   };
 
   (opcoesDireitos[inst] || []).forEach(o => {
@@ -1086,23 +1205,23 @@ function mudarInstituicao() {
   const inst = document.getElementById('instituicao').value;
   document.body.setAttribute('data-inst', inst);
   
-  const headerSpan = document.getElementById('header-span');
   const headerDesc = document.getElementById('header-desc');
   const txtInstDir = document.getElementById('txt-inst-dir');
   const alertaPrev = document.getElementById('alerta-prev');
   const rodapeAlerta = document.getElementById('rodape_alerta');
 
   const config = {
-    pmesp: { span: 'Soldo', desc: 'Descubra quanto você vai receber como PMESP (valor 2026)', dir: 'PMESP', prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.' },
-    pcsp: { span: 'Subsídio', desc: 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)', dir: 'PCSP', prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.' },
-    pmerj: { span: 'Soldo', desc: 'Descubra seus vencimentos na PMERJ (valor 2026)', dir: 'PMERJ', prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre soldo + gratificações sujeitas a contribuição. RAS é indenizatório (não incide previdência).', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
-    pcerj: { span: 'Subsídio', desc: 'Descubra seus vencimentos na Polícia Civil RJ (Lei 11.003/2025)', dir: 'PCERJ', prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre vencimento-base + adicionais (incluindo periculosidade ou verba de representação dos delegados).', rodape: 'Cálculos baseados na legislação atual (Lei 11.003/2025) com projeção/ajustes 2026.' },
-    pmmg: { span: 'Subsídio', desc: 'Descubra quanto você vai receber na PMMG (valor 2026)', dir: 'PMMG', prev: 'IPSM (10,5% previdência militar e saúde) é descontado automaticamente sobre o subsídio e adicionais.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
-    pcmg: { span: 'Subsídio', desc: 'Descubra seus vencimentos na Polícia Civil MG (valor 2026)', dir: 'PCMG', prev: 'Previdência Estadual (~14%) é descontada automaticamente. IPSEMG saúde (3,2%) é opcional.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' }
+    pmesp: { desc: 'Descubra quanto você vai receber como PMESP (valor 2026)', dir: 'PMESP', prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.' },
+    pcsp: { desc: 'Descubra seus vencimentos na Polícia Civil SP (valor 2026)', dir: 'PCSP', prev: 'SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026. UFESP: R$ 38,42.' },
+    pmerj: { desc: 'Descubra seus vencimentos na PMERJ (valor 2026)', dir: 'PMERJ', prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre soldo + gratificações sujeitas a contribuição. RAS é indenizatório (não incide previdência).', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
+    pcerj: { desc: 'Descubra seus vencimentos na Polícia Civil RJ (Lei 11.003/2025)', dir: 'PCERJ', prev: 'RioPrevidência (previdência) é descontada automaticamente — 14% sobre vencimento-base + adicionais (incluindo periculosidade ou verba de representação dos delegados).', rodape: 'Cálculos baseados na legislação atual (Lei 11.003/2025) com projeção/ajustes 2026.' },
+    pmmg: { desc: 'Descubra quanto você vai receber na PMMG (valor 2026)', dir: 'PMMG', prev: 'IPSM (10,5% previdência militar e saúde) é descontado automaticamente sobre o subsídio e adicionais.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
+    pcmg: { desc: 'Descubra seus vencimentos na Polícia Civil MG (valor 2026)', dir: 'PCMG', prev: 'Previdência Estadual (~14%) é descontada automaticamente. IPSEMG saúde (3,2%) é opcional.', rodape: 'Cálculos baseados na legislação atual com projeção/ajustes 2026.' },
+    pmba: { desc: 'Descubra quanto você vai receber na PMBA (valor 2026)', dir: 'PMBA', prev: 'BAPREV (previdência) é descontada automaticamente. PLANSERV é declarado na seção de descontos.', rodape: 'Cálculos baseados na legislação atual da Bahia com projeção/ajustes 2026.' },
+    pcba: { desc: 'Descubra seus vencimentos na Polícia Civil BA (valor 2026)', dir: 'PCBA', prev: 'BAPREV (previdência) é descontada automaticamente. PLANSERV é declarado na seção de descontos.', rodape: 'Cálculos baseados na legislação atual da Bahia com projeção/ajustes 2026.' }
   };
 
   const c = config[inst] || config.pmesp;
-  // headerSpan.innerText = c.span; <- Removido para manter "Segurança Pública" fixo
   headerDesc.innerText = c.desc;
   txtInstDir.innerText = c.dir;
   alertaPrev.innerText = c.prev;
@@ -1339,6 +1458,22 @@ function calcular() {
     valFardamento = parseFloat(document.getElementById("vestimenta_mg_pc").value) || 0;
     valPlantao = (parseInt(document.getElementById("qtdextra_mg_pc").value) || 0) * (parseFloat(document.getElementById("valextra_mg_pc").value) || 0);
   }
+  else if (inst === 'pmba') {
+    const anu = parseInt(document.getElementById("anuenios_ba_pm").value) || 0;
+    valQuinq = padrao * 0.01 * anu;
+    quinq = anu;
+    const cet = parseFloat(document.getElementById("cet_ba_pm").value) || 0;
+    valADE = padrao * (cet / 100);
+    valPlantao = (parseInt(document.getElementById("qtdextra_ba_pm").value) || 0) * (parseFloat(document.getElementById("valextra_ba_pm").value) || 0);
+  }
+  else if (inst === 'pcba') {
+    const anu = parseInt(document.getElementById("anuenios_ba_pc").value) || 0;
+    valQuinq = padrao * 0.01 * anu;
+    quinq = anu;
+    const cet = parseFloat(document.getElementById("cet_ba_pc").value) || 0;
+    valADE = padrao * (cet / 100);
+    valPlantao = (parseInt(document.getElementById("qtdextra_ba_pc").value) || 0) * (parseFloat(document.getElementById("valextra_ba_pc").value) || 0);
+  }
 
   let retpAjustado = retp;
   if (inst === 'pcerj' && !c.delegado) {
@@ -1359,18 +1494,18 @@ function calcular() {
   } else if (inst === 'pcerj') {
     proventosHTML += linha("Vencimento-Base", padrao, "provento");
     if (retpAjustado > 0) proventosHTML += linha(retpLabel, retpAjustado, "provento");
-  } else if (inst === 'pmmg' || inst === 'pcmg') {
-    proventosHTML += linha("Subsídio / Vencimento", padrao, "provento");
+  } else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
+    proventosHTML += linha((inst === 'pmba' ? "Soldo Base + GAP" : (inst === 'pcba' ? "Vencimento" : "Subsídio / Vencimento")), padrao, "provento");
   } else {
     proventosHTML += linha(inst === 'pmesp' ? "Padrão" : "Salário Base", padrao, "provento");
     proventosHTML += linha("RETP (100%)", retpAjustado, "provento");
   }
 
-  if (valQuinq) proventosHTML += linha(inst === 'pmerj' ? `Triênios (${quinq})` : `Quinquênios (${quinq})`, valQuinq, "provento");
+  if (valQuinq) proventosHTML += linha(inst === 'pmerj' ? `Triênios (${quinq})` : (inst === 'pmba' || inst === 'pcba' ? `Anuênios (${quinq})` : `Quinquênios (${quinq})`), valQuinq, "provento");
   if (valSexta) proventosHTML += linha("Sexta-parte", valSexta, "provento");
   if (insal) proventosHTML += linha("Insalubridade", insal, "provento");
   if (gratifRepres) proventosHTML += linha("Representação", gratifRepres, "provento");
-  if (valADE) proventosHTML += linha("Adicional de Desempenho (ADE)", valADE, "provento");
+  if (valADE) proventosHTML += linha((inst === 'pmba' || inst === 'pcba') ? "CET - Condição Especial de Trabalho" : "Adicional de Desempenho (ADE)", valADE, "provento");
   
   if (inst === 'pmesp') {
     if (valDS) proventosHTML += linha("Desig. Substituição", valDS, "provento");
@@ -1403,6 +1538,9 @@ function calcular() {
     if (valFardamento) proventosHTML += linha("Auxílio Vestimenta", valFardamento, "provento");
     if (valPlantao) proventosHTML += linha("Plantões Extras", valPlantao, "provento");
   }
+  if (inst === 'pmba' || inst === 'pcba') {
+    if (valPlantao) proventosHTML += linha("Serviço Extraordinário / Plantão Extra", valPlantao, "provento");
+  }
 
   if (acaoInsal) proventosHTML += linha("Ação Insalub.", acaoInsal, "provento");
   if (val13) proventosHTML += linha("13º Salário", val13, "provento");
@@ -1420,6 +1558,7 @@ function calcular() {
   
   let sprev = 0, nomePrev = "Previdência";
   if (inst === 'pmmg') { sprev = basePrev * ALIQ_IPSM; nomePrev = "IPSM (10,5% Prev+Saúde)"; } 
+  else if (inst === 'pmba' || inst === 'pcba') { sprev = basePrev * 0.14; nomePrev = "BAPREV (14%)"; }
   else {
     sprev = basePrev * ALIQ_PREV; 
     if (inst === 'pmesp' || inst === 'pcsp') nomePrev = "SPPREV (14%)";
@@ -1486,6 +1625,20 @@ function calcular() {
     descEspecificos = ipsemgVal + sindMg;
     if (ipsemgVal) descHTML += linha("IPSEMG (Saúde 3,2%)", ipsemgVal, "desconto");
     if (sindMg) descHTML += linha("Sindicato (SINDPOL)", sindMg, "desconto");
+  }
+  else if (inst === 'pmba') {
+    const planserv = parseFloat(document.getElementById("planserv_ba_pm").value) || 0;
+    const assocBa = parseFloat(document.getElementById("assoc_ba_pm").value) || 0;
+    descEspecificos = planserv + assocBa;
+    if (planserv) descHTML += linha("PLANSERV", planserv, "desconto");
+    if (assocBa) descHTML += linha("Associação / Clube", assocBa, "desconto");
+  }
+  else if (inst === 'pcba') {
+    const planserv = parseFloat(document.getElementById("planserv_ba_pc").value) || 0;
+    const sindBa = parseFloat(document.getElementById("sindicato_ba_pc").value) || 0;
+    descEspecificos = planserv + sindBa;
+    if (planserv) descHTML += linha("PLANSERV", planserv, "desconto");
+    if (sindBa) descHTML += linha("Sindicato", sindBa, "desconto");
   }
 
   const pensaoPct = parseFloat(document.getElementById("pensao").value) || 0;
@@ -1563,6 +1716,23 @@ function analisarDireitos() {
     direitos.push({ nome: "Quinquênios (10%)", tem: q > 0, desc: q > 0 ? `Acumulado de ${q} quinquênio(s).` : "Garantia atrelada a ingressos antigos." });
     direitos.push({ nome: "Auxílio Vestimenta", tem: !inativo, desc: !inativo ? "Ajuda de custo conforme lei." : "Não se projeta para inatividade." });
     if (inativo) direitos.push({ nome: "Aposentadoria Policial Especial", tem: true, desc: "Garantia de integralidade e paridade (regras de transição)." });
+  }
+
+  if (inst === 'pmba') {
+    direitos.push({ nome: "Soldo + GAP", tem: true, desc: "A remuneração base é composta pelo Soldo e pela Gratificação de Atividade Policial (GAP)." });
+    direitos.push({ nome: "CET (Condição Especial de Trabalho)", tem: true, desc: "Gratificação que pode variar percentualmente de acordo com a função e local de trabalho." });
+    const anu = document.getElementById("anuenios_ba_pm") ? parseInt(document.getElementById("anuenios_ba_pm").value) : 0;
+    direitos.push({ nome: "Anuênios (1% ao ano)", tem: anu > 0, desc: anu > 0 ? `Acumulado de ${anu} anuênio(s).` : "Adquirido a cada ano de efetivo serviço." });
+    direitos.push({ nome: "PLANSERV", tem: true, desc: "Assistência à saúde do servidor estadual da Bahia (opcional)." });
+    if (inativo) direitos.push({ nome: "Sistema de Proteção Social", tem: true, desc: "Garantia de paridade e integralidade para militares estaduais." });
+  }
+
+  if (inst === 'pcba') {
+    direitos.push({ nome: "Vencimento Básico", tem: true, desc: "A remuneração da Polícia Civil é composta por Vencimento e gratificações atreladas." });
+    direitos.push({ nome: "CET (Condição Especial de Trabalho)", tem: true, desc: "Gratificação de atividade aplicada sobre o vencimento." });
+    const anu = document.getElementById("anuenios_ba_pc") ? parseInt(document.getElementById("anuenios_ba_pc").value) : 0;
+    direitos.push({ nome: "Anuênios (1% ao ano)", tem: anu > 0, desc: anu > 0 ? `Acumulado de ${anu} anuênio(s).` : "Adquirido a cada ano de efetivo serviço." });
+    if (inativo) direitos.push({ nome: "Aposentadoria Policial Especial", tem: true, desc: "Garantia de integralidade e paridade com base nas regras constitucionais e de transição." });
   }
 
   const container = document.getElementById('resultados_dir');
