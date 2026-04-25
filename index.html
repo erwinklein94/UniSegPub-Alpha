@@ -10,15 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --vermelho: #c8102e;
-    --vermelho-escuro: #8a0a1f;
-    --preto: #0d0d0d;
-    --cinza-escuro: #1a1a1a;
-    --cinza: #2a2a2a;
-    --cinza-claro: #404040;
-    --branco: #f5f5f5;
-    --dourado: #d4af37;
-    --verde: #2e8b57;
+    --vermelho: #d52027;
+    --vermelho-escuro: #9e1820;
+    --azul: #003c8f;
+    --azul-escuro: #002966;
+    --preto: #0a0a0a;
+    --cinza-escuro: #161616;
+    --cinza: #252525;
+    --cinza-claro: #3a3a3a;
+    --branco: #f8f8f8;
+    --dourado: #f5b800;
+    --dourado-escuro: #c89400;
   }
 
 - { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,14 +31,14 @@ background: var(–preto);
 color: var(–branco);
 min-height: 100vh;
 background-image:
-radial-gradient(circle at 20% 10%, rgba(200,16,46,0.12) 0%, transparent 50%),
-radial-gradient(circle at 80% 80%, rgba(200,16,46,0.08) 0%, transparent 50%),
-linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+radial-gradient(circle at 20% 10%, rgba(213,32,39,0.15) 0%, transparent 55%),
+radial-gradient(circle at 80% 80%, rgba(0,60,143,0.12) 0%, transparent 55%),
+linear-gradient(135deg, #0a0a0a 0%, #161616 100%);
 }
 
 /* ===== HEADER ===== */
 header {
-background: linear-gradient(180deg, #000 0%, #1a1a1a 100%);
+background: linear-gradient(180deg, #000 0%, #0a1530 100%);
 border-bottom: 4px solid var(–vermelho);
 padding: 20px 0;
 position: relative;
@@ -47,11 +49,11 @@ content: “”;
 position: absolute;
 top: 0; right: 0; bottom: 0; left: 0;
 background: repeating-linear-gradient(
-45deg,
+90deg,
 transparent,
-transparent 20px,
-rgba(200,16,46,0.03) 20px,
-rgba(200,16,46,0.03) 22px
+transparent 60px,
+rgba(255,255,255,0.04) 60px,
+rgba(255,255,255,0.04) 64px
 );
 pointer-events: none;
 }
@@ -68,15 +70,24 @@ position: relative;
 width: 70px;
 height: 70px;
 flex-shrink: 0;
-background: var(–vermelho);
-border: 3px solid var(–dourado);
+background: #000;
+border: 3px solid var(–vermelho);
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0 0 20px rgba(200,16,46,0.5), inset 0 0 15px rgba(0,0,0,0.4);
+box-shadow: 0 0 25px rgba(213,32,39,0.4), inset 0 0 15px rgba(0,0,0,0.6);
+position: relative;
 }
-.brasao svg { width: 50px; height: 50px; }
+.brasao::after {
+content: “”;
+position: absolute;
+inset: -8px;
+border: 2px solid var(–dourado);
+border-radius: 50%;
+opacity: 0.4;
+}
+.brasao svg { width: 56px; height: 56px; }
 .header-text h1 {
 font-family: ‘Oswald’, sans-serif;
 font-size: 28px;
@@ -86,12 +97,12 @@ text-transform: uppercase;
 color: var(–branco);
 line-height: 1.1;
 }
-.header-text h1 span { color: var(–vermelho); }
+.header-text h1 span { color: var(–dourado); }
 .header-text p {
 font-family: ‘Roboto Condensed’, sans-serif;
 font-size: 13px;
 letter-spacing: 3px;
-color: #999;
+color: #aaa;
 text-transform: uppercase;
 margin-top: 4px;
 }
@@ -99,7 +110,11 @@ margin-top: 4px;
 height: 6px;
 background: linear-gradient(90deg, var(–vermelho) 0%, var(–vermelho-escuro) 50%, var(–vermelho) 100%);
 }
-.stripe-dark { height: 4px; background: var(–preto); }
+.stripe-blue {
+height: 4px;
+background: linear-gradient(90deg, var(–azul) 0%, var(–azul-escuro) 50%, var(–azul) 100%);
+}
+.stripe-dark { height: 3px; background: var(–preto); }
 
 /* ===== MAIN ===== */
 main {
@@ -119,7 +134,7 @@ main { grid-template-columns: 1fr; }
 .card {
 background: linear-gradient(145deg, #1c1c1c 0%, #141414 100%);
 border: 1px solid #2a2a2a;
-border-left: 4px solid var(–vermelho);
+border-left: 4px solid var(–azul);
 border-radius: 4px;
 padding: 24px;
 margin-bottom: 20px;
@@ -131,7 +146,7 @@ font-size: 18px;
 font-weight: 600;
 letter-spacing: 1.5px;
 text-transform: uppercase;
-color: var(–vermelho);
+color: var(–branco);
 margin-bottom: 18px;
 padding-bottom: 10px;
 border-bottom: 1px solid var(–cinza);
@@ -225,11 +240,11 @@ top: 20px;
 align-self: start;
 }
 .resumo .card {
-background: linear-gradient(145deg, #1f1f1f 0%, #0d0d0d 100%);
-border-left: 4px solid var(–dourado);
+background: linear-gradient(145deg, #1f1f1f 0%, #0a0a0a 100%);
+border-left: 4px solid var(–vermelho);
 }
-.resumo h2 { color: var(–dourado); }
-.resumo h2::before { background: var(–dourado); }
+.resumo h2 { color: var(–branco); }
+.resumo h2::before { background: var(–vermelho); }
 
 .total-bloco {
 background: linear-gradient(135deg, var(–vermelho) 0%, var(–vermelho-escuro) 100%);
@@ -237,9 +252,10 @@ padding: 20px;
 border-radius: 3px;
 margin-bottom: 12px;
 text-align: center;
-box-shadow: 0 4px 15px rgba(200,16,46,0.3);
+box-shadow: 0 4px 15px rgba(213,32,39,0.35);
 position: relative;
 overflow: hidden;
+border: 1px solid rgba(245,184,0,0.3);
 }
 .total-bloco::before {
 content: “”;
@@ -270,9 +286,9 @@ margin-top: 4px;
 text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 .total-bloco.liquido {
-background: linear-gradient(135deg, var(–cinza-escuro) 0%, var(–preto) 100%);
+background: linear-gradient(135deg, var(–azul) 0%, var(–azul-escuro) 100%);
 border: 1px solid var(–dourado);
-box-shadow: 0 4px 15px rgba(212,175,55,0.15);
+box-shadow: 0 4px 15px rgba(0,60,143,0.35);
 }
 .total-bloco.liquido .valor { color: var(–dourado); }
 
@@ -285,9 +301,11 @@ padding-top: 14px;
 font-family: ‘Oswald’, sans-serif;
 font-size: 13px;
 letter-spacing: 1.5px;
-color: var(–vermelho);
+color: var(–branco);
 text-transform: uppercase;
 margin-bottom: 10px;
+border-left: 3px solid var(–vermelho);
+padding-left: 8px;
 }
 .linha {
 display: flex;
@@ -310,14 +328,15 @@ font-variant-numeric: tabular-nums;
 .linha.desconto .val { color: #ff6b6b; }
 .linha.provento .val { color: #6dd97c; }
 .linha.subtotal {
-background: rgba(200,16,46,0.08);
+background: rgba(213,32,39,0.12);
 margin: 6px -10px;
 padding: 8px 10px;
 border-bottom: none;
 border-radius: 2px;
+border-left: 2px solid var(–vermelho);
 }
-.linha.subtotal .desc { color: var(–vermelho); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
-.linha.subtotal .val { color: var(–vermelho); font-size: 15px; }
+.linha.subtotal .desc { color: var(–branco); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+.linha.subtotal .val { color: var(–dourado); font-size: 15px; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -326,25 +345,34 @@ border-top: 4px solid var(–vermelho);
 margin-top: 40px;
 padding: 25px 20px;
 text-align: center;
+position: relative;
+}
+footer::before {
+content: “”;
+position: absolute;
+top: -8px; left: 0; right: 0;
+height: 4px;
+background: var(–azul);
 }
 footer p {
 font-family: ‘Roboto Condensed’, sans-serif;
 font-size: 13px;
-color: #777;
+color: #888;
 letter-spacing: 1px;
 }
-footer p strong { color: var(–vermelho); }
+footer p strong { color: var(–dourado); }
 
 /* ===== ALERTA ===== */
 .alerta {
-background: rgba(212,175,55,0.08);
-border-left: 3px solid var(–dourado);
+background: rgba(0,60,143,0.12);
+border-left: 3px solid var(–azul);
 padding: 10px 14px;
 margin-top: 14px;
 font-size: 12px;
 color: #ccc;
 line-height: 1.5;
 }
+.alerta strong { color: var(–dourado) !important; }
 
 @media (max-width: 600px) {
 .form-grid { grid-template-columns: 1fr; }
@@ -364,8 +392,35 @@ line-height: 1.5;
   <div class="header-content">
     <div class="brasao">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,15 60,42 88,42 65,60 73,87 50,70 27,87 35,60 12,42 40,42"
-                 fill="#d4af37" stroke="#000" stroke-width="1"/>
+        <!-- Adaga vertical atrás da caveira -->
+        <g stroke="#f5f5f5" stroke-linecap="square" fill="#f5f5f5">
+          <!-- Lâmina superior -->
+          <polygon points="49.5,8 50.5,8 51.5,28 48.5,28" />
+          <!-- Guarda (cross-guard) -->
+          <rect x="42" y="27" width="16" height="2.5" />
+          <!-- Cabo -->
+          <rect x="48.5" y="68" width="3" height="22" />
+          <!-- Pommel -->
+          <rect x="46.5" y="89" width="7" height="3" />
+        </g>
+        <!-- Caveira estilizada -->
+        <g fill="#f5f5f5">
+          <!-- Crânio (formato arredondado superior) -->
+          <path d="M30,42 Q30,28 50,28 Q70,28 70,42 L70,58 Q70,64 65,66 L60,66 L58,72 L42,72 L40,66 L35,66 Q30,64 30,58 Z"/>
+        </g>
+        <!-- Olhos (vazios = preto) -->
+        <ellipse cx="40" cy="48" rx="4" ry="5" fill="#0a0a0a"/>
+        <ellipse cx="60" cy="48" rx="4" ry="5" fill="#0a0a0a"/>
+        <!-- Cavidade nasal -->
+        <polygon points="50,54 47,60 53,60" fill="#0a0a0a"/>
+        <!-- Linha dos dentes -->
+        <rect x="42" y="64" width="16" height="1.5" fill="#0a0a0a"/>
+        <!-- Dentes verticais -->
+        <rect x="44" y="64" width="1" height="6" fill="#0a0a0a"/>
+        <rect x="47" y="64" width="1" height="6" fill="#0a0a0a"/>
+        <rect x="50" y="64" width="1" height="6" fill="#0a0a0a"/>
+        <rect x="53" y="64" width="1" height="6" fill="#0a0a0a"/>
+        <rect x="56" y="64" width="1" height="6" fill="#0a0a0a"/>
       </svg>
     </div>
     <div class="header-text">
@@ -375,7 +430,7 @@ line-height: 1.5;
   </div>
 </header>
 <div class="stripe"></div>
-<div class="stripe-dark"></div>
+<div class="stripe-blue"></div>
 <div class="stripe" style="height:3px;"></div>
 
 <main>
