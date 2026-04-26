@@ -112,6 +112,41 @@
   .header-text h1 span { color: var(--vermelho); transition: color 0.4s ease; }
   .header-text p { font-family: 'Roboto Condensed', sans-serif; font-size: 14px; font-weight: 400; color: #a0a0a5; margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
 
+  .header-inst-selector {
+    margin-top: 14px;
+    max-width: 460px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 4px solid var(--vermelho);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+    transition: border-color 0.4s ease;
+  }
+  .header-inst-selector label {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .header-inst-selector select {
+    background-color: #050506;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #ffffff;
+    padding: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  .header-inst-selector select:focus { border-color: var(--vermelho); box-shadow: 0 0 0 3px rgba(255,255,255,0.06); }
+
   .stripe-container { display: flex; flex-direction: column; }
   .stripe { height: 4px; background: var(--vermelho); transition: background 0.4s ease; }
   .stripe-white { height: 2px; background: #ffffff; }
@@ -155,14 +190,173 @@
 
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
-  #page-direitos.active, #page-concursos.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
+  #page-principal.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-  #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; grid-template-columns: 1fr 420px; gap: 30px; }
-  #page-direitos, #page-concursos, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-principal, #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+  #page-calculadora { grid-template-columns: 1fr 420px; gap: 30px; }
+  #page-direitos, #page-concursos, #page-cursos, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
-  @media (max-width: 968px) { #page-calculadora { grid-template-columns: 1fr; margin: 20px auto; } .resumo { position: static !important; } }
+  @media (max-width: 968px) { #page-principal, #page-calculadora { margin: 20px auto; } #page-calculadora { grid-template-columns: 1fr; } .resumo { position: static !important; } }
+
+  .principal-hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #050506 0%, #101114 58%, #000 100%);
+    border: 1px solid var(--border-card);
+    border-left: 5px solid var(--vermelho);
+    padding: 42px;
+    margin-bottom: 26px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+    transition: border-color 0.4s ease;
+  }
+  .principal-hero::before {
+    content: "Universo Segurança Pública";
+    position: absolute;
+    right: -50px;
+    bottom: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(38px, 8vw, 92px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.035);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .principal-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 18% 20%, rgba(255,255,255,0.08), transparent 28%);
+    pointer-events: none;
+  }
+  .principal-hero > * { position: relative; z-index: 1; }
+  .principal-eyebrow {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--vermelho);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .principal-title {
+    max-width: 820px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.02;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .principal-title span { color: var(--vermelho); transition: color 0.4s ease; }
+  .principal-subtitle {
+    max-width: 760px;
+    color: rgba(255,255,255,0.78);
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  .principal-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .principal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 12px 18px;
+    background: var(--vermelho);
+    color: #ffffff;
+    border: 1px solid var(--vermelho);
+    border-radius: 4px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  .principal-btn:hover { background: var(--vermelho-escuro); border-color: var(--vermelho-escuro); transform: translateY(-2px); }
+  .principal-btn.secundario { background: #050506; border-color: rgba(255,255,255,0.18); }
+  .principal-btn.secundario:hover { border-color: var(--vermelho); color: #ffffff; }
+
+  .principal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+  .principal-card {
+    background: #0d0e11;
+    border: 1px solid var(--border-card);
+    border-top: 4px solid var(--vermelho);
+    padding: 22px;
+    min-height: 190px;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  .principal-card:hover { transform: translateY(-4px); border-color: var(--vermelho); }
+  .principal-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .principal-card p {
+    color: rgba(255,255,255,0.72);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .principal-card .principal-tag {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--vermelho);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .principal-nota {
+    background: #050506;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-left: 4px solid var(--vermelho);
+    padding: 16px 18px;
+    color: rgba(255,255,255,0.76);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .curso-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .curso-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-main);
+    background: var(--item-bg);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    padding: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+    transition: 0.2s ease;
+  }
+  .curso-card:hover { border-color: var(--vermelho); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,0.14); }
+  .curso-card h3 { font-family: 'Oswald', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .curso-card p { color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+  .curso-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .curso-meta span { border: 1px solid var(--border-input); background: var(--bg-card); color: var(--text-main); padding: 5px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+
+  @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .principal-hero { padding: 28px 22px; } .principal-grid { grid-template-columns: 1fr; } .header-inst-selector { grid-template-columns: 1fr; max-width: 100%; } }
 
   .card { background-color: var(--bg-card); border: 1px solid var(--border-card); padding: 28px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); position: relative; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); transition: border-color 0.3s ease; }
   .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro)); transition: background 0.4s ease;}
@@ -355,7 +549,7 @@
   /* CSS Print - Holerite */
   @media print {
     header, .stripe-container, .menu-overlay, .sidebar, .menu-btn, footer,
-    #page-direitos, #page-concursos, #page-acoes, #page-associacoes, #page-parceiros,
+    #page-principal, #page-direitos, #page-concursos, #page-cursos, #page-acoes, #page-associacoes, #page-parceiros,
     .actions-row, .sidebar-ad, .alerta, h2 { display: none !important; }
     body { background: white !important; color: black !important; }
     #page-calculadora { display: block !important; max-width: 100%; margin: 0; padding: 20px; }
@@ -388,7 +582,28 @@
     </button>
     <div class="header-text" id="header-text">
       <h1>Universo <span>Segurança Pública</span></h1>
-      <p id="header-desc">Descubra quanto você vai receber (valor atualizado 2026)</p>
+      <p id="header-desc">Polícia Militar de São Paulo — Simulador 2026</p>
+      <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
+        <label for="instituicao_header">Instituição</label>
+        <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
+          <optgroup label="São Paulo">
+            <option value="pmesp" selected>PMESP - Polícia Militar</option>
+            <option value="pcsp">PCSP - Polícia Civil</option>
+          </optgroup>
+          <optgroup label="Rio de Janeiro">
+            <option value="pmerj">PMERJ - Polícia Militar</option>
+            <option value="pcerj">PCERJ - Polícia Civil</option>
+          </optgroup>
+          <optgroup label="Minas Gerais">
+            <option value="pmmg">PMMG - Polícia Militar</option>
+            <option value="pcmg">PCMG - Polícia Civil</option>
+          </optgroup>
+          <optgroup label="Bahia">
+            <option value="pmba">PMBA - Polícia Militar</option>
+            <option value="pcba">PCBA - Polícia Civil</option>
+          </optgroup>
+        </select>
+      </div>
     </div>
   </div>
 </header>
@@ -408,7 +623,7 @@
 
   <div class="inst-selector">
     <label for="instituicao">Instituição</label>
-    <select id="instituicao" onchange="mudarInstituicao()" aria-label="Selecione a instituição">
+    <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
       <optgroup label="São Paulo">
         <option value="pmesp" selected>PMESP - Polícia Militar</option>
         <option value="pcsp">PCSP - Polícia Civil</option>
@@ -429,10 +644,12 @@
   </div>
 
   <nav class="sidebar-nav" aria-label="Páginas">
+    <a onclick="switchPage('principal')" id="menu-principal" class="active" tabindex="0" role="link">Principal</a>
     <a onclick="switchPage('acoes')" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
     <a onclick="switchPage('associacoes')" id="menu-associacoes" tabindex="0" role="link">Associações e Sindicatos</a>
-    <a onclick="switchPage('calculadora')" id="menu-calculadora" class="active" tabindex="0" role="link">Calculadora de Vencimentos</a>
+    <a onclick="switchPage('calculadora')" id="menu-calculadora" tabindex="0" role="link">Calculadora de Vencimentos</a>
     <a onclick="switchPage('concursos')" id="menu-concursos" tabindex="0" role="link">Concursos</a>
+    <a onclick="switchPage('cursos')" id="menu-cursos" tabindex="0" role="link">Cursos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos" tabindex="0" role="link">Direitos e Vantagens</a>
     <a onclick="switchPage('parceiros')" id="menu-parceiros" tabindex="0" role="link">Parceiros - Anuncie aqui!</a>
     <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">Instagram</a>
@@ -459,7 +676,55 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<main id="page-calculadora" class="page-section active" role="main">
+<main id="page-principal" class="page-section active" role="main">
+  <section class="principal-hero" aria-labelledby="principal-titulo">
+    <div class="principal-eyebrow">Portal prático para segurança pública</div>
+    <h1 class="principal-title" id="principal-titulo">Tudo que o profissional precisa consultar em um só <span>lugar</span></h1>
+    <p class="principal-subtitle">
+      Escolha sua instituição no topo do site e navegue por simulador de vencimentos, direitos, concursos, ações judiciais, associações, cursos preparatórios e parceiros. O objetivo é simples: entregar informação útil, organizada e rápida para quem vive a rotina da segurança pública.
+    </p>
+    <div class="principal-actions">
+      <button class="principal-btn" type="button" onclick="switchPage('calculadora')">Abrir Simulador</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Ver Concursos</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('cursos')">Ver Cursos</button>
+    </div>
+  </section>
+
+  <section class="principal-grid" aria-label="Resumo das áreas do site">
+    <article class="principal-card" onclick="switchPage('calculadora')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('calculadora')">
+      <h3>Calculadora de Vencimentos</h3>
+      <p>Simule salário bruto, descontos, adicionais, benefícios, extras e valor líquido estimado da instituição selecionada.</p>
+      <span class="principal-tag">Abrir cálculo</span>
+    </article>
+    <article class="principal-card" onclick="switchPage('direitos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('direitos')">
+      <h3>Direitos e Vantagens</h3>
+      <p>Consulte vantagens, licenças, adicionais, aposentadoria, benefícios e observações importantes para a carreira.</p>
+      <span class="principal-tag">Consultar direitos</span>
+    </article>
+    <article class="principal-card" onclick="switchPage('concursos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('concursos')">
+      <h3>Concursos</h3>
+      <p>Veja requisitos, etapas, dados do último edital e informações úteis para quem quer ingressar na carreira policial.</p>
+      <span class="principal-tag">Ver editais</span>
+    </article>
+    <article class="principal-card" onclick="switchPage('cursos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('cursos')">
+      <h3>Cursos</h3>
+      <p>Área preparada para divulgar cursos preparatórios, treinamentos e produtos educacionais como afiliado.</p>
+      <span class="principal-tag">Ver cursos</span>
+    </article>
+    <article class="principal-card" onclick="switchPage('acoes')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('acoes')">
+      <h3>Ações Judiciais</h3>
+      <p>Resumo das principais teses e alertas jurídicos que podem interessar a policiais ativos e inativos.</p>
+      <span class="principal-tag">Ver ações</span>
+    </article>
+    <article class="principal-card" onclick="switchPage('parceiros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('parceiros')">
+      <h3>Parceiros</h3>
+      <p>Espaço para empresas anunciarem, sugerirem parcerias e apresentarem soluções para o público da segurança pública.</p>
+      <span class="principal-tag">Anunciar aqui</span>
+    </article>
+  </section>
+</main>
+
+<main id="page-calculadora" class="page-section" role="main">
   <div>
     <div class="card">
       <h2>Identificação do Servidor</h2>
@@ -1135,6 +1400,15 @@
   </div>
 </main>
 
+<main id="page-cursos" class="page-section" role="main">
+  <div class="card">
+    <h2>Cursos Preparatórios (<span id="txt-inst-cursos">PMESP</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 0;">
+      Espaço destinado a cursos preparatórios, mentorias e materiais de estudo.
+    </div>
+  </div>
+</main>
+
 <main id="page-acoes" class="page-section" role="main">
   <div class="card">
     <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
@@ -1668,9 +1942,16 @@ function toggleMenu() {
 function switchPage(page) {
   document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  document.getElementById('menu-' + page).classList.add('active');
-  if (window.innerWidth <= 968) toggleMenu();
+
+  const pageEl = document.getElementById('page-' + page);
+  const menuEl = document.getElementById('menu-' + page);
+  if (!pageEl || !menuEl) return;
+
+  pageEl.classList.add('active');
+  menuEl.classList.add('active');
+
+  const sidebar = document.getElementById('sidebar');
+  if (window.innerWidth <= 968 && sidebar && sidebar.classList.contains('active')) toggleMenu();
 
   // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();
@@ -1727,10 +2008,15 @@ function popularCargos(inst) {
 /* ============================================================ */
 /* === TROCA INSTITUIÇÃO ====================================== */
 /* ============================================================ */
-function mudarInstituicao() {
-  const inst = document.getElementById('instituicao').value;
+function mudarInstituicao(novaInstituicao) {
+  const inst = novaInstituicao || document.getElementById('instituicao').value;
   currInst = inst;
   document.body.setAttribute('data-inst', inst);
+
+  ['instituicao', 'instituicao_header'].forEach(id => {
+    const seletor = document.getElementById(id);
+    if (seletor && seletor.value !== inst) seletor.value = inst;
+  });
 
   const config = {
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
@@ -1746,11 +2032,18 @@ function mudarInstituicao() {
   // Atualiza textos visíveis
   document.querySelector('.header-text h1').innerHTML = `Universo <span>Segurança Pública</span>`;
   document.getElementById('header-desc').textContent = `${config.desc} — Simulador 2026`;
-  document.getElementById('txt-inst-dir').textContent = config.titulo;
-  document.getElementById('txt-inst-concursos').textContent = config.titulo;
-  document.getElementById('txt-inst-acoes').textContent = config.titulo;
-  document.getElementById('txt-inst-assoc').textContent = config.titulo;
-  document.getElementById('alerta-prev').textContent = config.alertaPrev;
+
+  const atualizarTexto = (id, valor) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  };
+  atualizarTexto('txt-inst-principal', config.titulo);
+  atualizarTexto('txt-inst-dir', config.titulo);
+  atualizarTexto('txt-inst-concursos', config.titulo);
+  atualizarTexto('txt-inst-cursos', config.titulo);
+  atualizarTexto('txt-inst-acoes', config.titulo);
+  atualizarTexto('txt-inst-assoc', config.titulo);
+  atualizarTexto('alerta-prev', config.alertaPrev);
 
   // UFESP é referência apenas do estado de São Paulo
   const spanUfesp = document.getElementById('rodape_ufesp');
@@ -1762,6 +2055,7 @@ function mudarInstituicao() {
   carregarConcursos();
   carregarAcoes();
   carregarAssociacoes();
+  salvarFormulario();
 }
 
 
@@ -2446,7 +2740,9 @@ function restaurarFormulario() {
     const data = JSON.parse(raw);
     if (data.__instituicao) {
       const sel = document.getElementById('instituicao');
+      const selHeader = document.getElementById('instituicao_header');
       sel.value = data.__instituicao;
+      if (selHeader) selHeader.value = data.__instituicao;
       currInst = data.__instituicao;
       document.body.setAttribute('data-inst', currInst);
       popularCargos(currInst);
