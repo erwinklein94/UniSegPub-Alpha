@@ -1374,8 +1374,57 @@
 </main>
 
 <main id="page-direitos" class="page-section" role="main">
+  <style>
+    #page-direitos .direitos-intro {
+      background: var(--item-bg);
+      border-left: 4px solid var(--vermelho);
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    #page-direitos .direitos-grid-extra {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+    #page-direitos .direitos-section-title {
+      margin: 20px 0 4px;
+      padding: 10px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--vermelho);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+    #page-direitos .direito-meta {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    #page-direitos .direito-status {
+      align-self: flex-start;
+      padding: 4px 8px;
+      border-radius: 3px;
+      border: 1px solid currentColor;
+      font-size: 11px;
+    }
+    @media (max-width: 600px) { #page-direitos .direitos-grid-extra { grid-template-columns: 1fr; } }
+  </style>
+
   <div class="card">
-    <h2>Informações do Profissional</h2>
+    <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
+    <div class="direitos-intro">
+      Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+    </div>
+
     <div class="form-grid" style="margin-bottom: 0;">
       <div class="field">
         <label for="cargo_dir">Nível da Carreira</label>
@@ -1389,18 +1438,65 @@
           <option value="reforma">Reforma / Invalidez</option>
         </select>
       </div>
-      <div class="field span-2">
+      <div class="field">
         <label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
-        <input type="number" id="tempo_dir" value="10" min="0" max="40"/>
+        <input type="number" id="tempo_dir" value="10" min="0" max="45"/>
+      </div>
+      <div class="field">
+        <label for="idade_dir">Idade</label>
+        <input type="number" id="idade_dir" value="35" min="18" max="80" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+      </div>
+      <div class="field">
+        <label for="sexo_dir">Sexo para regra previdenciária</label>
+        <select id="sexo_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não informar</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="ingresso_dir">Data de ingresso na carreira</label>
+        <input type="date" id="ingresso_dir" onchange="analisarDireitos()"/>
+      </div>
+      <div class="field">
+        <label for="dependente_dir">Tem filho/dependente até 14 anos ou inválido?</label>
+        <select id="dependente_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não informar</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="renda_dir">Remuneração bruta aproximada (R$)</label>
+        <input type="number" id="renda_dir" value="0" min="0" step="0.01" placeholder="Use para salário-família" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+      </div>
+      <div class="field">
+        <label for="local_especial_dir">Atua em localidade/unidade especial?</label>
+        <select id="local_especial_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não informar</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="requisitos_apos_dir">Já cumpriu requisitos de aposentadoria?</label>
+        <select id="requisitos_apos_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não sei / verificar</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
       </div>
     </div>
   </div>
 
   <div class="card">
     <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
+    <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
+      <strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
+    </div>
     <div class="result-list" id="resultados_dir"></div>
     <div class="alerta legal">
-      <strong>Aviso:</strong> Esta análise é informativa. Direitos específicos podem depender de regulamento interno, regime de transição (EC 103/2019) ou enquadramento jurídico individual. Consulte sua associação ou um advogado especializado em direito administrativo.
+      <strong>Aviso:</strong> Esta análise é informativa e não substitui consulta ao setor de pessoal, associação, sindicato, advogado especializado ou fonte oficial. Direitos específicos podem depender de regulamento interno, cargo, data de ingresso, regra de transição previdenciária, perícia médica, limite de renda, disponibilidade orçamentária ou requerimento administrativo.
     </div>
   </div>
 </main>
@@ -1884,7 +1980,7 @@
   <div class="card">
     <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
     <div class="alerta legal" style="margin-top: 0; margin-bottom: 24px;">
-      <strong>Aviso Legal:</strong> Resumos das principais teses jurídicas em andamento. <strong>Ações contra a Fazenda Pública prescrevem em 5 anos</strong> (Decreto 20.910/1932) — não deixe esfriar. Procure o setor jurídico da sua associação para análise individual.
+      <strong>Aviso legal:</strong> conteúdo meramente informativo. As teses abaixo dependem de análise individual, documentos funcionais, holerites, data de ingresso, situação ativa/inativa e entendimento judicial atualizado. Em regra, pretensões contra a Fazenda Pública observam prescrição quinquenal, sem prejuízo de regras específicas. Consulte advogado, associação ou sindicato antes de tomar decisão.
     </div>
     <div class="result-list" id="lista-acoes"></div>
   </div>
@@ -1894,7 +1990,7 @@
   <div class="card">
     <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Principais entidades representativas, com descrição do foco, serviços oferecidos, faixa de mensalidade e canais de contato.
+      Entidades representativas e de apoio relacionadas à instituição selecionada. Consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
     </div>
     <div class="result-list" id="lista-associacoes"></div>
   </div>
@@ -2279,113 +2375,108 @@ const CARGOS_PCBA = [
 /* ============================================================ */
 const ACOES_JUDICIAIS = {
   pmesp: [
-    { titulo: "Recálculo de Quinquênio e Sexta-Parte (Base Integral)", status: "Tese Consolidada", ano: "Ativa desde 2018", tipo: "individual", desc: "Busca que o cálculo dos adicionais incida sobre os vencimentos integrais (Padrão + RETP + gratificações incorporadas) e não apenas sobre o salário-base.", base: "TJSP - Súmulas administrativas / RE 1.018.587" },
-    { titulo: "Incorporação do ALE (Adicional de Local de Exercício)", status: "Ação de Cobrança Retroativa", ano: "Tese ativa desde 2014", tipo: "individual", desc: "Policiais que estavam na ativa em 2013 podem ter direito a diferenças retroativas devido a falhas no cálculo de incorporação realizado pelo Estado.", base: "Lei Complementar Estadual SP 1.196/2013" },
-    { titulo: "Insalubridade no Curso de Formação (Sd 2ª Cl)", status: "Tese Favorável", ano: "Consolidada em 2020", tipo: "individual", desc: "Reconhecimento do direito ao recebimento do Adicional de Insalubridade desde o primeiro dia no curso de formação, com pagamento de retroativos dos últimos 5 anos.", base: "TJSP - Apelação 1003... e seguintes" },
-    { titulo: "Conversão de Licença-Prêmio em Pecúnia", status: "Direito Adquirido na Aposentadoria", ano: "Pacífico desde 2015", tipo: "individual", desc: "O Estado é obrigado a indenizar meses de licença-prêmio não gozadas em dinheiro. Sem incidência de IRRF e previdência (verba indenizatória).", base: "STF - Tema 635 / RE 721.001" },
-    { titulo: "Adicional Noturno sobre Hora Extra", status: "Em Discussão", ano: "Tese em construção", tipo: "individual", desc: "Cobrança do acréscimo de 25% sobre as horas trabalhadas no período noturno (22h às 5h), inclusive nas DEJEMs realizadas à noite.", base: "Art. 7º, IX, CF/88" }
+    { titulo: "Quinquênio e sexta-parte — base de cálculo", status: "Verificar caso a caso", ano: "Tema recorrente", tipo: "individual", desc: "Discussão sobre a base de cálculo dos adicionais temporais. Exige análise do holerite, verba discutida, período cobrado e entendimento judicial atual.", base: "Constituição do Estado de SP, art. 129; conferir ficha financeira e decisões recentes da carreira.", fonte: "Constituição do Estado de São Paulo", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/constituicao/1989/constituicao-0-05.10.1989.html", atualizado: "Abril/2026" },
+    { titulo: "ALE — incorporação e eventuais diferenças", status: "Possível cobrança individual", ano: "Incorporação de 2013", tipo: "individual", desc: "Conferência de eventuais diferenças decorrentes da absorção do Adicional de Local de Exercício nos vencimentos da PMESP. Não tratar como ganho automático.", base: "Lei Complementar Estadual SP nº 1.200/2013, sobre absorção do ALE nos vencimentos dos integrantes da Polícia Militar.", fonte: "LC SP 1.200/2013", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2013/lei.complementar-1200-06.06.2013.html", atualizado: "Abril/2026" },
+    { titulo: "Insalubridade — termo inicial após atividade insalubre", status: "Atenção: não afirmar no curso de formação", ano: "IRDR Tema 36/TJSP", tipo: "individual", desc: "O ponto seguro é discutir termo inicial após início de atividade insalubre reconhecida por laudo ou documento equivalente. Não afirmar direito automático durante o curso de formação.", base: "TJSP — IRDR Tema 36: o curso de formação é tratado como período acadêmico/treinamento; conferir caso concreto e laudo.", fonte: "TJSP — IRDR Tema 36", fonteUrl: "https://www.tjsp.jus.br/NugepNac/Irdr/DetalheTema?codigoNoticia=62232&pagina=1", atualizado: "Abril/2026" },
+    { titulo: "Licença-prêmio não gozada em pecúnia", status: "Tema com precedente forte", ano: "STF Tema 635", tipo: "individual", desc: "Servidor inativo pode discutir conversão em dinheiro de licença-prêmio, férias ou direitos remuneratórios não usufruídos, desde que não usados nem contados para outro fim.", base: "STF — Tema 635 da repercussão geral.", fonte: "STF Tema 635", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635", atualizado: "Abril/2026" },
+    { titulo: "Adicional noturno e jornada extraordinária", status: "Em discussão", ano: "Conferir entendimento atual", tipo: "individual", desc: "Tema sensível para militares estaduais por envolver regime próprio, RETP, escalas especiais e DEJEM. Não tratar como direito líquido sem análise jurídica.", base: "Art. 7º, IX, da Constituição Federal; confrontar com regime militar estadual e jurisprudência do TJSP.", fonte: "Constituição Federal", fonteUrl: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm", atualizado: "Abril/2026" }
   ],
   pcsp: [
-    { titulo: "Base de Cálculo do Adicional de Insalubridade", status: "Tese em Discussão", ano: "Ativa desde 2021", tipo: "coletiva", desc: "Ação visando a alteração da base de cálculo, pleiteando que o valor não seja vinculado a salários mínimos defasados.", base: "Súmula Vinculante 4 STF" },
-    { titulo: "Paridade e Integralidade (Tema 1019 STF)", status: "Repercussão Geral Julgada", ano: "Decisão STF 2021", tipo: "individual", desc: "O STF garantiu a aposentadoria especial com integralidade e paridade para policiais civis que ingressaram até a EC 103/2019.", base: "STF - Tema 1019 / RE 1.162.672" },
-    { titulo: "Cobrança do GAT (Acúmulo de Titularidade)", status: "Para Delegados", ano: "Pacífico desde 2017", tipo: "individual", desc: "Cobrança de diferenças atrasadas da Gratificação por Acúmulo de Titularidade para Delegados que responderam por mais de uma unidade.", base: "Lei Complementar Estadual SP 1.041/2008" },
-    { titulo: "Abono de Permanência Retroativo", status: "Ação de Cobrança", ano: "Tese consolidada", tipo: "individual", desc: "Restituição de contribuição previdenciária descontada indevidamente após o policial ter completado os requisitos para aposentadoria voluntária.", base: "STF - Tema 888" },
-    { titulo: "Insalubridade para Plantonistas em DPs", status: "Tese Favorável", ano: "Crescente em 2024", tipo: "individual", desc: "Servidores que atuam em delegacias com fluxo de presos têm direito ao adicional de insalubridade de grau máximo.", base: "Laudos periciais / Lei 8.112/90 (analogia)" }
+    { titulo: "Insalubridade — grau, laudo e base de cálculo", status: "Verificar caso a caso", ano: "Tema permanente", tipo: "individual", desc: "Ação possível quando houver divergência no grau, termo inicial, pagamento ou base usada. Depende de laudo, local de trabalho, função e holerites.", base: "Lei Complementar Estadual SP nº 432/1985 e Súmula Vinculante nº 4 do STF.", fonte: "LC SP 432/1985", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/1985/compilacao-lei.complementar-432-18.12.1985.html", atualizado: "Abril/2026" },
+    { titulo: "Paridade e integralidade na aposentadoria policial", status: "Tema com repercussão geral", ano: "STF Tema 1019", tipo: "individual", desc: "Policiais civis que ingressaram antes da EC 103/2019 podem ter análise de aposentadoria especial com integralidade e paridade, conforme requisitos e regra aplicada.", base: "STF — Tema 1019 / RE 1.162.672.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" },
+    { titulo: "Abono de permanência retroativo", status: "Possível cobrança", ano: "Depende da data dos requisitos", tipo: "individual", desc: "Pode haver cobrança quando o servidor completou requisitos para aposentadoria voluntária e permaneceu em atividade, mas o abono não foi implantado ou foi pago tardiamente.", base: "Regras previdenciárias aplicáveis ao servidor policial; análise da ficha funcional e ato de concessão.", fonte: "Conferência previdenciária individual", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "GAT / acúmulo de titularidade — Delegados", status: "Restrito ao caso concreto", ano: "Quando houver acúmulo comprovado", tipo: "individual", desc: "Discussão de diferenças quando Delegado respondeu formalmente por mais de uma unidade e entende que houve pagamento incompleto.", base: "LC SP nº 1.020/2007 e atos de designação do período cobrado.", fonte: "LC SP 1.020/2007", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2007/lei.complementar-1020-23.10.2007.html", atualizado: "Abril/2026" }
   ],
   pmerj: [
-    { titulo: "Revisão e Incidência da GRAM", status: "Tese em Ascensão", ano: "Em julgamento", tipo: "coletiva", desc: "Busca a incorporação correta da Gratificação de Risco de Atividade Militar na base de cálculo do 13º salário e férias.", base: "Lei 5.260/2008 RJ" },
-    { titulo: "Indenização por Férias não Gozadas (Pecúnia)", status: "Direito Adquirido (Inativos)", ano: "Consolidado", tipo: "individual", desc: "Militares que foram para a inatividade sem gozar todas as suas férias têm o direito de receber em dinheiro, sem incidência de imposto.", base: "STF - Tema 635" },
-    { titulo: "Revisão do Auxílio-Moradia", status: "Ação Histórica/Retroativos", ano: "Ativa desde 2019", tipo: "individual", desc: "Ressarcimento das diferenças geradas pelo pagamento a menor do auxílio-moradia em anos passados.", base: "Decreto Estadual RJ 23.143" },
-    { titulo: "Promoção por Tempo de Serviço", status: "Ação Individual", ano: "Caso a caso", tipo: "individual", desc: "Retroação da data de promoção para praças que sofreram atrasos por parte do Estado, cobrando as diferenças salariais.", base: "Lei 443/1981 RJ" },
-    { titulo: "Cobrança de Triênios sobre Adicionais", status: "Tese Recente", ano: "2023-2026", tipo: "individual", desc: "Busca a inclusão dos adicionais (GRET, IHP) na base de cálculo dos triênios, ampliando o ganho mensal.", base: "Princípio da habitualidade" }
+    { titulo: "Férias não gozadas na passagem para inatividade", status: "Tema com precedente forte", ano: "STF Tema 635", tipo: "individual", desc: "Militar que passou para a inatividade sem usufruir férias ou outros direitos remuneratórios pode discutir conversão em pecúnia, desde que não tenha havido uso ou contagem para outro fim.", base: "STF — Tema 635 da repercussão geral.", fonte: "STF Tema 635", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635", atualizado: "Abril/2026" },
+    { titulo: "Promoção retroativa / preterição", status: "Verificar caso a caso", ano: "Depende do histórico funcional", tipo: "individual", desc: "Pode envolver atraso de promoção, erro administrativo, preterição ou reflexos financeiros. Depende da legislação de promoções, quadro de acesso e publicações.", base: "Estatuto dos Policiais Militares do RJ, normas de promoção, boletins e publicações oficiais.", fonte: "Legislação e boletins internos da PMERJ", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Auxílio-moradia / diferenças pretéritas", status: "Cautela: tema histórico", ano: "Conferir período e prescrição", tipo: "individual", desc: "A discussão pode existir para períodos específicos, desde que o policial comprove direito, pagamento a menor e ausência de prescrição.", base: "Normas estaduais do RJ sobre auxílio-moradia e demonstrativos de pagamento do período cobrado.", fonte: "Legislação estadual do RJ e holerites", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Triênios e reflexos remuneratórios", status: "Em discussão", ano: "Conferir entendimento atual", tipo: "individual", desc: "Tema deve ser apresentado com prudência, pois a base de cálculo depende do regime remuneratório, da natureza das verbas e da jurisprudência atual.", base: "Regime jurídico militar estadual e ficha financeira individual; não usar apenas habitualidade como fundamento isolado.", fonte: "Legislação remuneratória estadual e jurisprudência do TJRJ", fonteUrl: "", atualizado: "Abril/2026" }
   ],
   pcerj: [
-    { titulo: "Adicional de Periculosidade (Retroativos)", status: "Pós Lei 11.003/2025", ano: "Vigente em 2025", tipo: "individual", desc: "Cobrança de insalubridade/periculosidade referentes a períodos anteriores à implementação da nova Lei Orgânica.", base: "Lei Estadual RJ 11.003/2025" },
-    { titulo: "Paridade e Integralidade na Aposentadoria", status: "Direito Constitucional", ano: "STF 2021", tipo: "individual", desc: "Garantia de reajustes iguais aos da ativa para policiais civis aposentados, combatendo erros da RioPrevidência.", base: "STF Tema 1019 / EC 103/2019" },
-    { titulo: "Reenquadramento de Classe (Promoção)", status: "Ação de Obrigação de Fazer", ano: "Caso a caso", tipo: "individual", desc: "Busca promoção e diferenças retroativas para policiais prejudicados pela inércia do Estado nas avaliações.", base: "LC RJ 235/2018" },
-    { titulo: "Cobrança da Verba de Representação - Delegados", status: "Tese Consolidada", ano: "Pós Lei 11.003", tipo: "coletiva", desc: "Garantia do pagamento integral dos 212% sobre o vencimento-base, sem qualquer redução discricionária.", base: "Lei 11.003/2025 RJ - art. 23" }
+    { titulo: "Lei 11.003/2025 — conferência de vantagens implantadas", status: "Atualização legislativa relevante", ano: "Vigente desde 2025", tipo: "individual", desc: "A reestruturação da PCERJ reorganizou cargos e listou vantagens. O ponto prático é conferir se a implantação no holerite corresponde à lei e ao cargo.", base: "Lei Estadual RJ nº 11.003/2025.", fonte: "Alerj — Lei 11.003/2025", fonteUrl: "https://www.alerj.rj.gov.br/Visualizar/Noticia/80215", atualizado: "Abril/2026" },
+    { titulo: "Adicional de atividade perigosa — 230%", status: "Conferência de implantação", ano: "Lei 11.003/2025", tipo: "individual", desc: "A lei prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados. Ação só faz sentido se houver não implantação, implantação parcial, base incorreta ou retroativo discutível.", base: "Lei Estadual RJ nº 11.003/2025.", fonte: "Alerj — reestruturação da PCERJ", fonteUrl: "https://www.alerj.rj.gov.br/Visualizar/Noticia/80215", atualizado: "Abril/2026" },
+    { titulo: "Verba de representação — Delegados", status: "Conferência de implantação", ano: "Lei 11.003/2025", tipo: "individual", desc: "Para Delegados, a lei prevê verba de representação própria. Conferir percentual, vencimento-base usado, implantação e eventuais diferenças.", base: "Lei Estadual RJ nº 11.003/2025 — verba de representação de Delegado.", fonte: "Alerj — reestruturação da PCERJ", fonteUrl: "https://www.alerj.rj.gov.br/Visualizar/Noticia/80215", atualizado: "Abril/2026" },
+    { titulo: "Paridade e integralidade na aposentadoria policial", status: "Tema com repercussão geral", ano: "STF Tema 1019", tipo: "individual", desc: "Policiais civis inativos ou próximos da aposentadoria devem conferir regra usada, data de ingresso e direito a paridade/integralidade.", base: "STF — Tema 1019 / RE 1.162.672.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" }
   ],
   pmmg: [
-    { titulo: "Ação da URV (Unidade Real de Valor)", status: "Ação Indenizatória Histórica", ano: "Tese desde 1994", tipo: "individual", desc: "Cobra as perdas salariais decorrentes da conversão da moeda em 1994 (defasagem de 11,98%).", base: "STF - RE 561.836" },
-    { titulo: "Revisão da Alíquota do IPSM", status: "Discussão Jurídica Ativa", ano: "Pós EC 103/2019", tipo: "coletiva", desc: "Questiona descontos indevidos e majoração da alíquota do Instituto de Previdência dos Servidores Militares.", base: "EC Estadual MG 105/2020" },
-    { titulo: "Promoção Retroativa (Ressarcimento de Preterição)", status: "Ação Individual", ano: "Caso a caso", tipo: "individual", desc: "Para militares que tiveram promoção atrasada por erro administrativo ou absolvição em processos, garantindo o soldo retroativo.", base: "TJMG - Súmula 13" },
-    { titulo: "Férias Prêmio em Pecúnia", status: "Garantia na Reserva", ano: "Direito adquirido", tipo: "individual", desc: "Conversão em espécie das férias-prêmio não gozadas na ativa ao passar para a inatividade.", base: "STF Tema 635" },
-    { titulo: "ADE no Cálculo da Aposentadoria", status: "Tese em Crescimento", ano: "Foco em 2024-2026", tipo: "individual", desc: "Busca incluir o Adicional de Desempenho na base de cálculo dos proventos.", base: "Princípio da habitualidade" }
+    { titulo: "URV — diferença de 11,98% e compensações", status: "Tema histórico com cautela", ano: "STF Tema 5", tipo: "individual", desc: "A discussão da URV envolve eventual diferença decorrente da conversão monetária de 1994, mas deve considerar reestruturações posteriores, compensações, prescrição e situação funcional.", base: "STF — Tema 5 / RE 561.836.", fonte: "STF Tema 5", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=2554015&numeroProcesso=561836&numeroTema=5", atualizado: "Abril/2026" },
+    { titulo: "Férias-prêmio não gozadas em pecúnia", status: "Tema com precedente forte", ano: "STF Tema 635", tipo: "individual", desc: "Na passagem para a reserva/inatividade, pode haver discussão sobre conversão em dinheiro de férias-prêmio não usufruídas nem aproveitadas para outro fim.", base: "STF — Tema 635 da repercussão geral.", fonte: "STF Tema 635", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635", atualizado: "Abril/2026" },
+    { titulo: "Promoção retroativa / ressarcimento de preterição", status: "Verificar caso a caso", ano: "Depende do processo funcional", tipo: "individual", desc: "Possível quando houver atraso, erro administrativo, preterição indevida ou reflexos de absolvição/revisão funcional. Precisa de boletins, quadro de acesso e atos de promoção.", base: "Normas de promoção da PMMG, atos administrativos e jurisprudência do TJMG.", fonte: "Legislação PMMG, boletins e decisões do TJMG", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "IPSM / descontos previdenciários e assistenciais", status: "Em discussão conforme caso", ano: "Conferir holerite", tipo: "coletiva", desc: "Revisões de descontos exigem separar contribuição previdenciária, assistência à saúde, dependentes e regras específicas dos militares mineiros. Não confundir IPSM com IPSEMG dos servidores civis.", base: "Conferir legislação do IPSM, contracheques e orientação da entidade representativa.", fonte: "IPSM/MG", fonteUrl: "https://www.ipsm.mg.gov.br/", atualizado: "Abril/2026" }
   ],
   pcmg: [
-    { titulo: "Restituição do IPSEMG", status: "Tese Consolidada", ano: "Decisão STF 2018", tipo: "individual", desc: "Ação para interromper desconto compulsório do IPSEMG saúde para não interessados, e devolução dos valores dos últimos 5 anos.", base: "STF - ADI 3.106" },
-    { titulo: "Inclusão do ADE na Aposentadoria", status: "Ação de Inativos", ano: "Ativa", tipo: "individual", desc: "Garantir que o Adicional de Desempenho recebido na ativa seja incorporado aos proventos de aposentadoria.", base: "Princípio da habitualidade" },
-    { titulo: "Pagamento de Progressão e Promoção Atrasada", status: "Ação de Cobrança", ano: "Caso a caso", tipo: "individual", desc: "Ação para cobrar valores retroativos devidos pela demora do Estado em publicar o ato de promoção.", base: "TJMG - Apelações" },
-    { titulo: "Diferenças do Subsídio (Reestruturação 2023)", status: "Tese Recente", ano: "2023-2026", tipo: "coletiva", desc: "Cobrança de servidores que tiveram a transposição de carreira realizada incorretamente.", base: "Lei Estadual MG 24.030/2022" }
+    { titulo: "IPSEMG Saúde — contribuição sem adesão", status: "Tema com precedente relevante", ano: "STF ADI 3.106/MG", tipo: "individual", desc: "A tese forte é contra cobrança compulsória para custeio de assistência à saúde quando não houver adesão válida. Devolução depende do período, modulação, prova de não adesão e entendimento aplicável.", base: "STF — ADI 3.106/MG; atenção à modulação e à comprovação individual.", fonte: "STF — ADI 3.106/MG", fonteUrl: "https://noticias.stf.jus.br/postsnoticias/julgada-parcialmente-procedente-adi-que-questionava-lei-mineira-sobre-regime-de-previdencia/", atualizado: "Abril/2026" },
+    { titulo: "ADE / vantagens na aposentadoria", status: "Verificar caso a caso", ano: "Depende da regra aplicada", tipo: "individual", desc: "A inclusão de ADE ou vantagens semelhantes em proventos depende da natureza da verba, regra de aposentadoria, histórico de recebimento e legislação mineira.", base: "Plano de carreira, legislação estadual da PCMG e ato de aposentadoria.", fonte: "Legislação PCMG e análise previdenciária individual", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Promoção/progressão atrasada", status: "Possível cobrança", ano: "Caso a caso", tipo: "individual", desc: "Pode haver cobrança de diferenças quando a progressão ou promoção foi concedida com atraso ou implantada em data incorreta. Depende de publicações e requisitos cumpridos.", base: "Lei de carreira da PCMG, atos de promoção/progressão e jurisprudência do TJMG.", fonte: "Legislação PCMG, atos funcionais e TJMG", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Paridade, integralidade e regra de aposentadoria", status: "Análise previdenciária individual", ano: "Conferir ingresso e regra utilizada", tipo: "individual", desc: "Para policiais civis, a análise depende da data de ingresso, regra de aposentadoria, transições e entendimento aplicado ao cargo.", base: "STF — Tema 1019 como referência para atividade de risco, além da legislação estadual aplicável.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" }
   ],
   pmba: [
-    { titulo: "Implantação e Retroativos da GAP V", status: "Tese Consolidada", ano: "Ativa desde 2020", tipo: "individual", desc: "Pagamento de valores retroativos referentes a atrasos na implantação da Gratificação de Atividade Policial nível V.", base: "Lei Estadual BA 13.748/2017" },
-    { titulo: "Revisão da URV (11,98%)", status: "Ação de Cobrança", ano: "Histórica", tipo: "individual", desc: "Ação visando a recomposição salarial devido às perdas geradas na transição da moeda em 1994.", base: "STF - RE 561.836" },
-    { titulo: "Adicional Noturno", status: "Direito Reconhecido", ano: "TJBA", tipo: "individual", desc: "Cobrança do adicional noturno para militares que trabalharam em escalas noturnas sem a devida remuneração específica.", base: "Art. 7º, IX, CF/88" },
-    { titulo: "Base de Cálculo da CET", status: "Tese em Ascensão", ano: "2023-2026", tipo: "coletiva", desc: "Revisão da base de cálculo da Condição Especial de Trabalho para que incida sobre outras gratificações fixas.", base: "Princípio do não enriquecimento ilícito" }
+    { titulo: "GAP / gratificações — implantação e retroativos", status: "Verificar caso a caso", ano: "Depende do período e da publicação", tipo: "individual", desc: "Discussão possível quando houver atraso de implantação, erro de nível, base incorreta ou diferenças em gratificações da carreira. Exige legislação, boletins, holerites e prescrição.", base: "Legislação remuneratória da Bahia e atos funcionais do período cobrado.", fonte: "Legislação estadual da Bahia e Diário Oficial", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "URV — diferença de 11,98% e compensações", status: "Tema histórico com cautela", ano: "STF Tema 5", tipo: "individual", desc: "A tese da URV não deve ser apresentada como ganho automático. É necessário verificar período, carreira, reajustes posteriores, compensações, prescrição e decisões aplicáveis à Bahia.", base: "STF — Tema 5 / RE 561.836.", fonte: "STF Tema 5", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=2554015&numeroProcesso=561836&numeroTema=5", atualizado: "Abril/2026" },
+    { titulo: "Adicional noturno", status: "Em discussão", ano: "Conferir jurisprudência atual", tipo: "individual", desc: "A cobrança depende do regime jurídico militar estadual, escala, previsão legal e entendimento do TJBA. Melhor apresentar como tese em avaliação.", base: "Art. 7º, IX, da Constituição Federal; legislação militar estadual e jurisprudência do TJBA.", fonte: "Constituição Federal", fonteUrl: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm", atualizado: "Abril/2026" },
+    { titulo: "CET — Condição Especial de Trabalho", status: "Conferência individual", ano: "Depende de função/local", tipo: "individual", desc: "A CET pode variar conforme função, lotação e norma aplicável. Ação judicial deve focar erro de percentual, base de cálculo ou atraso comprovado.", base: "Legislação remuneratória da Bahia, ato de designação, lotação e holerites.", fonte: "Legislação estadual da Bahia e ficha funcional", fonteUrl: "", atualizado: "Abril/2026" }
   ],
   pcba: [
-    { titulo: "Paridade e Integralidade para Aposentados", status: "Repercussão Geral STF", ano: "Decisão 2021", tipo: "individual", desc: "Garantia de que os inativos recebam os mesmos reajustes e benefícios dos policiais da ativa.", base: "STF - Tema 1019" },
-    { titulo: "Promoções em Atraso (Ressarcimento)", status: "Ação de Cobrança", ano: "Caso a caso", tipo: "individual", desc: "Pagamento de diferenças salariais geradas pelo atraso na publicação de promoções de classe.", base: "TJBA - Apelações" },
-    { titulo: "Adicional de Insalubridade", status: "Discussão Jurídica", ano: "Em curso", tipo: "coletiva", desc: "Cobrança de insalubridade para servidores que atuam em ambientes nocivos sem o repasse correto do Estado.", base: "NR-15 / Decreto 4.345/95 BA" },
-    { titulo: "GIP - Cobrança de Diferenças", status: "Tese em Ascensão", ano: "Recente", tipo: "individual", desc: "Cobrança de diferenças nos pagamentos da Gratificação de Incentivo à Produtividade não computadas corretamente.", base: "Lei BA 13.748/2017" }
+    { titulo: "Paridade e integralidade na aposentadoria policial", status: "Tema com repercussão geral", ano: "STF Tema 1019", tipo: "individual", desc: "Policiais civis devem conferir data de ingresso, regra de aposentadoria, ato concessório e reajustes aplicados. O tema exige análise previdenciária individual.", base: "STF — Tema 1019 / RE 1.162.672, além da legislação previdenciária estadual.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" },
+    { titulo: "Promoções/progressões atrasadas", status: "Possível cobrança", ano: "Caso a caso", tipo: "individual", desc: "Discussão possível quando houver atraso administrativo, implantação tardia ou erro em progressão/promoção. Necessário comprovar requisitos, publicação, data correta e diferenças financeiras.", base: "Lei de carreira da PCBA, atos de promoção/progressão e publicações oficiais.", fonte: "Legislação PCBA e Diário Oficial da Bahia", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Insalubridade — laudo, lotação e pagamento", status: "Verificar caso a caso", ano: "Depende da função e local", tipo: "individual", desc: "Possível quando houver exposição insalubre reconhecida, laudo, previsão legal e pagamento ausente ou incorreto. Não tratar como verba universal.", base: "Legislação estadual, laudos, local de trabalho e holerites do período.", fonte: "Legislação estadual da Bahia e prova técnica", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "GIP / gratificações e diferenças remuneratórias", status: "Conferência individual", ano: "Depende do cargo e período", tipo: "individual", desc: "A cobrança de diferenças de gratificações deve partir de erro concreto: percentual, base, atraso, não implantação ou enquadramento incorreto.", base: "Legislação remuneratória da Bahia, ato funcional e demonstrativos de pagamento.", fonte: "Legislação estadual da Bahia e ficha financeira", fonteUrl: "", atualizado: "Abril/2026" }
   ]
 };
 
-/* ============================================================ */
-/* === ASSOCIAÇÕES (com contato, mensalidade, serviços) ======= */
-/* ============================================================ */
 const ASSOCIACOES = {
   pmesp: [
-    { nome: "ACS - Associação dos Cabos e Soldados PM-SP", foco: "Defesa Jurídica, Assistência e Política de Classe", acao: "Ação do ALE 100%, Insalubridade e Recálculo de Quinquênio.", site: "acspmsp.com.br", telefone: "(11) 3392-1900", mensalidade: "R$ 60 a R$ 130", servicos: "Jurídico, convênios médicos e odontológicos, clube de campo, hotel de trânsito, financiamento veicular." },
-    { nome: "AFAM - Assoc. Fundo de Auxílio Mútuo", foco: "Assistência Social, Saúde e Jurídica", acao: "Defesa em PADs e ações de pecúnia (licença-prêmio).", site: "afammsp.org.br", telefone: "(11) 3289-3700", mensalidade: "R$ 80 a R$ 160", servicos: "PAD, ações cíveis, hotel de trânsito, parcerias médicas." },
-    { nome: "AOMESP - Associação dos Oficiais Militares Estaduais SP", foco: "Defesa de Oficiais e Pensionistas", acao: "Atua na defesa da paridade remuneratória e proteção do SPSM.", site: "aomesp.com.br", telefone: "(11) 3214-0511", mensalidade: "R$ 100 a R$ 250", servicos: "Departamento jurídico, eventos, clube social, convênios." },
-    { nome: "Cruz Azul de São Paulo", foco: "Plano de Saúde Tradicional dos Militares Estaduais", acao: "Manutenção da rede credenciada e ampliação da cobertura.", site: "cruzazulsp.com.br", telefone: "(11) 4571-4400", mensalidade: "Variável (faixa etária)", servicos: "Hospital próprio, rede ambulatorial, clínicas conveniadas." },
-    { nome: "Caixa Beneficente da PMESP - CBPM", foco: "Pensão Militar e Auxílios Suplementares", acao: "Gerencia o Sistema de Proteção Social do Militar.", site: "cbpm.sp.gov.br", telefone: "(11) 3327-7700", mensalidade: "Compulsória (folha)", servicos: "Pensão por morte, auxílio-funeral, pecúlio, financiamento habitacional." }
+    { nome: "ACS - Associação dos Cabos e Soldados da PMESP", foco: "Praças da Polícia Militar do Estado de São Paulo", acao: "Representação institucional, apoio jurídico, pautas remuneratórias, valorização da carreira e atendimento por regionais no Estado.", site: "www.cabosesoldados.org.br", telefone: "(11) 3871-8100", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias de classe, regionais, convênios, comunicação institucional e orientação ao associado." },
+    { nome: "AFAM - Associação Fundo de Auxílio Mútuo dos Militares do Estado de São Paulo", foco: "Família policial-militar, assistência social e apoio ao associado", acao: "Atuação voltada a benefícios assistenciais, apoio familiar, orientação jurídica e atendimento ao policial militar e seus dependentes.", site: "www.afam.com.br", telefone: "(11) 3328-1500", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento ao associado, assistência, apoio jurídico, canais de contato, benefícios e ações de suporte à família policial militar." },
+    { nome: "AOMESP - Associação dos Oficiais Militares do Estado de São Paulo", foco: "Oficiais militares estaduais, veteranos e pensionistas", acao: "Defesa institucional da oficialidade, acompanhamento de pautas legislativas, previdenciárias e remuneratórias dos militares estaduais.", site: "aomesp.com.br", telefone: "(11) 3388-7501", mensalidade: "Consultar diretamente na entidade", servicos: "Representação de classe, comunicação institucional, convênios, eventos e apoio aos associados." },
+    { nome: "AOPM - Associação dos Oficiais da Polícia Militar do Estado de São Paulo", foco: "Oficiais da PMESP e família policial-militar", acao: "Entidade tradicional de apoio associativo, social e institucional aos oficiais, com estrutura de convivência, serviços e defesa de interesses da carreira.", site: "www.aopm.com.br", telefone: "(11) 2997-8800", mensalidade: "Consultar diretamente na entidade", servicos: "Clube, eventos, convênios, comunicação institucional, apoio associativo e estrutura social para oficiais e familiares." }
   ],
   pcsp: [
-    { nome: "SINDPOL-SP", foco: "Sindicato dos Policiais Civis SP", acao: "Reestruturação de carreiras, defasagem salarial e base de insalubridade.", site: "sindpolsp.org.br", telefone: "(11) 3120-9100", mensalidade: "1% sobre vencimento", servicos: "Jurídico, médico, hotel de trânsito, clube." },
-    { nome: "ADPESP - Assoc. dos Delegados de Polícia SP", foco: "Defesa das Prerrogativas dos Delegados", acao: "Cumprimento do Tema 1019 STF e GAT.", site: "adpesp.org.br", telefone: "(11) 3115-8400", mensalidade: "R$ 200 a R$ 400", servicos: "Jurídico especializado, eventos, clube." },
-    { nome: "SIPESP - Sindicato dos Investigadores", foco: "Defesa específica dos Investigadores", acao: "Nível superior para a carreira e ações de abono de permanência.", site: "sipesp.com.br", telefone: "(11) 3107-4300", mensalidade: "R$ 50 a R$ 100", servicos: "Jurídico, sócio-cultural, convênios." },
-    { nome: "ASCESPMS - Escrivães e Carcereiros", foco: "Categoria de Escrivães e Carcereiros", acao: "Equiparação salarial e direitos da categoria.", site: "ascesp.org.br", telefone: "(11) 3271-3800", mensalidade: "R$ 50 a R$ 90", servicos: "Apoio jurídico e convênios assistenciais." }
+    { nome: "SINDPESP - Sindicato dos Delegados de Polícia do Estado de São Paulo", foco: "Delegados de Polícia do Estado de São Paulo", acao: "Defesa de prerrogativas, valorização profissional, plano de carreira, remuneração e pautas institucionais da carreira de Delegado.", site: "sindpesp.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atuação sindical, jurídico e institucional, comunicação de pautas da carreira e representação perante órgãos públicos." },
+    { nome: "ADPESP - Associação dos Delegados de Polícia do Estado de São Paulo", foco: "Delegados de Polícia, ativos, aposentados e pensionistas", acao: "Associação voltada à organização, consulta, fortalecimento e defesa dos interesses da carreira de Delegado de Polícia.", site: "www.adpesp.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, eventos, notícias, apoio institucional, convênios e comunicação da carreira." },
+    { nome: "SIPESP - Sindicato dos Investigadores de Polícia do Estado de São Paulo", foco: "Investigadores de Polícia e demais carreiras da Polícia Civil paulista", acao: "Defesa de direitos, interesses e prerrogativas dos investigadores, com atuação sindical e acompanhamento de pautas de valorização da PCSP.", site: "sipesp.org.br", telefone: "(11) 3326-8307 / (11) 3326-8308", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, convênios, colônia de férias, clube de vantagens, notícias, permutas e atendimento sindical." },
+    { nome: "SINCOPOL - Sindicato Regional dos Policiais Civis do Centro-Oeste Paulista", foco: "Policiais civis da região Centro-Oeste Paulista", acao: "Representação regional de policiais civis, defesa de direitos, acompanhamento de pautas funcionais e apoio sindical ao filiado.", site: "www.sincopol.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, legislação, serviços ao filiado, orientação sindical, convênios e defesa de direitos." }
   ],
   pmerj: [
-    { nome: "AME-RJ - Associação de Militares Estaduais", foco: "Representatividade Plena", acao: "Protagonista nas ações de incidência da GRAM e revisão do Auxílio-Moradia histórico.", site: "amerj.org.br", telefone: "(21) 2532-6677", mensalidade: "R$ 70 a R$ 150", servicos: "Jurídico, convênios médicos, clube, hotel de trânsito." },
-    { nome: "ACS PM/BM RJ", foco: "Apoio ao Praça Policial e Bombeiro", acao: "Foco na cobrança de promoções atrasadas, triênios e assistência habitacional.", site: "acspmbmrj.com.br", telefone: "(21) 2253-1900", mensalidade: "R$ 50 a R$ 110", servicos: "Convênios, eventos, defesa em PADs, jurídico." },
-    { nome: "Clube dos Oficiais da PMERJ", foco: "Oficiais da Ativa e Reserva", acao: "Defesa de prerrogativas e benefícios dos oficiais.", site: "clubedosoficiais-pmerj.com.br", telefone: "(21) 2202-5000", mensalidade: "R$ 120 a R$ 250", servicos: "Sede social, eventos, departamento jurídico." }
+    { nome: "ASSINAP - Associação de Ativos, Inativos, Pensionistas das Polícias Militares, Brigadas Militares e Corpos de Bombeiros Militares do Brasil", foco: "Policiais militares, bombeiros militares, inativos e pensionistas", acao: "Entidade representativa de classe militar, com atuação voltada à defesa de direitos, atendimento regional e apoio aos associados.", site: "assinap.com.br", telefone: "WhatsApp: (21) 96499-6470 / (21) 97580-9680", mensalidade: "Consultar diretamente na entidade", servicos: "Representação, atendimento em sedes, orientação ao associado, canais de contato e acompanhamento de pautas militares." },
+    { nome: "AME-RJ - Associação de Oficiais Militares Estaduais do Rio de Janeiro", foco: "Oficiais da PMERJ e do CBMERJ, ativa, reserva e reformados", acao: "Representação da oficialidade militar estadual, defesa institucional e acompanhamento de pautas de carreira, prerrogativas e valorização.", site: "amerj.net.br", telefone: "(21) 2233-1144", mensalidade: "Consultar diretamente na entidade", servicos: "Representação de classe, notícias, atuação institucional, comunicação com associados e defesa de prerrogativas." },
+    { nome: "CBPMRJ - Caixa Beneficente da Polícia Militar do Estado do Rio de Janeiro", foco: "Policiais militares associados e seus familiares", acao: "Entidade de benefícios e serviços voltada à família policial militar do Rio de Janeiro.", site: "www.cbpmrj.com.br", telefone: "Consultar no site", mensalidade: "Consultar regras de associação e contribuição", servicos: "Benefícios, serviços ao associado, apoio familiar e canais de atendimento." },
+    { nome: "Clube dos Oficiais Bombeiros do Estado do Rio de Janeiro", foco: "Oficiais bombeiros militares e associados", acao: "Entidade social e associativa com estrutura de lazer, convivência, assessoria jurídica e apoio aos oficiais bombeiros.", site: "clubeoficiaisbmrj.com.br", telefone: "(21) 2252-1619", mensalidade: "Consultar diretamente na entidade", servicos: "Clube social, assessoria jurídica, áreas de lazer, eventos e serviços ao associado." }
   ],
   pcerj: [
-    { nome: "SINPOL-RJ", foco: "Sindicato Único dos Policiais Civis", acao: "Pioneiros na luta pela Lei 11.003/2025; agora cobram pagamentos retroativos de periculosidade.", site: "sinpol-rj.org.br", telefone: "(21) 2232-3200", mensalidade: "1% sobre vencimento", servicos: "Jurídico, hotel de trânsito, convênios, eventos." },
-    { nome: "ADPERJ - Assoc. dos Delegados RJ", foco: "Associação dos Delegados RJ", acao: "Luta pela manutenção da Verba de Representação (212%) e autonomia da Polícia Judiciária.", site: "adperj.com.br", telefone: "(21) 2220-1800", mensalidade: "R$ 200 a R$ 400", servicos: "Jurídico, sede social, eventos." },
-    { nome: "COLPOL-RJ", foco: "Coligação dos Policiais Civis", acao: "Ações de reenquadramento de classes e paridade para inativos.", site: "colpol-rj.com.br", telefone: "(21) 2253-7200", mensalidade: "R$ 50 a R$ 100", servicos: "Apoio jurídico e político." }
+    { nome: "SINDPOL-RJ - Sindicato dos Policiais Civis do Estado do Rio de Janeiro", foco: "Policiais civis do Estado do Rio de Janeiro", acao: "Atuação sindical em defesa de direitos, condições de trabalho, valorização da carreira e acompanhamento de pautas da PCERJ.", site: "sindpolrj.com.br", telefone: "(21) 3439-8428 / (21) 98514-4949", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, convênios, saúde do policial, educação, bem-estar, notícias e atendimento sindical." },
+    { nome: "SINPOL-RJ - Sindicato dos Funcionários da Polícia Civil", foco: "Servidores e funcionários da Polícia Civil do Estado do Rio de Janeiro", acao: "Representação sindical, mobilização da categoria, acompanhamento legislativo e defesa de pautas funcionais da Polícia Civil.", site: "sinpol.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Filiação, notícias, comunicação sindical, assembleias, acompanhamento político e defesa coletiva." },
+    { nome: "ADEPOL-RJ - Associação dos Delegados de Polícia do Estado do Rio de Janeiro", foco: "Delegados de Polícia do Estado do Rio de Janeiro", acao: "Defesa das prerrogativas dos delegados, representação institucional e acompanhamento de temas ligados à Polícia Judiciária.", site: "www.portal.adepolrj.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, notícias, atuação institucional, comunicação com associados e defesa de prerrogativas." },
+    { nome: "COLPOL-RJ - Coligação dos Policiais Civis do Estado do Rio de Janeiro", foco: "Policiais civis ativos, aposentados e pensionistas", acao: "Entidade tradicional da PCERJ, com atuação em jurídico, saúde, serviços ao associado, convênios e acompanhamento de pautas da categoria.", site: "colpol.com.br", telefone: "(21) 2509-0611 / (21) 2509-1255 / (21) 96914-0012", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, centro odontológico, reabilitação física, ambulatório, convênios, assistência funeral e serviços ao policial civil." }
   ],
   pmmg: [
-    { nome: "CSCS-MG - Centro Social de Cabos e Soldados", foco: "Suporte Total ao Praça", acao: "Principal entidade cobrando a tese da URV (11,98%) e revisão do IPSM.", site: "cscsmg.org.br", telefone: "(31) 3309-2000", mensalidade: "R$ 70 a R$ 150", servicos: "Convênios, jurídico, clube de campo, hotel de trânsito." },
-    { nome: "ASPRA-MG", foco: "Representação de Classe e Assistência", acao: "Atuação nas ações de ressarcimento por preterição em promoções e direito a férias-prêmio.", site: "aspramg.com.br", telefone: "(31) 3307-3500", mensalidade: "R$ 60 a R$ 130", servicos: "Convênios, defesa jurídica, descontos em farmácias e óticas." },
-    { nome: "AOPMBM - Oficiais PMMG e CBMMG", foco: "Oficiais e Comando", acao: "Defesa do regime de subsídio e da paridade integral.", site: "aopmbm.com.br", telefone: "(31) 3307-7777", mensalidade: "R$ 150 a R$ 300", servicos: "Sede social, departamento jurídico, eventos." },
-    { nome: "IPSM - Instituto de Previdência dos Servidores Militares", foco: "Previdência e Saúde Militar MG", acao: "Gestão de benefícios e plano de saúde dos militares.", site: "ipsm.mg.gov.br", telefone: "(31) 3307-2100", mensalidade: "Compulsória (10,5%)", servicos: "Pensão, plano de saúde, auxílio-funeral, pecúlio." }
+    { nome: "ASPRA/PMBM-MG - Associação dos Praças Policiais e Bombeiros Militares de Minas Gerais", foco: "Praças da PMMG e do CBMMG", acao: "Representação de classe, defesa de direitos, pautas remuneratórias, previdenciárias, IPSM, regionais, lazer e clube de vantagens.", site: "aspra.org.br", telefone: "(31) 3235-2700", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, regionais, clubes, hotelaria, clube de vantagens, convênios e projetos aos associados." },
+    { nome: "AOPMBM-MG - Associação dos Oficiais da Polícia Militar e do Corpo de Bombeiros Militar de Minas Gerais", foco: "Oficiais da PMMG e do CBMMG", acao: "Representação da oficialidade, defesa de interesses dos associados, prerrogativas, valorização da carreira e fortalecimento institucional.", site: "www.aopmbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação de classe, jurídico, eventos, comunicação institucional, convênios e apoio aos associados." },
+    { nome: "APNM/BMPM - Associação dos Praças do Interior de Minas Gerais", foco: "Praças policiais e bombeiros militares do interior de Minas Gerais", acao: "Associação civil de classe voltada à representação, apoio e defesa dos interesses dos praças no interior do Estado.", site: "www.apnm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, comunicação, atendimento ao associado e apoio regional." },
+    { nome: "AAPMMGBM - Associação de Amparo aos Policiais Militares e Bombeiros Militares de Minas Gerais", foco: "Policiais militares, bombeiros militares e familiares", acao: "Atuação de amparo, benefícios, assistência e projetos sociais voltados aos militares estaduais e suas famílias.", site: "aapmmgbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Benefícios, assistências, projetos sociais, cursos, diretoria, atendimento e canais de contato." }
   ],
   pcmg: [
-    { nome: "SINDPOL-MG", foco: "Sindicato dos Servidores da PCMG", acao: "Lidera as ações de restituição de descontos indevidos ao IPSEMG (Saúde).", site: "sindpolmg.org.br", telefone: "(31) 3309-5000", mensalidade: "1% sobre vencimento", servicos: "Jurídico, convênios, clube, eventos." },
-    { nome: "ADEPOL-MG - Sind. Delegados MG", foco: "Sindicato dos Delegados MG", acao: "Cumprimento das datas de promoção e defesa de prerrogativas funcionais.", site: "adepolmg.org.br", telefone: "(31) 3214-4400", mensalidade: "R$ 200 a R$ 400", servicos: "Jurídico, eventos, sede social." },
-    { nome: "AESPOL-MG - Assoc. Escrivães MG", foco: "Escrivães de PC", acao: "Manutenção do ADE na aposentadoria e paridade.", site: "aespolmg.com.br", telefone: "(31) 3214-9100", mensalidade: "R$ 70 a R$ 130", servicos: "Apoio jurídico e convênios." }
+    { nome: "SINDPOL-MG - Sindicato dos Servidores da Polícia Civil do Estado de Minas Gerais", foco: "Servidores da Polícia Civil de Minas Gerais", acao: "Defesa sindical da categoria, valorização, recomposição salarial, condições de trabalho, convênios e acompanhamento jurídico-institucional.", site: "sindpolmg.org.br", telefone: "(31) 2138-9898", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, convênios, atendimento administrativo, financeiro, comunicação, notícias e orientação ao filiado." },
+    { nome: "ADEPOL-MG - Associação dos Delegados da Polícia Civil de Minas Gerais", foco: "Delegados de Polícia Civil de Minas Gerais", acao: "Representação associativa dos delegados, defesa de prerrogativas, integração institucional, eventos e acompanhamento de pautas da carreira.", site: "adepolmg.org", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, eventos, representação, convênios, comunicação institucional e apoio aos delegados associados." },
+    { nome: "SINDEPOMINAS - Sindicato dos Delegados de Polícia do Estado de Minas Gerais", foco: "Delegados de Polícia Civil de Minas Gerais", acao: "Atuação sindical sem conotação político-partidária, defesa de interesses da carreira, prerrogativas, remuneração e pautas institucionais.", site: "www.sindepominas.com.br", telefone: "(31) 3272-7268", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, notícias, diretoria, atendimento, comunicação, defesa institucional e orientação ao filiado." },
+    { nome: "SINDPECRI-MG - Sindicato dos Peritos Criminais do Estado de Minas Gerais", foco: "Peritos criminais da Polícia Civil de Minas Gerais", acao: "Defesa dos direitos da perícia criminal, valorização da carreira, estrutura de trabalho e pautas específicas dos peritos oficiais.", site: "sindpecri.org.br", telefone: "(31) 3295-4177", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, convênios, atendimento sindical, contato administrativo e defesa das pautas da perícia criminal." }
   ],
   pmba: [
-    { nome: "ASPRA-BA", foco: "Representação de Praças BA", acao: "Defesa em ações de GAP V retroativa e melhorias nas escalas.", site: "aspra-ba.com.br", telefone: "(71) 3320-9000", mensalidade: "R$ 60 a R$ 130", servicos: "Convênios, defesa jurídica, hotel de trânsito." },
-    { nome: "APPM-BA - Praças PM/BM Bahia", foco: "Defesa Jurídica e Política de Praças", acao: "Luta pela revisão da URV e Adicional Noturno.", site: "appmba.org.br", telefone: "(71) 3357-5500", mensalidade: "R$ 50 a R$ 110", servicos: "Defesa jurídica, eventos, convênios." },
-    { nome: "Força Invicta", foco: "Associação dos Oficiais Militares", acao: "Defesa das prerrogativas dos Oficiais e simetria de vencimentos.", site: "forcainvicta.com.br", telefone: "(71) 3320-1100", mensalidade: "R$ 130 a R$ 280", servicos: "Sede social, jurídico, networking institucional." },
-    { nome: "PLANSERV - Bahia", foco: "Plano de Saúde dos Servidores BA", acao: "Operação do plano de saúde dos servidores estaduais.", site: "planserv.ba.gov.br", telefone: "0800 071 5500", mensalidade: "Variável (faixa etária)", servicos: "Hospital, ambulatorial, odontológico, dependentes." }
+    { nome: "APPM-BA - Associação de Praças da Polícia e Bombeiro Militar da Bahia", foco: "Praças da PMBA e do CBMBA", acao: "Atuação em valorização salarial, direitos dos militares estaduais, propostas, ofícios e discussões com o governo e comando da Corporação.", site: "www.appmba.org.br", telefone: "(71) 3310-4250", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, comunicação, notícias, secretaria, representação associativa, canais digitais e atendimento ao associado." },
+    { nome: "ASPRA-BA - Associação de Policiais e Bombeiros e de seus Familiares do Estado da Bahia", foco: "Policiais militares, bombeiros militares e familiares", acao: "Representação de policiais e bombeiros militares, defesa de direitos, plantão jurídico e mobilização por valorização da categoria.", site: "www.instagram.com/asprabahia", telefone: "Plantão jurídico: (71) 99374-2524", mensalidade: "Consultar diretamente na entidade", servicos: "Plantão jurídico, comunicação institucional, mobilização, atendimento regional e defesa de pautas dos militares estaduais." },
+    { nome: "Força Invicta - Associação dos Oficiais Militares Estaduais da Bahia", foco: "Oficiais da PMBA e do CBMBA", acao: "Representação institucional da oficialidade baiana, segurança jurídica, acompanhamento de pautas no Legislativo e Executivo e defesa de prerrogativas.", site: "forcainvicta.org.br", telefone: "0800 190 0574", mensalidade: "Consultar diretamente na entidade", servicos: "Suporte jurídico, representação institucional, rede de associados, convênios, benefícios, bem-estar e comunicação transparente." },
+    { nome: "PLANSERV - Assistência à Saúde dos Servidores Públicos Estaduais da Bahia", foco: "Servidores públicos estaduais da Bahia, incluindo militares estaduais quando vinculados", acao: "Plano de assistência à saúde dos servidores estaduais; não é sindicato, mas é serviço essencial de consulta para o público da segurança pública baiana.", site: "www.planserv.ba.gov.br", telefone: "Consultar canais oficiais", mensalidade: "Conforme regras do plano e dependentes", servicos: "Rede assistencial, atendimento de saúde, dependentes, informações cadastrais e canais oficiais do Governo da Bahia." }
   ],
   pcba: [
-    { nome: "SINDPOC-BA", foco: "Sindicato dos Policiais Civis", acao: "Reestruturação salarial, pagamento de promoções, nível superior.", site: "sindpoc.org.br", telefone: "(71) 3329-7000", mensalidade: "1% sobre vencimento", servicos: "Jurídico, convênios, hotel de trânsito, eventos." },
-    { nome: "ADPEB - Assoc. Delegados BA", foco: "Sindicato dos Delegados", acao: "Defesa das prerrogativas, paridade para aposentados.", site: "adpeb.org.br", telefone: "(71) 3320-4100", mensalidade: "R$ 180 a R$ 380", servicos: "Jurídico especializado, eventos." },
-    { nome: "AEPEB - Assoc. Escrivães BA", foco: "Categoria dos Escrivães", acao: "Demandas específicas dos Escrivães e valorização da carreira.", site: "aepeb.com.br", telefone: "(71) 3327-4400", mensalidade: "R$ 60 a R$ 110", servicos: "Defesa jurídica e convênios." }
+    { nome: "SINDPOC-BA - Sindicato dos Policiais Civis do Estado da Bahia", foco: "Policiais civis da Bahia", acao: "Representação sindical, defesa de direitos, valorização, condições de trabalho, atuação jurídica, fiscalização e acompanhamento de pautas da PCBA.", site: "www.sindpoc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, convênios, articulação institucional, fiscalização, comunicação e atendimento ao sindicalizado." },
+    { nome: "ADPEB/Sindicato - Sindicato dos Delegados de Polícia do Estado da Bahia", foco: "Delegados de Polícia do Estado da Bahia", acao: "Defesa das prerrogativas, valorização da carreira, representação sindical, assembleias, eleições internas e apoio jurídico aos delegados sindicalizados.", site: "www.adpeb.com.br", telefone: "(71) 3329-2684", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, atendimento psicológico, convênios, cursos, notícias, assembleias e comunicação institucional." },
+    { nome: "AEPEB/Sindicato - Sindicato dos Escrivães de Polícia Civil do Estado da Bahia", foco: "Escrivães de Polícia Civil da Bahia", acao: "Representação específica dos escrivães, defesa de direitos, valorização funcional e comunicação sindical da categoria.", site: "aepebsindicato.com.br", telefone: "(71) 3329-6802", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação sindical, filiação, redes sociais, notícias, orientação e defesa de pautas dos escrivães." },
+    { nome: "SINDPEP-BA - Sindicato dos Peritos em Papiloscopia do Estado da Bahia", foco: "Peritos em papiloscopia e identificação civil/criminal da Bahia", acao: "Defesa dos interesses da papiloscopia, valorização da ciência papiloscópica, identificação civil e criminal e pautas específicas da carreira.", site: "sindpep.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, notícias, comunicação, defesa de direitos, eventos técnicos e pautas de valorização profissional." }
   ]
 };
 
-/* ============================================================ */
-/* === CONCURSOS (com vagas, etapas, idade, escolaridade) ===== */
-/* ============================================================ */
+
 const CONCURSOS = {
   pmesp: {
     edital: "Soldado PM 2ª Classe (2025/2026) — edital PMES2502 em andamento",
@@ -3128,122 +3219,360 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 function analisarDireitos() {
   const cont = document.getElementById('resultados_dir');
   if (!cont) return;
+
   const inst = currInst;
   const tempo = valEl('tempo_dir');
-  const sit = document.getElementById('situacao_dir').value;
-  const cargoVal = document.getElementById('cargo_dir').value;
+  const idade = valEl('idade_dir');
+  const renda = valEl('renda_dir');
+  const sit = document.getElementById('situacao_dir')?.value || 'ativa';
+  const sexo = document.getElementById('sexo_dir')?.value || 'na';
+  const ingresso = document.getElementById('ingresso_dir')?.value || '';
+  const dependente = document.getElementById('dependente_dir')?.value || 'na';
+  const localEspecial = document.getElementById('local_especial_dir')?.value || 'na';
+  const requisitosApos = document.getElementById('requisitos_apos_dir')?.value || 'na';
+  const cargoVal = document.getElementById('cargo_dir')?.value;
   const c = currTabela.find(x => x.val === cargoVal);
   if (!c) return;
 
-  let html = "";
+  const nomesInst = {
+    pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
+    pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA'
+  };
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba'].includes(inst);
+  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : '';
+  const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
-  // ===== DIREITOS UNIVERSAIS =====
-  html += direitoItem("Salário-Família", true,
-    `Direito a benefício mensal pago pela previdência por filho de até 14 anos com renda até R$ 1.984,71. Valor 2026: <strong>R$ 65,00 por filho</strong>.`);
+  let html = '';
 
-  html += direitoItem("Auxílio-Saúde / Plano de Saúde", true,
-    `${inst === 'pmesp' ? 'Cruz Azul SP, FUSAM ou plano credenciado.' :
-       inst === 'pcsp' ? 'IAMSPE — atendimento no Hospital do Servidor Público Estadual.' :
-       inst === 'pmerj' ? 'FUSPOM, HCPM, Família Azul.' :
-       inst === 'pcerj' ? 'FUSPOL ou plano credenciado.' :
-       inst === 'pmmg' ? 'IPSM (10,5% compulsório) com rede credenciada.' :
-       inst === 'pcmg' ? 'IPSEMG opcional (3,2%) ou plano particular.' :
-       inst === 'pmba' || inst === 'pcba' ? 'PLANSERV — gestão estadual.' : ''}`);
+  html += direitoResumo(c.text, nomesInst[inst], tempo, idade, sit, sexo, ingresso, renda, dependente);
 
-  html += direitoItem("Licença-Maternidade / Paternidade", true,
-    `<strong>180 dias</strong> (maternidade) e <strong>20 dias</strong> (paternidade) garantidos pela CF/88, Lei 13.257/2016 e regulamentos institucionais.`);
+  // ===== DIREITOS GERAIS =====
+  html += direitoSecao('Direitos gerais e benefícios familiares');
 
-  html += direitoItem("Licença para Tratamento de Pessoa da Família", true,
-    `Possibilidade de afastamento remunerado por até 12 meses para cuidar de cônjuge, ascendente, descendente ou enteado, conforme regulamento institucional e perícia médica.`);
+  if (dependente === 'sim' && renda > 0 && renda <= 1980.38) {
+    html += direitoItem('Salário-Família', 'condicionado',
+      'Pelos dados informados, pode haver enquadramento no salário-família: filho/equiparado até 14 anos ou inválido e remuneração dentro do limite legal. Cota 2026: <strong>R$ 67,54</strong>.',
+      'Base: Portaria Interministerial MPS/MF nº 13/2026 e tabela INSS 2026. Conferir aplicação ao regime do servidor e regras do órgão.');
+  } else if (dependente === 'nao' || (renda > 1980.38)) {
+    html += direitoItem('Salário-Família', 'atencao',
+      'Não aparece como direito provável com os dados informados. O benefício depende de dependente elegível e remuneração dentro do limite legal.',
+      'Referência 2026: cota de R$ 67,54 para remuneração até R$ 1.980,38.');
+  } else {
+    html += direitoItem('Salário-Família', 'condicionado',
+      'Pode existir somente se houver filho/equiparado até 14 anos ou inválido e remuneração dentro do limite legal. Informe dependente e remuneração para uma análise melhor.',
+      'Referência 2026: cota de R$ 67,54 para remuneração até R$ 1.980,38.');
+  }
 
-  html += direitoItem("Auxílio-Funeral", true,
-    `Indenização paga em caso de falecimento, no valor equivalente a 1 mês de remuneração, conforme regulamento institucional.`);
+  html += direitoItem('Auxílio-Funeral', 'condicionado',
+    'Benefício/indenização normalmente destinado aos dependentes ou a quem comprovar despesas de funeral, conforme regra previdenciária ou estatuto próprio da instituição.',
+    'Depende de requerimento, documentação, vínculo com o servidor e norma estadual específica.');
 
-  html += direitoItem("Pensão por Morte", true,
-    `Direito dos dependentes legais de receber benefício previdenciário (regime próprio). Para policiais civis e militares, regulado pela EC 103/2019 e leis estaduais.`);
+  html += direitoItem('Pensão por Morte', 'condicionado',
+    'Direito dos dependentes legalmente habilitados, observadas as regras do regime próprio, sistema de proteção social militar ou previdência estadual.',
+    'Depende da qualidade de dependente, documentação, cálculo previdenciário e legislação estadual aplicável.');
 
-  html += direitoItem("Promoção por Bravura / Ato de Bravura", true,
-    `Reconhecimento por ato de extrema coragem em serviço, com promoção excepcional ao posto/grad superior, conforme regulamento de promoções.`);
+  html += direitoItem('Licença-Maternidade / Paternidade', 'condicionado',
+    'Direito ligado ao nascimento, adoção ou guarda, com prazos definidos pela Constituição, lei estadual, estatuto e regulamento próprio da carreira.',
+    'Evitar tratar prazo único como regra universal: a aplicação concreta depende do ente federativo e do regime jurídico.');
+
+  html += direitoItem('Licença para Tratamento de Pessoa da Família', 'requerimento',
+    'Possibilidade de afastamento para cuidar de familiar, normalmente condicionada a requerimento, comprovação do vínculo, necessidade de acompanhamento e avaliação administrativa/pericial.',
+    'A remuneração, prazo e renovação variam conforme estatuto/regulamento da instituição.');
+
+  // ===== SAÚDE E ASSISTÊNCIA =====
+  html += direitoSecao('Saúde, assistência e proteção social');
+  html += direitoItem('Assistência à Saúde / Plano Institucional', 'condicionado', getSaudeTexto(inst), getSaudeBase(inst));
+
+  if (sit === 'reforma') {
+    html += direitoItem('Reforma / Invalidez', 'requerimento',
+      'A reforma ou aposentadoria por incapacidade exige procedimento administrativo e/ou perícia oficial. Em casos ligados ao serviço, pode haver tratamento jurídico e cálculo diferenciados.',
+      'Depende de laudo, nexo com o serviço, junta médica e legislação estadual.');
+  } else {
+    html += direitoItem('Licença-Saúde e Readaptação', 'requerimento',
+      'Em caso de doença, acidente ou limitação funcional, pode haver licença para tratamento de saúde, readaptação, restrição temporária ou avaliação de incapacidade.',
+      'Depende de perícia médica oficial e procedimento administrativo.');
+  }
+
+  if (inst === 'pmesp') {
+    html += direitoItem('SPSM / CBPM / Cruz Azul', 'condicionado',
+      'Sistema de proteção social e assistência ligado ao militar paulista, com possíveis benefícios como pensão, auxílio-funeral, assistência e serviços vinculados.',
+      'Acesso, contribuição, dependentes e coberturas dependem das normas da PMESP/CBPM/Cruz Azul.');
+  } else if (inst === 'pmmg') {
+    html += direitoItem('IPSM Minas Gerais', 'condicionado',
+      'O IPSM é referência para previdência e saúde dos militares mineiros e seus dependentes, conforme regras próprias.',
+      'Base institucional: IPSM/MG. Verificar contribuição, dependentes, rede e cobertura.');
+  } else if (inst === 'pcmg') {
+    html += direitoItem('IPSEMG / Assistência à Saúde', 'condicionado',
+      'Servidores civis mineiros podem ter acesso a assistência conforme adesão, contribuição e regras do sistema estadual.',
+      'Verificar adesão, descontos, dependentes e cobertura vigente.');
+  } else if (inst === 'pmba' || inst === 'pcba') {
+    html += direitoItem('Planserv Bahia', 'condicionado',
+      'Assistência à saúde dos servidores públicos baianos, sujeita a adesão, contribuição, dependentes e regras administrativas.',
+      'Base: normas do Planserv e legislação estadual da Bahia.');
+  }
+
+  // ===== VANTAGENS REMUNERATÓRIAS =====
+  html += direitoSecao('Vantagens remuneratórias e adicionais');
+
+  if (tempo >= 5) {
+    html += direitoItem('Adicional por Tempo de Serviço', 'automatico', getTempoServicoTexto(inst, tempo), getTempoServicoBase(inst));
+  } else {
+    const faltaTempo = Math.max(0, 5 - tempo);
+    html += direitoItem('Adicional por Tempo de Serviço', 'atencao',
+      `Ainda não há indicativo de primeiro período completo de tempo de serviço. Faltam aproximadamente <strong>${faltaTempo}</strong> ano(s) para o primeiro marco de 5 anos, quando aplicável.`,
+      getTempoServicoBase(inst));
+  }
+
+  if (inst === 'pmesp' || inst === 'pcsp') {
+    if (tempo >= 20) {
+      html += direitoItem('Sexta-Parte', 'automatico',
+        'Com 20 anos ou mais de efetivo exercício, há indicativo de direito à sexta-parte dos vencimentos integrais, observadas as regras constitucionais e exceções legais.',
+        'Base: Art. 129 da Constituição do Estado de São Paulo; atenção à exceção para servidores remunerados por subsídio, quando aplicável.');
+    } else {
+      html += direitoItem('Sexta-Parte', 'atencao',
+        `Ainda não há 20 anos informados. Faltam aproximadamente <strong>${20 - tempo}</strong> ano(s) para o marco temporal da sexta-parte em SP.`,
+        'Base: Art. 129 da Constituição do Estado de São Paulo.');
+    }
+  }
+
+  if (tempo >= 5) {
+    html += direitoItem('Licença-Prêmio / Férias-Prêmio / Licença Especial', 'condicionado',
+      'Pode existir direito relacionado a períodos aquisitivos por tempo de serviço, conforme a regra estadual e a situação funcional do servidor.',
+      'Não tratar como automático universal: nomenclatura, concessão, conversão em pecúnia e restrições variam por Estado e carreira.');
+  }
+
+  html += direitoItem('Insalubridade', 'condicionado', getInsalubridadeTexto(inst), getInsalubridadeBase(inst));
+  html += direitoItem('Periculosidade / Atividade de Risco', inst === 'pcerj' ? 'automatico' : 'condicionado', getPericulosidadeTexto(inst), getPericulosidadeBase(inst));
+
+  if (localEspecial === 'sim') {
+    html += direitoItem('Localidade Especial / Unidade Especial', 'condicionado',
+      'Você informou atuação em localidade ou unidade especial. Pode haver verba, gratificação, diária, adicional ou prioridade administrativa conforme norma da instituição.',
+      'Depende de designação formal, publicação, unidade, escala, disponibilidade e legislação local.');
+  } else {
+    html += direitoItem('Localidade Especial / Unidade Especial', 'verificar',
+      'Algumas instituições possuem verbas ou regras específicas para local de difícil provimento, unidade especial, transferência ou serviço extraordinário.',
+      'Marque “sim” se o servidor atua nessas condições e confirme a norma da instituição.');
+  }
+
+  html += getVantagensEspecificas(inst);
+
+  // ===== LICENÇAS E CARREIRA =====
+  html += direitoSecao('Licenças, carreira e estabilidade');
+  if (tempo >= 3) {
+    html += direitoItem('Estabilidade no Serviço Público', 'automatico',
+      'Com 3 anos ou mais informados, há indicativo de estabilidade, desde que o estágio probatório tenha sido cumprido e aprovado.',
+      'Base geral: Art. 41 da Constituição Federal. Militares e carreiras específicas podem ter rito próprio de avaliação e permanência.');
+  } else {
+    html += direitoItem('Estabilidade no Serviço Público', 'atencao',
+      `Tempo informado inferior a 3 anos. Faltam aproximadamente <strong>${3 - tempo}</strong> ano(s) para o marco geral de estabilidade, se aprovado no estágio probatório.`,
+      'Base geral: Art. 41 da Constituição Federal.');
+  }
+
+  html += direitoItem('Promoção por Bravura / Ato de Bravura', 'condicionado',
+    'Não é vantagem automática. Pode ocorrer em casos excepcionais de ato reconhecido formalmente como bravura, conforme regulamento de promoções da instituição.',
+    'Depende de sindicância/procedimento, enquadramento, proposta, decisão administrativa e publicação oficial.');
+
+  html += direitoItem('Progressão / Promoção na Carreira', 'condicionado',
+    'Promoções e progressões dependem de tempo, merecimento, antiguidade, avaliação, cursos, vagas, interstício, conduta e regras próprias da carreira.',
+    'Verificar estatuto, plano de carreira e editais internos da instituição.');
+
+  // ===== APOSENTADORIA / RESERVA / REFORMA =====
+  html += direitoSecao(isPM ? 'Reserva, reforma e proteção previdenciária' : 'Aposentadoria, abono e proteção previdenciária');
+
+  html += direitoItem(isPM ? 'Reserva Remunerada / Inatividade' : 'Aposentadoria Policial', getStatusAposentadoria(tempo, idade, requisitosApos),
+    getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103),
+    'A regra concreta depende de idade, tempo total, tempo no cargo/carreira, sexo, data de ingresso, legislação estadual e regras de transição após a EC 103/2019.');
+
+  if (sit === 'ativa') {
+    if (requisitosApos === 'sim') {
+      html += direitoItem('Abono de Permanência', 'condicionado',
+        'Como você informou já ter cumprido requisitos de aposentadoria/reserva e permanece em atividade, pode haver direito ao abono de permanência conforme regra previdenciária aplicável.',
+        'Depende de requerimento, reconhecimento administrativo dos requisitos e norma estadual.');
+    } else {
+      html += direitoItem('Abono de Permanência', 'verificar',
+        'Só deve ser tratado como possível depois de confirmado o cumprimento dos requisitos para aposentadoria/reserva com permanência em atividade.',
+        'Não depende apenas de tempo informado: exige análise de idade, ingresso, carreira, contribuição e regra de transição.');
+    }
+  }
+
+  if (isPC && (sit === 'reserva' || sit === 'reforma')) {
+    html += direitoItem('Paridade e Integralidade', ingressoAntesEC103 ? 'condicionado' : 'verificar',
+      ingressoAntesEC103
+        ? 'A data de ingresso informada é anterior à EC 103/2019, o que pode indicar análise de integralidade/paridade conforme regras de transição e jurisprudência aplicável aos policiais civis.'
+        : 'A análise de paridade e integralidade depende principalmente da data de ingresso, regra de aposentadoria utilizada e legislação do Estado. Informe/verifique a data de ingresso.',
+      'Tema sensível: confirmar com setor previdenciário, associação ou advogado especializado.');
+  }
 
   if (sit === 'reserva' || sit === 'reforma') {
-    html += direitoItem("Porte Funcional Vitalício", true,
-      `Garantido pelo Estatuto da Polícia Civil/Militar e pela Lei Federal 10.826/2003 (Estatuto do Desarmamento) ao policial inativo, condicionado a aptidão psicológica.`);
+    html += direitoItem('Porte de Arma na Inatividade', 'condicionado',
+      'Pode existir autorização para porte na inatividade, mas não deve ser tratado como “vitalício” sem ressalvas. Normalmente depende de requisitos legais, aptidão psicológica, documentação e regras de controle.',
+      'Base geral: Estatuto do Desarmamento e regulamentos. Conferir norma institucional e exigências vigentes.');
   }
 
-  // ===== INSALUBRIDADE / PERICULOSIDADE =====
-  html += direitoItem("Adicional de Insalubridade / Periculosidade", true,
-    inst === 'pcerj' ? `Direito constitucional. <strong>Lei 11.003/2025 RJ:</strong> 230% sobre vencimento para todas as carreiras (exceto Delegado, que recebe verba de representação de 212%).` :
-    `Direito constitucional. PCs/PMs em SP: insalubridade percentual sobre o salário-mínimo (R$ 1.621,00 em 2026 - mín 10%, médio 20%, máx 40%).`);
-
-  // ===== TEMPO DE SERVIÇO =====
-  if (tempo >= 5) {
-    let txt = "";
-    if (inst === 'pmesp' || inst === 'pcsp') txt = `Direito a Quinquênios (5%/qq) — você tem direito a ${Math.min(6, Math.floor(tempo/5))} quinquênio(s).`;
-    else if (inst === 'pmerj') txt = `Direito a Triênios (10%/tri) — você tem direito a ${Math.min(13, Math.floor(tempo/3))} triênio(s).`;
-    else if (inst === 'pcerj') txt = `Direito a Adic. Tempo de Serviço (5%/qq, Lei 11.003/2025) — ${Math.min(6, Math.floor(tempo/5))} quinquênio(s).`;
-    else if (inst === 'pmmg' || inst === 'pcmg') txt = `Direito a Quinquênios (10%/qq) — ${Math.min(6, Math.floor(tempo/5))} quinquênio(s).`;
-    else if (inst === 'pmba' || inst === 'pcba') txt = `Direito a Anuênios (1%/ano) — ${Math.min(35, tempo)} anuênio(s).`;
-    html += direitoItem("Adicional por Tempo de Serviço", true, txt);
-  }
-
-  // ===== SEXTA-PARTE (SP) =====
-  if (inst === 'pmesp' || inst === 'pcsp') {
-    if (tempo >= 20) html += direitoItem("Sexta-Parte (1/6 sobre vencimentos)", true, `Concedida após 20 anos de serviço. Direito constitucional do servidor público estadual SP (Art. 129 CE/SP).`);
-    else html += direitoItem("Sexta-Parte (1/6)", false, `Faltam ${20 - tempo} anos para conquistar este direito (após 20 anos de efetivo serviço).`);
-  }
-
-  // ===== LICENÇA-PRÊMIO =====
-  if (tempo >= 5) {
-    html += direitoItem("Licença-Prêmio (Especial)", true, `Após cada quinquênio, direito a ${inst.includes('mg') ? '3' : '3'} meses de licença remunerada. Pode ser convertida em pecúnia ao se aposentar (sem incidência de IRRF — STF Tema 635).`);
-  }
-
-  // ===== ESTABILIDADE =====
-  if (tempo >= 3) {
-    html += direitoItem("Estabilidade no Serviço Público", true, `Garantida após 3 anos de efetivo exercício e aprovação no estágio probatório (Art. 41 CF/88).`);
-  } else {
-    html += direitoItem("Estabilidade no Serviço Público", false, `Você ainda está em estágio probatório. Faltam ${3 - tempo} anos para conquistar a estabilidade (Art. 41 CF/88).`);
-  }
-
-  // ===== APOSENTADORIA =====
-  if (sit === 'ativa') {
-    if (tempo >= 30) html += direitoItem("Aposentadoria Voluntária Integral", true, `Direito conquistado para policiais (regra de transição EC 103/2019 - 30 anos contribuição + 55 anos idade homens / 25+50 mulheres).`);
-    else html += direitoItem("Aposentadoria Voluntária", false, `Faltam aproximadamente ${30 - tempo} anos para a aposentadoria voluntária integral (regra de transição EC 103/2019).`);
-
-    if (tempo >= 25) html += direitoItem("Abono de Permanência", true, `Direito ao abono (devolução de 14% da contribuição previdenciária) para quem já cumpriu requisitos da aposentadoria mas continua em atividade.`);
-  }
-
-  // ===== PARIDADE/INTEGRALIDADE (PCs) =====
-  if (inst.startsWith('pc') && (sit === 'reserva' || sit === 'reforma')) {
-    html += direitoItem("Paridade e Integralidade — Tema 1019 STF", true,
-      `Aposentados policiais civis que ingressaram <strong>antes da EC 103/2019</strong> têm direito a aposentadoria com <strong>integralidade</strong> (último vencimento) e <strong>paridade</strong> (mesmo reajuste dos ativos). RE 1.162.672 STF.`);
-  }
-
-  // ===== INSTITUCIONAIS ESPECÍFICOS =====
-  if (inst === 'pmesp') {
-    html += direitoItem("Sistema de Proteção Social do Militar (SPSM)", true, `Caixa Beneficente da PMESP (CBPM) — pensão por morte, auxílio-funeral, pecúlio e financiamento habitacional.`);
-  }
-  else if (inst === 'pmerj') {
-    html += direitoItem("Auxílio-Moradia / Lotação Especial", true, `Concedido em situações de transferência ou unidades especiais (BOPE, UPP, BPChq).`);
-  }
-  else if (inst === 'pcerj') {
-    html += direitoItem("Lei 11.003/2025 — Nova Lei Orgânica", true, `Reestruturação geral da PC RJ: novas faixas, adicional de periculosidade de 230%, gratificação técnico-científica de 100%, verba de representação de 212% para Delegados.`);
-  }
-  else if (inst === 'pmmg') {
-    html += direitoItem("Adicional de Desempenho (ADE)", true, `Avaliação periódica concede 10%, 30%, 50% ou 70% sobre o subsídio.`);
-  }
-  else if (inst === 'pmba' || inst === 'pcba') {
-    html += direitoItem("CET (Condição Especial de Trabalho)", true, `Gratificação variável de 25% a 125% sobre o vencimento básico — varia conforme a função e local de exercício.`);
-  }
+  // ===== ALERTAS E FONTES =====
+  html += direitoSecao('Alertas e fontes de conferência');
+  html += direitoItem('Conferência em fonte oficial', 'verificar',
+    'Use esta aba como triagem inicial. Para decisão financeira, ação judicial, aposentadoria, abono ou requerimento administrativo, confira sempre a legislação atualizada e a ficha funcional do servidor.',
+    'Fontes úteis: Diário Oficial do Estado, estatuto da carreira, lei orgânica, portal de transparência, setor de pessoal, previdência estadual e associação/sindicato.');
 
   cont.innerHTML = html;
 }
 
-function direitoItem(nome, sim, desc) {
-  return `<div class="direito-item ${sim ? 'sim' : 'nao'}">
-    <span class="direito-nome">${nome}</span>
-    <span class="direito-status">${sim ? '✓ Direito Garantido' : '⚠ Atenção'}</span>
-    <span class="direito-desc">${desc}</span>
+function direitoResumo(cargo, instNome, tempo, idade, sit, sexo, ingresso, renda, dependente) {
+  const sitTxt = sit === 'ativa' ? 'Serviço ativo' : sit === 'reserva' ? 'Inatividade / aposentadoria' : 'Reforma / invalidez';
+  const sexoTxt = sexo === 'masculino' ? 'masculino' : sexo === 'feminino' ? 'feminino' : 'não informado';
+  const ingressoTxt = ingresso ? ingresso.split('-').reverse().join('/') : 'não informado';
+  const rendaTxt = renda > 0 ? fmt(renda) : 'não informada';
+  const depTxt = dependente === 'sim' ? 'sim' : dependente === 'nao' ? 'não' : 'não informado';
+  return `<div class="direito-item acao" style="border-left-color: var(--vermelho);">
+    <span class="direito-nome">Resumo da análise — ${instNome}</span>
+    <span class="direito-desc"><strong>Cargo/nível:</strong> ${cargo}</span>
+    <span class="direito-desc"><strong>Situação:</strong> ${sitTxt} · <strong>Tempo informado:</strong> ${tempo} ano(s) · <strong>Idade:</strong> ${idade || 'não informada'} · <strong>Sexo:</strong> ${sexoTxt}</span>
+    <span class="direito-desc"><strong>Ingresso:</strong> ${ingressoTxt} · <strong>Remuneração bruta:</strong> ${rendaTxt} · <strong>Dependente para salário-família:</strong> ${depTxt}</span>
   </div>`;
+}
+
+function direitoSecao(titulo) {
+  return `<div class="direitos-section-title">${titulo}</div>`;
+}
+
+function direitoItem(nome, status, desc, base = '') {
+  const statusMap = {
+    automatico: { label: '✓ Direito automático / requisito provável', color: 'var(--verde)', bg: 'rgba(32, 142, 78, 0.06)' },
+    condicionado: { label: '◼ Direito condicionado', color: 'var(--dourado)', bg: 'rgba(223,182,62,0.08)' },
+    requerimento: { label: '⏳ Depende de requerimento/perícia', color: 'var(--azul)', bg: 'rgba(30,48,132,0.08)' },
+    verificar: { label: '⚠ Verificar caso individual', color: 'var(--text-muted)', bg: 'var(--item-bg)' },
+    atencao: { label: '⚠ Atenção / requisito não indicado', color: '#e60000', bg: 'rgba(230, 0, 0, 0.05)' }
+  };
+  const cfg = statusMap[status] || statusMap.verificar;
+  const baseHtml = base ? `<span class="direito-meta"><strong>Base/observação:</strong> ${base}</span>` : '';
+  const classe = status === 'automatico' ? 'sim' : status === 'atencao' ? 'nao' : '';
+  return `<div class="direito-item ${classe}" style="border-left-color:${cfg.color}; background:${cfg.bg};">
+    <span class="direito-nome">${nome}</span>
+    <span class="direito-status" style="color:${cfg.color};">${cfg.label}</span>
+    <span class="direito-desc">${desc}</span>
+    ${baseHtml}
+  </div>`;
+}
+
+function getSaudeTexto(inst) {
+  const textos = {
+    pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes.',
+    pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
+    pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
+    pcerj: 'PCERJ: verificar assistência disponível, convênios e regras administrativas da Polícia Civil/RJ.',
+    pmmg: 'PMMG: assistência e previdência vinculadas ao IPSM, conforme contribuição, dependentes e rede credenciada.',
+    pcmg: 'PCMG: assistência pode envolver IPSEMG ou outro plano, conforme adesão e regra estadual.',
+    pmba: 'PMBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
+    pcba: 'PCBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.'
+  };
+  return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
+}
+
+function getSaudeBase(inst) {
+  if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
+  if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
+  return 'Regulamento institucional, estatuto da carreira, órgão de saúde estadual e regras de contribuição/dependentes.';
+}
+
+function getTempoServicoTexto(inst, tempo) {
+  if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
+  if (inst === 'pmerj') return `Na PMERJ, o adicional por tempo de serviço deve ser conferido conforme regra estadual e ficha funcional. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência de triênio, se aplicável.`;
+  if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
+  if (inst === 'pmmg' || inst === 'pcmg') return `Em MG, tratar o adicional por tempo de serviço com cautela: pode envolver quinquênio, ADE, VPNI ou regra de transição. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência para conferência.`;
+  if (inst === 'pmba' || inst === 'pcba') return `Na Bahia, há referência a anuênios/adicionais por tempo conforme carreira. Pelo tempo informado, a referência inicial é de <strong>${Math.min(35, tempo)}</strong> ano(s) de serviço.`;
+  return 'Verificar adicional por tempo de serviço conforme legislação da carreira.';
+}
+
+function getTempoServicoBase(inst) {
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
+  if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
+  if (inst === 'pmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
+  if (inst === 'pmba' || inst === 'pcba') return 'Base: estatuto/lei orgânica e normas remuneratórias do Estado da Bahia.';
+  return 'Base: estatuto, lei de remuneração e ficha funcional.';
+}
+
+function getInsalubridadeTexto(inst) {
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
+  if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
+  return 'Pode existir quando houver exposição reconhecida a agente insalubre, mediante laudo, enquadramento e previsão legal da instituição.';
+}
+
+function getInsalubridadeBase(inst) {
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
+  return 'Depende de laudo, legislação estadual e enquadramento do local/função.';
+}
+
+function getPericulosidadeTexto(inst) {
+  if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
+  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
+}
+
+function getPericulosidadeBase(inst) {
+  if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
+  return 'Base: estatuto e lei de remuneração da instituição; não usar regra genérica para todas as carreiras.';
+}
+
+function getVantagensEspecificas(inst) {
+  let html = '';
+  if (inst === 'pmesp') {
+    html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
+      'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',
+      'Depende de escala, disponibilidade, limite mensal e norma vigente.');
+  } else if (inst === 'pcsp') {
+    html += direitoItem('DEJEC / Diária Especial por Jornada Extraordinária', 'condicionado',
+      'Verba eventual para jornada extraordinária na Polícia Civil/SP, quando autorizada e efetivamente cumprida.',
+      'Depende de escala, autorização, limite e regulamentação vigente.');
+  } else if (inst === 'pmerj') {
+    html += direitoItem('RAS / Serviço Adicional', 'condicionado',
+      'Pode haver remuneração por serviço adicional, escala extraordinária ou programa equivalente, conforme disponibilidade e autorização.',
+      'Depende de escala, publicação, limite e norma estadual.');
+  } else if (inst === 'pcerj') {
+    html += direitoItem('Gratificação Técnico-Científica', 'condicionado',
+      'Pode ser aplicável a carreiras técnico-científicas, como peritos e médicos legistas, conforme enquadramento legal.',
+      'Base: Lei 11.003/2025/RJ e cargo ocupado.');
+    html += direitoItem('Verba de Representação — Delegado', 'condicionado',
+      'Delegados possuem tratamento remuneratório próprio, com verba de representação prevista na reestruturação da PCERJ.',
+      'Base: Lei 11.003/2025/RJ. Aplicável apenas ao cargo correspondente.');
+    html += direitoItem('Auxílio-Transporte / Diárias / Auxílios específicos', 'condicionado',
+      'A nova estrutura da PCERJ lista vantagens e indenizações específicas que devem ser verificadas conforme lotação, deslocamento e situação funcional.',
+      'Conferir Lei 11.003/2025/RJ e regulamentação interna.');
+  } else if (inst === 'pmmg') {
+    html += direitoItem('ADE / VPNI / Vantagens de transição', 'condicionado',
+      'ADE, VPNI e parcelas de transição podem aparecer conforme avaliação, histórico funcional e regra remuneratória individual.',
+      'Conferir ficha financeira, avaliações e legislação mineira atualizada.');
+  } else if (inst === 'pcmg') {
+    html += direitoItem('ADE / Gratificação de Aprimoramento Profissional', 'condicionado',
+      'Podem existir vantagens por desempenho, formação, titulação ou aprimoramento profissional, conforme cargo e legislação da PCMG.',
+      'Conferir plano de carreira, titulação aceita e percentuais vigentes.');
+  } else if (inst === 'pmba' || inst === 'pcba') {
+    html += direitoItem('CET — Condição Especial de Trabalho', 'condicionado',
+      'Gratificação variável ligada a condição especial de trabalho, função ou local de exercício. Não deve ser tratada como valor fixo universal.',
+      'Conferir percentual, cargo, setor, publicação e legislação estadual da Bahia.');
+  }
+  return html;
+}
+
+function getStatusAposentadoria(tempo, idade, requisitosApos) {
+  if (requisitosApos === 'sim') return 'condicionado';
+  if (tempo >= 30 && idade >= 55) return 'verificar';
+  return 'atencao';
+}
+
+function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  if (requisitosApos === 'sim') {
+    return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
+  }
+  if (tempo >= 30 && idade >= 55) {
+    return `Tempo e idade informados indicam possível proximidade de ${tipo}, mas isso não basta para afirmar direito automático. É indispensável conferir data de ingresso, sexo, tempo no cargo/carreira e regra de transição.`;
+  }
+  const idadeTxt = idade ? `${idade} ano(s) de idade` : 'idade não informada';
+  const sexoTxt = sexo === 'na' ? 'sexo não informado' : `sexo ${sexo}`;
+  const ingressoTxt = ingressoAntesEC103 ? 'ingresso informado antes da EC 103/2019' : 'ingresso não informado ou posterior à EC 103/2019';
+  return `Com ${tempo} ano(s) de contribuição policial, ${idadeTxt}, ${sexoTxt} e ${ingressoTxt}, a análise previdenciária deve ser individual. Não é seguro afirmar direito adquirido apenas por este simulador.`;
 }
 
 /* ============================================================ */
@@ -3282,18 +3611,26 @@ function carregarAcoes() {
   const cont = document.getElementById('lista-acoes');
   if (!cont) return;
   const lista = ACOES_JUDICIAIS[currInst] || [];
-  cont.innerHTML = lista.map(a => `
-    <div class="direito-item acao">
-      <span class="direito-nome">${a.titulo}</span>
-      <span class="direito-status" style="color: var(--vermelho);">${a.status}</span>
-      <div>
-        <span class="badge-info ${a.tipo}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
-        <span class="badge-info ativa">${a.ano}</span>
+
+  cont.innerHTML = lista.map(a => {
+    const fonteHtml = a.fonte ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${a.fonteUrl ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : a.fonte}</span>` : '';
+    const atualizadoHtml = a.atualizado ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
+
+    return `
+      <div class="direito-item acao">
+        <span class="direito-nome">${a.titulo}</span>
+        <span class="direito-status" style="color: var(--vermelho);">${a.status}</span>
+        <div>
+          <span class="badge-info ${a.tipo}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
+          <span class="badge-info ativa">${a.ano}</span>
+        </div>
+        <span class="direito-desc">${a.desc}</span>
+        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${a.base}</span>
+        ${fonteHtml}
+        ${atualizadoHtml}
       </div>
-      <span class="direito-desc">${a.desc}</span>
-      <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${a.base}</span>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 /* ============================================================ */
