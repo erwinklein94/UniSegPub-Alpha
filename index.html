@@ -354,6 +354,17 @@
   .curso-card p { color: var(--text-muted); font-size: 14px; line-height: 1.5; }
   .curso-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
   .curso-meta span { border: 1px solid var(--border-input); background: var(--bg-card); color: var(--text-main); padding: 5px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+  .curso-pmesp-only { display: none; }
+  body[data-inst="pmesp"] .curso-pmesp-only { display: block; }
+  .curso-outra-inst-only { display: block; }
+  body[data-inst="pmesp"] .curso-outra-inst-only { display: none; }
+  .curso-section-title { font-family: 'Oswald', sans-serif; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); margin: 18px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border-input); }
+  .curso-lista-aulas { margin: 10px 0 0 18px; color: var(--text-muted); font-size: 14px; line-height: 1.55; }
+  .curso-lista-aulas li { margin-bottom: 4px; }
+  .curso-detalhes { margin-top: 16px; border: 1px solid var(--border-input); background: var(--bg-card); padding: 14px; border-radius: 6px; }
+  .curso-detalhes summary { cursor: pointer; font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--vermelho); }
+  .curso-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 18px; padding: 13px 18px; background: var(--vermelho); color: #ffffff; border-radius: 4px; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: 0.2s ease; }
+  .curso-cta:hover { background: var(--vermelho-escuro); transform: translateY(-2px); }
 
   @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .principal-hero { padding: 28px 22px; } .principal-grid { grid-template-columns: 1fr; } .header-inst-selector { grid-template-columns: 1fr; max-width: 100%; } }
@@ -1403,8 +1414,101 @@
 <main id="page-cursos" class="page-section" role="main">
   <div class="card">
     <h2>Cursos Preparatórios (<span id="txt-inst-cursos">PMESP</span>)</h2>
-    <div class="alerta" style="margin-top: 0; margin-bottom: 0;">
+
+    <div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
       Espaço destinado a cursos preparatórios, mentorias e materiais de estudo.
+    </div>
+
+    <div class="curso-grid curso-pmesp-only">
+      <div class="curso-card">
+        <h3>Curso Preparatório - SARGENTO PMESP</h3>
+        <p>
+          O Centro Educacional ao Bem Estar Policial - CABEP - é um curso online no modelo de recorrência anual, que aborda "ponto a ponto" dos tópicos exigidos nos principais editais dos Concursos Internos de Formação para as Carreiras: Soldado, Cabo, Sargento (CFS) e Chacal (CHQAOPM).
+        </p>
+        <p style="margin-top: 10px;">
+          Oferecendo aos seus alunos um <strong>MÉTODO REVOLUCIONÁRIO e EFICAZ</strong>.
+        </p>
+        <p style="margin-top: 10px;">
+          O CABEP conta como o melhor corpo docente especializado em cada área do conhecimento específico. Todo o conteúdo fica disponível na plataforma para acesso e consulta durante sua assinatura.
+        </p>
+        <p style="margin-top: 10px;">
+          Centro Educacional ao Bem Estar Policial - CABEP.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do curso">
+          <span>Garantia de 7 dias</span>
+          <span>Qualquer dispositivo</span>
+          <span>100 aulas</span>
+          <span>200 horas</span>
+          <span>100% avaliações positivas</span>
+          <span>Para Policiais Militares</span>
+        </div>
+
+        <div class="curso-section-title">Conteúdo das aulas</div>
+
+        <details class="curso-detalhes">
+          <summary>Direito Penal - Parte Geral</summary>
+          <ol class="curso-lista-aulas">
+            <li>Aula 1. Descrição de Crime e Contravenção Penal</li>
+            <li>Aula 2. Lei Penal no Tempo</li>
+            <li>Aula 3. Tempo e lugar do crime</li>
+            <li>Aula 4. Iter Criminis e o Crime Consumado</li>
+            <li>Aula 5. Tentativa - 1ª parte</li>
+            <li>Aula 6. Tentativa - 2ª Parte</li>
+            <li>Aula 7. Crime Doloso</li>
+            <li>Aula 8. Crime Culposo</li>
+            <li>Aula 09. Excludentes de Ilicitude</li>
+            <li>Aula 10. Estado de Necessidade - 1ª parte</li>
+            <li>Aula 11. Estado de Necessidade - 2ª parte</li>
+            <li>Aula 12. Legítima Defesa - 1ª parte</li>
+            <li>Aula 13. Legítima Defesa - 2ª parte</li>
+          </ol>
+        </details>
+
+        <details class="curso-detalhes">
+          <summary>Língua Portuguesa</summary>
+          <ol class="curso-lista-aulas">
+            <li>AULA 01. Língua, linguagem e fala</li>
+            <li>AULA 02. Acentuação Gráfica</li>
+            <li>AULA 03. Acentuação Gráfica - 2ª parte</li>
+            <li>AULA 04. Ortografia</li>
+            <li>AULA 05. Morfologia / Morfossintaxe / Classe de palavras</li>
+            <li>AULA 06. Morfologia / Morfossintaxe / Classe de palavras - 2ª parte</li>
+            <li>AULA 07. Hora de treinar - Morfologia / Morfossintaxe / Classe de palavras - 3ª parte</li>
+            <li>AULA 08. Morfologia / Morfossintaxe / Classe de palavras - 4ª parte</li>
+            <li>AULA 09. Morfologia / Morfossintaxe / Classe de palavras - 5ª parte</li>
+            <li>AULA 10. Período Composto</li>
+            <li>AULA 11. Período Composto - 2ª parte</li>
+            <li>AULA 12. Períodos Compostos - 3ª parte</li>
+            <li>Aula 13. Análise Sintática - Termos da Oração</li>
+            <li>Aula 14. Análise Sintática - Termos da Oração - 2ª Parte</li>
+            <li>Aula 15. Análise Sintática - Termos da Oração - 3ª parte</li>
+            <li>Aula 16. Sintaxe de Regência Verbal e Nominal</li>
+            <li>Aula 17. Regência em Período Composto - Pronomes</li>
+            <li>AULA 18. Sintaxe - Regência de Verbos</li>
+            <li>AULA 19. Crase</li>
+            <li>AULA 20. Crase - 2ª Parte</li>
+            <li>AULA 21. Vozes Verbais e Funções do SE</li>
+            <li>AULA 22. Sintaxe - Concordância Nominal</li>
+            <li>AULA 23. Concordância Nominal e Verbal</li>
+            <li>AULA 24. Concordância Verbal</li>
+            <li>AULA 25. Normas de Pontuação</li>
+            <li>AULA 26. Normas de Pontuação - 2ª parte</li>
+            <li>AULA 27. Pontuação e Orações Coordenadas Assindéticas e Sindéticas</li>
+            <li>AULA 28. Verbos</li>
+            <li>AULA 29. Verbos - 2ª parte</li>
+            <li>AULA 30. Verbos - 3ª parte</li>
+            <li>AULA 31. Processo de Interpretação</li>
+            <li>AULA 32. Erros Clássicos de Interpretação</li>
+            <li>AULA 33. Técnica de Leitura: palavras e ideias-chave</li>
+            <li>AULA 34. Coesão e Coerência</li>
+            <li>AULA 35. Semântica (sentido)</li>
+            <li>AULA 36. Informações Implícitas - Encerramento</li>
+          </ol>
+        </details>
+
+        <a class="curso-cta" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP na Hotmart">Acessar curso na Hotmart</a>
+      </div>
     </div>
   </div>
 </main>
