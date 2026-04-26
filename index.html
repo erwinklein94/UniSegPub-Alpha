@@ -593,7 +593,7 @@
     </button>
     <div class="header-text" id="header-text">
       <h1>Universo <span>Segurança Pública</span></h1>
-      <p id="header-desc">Polícia Militar de São Paulo — Simulador 2026</p>
+      <p id="header-desc">Polícia Militar de São Paulo — Principal</p>
       <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
         <label for="instituicao_header">Instituição</label>
         <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
@@ -1732,6 +1732,35 @@
 
         <a class="curso-cta" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo na Hotmart">Acessar curso na Hotmart</a>
       </div>
+
+      <div class="curso-card">
+        <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
+        <p>
+          Observando os altos índices de reprovação nos testes psicológicos das carreiras policiais, criamos um método simples e prático para a evolução pessoal dos candidatos, bem como seu enquadramento nas exigências estabelecidas pelos editais.
+        </p>
+        <p style="margin-top: 10px;">
+          Nossa abordagem visa abordar aspectos importantes e é válida para quaisquer corporações ou instituições.
+        </p>
+        <p style="margin-top: 10px;">
+          Ao todo são 24 vídeo aulas, com vasto conteúdo esclarecedor. É importante salientar que nosso programa procura levar os concurseiros direto ao ponto de interesse, sem enrolação!
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do curso">
+          <span>Garantia de 7 dias</span>
+          <span>Qualquer dispositivo</span>
+          <span>23 aulas</span>
+          <span>Conteúdo original</span>
+          <span>100% avaliações positivas</span>
+          <span>Para concurseiros</span>
+        </div>
+
+        <div class="curso-section-title">Para quem é esse produto?</div>
+        <p>
+          Concurseiros.
+        </p>
+
+        <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Acessar curso na Hotmart</a>
+      </div>
     </div>
   </div>
 </main>
@@ -2276,6 +2305,7 @@ function switchPage(page) {
 
   pageEl.classList.add('active');
   menuEl.classList.add('active');
+  atualizarHeaderDesc();
 
   const sidebar = document.getElementById('sidebar');
   if (window.innerWidth <= 968 && sidebar && sidebar.classList.contains('active')) toggleMenu();
@@ -2285,6 +2315,37 @@ function switchPage(page) {
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
+}
+
+function getNomeAbaAtual() {
+  const ativa = document.querySelector('.page-section.active');
+  const page = ativa ? ativa.id.replace('page-', '') : 'principal';
+  const nomes = {
+    principal: 'Principal',
+    acoes: 'Ações Judiciais',
+    associacoes: 'Associações e Sindicatos',
+    calculadora: 'Calculadora de Vencimentos',
+    concursos: 'Concursos',
+    cursos: 'Cursos',
+    direitos: 'Direitos e Vantagens',
+    parceiros: 'Parceiros - Anuncie aqui!'
+  };
+  return nomes[page] || 'Principal';
+}
+
+function atualizarHeaderDesc(descInstituicao) {
+  const descs = {
+    pmesp: 'Polícia Militar de São Paulo',
+    pcsp: 'Polícia Civil de São Paulo',
+    pmerj: 'Polícia Militar do Rio de Janeiro',
+    pcerj: 'Polícia Civil do Rio de Janeiro',
+    pmmg: 'Polícia Militar de Minas Gerais',
+    pcmg: 'Polícia Civil de Minas Gerais',
+    pmba: 'Polícia Militar da Bahia',
+    pcba: 'Polícia Civil da Bahia'
+  };
+  const el = document.getElementById('header-desc');
+  if (el) el.textContent = (descInstituicao || descs[currInst] || descs.pmesp) + ' — ' + getNomeAbaAtual();
 }
 
 function toggleTheme() {
@@ -2358,7 +2419,7 @@ function mudarInstituicao(novaInstituicao) {
 
   // Atualiza textos visíveis
   document.querySelector('.header-text h1').innerHTML = `Universo <span>Segurança Pública</span>`;
-  document.getElementById('header-desc').textContent = `${config.desc} — Simulador 2026`;
+  atualizarHeaderDesc(config.desc);
 
   const atualizarTexto = (id, valor) => {
     const el = document.getElementById(id);
