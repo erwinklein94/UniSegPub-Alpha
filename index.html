@@ -190,13 +190,13 @@
 
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
-  #page-principal.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
+  #page-principal.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-principal, #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
   #page-calculadora { grid-template-columns: 1fr 420px; gap: 30px; }
-  #page-direitos, #page-concursos, #page-cursos, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-principal, #page-calculadora { margin: 20px auto; } #page-calculadora { grid-template-columns: 1fr; } .resumo { position: static !important; } }
 
@@ -356,8 +356,11 @@
   .curso-meta span { border: 1px solid var(--border-input); background: var(--bg-card); color: var(--text-main); padding: 5px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
   .curso-pmesp-only { display: none; }
   body[data-inst="pmesp"] .curso-pmesp-only { display: block; }
+  .curso-pcsp-only { display: none; }
+  body[data-inst="pcsp"] .curso-pcsp-only { display: block; }
   .curso-outra-inst-only { display: block; }
-  body[data-inst="pmesp"] .curso-outra-inst-only { display: none; }
+  body[data-inst="pmesp"] .curso-outra-inst-only,
+  body[data-inst="pcsp"] .curso-outra-inst-only { display: none; }
   .curso-section-title { font-family: 'Oswald', sans-serif; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main); margin: 18px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border-input); }
   .curso-lista-aulas { margin: 10px 0 0 18px; color: var(--text-muted); font-size: 14px; line-height: 1.55; }
   .curso-lista-aulas li { margin-bottom: 4px; }
@@ -560,7 +563,7 @@
   /* CSS Print - Holerite */
   @media print {
     header, .stripe-container, .menu-overlay, .sidebar, .menu-btn, footer,
-    #page-principal, #page-direitos, #page-concursos, #page-cursos, #page-acoes, #page-associacoes, #page-parceiros,
+    #page-principal, #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros,
     .actions-row, .sidebar-ad, .alerta, h2 { display: none !important; }
     body { background: white !important; color: black !important; }
     #page-calculadora { display: block !important; max-width: 100%; margin: 0; padding: 20px; }
@@ -662,6 +665,7 @@
     <a onclick="switchPage('concursos')" id="menu-concursos" tabindex="0" role="link">Concursos</a>
     <a onclick="switchPage('cursos')" id="menu-cursos" tabindex="0" role="link">Cursos</a>
     <a onclick="switchPage('direitos')" id="menu-direitos" tabindex="0" role="link">Direitos e Vantagens</a>
+    <a onclick="switchPage('livros')" id="menu-livros" tabindex="0" role="link">Livros</a>
     <a onclick="switchPage('parceiros')" id="menu-parceiros" tabindex="0" role="link">Parceiros - Anuncie aqui!</a>
     <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">Instagram</a>
   </nav>
@@ -1762,6 +1766,117 @@
         <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Acessar curso na Hotmart</a>
       </div>
     </div>
+
+    <div class="curso-grid curso-pcsp-only">
+      <div class="curso-card">
+        <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
+        <p>
+          O curso de Raciocínio Lógico visa preparar os candidatos de forma imersiva para o concurso da Polícia Civil de São Paulo (PCSP).
+        </p>
+        <p style="margin-top: 10px;">
+          Por meio de uma metodologia com foco na banca VUNESP, o aluno aprenderá de forma rápida e prática Raciocínio Lógico.
+        </p>
+        <p style="margin-top: 10px;">
+          Olha só alguns tópicos de tudo o que você vai aprender a partir de hoje.
+        </p>
+
+        <ul class="curso-lista-aulas">
+          <li>Fazer mais RAPIDAMENTE as questões.</li>
+          <li>Dominar as TÉCNICAS de resolução de questões.</li>
+          <li>Passos simples para identificar os pontos-chaves.</li>
+          <li>Os passos mentais usados para APRENDER DE FORMA DEFINITIVA.</li>
+        </ul>
+
+        <p style="margin-top: 10px;">
+          Escolha uma das matérias ou o combo e comece a estudar ainda hoje.
+        </p>
+
+        <div class="curso-section-title">Diferenciais do curso</div>
+        <ol class="curso-lista-aulas">
+          <li><strong>Preparação específica para o concurso da Polícia Civil de São Paulo (PCSP):</strong> o curso de Raciocínio Lógico foi desenvolvido com foco no conteúdo exigido no concurso da PCSP, garantindo que os candidatos estejam preparados de forma adequada e direcionada para as provas.</li>
+          <li><strong>Metodologia voltada para a banca VUNESP:</strong> a metodologia do curso foi elaborada levando em consideração o perfil da banca examinadora VUNESP, conhecida por suas características específicas de elaboração de questões. Isso permite que os alunos se familiarizem com o estilo de perguntas e estejam mais preparados para enfrentar o exame.</li>
+          <li><strong>Aprendizado rápido e prático:</strong> o curso de Raciocínio Lógico proporciona aos alunos um aprendizado eficiente e prático, permitindo que eles adquiram as habilidades necessárias para resolver as questões de forma rápida e eficaz. Isso é especialmente importante em concursos, onde o tempo é um fator crucial.</li>
+          <li><strong>Domínio das técnicas de resolução de questões:</strong> o curso oferece aos alunos o conhecimento e as técnicas necessárias para resolver questões de Raciocínio Lógico de forma eficiente. Isso inclui identificar os pontos-chave das questões, utilizar passos mentais para aprender de forma definitiva e realizar as resoluções de maneira mais rápida.</li>
+        </ol>
+
+        <div class="curso-meta" aria-label="Destaques do curso">
+          <span>Garantia de 7 dias</span>
+          <span>Qualquer dispositivo</span>
+          <span>+300 estudantes</span>
+          <span>94% avaliações positivas</span>
+          <span>Para concurseiros</span>
+          <span>PCSP</span>
+          <span>VUNESP</span>
+        </div>
+
+        <div class="curso-section-title">Material do curso</div>
+        <details class="curso-detalhes">
+          <summary>Conteúdo de Raciocínio Lógico</summary>
+          <ul class="curso-lista-aulas">
+            <li>Lógica Proposicional</li>
+            <li>Questões de Lógica Proposicional</li>
+            <li>Proposição Composta</li>
+            <li>Sinônimos dos Conectivos</li>
+            <li>Sinônimos do Conectivo SE..., ENTÃO</li>
+            <li>Sinônimos do Conectivo SE, e SOMENTE SE</li>
+            <li>Questões de Conectivos</li>
+            <li>Tabela Verdade</li>
+            <li>Questões de Tabela Verdade</li>
+            <li>Estrutura Lógica das Relações Arbitrárias Entre Pessoas, Lugares, Coisas e Eventos Fictícios</li>
+            <li>Sequências Lógicas - Parte I e II</li>
+            <li>Sequências Lógicas - Parte III e IV</li>
+            <li>Negação</li>
+            <li>Equivalências Lógicas</li>
+            <li>Quantificadores</li>
+            <li>Negação dos Quantificadores</li>
+            <li>Diagramas Lógicos</li>
+            <li>Questões de Diagramas Lógicos</li>
+            <li>Questões de Argumentos Hipotéticos</li>
+            <li>Questões de Associações de Informações</li>
+            <li>Diagrama de Venn</li>
+          </ul>
+        </details>
+
+        <a class="curso-cta" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir curso de Raciocínio Lógico para PCSP na Hotmart">Acessar curso na Hotmart</a>
+      </div>
+
+      <div class="curso-card">
+        <h3>PCSP - Curso de Informática - Edital Completo</h3>
+        <p>
+          Curso preparatório para concursos públicos na disciplina de Informática, com o professor Pablo Leonardo, carga horária de 24 horas, modalidade teoria + exercícios e foco total na banca VUNESP.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do curso">
+          <span>Garantia de 7 dias</span>
+          <span>Qualquer dispositivo</span>
+          <span>24 horas</span>
+          <span>Teoria + exercícios</span>
+          <span>Videoaulas</span>
+          <span>PDFs</span>
+          <span>Listas de questões</span>
+          <span>100% avaliações positivas</span>
+          <span>VUNESP</span>
+        </div>
+
+        <div class="curso-section-title">Descrição do curso</div>
+        <ul class="curso-lista-aulas">
+          <li>Curso preparatório para concursos públicos.</li>
+          <li>Disciplina: Informática.</li>
+          <li>Professor: Pablo Leonardo.</li>
+          <li>Carga horária: 24 horas.</li>
+          <li>Modalidade: teoria + exercícios.</li>
+          <li>Materiais disponíveis: videoaulas, PDFs e listas de questões.</li>
+          <li>Foco total na banca VUNESP.</li>
+        </ul>
+
+        <div class="curso-section-title">Para quem é esse produto?</div>
+        <p>
+          Pessoas que querem ser aprovadas no concurso de Delegado da Polícia Civil de São Paulo.
+        </p>
+
+        <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Acessar curso na Hotmart</a>
+      </div>
+    </div>
   </div>
 </main>
 
@@ -1782,6 +1897,157 @@
       Principais entidades representativas, com descrição do foco, serviços oferecidos, faixa de mensalidade e canais de contato.
     </div>
     <div class="result-list" id="lista-associacoes"></div>
+  </div>
+</main>
+
+
+<main id="page-livros" class="page-section" role="main">
+  <div class="card">
+    <h2>Livros e E-books</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Espaço destinado a livros, e-books e materiais de desenvolvimento pessoal, produtividade, liderança e preparação para concursos.
+    </div>
+
+    <div class="curso-grid">
+      <div class="curso-card">
+        <h3>Pacote - Viva Sem Procrastinar</h3>
+        <p>
+          Descubra como melhorar sua saúde mental e eliminar a procrastinação de uma vez por todas. Com este pacote completo, você terá acesso a materiais voltados para mudança de vida, superação de medos, expectativas e construção de atitude prática.
+        </p>
+        <p style="margin-top: 10px;">
+          O pacote busca mostrar a causa número 1 da procrastinação e apresenta um guia rápido e eficaz para quem está cansado de sentir preguiça, tentar melhorar de vida e não conseguir manter um plano por muito tempo.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Garantia de 21 dias</span>
+          <span>80% avaliações positivas</span>
+          <span>Desenvolvimento pessoal</span>
+          <span>Procrastinação</span>
+        </div>
+
+        <div class="curso-section-title">O que contém</div>
+        <ul class="curso-lista-aulas">
+          <li>Ebook Viva Sem Procrastinar (34 páginas).</li>
+          <li>Mini-ebook bônus: Trate esse teu Medo (14 páginas).</li>
+          <li>Mini-ebook bônus: Saiba que é possível (11 páginas).</li>
+          <li>Mini-ebook bônus: O Homem é um Ser Triunfante (10 páginas).</li>
+          <li>Mini-ebook bônus: A arte de Fazer Algo (9 páginas).</li>
+        </ul>
+
+        <div class="curso-section-title">Para quem é esse produto?</div>
+        <p>
+          Pessoas que sofrem com a procrastinação, estão cansadas de sentir preguiça e tentam melhorar de vida, mas não conseguem manter um plano por muito tempo.
+        </p>
+
+        <a class="curso-cta" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar na Hotmart">Acessar livro na Hotmart</a>
+      </div>
+
+      <div class="curso-card">
+        <h3>Otimizando o Cérebro para Concursos Públicos</h3>
+        <p>
+          Livro escrito por quem entende do assunto, tanto pela experiência de já ter sido aprovado em mais de 5 processos seletivos, como pela formação em Neurociências e mestrado em Psicologia.
+        </p>
+        <p style="margin-top: 10px;">
+          O e-book oferece técnicas para melhorar memória, concentração, aprendizado, organização do tempo, motivação e controle de distrações durante a preparação para concursos públicos.
+        </p>
+        <p style="margin-top: 10px;">
+          Na compra deste e-book, o aluno ainda ganha gratuitamente o livro Manual sobre Procrastinação, Sono e Administração do Tempo.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Garantia de 7 dias</span>
+          <span>Concursos públicos</span>
+          <span>Neurociências</span>
+          <span>Estudos</span>
+          <span>Produtividade</span>
+        </div>
+
+        <div class="curso-section-title">Para quem é esse produto?</div>
+        <p>
+          Concurseiros, estudantes e universitários.
+        </p>
+
+        <a class="curso-cta" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos na Hotmart">Acessar livro na Hotmart</a>
+      </div>
+
+      <div class="curso-card">
+        <h3>Além da Farda: O Código da Travessia</h3>
+        <p>
+          Um manual de desarmamento emocional e reconstrução de identidade, voltado para quem deseja fazer a transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor pessoal.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Garantia de 7 dias</span>
+          <span>Identidade</span>
+          <span>Carreira</span>
+          <span>Transição</span>
+          <span>Vida pós-farda</span>
+        </div>
+
+        <div class="curso-section-title">O que você vai dominar</div>
+        <ul class="curso-lista-aulas">
+          <li>O fim da Síndrome do B.O. Familiar: desligar o “Modo Ocorrência” e transformar sua casa de quartel em santuário.</li>
+          <li>Do tempo institucional ao tempo de CEO: parar de ser escravo da escala e gerir a agenda com o Método Cronos.</li>
+          <li>A Simbiose Midas &amp; Valquírias: usar a disciplina militar no mundo dos negócios sem perder identidade e presença.</li>
+          <li>A Tradução de Competências: transformar anos de caserna em currículo executivo valorizado pelo mercado.</li>
+        </ul>
+
+        <a class="curso-cta" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia na Hotmart">Acessar livro na Hotmart</a>
+      </div>
+
+      <div class="curso-card">
+        <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
+        <p>
+          Este método apresenta técnicas de planejamento pessoal e financeiro, gestão de tempo, atitude sob pressão, rotina disciplinada e desenvolvimento pessoal para quem deseja conquistar mais resultado na vida profissional e pessoal.
+        </p>
+        <p style="margin-top: 10px;">
+          O conteúdo é apresentado por Pedro, militar com mais de 6 anos de experiência e formação de destaque no Exército, que aplica lições do quartel na vida civil e nos negócios.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Planejamento</span>
+          <span>Gestão de tempo</span>
+          <span>Disciplina</span>
+          <span>Desenvolvimento pessoal</span>
+        </div>
+
+        <a class="curso-cta" href="https://go.hotmart.com/V105563143D" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Método DMA na Hotmart">Acessar livro na Hotmart</a>
+      </div>
+
+      <div class="curso-card">
+        <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
+        <p>
+          E-book criado para pessoas que desejam alcançar mais controle, disciplina e resultados no trabalho, nos estudos ou em projetos pessoais, aplicando princípios de liderança militar no cotidiano.
+        </p>
+        <p style="margin-top: 10px;">
+          O material mostra como tomar decisões com clareza sob pressão, organizar a rotina como uma operação bem-sucedida, comunicar-se de forma objetiva e manter a calma em momentos desafiadores.
+        </p>
+
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Garantia de 7 dias</span>
+          <span>Liderança</span>
+          <span>Disciplina</span>
+          <span>Tomada de decisão</span>
+          <span>Para líderes</span>
+        </div>
+
+        <div class="curso-section-title">Principais temas</div>
+        <ul class="curso-lista-aulas">
+          <li>Desenvolvimento de disciplina e foco.</li>
+          <li>Aplicação de táticas de liderança militar na produtividade diária.</li>
+          <li>Gestão eficiente de crises.</li>
+          <li>Tomada de decisão rápida e precisa mesmo sob pressão.</li>
+          <li>Comunicação clara, planejamento e comando da própria rotina.</li>
+        </ul>
+
+        <div class="curso-section-title">Para quem é esse produto?</div>
+        <p>
+          Líderes e pessoas que desejam assumir mais controle sobre metas, decisões e rotina.
+        </p>
+
+        <a class="curso-cta" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia na Hotmart">Acessar livro na Hotmart</a>
+      </div>
+    </div>
   </div>
 </main>
 
@@ -2328,6 +2594,7 @@ function getNomeAbaAtual() {
     concursos: 'Concursos',
     cursos: 'Cursos',
     direitos: 'Direitos e Vantagens',
+    livros: 'Livros',
     parceiros: 'Parceiros - Anuncie aqui!'
   };
   return nomes[page] || 'Principal';
