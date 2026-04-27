@@ -673,6 +673,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+  .calc-section-title.sem-campos-visiveis { display: none !important; }
   .calc-field-note {
     margin-top: 6px;
     color: var(--text-muted);
@@ -1293,6 +1294,12 @@
         <div class="field">
           <label for="lpremio">Licença-Prêmio em Pecúnia (meses) <span class="tip" data-tip="Conversão em dinheiro de licenças-prêmio não gozadas. Ao se aposentar, sem incidência de IRRF e previdência.">?</span></label>
           <input type="number" id="lpremio" value="0" min="0" max="12"/>
+        </div>
+
+        <div class="field pmba-only">
+          <label for="auxfard_ba_pm">Auxílio-Fardamento PMBA (R$) <span class="tip" data-tip="Informe manualmente apenas quando a verba constar no mês simulado. O campo inicia zerado para não inflar o salário mensal padrão.">?</span></label>
+          <input type="number" id="auxfard_ba_pm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+          <div class="calc-field-note">Campo eventual/manual. Use somente quando quiser simular o pagamento dessa parcela.</div>
         </div>
       </div>
     </div>
@@ -3915,6 +3922,7 @@ function mudarInstituicao(novaInstituicao) {
   carregarConcursos();
   carregarAcoes();
   carregarAssociacoes();
+  atualizarTitulosCalculadora();
   salvarFormulario();
 }
 
@@ -4035,12 +4043,25 @@ function validarCampoCalculadora(el) {
 
 function campoTemValorAtivo(el) {
   if (!el || !el.id) return false;
+
+  // No modo simples, o aviso deve aparecer apenas quando o usuário alterou
+  // algum campo avançado em relação ao valor padrão real do formulário.
+  // Assim, valores padrão como auxílio-alimentação diário, dias VA ou selects
+  // automáticos não geram alerta falso.
   if (el.tagName === 'SELECT') {
     const padrao = el.querySelector('option[selected]')?.value ?? (el.options[0]?.value ?? '');
-    return el.value !== padrao && el.value !== '0';
+    return String(el.value) !== String(padrao);
   }
-  const n = parseFloat(el.value);
-  return !Number.isNaN(n) && Math.abs(n) > 0.005;
+
+  if (el.type === 'number') {
+    const atual = parseFloat(el.value);
+    const padrao = parseFloat(el.defaultValue || '0');
+    const atualSeguro = Number.isNaN(atual) ? 0 : atual;
+    const padraoSeguro = Number.isNaN(padrao) ? 0 : padrao;
+    return Math.abs(atualSeguro - padraoSeguro) > 0.005;
+  }
+
+  return String(el.value || '') !== String(el.defaultValue || '');
 }
 
 function atualizarModoCalculadora(modo = 'avancado') {
@@ -4054,13 +4075,44 @@ function atualizarModoCalculadora(modo = 'avancado') {
   localStorage.setItem('usegpub_calc_modo', modo);
   const temOcultoAtivo = simples && Array.from(page.querySelectorAll('.calc-advanced input, .calc-advanced select')).some(campoTemValorAtivo);
   document.getElementById('calc_modo_aviso')?.classList.toggle('show', temOcultoAtivo);
+  atualizarTitulosCalculadora();
+}
+
+function campoVisualmenteDisponivelNaInstituicao(el) {
+  if (!el || el.hidden) return false;
+  const estilo = window.getComputedStyle(el);
+  return estilo.display !== 'none' && estilo.visibility !== 'hidden';
+}
+
+function atualizarTitulosCalculadora() {
+  document.querySelectorAll('#page-calculadora .calc-advanced .form-grid').forEach(grid => {
+    const itens = Array.from(grid.children);
+
+    itens.forEach((item, indice) => {
+      if (!item.classList?.contains('calc-section-title')) return;
+
+      let possuiCampoVisivel = false;
+      for (let i = indice + 1; i < itens.length; i++) {
+        const proximo = itens[i];
+        if (proximo.classList?.contains('calc-section-title')) break;
+
+        if (proximo.classList?.contains('field') && campoVisualmenteDisponivelNaInstituicao(proximo)) {
+          possuiCampoVisivel = true;
+          break;
+        }
+      }
+
+      item.classList.toggle('sem-campos-visiveis', !possuiCampoVisivel);
+      item.setAttribute('aria-hidden', possuiCampoVisivel ? 'false' : 'true');
+    });
+  });
 }
 
 function classificarCamposCalculadora() {
   const tipos = {
     auto: ['cargo','dias','dias_va','quinquenios','quinquenios_sp_pc','trienios','quinquenios_rj_pc','quinquenios_mg_pm','quinquenios_mg_pc','anuenios_ba_pm','anuenios_ba_pc','sextaparte','sextaparte_sp_pc','gap_ba_nivel','grat_ba_pc_ref','opt_iamspe','opt_ipsemg','opt_faspm_pr'],
     manual: ['emprestimo','pensao','fepomcopa','fepomalo','fepomran','daxv','prosaude','cbpm','cruzazul','sindicato','fuspom','familiazul','hcpm','coopm','fuspol','sindicato_rj','ipsm_copart','assoc_mg_pm','sindicato_mg_pc','planserv_ba_pm','assoc_ba_pm','planserv_ba_pc','sindicato_ba_pc','assoc_pr_pm','sindicato_pr_pc','dependentes_saude'],
-    opcional: ['dependentes','auxalim_sp_dia','auxalim_mg_dia','auxalim_mg_meta_dia','insalubridade','insalubridade_sp_pc','decimo','ferias','abonotransf','lpremio','auxfard_pm','auxfard_rj','fardamento_mg_pm','vestimenta_mg_pc'],
+    opcional: ['dependentes','auxalim_sp_dia','auxalim_mg_dia','auxalim_mg_meta_dia','insalubridade','insalubridade_sp_pc','decimo','ferias','abonotransf','lpremio','auxfard_pm','auxfard_rj','fardamento_mg_pm','vestimenta_mg_pc','auxfard_ba_pm'],
     estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','ghp_rj_pc','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc','qtdextra_pr_pm','valextra_pr_pm','qtdextra_pr_pc','valextra_pr_pc']
   };
   const nomes = { auto: 'Automático', manual: 'Manual', opcional: 'Opcional', estimativa: 'Estimativa' };
@@ -4326,7 +4378,9 @@ function calcular() {
     gapBaRefLabel = refBa(idx);
     gapBaValor = ((c.gapBa || [])[idx] || 0) * fatorDias;
     auxalimBa = valEl('auxalim_ba');
-    auxfardBaPm = PMBA_AUX_FARDAMENTO_2026 * fatorDias;
+    // Auxílio-fardamento PMBA: tratado como campo eventual/manual para não inflar
+    // automaticamente o salário mensal padrão.
+    auxfardBaPm = valEl('auxfard_ba_pm');
   }
 
   // Bahia PC - CET + GAJ/GAPJ fixa por referência + verbas manuais + qualificação + auxílio-alimentação
@@ -4395,8 +4449,19 @@ function calcular() {
     extraLabel = `Escala Extra PCPR (${valEl('qtdextra_pr_pc')})`;
   }
 
-  // ===== Verbas eventuais (13º, férias, abono, lpremio) =====
-  const baseEventosRemuneratorios = padrao + retpOuVerba + gretRj + ghpRj + gramRj + ghpPcRj + gtcRj + tempoVal + sextaVal;
+  // ===== BASE MENSAL NORMAL =====
+  // Separação lógica: mensal normal x eventos. Isso evita que 13º/férias/retroativos
+  // pareçam salário mensal comum e garante que o total bruto bata com o detalhamento.
+  const baseRemuneratoriaMensalNormal = padrao + gratif + retpOuVerba + tempoVal + sextaVal + insalVal + dsVal +
+                            gatVal + gas_pc + ale_pm + ensino + adicNoturno_pm +
+                            gretRj + ghpRj + gramRj + lotacaoRj + ghpPcRj + pericRj + gtcRj + locespRj +
+                            adeMgPm + vpniMgPm + adeMgPc + gapMgPc +
+                            cetBaPm + gapBaValor + cetBaPc + gratBaPc + gipBaPc + gqualBaPc;
+
+  // ===== Verbas eventuais (13º, férias, abono, licença-prêmio) =====
+  // Usa a base remuneratória mensal já completa, em vez de uma base reduzida,
+  // para não subestimar eventos quando houver adicionais recorrentes informados.
+  const baseEventosRemuneratorios = baseRemuneratoriaMensalNormal;
   const decimoFator = parseFloat(document.getElementById('decimo').value || 0);
   const decimoVal = baseEventosRemuneratorios * decimoFator;
   const ferias = valEl('ferias');
@@ -4405,13 +4470,6 @@ function calcular() {
   const lpremioVal = valEl('lpremio') * baseEventosRemuneratorios;
 
   // ===== TOTAL BRUTO =====
-  // Separação lógica: mensal normal x eventos. Isso evita que 13º/férias/retroativos pareçam salário mensal comum.
-  const baseRemuneratoriaMensalNormal = padrao + retpOuVerba + tempoVal + sextaVal + insalVal + dsVal +
-                            gatVal + gas_pc + ale_pm + ensino + adicNoturno_pm +
-                            gretRj + ghpRj + gramRj + lotacaoRj + ghpPcRj + pericRj + gtcRj + locespRj +
-                            adeMgPm + vpniMgPm + adeMgPc + gapMgPc +
-                            cetBaPm + gapBaValor + cetBaPc + gratBaPc + gipBaPc + gqualBaPc;
-
   const baseRemuneratoriaEventos = decimoVal + feriasVal;
   const baseRemuneratoria = baseRemuneratoriaMensalNormal + baseRemuneratoriaEventos;
 
@@ -4459,7 +4517,7 @@ function calcular() {
     descPM = valEl('fepomcopa') + valEl('fepomalo') + valEl('fepomran') + valEl('daxv') + valEl('prosaude') + valEl('cbpm') + valEl('cruzazul');
   } else if (inst === 'pcsp') {
     if (parseInt(document.getElementById('opt_iamspe').value) === 1) {
-      descPM = baseRemuneratoria * 0.02 * (1 + dependentesSaude); // simplificado: 2% titular + 2% por dependente de saúde
+      descPM = baseRemuneratoriaMensalNormal * 0.02 * (1 + dependentesSaude); // simplificado: 2% titular + 2% por dependente de saúde, sem eventos
     }
     descPM += valEl('sindicato');
   } else if (inst === 'pmerj') {
@@ -4471,7 +4529,7 @@ function calcular() {
   } else if (inst === 'pcmg') {
     descPCMG = valEl('sindicato_mg_pc');
     if (parseInt(document.getElementById('opt_ipsemg').value) === 1) {
-      descPCMG += baseRemuneratoria * 0.032;
+      descPCMG += baseRemuneratoriaMensalNormal * 0.032;
     }
   } else if (inst === 'pmba') {
     descPMBA = valEl('planserv_ba_pm') + valEl('assoc_ba_pm');
@@ -4490,7 +4548,8 @@ function calcular() {
 
   // Pensão alimentícia (% sobre líquido antes da pensão)
   const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPCMG - descPMBA - descPCBA - descPMPR - descPCPR - descGeral;
-  const pensaoVal = liquidoAntesPensao * (valEl('pensao') / 100);
+  const pensaoPct = Math.min(100, Math.max(0, valEl('pensao')));
+  const pensaoVal = Math.max(0, liquidoAntesPensao) * (pensaoPct / 100);
 
   const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPCMG + descPMBA + descPCBA + descPMPR + descPCPR + descGeral + pensaoVal;
   const liquido = bruto - totalDescontos;
@@ -4528,7 +4587,6 @@ function calcular() {
   if (tempoVal > 0) proventos += linha(tempoLabel, tempoVal, "provento");
   if (sextaVal > 0) proventos += linha("Sexta-Parte (1/6)", sextaVal, "provento");
   if (insalVal > 0) proventos += linha(`Insalubridade (${(parseFloat(document.getElementById(inst==='pmesp'?'insalubridade':'insalubridade_sp_pc')?.value || 0) * 100).toFixed(0)}% SM)`, insalVal, "provento");
-  if (acaoInsalVal > 0) proventos += linha("Ação Insalubridade (retroativo)", acaoInsalVal, "provento");
   if (dsVal > 0) proventos += linha("Designação em Substituição", dsVal, "provento");
   if (gatVal > 0) proventos += linha("GAT (Acúmulo Titularidade)", gatVal, "provento");
   if (gas_pc > 0) proventos += linha("GAS (Atividade Específica)", gas_pc, "provento");
@@ -4536,14 +4594,12 @@ function calcular() {
   if (auxalimSp > 0) proventos += linha(`VA/VR SP (${diasVA} dias × ${fmt(valEl('auxalim_sp_dia'))})`, auxalimSp, "provento");
   if (ale_pm > 0) proventos += linha("ALE (Adic. Local Exercício)", ale_pm, "provento");
   if (ensino > 0) proventos += linha("Retribuição Função Ensino", ensino, "provento");
-  if (auxfard_pm > 0) proventos += linha("Auxílio-Fardamento", auxfard_pm, "provento");
   if (adicNoturno_pm > 0) proventos += linha("Adicional Noturno", adicNoturno_pm, "provento");
   if (gretRj > 0) proventos += linha("GRET PMERJ (" + ((c.gretPct || 0) * 100).toFixed(1).replace('.', ',') + "% sobre soldo)", gretRj, "provento");
   if (ghpRj > 0) proventos += linha("GHP PMERJ (" + (ghpRjPctAplicado * 100).toFixed(0) + "% sobre soldo)", ghpRj, "provento");
   if (gramRj > 0) proventos += linha("GRAM PMERJ (62,5% sobre soldo+GRET+GHP)", gramRj, "provento");
   if (auxalimRj > 0) proventos += linha("Auxílio-Alimentação", auxalimRj, "provento");
   if (auxtranspRj > 0) proventos += linha("Auxílio-Transporte", auxtranspRj, "provento");
-  if (auxfardRj > 0) proventos += linha("Auxílio-Fardamento", auxfardRj, "provento");
   if (lotacaoRj > 0) proventos += linha("Gratif. Lotação Especial", lotacaoRj, "provento");
   if (ghpPcRj > 0) proventos += linha("GHP PCERJ (" + (ghpPcRjPctAplicado * 100).toFixed(0) + "% sobre vencimento-base)", ghpPcRj, "provento");
   if (pericRj > 0) proventos += linha("Adic. Periculosidade (230%)", pericRj, "provento");
@@ -4554,15 +4610,12 @@ function calcular() {
   if (locespRj > 0) proventos += linha("Gratif. Localidade Especial", locespRj, "provento");
   if (adeMgPm > 0) proventos += linha("ADE (Adic. Desempenho)", adeMgPm, "provento");
   if (vpniMgPm > 0) proventos += linha("VPNI", vpniMgPm, "provento");
-  if (fardamentoMgPm > 0) proventos += linha("Abono Fardamento", fardamentoMgPm, "provento");
   if (auxalimMgPm > 0) proventos += linha(`Auxílio-Alimentação MG (${diasVA} dias)`, auxalimMgPm, "provento");
   if (adeMgPc > 0) proventos += linha("ADE (Adic. Desempenho PC)", adeMgPc, "provento");
   if (gapMgPc > 0) proventos += linha("Gratif. Aprimoramento Profissional", gapMgPc, "provento");
-  if (vestimentaMgPc > 0) proventos += linha("Auxílio Vestimenta", vestimentaMgPc, "provento");
   if (auxalimMgPc > 0) proventos += linha(`Auxílio-Alimentação MG (${diasVA} dias)`, auxalimMgPc, "provento");
   if (cetBaPm > 0) proventos += linha("CET (Cond. Especial Trabalho)", cetBaPm, "provento");
   if (gapBaValor > 0) proventos += linha(`GAP PMBA — Referência ${gapBaRefLabel}`, gapBaValor, "provento");
-  if (auxfardBaPm > 0) proventos += linha("Auxílio-Fardamento PMBA", auxfardBaPm, "provento");
   if (auxalimBa > 0) proventos += linha("Auxílio-Alimentação", auxalimBa, "provento");
   if (cetBaPc > 0) proventos += linha("CET / Verba percentual informada", cetBaPc, "provento");
   if (gratBaPc > 0) proventos += linha(`${gratBaPcLabel} — Referência ${gratBaPcRefLabel}`, gratBaPc, "provento");
@@ -4570,7 +4623,13 @@ function calcular() {
   if (auxalimPr > 0) proventos += linha("Auxílio-Alimentação PR", auxalimPr, "provento");
   if (gipBaPc > 0) proventos += linha("GIP / Verba variável informada", gipBaPc, "provento");
   if (gqualBaPc > 0) proventos += linha("Gratif. Qualificação Profissional", gqualBaPc, "provento");
-  if (extraVal > 0 || decimoVal > 0 || feriasVal > 0 || abonoTransfVal > 0 || lpremioVal > 0 || acaoInsalVal > 0) proventos += linhaGrupo('Eventos, extras e parcelas não mensais');
+  if (extraVal > 0 || decimoVal > 0 || feriasVal > 0 || abonoTransfVal > 0 || lpremioVal > 0 || acaoInsalVal > 0 || auxfard_pm > 0 || auxfardRj > 0 || fardamentoMgPm > 0 || vestimentaMgPc > 0 || auxfardBaPm > 0) proventos += linhaGrupo('Eventos, extras e parcelas não mensais');
+  if (acaoInsalVal > 0) proventos += linha("Ação Insalubridade (retroativo)", acaoInsalVal, "provento");
+  if (auxfard_pm > 0) proventos += linha("Auxílio-Fardamento PMESP", auxfard_pm, "provento");
+  if (auxfardRj > 0) proventos += linha("Auxílio-Fardamento PMERJ", auxfardRj, "provento");
+  if (fardamentoMgPm > 0) proventos += linha("Abono Fardamento PMMG", fardamentoMgPm, "provento");
+  if (vestimentaMgPc > 0) proventos += linha("Auxílio Vestimenta PCMG", vestimentaMgPc, "provento");
+  if (auxfardBaPm > 0) proventos += linha("Auxílio-Fardamento PMBA", auxfardBaPm, "provento");
   if (extraVal > 0) proventos += linha(extraLabel, extraVal, "provento");
   if (decimoVal > 0) proventos += linha("13º Salário", decimoVal, "provento");
   if (feriasVal > 0) proventos += linha(`Férias + 1/3 (${ferias} dias)`, feriasVal, "provento");
@@ -4593,7 +4652,7 @@ function calcular() {
   if (descPMPR > 0) descontos += linha("FASPM / Associação", descPMPR, "desconto");
   if (descPCPR > 0) descontos += linha("Sindicato / Associação PCPR", descPCPR, "desconto");
   if (descGeral > 0) descontos += linha("Empréstimo / Consignado", descGeral, "desconto");
-  if (pensaoVal > 0) descontos += linha(`Pensão Alimentícia (${valEl('pensao')}%)`, pensaoVal, "desconto");
+  if (pensaoVal > 0) descontos += linha(`Pensão Alimentícia (${pensaoPct}%)`, pensaoVal, "desconto");
   descontos += subtotal("Total Descontos", totalDescontos);
 
   document.getElementById('proventos').innerHTML = proventos;
@@ -5143,6 +5202,10 @@ function limparFormulario() {
   };
   Object.keys(defs).forEach(id => { const el = document.getElementById(id); if (el) el.value = defs[id]; });
 
+  // Recria o seletor de cargos para voltar ao cargo padrão marcado da instituição atual,
+  // em vez de deixar o primeiro item da tabela após o reset dos selects.
+  popularCargos(currInst);
+
   localStorage.removeItem(STORAGE_KEY);
   localStorage.removeItem(STORAGE_KEY_CENARIO);
   calcular();
@@ -5252,6 +5315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listeners
   classificarCamposCalculadora();
   atualizarModoCalculadora(localStorage.getItem('usegpub_calc_modo') || 'avancado');
+  atualizarTitulosCalculadora();
 
   document.querySelectorAll('#page-calculadora input, #page-calculadora select').forEach(el => {
     el.addEventListener('input', e => { validarCampoCalculadora(e.target); recalcDebounced(); });
