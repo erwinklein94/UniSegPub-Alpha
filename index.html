@@ -2,6 +2,12 @@
 <html lang="pt-BR">
 <head>
 
+<!-- =======================================================
+     BLOCO 01 — HEAD / CONFIGURAÇÕES INICIAIS DO SITE
+     Tags de rastreamento, metadados, fontes, tema inicial e CSS.
+     ======================================================= -->
+
+<!-- BLOCO 01.1 — Google Analytics -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHR4TCCF9D"></script>
 <script>
@@ -12,6 +18,7 @@
   gtag('config', 'G-XHR4TCCF9D');
 </script>
 
+<!-- BLOCO 01.2 — Google Ads -->
 <!-- Google Ads tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18121830612"></script>
 <script>
@@ -22,12 +29,14 @@
   gtag('config', 'AW-18121830612');
 </script>
 
+<!-- BLOCO 01.3 — Conversão do Google Ads -->
 <!-- Event snippet for Visualização de página conversion page -->
 <script>
   gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThlMFD'});
 </script>
 
 
+<!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas e auxílio-alimentação por instituição">
@@ -40,12 +49,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<!-- BLOCO 01.5 — Aplicação antecipada do tema salvo -->
 <script>
   const savedTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', savedTheme);
 </script>
 
 <style>
+  /* =======================================================
+     BLOCO 02 — CSS ORIGINAL DO SITE
+     Estrutura visual base, temas, layout, cards, formulários,
+     páginas internas, responsividade e impressão.
+     ======================================================= */
+
+  /* BLOCO 02.1 — Variáveis principais de cor e tema claro */
   :root {
     --vermelho: #e60000;
     --vermelho-escuro: #a30000;
@@ -66,6 +83,7 @@
     --item-hover: #f3f4f6;
   }
 
+  /* BLOCO 02.2 — Variáveis do tema escuro */
   [data-theme="dark"] {
     --bg-site: #0a0a0c;
     --bg-card: #141518;
@@ -80,6 +98,7 @@
     --item-hover: #23252a;
   }
 
+  /* BLOCO 02.3 — Cores dinâmicas por instituição */
   body[data-inst="pcsp"] { --vermelho: #4f4f4f; --vermelho-escuro: #2b2b2b; }
   body[data-inst="pmerj"] { --vermelho: #1E3084; --vermelho-escuro: #142057; }
   body[data-inst="pcerj"] { --vermelho: #6B7280; --vermelho-escuro: #4B5563; }
@@ -88,6 +107,7 @@
   body[data-inst="pmba"] { --vermelho: #967117; --vermelho-escuro: #5c4308; }
   body[data-inst="pcba"] { --vermelho: #333333; --vermelho-escuro: #111111; }
 
+  /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -106,6 +126,7 @@
       radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
   }
 
+  /* BLOCO 02.5 — Cabeçalho superior */
   header {
     background-color: var(--header-bg);
     border-bottom: 4px solid var(--vermelho);
@@ -168,6 +189,7 @@
   .stripe-white { height: 2px; background: #ffffff; }
   .stripe-black { height: 4px; background: #111; }
 
+  /* BLOCO 02.6 — Menu lateral, overlay e botão hambúrguer */
   .menu-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 10px; z-index: 101; }
   .menu-btn span { width: 26px; height: 3px; background: var(--header-text); border-radius: 2px; transition: 0.3s; }
   .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: 0.3s ease; z-index: 100; }
@@ -204,6 +226,7 @@
   .sidebar-ad img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border-input); }
   .sidebar-ad span { display: block; padding: 12px; font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; color: var(--text-main); text-align: center; text-transform: uppercase; }
 
+  /* BLOCO 02.7 — Controle de páginas/abas */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
   #page-principal.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
@@ -216,6 +239,7 @@
 
   @media (max-width: 968px) { #page-principal, #page-calculadora { margin: 20px auto; } #page-calculadora { grid-template-columns: 1fr; } .resumo { position: static !important; } }
 
+  /* BLOCO 02.8 — Página Principal: hero, botões e cards */
   .principal-hero {
     position: relative;
     overflow: hidden;
@@ -353,6 +377,7 @@
     line-height: 1.5;
   }
 
+  /* BLOCO 02.9 — Cards de cursos, livros e produtos */
   .curso-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
   .curso-card {
     display: block;
@@ -388,16 +413,19 @@
   @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .principal-hero { padding: 28px 22px; } .principal-grid { grid-template-columns: 1fr; } .header-inst-selector { grid-template-columns: 1fr; max-width: 100%; } }
 
+  /* BLOCO 02.10 — Cards gerais */
   .card { background-color: var(--bg-card); border: 1px solid var(--border-card); padding: 28px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); position: relative; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); transition: border-color 0.3s ease; }
   .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro)); transition: background 0.4s ease;}
 
   .card h2 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-input); display: flex; align-items: center; gap: 10px; }
   .card h2::before { content: ""; display: block; width: 6px; height: 20px; background-color: var(--vermelho); transform: skewX(-15deg); transition: background-color 0.4s ease;}
 
+  /* BLOCO 02.11 — Grades de formulários */
   .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .field { display: flex; flex-direction: column; }
   .field.span-2 { grid-column: span 2; }
 
+  /* BLOCO 02.12 — Exibição condicional por instituição/estado */
   .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only,
   .sp-only, .mg-only, .ba-only {
     display: none !important;
@@ -428,6 +456,7 @@
   body[data-inst="pmba"] div.alerta.pmba-only { display: block !important; }
   body[data-inst="pcba"] div.alerta.pcba-only { display: block !important; }
 
+  /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
 
   /* Tooltip */
@@ -458,6 +487,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
   .tip:hover::after { opacity: 1; }
+  /* BLOCO 02.13.1 — Responsividade do tooltip em telas pequenas */
   @media (max-width: 600px) { .tip::after { left: 0; transform: none; width: 200px; } }
 
   input[type="number"], input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select, textarea { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
@@ -465,6 +495,7 @@
   input::placeholder, textarea::placeholder { color: var(--text-muted); }
   textarea { resize: vertical; min-height: 100px; }
 
+  /* BLOCO 02.14 — Botões e linhas de ação */
   .btn-submit { background-color: var(--vermelho); color: #ffffff; border: none; padding: 14px 20px; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease; width: 100%; margin-top: 8px; }
   .btn-submit:hover { background-color: var(--vermelho-escuro); }
   .btn-submit:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
@@ -475,6 +506,7 @@
   .actions-row { display: flex; gap: 10px; margin-top: 12px; }
   .actions-row .btn-secondary { flex: 1; padding: 10px; font-size: 12px; }
 
+  /* BLOCO 02.15 — Resumo do holerite e totais */
   .resumo { position: sticky; top: 24px; align-self: start; }
 
   .total-bloco { background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%); padding: 24px; border-radius: 6px; margin-bottom: 16px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%); transition: background 0.4s ease;}
@@ -502,6 +534,7 @@
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
+  /* BLOCO 02.16 — Resultados, direitos, ações e associações */
   .result-list { display: flex; flex-direction: column; gap: 16px; }
   .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); transition: background-color 0.3s ease; }
   .direito-item.sim { border-left-color: var(--verde); background-color: rgba(32, 142, 78, 0.05); }
@@ -533,6 +566,7 @@
   .badge-info.ativa { background: rgba(32, 142, 78, 0.12); color: var(--verde); border: 1px solid var(--verde); }
   .badge-info.inativa { background: rgba(107,114,128,0.12); color: var(--text-muted); border: 1px solid var(--text-muted); }
 
+  /* BLOCO 02.17 — Alertas, toast e mensagens auxiliares */
   .alerta { background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5; }
   .alerta strong { color: var(--vermelho) !important; font-weight: 700; transition: color 0.4s ease;}
 
@@ -559,6 +593,7 @@
   .char-counter { font-size: 11px; color: var(--text-muted); text-align: right; margin-top: 4px; font-family: 'Roboto Condensed', sans-serif; }
   .char-counter.over { color: #e60000; font-weight: 700; }
 
+  /* BLOCO 02.18 — Links externos e rodapé */
   /* Inst-link em concursos */
   .concurso-link {
     display: inline-block;
@@ -576,6 +611,7 @@
   footer p strong { color: #fff; font-weight: 700; }
   footer .small-note { font-size: 11px; opacity: 0.7; margin-top: 8px; letter-spacing: 0.5px; }
 
+  /* BLOCO 02.19 — CSS de impressão do holerite */
   /* CSS Print - Holerite */
   @media print {
     header, .stripe-container, .menu-overlay, .sidebar, .menu-btn, footer,
@@ -592,6 +628,36 @@
     .breakdown h3 { display: block !important; }
   }
 
+
+
+  /* BLOCO 02.21 — Melhorias específicas da Calculadora de Vencimentos */
+  .calc-toolbar { overflow: visible; }
+  .calc-toolbar h2 { margin-bottom: 10px; }
+  .calc-toolbar-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+  .calc-toolbar-desc { color: var(--text-muted); font-size: 14px; line-height: 1.55; max-width: 720px; }
+  .calc-mode-toggle { display: inline-flex; gap: 6px; padding: 5px; border: 1px solid var(--border-input); background: var(--item-bg); border-radius: 999px; }
+  .calc-mode-toggle button { border: none; border-radius: 999px; padding: 9px 12px; background: transparent; color: var(--text-muted); font-family: 'Roboto Condensed', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; cursor: pointer; transition: 0.2s ease; }
+  .calc-mode-toggle button.active { background: var(--vermelho); color: #ffffff; }
+  .calc-legenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .calc-badge, .calc-legenda span { display: inline-flex; align-items: center; gap: 4px; border-radius: 999px; padding: 4px 8px; font-family: 'Roboto Condensed', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; border: 1px solid var(--border-input); color: var(--text-muted); background: var(--bg-card); }
+  label .calc-badge { margin-left: 4px; padding: 2px 6px; font-size: 9px; line-height: 1.1; }
+  .calc-badge.auto, .calc-legenda .auto { color: var(--verde); border-color: rgba(32,142,78,0.5); background: rgba(32,142,78,0.08); }
+  .calc-badge.manual, .calc-legenda .manual { color: var(--text-main); border-color: var(--border-input); background: var(--item-bg); }
+  .calc-badge.opcional, .calc-legenda .opcional { color: var(--azul); border-color: rgba(30,48,132,0.45); background: rgba(30,48,132,0.08); }
+  .calc-badge.estimativa, .calc-legenda .estimativa { color: var(--dourado); border-color: rgba(223,182,62,0.55); background: rgba(223,182,62,0.09); }
+  #page-calculadora.calc-simple .calc-advanced { display: none; }
+  .calc-modo-aviso { display: none; margin-top: 14px; }
+  #page-calculadora.calc-simple .calc-modo-aviso.show { display: block; }
+  .calc-mini-resumo, .calc-comparativo { background: var(--item-bg); border: 1px solid var(--border-card); border-left: 4px solid var(--vermelho); padding: 12px 14px; margin-bottom: 14px; font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+  .calc-mini-resumo strong, .calc-comparativo strong { color: var(--text-main); }
+  .linha.grupo { margin-top: 12px; padding: 10px 0 6px 0; border-bottom: 1px dashed var(--border-input); color: var(--text-main); font-family: 'Oswald', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .linha.grupo .desc { color: var(--text-main); }
+  .linha.grupo .val { display: none; }
+  .linha.info .val { color: var(--text-muted); }
+  @media (max-width: 640px) { .calc-toolbar-top { flex-direction: column; } .calc-mode-toggle { width: 100%; } .calc-mode-toggle button { flex: 1; } }
+
+
+  /* BLOCO 02.20 — Responsividade final para celular */
   @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; gap: 12px; }
     .field.span-2 { grid-column: span 1; }
@@ -605,11 +671,22 @@
 </head>
 <body data-inst="pmesp">
 
+<!-- =======================================================
+     BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
+     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
+     ======================================================= -->
+
+<!-- BLOCO 03.1 — Cabeçalho superior com botão de menu e seletor rápido de instituição -->
 <header role="banner">
   <div class="header-content">
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header-menu-tools" aria-label="Controles rápidos">
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle-header" onclick="toggleTheme()" id="theme-toggle-header" type="button" aria-label="Alternar tema claro/escuro">
+        ☀️ Claro
+      </button>
+    </div>
     <div class="header-text" id="header-text">
       <h1>Universo <span>Segurança Pública</span></h1>
       <p id="header-desc">Polícia Militar de São Paulo — Principal</p>
@@ -637,20 +714,24 @@
     </div>
   </div>
 </header>
+<!-- BLOCO 03.2 — Faixas decorativas abaixo do cabeçalho -->
 <div class="stripe-container" aria-hidden="true">
   <div class="stripe"></div>
   <div class="stripe-white"></div>
   <div class="stripe-black"></div>
 </div>
 
+<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()" aria-hidden="true"></div>
 
+<!-- BLOCO 03.4 — Menu lateral: navegação, instituição, tema, Instagram e anúncios -->
 <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
   <div class="sidebar-header">
     <h2>Menu</h2>
     <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">✕</button>
   </div>
 
+  <!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
   <div class="inst-selector">
     <label for="instituicao">Instituição</label>
     <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
@@ -673,6 +754,7 @@
     </select>
   </div>
 
+  <!-- BLOCO 03.4.2 — Links das abas/páginas -->
   <nav class="sidebar-nav" aria-label="Páginas">
     <a onclick="switchPage('principal')" id="menu-principal" class="active" tabindex="0" role="link">Principal</a>
     <a onclick="switchPage('acoes')" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
@@ -686,12 +768,8 @@
     <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">Instagram</a>
   </nav>
 
-  <div class="theme-toggle-container">
-    <button class="btn-theme" onclick="toggleTheme()" id="theme-toggle" aria-label="Alternar tema claro/escuro">
-      ☀️ Modo Claro
-    </button>
-  </div>
 
+  <!-- BLOCO 03.4.4 — Produtos parceiros no menu lateral -->
   <div class="sidebar-ad" aria-label="Produtos parceiros">
     <p>Policial padrão precisa de<br>equipamento padrão!</p>
     <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
@@ -705,12 +783,20 @@
   </div>
 </aside>
 
+<!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+<!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <main id="page-principal" class="page-section active" role="main">
+  <!-- BLOCO 04.1 — Hero inicial e botões principais -->
   <section class="principal-hero" aria-labelledby="principal-titulo">
-    <div class="principal-eyebrow">Portal prático para segurança pública</div>
-    <h1 class="principal-title" id="principal-titulo">Tudo que o profissional precisa consultar em um só <span>lugar</span></h1>
+    <!-- BLOCO 04.1.1 — Título da página principal -->
+    <div class="principal-hero-top">
+      <div class="principal-title-area">
+        <div class="principal-eyebrow">Portal prático para segurança pública</div>
+        <h1 class="principal-title" id="principal-titulo">Tudo que o profissional precisa consultar em um só <span>lugar</span></h1>
+      </div>
+    </div>
     <p class="principal-subtitle">
       Escolha sua instituição no topo do site e navegue por simulador de vencimentos, direitos, concursos, ações judiciais, associações, cursos preparatórios e parceiros. O objetivo é simples: entregar informação útil, organizada e rápida para quem vive a rotina da segurança pública.
     </p>
@@ -721,6 +807,7 @@
     </div>
   </section>
 
+  <!-- BLOCO 04.2 — Cards de resumo das áreas -->
   <section class="principal-grid" aria-label="Resumo das áreas do site">
     <article class="principal-card" onclick="switchPage('calculadora')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('calculadora')">
       <h3>Calculadora de Vencimentos</h3>
@@ -747,6 +834,16 @@
       <p>Resumo das principais teses e alertas jurídicos que podem interessar a policiais ativos e inativos.</p>
       <span class="principal-tag">Ver ações</span>
     </article>
+    <article class="principal-card" onclick="switchPage('associacoes')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('associacoes')">
+      <h3>Associações e Sindicatos</h3>
+      <p>Consulte entidades representativas e de apoio relacionadas à instituição selecionada.</p>
+      <span class="principal-tag">Ver entidades</span>
+    </article>
+    <article class="principal-card" onclick="switchPage('livros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('livros')">
+      <h3>Livros</h3>
+      <p>Espaço destinado a livros, e-books e materiais de desenvolvimento pessoal, produtividade, liderança e preparação para concursos.</p>
+      <span class="principal-tag">Ver livros</span>
+    </article>
     <article class="principal-card" onclick="switchPage('parceiros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('parceiros')">
       <h3>Parceiros</h3>
       <p>Espaço para empresas anunciarem, sugerirem parcerias e apresentarem soluções para o público da segurança pública.</p>
@@ -755,9 +852,34 @@
   </section>
 </main>
 
-<main id="page-calculadora" class="page-section" role="main">
+<!-- BLOCO 05 — PÁGINA CALCULADORA DE VENCIMENTOS -->
+<main id="page-calculadora" class="page-section calc-advanced-mode" role="main">
   <div>
+    <div class="card calc-toolbar">
+      <!-- BLOCO 05.0 — Controles de modo e legenda da calculadora -->
+      <div class="calc-toolbar-top">
+        <div>
+          <h2>Calculadora de Vencimentos</h2>
+          <p class="calc-toolbar-desc">Use o modo simples para uma simulação rápida ou o modo avançado para informar adicionais, verbas eventuais, plantões, auxílios e descontos específicos. Os valores são estimativos e devem ser conferidos com o contracheque e normas oficiais.</p>
+        </div>
+        <div class="calc-mode-toggle" aria-label="Modo de uso da calculadora">
+          <button type="button" id="btn_calc_simples" onclick="atualizarModoCalculadora('simples')">Simples</button>
+          <button type="button" id="btn_calc_avancado" class="active" onclick="atualizarModoCalculadora('avancado')">Avançado</button>
+        </div>
+      </div>
+      <div class="calc-legenda" aria-label="Legenda dos campos da calculadora">
+        <span class="auto">Automático</span>
+        <span class="manual">Manual</span>
+        <span class="opcional">Opcional</span>
+        <span class="estimativa">Estimativa</span>
+      </div>
+      <div id="calc_modo_aviso" class="alerta calc-modo-aviso">
+        <strong>Atenção:</strong> existem valores preenchidos em campos avançados que continuam entrando no cálculo mesmo quando o modo simples oculta esses campos. Abra o modo avançado para revisar ou limpar esses valores.
+      </div>
+    </div>
+
     <div class="card">
+      <!-- BLOCO 05.1 — Identificação básica do servidor -->
       <h2>Identificação do Servidor</h2>
       <div class="form-grid">
         <div class="field span-2">
@@ -765,12 +887,16 @@
           <select id="cargo" aria-label="Selecione o posto, graduação ou cargo"></select>
         </div>
         <div class="field">
-          <label for="dias">Dias trabalhados (mês)</label>
-          <input type="number" id="dias" value="30" min="0" max="31" aria-label="Dias trabalhados no mês"/>
+          <label for="dias">Proporção do mês remunerado <span class="tip" data-tip="Use 30 para mês cheio. Use menos apenas em caso de admissão, afastamento ou pagamento proporcional. O cálculo não ultrapassa 30 dias para evitar salário-base acima de 100% do mês.">?</span></label>
+          <input type="number" id="dias" value="30" min="0" max="30" aria-label="Proporção do mês remunerado"/>
         </div>
         <div class="field">
-          <label for="dependentes">Dependentes (IRRF) <span class="tip" data-tip="Filhos até 21 anos (24 se universitários), cônjuge ou pais com renda baixa. Cada dependente reduz R$ 189,59 da base de cálculo do IRRF.">?</span></label>
+          <label for="dependentes">Dependentes para IRRF <span class="tip" data-tip="Filhos até 21 anos (24 se universitários), cônjuge ou pais com renda baixa. Cada dependente reduz R$ 189,59 da base de cálculo do IRRF.">?</span></label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
+        </div>
+        <div class="field pc-only">
+          <label for="dependentes_saude">Dependentes no plano de saúde <span class="tip" data-tip="Campo separado dos dependentes de IRRF. Use aqui apenas dependentes vinculados ao plano de saúde quando o cálculo do desconto usar dependentes, como no IAMSPE.">?</span></label>
+          <input type="number" id="dependentes_saude" value="0" min="0" max="20"/>
         </div>
         <div class="field">
           <label for="dias_va">Dias VA/VR / Aux. alimentação <span class="tip" data-tip="Quantidade de dias efetivamente trabalhados ou úteis considerados para vale-alimentação, diária alimentação ou ajuda de custo. Para verbas fixas mensais, o campo não altera o valor.">?</span></label>
@@ -779,10 +905,12 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card calc-advanced">
+      <!-- BLOCO 05.2 — Adicionais, vantagens, auxílios e gratificações -->
       <h2>Adicionais e Vantagens</h2>
       <div class="form-grid">
 
+        <!-- BLOCO 05.2.1 — VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
         <!-- VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
         <div class="field sp-only">
           <label for="auxalim_sp_dia">SP — VA/VR por dia (UFESP 2026) <span class="tip" data-tip="Valor indenizatório por dia efetivamente trabalhado. Por padrão, o simulador usa 1 UFESP de 2026 (R$ 38,42) por dia. Ajuste se o holerite/órgão usar regra diferente.">?</span></label>
@@ -797,9 +925,10 @@
           <input type="number" id="auxalim_mg_meta_dia" value="0" min="0" step="0.01"/>
         </div>
 
+        <!-- BLOCO 05.2.2 — TEMPO DE SERVIÇO -->
         <!-- TEMPO DE SERVIÇO -->
         <div class="field pm-only">
-          <label for="quinquenios">Quinquênios (5% cada) <span class="tip" data-tip="Adicional por tempo de serviço. PMESP: 5% sobre o vencimento a cada 5 anos completos, até no máximo 6 quinquênios (30 anos).">?</span></label>
+          <label for="quinquenios">Quinquênios (5% cada) <span class="tip" data-tip="Adicional por tempo de serviço. PMESP: 5% a cada 5 anos completos, calculado sobre a soma do padrão e da RETP. Quando houver pro labore legalmente aplicável, confira o holerite/ato específico.">?</span></label>
           <input type="number" id="quinquenios" value="0" min="0" max="6"/>
         </div>
         <div class="field pc-only">
@@ -807,8 +936,8 @@
           <input type="number" id="quinquenios_sp_pc" value="0" min="0" max="6"/>
         </div>
         <div class="field pmerj-only">
-          <label for="trienios">Triênios PMERJ (10% cada) <span class="tip" data-tip="PMERJ: adicional de 10% a cada 3 anos de efetivo serviço, calculado sobre o soldo. Limite: 13 triênios.">?</span></label>
-          <input type="number" id="trienios" value="0" min="0" max="13"/>
+          <label for="trienios">Triênios PMERJ (10% cada) <span class="tip" data-tip="PMERJ: adicional por tempo de serviço de 10% a 60%, calculado sobre soldo + GRET + GHP + GRAM. Atenção: extinto para ingressantes por edital publicado a partir de 01/01/2022; use apenas se houver direito adquirido.">?</span></label>
+          <input type="number" id="trienios" value="0" min="0" max="6"/>
         </div>
         <div class="field pcerj-only">
           <label for="quinquenios_rj_pc">Adic. Tempo Serviço (5%/qq.) <span class="tip" data-tip="PCERJ Lei 11.003/2025: 5% a cada 5 anos completos.">?</span></label>
@@ -827,34 +956,36 @@
           <input type="number" id="anuenios_ba_pm" value="0" min="0" max="35"/>
         </div>
         <div class="field pmba-only">
-          <label for="cet_ba_pm">CET (%) <span class="tip" data-tip="CET = Condição Especial de Trabalho. Gratificação variável conforme o local e função, geralmente entre 25% e 125%.">?</span></label>
-          <input type="number" id="cet_ba_pm" value="25" min="0" max="125" step="1"/>
+          <label for="cet_ba_pm">CET (%) <span class="tip" data-tip="CET = Condição Especial de Trabalho. Gratificação variável conforme o local e função, geralmente entre 25% e 125%. O campo começa zerado para evitar superestimar o salário; preencha somente se constar no contracheque ou norma aplicável.">?</span></label>
+          <input type="number" id="cet_ba_pm" value="0" min="0" max="125" step="1"/>
         </div>
         <div class="field pcba-only">
           <label for="anuenios_ba_pc">Anuênios (1% ao ano) <span class="tip" data-tip="PCBA: 1% sobre o vencimento a cada ano de efetivo serviço.">?</span></label>
           <input type="number" id="anuenios_ba_pc" value="0" min="0" max="35"/>
         </div>
         <div class="field pcba-only">
-          <label for="cet_ba_pc">CET (%) <span class="tip" data-tip="Gratificação variável de 25% a 125% sobre o vencimento conforme o cargo e setor.">?</span></label>
-          <input type="number" id="cet_ba_pc" value="25" min="0" max="125" step="1"/>
+          <label for="cet_ba_pc">CET (%) <span class="tip" data-tip="Gratificação variável de 25% a 125% sobre o vencimento conforme o cargo e setor. O campo começa zerado para evitar superestimar o salário; preencha somente se constar no contracheque ou norma aplicável.">?</span></label>
+          <input type="number" id="cet_ba_pc" value="0" min="0" max="125" step="1"/>
         </div>
 
+        <!-- BLOCO 05.2.3 — SEXTA-PARTE -->
         <!-- SEXTA-PARTE -->
         <div class="field pm-only">
-          <label for="sextaparte">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço, o servidor recebe 1/6 do vencimento como gratificação adicional.">?</span></label>
+          <label for="sextaparte">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço. Na PMESP, o cálculo foi ajustado para considerar padrão + RETP + quinquênio, conforme estrutura da LC 731/1993.">?</span></label>
           <select id="sextaparte">
             <option value="0">Não</option>
             <option value="1">Sim — 1/6 sobre vencimentos</option>
           </select>
         </div>
         <div class="field pc-only">
-          <label for="sextaparte_sp_pc">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço, o servidor recebe 1/6 do vencimento.">?</span></label>
+          <label for="sextaparte_sp_pc">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço. Na PCSP, o cálculo foi ajustado para considerar padrão + RETP + quinquênio, conforme estrutura da LC 731/1993.">?</span></label>
           <select id="sextaparte_sp_pc">
             <option value="0">Não</option>
             <option value="1">Sim — 1/6 sobre vencimentos</option>
           </select>
         </div>
 
+        <!-- BLOCO 05.2.4 — ADE / VPNI / GRATIFICAÇÕES ESPECÍFICAS -->
         <!-- ADE / VPNI -->
         <div class="field pmmg-only">
           <label for="ade_mg_pm">ADE (Adic. Desempenho %) <span class="tip" data-tip="Adicional de Desempenho concedido com base nas avaliações periódicas. Aplica-se sobre o subsídio.">?</span></label>
@@ -873,19 +1004,29 @@
           <input type="number" id="gap_mg_pc" value="0" min="0" max="35" step="1" placeholder="Ex: 10"/>
         </div>
 
-        <!-- PCERJ Periculosidade / GTC -->
+        <!-- BLOCO 05.2.5 — PCERJ: AAP, representação, GHP, GATC e verbas específicas -->
+        <!-- PCERJ AAP / Representação / GHP / GATC -->
         <div class="field pcerj-only">
-          <label for="periculosidade_rj">Adicional Periculosidade <span class="tip" data-tip="Adicional de 230% sobre o vencimento previsto na Lei 11.003/2025 para todas as carreiras da Polícia Civil RJ, exceto Delegado.">?</span></label>
+          <label for="periculosidade_rj">AAP / Representação <span class="tip" data-tip="Conforme a Lei 11.003/2025: AAP de 230% sobre o vencimento-base para policiais civis, exceto Delegados; Delegados recebem verba de representação de 212% sobre o vencimento-base.">?</span></label>
           <select id="periculosidade_rj">
-            <option value="1" selected>Sim — 230% sobre vencimento</option>
-            <option value="0">Não optante</option>
+            <option value="auto" selected>Automático conforme cargo</option>
+            <option value="1">Forçar AAP 230% (não Delegado)</option>
+            <option value="0">Não computar</option>
           </select>
         </div>
         <div class="field pcerj-only">
-          <label for="gtc_rj">Gratif. Técnico-Científica <span class="tip" data-tip="Acréscimo de 100% sobre o vencimento para Peritos Criminais e Médicos Legistas.">?</span></label>
+          <label for="ghp_rj_pc">GHP PCERJ <span class="tip" data-tip="O Caderno de Remuneração RJ apresenta GHP no valor máximo: 100% para a maioria dos cargos e 105% para Delegados. Use 'não computar' caso o servidor não receba a parcela máxima.">?</span></label>
+          <select id="ghp_rj_pc">
+            <option value="auto" selected>Conforme tabela oficial (máximo)</option>
+            <option value="0">Não computar</option>
+          </select>
+        </div>
+        <div class="field pcerj-only">
+          <label for="gtc_rj">GATC Técnico-Científica <span class="tip" data-tip="Gratificação de Atividade Técnico-Científica de 100% sobre o vencimento-base, aplicada aos cargos técnico-científicos indicados na tabela remuneratória oficial.">?</span></label>
           <select id="gtc_rj">
-            <option value="0" selected>Não se aplica</option>
-            <option value="1">Sim — +100% sobre venc.</option>
+            <option value="auto" selected>Automático conforme cargo</option>
+            <option value="1">Forçar GATC 100%</option>
+            <option value="0">Não computar</option>
           </select>
         </div>
         <div class="field pcerj-only">
@@ -896,24 +1037,30 @@
           <label for="locesp_rj">Gratif. Localidade Especial (R$) <span class="tip" data-tip="Verba para policiais lotados em áreas de difícil provimento ou risco elevado.">?</span></label>
           <input type="number" id="locesp_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
+        <div class="field span-2 pcerj-only">
+          <div class="alerta legal">
+            <strong>PCERJ:</strong> remuneração reestruturada pela Lei 11.003/2025 e conferida pelo Caderno de Remuneração RJ/2026. AAP/representação, GHP e GATC são calculadas por parcelas separadas para evitar duplicidade. O auxílio-alimentação é informado como total mensal estimado.
+          </div>
+        </div>
 
+        <!-- BLOCO 05.2.6 — INSALUBRIDADE / PERICULOSIDADE / VERBAS DE RISCO -->
         <!-- INSALUBRIDADE -->
         <div class="field pm-only">
           <label for="insalubridade">Insalubridade (grau) <span class="tip" data-tip="Adicional de insalubridade calculado sobre o salário-mínimo nacional 2026 (R$ 1.621). Mínimo 10%, médio 20%, máximo 40%.">?</span></label>
           <select id="insalubridade">
-            <option value="0.40" selected>Máximo (40% SM)</option>
+            <option value="0" selected>Não computar</option>
+            <option value="0.40">Máximo (40% SM)</option>
             <option value="0.20">Médio (20% SM)</option>
             <option value="0.10">Mínimo (10% SM)</option>
-            <option value="0">Sem insalubridade</option>
           </select>
         </div>
         <div class="field pc-only">
           <label for="insalubridade_sp_pc">Insalubridade (grau) <span class="tip" data-tip="Calculado em % do salário-mínimo 2026 (R$ 1.621).">?</span></label>
           <select id="insalubridade_sp_pc">
-            <option value="0.40" selected>Máximo (40% SM)</option>
+            <option value="0" selected>Não computar</option>
+            <option value="0.40">Máximo (40% SM)</option>
             <option value="0.20">Médio (20% SM)</option>
             <option value="0.10">Mínimo (10% SM)</option>
-            <option value="0">Sem insalubridade</option>
           </select>
         </div>
         <div class="field pm-only">
@@ -973,9 +1120,9 @@
 
         <!-- PMERJ - GHP, LOTAÇÃO ESP, AUX ALIMENTAÇÃO -->
         <div class="field pmerj-only">
-          <label for="auxalim_rj">Auxílio-Alimentação (R$ 433,80) <span class="tip" data-tip="Verba indenizatória mensal. Não incide previdência nem IRRF.">?</span></label>
+          <label for="auxalim_rj">PMERJ — Etapa de alimentação mensal <span class="tip" data-tip="Valor mensal indenizatório da etapa de alimentação da PMERJ. Este campo já representa o total mensal e não é multiplicado pelos dias VA/VR.">?</span></label>
           <select id="auxalim_rj">
-            <option value="433.80" selected>Receber R$ 433,80</option>
+            <option value="433.80" selected>Receber R$ 433,80 mensais</option>
             <option value="0">Não recebe</option>
           </select>
         </div>
@@ -991,12 +1138,14 @@
           <input type="number" id="lotacao_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pmerj-only">
-          <label for="ghp_rj">GHP (Habil. Profissional %) <span class="tip" data-tip="Gratificação de Habilitação Profissional: 10% por curso de especialização (CFC, CFAP), 20% (CAS), 30% (CAO/CSP).">?</span></label>
+          <label for="ghp_rj">GHP PMERJ <span class="tip" data-tip="Gratificação de Habilitação Profissional conforme tabela oficial do Caderno de Remuneração RJ/2026. O modo automático usa o percentual previsto para o cargo: 160%, 110%, 80%, 75% ou 0%, conforme a linha da tabela.">?</span></label>
           <select id="ghp_rj">
-            <option value="0" selected>Não tem</option>
-            <option value="0.10">CFC/CFAP (+10%)</option>
-            <option value="0.20">CAS/CASES (+20%)</option>
-            <option value="0.30">CAO/CSP (+30%)</option>
+            <option value="auto" selected>Automático conforme cargo</option>
+            <option value="1.60">160% sobre soldo</option>
+            <option value="1.10">110% sobre soldo</option>
+            <option value="0.80">80% sobre soldo</option>
+            <option value="0.75">75% sobre soldo</option>
+            <option value="0">Não computar</option>
           </select>
         </div>
         <div class="field pmerj-only">
@@ -1006,8 +1155,8 @@
 
         <!-- PCERJ - AUX -->
         <div class="field pcerj-only">
-          <label for="auxalim_rj_pc">Auxílio-Alimentação</label>
-          <input type="number" id="auxalim_rj_pc" value="433.80" min="0" step="0.01"/>
+          <label for="auxalim_rj_pc">PCERJ — Auxílio-Alimentação mensal estimado <span class="tip" data-tip="Decreto RJ 49.585/2025: R$ 32,00 por dia para servidores da SEPOL. Para evitar duplicidade, este campo usa o total mensal estimado. Padrão: 22 dias × R$ 32,00 = R$ 704,00. Ajuste manualmente se o contracheque vier diferente.">?</span></label>
+          <input type="number" id="auxalim_rj_pc" value="704" min="0" step="0.01" placeholder="Ex: 704,00"/>
         </div>
         <div class="field pcerj-only">
           <label for="auxtransp_rj_pc">Auxílio-Transporte</label>
@@ -1036,7 +1185,7 @@
           </select>
         </div>
         <div class="field pmba-only">
-          <label for="auxalim_ba">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Ajuste se o contracheque trouxer outro valor.">?</span></label>
+          <label for="auxalim_ba">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Este campo já representa o total mensal e não é multiplicado por dias. Ajuste se o contracheque trouxer outro valor.">?</span></label>
           <input type="number" id="auxalim_ba" value="440" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
@@ -1056,7 +1205,7 @@
           <input type="number" id="gip_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
-          <label for="auxalim_ba_pc">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Ajuste se o contracheque trouxer outro valor.">?</span></label>
+          <label for="auxalim_ba_pc">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Este campo já representa o total mensal e não é multiplicado por dias. Ajuste se o contracheque trouxer outro valor.">?</span></label>
           <input type="number" id="auxalim_ba_pc" value="440" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
@@ -1071,6 +1220,11 @@
         </div>
 
         <!-- VERBAS GERAIS -->
+        <div class="field span-2">
+          <div class="alerta">
+            <strong>Verbas eventuais:</strong> 13º, férias, abono, licença-prêmio, fardamento e retroativos aparecem separados no holerite para não serem confundidos com o salário mensal normal.
+          </div>
+        </div>
         <div class="field">
           <label for="decimo">13º Salário (proporcional)</label>
           <select id="decimo">
@@ -1094,7 +1248,8 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card calc-advanced">
+      <!-- BLOCO 05.3 — Trabalho extra por instituição -->
       <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
       <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
       <h2 class="pmerj-only">Trabalho Extra — RAS (Regime Adicional de Serviço)</h2>
@@ -1231,6 +1386,7 @@
     </div>
 
     <div class="card">
+      <!-- BLOCO 05.4 — Descontos, contribuições, previdência, IRRF e abatimentos -->
       <h2>Descontos e Contribuições</h2>
       <div class="form-grid">
         <div class="field">
@@ -1319,10 +1475,10 @@
         </div>
 
         <div class="field pcmg-only">
-          <label for="opt_ipsemg">IPSEMG (Saúde 3,2%) <span class="tip" data-tip="Assistência médica do servidor MG. Desconto de 3,2% sobre a remuneração.">?</span></label>
+          <label for="opt_ipsemg">IPSEMG Saúde <span class="tip" data-tip="Estimativa da contribuição mensal do titular pela assistência à saúde. Dependentes e coparticipações variam conforme cadastro/uso e devem ser lançados manualmente no campo Sindicato/Descontos PCMG quando necessário.">?</span></label>
           <select id="opt_ipsemg">
-            <option value="1">Sim (3,2%)</option>
-            <option value="0" selected>Não optante</option>
+            <option value="1">Sim — 3,2% titular</option>
+            <option value="0" selected>Não computar / informar manualmente</option>
           </select>
         </div>
         <div class="field pcmg-only">
@@ -1353,6 +1509,8 @@
 
       <div class="actions-row">
         <button type="button" class="btn-secondary" onclick="imprimirHolerite()" aria-label="Imprimir ou exportar holerite em PDF">📄 Exportar / Imprimir</button>
+        <button type="button" class="btn-secondary" onclick="salvarCenarioAtual()" aria-label="Salvar cenário atual para comparação">💾 Salvar Cenário</button>
+        <button type="button" class="btn-secondary" onclick="compararCenarioSalvo()" aria-label="Comparar cenário atual com o salvo">↔️ Comparar</button>
         <button type="button" class="btn-secondary" onclick="limparFormulario()" aria-label="Limpar todos os campos">🗑️ Limpar Campos</button>
       </div>
     </div>
@@ -1361,15 +1519,24 @@
 
   <aside class="resumo" aria-label="Resumo do holerite">
     <div class="card">
+      <!-- BLOCO 05.5 — Resultado do holerite simulado -->
       <h2>Holerite Simulado</h2>
+      <div id="resumo_rapido" class="calc-mini-resumo">Selecione o cargo e preencha os campos para gerar o resumo.</div>
+      <div id="calc_comparativo" class="calc-comparativo" style="display:none;"></div>
+
       <div class="total-bloco">
-        <div class="label">Salário Bruto</div>
+        <div class="label">Bruto Total Estimado</div>
         <div class="valor" id="bruto">R$ 0,00</div>
       </div>
 
       <div class="total-bloco liquido">
-        <div class="label">Salário Líquido</div>
+        <div class="label">Líquido Total Estimado</div>
         <div class="valor" id="liquido">R$ 0,00</div>
+      </div>
+
+      <div class="breakdown">
+        <h3>Resumo por Natureza</h3>
+        <div id="naturezas"></div>
       </div>
 
       <div class="breakdown">
@@ -1383,12 +1550,13 @@
       </div>
 
       <div class="alerta" id="rodape_alerta">
-        Cálculos baseados na legislação atual com projeção/ajustes 2026. <span id="rodape_ufesp">UFESP: R$ 38,42 · </span>Salário-mínimo: R$ 1.621,00 · IRRF: tabela progressiva + redutor da Lei 15.270/2025.
+        Simulação sem valor oficial. Parâmetros usados: <span id="rodape_ufesp">UFESP 2026: R$ 38,42 · </span>Salário-mínimo 2026: R$ 1.621,00 · IRRF: tabela progressiva + redutor da Lei 15.270/2025. Última revisão interna: abril/2026. Confira sempre o contracheque, setor de pessoal e normas oficiais.
       </div>
     </div>
   </aside>
 </main>
 
+<!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
 <main id="page-direitos" class="page-section" role="main">
   <style>
     #page-direitos .direitos-intro {
@@ -1436,6 +1604,7 @@
   </style>
 
   <div class="card">
+    <!-- BLOCO 06.1 — Formulário para análise de direitos -->
     <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
     <div class="direitos-intro">
       Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
@@ -1506,6 +1675,7 @@
   </div>
 
   <div class="card">
+    <!-- BLOCO 06.2 — Resultado da análise de direitos -->
     <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
     <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
       <strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
@@ -1517,6 +1687,7 @@
   </div>
 </main>
 
+<!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main id="page-concursos" class="page-section" role="main">
   <div class="card">
     <h2>Informações de Concursos (<span id="txt-inst-concursos">PMESP</span>)</h2>
@@ -1527,6 +1698,7 @@
   </div>
 </main>
 
+<!-- BLOCO 08 — PÁGINA CURSOS -->
 <main id="page-cursos" class="page-section" role="main">
   <div class="card">
     <h2>Cursos Preparatórios (<span id="txt-inst-cursos">PMESP</span>)</h2>
@@ -1623,7 +1795,7 @@
           </ol>
         </details>
 
-        <a class="curso-cta" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP na Hotmart">Click e Compre</a>
       </div>
 
       <div class="curso-card">
@@ -1846,7 +2018,7 @@
           </ul>
         </details>
 
-        <a class="curso-cta" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo na Hotmart">Click e Compre</a>
       </div>
 
       <div class="curso-card">
@@ -1875,7 +2047,7 @@
           Concurseiros.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Click e Compre</a>
       </div>
     </div>
 
@@ -1949,7 +2121,7 @@
           </ul>
         </details>
 
-        <a class="curso-cta" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir curso de Raciocínio Lógico para PCSP na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir curso de Raciocínio Lógico para PCSP na Hotmart">Click e Compre</a>
       </div>
 
       <div class="curso-card">
@@ -1986,12 +2158,13 @@
           Pessoas que querem ser aprovadas no concurso de Delegado da Polícia Civil de São Paulo.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Click e Compre</a>
       </div>
     </div>
   </div>
 </main>
 
+<!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <main id="page-acoes" class="page-section" role="main">
   <div class="card">
     <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
@@ -2002,6 +2175,7 @@
   </div>
 </main>
 
+<!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <main id="page-associacoes" class="page-section" role="main">
   <div class="card">
     <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
@@ -2013,6 +2187,7 @@
 </main>
 
 
+<!-- BLOCO 11 — PÁGINA LIVROS -->
 <main id="page-livros" class="page-section" role="main">
   <div class="card">
     <h2>Livros e E-books</h2>
@@ -2163,6 +2338,7 @@
   </div>
 </main>
 
+<!-- BLOCO 12 — PÁGINA PARCEIROS E CONTATO -->
 <main id="page-parceiros" class="page-section" role="main">
   <div class="card">
     <h2>Parceiros e Contato</h2>
@@ -2204,12 +2380,674 @@
   </div>
 </main>
 
+<!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
   <p>Desenvolvido por <strong>LOCKSTAGE</strong> — Conteúdo informativo baseado em fontes públicas.</p>
   <p class="small-note">Os valores são estimativas e referências. Confira sempre o holerite oficial e o regulamento institucional.</p>
 </footer>
 
+
+<!-- ============================================================ -->
+<!-- === CAMADA VISUAL GLASS / MODERNA ========================= -->
+<!-- === Apenas aparência: não altera HTML funcional nem JS ===== -->
+<!-- ============================================================ -->
+<!-- =======================================================
+     BLOCO 14 — CSS VISUAL GLASS / MODERNIZAÇÃO DE APARÊNCIA
+     Camada visual final: apenas aparência, sem alterar HTML funcional ou JavaScript.
+     ======================================================= -->
+<style id="visual-glass-upgrade">
+  /* BLOCO 14.1 — Variáveis visuais do estilo glass */
+  :root {
+    --bg-site: #eef2f7;
+    --bg-card: rgba(255, 255, 255, 0.74);
+    --bg-input: rgba(255, 255, 255, 0.68);
+    --border-card: rgba(15, 23, 42, 0.10);
+    --border-input: rgba(15, 23, 42, 0.14);
+    --text-main: #111827;
+    --text-muted: #64748b;
+    --header-bg: rgba(10, 13, 20, 0.82);
+    --item-bg: rgba(255, 255, 255, 0.58);
+    --item-hover: rgba(255, 255, 255, 0.82);
+
+    --glass-panel: rgba(255, 255, 255, 0.72);
+    --glass-panel-strong: rgba(255, 255, 255, 0.88);
+    --glass-panel-soft: rgba(255, 255, 255, 0.46);
+    --glass-border: rgba(15, 23, 42, 0.10);
+    --glass-border-strong: rgba(15, 23, 42, 0.16);
+    --glass-shadow: 0 24px 70px rgba(15, 23, 42, 0.13);
+    --glass-shadow-soft: 0 14px 34px rgba(15, 23, 42, 0.10);
+    --glass-blur: blur(20px) saturate(150%);
+    --radius-xl: 26px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+  }
+
+  /* BLOCO 14.2 — Ajustes glass do tema escuro */
+  [data-theme="dark"] {
+    --bg-site: #07090f;
+    --bg-card: rgba(17, 20, 30, 0.72);
+    --bg-input: rgba(255, 255, 255, 0.075);
+    --border-card: rgba(255, 255, 255, 0.11);
+    --border-input: rgba(255, 255, 255, 0.14);
+    --text-main: #f8fafc;
+    --text-muted: #a7b0c0;
+    --header-bg: rgba(7, 9, 15, 0.78);
+    --item-bg: rgba(255, 255, 255, 0.06);
+    --item-hover: rgba(255, 255, 255, 0.10);
+
+    --glass-panel: rgba(17, 20, 30, 0.68);
+    --glass-panel-strong: rgba(20, 24, 36, 0.86);
+    --glass-panel-soft: rgba(255, 255, 255, 0.055);
+    --glass-border: rgba(255, 255, 255, 0.11);
+    --glass-border-strong: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+    --glass-shadow-soft: 0 16px 42px rgba(0, 0, 0, 0.30);
+  }
+
+  /* BLOCO 14.3 — Fundo geral moderno e suavização de rolagem */
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-site);
+    background-image:
+      radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--vermelho) 18%, transparent), transparent 28%),
+      radial-gradient(circle at 88% 8%, rgba(255, 255, 255, 0.42), transparent 22%),
+      radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--vermelho) 10%, transparent), transparent 34%),
+      linear-gradient(135deg, #f8fafc 0%, #eef2f7 45%, #e5e7eb 100%);
+    background-attachment: fixed;
+  }
+
+  [data-theme="dark"] body {
+    background-image:
+      radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--vermelho) 26%, transparent), transparent 28%),
+      radial-gradient(circle at 88% 6%, rgba(255, 255, 255, 0.08), transparent 24%),
+      radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--vermelho) 16%, transparent), transparent 36%),
+      linear-gradient(135deg, #05060a 0%, #0a0e17 48%, #111827 100%);
+  }
+
+  /* BLOCO 14.4 — Cabeçalho glass */
+  header {
+    background: linear-gradient(135deg, rgba(8, 11, 18, 0.88), rgba(17, 24, 39, 0.70));
+    border-bottom: 1px solid var(--glass-border-strong);
+    box-shadow: var(--glass-shadow-soft);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  header::before {
+    background:
+      radial-gradient(circle at 14% 20%, color-mix(in srgb, var(--vermelho) 28%, transparent), transparent 22%),
+      linear-gradient(120deg, rgba(255,255,255,0.08), transparent 35%),
+      repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(255,255,255,0.025) 18px, rgba(255,255,255,0.025) 36px);
+  }
+
+  .stripe-container {
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+    opacity: 0.92;
+  }
+  .stripe { height: 4px; background: linear-gradient(90deg, transparent, var(--vermelho), transparent); }
+  .stripe-white, .stripe-black { display: none; }
+
+  .header-content { gap: 18px; }
+
+  .header-text h1 {
+    letter-spacing: 1.2px;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .header-text h1 span,
+  .principal-title span,
+  .principal-card .principal-tag,
+  .curso-detalhes summary,
+  .concurso-link {
+    text-shadow: 0 0 20px color-mix(in srgb, var(--vermelho) 35%, transparent);
+  }
+
+  .header-inst-selector,
+  .inst-selector,
+  .theme-toggle-container {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-left: 1px solid color-mix(in srgb, var(--vermelho) 60%, rgba(255,255,255,0.25));
+    border-radius: var(--radius-lg);
+    clip-path: none !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  .header-inst-selector select,
+  .inst-selector select,
+  /* BLOCO 14.8 — Campos de formulário no estilo glass */
+  input[type="number"],
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  select,
+  textarea {
+    background: var(--bg-input);
+    border: 1px solid var(--border-input);
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  .header-inst-selector select:focus {
+    border-color: var(--vermelho);
+    box-shadow:
+      0 0 0 4px color-mix(in srgb, var(--vermelho) 18%, transparent),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .menu-btn {
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .menu-btn:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--vermelho) 65%, rgba(255,255,255,0.20));
+    background: rgba(255,255,255,0.10);
+  }
+  .menu-btn span { border-radius: 999px; }
+
+  .menu-overlay {
+    background: rgba(4, 7, 12, 0.54);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* BLOCO 14.5 — Sidebar e menu lateral glass */
+  .sidebar {
+    background: var(--glass-panel-strong);
+    border-right: 1px solid var(--glass-border-strong);
+    box-shadow: 24px 0 70px rgba(0, 0, 0, 0.32);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  .sidebar-header {
+    background: linear-gradient(135deg, rgba(8, 11, 18, 0.94), rgba(17, 24, 39, 0.78));
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .sidebar-nav a {
+    margin: 3px 14px;
+    padding: 14px 16px;
+    border-left: 0;
+    border-radius: 15px;
+    letter-spacing: 0.4px;
+  }
+  .sidebar-nav a:hover {
+    background: var(--item-hover);
+    transform: translateX(2px);
+  }
+  .sidebar-nav a.active {
+    border-left-color: transparent;
+    color: var(--text-main);
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 19%, transparent), rgba(255,255,255,0.05));
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--vermelho) 36%, transparent),
+      0 10px 24px rgba(0,0,0,0.08);
+  }
+  .sidebar-nav a.active::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 9px;
+    border-radius: 999px;
+    background: var(--vermelho);
+    box-shadow: 0 0 18px var(--vermelho);
+    vertical-align: middle;
+  }
+
+  .btn-theme,
+  .btn-secondary,
+  /* BLOCO 14.9 — Botões com acabamento moderno */
+  .btn-submit,
+  .principal-btn,
+  .curso-cta {
+    border-radius: 999px;
+  }
+
+  .btn-theme,
+  .btn-secondary {
+    background: var(--glass-panel-soft);
+    border: 1px solid var(--glass-border-strong);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .btn-submit,
+  .principal-btn,
+  .curso-cta {
+    background: linear-gradient(135deg, var(--vermelho), var(--vermelho-escuro));
+    box-shadow: 0 14px 30px color-mix(in srgb, var(--vermelho) 24%, transparent);
+  }
+  .btn-submit:hover,
+  .principal-btn:hover,
+  .curso-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px color-mix(in srgb, var(--vermelho) 32%, transparent);
+  }
+  .principal-btn.secundario {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.16);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+  }
+
+  /* BLOCO 14.6 — Cards e painéis glass reutilizáveis */
+  .card,
+  .principal-hero,
+  .principal-card,
+  .curso-card,
+  .curso-detalhes,
+  .direito-item,
+  .alerta,
+  .sidebar-ad a {
+    clip-path: none !important;
+    border-radius: var(--radius-xl);
+    background: var(--glass-panel);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow-soft);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  .card,
+  .principal-card,
+  .curso-card,
+  .direito-item.acao,
+  .direito-item.associacao {
+    border-top: 1px solid var(--glass-border-strong);
+    border-left: 1px solid color-mix(in srgb, var(--vermelho) 42%, var(--glass-border));
+  }
+
+  .card::before {
+    height: 3px;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+    opacity: 0.92;
+  }
+
+  .card h2 {
+    border-bottom-color: var(--glass-border);
+  }
+  .card h2::before {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    transform: none;
+    box-shadow: 0 0 18px var(--vermelho);
+  }
+
+  /* BLOCO 14.7 — Hero principal glass */
+  .principal-hero {
+    background:
+      linear-gradient(135deg, rgba(8, 11, 18, 0.88), rgba(17, 24, 39, 0.72)),
+      radial-gradient(circle at 16% 16%, color-mix(in srgb, var(--vermelho) 34%, transparent), transparent 28%);
+    border-left: 1px solid color-mix(in srgb, var(--vermelho) 50%, rgba(255,255,255,0.12));
+    box-shadow: var(--glass-shadow);
+  }
+  .principal-hero::before {
+    color: rgba(255,255,255,0.045);
+    filter: blur(0.2px);
+  }
+  .principal-hero::after {
+    background:
+      radial-gradient(circle at 18% 18%, rgba(255,255,255,0.12), transparent 26%),
+      linear-gradient(135deg, transparent, rgba(255,255,255,0.06));
+  }
+
+  .principal-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--vermelho) 16%, rgba(255,255,255,0.06));
+    border: 1px solid color-mix(in srgb, var(--vermelho) 42%, rgba(255,255,255,0.14));
+  }
+
+  .principal-card {
+    color: var(--text-main);
+    min-height: 185px;
+  }
+  [data-theme="dark"] .principal-card { color: #ffffff; }
+  .principal-card:hover,
+  .curso-card:hover,
+  .direito-item.acao:hover,
+  .direito-item.associacao:hover,
+  .sidebar-ad a:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--vermelho) 55%, var(--glass-border-strong));
+    box-shadow: var(--glass-shadow);
+  }
+  .principal-card p { color: var(--text-muted); }
+  [data-theme="dark"] .principal-card p { color: rgba(255,255,255,0.72); }
+
+  .curso-card,
+  .direito-item.acao,
+  .direito-item.associacao {
+    border-left: 1px solid color-mix(in srgb, var(--vermelho) 50%, var(--glass-border));
+  }
+
+  .curso-meta span,
+  .badge-info,
+  .badge-acao,
+  .direito-status {
+    border-radius: 999px !important;
+  }
+
+  .direito-item.sim {
+    background: linear-gradient(135deg, rgba(32, 142, 78, 0.11), var(--glass-panel));
+  }
+  .direito-item.nao {
+    background: linear-gradient(135deg, rgba(230, 0, 0, 0.10), var(--glass-panel));
+  }
+
+  /* BLOCO 14.10 — Blocos de total e resumo do holerite */
+  .total-bloco {
+    clip-path: none !important;
+    border-radius: var(--radius-xl);
+    border: 1px solid color-mix(in srgb, var(--vermelho) 40%, rgba(255,255,255,0.15));
+    background:
+      radial-gradient(circle at 18% 18%, rgba(255,255,255,0.20), transparent 28%),
+      linear-gradient(135deg, var(--vermelho), var(--vermelho-escuro));
+    box-shadow: 0 18px 45px color-mix(in srgb, var(--vermelho) 28%, rgba(0,0,0,0.20));
+  }
+  .total-bloco.liquido {
+    background:
+      radial-gradient(circle at 20% 18%, color-mix(in srgb, var(--vermelho) 20%, transparent), transparent 30%),
+      linear-gradient(135deg, rgba(8, 11, 18, 0.92), rgba(17, 24, 39, 0.84));
+    border: 1px solid var(--glass-border-strong);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  .breakdown { border-top-color: var(--glass-border-strong); }
+  .linha { border-bottom-color: var(--glass-border); }
+  .linha.subtotal {
+    border-left: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 12%, transparent), var(--glass-panel-soft));
+  }
+
+  .alerta {
+    border-left: 1px solid color-mix(in srgb, var(--vermelho) 45%, var(--glass-border));
+  }
+  .alerta.legal { border-left-color: color-mix(in srgb, var(--azul) 65%, var(--glass-border)); }
+  .alerta.success { border-left-color: color-mix(in srgb, var(--verde) 65%, var(--glass-border)); }
+
+  .tip {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--text-muted) 12%, transparent);
+  }
+  .tip::after {
+    border-radius: 14px;
+    background: rgba(8, 11, 18, 0.92);
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .toast {
+    border-radius: 999px;
+    box-shadow: var(--glass-shadow);
+  }
+
+  .sidebar-ad p {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .sidebar-ad p::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 999px;
+    background: var(--vermelho);
+    box-shadow: 0 0 18px var(--vermelho);
+  }
+  .sidebar-ad img { border-bottom: 1px solid var(--glass-border); }
+
+  /* BLOCO 14.11 — Rodapé glass */
+  footer {
+    background: linear-gradient(135deg, rgba(8, 11, 18, 0.90), rgba(17, 24, 39, 0.76));
+    border-top: 1px solid var(--glass-border-strong);
+    box-shadow: 0 -16px 45px rgba(0,0,0,0.18);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+  footer::before {
+    height: 3px;
+    top: 0;
+    background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+  }
+
+  /* BLOCO 14.12 — Responsividade da camada glass */
+  @media (max-width: 640px) {
+    .principal-hero,
+    .card { border-radius: 22px; }
+    .principal-card,
+    .curso-card,
+    .direito-item,
+    .alerta { border-radius: 20px; }
+    .header-inst-selector { padding: 12px; }
+    .sidebar-nav a { margin-left: 10px; margin-right: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* BLOCO 14.13 — Ajustes de impressão da camada glass */
+  @media print {
+    .card,
+    .total-bloco,
+    .direito-item,
+    .alerta {
+      background: #ffffff !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+  }
+
+
+  /* BLOCO 14.14 — Correção visual dos seletores nativos de instituição
+     Objetivo: evitar lista branca com texto invisível ao abrir o <select> no tema escuro.
+     Apenas aparência. Não altera IDs, classes, opções, valores, JavaScript ou funcionalidade. */
+  .header-inst-selector select,
+  .inst-selector select {
+    color-scheme: dark;
+  }
+
+  .header-inst-selector select option,
+  .header-inst-selector select optgroup,
+  .inst-selector select option,
+  .inst-selector select optgroup,
+  select option,
+  select optgroup {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-weight: 700;
+  }
+
+  [data-theme="dark"] .header-inst-selector select option,
+  [data-theme="dark"] .header-inst-selector select optgroup,
+  [data-theme="dark"] .inst-selector select option,
+  [data-theme="dark"] .inst-selector select optgroup,
+  [data-theme="dark"] select option,
+  [data-theme="dark"] select optgroup {
+    background-color: #111827 !important;
+    color: #f9fafb !important;
+  }
+
+  .header-inst-selector select option:checked,
+  .inst-selector select option:checked,
+  select option:checked {
+    background-color: var(--vermelho) !important;
+    color: #ffffff !important;
+  }
+
+  .header-inst-selector select option:hover,
+  .inst-selector select option:hover,
+  select option:hover {
+    background-color: var(--vermelho-escuro) !important;
+    color: #ffffff !important;
+  }
+
+
+  /* BLOCO 14.15 — Complementos da página principal: cards completos */
+  .principal-hero-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .principal-title-area {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .theme-toggle-hero {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.86);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 22px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .theme-toggle-hero:hover,
+  .theme-toggle-hero:focus-visible {
+    border-color: var(--vermelho);
+    background: color-mix(in srgb, var(--vermelho) 16%, rgba(255, 255, 255, 0.08));
+    color: #ffffff;
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .principal-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 900px) {
+    .principal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 640px) {
+    .principal-hero-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .theme-toggle-hero {
+      align-self: flex-start;
+      padding: 7px 11px;
+      font-size: 10px;
+    }
+
+    .principal-grid { grid-template-columns: 1fr; }
+  }
+
+
+  /* BLOCO 14.16 — Botão discreto de tema abaixo do menu superior */
+  .header-menu-tools {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    position: relative;
+    z-index: 103;
+  }
+
+  .theme-toggle-header {
+    min-height: 26px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.86);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 20px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+
+  .theme-toggle-header:hover,
+  .theme-toggle-header:focus-visible {
+    border-color: var(--vermelho);
+    background: color-mix(in srgb, var(--vermelho) 16%, rgba(255, 255, 255, 0.08));
+    color: #ffffff;
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .principal-hero-top {
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .header-menu-tools {
+      gap: 7px;
+    }
+
+    .theme-toggle-header {
+      min-height: 24px;
+      padding: 5px 8px;
+      font-size: 9px;
+      letter-spacing: 0.45px;
+    }
+  }
+</style>
 <script>
+/* =======================================================
+   BLOCO 15 — JAVASCRIPT / DADOS E FUNCIONALIDADES
+   Dados das instituições, cálculos, navegação, tema,
+   formulários, geração de resultados e contato.
+   ======================================================= */
+
+/* BLOCO 15.1 — Constantes oficiais e parâmetros legais 2026 */
 /* ============================================================ */
 /* === CONSTANTES OFICIAIS 2026 ================================ */
 /* ============================================================ */
@@ -2223,8 +3061,10 @@ const SAL_MIN_2026 = 1621.00;        // Decreto 12.797/2025
 const ALIQ_PREV = 0.14;
 const ALIQ_IPSM = 0.105;
 const STORAGE_KEY = 'usegpub_form_v2';
+const STORAGE_KEY_CENARIO = 'usegpub_cenario_calc_v1';
 
 /* === IRRF 2026 (tabela progressiva mensal) === */
+/* BLOCO 15.2 — Tabela de IRRF e parâmetros do imposto */
 const IRRF_FAIXAS = [
   { ate: 2428.80, aliq: 0,     ded: 0      },
   { ate: 2826.65, aliq: 0.075, ded: 182.16 },
@@ -2233,6 +3073,8 @@ const IRRF_FAIXAS = [
   { ate: Infinity, aliq: 0.275, ded: 908.73 }
 ];
 const IRRF_DEP_DEDUCAO = 189.59;
+const IRRF_DESCONTO_SIMPLIFICADO = 607.20; // 25% da faixa mensal isenta da tabela progressiva (R$ 2.428,80)
+let ultimoDetalheIRRF = null;
 /* Redutor mensal da Lei 15.270/2025 */
 const IRRF_REDUTOR_LIM_TOTAL = 5000.00;
 const IRRF_REDUTOR_LIM_PARC  = 7350.00;
@@ -2243,6 +3085,7 @@ const IRRF_REDUTOR_FORMULA_B = 0.133145;
 /* === DADOS DE CARGOS (PADRÃO + GRATIF + RETP FATOR) ========== */
 /* ============================================================ */
 
+/* BLOCO 15.3 — Tabelas de cargos e remunerações por instituição */
 const CARGOS_PM = [
   { val: "cmtg",   text: "CMT G — Comandante Geral PM",          padrao: 11524.04, gratif: 1798.01, oficial: true,  retpFator: 1.0 },
   { val: "cel",    text: "CEL — Coronel PM",                     padrao: 9495.92,  gratif: 899.00,  oficial: true,  retpFator: 1.0 },
@@ -2266,58 +3109,73 @@ const CARGOS_PM = [
 ];
 
 const CARGOS_PC = [
-  { val: "del_esp", text: "Delegado de Polícia - Especial",   padrao: 9385.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_1",   text: "Delegado de Polícia - 1ª Classe",  padrao: 8650.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_2",   text: "Delegado de Polícia - 2ª Classe",  padrao: 7950.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_3",   text: "Delegado de Polícia - 3ª Classe",  padrao: 7420.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8100.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_1",   text: "Médico Legista / Perito - 1ª Classe", padrao: 7450.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_2",   text: "Médico Legista / Perito - 2ª Classe", padrao: 6850.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_3",   text: "Médico Legista / Perito - 3ª Classe", padrao: 6450.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "inv_esp", text: "Investigador / Escrivão - Especial",  padrao: 4200.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_1",   text: "Investigador / Escrivão - 1ª Classe", padrao: 3820.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_2",   text: "Investigador / Escrivão - 2ª Classe", padrao: 3450.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_3",   text: "Investigador / Escrivão - 3ª Classe", padrao: 3120.00, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
-  { val: "age_esp", text: "Agente / Aux. / Papi - Especial",     padrao: 3550.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_1",   text: "Agente / Aux. / Papi - 1ª Classe",    padrao: 3150.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_2",   text: "Agente / Aux. / Papi - 2ª Classe",    padrao: 2850.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_3",   text: "Agente / Aux. / Papi - 3ª Classe",    padrao: 2600.00, gratif: 0, oficial: false, retpFator: 1.0 }
+  // PCSP — estrutura padrão + RETP (100%). Valores da 3ª classe ancorados nos vencimentos iniciais oficiais divulgados pela Polícia Civil/SP.
+  // Demais classes mantêm progressão estimativa do simulador, ajustada pela mesma referência proporcional quando não há tabela oficial legível no HTML.
+  { val: "del_esp", text: "Delegado de Polícia - Especial",   padrao: 9510.20, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "del_1",   text: "Delegado de Polícia - 1ª Classe",  padrao: 8765.41, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "del_2",   text: "Delegado de Polícia - 2ª Classe",  padrao: 8056.08, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "del_3",   text: "Delegado de Polícia - 3ª Classe",  padrao: 7519.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8134.16, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_1",   text: "Médico Legista / Perito - 1ª Classe", padrao: 7481.42, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_2",   text: "Médico Legista / Perito - 2ª Classe", padrao: 6878.89, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_3",   text: "Médico Legista / Perito - 3ª Classe", padrao: 6477.20, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "inv_esp", text: "Investigador / Escrivão - Especial",  padrao: 3957.96, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_1",   text: "Investigador / Escrivão - 1ª Classe", padrao: 3591.58, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_2",   text: "Investigador / Escrivão - 2ª Classe", padrao: 3243.71, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_3",   text: "Investigador / Escrivão - 3ª Classe", padrao: 2939.84, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
+  { val: "age_esp", text: "Agente / Aux. / Papi - Especial",     padrao: 3345.01, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_1",   text: "Agente / Aux. / Papi - 1ª Classe",    padrao: 2968.25, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_2",   text: "Agente / Aux. / Papi - 2ª Classe",    padrao: 2685.24, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_3",   text: "Agente / Aux. / Papi - 3ª Classe",    padrao: 2449.87, gratif: 0, oficial: false, retpFator: 1.0 }
 ];
 
 const CARGOS_PMERJ = [
-  { val: "cel_rj",     text: "CEL PM — Coronel PMERJ",            padrao: 4700.00, gratif: 1850.00, oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "tencel_rj",  text: "TEN CEL PM — Tenente Coronel PMERJ", padrao: 4250.00, gratif: 950.00, oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "maj_rj",     text: "MAJ PM — Major PMERJ",               padrao: 3800.00, gratif: 600.00, oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "cap_rj",     text: "CAP PM — Capitão PMERJ",             padrao: 3200.00, gratif: 0,      oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "1ten_rj",    text: "1º TEN PM — 1º Tenente PMERJ",       padrao: 2750.00, gratif: 0,      oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "2ten_rj",    text: "2º TEN PM — 2º Tenente PMERJ",       padrao: 2400.00, gratif: 0,      oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "subten_rj",  text: "SUBTEN PM — Subtenente PMERJ",       padrao: 1900.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "1sgt_rj",    text: "1º SGT PM — 1º Sargento PMERJ",      padrao: 1750.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "2sgt_rj",    text: "2º SGT PM — 2º Sargento PMERJ",      padrao: 1620.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "3sgt_rj",    text: "3º SGT PM — 3º Sargento PMERJ",      padrao: 1500.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "cabo_rj",    text: "CABO PM — Cabo PMERJ",               padrao: 1141.30, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "sd_rj",      text: "SD PM — Soldado PMERJ",              padrao: 991.03,  gratif: 0,      oficial: false, selected: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "sdaluno_rj", text: "SD ALUNO — Soldado-Aluno (CFAP)",    padrao: 740.00,  gratif: 0,      oficial: false, retpFator: 3.0,   retpLabel: "Auxílios formação" }
+  // Tabela oficial do Caderno de Remuneração RJ — janeiro/2026.
+  // Cálculo por parcelas: Soldo + GRET + GHP + GRAM.
+  { val: "cel_rj",     text: "CEL PM — Coronel PMERJ",              padrao: 3270.72, oficial: true,  gretPct: 1.925, ghpPct: 1.60, retpFator: 0 },
+  { val: "tencel_rj",  text: "TEN CEL PM — Tenente Coronel PMERJ",  padrao: 2943.64, oficial: true,  gretPct: 1.925, ghpPct: 1.60, retpFator: 0 },
+  { val: "maj_rj",     text: "MAJ PM — Major PMERJ",                padrao: 2649.27, oficial: true,  gretPct: 1.925, ghpPct: 1.10, retpFator: 0 },
+  { val: "cap_rj",     text: "CAP PM — Capitão PMERJ",              padrao: 2384.35, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "1ten_rj",    text: "1º TEN PM — 1º Tenente PMERJ",        padrao: 2145.59, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "2ten_rj",    text: "2º TEN PM — 2º Tenente PMERJ",        padrao: 1929.73, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "asp_rj",     text: "ASP OF PM — Aspirante Oficial PMERJ", padrao: 1736.74, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "subten_rj",  text: "SUBTEN PM — Subtenente PMERJ",        padrao: 1736.74, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "1sgt_rj",    text: "1º SGT PM — 1º Sargento PMERJ",       padrao: 1596.10, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "2sgt_rj",    text: "2º SGT PM — 2º Sargento PMERJ",       padrao: 1448.93, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "3sgt_rj",    text: "3º SGT PM — 3º Sargento PMERJ",       padrao: 1318.10, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "cabo_rj",    text: "CABO PM — Cabo PMERJ",                padrao: 1141.48, oficial: false, gretPct: 1.500, ghpPct: 0.75, retpFator: 0 },
+  { val: "sd_rj",      text: "SD PM — Soldado A/B/C PMERJ",         padrao: 991.03,  oficial: false, selected: true, gretPct: 1.500, ghpPct: 0.75, retpFator: 0 },
+  { val: "sdaluno_rj", text: "SD ALUNO — Soldado-Aluno PMERJ",      padrao: 817.67,  oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0 },
+  { val: "alesfo_rj",  text: "ALUNO ESFO — Aluno EsFO PMERJ",       padrao: 1141.48, oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0 }
 ];
 
 const CARGOS_PCERJ = [
-  { val: "del_esp_rj",     text: "Delegado de Polícia - Especial", padrao: 11200.00, gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "del_1_rj",       text: "Delegado de Polícia - 1ª Classe", padrao: 10100.00, gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "del_2_rj",       text: "Delegado de Polícia - 2ª Classe", padrao: 9300.00,  gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "del_3_rj",       text: "Delegado de Polícia - 3ª Classe", padrao: 8648.00,  gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "perito_esp_rj",  text: "Perito Criminal/Legista - Esp",   padrao: 7100.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "perito_1_rj",    text: "Perito Criminal/Legista - 1ª Cl", padrao: 6450.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "perito_2_rj",    text: "Perito Criminal/Legista - 2ª Cl", padrao: 5950.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "perito_3_rj",    text: "Perito Criminal/Legista - 3ª Cl", padrao: 5500.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "piloto_rj",      text: "Piloto Policial",                  padrao: 6800.00,  gratif: 0, oficial: true,                  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_esp_rj",    text: "Oficial de PC (Insp/Inv) - Esp",  padrao: 4250.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_1_rj",      text: "Oficial de PC - 1ª Classe",        padrao: 3850.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_2_rj",      text: "Oficial de PC - 2ª Classe",        padrao: 3500.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_3_rj",      text: "Oficial de PC - 3ª Classe",        padrao: 3200.00,  gratif: 0, oficial: false, selected: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_esp_rj",    text: "Agente Polícia Científica - Esp",  padrao: 3450.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_1_rj",      text: "Agente Polícia Científica - 1ª",   padrao: 3100.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_2_rj",      text: "Agente Polícia Científica - 2ª",   padrao: 2800.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_3_rj",      text: "Agente Polícia Científica - 3ª",   padrao: 2550.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" }
+  // Tabela oficial do Caderno de Remuneração RJ — janeiro/2026, conforme Lei 11.003/2025.
+  // Cálculo por parcelas: VB + AAP/Representação + GHP máxima + GATC quando aplicável.
+  { val: "del_1_rj",       text: "Delegado de Polícia - 1ª Classe",       padrao: 7133.67, oficial: true,  delegado: true,  representacaoPct: 2.12, ghpPct: 1.05, gatcPct: 0, retpFator: 0 },
+  { val: "del_2_rj",       text: "Delegado de Polícia - 2ª Classe",       padrao: 6793.98, oficial: true,  delegado: true,  representacaoPct: 2.12, ghpPct: 1.05, gatcPct: 0, retpFator: 0 },
+  { val: "del_3_rj",       text: "Delegado de Polícia - 3ª Classe",       padrao: 6470.45, oficial: true,  delegado: true,  representacaoPct: 2.12, ghpPct: 1.05, gatcPct: 0, retpFator: 0 },
+  { val: "engtelecom_rj",  text: "Eng. Policial de Telecomunicações",     padrao: 3251.50, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "piloto_rj",      text: "Piloto Policial",                       padrao: 3251.50, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 0,    retpFator: 0 },
+  { val: "perito_1_rj",    text: "Perito Legista/Criminal - 1ª Classe",   padrao: 3251.50, oficial: true,  perito: true,    aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "perito_2_rj",    text: "Perito Legista/Criminal - 2ª Classe",   padrao: 2861.32, oficial: true,  perito: true,    aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "perito_3_rj",    text: "Perito Legista/Criminal - 3ª Classe",   padrao: 2601.20, oficial: true,  perito: true,    aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "med_1_rj",       text: "Médico Policial - 1ª Classe",           padrao: 2601.20, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "med_2_rj",       text: "Médico Policial - 2ª Classe",           padrao: 2471.14, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "med_3_rj",       text: "Médico Policial - 3ª Classe",           padrao: 2158.99, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "papilo_1_rj",    text: "Perito Papiloscopista - 1ª Classe",     padrao: 3251.50, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "papilo_2_rj",    text: "Perito Papiloscopista - 2ª Classe",     padrao: 2861.32, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "papilo_3_rj",    text: "Perito Papiloscopista - 3ª Classe",     padrao: 2601.20, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "ofpc_com_rj",    text: "Oficial de Polícia Civil - Comissário", padrao: 2861.32, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_2_rj",      text: "Oficial de Polícia Civil - 2ª Classe",  padrao: 2471.14, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_3_rj",      text: "Oficial de Polícia Civil - 3ª Classe",  padrao: 2341.07, oficial: false, selected: true,  aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_4_rj",      text: "Oficial de Polícia Civil - 4ª Classe",  padrao: 2132.97, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_5_rj",      text: "Oficial de Polícia Civil - 5ª Classe",  padrao: 2080.95, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_6_rj",      text: "Oficial de Polícia Civil - 6ª Classe",  padrao: 2028.92, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "agpc_1_rj",      text: "Agente de Polícia Científica - 1ª",     padrao: 2028.92, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "agpc_2_rj",      text: "Agente de Polícia Científica - 2ª",     padrao: 1820.84, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "agpc_3_rj",      text: "Agente de Polícia Científica - 3ª",     padrao: 1690.77, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "auxenf_rj",      text: "Aux. Enfermagem da Polícia - 1ª",       padrao: 2028.92, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 }
 ];
 
 const MG_REAJUSTE_2026 = 1.054; // Lei Estadual MG 25.804/2026 — revisão geral de 5,4% a partir de jan/2026.
@@ -2389,6 +3247,7 @@ const CARGOS_PCBA = [
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
+/* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 const ACOES_JUDICIAIS = {
   pmesp: [
     { titulo: "Quinquênio e sexta-parte — base de cálculo", status: "Verificar caso a caso", ano: "Tema recorrente", tipo: "individual", desc: "Discussão sobre a base de cálculo dos adicionais temporais. Exige análise do holerite, verba discutida, período cobrado e entendimento judicial atual.", base: "Constituição do Estado de SP, art. 129; conferir ficha financeira e decisões recentes da carreira.", fonte: "Constituição do Estado de São Paulo", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/constituicao/1989/constituicao-0-05.10.1989.html", atualizado: "Abril/2026" },
@@ -2441,6 +3300,7 @@ const ACOES_JUDICIAIS = {
   ]
 };
 
+/* BLOCO 15.5 — Base de dados das associações e sindicatos */
 const ASSOCIACOES = {
   pmesp: [
     { nome: "ACS - Associação dos Cabos e Soldados da PMESP", foco: "Praças da Polícia Militar do Estado de São Paulo", acao: "Representação institucional, apoio jurídico, pautas remuneratórias, valorização da carreira e atendimento por regionais no Estado.", site: "www.cabosesoldados.org.br", telefone: "(11) 3871-8100", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias de classe, regionais, convênios, comunicação institucional e orientação ao associado." },
@@ -2493,6 +3353,7 @@ const ASSOCIACOES = {
 };
 
 
+/* BLOCO 15.6 — Base de dados dos concursos por instituição */
 const CONCURSOS = {
   pmesp: {
     edital: "Soldado PM 2ª Classe (2025/2026) — edital PMES2502 em andamento",
@@ -2639,6 +3500,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 
+/* BLOCO 15.7 — Funções utilitárias gerais */
 const fmt = v => `R$ ${(+v || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 const valEl = id => parseFloat(document.getElementById(id)?.value) || 0;
 const BA_REFS = ['I', 'II', 'III', 'IV', 'V'];
@@ -2659,6 +3521,7 @@ function mostrarToast(msg, tipo = 'success') {
 /* ============================================================ */
 /* === UI: MENU, TEMA, TROCA DE PÁGINA ======================== */
 /* ============================================================ */
+/* BLOCO 15.8 — Menu lateral, navegação por abas e tema */
 function toggleMenu() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');
@@ -2733,12 +3596,17 @@ function toggleTheme() {
 function initTheme() {
   const tema = document.documentElement.getAttribute('data-theme');
   const btn = document.getElementById('theme-toggle');
+  const btnHero = document.getElementById('theme-toggle-hero');
+  const btnHeader = document.getElementById('theme-toggle-header');
   if (btn) btn.innerHTML = tema === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+  if (btnHero) btnHero.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+  if (btnHeader) btnHeader.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
 }
 
 /* ============================================================ */
 /* === POPULA CARGOS NO SELECT ================================ */
 /* ============================================================ */
+/* BLOCO 15.9 — Troca de instituição e popularização dos cargos */
 function popularCargos(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,
@@ -2783,8 +3651,8 @@ function mudarInstituicao(novaInstituicao) {
   const config = {
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
-    pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, IHP, GRAM e triênios." },
-    pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento e Verba de Representação/Periculosidade." },
+    pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
+    pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento-base, AAP/representação, GHP, GATC e adicionais remuneratórios." },
     pmmg:  { titulo: "PMMG",  desc: "Polícia Militar de Minas Gerais",     cor: "#7c1a1a", alertaPrev: "IPSM — 10,5% (8% previdência + 2,5% saúde compulsória) sobre o subsídio." },
     pcmg:  { titulo: "PCMG",  desc: "Polícia Civil de Minas Gerais",        cor: "#b58d3d", alertaPrev: "IPSEMG — 11% previdência + 3,2% saúde (opcional) sobre subsídio." },
     pmba:  { titulo: "PMBA",  desc: "Polícia Militar da Bahia",             cor: "#967117", alertaPrev: "Funprev-BA — 14% sobre soldo, GAP, anuênios e CET." },
@@ -2824,31 +3692,61 @@ function mudarInstituicao(novaInstituicao) {
 /* ============================================================ */
 /* === IRRF 2026 (com redutor Lei 15.270/2025) ================ */
 /* ============================================================ */
-function calcularIRRF(rendimentoTributavelMensal, baseAposPrevDep) {
-  // Etapa 1: IRRF pela tabela progressiva
+/* BLOCO 15.10 — Cálculo de IRRF, extras e holerite */
+function calcularIRRFPelaTabela(baseCalculo) {
   let irrfBruto = 0;
   for (const f of IRRF_FAIXAS) {
-    if (baseAposPrevDep <= f.ate) {
-      irrfBruto = baseAposPrevDep * f.aliq - f.ded;
+    if (baseCalculo <= f.ate) {
+      irrfBruto = baseCalculo * f.aliq - f.ded;
       break;
     }
   }
-  if (irrfBruto < 0) irrfBruto = 0;
+  return Math.max(0, irrfBruto);
+}
 
-  // Etapa 2: Redutor mensal Lei 15.270/2025
-  // Importante: o redutor incide sobre o RENDIMENTO TRIBUTÁVEL MENSAL (bruto após prev), não a base IRRF
+function aplicarRedutorIRRF(irrfBruto, rendimentoTributavelMensal) {
   let redutor = 0;
   if (rendimentoTributavelMensal <= IRRF_REDUTOR_LIM_TOTAL) {
-    redutor = irrfBruto; // zera o IR
+    redutor = irrfBruto;
   } else if (rendimentoTributavelMensal <= IRRF_REDUTOR_LIM_PARC) {
     redutor = IRRF_REDUTOR_FORMULA_A - (IRRF_REDUTOR_FORMULA_B * rendimentoTributavelMensal);
     if (redutor < 0) redutor = 0;
     if (redutor > irrfBruto) redutor = irrfBruto;
-  } else {
-    redutor = 0;
   }
+  return {
+    redutor,
+    valorFinal: Math.max(0, irrfBruto - redutor)
+  };
+}
 
-  return Math.max(0, irrfBruto - redutor);
+function calcularIRRF(rendimentoTributavelMensal, deducoesLegais) {
+  // Calcula o IRRF por dois caminhos e usa o menor imposto:
+  // 1) deduções legais: previdência + dependentes;
+  // 2) desconto simplificado mensal de R$ 607,20.
+  const deducoes = Math.max(0, Number(deducoesLegais) || 0);
+  const rendimento = Math.max(0, Number(rendimentoTributavelMensal) || 0);
+
+  const baseLegal = Math.max(0, rendimento - deducoes);
+  const irrfLegalBruto = calcularIRRFPelaTabela(baseLegal);
+  const irrfLegal = aplicarRedutorIRRF(irrfLegalBruto, rendimento);
+
+  const baseSimplificada = Math.max(0, rendimento - IRRF_DESCONTO_SIMPLIFICADO);
+  const irrfSimplificadoBruto = calcularIRRFPelaTabela(baseSimplificada);
+  const irrfSimplificado = aplicarRedutorIRRF(irrfSimplificadoBruto, rendimento);
+
+  const usarSimplificado = irrfSimplificado.valorFinal < irrfLegal.valorFinal;
+  const escolhido = usarSimplificado ? irrfSimplificado : irrfLegal;
+
+  ultimoDetalheIRRF = {
+    metodo: usarSimplificado ? 'desconto simplificado' : 'deduções legais',
+    baseLegal,
+    baseSimplificada,
+    baseUsada: usarSimplificado ? baseSimplificada : baseLegal,
+    redutor: escolhido.redutor,
+    valor: escolhido.valorFinal
+  };
+
+  return escolhido.valorFinal;
 }
 
 /* ============================================================ */
@@ -2880,59 +3778,189 @@ function valorRAS(tipo) {
 /* ============================================================ */
 function linha(desc, valor, cls = "") {
   if (Math.abs(valor) < 0.005) return "";
-  return `<div class="linha ${cls}"><span class="desc">${desc}</span><span class="val">${fmt(valor)}</span></div>`;
+  return '<div class="linha ' + cls + '"><span class="desc">' + desc + '</span><span class="val">' + fmt(valor) + '</span></div>';
+}
+function linhaGrupo(desc) {
+  return '<div class="linha grupo"><span class="desc">' + desc + '</span><span class="val"></span></div>';
 }
 function subtotal(desc, valor) {
-  return `<div class="linha subtotal"><span class="desc">${desc}</span><span class="val">${fmt(valor)}</span></div>`;
+  return '<div class="linha subtotal"><span class="desc">' + desc + '</span><span class="val">' + fmt(valor) + '</span></div>';
 }
+function escapeHtml(str = '') {
+  return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;'}[ch]));
+}
+
+let ultimoCalculo = null;
+
+function validarCampoCalculadora(el) {
+  if (!el || el.type !== 'number' || el.value === '') return;
+  let n = parseFloat(el.value);
+  if (Number.isNaN(n)) n = 0;
+  const min = el.min !== '' ? parseFloat(el.min) : null;
+  const max = el.max !== '' ? parseFloat(el.max) : null;
+  if (min !== null && n < min) n = min;
+  if (max !== null && n > max) n = max;
+  el.value = n;
+}
+
+function campoTemValorAtivo(el) {
+  if (!el || !el.id) return false;
+  if (el.tagName === 'SELECT') {
+    const padrao = el.querySelector('option[selected]')?.value ?? (el.options[0]?.value ?? '');
+    return el.value !== padrao && el.value !== '0';
+  }
+  const n = parseFloat(el.value);
+  return !Number.isNaN(n) && Math.abs(n) > 0.005;
+}
+
+function atualizarModoCalculadora(modo = 'avancado') {
+  const page = document.getElementById('page-calculadora');
+  if (!page) return;
+  const simples = modo === 'simples';
+  page.classList.toggle('calc-simple', simples);
+  page.classList.toggle('calc-advanced-mode', !simples);
+  document.getElementById('btn_calc_simples')?.classList.toggle('active', simples);
+  document.getElementById('btn_calc_avancado')?.classList.toggle('active', !simples);
+  localStorage.setItem('usegpub_calc_modo', modo);
+  const temOcultoAtivo = simples && Array.from(page.querySelectorAll('.calc-advanced input, .calc-advanced select')).some(campoTemValorAtivo);
+  document.getElementById('calc_modo_aviso')?.classList.toggle('show', temOcultoAtivo);
+}
+
+function classificarCamposCalculadora() {
+  const tipos = {
+    auto: ['cargo','dias','dias_va','quinquenios','quinquenios_sp_pc','trienios','quinquenios_rj_pc','quinquenios_mg_pm','quinquenios_mg_pc','anuenios_ba_pm','anuenios_ba_pc','sextaparte','sextaparte_sp_pc','gap_ba_nivel','grat_ba_pc_ref','opt_iamspe','opt_ipsemg'],
+    manual: ['emprestimo','pensao','fepomcopa','fepomalo','fepomran','daxv','prosaude','cbpm','cruzazul','sindicato','fuspom','familiazul','hcpm','coopm','fuspol','sindicato_rj','ipsm_copart','assoc_mg_pm','sindicato_mg_pc','planserv_ba_pm','assoc_ba_pm','planserv_ba_pc','sindicato_ba_pc','dependentes_saude'],
+    opcional: ['dependentes','auxalim_sp_dia','auxalim_mg_dia','auxalim_mg_meta_dia','insalubridade','insalubridade_sp_pc','decimo','ferias','abonotransf','lpremio','auxfard_pm','auxfard_rj','fardamento_mg_pm','vestimenta_mg_pc'],
+    estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','ghp_rj_pc','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc']
+  };
+  const nomes = { auto: 'Automático', manual: 'Manual', opcional: 'Opcional', estimativa: 'Estimativa' };
+  Object.keys(tipos).forEach(tipo => {
+    tipos[tipo].forEach(id => {
+      const el = document.getElementById(id);
+      const label = el ? document.querySelector('label[for="' + id + '"]') : null;
+      if (label && !label.querySelector('.calc-badge')) {
+        const badge = document.createElement('span');
+        badge.className = 'calc-badge ' + tipo;
+        badge.textContent = nomes[tipo];
+        label.appendChild(badge);
+      }
+    });
+  });
+}
+
+function salvarCenarioAtual() {
+  calcular();
+  if (!ultimoCalculo) return;
+  localStorage.setItem(STORAGE_KEY_CENARIO, JSON.stringify(ultimoCalculo));
+  mostrarToast('Cenário da calculadora salvo!');
+  compararCenarioSalvo(false);
+}
+
+function compararCenarioSalvo(exibirToast = true) {
+  calcular();
+  const box = document.getElementById('calc_comparativo');
+  if (!box || !ultimoCalculo) return;
+  const raw = localStorage.getItem(STORAGE_KEY_CENARIO);
+  if (!raw) {
+    if (exibirToast) mostrarToast('Salve um cenário antes de comparar.', 'error');
+    box.style.display = 'none';
+    return;
+  }
+  let salvo;
+  try { salvo = JSON.parse(raw); } catch (e) { return; }
+  const difLiq = ultimoCalculo.liquido - (salvo.liquido || 0);
+  const difBruto = ultimoCalculo.bruto - (salvo.bruto || 0);
+  const sinalLiq = difLiq >= 0 ? '+' : '-';
+  const sinalBruto = difBruto >= 0 ? '+' : '-';
+  box.style.display = 'block';
+  box.innerHTML = '<strong>Comparação com cenário salvo:</strong><br>' +
+    'Atual: ' + escapeHtml(ultimoCalculo.cargoTexto) + ' · ' + fmt(ultimoCalculo.liquido) + ' líquido.<br>' +
+    'Salvo: ' + escapeHtml(salvo.cargoTexto || 'cenário anterior') + ' · ' + fmt(salvo.liquido || 0) + ' líquido.<br>' +
+    'Diferença líquida: <strong>' + sinalLiq + fmt(Math.abs(difLiq)) + '</strong> · diferença bruta: ' + sinalBruto + fmt(Math.abs(difBruto)) + '.';
+}
+
 
 /* ============================================================ */
 /* === CÁLCULO PRINCIPAL ====================================== */
 /* ============================================================ */
+/* BLOCO 15.10.1 — Função principal da calculadora */
 function calcular() {
   const cargoVal = document.getElementById('cargo').value;
   const c = currTabela.find(x => x.val === cargoVal);
   if (!c) return;
 
   const inst = currInst;
-  const dias = Math.min(31, Math.max(0, valEl('dias')));
+  const dias = Math.min(30, Math.max(0, valEl('dias')));
   const diasVA = Math.min(31, Math.max(0, valEl('dias_va')));
   const fatorDias = dias / 30;
-  const dependentes = valEl('dependentes');
+  const dependentes = Math.min(20, Math.max(0, valEl('dependentes')));
+  const dependentesSaude = Math.min(20, Math.max(0, valEl('dependentes_saude')));
 
   // Padrão e RETP/Verba representação
-const padrao = c.padrao * fatorDias;
-const retpFator = c.retpFator || 0;
+  const padrao = c.padrao * fatorDias;
+  const retpFator = c.retpFator || 0;
 
-// Gratificação fixa do cargo, quando existir
-let gratif = (c.gratif || 0) * fatorDias;
+  // Gratificação fixa do cargo, quando existir
+  let gratif = (c.gratif || 0) * fatorDias;
 
-let retpOuVerba = 0;
-let retpLabel = "RETP";
+  let retpOuVerba = 0;
+  let retpLabel = "RETP";
 
-// SP: mantém a lógica atual de RETP/Verba Representação
-if (inst === 'pmesp' || inst === 'pcsp') {
-  retpOuVerba = padrao;
-  retpLabel = (inst === 'pmesp') ? "RETP (Representação Patrimonial)" : "Verba Representação";
-}
+  // RJ — parcelas oficiais separadas
+  let gretRj = 0;
+  let gramRj = 0;
+  let ghpRj = 0;
+  let ghpRjPctAplicado = 0;
+  let ghpPcRj = 0;
+  let ghpPcRjPctAplicado = 0;
 
-// RJ: usa o fator próprio já cadastrado no cargo
-else if (inst === 'pmerj' || inst === 'pcerj') {
-  retpOuVerba = retpFator > 1 ? padrao * (retpFator - 1) : 0;
-  retpLabel = c.retpLabel || "Gratificações Adicionais";
-}
+  // SP: RETP/verba representação calculada em 100% do padrão.
+  if (inst === 'pmesp' || inst === 'pcsp') {
+    retpOuVerba = padrao;
+    retpLabel = (inst === 'pmesp') ? "RETP (Regime Especial de Trabalho Policial Militar)" : "RETP (Regime Especial de Trabalho Policial)";
+  }
 
-// MG e BA: não possuem Verba Representação automática neste simulador
-else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
-  retpOuVerba = 0;
-  retpLabel = "";
-}
+  // PMERJ: cálculo oficial por Soldo + GRET + GHP + GRAM.
+  else if (inst === 'pmerj') {
+    const ghpOpt = document.getElementById('ghp_rj')?.value || 'auto';
+    ghpRjPctAplicado = ghpOpt === 'auto' ? (c.ghpPct || 0) : parseFloat(ghpOpt || 0);
+    gretRj = padrao * (c.gretPct || 0);
+    ghpRj = padrao * ghpRjPctAplicado;
+    gramRj = (padrao + gretRj + ghpRj) * 0.625;
+    retpOuVerba = 0;
+    retpLabel = "";
+  }
+
+  // PCERJ: Lei 11.003/2025 — AAP 230% para não Delegados; Representação 212% para Delegados.
+  else if (inst === 'pcerj') {
+    const aapOpt = document.getElementById('periculosidade_rj')?.value || 'auto';
+    if (c.delegado) {
+      retpOuVerba = padrao * (c.representacaoPct || 2.12);
+      retpLabel = "Verba de Representação Delegado (212%)";
+    } else if (aapOpt !== '0') {
+      retpOuVerba = padrao * (aapOpt === '1' ? 2.30 : (c.aapPct || 2.30));
+      retpLabel = "AAP — Adic. Atividade Perigosa (230%)";
+    } else {
+      retpOuVerba = 0;
+      retpLabel = "AAP / Representação";
+    }
+
+    const ghpPcOpt = document.getElementById('ghp_rj_pc')?.value || 'auto';
+    ghpPcRjPctAplicado = ghpPcOpt === 'auto' ? (c.ghpPct || 0) : parseFloat(ghpPcOpt || 0);
+    ghpPcRj = padrao * ghpPcRjPctAplicado;
+  }
+
+  // MG e BA: não possuem Verba Representação automática neste simulador
+  else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
+    retpOuVerba = 0;
+    retpLabel = "";
+  }
 
   // ===== Tempo de serviço =====
   let tempoVal = 0, tempoLabel = "";
-  if (inst === 'pmesp')      { tempoVal = padrao * 0.05 * Math.min(6, valEl('quinquenios')); tempoLabel = `Quinquênios (${valEl('quinquenios')}×5%)`; }
-  else if (inst === 'pcsp')  { tempoVal = padrao * 0.05 * Math.min(6, valEl('quinquenios_sp_pc')); tempoLabel = `Quinquênios (${valEl('quinquenios_sp_pc')}×5%)`; }
-  else if (inst === 'pmerj') { tempoVal = padrao * 0.10 * Math.min(13, valEl('trienios')); tempoLabel = `Triênios (${valEl('trienios')}×10%)`; }
+  if (inst === 'pmesp')      { tempoVal = (padrao + retpOuVerba) * 0.05 * Math.min(6, valEl('quinquenios')); tempoLabel = `Quinquênios PMESP (${valEl('quinquenios')}×5% sobre padrão + RETP)`; }
+  else if (inst === 'pcsp')  { tempoVal = (padrao + retpOuVerba) * 0.05 * Math.min(6, valEl('quinquenios_sp_pc')); tempoLabel = `Quinquênios PCSP (${valEl('quinquenios_sp_pc')}×5% sobre padrão + RETP)`; }
+  else if (inst === 'pmerj') { const qtdTrienios = Math.min(6, valEl('trienios')); tempoVal = (padrao + gretRj + ghpRj + gramRj) * 0.10 * qtdTrienios; tempoLabel = `Triênios PMERJ (${qtdTrienios}×10% sobre soldo+GRET+GHP+GRAM)`; }
   else if (inst === 'pcerj') { tempoVal = padrao * 0.05 * Math.min(6, valEl('quinquenios_rj_pc')); tempoLabel = `Adic. Tempo Serviço (${valEl('quinquenios_rj_pc')}×5%)`; }
   else if (inst === 'pmmg')  { tempoVal = padrao * 0.10 * Math.min(6, valEl('quinquenios_mg_pm')); tempoLabel = `Quinquênios PMMG (${valEl('quinquenios_mg_pm')}×10%)`; }
   else if (inst === 'pcmg')  { tempoVal = padrao * 0.10 * Math.min(6, valEl('quinquenios_mg_pc')); tempoLabel = `Quinquênios PCMG (${valEl('quinquenios_mg_pc')}×10%)`; }
@@ -2941,8 +3969,8 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   // ===== Sexta-parte (SP) =====
   let sextaVal = 0;
-  if (inst === 'pmesp' && valEl('sextaparte') === 1) sextaVal = (padrao + tempoVal) / 6;
-  else if (inst === 'pcsp' && valEl('sextaparte_sp_pc') === 1) sextaVal = (padrao + tempoVal) / 6;
+  if (inst === 'pmesp' && valEl('sextaparte') === 1) sextaVal = (padrao + retpOuVerba + tempoVal) / 6;
+  else if (inst === 'pcsp' && valEl('sextaparte_sp_pc') === 1) sextaVal = (padrao + retpOuVerba + tempoVal) / 6;
 
   // ===== Insalubridade dinâmica (% SM 2026) =====
   let insalVal = 0, acaoInsalVal = 0;
@@ -2977,29 +4005,25 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     auxalimSp = valEl('auxalim_sp_dia') * diasVA;
   }
 
-  // PMERJ
-  let auxalimRj = 0, auxtranspRj = 0, lotacaoRj = 0, ghpRj = 0, auxfardRj = 0;
+  // PMERJ — auxílios e verbas manuais; GRET/GHP/GRAM já foram calculadas no núcleo remuneratório RJ.
+  let auxalimRj = 0, auxtranspRj = 0, lotacaoRj = 0, auxfardRj = 0;
   if (inst === 'pmerj') {
     auxalimRj   = parseFloat(document.getElementById('auxalim_rj').value || 0);
     auxtranspRj = parseFloat(document.getElementById('auxtransp_rj').value || 0);
     lotacaoRj   = valEl('lotacao_rj');
-    ghpRj       = (padrao) * parseFloat(document.getElementById('ghp_rj').value || 0);
     auxfardRj   = valEl('auxfard_rj');
   }
 
-  // PCERJ
+  // PCERJ — GATC, auxílio-alimentação diário e verbas manuais.
   let pericRj = 0, gtcRj = 0, auxalimRjPc = 0, auxtranspRjPc = 0, adictransfRj = 0, locespRj = 0;
   if (inst === 'pcerj') {
-    pericRj  = (parseInt(document.getElementById('periculosidade_rj').value) === 1 && !c.delegado) ? padrao * 2.30 : 0;
-    if (c.delegado) pericRj = 0; // Delegado tem verba representação 212% (já no retpFator)
-    gtcRj   = parseInt(document.getElementById('gtc_rj').value) === 1 ? padrao * 1.0 : 0;
+    const gatcOpt = document.getElementById('gtc_rj')?.value || 'auto';
+    gtcRj = gatcOpt === '0' ? 0 : padrao * (gatcOpt === '1' ? 1.0 : (c.gatcPct || 0));
     auxalimRjPc   = valEl('auxalim_rj_pc');
     auxtranspRjPc = valEl('auxtransp_rj_pc');
     adictransfRj  = valEl('adictransf_rj');
     locespRj      = valEl('locesp_rj');
   }
-  // Para PCERJ c/ retpFator já computado, pericRj acima dobraria — então quando retpFator>1 (delegado/perito), zera periculosidade adicional
-  if (inst === 'pcerj' && retpFator > 1) pericRj = 0;
 
   // PMMG
   let adeMgPm = 0, vpniMgPm = 0, fardamentoMgPm = 0, auxalimMgPm = 0;
@@ -3084,18 +4108,19 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   }
 
   // ===== Verbas eventuais (13º, férias, abono, lpremio) =====
+  const baseEventosRemuneratorios = padrao + retpOuVerba + gretRj + ghpRj + gramRj + ghpPcRj + gtcRj + tempoVal + sextaVal;
   const decimoFator = parseFloat(document.getElementById('decimo').value || 0);
-  const decimoVal = (padrao + retpOuVerba + tempoVal + sextaVal) * decimoFator;
+  const decimoVal = baseEventosRemuneratorios * decimoFator;
   const ferias = valEl('ferias');
-  const feriasVal = ((padrao + retpOuVerba + tempoVal + sextaVal) / 30) * ferias * (1 + 1/3);
+  const feriasVal = (baseEventosRemuneratorios / 30) * ferias * (1 + 1/3);
   const abonoTransfVal = valEl('abonotransf');
-  const lpremioVal = valEl('lpremio') * (padrao + retpOuVerba + tempoVal + sextaVal);
+  const lpremioVal = valEl('lpremio') * baseEventosRemuneratorios;
 
   // ===== TOTAL BRUTO =====
   // Verbas remuneratórias (incidência previdência e IRRF)
   const baseRemuneratoria = padrao + retpOuVerba + tempoVal + sextaVal + insalVal + dsVal +
                             gatVal + gas_pc + ale_pm + ensino + adicNoturno_pm +
-                            ghpRj + lotacaoRj + pericRj + gtcRj + locespRj +
+                            gretRj + ghpRj + gramRj + lotacaoRj + ghpPcRj + pericRj + gtcRj + locespRj +
                             adeMgPm + vpniMgPm + adeMgPc + gapMgPc +
                             cetBaPm + gapBaValor + cetBaPc + gratBaPc + gqualBaPc +
                             decimoVal + feriasVal;
@@ -3110,6 +4135,11 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   const bruto = baseRemuneratoria + baseIndenizatoria;
 
+  const eventosRemuneratorios = decimoVal + feriasVal;
+  const eventosIndenizatorios = acaoInsalVal + auxfard_pm + auxfardRj + fardamentoMgPm + vestimentaMgPc + auxfardBaPm + abonoTransfVal + lpremioVal + extraVal;
+  const totalEventos = eventosRemuneratorios + eventosIndenizatorios;
+  const brutoMensalNormal = bruto - totalEventos;
+
   // ===== DESCONTOS =====
   // Previdência
   let aliqPrev = ALIQ_PREV;
@@ -3117,9 +4147,10 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (inst === 'pcmg') aliqPrev = 0.11;
   const previdencia = baseRemuneratoria * aliqPrev;
 
-  // IRRF (rendimento tributável = base remuneratória; base IRRF = rendTributavel - previdencia - dependentes)
-  const baseIRRF = Math.max(0, baseRemuneratoria - previdencia - (dependentes * IRRF_DEP_DEDUCAO));
-  const irrf = calcularIRRF(baseRemuneratoria, baseIRRF);
+  // IRRF 2026: compara deduções legais (previdência + dependentes) com desconto simplificado mensal.
+  const deducoesIRRFLegais = previdencia + (dependentes * IRRF_DEP_DEDUCAO);
+  const baseIRRF = Math.max(0, baseRemuneratoria - deducoesIRRFLegais);
+  const irrf = calcularIRRF(baseRemuneratoria, deducoesIRRFLegais);
 
   // Outros descontos por instituição
   let descPM = 0, descPMERJ = 0, descPCERJ = 0, descPMMG = 0, descPCMG = 0, descPMBA = 0, descPCBA = 0, descGeral = 0;
@@ -3127,7 +4158,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     descPM = valEl('fepomcopa') + valEl('fepomalo') + valEl('fepomran') + valEl('daxv') + valEl('prosaude') + valEl('cbpm') + valEl('cruzazul');
   } else if (inst === 'pcsp') {
     if (parseInt(document.getElementById('opt_iamspe').value) === 1) {
-      descPM = baseRemuneratoria * 0.02 * (1 + dependentes); // simplificado: 2% titular + 2% dep
+      descPM = baseRemuneratoria * 0.02 * (1 + dependentesSaude); // simplificado: 2% titular + 2% por dependente de saúde
     }
     descPM += valEl('sindicato');
   } else if (inst === 'pmerj') {
@@ -3137,9 +4168,9 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   } else if (inst === 'pmmg') {
     descPMMG = valEl('ipsm_copart') + valEl('assoc_mg_pm');
   } else if (inst === 'pcmg') {
-    descPMMG = valEl('sindicato_mg_pc');
+    descPCMG = valEl('sindicato_mg_pc');
     if (parseInt(document.getElementById('opt_ipsemg').value) === 1) {
-      descPMMG += baseRemuneratoria * 0.032;
+      descPCMG += baseRemuneratoria * 0.032;
     }
   } else if (inst === 'pmba') {
     descPMBA = valEl('planserv_ba_pm') + valEl('assoc_ba_pm');
@@ -3149,18 +4180,37 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   descGeral = valEl('emprestimo');
 
   // Pensão alimentícia (% sobre líquido antes da pensão)
-  const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPMBA - descPCBA - descGeral;
+  const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPCMG - descPMBA - descPCBA - descGeral;
   const pensaoVal = liquidoAntesPensao * (valEl('pensao') / 100);
 
-  const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPMBA + descPCBA + descGeral + pensaoVal;
+  const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPCMG + descPMBA + descPCBA + descGeral + pensaoVal;
   const liquido = bruto - totalDescontos;
 
   // ===== Renderização =====
   document.getElementById('bruto').textContent = fmt(bruto);
   document.getElementById('liquido').textContent = fmt(liquido);
 
+  const instNomeCurto = {pmesp:'PMESP', pcsp:'PCSP', pmerj:'PMERJ', pcerj:'PCERJ', pmmg:'PMMG', pcmg:'PCMG', pmba:'PMBA', pcba:'PCBA'}[inst] || inst.toUpperCase();
+  const resumoRapido = document.getElementById('resumo_rapido');
+  if (resumoRapido) {
+    resumoRapido.innerHTML = '<strong>' + instNomeCurto + '</strong> · ' + escapeHtml(c.text) + ' · ' + dias + ' dia(s) remunerados · ' + dependentes + ' dep. IRRF' + (inst === 'pcsp' ? ' · ' + dependentesSaude + ' dep. saúde' : '') + '.<br><strong>Bruto mensal normal:</strong> ' + fmt(brutoMensalNormal) + ' · <strong>Eventos/extras:</strong> ' + fmt(totalEventos) + ' · <strong>Descontos:</strong> ' + fmt(totalDescontos) + '.';
+  }
+
+  const naturezas = document.getElementById('naturezas');
+  if (naturezas) {
+    naturezas.innerHTML =
+      linha('Base remuneratória tributável', baseRemuneratoria, 'info') +
+      linha('Base IRRF usada (' + (ultimoDetalheIRRF ? ultimoDetalheIRRF.metodo : 'deduções legais') + ')', ultimoDetalheIRRF ? ultimoDetalheIRRF.baseUsada : baseIRRF, 'info') +
+      linha('Redutor IRRF Lei 15.270/2025', ultimoDetalheIRRF ? ultimoDetalheIRRF.redutor : 0, 'info') +
+      linha('Base indenizatória / sem incidência', baseIndenizatoria, 'info') +
+      linha('Bruto mensal normal estimado', brutoMensalNormal, 'info') +
+      linha('Eventos, extras e parcelas eventuais', totalEventos, 'info') +
+      subtotal('Total bruto estimado', bruto);
+  }
+
   let proventos = "";
-  proventos += linha(`Padrão / Soldo (${dias} dias)`, padrao, "provento");
+  proventos += linhaGrupo('Mensal normal / parcelas recorrentes');
+  proventos += linha('Padrão / Soldo (' + dias + ' dias)', padrao, "provento");
   if (gratif > 0) proventos += linha("Gratificação Posto", gratif, "provento");
   if (retpOuVerba > 0) proventos += linha(retpLabel, retpOuVerba, "provento");
   if (tempoVal > 0) proventos += linha(tempoLabel, tempoVal, "provento");
@@ -3176,14 +4226,17 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (ensino > 0) proventos += linha("Retribuição Função Ensino", ensino, "provento");
   if (auxfard_pm > 0) proventos += linha("Auxílio-Fardamento", auxfard_pm, "provento");
   if (adicNoturno_pm > 0) proventos += linha("Adicional Noturno", adicNoturno_pm, "provento");
+  if (gretRj > 0) proventos += linha("GRET PMERJ (" + ((c.gretPct || 0) * 100).toFixed(1).replace('.', ',') + "% sobre soldo)", gretRj, "provento");
+  if (ghpRj > 0) proventos += linha("GHP PMERJ (" + (ghpRjPctAplicado * 100).toFixed(0) + "% sobre soldo)", ghpRj, "provento");
+  if (gramRj > 0) proventos += linha("GRAM PMERJ (62,5% sobre soldo+GRET+GHP)", gramRj, "provento");
   if (auxalimRj > 0) proventos += linha("Auxílio-Alimentação", auxalimRj, "provento");
   if (auxtranspRj > 0) proventos += linha("Auxílio-Transporte", auxtranspRj, "provento");
   if (auxfardRj > 0) proventos += linha("Auxílio-Fardamento", auxfardRj, "provento");
   if (lotacaoRj > 0) proventos += linha("Gratif. Lotação Especial", lotacaoRj, "provento");
-  if (ghpRj > 0) proventos += linha("GHP (Habilitação Profissional)", ghpRj, "provento");
+  if (ghpPcRj > 0) proventos += linha("GHP PCERJ (" + (ghpPcRjPctAplicado * 100).toFixed(0) + "% sobre vencimento-base)", ghpPcRj, "provento");
   if (pericRj > 0) proventos += linha("Adic. Periculosidade (230%)", pericRj, "provento");
-  if (gtcRj > 0) proventos += linha("Gratif. Técnico-Científica (100%)", gtcRj, "provento");
-  if (auxalimRjPc > 0) proventos += linha("Auxílio-Alimentação", auxalimRjPc, "provento");
+  if (gtcRj > 0) proventos += linha("GATC Técnico-Científica (100%)", gtcRj, "provento");
+  if (auxalimRjPc > 0) proventos += linha("Auxílio-Alimentação PCERJ (mensal estimado)", auxalimRjPc, "provento");
   if (auxtranspRjPc > 0) proventos += linha("Auxílio-Transporte", auxtranspRjPc, "provento");
   if (adictransfRj > 0) proventos += linha("Adic. Transferência", adictransfRj, "provento");
   if (locespRj > 0) proventos += linha("Gratif. Localidade Especial", locespRj, "provento");
@@ -3204,6 +4257,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (auxalimBaPc > 0) proventos += linha("Auxílio-Alimentação BA", auxalimBaPc, "provento");
   if (gipBaPc > 0) proventos += linha("GIP / Verba variável informada", gipBaPc, "provento");
   if (gqualBaPc > 0) proventos += linha("Gratif. Qualificação Profissional", gqualBaPc, "provento");
+  if (extraVal > 0 || decimoVal > 0 || feriasVal > 0 || abonoTransfVal > 0 || lpremioVal > 0 || acaoInsalVal > 0) proventos += linhaGrupo('Eventos, extras e parcelas não mensais');
   if (extraVal > 0) proventos += linha(extraLabel, extraVal, "provento");
   if (decimoVal > 0) proventos += linha("13º Salário", decimoVal, "provento");
   if (feriasVal > 0) proventos += linha(`Férias + 1/3 (${ferias} dias)`, feriasVal, "provento");
@@ -3213,11 +4267,12 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   let descontos = "";
   descontos += linha(`Previdência (${(aliqPrev*100).toFixed(1)}%)`, previdencia, "desconto");
-  descontos += linha("IRRF (Lei 15.270/2025)", irrf, "desconto");
+  descontos += linha("IRRF (Lei 15.270/2025" + (ultimoDetalheIRRF ? " — " + ultimoDetalheIRRF.metodo : "") + ")", irrf, "desconto");
   if (descPM > 0) descontos += linha(inst === 'pcsp' ? "IAMSPE / Sindicato" : "Descontos Institucionais", descPM, "desconto");
   if (descPMERJ > 0) descontos += linha("Saúde / Cooperativa", descPMERJ, "desconto");
   if (descPCERJ > 0) descontos += linha("FUSPOL / Sindicato", descPCERJ, "desconto");
-  if (descPMMG > 0) descontos += linha("Saúde / Sindicato / Coparticipação", descPMMG, "desconto");
+  if (descPMMG > 0) descontos += linha("IPSM / Associação / Coparticipação", descPMMG, "desconto");
+  if (descPCMG > 0) descontos += linha("IPSEMG / Sindicato", descPCMG, "desconto");
   if (descPMBA > 0) descontos += linha("PLANSERV / Associação", descPMBA, "desconto");
   if (descPCBA > 0) descontos += linha("PLANSERV / Sindicato", descPCBA, "desconto");
   if (descGeral > 0) descontos += linha("Empréstimo / Consignado", descGeral, "desconto");
@@ -3226,12 +4281,27 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   document.getElementById('proventos').innerHTML = proventos;
   document.getElementById('descontos').innerHTML = descontos;
+
+  ultimoCalculo = {
+    inst,
+    instNomeCurto,
+    cargoTexto: c.text,
+    bruto,
+    liquido,
+    brutoMensalNormal,
+    totalEventos,
+    totalDescontos,
+    data: new Date().toISOString()
+  };
+
+  atualizarModoCalculadora(localStorage.getItem('usegpub_calc_modo') || 'avancado');
 }
 
 
 /* ============================================================ */
 /* === ANÁLISE DE DIREITOS (EXPANDIDA) ======================== */
 /* ============================================================ */
+/* BLOCO 15.11 — Análise de direitos e vantagens */
 function analisarDireitos() {
   const cont = document.getElementById('resultados_dir');
   if (!cont) return;
@@ -3594,6 +4664,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* ============================================================ */
 /* === CONCURSOS (RICO) ======================================= */
 /* ============================================================ */
+/* BLOCO 15.12 — Renderização das páginas de concursos, ações e associações */
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
@@ -3672,6 +4743,7 @@ function carregarAssociacoes() {
 /* ============================================================ */
 /* === IMPRESSÃO / EXPORTAÇÃO PDF ============================= */
 /* ============================================================ */
+/* BLOCO 15.13 — Impressão, limpeza, salvamento e restauração do formulário */
 function imprimirHolerite() {
   // Garante que está na aba calculadora
   const calc = document.getElementById('page-calculadora');
@@ -3692,14 +4764,15 @@ function limparFormulario() {
   calc.querySelectorAll('input[type="number"]').forEach(el => {
     if (el.id === 'dias') el.value = 30;
     else if (el.id === 'dias_va') el.value = 22;
+    else if (el.id === 'dependentes_saude') el.value = 0;
     else if (el.id === 'auxalim_sp_dia') el.value = AUX_ALIM_SP_DIA_PADRAO;
     else if (el.id === 'auxalim_mg_dia') el.value = AUX_ALIM_MG_DIA_PADRAO;
     else if (el.id === 'auxalim_mg_meta_dia') el.value = 0;
     else if (el.id === 'auxalim_ba') el.value = AUX_ALIM_BA_40H;
     else if (el.id === 'auxalim_ba_pc') el.value = AUX_ALIM_BA_40H;
-    else if (el.id === 'auxalim_rj_pc') el.value = 433.80;
+    else if (el.id === 'auxalim_rj_pc') el.value = 704;
     else if (el.id === 'auxtransp_rj_pc') el.value = 100;
-    else if (el.id === 'cet_ba_pm' || el.id === 'cet_ba_pc') el.value = 25;
+    else if (el.id === 'cet_ba_pm' || el.id === 'cet_ba_pc') el.value = 0;
     else if (el.id === 'valplantao_rj') el.value = 350;
     else if (el.id === 'valextra_mg_pm') el.value = 250;
     else if (el.id === 'valextra_mg_pc') el.value = 300;
@@ -3712,9 +4785,9 @@ function limparFormulario() {
   });
   // Restaurar selects com valores padrão específicos
   const defs = {
-    insalubridade: '0.40', insalubridade_sp_pc: '0.40',
-    auxalim_rj: '433.80', auxtransp_rj: '100',
-    periculosidade_rj: '1', gtc_rj: '0',
+    insalubridade: '0', insalubridade_sp_pc: '0',
+    auxalim_rj: '433.80', auxtransp_rj: '100', ghp_rj: 'auto',
+    periculosidade_rj: 'auto', ghp_rj_pc: 'auto', gtc_rj: 'auto',
     regdejem: 'capital', regdel: 'capital',
     tipodejec: 'normal', tiporas: 'normal',
     gap_ba_nivel: '0', grat_ba_pc_ref: '0', gqual_ba_pc: '0',
@@ -3723,6 +4796,7 @@ function limparFormulario() {
   Object.keys(defs).forEach(id => { const el = document.getElementById(id); if (el) el.value = defs[id]; });
 
   localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(STORAGE_KEY_CENARIO);
   calcular();
   mostrarToast('Formulário limpo!');
 }
@@ -3769,6 +4843,7 @@ function restaurarFormulario() {
 /* ============================================================ */
 /* === CONTADOR DE CARACTERES (CONTATO) ======================= */
 /* ============================================================ */
+/* BLOCO 15.14 — Formulário de contato e contador de caracteres */
 function atualizarContador() {
   const txt = document.getElementById('contato_mensagem');
   const cnt = document.getElementById('char-counter');
@@ -3805,6 +4880,7 @@ function enviarEmailContato(event) {
 /* ============================================================ */
 /* === EVENT LISTENERS / INICIALIZAÇÃO ======================== */
 /* ============================================================ */
+/* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
 const recalcDebounced = debounce(() => {
   calcular();
   if (document.getElementById('page-direitos').classList.contains('active')) analisarDireitos();
@@ -3821,9 +4897,12 @@ document.addEventListener('DOMContentLoaded', () => {
   mudarInstituicao();
 
   // Event listeners
+  classificarCamposCalculadora();
+  atualizarModoCalculadora(localStorage.getItem('usegpub_calc_modo') || 'avancado');
+
   document.querySelectorAll('#page-calculadora input, #page-calculadora select').forEach(el => {
-    el.addEventListener('input', recalcDebounced);
-    el.addEventListener('change', recalcDebounced);
+    el.addEventListener('input', e => { validarCampoCalculadora(e.target); recalcDebounced(); });
+    el.addEventListener('change', e => { validarCampoCalculadora(e.target); recalcDebounced(); });
   });
 
   // Direitos: atualizar quando muda cargo/situação/tempo
