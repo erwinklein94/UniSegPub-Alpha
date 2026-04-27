@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA e PR - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,6 +102,8 @@
   body[data-inst="pcmg"] { --vermelho: #b58d3d; --vermelho-escuro: #7a5f28; }
   body[data-inst="pmba"] { --vermelho: #967117; --vermelho-escuro: #5c4308; }
   body[data-inst="pcba"] { --vermelho: #333333; --vermelho-escuro: #111111; }
+  body[data-inst="pmpr"] { --vermelho: #2f6b3f; --vermelho-escuro: #1f4b2c; }
+  body[data-inst="pcpr"] { --vermelho: #1f5e89; --vermelho-escuro: #123a56; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -423,8 +425,8 @@
   .field.span-2 { grid-column: span 2; }
 
   /* BLOCO 02.12 — Exibição condicional por instituição/estado */
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only,
-  .sp-only, .mg-only, .ba-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only,
+  .sp-only, .mg-only, .ba-only, .pr-only {
     display: none !important;
   }
 
@@ -436,13 +438,17 @@
   body[data-inst="pcmg"] .field.pcmg-only, body[data-inst="pcmg"] h2.pcmg-only { display: flex !important; }
   body[data-inst="pmba"] .field.pmba-only, body[data-inst="pmba"] h2.pmba-only { display: flex !important; }
   body[data-inst="pcba"] .field.pcba-only, body[data-inst="pcba"] h2.pcba-only { display: flex !important; }
+  body[data-inst="pmpr"] .field.pmpr-only, body[data-inst="pmpr"] h2.pmpr-only { display: flex !important; }
+  body[data-inst="pcpr"] .field.pcpr-only, body[data-inst="pcpr"] h2.pcpr-only { display: flex !important; }
 
   body[data-inst="pmesp"] .field.sp-only,
   body[data-inst="pcsp"] .field.sp-only,
   body[data-inst="pmmg"] .field.mg-only,
   body[data-inst="pcmg"] .field.mg-only,
   body[data-inst="pmba"] .field.ba-only,
-  body[data-inst="pcba"] .field.ba-only { display: flex !important; }
+  body[data-inst="pcba"] .field.ba-only,
+  body[data-inst="pmpr"] .field.pr-only,
+  body[data-inst="pcpr"] .field.pr-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -452,6 +458,8 @@
   body[data-inst="pcmg"] div.alerta.pcmg-only { display: block !important; }
   body[data-inst="pmba"] div.alerta.pmba-only { display: block !important; }
   body[data-inst="pcba"] div.alerta.pcba-only { display: block !important; }
+  body[data-inst="pmpr"] div.alerta.pmpr-only { display: block !important; }
+  body[data-inst="pcpr"] div.alerta.pcpr-only { display: block !important; }
 
   /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
@@ -735,6 +743,10 @@
             <option value="pmba">PMBA - Polícia Militar</option>
             <option value="pcba">PCBA - Polícia Civil</option>
           </optgroup>
+          <optgroup label="Paraná">
+            <option value="pmpr">PMPR - Polícia Militar</option>
+            <option value="pcpr">PCPR - Polícia Civil</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -776,6 +788,10 @@
       <optgroup label="Bahia">
         <option value="pmba">PMBA - Polícia Militar</option>
         <option value="pcba">PCBA - Polícia Civil</option>
+      </optgroup>
+      <optgroup label="Paraná">
+        <option value="pmpr">PMPR - Polícia Militar</option>
+        <option value="pcpr">PCPR - Polícia Civil</option>
       </optgroup>
     </select>
   </div>
@@ -920,7 +936,7 @@
           <label for="dependentes">Dependentes para IRRF <span class="tip" data-tip="Filhos até 21 anos (24 se universitários), cônjuge ou pais com renda baixa. Cada dependente reduz R$ 189,59 da base de cálculo do IRRF.">?</span></label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
         </div>
-        <div class="field pc-only">
+        <div class="field pc-only pmpr-only">
           <label for="dependentes_saude">Dependentes no plano de saúde <span class="tip" data-tip="Campo separado dos dependentes de IRRF. Use aqui apenas dependentes vinculados ao plano de saúde quando o cálculo do desconto usar dependentes, como no IAMSPE.">?</span></label>
           <input type="number" id="dependentes_saude" value="0" min="0" max="20"/>
         </div>
@@ -1291,6 +1307,8 @@
       <h2 class="pcmg-only">Trabalho Extra — Plantão Extraordinário</h2>
       <h2 class="pmba-only">Trabalho Extra — Serviço Extraordinário</h2>
       <h2 class="pcba-only">Trabalho Extra — Plantão Extraordinário</h2>
+      <h2 class="pmpr-only">Trabalho Extra — Escala Extra / Diária Especial</h2>
+      <h2 class="pcpr-only">Trabalho Extra — Diária Especial / Escala Extra</h2>
 
       <div class="form-grid">
         <div class="calc-section-title">Plantões, diárias, escalas extras e valores manuais</div>
@@ -1388,6 +1406,22 @@
           <label for="valextra_ba_pc">Valor do Plantão Extra (R$)</label>
           <input type="number" id="valextra_ba_pc" value="200" min="0" step="0.01"/>
         </div>
+        <div class="field pmpr-only">
+          <label for="qtdextra_pr_pm">Escala extra / diária especial (Qtd)</label>
+          <input type="number" id="qtdextra_pr_pm" value="0" min="0" max="20"/>
+        </div>
+        <div class="field pmpr-only">
+          <label for="valextra_pr_pm">Valor da escala extra PMPR (R$)</label>
+          <input type="number" id="valextra_pr_pm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pcpr-only">
+          <label for="qtdextra_pr_pc">Diária especial / escala extra (Qtd)</label>
+          <input type="number" id="qtdextra_pr_pc" value="0" min="0" max="20"/>
+        </div>
+        <div class="field pcpr-only">
+          <label for="valextra_pr_pc">Valor da escala extra PCPR (R$)</label>
+          <input type="number" id="valextra_pr_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
 
         <div class="field span-2">
           <div class="alerta pm-only">
@@ -1414,6 +1448,12 @@
           </div>
           <div class="alerta pcba-only">
             <strong>PCBA 2026:</strong> vencimento e GAJ/GAPJ foram corrigidos para a estrutura da Lei Estadual 14.891/2025. A gratificação agora é valor fixo por carreira, classe e referência, não percentual.
+          </div>
+          <div class="alerta pmpr-only">
+            <strong>PMPR 2026:</strong> cálculo por subsídio conforme a Lei Estadual 22.187/2024. O auxílio-alimentação de R$ 834,74 é aplicado automaticamente. Escalas extras devem ser lançadas manualmente quando existirem no contracheque.
+          </div>
+          <div class="alerta pcpr-only">
+            <strong>PCPR 2026:</strong> cálculo por subsídio conforme a Lei Complementar 259/2023. O auxílio-alimentação de R$ 834,74 é aplicado automaticamente. Diárias/escala extra devem ser lançadas manualmente quando existirem no contracheque.
           </div>
         </div>
       </div>
@@ -1536,6 +1576,21 @@
         <div class="field pcba-only">
           <label for="sindicato_ba_pc">Sindicato (SINDPOC / ADPEB)</label>
           <input type="number" id="sindicato_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pmpr-only">
+          <label for="opt_faspm_pr">FASPM — Saúde Militar PR <span class="tip" data-tip="Contribuição facultativa: 0,5% do subsídio do titular + 0,2% por dependente, limitada a 2%. Use os dependentes no plano de saúde no bloco de identificação.">?</span></label>
+          <select id="opt_faspm_pr">
+            <option value="0" selected>Não computar / não optante</option>
+            <option value="1">Sim — calcular FASPM</option>
+          </select>
+        </div>
+        <div class="field pmpr-only">
+          <label for="assoc_pr_pm">Associação PMPR (R$)</label>
+          <input type="number" id="assoc_pr_pm" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
+        </div>
+        <div class="field pcpr-only">
+          <label for="sindicato_pr_pc">Sindicato / Associação PCPR (R$)</label>
+          <input type="number" id="sindicato_pr_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
       </div>
       <div class="alerta">
@@ -3047,6 +3102,10 @@ const AUX_ALIM_MG_DIA_PADRAO = 50.00;      // Decreto MG 49.006/2025
 const AUX_ALIM_BA_40H = 440.00;            // Decreto BA 22.863/2024
 const AUX_ALIM_BA_30H = 286.00;            // Decreto BA 22.863/2024
 const AUX_ALIM_RJ_PM = 433.80;             // Decreto RJ 50.081/2026 (PMERJ)
+const AUX_ALIM_PR_PADRAO = 834.74;         // Lei PR 22.208/2024 — auxílio-alimentação dos servidores ativos
+const FASPM_PR_TITULAR = 0.005;            // Lei PR 17.169/2012 — 0,5% do subsídio (facultativo)
+const FASPM_PR_DEPENDENTE = 0.002;         // Lei PR 17.169/2012 — 0,2% por dependente
+const FASPM_PR_LIMITE = 0.02;              // Limite de 2% do subsídio
 const SAL_MIN_2026 = 1621.00;        // Decreto 12.797/2025
 const ALIQ_PREV = 0.14;
 const ALIQ_IPSM = 0.105;
@@ -3234,6 +3293,114 @@ const CARGOS_PCBA = [
 ];
 
 
+const CARGOS_PMPR = [
+  // PMPR — Lei Estadual PR 22.187/2024, Anexo I, Tabela I.
+  // Regime por subsídio. Classe I é a entrada/menor classe do posto ou graduação; Classe V é o topo da respectiva linha.
+  { val: "cel_pr_i", text: "CEL PM — Coronel PMPR — Classe I", padrao: 26380.68, oficial: true, retpFator: 0 },
+  { val: "cel_pr_ii", text: "CEL PM — Coronel PMPR — Classe II", padrao: 28978.89, oficial: true, retpFator: 0 },
+  { val: "cel_pr_iii", text: "CEL PM — Coronel PMPR — Classe III", padrao: 31577.05, oficial: true, retpFator: 0 },
+  { val: "cel_pr_iv", text: "CEL PM — Coronel PMPR — Classe IV", padrao: 34175.24, oficial: true, retpFator: 0 },
+  { val: "cel_pr_v", text: "CEL PM — Coronel PMPR — Classe V", padrao: 36773.42, oficial: true, retpFator: 0 },
+  { val: "tencel_pr_i", text: "TEN CEL PM — Tenente-Coronel PMPR — Classe I", padrao: 25143.48, oficial: true, retpFator: 0 },
+  { val: "tencel_pr_ii", text: "TEN CEL PM — Tenente-Coronel PMPR — Classe II", padrao: 27617.92, oficial: true, retpFator: 0 },
+  { val: "tencel_pr_iii", text: "TEN CEL PM — Tenente-Coronel PMPR — Classe III", padrao: 30092.37, oficial: true, retpFator: 0 },
+  { val: "tencel_pr_iv", text: "TEN CEL PM — Tenente-Coronel PMPR — Classe IV", padrao: 32566.86, oficial: true, retpFator: 0 },
+  { val: "tencel_pr_v", text: "TEN CEL PM — Tenente-Coronel PMPR — Classe V", padrao: 35041.30, oficial: true, retpFator: 0 },
+  { val: "maj_pr_i", text: "MAJ PM — Major PMPR — Classe I", padrao: 23742.83, oficial: true, retpFator: 0 },
+  { val: "maj_pr_ii", text: "MAJ PM — Major PMPR — Classe II", padrao: 26077.21, oficial: true, retpFator: 0 },
+  { val: "maj_pr_iii", text: "MAJ PM — Major PMPR — Classe III", padrao: 28411.61, oficial: true, retpFator: 0 },
+  { val: "maj_pr_iv", text: "MAJ PM — Major PMPR — Classe IV", padrao: 30746.01, oficial: true, retpFator: 0 },
+  { val: "maj_pr_v", text: "MAJ PM — Major PMPR — Classe V", padrao: 33080.38, oficial: true, retpFator: 0 },
+  { val: "cap_pr_i", text: "CAP PM — Capitão PMPR — Classe I", padrao: 22631.21, oficial: true, retpFator: 0 },
+  { val: "cap_pr_ii", text: "CAP PM — Capitão PMPR — Classe II", padrao: 24854.45, oficial: true, retpFator: 0 },
+  { val: "cap_pr_iii", text: "CAP PM — Capitão PMPR — Classe III", padrao: 27077.66, oficial: true, retpFator: 0 },
+  { val: "cap_pr_iv", text: "CAP PM — Capitão PMPR — Classe IV", padrao: 29300.90, oficial: true, retpFator: 0 },
+  { val: "cap_pr_v", text: "CAP PM — Capitão PMPR — Classe V", padrao: 31524.13, oficial: true, retpFator: 0 },
+  { val: "1ten_pr_i", text: "1º TEN PM — 1º Tenente PMPR — Classe I", padrao: 15731.54, oficial: true, retpFator: 0 },
+  { val: "1ten_pr_ii", text: "1º TEN PM — 1º Tenente PMPR — Classe II", padrao: 17264.77, oficial: true, retpFator: 0 },
+  { val: "1ten_pr_iii", text: "1º TEN PM — 1º Tenente PMPR — Classe III", padrao: 18798.04, oficial: true, retpFator: 0 },
+  { val: "1ten_pr_iv", text: "1º TEN PM — 1º Tenente PMPR — Classe IV", padrao: 20331.31, oficial: true, retpFator: 0 },
+  { val: "1ten_pr_v", text: "1º TEN PM — 1º Tenente PMPR — Classe V", padrao: 21864.57, oficial: true, retpFator: 0 },
+  { val: "2ten_pr_i", text: "2º TEN PM — 2º Tenente PMPR — Classe I", padrao: 13731.61, oficial: true, retpFator: 0 },
+  { val: "2ten_pr_ii", text: "2º TEN PM — 2º Tenente PMPR — Classe II", padrao: 15064.92, oficial: true, retpFator: 0 },
+  { val: "2ten_pr_iii", text: "2º TEN PM — 2º Tenente PMPR — Classe III", padrao: 16398.16, oficial: true, retpFator: 0 },
+  { val: "2ten_pr_iv", text: "2º TEN PM — 2º Tenente PMPR — Classe IV", padrao: 17731.46, oficial: true, retpFator: 0 },
+  { val: "2ten_pr_v", text: "2º TEN PM — 2º Tenente PMPR — Classe V", padrao: 19064.70, oficial: true, retpFator: 0 },
+  { val: "subten_pr_i", text: "SUBTEN PM — Subtenente PMPR — Classe I", padrao: 9990.80, oficial: false, retpFator: 0 },
+  { val: "subten_pr_ii", text: "SUBTEN PM — Subtenente PMPR — Classe II", padrao: 10939.06, oficial: false, retpFator: 0 },
+  { val: "subten_pr_iii", text: "SUBTEN PM — Subtenente PMPR — Classe III", padrao: 11887.36, oficial: false, retpFator: 0 },
+  { val: "subten_pr_iv", text: "SUBTEN PM — Subtenente PMPR — Classe IV", padrao: 12835.64, oficial: false, retpFator: 0 },
+  { val: "subten_pr_v", text: "SUBTEN PM — Subtenente PMPR — Classe V", padrao: 13783.90, oficial: false, retpFator: 0 },
+  { val: "1sgt_pr_i", text: "1º SGT PM — 1º Sargento PMPR — Classe I", padrao: 7825.54, oficial: false, retpFator: 0 },
+  { val: "1sgt_pr_ii", text: "1º SGT PM — 1º Sargento PMPR — Classe II", padrao: 8554.06, oficial: false, retpFator: 0 },
+  { val: "1sgt_pr_iii", text: "1º SGT PM — 1º Sargento PMPR — Classe III", padrao: 9282.53, oficial: false, retpFator: 0 },
+  { val: "1sgt_pr_iv", text: "1º SGT PM — 1º Sargento PMPR — Classe IV", padrao: 10011.06, oficial: false, retpFator: 0 },
+  { val: "1sgt_pr_v", text: "1º SGT PM — 1º Sargento PMPR — Classe V", padrao: 10739.53, oficial: false, retpFator: 0 },
+  { val: "2sgt_pr_i", text: "2º SGT PM — 2º Sargento PMPR — Classe I", padrao: 7364.37, oficial: false, retpFator: 0 },
+  { val: "2sgt_pr_ii", text: "2º SGT PM — 2º Sargento PMPR — Classe II", padrao: 8046.26, oficial: false, retpFator: 0 },
+  { val: "2sgt_pr_iii", text: "2º SGT PM — 2º Sargento PMPR — Classe III", padrao: 8728.15, oficial: false, retpFator: 0 },
+  { val: "2sgt_pr_iv", text: "2º SGT PM — 2º Sargento PMPR — Classe IV", padrao: 9410.05, oficial: false, retpFator: 0 },
+  { val: "2sgt_pr_v", text: "2º SGT PM — 2º Sargento PMPR — Classe V", padrao: 10091.93, oficial: false, retpFator: 0 },
+  { val: "3sgt_pr_i", text: "3º SGT PM — 3º Sargento PMPR — Classe I", padrao: 7022.39, oficial: false, retpFator: 0 },
+  { val: "3sgt_pr_ii", text: "3º SGT PM — 3º Sargento PMPR — Classe II", padrao: 7662.91, oficial: false, retpFator: 0 },
+  { val: "3sgt_pr_iii", text: "3º SGT PM — 3º Sargento PMPR — Classe III", padrao: 8303.38, oficial: false, retpFator: 0 },
+  { val: "3sgt_pr_iv", text: "3º SGT PM — 3º Sargento PMPR — Classe IV", padrao: 8943.87, oficial: false, retpFator: 0 },
+  { val: "3sgt_pr_v", text: "3º SGT PM — 3º Sargento PMPR — Classe V", padrao: 9584.38, oficial: false, retpFator: 0 },
+  { val: "cabo_pr_i", text: "CABO PM — Cabo PMPR — Classe I", padrao: 6277.66, oficial: false, retpFator: 0 },
+  { val: "cabo_pr_ii", text: "CABO PM — Cabo PMPR — Classe II", padrao: 6826.00, oficial: false, retpFator: 0 },
+  { val: "cabo_pr_iii", text: "CABO PM — Cabo PMPR — Classe III", padrao: 7374.30, oficial: false, retpFator: 0 },
+  { val: "cabo_pr_iv", text: "CABO PM — Cabo PMPR — Classe IV", padrao: 7884.89, oficial: false, retpFator: 0 },
+  { val: "cabo_pr_v", text: "CABO PM — Cabo PMPR — Classe V", padrao: 8632.27, oficial: false, retpFator: 0 },
+  { val: "sd1_pr_i", text: "SD 1ª CL — Soldado PMPR — Classe I", padrao: 6101.87, oficial: false, selected: true, retpFator: 0 },
+  { val: "sd1_pr_ii", text: "SD 1ª CL — Soldado PMPR — Classe II", padrao: 6597.95, oficial: false, retpFator: 0 },
+  { val: "sd1_pr_iii", text: "SD 1ª CL — Soldado PMPR — Classe III", padrao: 7094.07, oficial: false, retpFator: 0 },
+  { val: "sd1_pr_iv", text: "SD 1ª CL — Soldado PMPR — Classe IV", padrao: 7553.83, oficial: false, retpFator: 0 },
+  { val: "sd1_pr_v", text: "SD 1ª CL — Soldado PMPR — Classe V", padrao: 8279.70, oficial: false, retpFator: 0 },
+  { val: "asp_pr", text: "ASP OF PM — Aspirante a Oficial PMPR", padrao: 8280.91, oficial: true, retpFator: 0 },
+  { val: "cad3_pr", text: "CADETE PM — 3º Ano CFO PMPR", padrao: 5023.53, oficial: false, retpFator: 0 },
+  { val: "cad2_pr", text: "CADETE PM — 2º Ano CFO PMPR", padrao: 4423.48, oficial: false, retpFator: 0 },
+  { val: "cad1_pr", text: "CADETE PM — 1º Ano CFO PMPR", padrao: 3994.86, oficial: false, retpFator: 0 },
+  { val: "sdaluno2_pr", text: "ALUNO-SOLDADO OPERACIONAL — 2ª Classe PMPR", padrao: 3795.18, oficial: false, retpFator: 0 },
+  { val: "sdaluno3_pr", text: "ALUNO-SOLDADO — 3ª Classe PMPR", padrao: 2530.12, oficial: false, retpFator: 0 }
+];
+
+const CARGOS_PCPR = [
+  // PCPR — Lei Complementar PR 259/2023 e tabelas de remuneração 2026.
+  // Regime por subsídio. Agente e Papiloscopista são organizados em níveis I a XI; Delegado tem classes.
+  { val: "del_pr_4_ini", text: "Delegado de Polícia PCPR — 4ª Classe — Inicial", padrao: 24247.12, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_4_fin", text: "Delegado de Polícia PCPR — 4ª Classe — Final", padrao: 29351.01, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_3_ini", text: "Delegado de Polícia PCPR — 3ª Classe — Inicial", padrao: 30764.55, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_3_fin", text: "Delegado de Polícia PCPR — 3ª Classe — Final", padrao: 32224.50, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_2_ini", text: "Delegado de Polícia PCPR — 2ª Classe — Inicial", padrao: 33732.94, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_2_fin", text: "Delegado de Polícia PCPR — 2ª Classe — Final", padrao: 35303.15, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_1_ini", text: "Delegado de Polícia PCPR — 1ª Classe — Inicial", padrao: 36760.50, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_pr_1_fin", text: "Delegado de Polícia PCPR — 1ª Classe — Final", padrao: 38570.72, oficial: true, delegado: true, retpFator: 0 },
+  { val: "agente_pr_i", text: "Agente de Polícia Judiciária PCPR — Nível I", padrao: 7818.45, oficial: false, selected: true, retpFator: 0 },
+  { val: "agente_pr_ii", text: "Agente de Polícia Judiciária PCPR — Nível II", padrao: 8337.20, oficial: false, retpFator: 0 },
+  { val: "agente_pr_iii", text: "Agente de Polícia Judiciária PCPR — Nível III", padrao: 9125.16, oficial: false, retpFator: 0 },
+  { val: "agente_pr_iv", text: "Agente de Polícia Judiciária PCPR — Nível IV", padrao: 9850.32, oficial: false, retpFator: 0 },
+  { val: "agente_pr_v", text: "Agente de Polícia Judiciária PCPR — Nível V", padrao: 10716.78, oficial: false, retpFator: 0 },
+  { val: "agente_pr_vi", text: "Agente de Polícia Judiciária PCPR — Nível VI", padrao: 11681.41, oficial: false, retpFator: 0 },
+  { val: "agente_pr_vii", text: "Agente de Polícia Judiciária PCPR — Nível VII", padrao: 12679.72, oficial: false, retpFator: 0 },
+  { val: "agente_pr_viii", text: "Agente de Polícia Judiciária PCPR — Nível VIII", padrao: 14119.73, oficial: false, retpFator: 0 },
+  { val: "agente_pr_ix", text: "Agente de Polícia Judiciária PCPR — Nível IX", padrao: 15392.94, oficial: false, retpFator: 0 },
+  { val: "agente_pr_x", text: "Agente de Polícia Judiciária PCPR — Nível X", padrao: 17113.10, oficial: false, retpFator: 0 },
+  { val: "agente_pr_xi", text: "Agente de Polícia Judiciária PCPR — Nível XI", padrao: 18513.49, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_i", text: "Papiloscopista Policial PCPR — Nível I", padrao: 7818.45, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_ii", text: "Papiloscopista Policial PCPR — Nível II", padrao: 8337.20, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_iii", text: "Papiloscopista Policial PCPR — Nível III", padrao: 9125.16, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_iv", text: "Papiloscopista Policial PCPR — Nível IV", padrao: 9850.32, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_v", text: "Papiloscopista Policial PCPR — Nível V", padrao: 10716.78, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_vi", text: "Papiloscopista Policial PCPR — Nível VI", padrao: 11681.41, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_vii", text: "Papiloscopista Policial PCPR — Nível VII", padrao: 12679.72, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_viii", text: "Papiloscopista Policial PCPR — Nível VIII", padrao: 14119.73, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_ix", text: "Papiloscopista Policial PCPR — Nível IX", padrao: 15392.94, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_x", text: "Papiloscopista Policial PCPR — Nível X", padrao: 17113.10, oficial: false, retpFator: 0 },
+  { val: "papilo_pr_xi", text: "Papiloscopista Policial PCPR — Nível XI", padrao: 18513.49, oficial: false, retpFator: 0 }
+];
+
+
+
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
@@ -3287,6 +3454,18 @@ const ACOES_JUDICIAIS = {
     { titulo: "Promoções/progressões atrasadas", status: "Possível cobrança", ano: "Caso a caso", tipo: "individual", desc: "Discussão possível quando houver atraso administrativo, implantação tardia ou erro em progressão/promoção. Necessário comprovar requisitos, publicação, data correta e diferenças financeiras.", base: "Lei de carreira da PCBA, atos de promoção/progressão e publicações oficiais.", fonte: "Legislação PCBA e Diário Oficial da Bahia", fonteUrl: "", atualizado: "Abril/2026" },
     { titulo: "Insalubridade — laudo, lotação e pagamento", status: "Verificar caso a caso", ano: "Depende da função e local", tipo: "individual", desc: "Possível quando houver exposição insalubre reconhecida, laudo, previsão legal e pagamento ausente ou incorreto. Não tratar como verba universal.", base: "Legislação estadual, laudos, local de trabalho e holerites do período.", fonte: "Legislação estadual da Bahia e prova técnica", fonteUrl: "", atualizado: "Abril/2026" },
     { titulo: "GIP / gratificações e diferenças remuneratórias", status: "Conferência individual", ano: "Depende do cargo e período", tipo: "individual", desc: "A cobrança de diferenças de gratificações deve partir de erro concreto: percentual, base, atraso, não implantação ou enquadramento incorreto.", base: "Legislação remuneratória da Bahia, ato funcional e demonstrativos de pagamento.", fonte: "Legislação estadual da Bahia e ficha financeira", fonteUrl: "", atualizado: "Abril/2026" }
+  ],
+  pmpr: [
+    { titulo: "Subsídio PMPR e enquadramento por classe", status: "Conferência individual", ano: "Lei 22.187/2024", tipo: "individual", desc: "A carreira militar estadual do Paraná foi reestruturada por subsídio e classes. Diferenças podem depender de enquadramento, promoção, data de implantação, ficha funcional e contracheque.", base: "Lei Estadual PR 22.187/2024; conferir Anexo I, classe, posto/graduação e histórico funcional.", fonte: "Lei PR 22.187/2024", fonteUrl: "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2024-12/lei_n.deg_22.187_2024_tabelas_vigentes_pmpr_e_cbmpr_2024.pdf", atualizado: "Abril/2026" },
+    { titulo: "FASPM — desconto facultativo e dependentes", status: "Verificar adesão", ano: "Lei 17.169/2012", tipo: "individual", desc: "A contribuição ao Fundo de Assistência à Saúde dos Militares Estaduais é facultativa e pode variar conforme titular e dependentes. Conferir autorização, percentual e limite aplicado.", base: "0,5% do subsídio + 0,2% por dependente, limitado a 2%, quando houver adesão formal.", fonte: "Lei PR 17.169/2012", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507044", atualizado: "Abril/2026" },
+    { titulo: "Auxílio-alimentação PMPR", status: "Conferência de pagamento", ano: "Lei 22.208/2024", tipo: "individual", desc: "Verificar se o auxílio-alimentação mensal está sendo pago conforme valor vigente para servidores ativos e se há proporcionalidade por afastamento, ingresso ou desligamento.", base: "Auxílio-alimentação de R$ 834,74 informado pela PMPR para concursos e remuneração de ingresso.", fonte: "PMPR — Formas de Ingresso", fonteUrl: "https://www.pmpr.pr.gov.br/Pagina/Formas-de-Ingresso", atualizado: "Abril/2026" },
+    { titulo: "Escala extra / diária especial", status: "Somente com previsão e escala", ano: "Tema administrativo", tipo: "individual", desc: "Possíveis valores de escala extraordinária, diária ou indenização operacional dependem de autorização, programa, publicação, cumprimento da escala e rubrica em contracheque.", base: "Conferir ato estadual, escala publicada, unidade e demonstrativo de pagamento.", fonte: "Normas internas e Diário Oficial do Paraná", fonteUrl: "", atualizado: "Abril/2026" }
+  ],
+  pcpr: [
+    { titulo: "Subsídio PCPR e parcelas indenizatórias", status: "Conferência individual", ano: "LC 259/2023", tipo: "individual", desc: "A Lei Complementar 259/2023 estruturou as carreiras da Polícia Civil do Paraná por subsídio. Verbas fora do subsídio exigem previsão legal específica.", base: "LC PR 259/2023: subsídio em parcela única, ressalvadas vantagens expressamente previstas na própria lei.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
+    { titulo: "Insalubridade, periculosidade e risco de vida no subsídio", status: "Atenção jurídica", ano: "LC 259/2023", tipo: "individual", desc: "A legislação da PCPR indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida, sem prejuízo de discussão judicial específica quando houver tese ou decisão aplicável.", base: "LC PR 259/2023, art. 39, §3º, com observação de ADI indicada no texto legal.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
+    { titulo: "Promoção por titulação e enquadramento", status: "Verificar requisitos", ano: "LC 259/2023 e alterações", tipo: "individual", desc: "A promoção por titulação para níveis específicos envolve tempo de carreira, formação, requisitos e regras de transição. Conferir cargo, nível, data de ingresso e documentação.", base: "Art. 83-A da LC PR 259/2023 e alterações posteriores.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
+    { titulo: "Diária especial por jornada extrajornada voluntária", status: "Somente se autorizada", ano: "LC 259/2023", tipo: "individual", desc: "A diária especial por jornada extrajornada voluntária aparece entre parcelas possíveis, mas depende de autorização, disponibilidade orçamentária, escala e cumprimento efetivo.", base: "LC PR 259/2023, art. 39, rol de vantagens e indenizações.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" }
   ]
 };
 
@@ -3339,6 +3518,16 @@ const ASSOCIACOES = {
     { nome: "ADPEB/Sindicato - Sindicato dos Delegados de Polícia do Estado da Bahia", foco: "Delegados de Polícia do Estado da Bahia", acao: "Defesa das prerrogativas, valorização da carreira, representação sindical, assembleias, eleições internas e apoio jurídico aos delegados sindicalizados.", site: "www.adpeb.com.br", telefone: "(71) 3329-2684", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, atendimento psicológico, convênios, cursos, notícias, assembleias e comunicação institucional." },
     { nome: "AEPEB/Sindicato - Sindicato dos Escrivães de Polícia Civil do Estado da Bahia", foco: "Escrivães de Polícia Civil da Bahia", acao: "Representação específica dos escrivães, defesa de direitos, valorização funcional e comunicação sindical da categoria.", site: "aepebsindicato.com.br", telefone: "(71) 3329-6802", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação sindical, filiação, redes sociais, notícias, orientação e defesa de pautas dos escrivães." },
     { nome: "SINDPEP-BA - Sindicato dos Peritos em Papiloscopia do Estado da Bahia", foco: "Peritos em papiloscopia e identificação civil/criminal da Bahia", acao: "Defesa dos interesses da papiloscopia, valorização da ciência papiloscópica, identificação civil e criminal e pautas específicas da carreira.", site: "sindpep.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, notícias, comunicação, defesa de direitos, eventos técnicos e pautas de valorização profissional." }
+  ],
+  pmpr: [
+    { nome: "APCS-PR — Associação de Praças do Estado do Paraná", tipo: "associação", publico: "Praças da PMPR/CBMPR", acao: "Acompanhamento de carreira, notícias, representação institucional e pautas de valorização dos militares estaduais.", site: "apcs.net.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Informativos, defesa de interesses da categoria, apoio institucional e acompanhamento de temas remuneratórios." },
+    { nome: "FASPM — Fundo de Assistência à Saúde dos Militares Estaduais", tipo: "assistência", publico: "Militares estaduais ativos, inativos, pensionistas e dependentes, quando aderentes", acao: "Assistência à saúde dos militares estaduais do Paraná, com contribuição facultativa conforme lei.", site: "Consultar canal oficial do Governo do Paraná / FASPM", telefone: "Consultar canal oficial", mensalidade: "0,5% do subsídio + 0,2% por dependente, limitado a 2%, quando houver adesão.", servicos: "Assistência à saúde, regras de dependentes e cobertura conforme regulamento próprio." },
+    { nome: "Entidades representativas locais da PMPR", tipo: "associação", publico: "Policiais militares do Paraná", acao: "Atuação em pautas de promoção, subsídio, saúde, escala, condições de trabalho e defesa institucional.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, orientação, notícias e eventual apoio jurídico conforme contrato." }
+  ],
+  pcpr: [
+    { nome: "SINCLAPOL — Sindicato das Classes Policiais Civis do Paraná", tipo: "sindicato", publico: "Policiais civis do Paraná", acao: "Defesa de interesses da categoria, carreira, remuneração, condições de trabalho e pautas institucionais da Polícia Civil do Paraná.", site: "sinclapol.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, comunicação de pautas, assembleias, apoio jurídico conforme regras internas e defesa coletiva." },
+    { nome: "ADEPOL-PR — Associação dos Delegados de Polícia do Paraná", tipo: "associação", publico: "Delegados de Polícia do Paraná", acao: "Representação institucional da carreira de Delegado, defesa de prerrogativas, valorização profissional e acompanhamento legislativo.", site: "adepolpr.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, notícias, eventos, defesa de prerrogativas e apoio institucional." },
+    { nome: "Entidades e associações por carreira da PCPR", tipo: "associação", publico: "Agentes, Papiloscopistas, Delegados e demais carreiras da Polícia Civil", acao: "Representação específica por cargo, acompanhamento de promoções, subsídio, titulação, escalas e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, apoio institucional, pautas remuneratórias, acompanhamento legislativo e eventual orientação jurídica." }
   ]
 };
 
@@ -3480,6 +3669,40 @@ const CONCURSOS = {
     validade: "A definir no edital.",
     previsao: "Governo da Bahia anunciou novo concurso da Polícia Civil em 2026 com mais de 750 vagas para Delegado, Escrivão e Investigador. Aguardar edital oficial.",
     site: "https://www.policiacivil.ba.gov.br"
+  },
+  pmpr: {
+    edital: "Soldado PMPR 2025 e Cadete PMPR 2025 — concursos oficiais em acompanhamento",
+    salario: "Soldado 1ª Classe: R$ 6.101,87 + R$ 834,74 de auxílio-alimentação; Aluno-Soldado 3ª Classe: R$ 2.530,12 + auxílio; Cadete 1º ano: R$ 3.994,86 + auxílio; 2º Tenente: R$ 13.731,61 + auxílio.",
+    vagas: "Soldado PMPR 2025: 2.000 vagas. Cadete PMPR 2025: acompanhar página oficial do certame.",
+    cotas: "Reserva de vagas conforme legislação estadual e regras do edital.",
+    idade: "Soldado: máximo de 30 anos, conforme página oficial de formas de ingresso. Cadete e demais quadros: conferir edital específico.",
+    escolaridade: "Soldado: curso superior completo. Cadete CFO: regras do edital próprio. Saúde/Capelão: formação específica exigida.",
+    materias: "Conforme edital e banca do certame. Para Soldado/Cadete, conferir conteúdo programático da página oficial e do IBFC.",
+    banca: "IBFC para o certame de Soldado PMPR 2025 informado na página oficial.",
+    inscritos: "Acompanhar convocações, resultados e publicações na página de concursos da PMPR.",
+    etapas: "Prova objetiva, avaliações específicas previstas no edital, investigação social, exames médicos, avaliação psicológica, TAF e curso de formação, conforme cargo.",
+    cfsd: "Curso de Formação de Praças para Soldado; CFO na Academia Policial Militar do Guatupê para Cadete.",
+    estagio: "Estágio/progressão conforme estrutura da carreira e regras da Lei 22.187/2024.",
+    validade: "Conforme edital e publicações oficiais.",
+    previsao: "PMPR possui concursos recentes para Soldado e Cadete. Usar a página oficial de Concursos em Andamento para cronograma, resultados e convocações.",
+    site: "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento"
+  },
+  pcpr: {
+    edital: "Novo concurso PCPR 2026 autorizado/comissão formada — Delegado, Agente de Polícia Judiciária e Papiloscopista",
+    salario: "Agente/Papiloscopista: inicial de R$ 7.818,45. Delegado: inicial de R$ 24.247,12. Valores por subsídio conforme estrutura da LC 259/2023 e tabelas de 2026.",
+    vagas: "A definir no novo edital. Último concurso PCPR ofertou 400 vagas: 300 para Investigador/Agente, 50 para Papiloscopista e 50 para Delegado.",
+    cotas: "Reserva de vagas conforme legislação e regras do edital.",
+    idade: "A definir no edital. Requisitos gerais costumam incluir idade mínima de 18 anos e demais condições legais.",
+    escolaridade: "Agente de Polícia Judiciária e Papiloscopista: nível superior; Delegado: Bacharelado em Direito. CNH categoria B ou superior conforme cargo/edital.",
+    materias: "A definir no edital. Últimos certames cobraram Língua Portuguesa, Informática, Raciocínio Lógico, Direito Constitucional, Administrativo, Penal, Processual Penal e conhecimentos específicos.",
+    banca: "A definir oficialmente no edital.",
+    inscritos: "Ainda sem inscrições abertas para o novo certame.",
+    etapas: "A definir no edital; tradicionalmente envolve prova objetiva, prova discursiva/peças quando previstas, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação.",
+    cfsd: "Curso de Formação Técnico-Profissional pela Escola Superior de Polícia Civil/PCPR, conforme cargo e edital.",
+    estagio: "Estágio probatório de 3 anos.",
+    validade: "A definir no edital.",
+    previsao: "Novo certame previsto para 2026; tratar informações de banca, vagas e cronograma como previsão até publicação do edital oficial.",
+    site: "https://www.pcpr.pr.gov.br/Pagina/Concursos"
   }
 };
 
@@ -3489,6 +3712,10 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr'];
+function normalizarInstituicao(inst) {
+  return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
+}
 
 /* BLOCO 15.7 — Funções utilitárias gerais */
 const fmt = v => `R$ ${(+v || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
@@ -3569,7 +3796,9 @@ function atualizarHeaderDesc(descInstituicao) {
     pmmg: 'Polícia Militar de Minas Gerais',
     pcmg: 'Polícia Civil de Minas Gerais',
     pmba: 'Polícia Militar da Bahia',
-    pcba: 'Polícia Civil da Bahia'
+    pcba: 'Polícia Civil da Bahia',
+    pmpr: 'Polícia Militar do Paraná',
+    pcpr: 'Polícia Civil do Paraná'
   };
   const el = document.getElementById('header-desc');
   if (el) el.textContent = (descInstituicao || descs[currInst] || descs.pmesp) + ' — ' + getNomeAbaAtual();
@@ -3598,7 +3827,8 @@ function popularCargos(inst) {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
-    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA
+    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
+    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR
   };
   currTabela = map[inst] || CARGOS_PM;
 
@@ -3625,16 +3855,7 @@ function popularCargos(inst) {
 /* === TROCA INSTITUIÇÃO ====================================== */
 /* ============================================================ */
 function mudarInstituicao(novaInstituicao) {
-  const inst = novaInstituicao || document.getElementById('instituicao').value;
-  currInst = inst;
-  document.body.setAttribute('data-inst', inst);
-
-  ['instituicao', 'instituicao_header'].forEach(id => {
-    const seletor = document.getElementById(id);
-    if (seletor && seletor.value !== inst) seletor.value = inst;
-  });
-
-  const config = {
+  const configs = {
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
     pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
@@ -3642,11 +3863,35 @@ function mudarInstituicao(novaInstituicao) {
     pmmg:  { titulo: "PMMG",  desc: "Polícia Militar de Minas Gerais",     cor: "#7c1a1a", alertaPrev: "IPSM — 10,5% (8% previdência + 2,5% saúde compulsória) sobre o subsídio." },
     pcmg:  { titulo: "PCMG",  desc: "Polícia Civil de Minas Gerais",        cor: "#b58d3d", alertaPrev: "IPSEMG — 11% previdência + 3,2% saúde (opcional) sobre subsídio." },
     pmba:  { titulo: "PMBA",  desc: "Polícia Militar da Bahia",             cor: "#967117", alertaPrev: "Funprev-BA — 14% sobre soldo, GAP, anuênios e CET." },
-    pcba:  { titulo: "PCBA",  desc: "Polícia Civil da Bahia",                cor: "#333333", alertaPrev: "Funprev-BA — 14% sobre vencimento, anuênios, CET, GIP e GQUAL." }
-  }[inst];
+    pcba:  { titulo: "PCBA",  desc: "Polícia Civil da Bahia",                cor: "#333333", alertaPrev: "Funprev-BA — 14% sobre vencimento, anuênios, CET, GIP e GQUAL." },
+    pmpr:  { titulo: "PMPR",  desc: "Polícia Militar do Paraná",              cor: "#2f6b3f", alertaPrev: "ParanáPrevidência/Sistema de Proteção Social Militar: contribuição previdenciária estimada em 14% sobre base remuneratória. FASPM é facultativo e calculado somente se selecionado." },
+    pcpr:  { titulo: "PCPR",  desc: "Polícia Civil do Paraná",                 cor: "#1f5e89", alertaPrev: "ParanáPrevidência: contribuição previdenciária estimada em 14% sobre base remuneratória. Verbas indenizatórias ficam destacadas sem incidência automática." }
+  };
+
+  const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
+  const inst = configs[solicitada] ? solicitada : 'pmesp';
+
+  // Proteção contra instituições antigas/inexistentes salvas no navegador.
+  // Sem isso, uma opção inválida no localStorage travava a inicialização e a calculadora deixava de recalcular.
+  if (!configs[solicitada]) {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* silencioso */ }
+  }
+
+  currInst = inst;
+  document.body.setAttribute('data-inst', inst);
+
+  ['instituicao', 'instituicao_header'].forEach(id => {
+    const seletor = document.getElementById(id);
+    if (!seletor) return;
+    const existeOpcao = Array.from(seletor.options || []).some(o => o.value === inst);
+    if (existeOpcao && seletor.value !== inst) seletor.value = inst;
+  });
+
+  const config = configs[inst];
 
   // Atualiza textos visíveis
-  document.querySelector('.header-text h1').innerHTML = `Universo <span>Segurança Pública</span>`;
+  const h1 = document.querySelector('.header-text h1');
+  if (h1) h1.innerHTML = `Universo <span>Segurança Pública</span>`;
   atualizarHeaderDesc(config.desc);
 
   const atualizarTexto = (id, valor) => {
@@ -3813,10 +4058,10 @@ function atualizarModoCalculadora(modo = 'avancado') {
 
 function classificarCamposCalculadora() {
   const tipos = {
-    auto: ['cargo','dias','dias_va','quinquenios','quinquenios_sp_pc','trienios','quinquenios_rj_pc','quinquenios_mg_pm','quinquenios_mg_pc','anuenios_ba_pm','anuenios_ba_pc','sextaparte','sextaparte_sp_pc','gap_ba_nivel','grat_ba_pc_ref','opt_iamspe','opt_ipsemg'],
-    manual: ['emprestimo','pensao','fepomcopa','fepomalo','fepomran','daxv','prosaude','cbpm','cruzazul','sindicato','fuspom','familiazul','hcpm','coopm','fuspol','sindicato_rj','ipsm_copart','assoc_mg_pm','sindicato_mg_pc','planserv_ba_pm','assoc_ba_pm','planserv_ba_pc','sindicato_ba_pc','dependentes_saude'],
+    auto: ['cargo','dias','dias_va','quinquenios','quinquenios_sp_pc','trienios','quinquenios_rj_pc','quinquenios_mg_pm','quinquenios_mg_pc','anuenios_ba_pm','anuenios_ba_pc','sextaparte','sextaparte_sp_pc','gap_ba_nivel','grat_ba_pc_ref','opt_iamspe','opt_ipsemg','opt_faspm_pr'],
+    manual: ['emprestimo','pensao','fepomcopa','fepomalo','fepomran','daxv','prosaude','cbpm','cruzazul','sindicato','fuspom','familiazul','hcpm','coopm','fuspol','sindicato_rj','ipsm_copart','assoc_mg_pm','sindicato_mg_pc','planserv_ba_pm','assoc_ba_pm','planserv_ba_pc','sindicato_ba_pc','assoc_pr_pm','sindicato_pr_pc','dependentes_saude'],
     opcional: ['dependentes','auxalim_sp_dia','auxalim_mg_dia','auxalim_mg_meta_dia','insalubridade','insalubridade_sp_pc','decimo','ferias','abonotransf','lpremio','auxfard_pm','auxfard_rj','fardamento_mg_pm','vestimenta_mg_pc'],
-    estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','ghp_rj_pc','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc']
+    estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','ghp_rj_pc','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc','qtdextra_pr_pm','valextra_pr_pm','qtdextra_pr_pc','valextra_pr_pc']
   };
   const nomes = { auto: 'Automático', manual: 'Manual', opcional: 'Opcional', estimativa: 'Estimativa' };
   Object.keys(tipos).forEach(tipo => {
@@ -3894,11 +4139,28 @@ function atualizarCamposPCERJ(c, inst) {
 }
 
 function calcular() {
-  const cargoVal = document.getElementById('cargo').value;
-  const c = currTabela.find(x => x.val === cargoVal);
-  if (!c) return;
+  const sCargo = document.getElementById('cargo');
+  if (!sCargo) return;
 
-  const inst = currInst;
+  const inst = normalizarInstituicao(currInst);
+  if (inst !== currInst) {
+    currInst = inst;
+    document.body.setAttribute('data-inst', inst);
+    popularCargos(inst);
+  }
+
+  let cargoVal = sCargo.value;
+  let c = currTabela.find(x => x.val === cargoVal);
+
+  // Se o cargo salvo no navegador pertence a outra instituição ou não existe mais,
+  // recria a lista da instituição atual e seleciona um cargo válido.
+  if (!c) {
+    popularCargos(inst);
+    cargoVal = document.getElementById('cargo')?.value;
+    c = currTabela.find(x => x.val === cargoVal) || currTabela[0];
+    if (c && document.getElementById('cargo')) document.getElementById('cargo').value = c.val;
+  }
+  if (!c) return;
   atualizarCamposPCERJ(c, inst);
   const dias = Math.min(30, Math.max(0, valEl('dias')));
   const diasVA = Math.min(31, Math.max(0, valEl('dias_va')));
@@ -3960,8 +4222,8 @@ function calcular() {
     ghpPcRj = padrao * ghpPcRjPctAplicado;
   }
 
-  // MG e BA: não possuem Verba Representação automática neste simulador
-  else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
+  // MG, BA e PR: não possuem Verba Representação automática neste simulador
+  else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba' || inst === 'pmpr' || inst === 'pcpr') {
     retpOuVerba = 0;
     retpLabel = "";
   }
@@ -3976,6 +4238,8 @@ function calcular() {
   else if (inst === 'pcmg')  { tempoVal = padrao * 0.10 * Math.min(6, valEl('quinquenios_mg_pc')); tempoLabel = `Quinquênios PCMG (${valEl('quinquenios_mg_pc')}×10%)`; }
   else if (inst === 'pmba')  { tempoVal = padrao * 0.01 * Math.min(35, valEl('anuenios_ba_pm')); tempoLabel = `Anuênios (${valEl('anuenios_ba_pm')}×1%)`; }
   else if (inst === 'pcba')  { tempoVal = padrao * 0.01 * Math.min(35, valEl('anuenios_ba_pc')); tempoLabel = `Anuênios (${valEl('anuenios_ba_pc')}×1%)`; }
+  else if (inst === 'pmpr')  { tempoVal = 0; tempoLabel = 'PMPR: carreira por subsídio e classes — sem adicional automático de tempo neste simulador'; }
+  else if (inst === 'pcpr')  { tempoVal = 0; tempoLabel = 'PCPR: carreira por subsídio e níveis — sem adicional automático de tempo neste simulador'; }
 
   // ===== Sexta-parte (SP) =====
   let sextaVal = 0;
@@ -4080,6 +4344,12 @@ function calcular() {
     gqualBaPc = padrao * parseFloat(document.getElementById('gqual_ba_pc')?.value || 0);
   }
 
+  // Paraná PM/PC - subsídio + auxílio-alimentação mensal padrão
+  let auxalimPr = 0;
+  if (inst === 'pmpr' || inst === 'pcpr') {
+    auxalimPr = AUX_ALIM_PR_PADRAO * fatorDias;
+  }
+
   // ===== Trabalho extra =====
   let extraVal = 0, extraLabel = "";
   if (inst === 'pmesp') {
@@ -4116,6 +4386,14 @@ function calcular() {
     extraVal = valEl('qtdextra_ba_pc') * valEl('valextra_ba_pc');
     extraLabel = `Plantões Extras (${valEl('qtdextra_ba_pc')})`;
   }
+  else if (inst === 'pmpr') {
+    extraVal = valEl('qtdextra_pr_pm') * valEl('valextra_pr_pm');
+    extraLabel = `Escala Extra PMPR (${valEl('qtdextra_pr_pm')})`;
+  }
+  else if (inst === 'pcpr') {
+    extraVal = valEl('qtdextra_pr_pc') * valEl('valextra_pr_pc');
+    extraLabel = `Escala Extra PCPR (${valEl('qtdextra_pr_pc')})`;
+  }
 
   // ===== Verbas eventuais (13º, férias, abono, lpremio) =====
   const baseEventosRemuneratorios = padrao + retpOuVerba + gretRj + ghpRj + gramRj + ghpPcRj + gtcRj + tempoVal + sextaVal;
@@ -4140,7 +4418,7 @@ function calcular() {
   // Verbas indenizatórias/sem incidência, também separadas entre mensal e eventual.
   const baseIndenizatoriaMensalNormal = auxalimSp + auxalimRj + auxtranspRj +
                             auxalimRjPc + auxtranspRjPc + adictransfRj +
-                            auxalimMgPm + auxalimMgPc + auxalimBa + auxalimBaPc + qualif_pc;
+                            auxalimMgPm + auxalimMgPc + auxalimBa + auxalimBaPc + auxalimPr + qualif_pc;
 
   const baseIndenizatoriaEventos = acaoInsalVal + auxfard_pm + auxfardRj + fardamentoMgPm +
                             vestimentaMgPc + auxfardBaPm + abonoTransfVal + lpremioVal + extraVal;
@@ -4176,7 +4454,7 @@ function calcular() {
   const irrf = irrfMensal + irrfEventos;
 
   // Outros descontos por instituição
-  let descPM = 0, descPMERJ = 0, descPCERJ = 0, descPMMG = 0, descPCMG = 0, descPMBA = 0, descPCBA = 0, descGeral = 0;
+  let descPM = 0, descPMERJ = 0, descPCERJ = 0, descPMMG = 0, descPCMG = 0, descPMBA = 0, descPCBA = 0, descPMPR = 0, descPCPR = 0, descGeral = 0;
   if (inst === 'pmesp') {
     descPM = valEl('fepomcopa') + valEl('fepomalo') + valEl('fepomran') + valEl('daxv') + valEl('prosaude') + valEl('cbpm') + valEl('cruzazul');
   } else if (inst === 'pcsp') {
@@ -4199,24 +4477,32 @@ function calcular() {
     descPMBA = valEl('planserv_ba_pm') + valEl('assoc_ba_pm');
   } else if (inst === 'pcba') {
     descPCBA = valEl('planserv_ba_pc') + valEl('sindicato_ba_pc');
+  } else if (inst === 'pmpr') {
+    if (parseInt(document.getElementById('opt_faspm_pr')?.value || '0', 10) === 1) {
+      const faspmPct = Math.min(FASPM_PR_LIMITE, FASPM_PR_TITULAR + (dependentesSaude * FASPM_PR_DEPENDENTE));
+      descPMPR = baseRemuneratoriaMensalNormal * faspmPct;
+    }
+    descPMPR += valEl('assoc_pr_pm');
+  } else if (inst === 'pcpr') {
+    descPCPR = valEl('sindicato_pr_pc');
   }
   descGeral = valEl('emprestimo');
 
   // Pensão alimentícia (% sobre líquido antes da pensão)
-  const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPCMG - descPMBA - descPCBA - descGeral;
+  const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPCMG - descPMBA - descPCBA - descPMPR - descPCPR - descGeral;
   const pensaoVal = liquidoAntesPensao * (valEl('pensao') / 100);
 
-  const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPCMG + descPMBA + descPCBA + descGeral + pensaoVal;
+  const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPCMG + descPMBA + descPCBA + descPMPR + descPCPR + descGeral + pensaoVal;
   const liquido = bruto - totalDescontos;
 
   // ===== Renderização =====
   document.getElementById('bruto').textContent = fmt(bruto);
   document.getElementById('liquido').textContent = fmt(liquido);
 
-  const instNomeCurto = {pmesp:'PMESP', pcsp:'PCSP', pmerj:'PMERJ', pcerj:'PCERJ', pmmg:'PMMG', pcmg:'PCMG', pmba:'PMBA', pcba:'PCBA'}[inst] || inst.toUpperCase();
+  const instNomeCurto = {pmesp:'PMESP', pcsp:'PCSP', pmerj:'PMERJ', pcerj:'PCERJ', pmmg:'PMMG', pcmg:'PCMG', pmba:'PMBA', pcba:'PCBA', pmpr:'PMPR', pcpr:'PCPR'}[inst] || inst.toUpperCase();
   const resumoRapido = document.getElementById('resumo_rapido');
   if (resumoRapido) {
-    resumoRapido.innerHTML = '<strong>' + instNomeCurto + '</strong> · ' + escapeHtml(c.text) + ' · ' + dias + ' dia(s) remunerados · ' + dependentes + ' dep. IRRF' + (inst === 'pcsp' ? ' · ' + dependentesSaude + ' dep. saúde' : '') + '.<br><strong>Bruto mensal normal:</strong> ' + fmt(brutoMensalNormal) + ' · <strong>Eventos/extras:</strong> ' + fmt(totalEventos) + ' · <strong>Descontos:</strong> ' + fmt(totalDescontos) + '.';
+    resumoRapido.innerHTML = '<strong>' + instNomeCurto + '</strong> · ' + escapeHtml(c.text) + ' · ' + dias + ' dia(s) remunerados · ' + dependentes + ' dep. IRRF' + ((inst === 'pcsp' || inst === 'pmpr') ? ' · ' + dependentesSaude + ' dep. saúde' : '') + '.<br><strong>Bruto mensal normal:</strong> ' + fmt(brutoMensalNormal) + ' · <strong>Eventos/extras:</strong> ' + fmt(totalEventos) + ' · <strong>Descontos:</strong> ' + fmt(totalDescontos) + '.';
   }
 
   const naturezas = document.getElementById('naturezas');
@@ -4281,6 +4567,7 @@ function calcular() {
   if (cetBaPc > 0) proventos += linha("CET / Verba percentual informada", cetBaPc, "provento");
   if (gratBaPc > 0) proventos += linha(`${gratBaPcLabel} — Referência ${gratBaPcRefLabel}`, gratBaPc, "provento");
   if (auxalimBaPc > 0) proventos += linha("Auxílio-Alimentação BA", auxalimBaPc, "provento");
+  if (auxalimPr > 0) proventos += linha("Auxílio-Alimentação PR", auxalimPr, "provento");
   if (gipBaPc > 0) proventos += linha("GIP / Verba variável informada", gipBaPc, "provento");
   if (gqualBaPc > 0) proventos += linha("Gratif. Qualificação Profissional", gqualBaPc, "provento");
   if (extraVal > 0 || decimoVal > 0 || feriasVal > 0 || abonoTransfVal > 0 || lpremioVal > 0 || acaoInsalVal > 0) proventos += linhaGrupo('Eventos, extras e parcelas não mensais');
@@ -4303,6 +4590,8 @@ function calcular() {
   if (descPCMG > 0) descontos += linha("IPSEMG / Sindicato", descPCMG, "desconto");
   if (descPMBA > 0) descontos += linha("PLANSERV / Associação", descPMBA, "desconto");
   if (descPCBA > 0) descontos += linha("PLANSERV / Sindicato", descPCBA, "desconto");
+  if (descPMPR > 0) descontos += linha("FASPM / Associação", descPMPR, "desconto");
+  if (descPCPR > 0) descontos += linha("Sindicato / Associação PCPR", descPCPR, "desconto");
   if (descGeral > 0) descontos += linha("Empréstimo / Consignado", descGeral, "desconto");
   if (pensaoVal > 0) descontos += linha(`Pensão Alimentícia (${valEl('pensao')}%)`, pensaoVal, "desconto");
   descontos += subtotal("Total Descontos", totalDescontos);
@@ -4350,11 +4639,11 @@ function analisarDireitos() {
 
   const nomesInst = {
     pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
-    pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA'
+    pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA', pmpr: 'PMPR', pcpr: 'PCPR'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba'].includes(inst);
-  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : '';
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr'].includes(inst);
+  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
@@ -4579,7 +4868,9 @@ function getSaudeTexto(inst) {
     pmmg: 'PMMG: assistência e previdência vinculadas ao IPSM, conforme contribuição, dependentes e rede credenciada.',
     pcmg: 'PCMG: assistência pode envolver IPSEMG ou outro plano, conforme adesão e regra estadual.',
     pmba: 'PMBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
-    pcba: 'PCBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.'
+    pcba: 'PCBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
+    pmpr: 'PMPR: assistência pode envolver FASPM, sistema próprio de saúde militar e regras de adesão/dependentes.',
+    pcpr: 'PCPR: assistência pode envolver o Sistema de Assistência à Saúde do Paraná e regras administrativas do Estado.'
   };
   return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
 }
@@ -4587,6 +4878,8 @@ function getSaudeTexto(inst) {
 function getSaudeBase(inst) {
   if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
+  if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
+  if (inst === 'pcpr') return 'SAS/Paraná, legislação estadual e normas internas da PCPR/SEAP, conforme vínculo e adesão.';
   return 'Regulamento institucional, estatuto da carreira, órgão de saúde estadual e regras de contribuição/dependentes.';
 }
 
@@ -4596,6 +4889,8 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
   if (inst === 'pmmg' || inst === 'pcmg') return `Em MG, tratar o adicional por tempo de serviço com cautela: pode envolver quinquênio, ADE, VPNI ou regra de transição. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência para conferência.`;
   if (inst === 'pmba' || inst === 'pcba') return `Na Bahia, há referência a anuênios/adicionais por tempo conforme carreira. Pelo tempo informado, a referência inicial é de <strong>${Math.min(35, tempo)}</strong> ano(s) de serviço.`;
+  if (inst === 'pmpr') return `Na PMPR, a carreira é estruturada por subsídio, posto/graduação e classes. A progressão/promoção por classe deve ser conferida no enquadramento funcional; o tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício.`;
+  if (inst === 'pcpr') return `Na PCPR, a carreira é estruturada por subsídio, cargo e níveis/classes. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de promoção, progressão e regras de titulação.`;
   return 'Verificar adicional por tempo de serviço conforme legislação da carreira.';
 }
 
@@ -4604,28 +4899,37 @@ function getTempoServicoBase(inst) {
   if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
   if (inst === 'pmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
   if (inst === 'pmba' || inst === 'pcba') return 'Base: estatuto/lei orgânica e normas remuneratórias do Estado da Bahia.';
+  if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e Lei PR 17.169/2012, com enquadramento por classes.';
+  if (inst === 'pcpr') return 'Base: Lei Complementar PR 259/2023 e alterações posteriores, com estrutura por subsídio e níveis/classes.';
   return 'Base: estatuto, lei de remuneração e ficha funcional.';
 }
 
 function getInsalubridadeTexto(inst) {
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
+  if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
+  if (inst === 'pmpr') return 'Na PMPR, a remuneração é por subsídio. Não computar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
   return 'Pode existir quando houver exposição reconhecida a agente insalubre, mediante laudo, enquadramento e previsão legal da instituição.';
 }
 
 function getInsalubridadeBase(inst) {
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
+  if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
+  if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
   return 'Depende de laudo, legislação estadual e enquadramento do local/função.';
 }
 
 function getPericulosidadeTexto(inst) {
   if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
-  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende o risco de vida e a periculosidade. Tratar como verba separada somente diante de rubrica, decisão ou tese específica.';
+  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
   return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
 }
 
 function getPericulosidadeBase(inst) {
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
+  if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º, e decisões judiciais aplicáveis.';
+  if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e regime de subsídio dos militares estaduais do Paraná.';
   return 'Base: estatuto e lei de remuneração da instituição; não usar regra genérica para todas as carreiras.';
 }
 
@@ -4665,6 +4969,20 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('CET — Condição Especial de Trabalho', 'condicionado',
       'Gratificação variável ligada a condição especial de trabalho, função ou local de exercício. Não deve ser tratada como valor fixo universal.',
       'Conferir percentual, cargo, setor, publicação e legislação estadual da Bahia.');
+  } else if (inst === 'pmpr') {
+    html += direitoItem('Auxílio-Alimentação PMPR', 'automatico',
+      'Valor mensal padrão de R$ 834,74 para servidores ativos, destacado como verba indenizatória no simulador.',
+      'Base: Lei PR 22.208/2024 e informação oficial de formas de ingresso da PMPR.');
+    html += direitoItem('FASPM', 'condicionado',
+      'Assistência à saúde militar com contribuição facultativa. No simulador, o desconto só entra se o usuário selecionar a opção FASPM.',
+      'Base: Lei PR 17.169/2012: 0,5% + 0,2% por dependente, limitado a 2%.');
+  } else if (inst === 'pcpr') {
+    html += direitoItem('Auxílio-Alimentação PCPR', 'automatico',
+      'Valor mensal padrão de R$ 834,74 para servidores ativos, destacado como verba indenizatória no simulador.',
+      'Base: Lei PR 22.208/2024 e regras estaduais de auxílio-alimentação.');
+    html += direitoItem('Diária especial / extrajornada voluntária', 'condicionado',
+      'Pode existir quando houver escala, autorização e cumprimento de jornada extraordinária prevista em norma. Não é verba fixa mensal.',
+      'Base: LC PR 259/2023, rol de vantagens/indenizações e regulamentação administrativa.');
   }
   return html;
 }
@@ -4676,7 +4994,7 @@ function getStatusAposentadoria(tempo, idade, requisitosApos) {
 }
 
 function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
-  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
   if (requisitosApos === 'sim') {
     return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
   }
@@ -4819,7 +5137,9 @@ function limparFormulario() {
     regdejem: 'capital', regdel: 'capital',
     tipodejec: 'normal', tiporas: 'normal',
     gap_ba_nivel: '0', grat_ba_pc_ref: '0', gqual_ba_pc: '0',
-    opt_iamspe: '0', opt_ipsemg: '0'
+    opt_iamspe: '0', opt_ipsemg: '0', opt_faspm_pr: '0',
+    qtdextra_pr_pm: '0', valextra_pr_pm: '0', qtdextra_pr_pc: '0', valextra_pr_pc: '0',
+    assoc_pr_pm: '0', sindicato_pr_pc: '0'
   };
   Object.keys(defs).forEach(id => { const el = document.getElementById(id); if (el) el.value = defs[id]; });
 
@@ -4849,13 +5169,18 @@ function restaurarFormulario() {
     if (!raw) return false;
     const data = JSON.parse(raw);
     if (data.__instituicao) {
+      const instSalva = normalizarInstituicao(data.__instituicao);
       const sel = document.getElementById('instituicao');
       const selHeader = document.getElementById('instituicao_header');
-      sel.value = data.__instituicao;
-      if (selHeader) selHeader.value = data.__instituicao;
-      currInst = data.__instituicao;
+      if (sel) sel.value = instSalva;
+      if (selHeader) selHeader.value = instSalva;
+      currInst = instSalva;
       document.body.setAttribute('data-inst', currInst);
       popularCargos(currInst);
+
+      if (instSalva !== data.__instituicao) {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* silencioso */ }
+      }
     }
     Object.keys(data).forEach(k => {
       if (k.startsWith('__')) return;
