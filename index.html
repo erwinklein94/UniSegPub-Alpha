@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA e PR - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA, PR e RS - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +104,8 @@
   body[data-inst="pcba"] { --vermelho: #333333; --vermelho-escuro: #111111; }
   body[data-inst="pmpr"] { --vermelho: #2f6b3f; --vermelho-escuro: #1f4b2c; }
   body[data-inst="pcpr"] { --vermelho: #1f5e89; --vermelho-escuro: #123a56; }
+  body[data-inst="pmrs"] { --vermelho: #0f3d75; --vermelho-escuro: #09274d; }
+  body[data-inst="pcrs"] { --vermelho: #5b6472; --vermelho-escuro: #323946; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -234,7 +236,7 @@
 
   #page-principal { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
   #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-  #page-remuneracao { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+  #page-remuneracao { max-width: 920px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-principal, #page-remuneracao { margin: 20px auto; } }
 
@@ -449,84 +451,134 @@
   }
   .remuneracao-table-wrap {
     width: 100%;
-    overflow-x: auto;
-    border: 1px solid var(--border-card);
-    border-radius: 8px;
-    background: var(--bg-card);
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
   .remuneracao-table {
     width: 100%;
-    border-collapse: collapse;
-    min-width: 1120px;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 0;
+  }
+  .remuneracao-table thead {
+    display: none;
+  }
+  .remuneracao-table tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .remuneracao-table tr {
+    display: grid;
+    grid-template-columns: minmax(170px, 1.15fr) minmax(120px, 0.65fr) minmax(210px, 1.2fr) minmax(210px, 1.2fr);
+    gap: 8px;
+    align-items: stretch;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.2s ease;
+  }
+  .remuneracao-table tr:hover {
+    background: var(--item-hover);
+    border-color: var(--vermelho);
   }
   .remuneracao-table th,
   .remuneracao-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border-card);
+    display: block;
+    padding: 0;
+    border-bottom: 0;
     text-align: left;
     vertical-align: top;
-    font-size: 13px;
-  }
-  .remuneracao-table th {
-    background: var(--item-bg);
-    color: var(--text-main);
-    font-family: 'Oswald', sans-serif;
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
   }
-  .remuneracao-table tbody tr:hover { background: var(--item-hover); }
+  .remuneracao-table td {
+    background: var(--item-bg);
+    border: 1px solid var(--border-card);
+    border-radius: 6px;
+    padding: 9px 10px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+  }
+  .remuneracao-table td::before {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .remuneracao-table td:nth-child(1)::before { content: "Cargo / Classe"; }
+  .remuneracao-table td:nth-child(2)::before { content: "Remuneração bruta"; }
+  .remuneracao-table td:nth-child(3)::before { content: "Adicionais / auxílios"; }
+  .remuneracao-table td:nth-child(4)::before { content: "Critério / fonte"; }
   .remuneracao-table td.valor {
     font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
+    color: var(--text-main);
   }
   .remuneracao-table td.adicionais {
     color: var(--text-muted);
-    line-height: 1.45;
-    min-width: 280px;
+    line-height: 1.35;
+    min-width: 0;
   }
   .remuneracao-table td.adicionais strong {
     color: var(--text-main);
   }
   .remuneracao-fonte {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 6px;
     color: var(--text-muted);
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 11px;
+    line-height: 1.35;
   }
   .remuneracao-badge {
     display: inline-flex;
     align-items: center;
-    padding: 3px 8px;
-    margin-top: 4px;
+    padding: 3px 7px;
+    margin-top: 5px;
     border-radius: 999px;
     border: 1px solid var(--border-input);
     color: var(--text-muted);
-    background: var(--item-bg);
-    font-size: 10px;
+    background: var(--bg-card);
+    font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.6px;
   }
   .remuneracao-link {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 6px;
     color: var(--vermelho);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-decoration: none;
   }
   .remuneracao-link:hover { text-decoration: underline; }
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .remuneracao-resumo-grid { grid-template-columns: 1fr; }
-    .remuneracao-table th,
-    .remuneracao-table td { padding: 10px; }
+    .remuneracao-table tr {
+      grid-template-columns: 1fr;
+      gap: 7px;
+      padding: 9px;
+    }
+    .remuneracao-table td {
+      padding: 8px 9px;
+      font-size: 12px;
+    }
+    .remuneracao-table td.valor {
+      font-size: 15px;
+      white-space: normal;
+    }
   }
 
   @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
@@ -545,8 +597,8 @@
   .field.span-2 { grid-column: span 2; }
 
   /* BLOCO 02.12 — Exibição condicional por instituição/estado */
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only,
-  .sp-only, .mg-only, .ba-only, .pr-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only,
+  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only {
     display: none !important;
   }
 
@@ -560,6 +612,8 @@
   body[data-inst="pcba"] .field.pcba-only, body[data-inst="pcba"] h2.pcba-only { display: flex !important; }
   body[data-inst="pmpr"] .field.pmpr-only, body[data-inst="pmpr"] h2.pmpr-only { display: flex !important; }
   body[data-inst="pcpr"] .field.pcpr-only, body[data-inst="pcpr"] h2.pcpr-only { display: flex !important; }
+  body[data-inst="pmrs"] .field.pmrs-only, body[data-inst="pmrs"] h2.pmrs-only { display: flex !important; }
+  body[data-inst="pcrs"] .field.pcrs-only, body[data-inst="pcrs"] h2.pcrs-only { display: flex !important; }
 
   body[data-inst="pmesp"] .field.sp-only,
   body[data-inst="pcsp"] .field.sp-only,
@@ -568,7 +622,9 @@
   body[data-inst="pmba"] .field.ba-only,
   body[data-inst="pcba"] .field.ba-only,
   body[data-inst="pmpr"] .field.pr-only,
-  body[data-inst="pcpr"] .field.pr-only { display: flex !important; }
+  body[data-inst="pcpr"] .field.pr-only,
+  body[data-inst="pmrs"] .field.rs-only,
+  body[data-inst="pcrs"] .field.rs-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -580,6 +636,8 @@
   body[data-inst="pcba"] div.alerta.pcba-only { display: block !important; }
   body[data-inst="pmpr"] div.alerta.pmpr-only { display: block !important; }
   body[data-inst="pcpr"] div.alerta.pcpr-only { display: block !important; }
+  body[data-inst="pmrs"] div.alerta.pmrs-only { display: block !important; }
+  body[data-inst="pcrs"] div.alerta.pcrs-only { display: block !important; }
 
   /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
@@ -792,6 +850,10 @@
             <option value="pmpr">PMPR - Polícia Militar</option>
             <option value="pcpr">PCPR - Polícia Civil</option>
           </optgroup>
+          <optgroup label="Rio Grande do Sul">
+            <option value="pmrs">PMRS - Brigada Militar</option>
+            <option value="pcrs">PCRS - Polícia Civil</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -837,6 +899,10 @@
       <optgroup label="Paraná">
         <option value="pmpr">PMPR - Polícia Militar</option>
         <option value="pcpr">PCPR - Polícia Civil</option>
+      </optgroup>
+      <optgroup label="Rio Grande do Sul">
+        <option value="pmrs">PMRS - Brigada Militar</option>
+        <option value="pcrs">PCRS - Polícia Civil</option>
       </optgroup>
     </select>
   </div>
@@ -888,7 +954,7 @@
       Escolha sua instituição no topo do site e navegue por remuneração tabelada, direitos, concursos, ações judiciais, associações, cursos preparatórios e parceiros. O objetivo é simples: entregar informação útil, organizada e rápida para quem vive a rotina da segurança pública.
     </p>
     <div class="principal-actions">
-      <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Tabela de Remuneração</button>
+      <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Ver Remuneração Grátis</button>
       <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Ver Concursos</button>
       <button class="principal-btn secundario" type="button" onclick="switchPage('cursos')">Ver Cursos</button>
     </div>
@@ -1657,7 +1723,7 @@
           Pessoas que sofrem com a procrastinação, estão cansadas de sentir preguiça e tentam melhorar de vida, mas não conseguem manter um plano por muito tempo.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar na Hotmart">Comprar livro</a>
+        <a class="curso-cta" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar na Hotmart">Acessar livro na Hotmart</a>
       </div>
 
       <div class="curso-card">
@@ -1685,7 +1751,7 @@
           Concurseiros, estudantes e universitários.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos na Hotmart">Comprar livro</a>
+        <a class="curso-cta" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos na Hotmart">Acessar livro na Hotmart</a>
       </div>
 
       <div class="curso-card">
@@ -1710,7 +1776,7 @@
           <li>A Tradução de Competências: transformar anos de caserna em currículo executivo valorizado pelo mercado.</li>
         </ul>
 
-        <a class="curso-cta" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia na Hotmart">Comprar livro</a>
+        <a class="curso-cta" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia na Hotmart">Acessar livro na Hotmart</a>
       </div>
 
       <div class="curso-card">
@@ -1729,7 +1795,7 @@
           <span>Desenvolvimento pessoal</span>
         </div>
 
-        <a class="curso-cta" href="https://go.hotmart.com/V105563143D" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Método DMA na Hotmart">Comprar livro</a>
+        <a class="curso-cta" href="https://go.hotmart.com/V105563143D" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Método DMA na Hotmart">Acessar livro na Hotmart</a>
       </div>
 
       <div class="curso-card">
@@ -1763,7 +1829,7 @@
           Líderes e pessoas que desejam assumir mais controle sobre metas, decisões e rotina.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia na Hotmart">Comprar livro</a>
+        <a class="curso-cta" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia na Hotmart">Acessar livro na Hotmart</a>
       </div>
     </div>
   </div>
@@ -2417,6 +2483,7 @@ const AUX_ALIM_BA_40H = 440.00;            // Decreto BA 22.863/2024
 const AUX_ALIM_BA_30H = 286.00;            // Decreto BA 22.863/2024
 const AUX_ALIM_RJ_PM = 433.80;             // Decreto RJ 50.081/2026 (PMERJ)
 const AUX_ALIM_PR_PADRAO = 834.74;         // Lei PR 22.208/2024 — auxílio-alimentação dos servidores ativos
+const AUX_ALIM_RS_BM = 400.00;              // Editais BM/RS 2025 — auxílio-alimentação informado para Soldado e Oficialato
 const FASPM_PR_TITULAR = 0.005;            // Lei PR 17.169/2012 — 0,5% do subsídio (facultativo)
 const FASPM_PR_DEPENDENTE = 0.002;         // Lei PR 17.169/2012 — 0,2% por dependente
 const FASPM_PR_LIMITE = 0.02;              // Limite de 2% do subsídio
@@ -2713,6 +2780,48 @@ const CARGOS_PCPR = [
   { val: "papilo_pr_xi", text: "Papiloscopista Policial PCPR — Nível XI", padrao: 18513.49, oficial: false, retpFator: 0 }
 ];
 
+const CARGOS_PMRS = [
+  // PMRS / Brigada Militar do Rio Grande do Sul — relação oficial de remuneração RHE, competência 11/2025, com linhas inicial/final por posto/graduação.
+  { val: "cel_rs_ini", text: "CEL PM — Coronel PMRS (remuneração inicial)", padrao: 19911.80, oficial: true, retpFator: 0 },
+  { val: "cel_rs_fin", text: "CEL PM — Coronel PMRS (remuneração final)", padrao: 36836.83, oficial: true, retpFator: 0 },
+  { val: "tc_rs_ini", text: "TEN CEL PM — Tenente-Coronel PMRS (remuneração inicial)", padrao: 17920.65, oficial: true, retpFator: 0 },
+  { val: "tc_rs_fin", text: "TEN CEL PM — Tenente-Coronel PMRS (remuneração final)", padrao: 33153.20, oficial: true, retpFator: 0 },
+  { val: "maj_rs_ini", text: "MAJ PM — Major PMRS (remuneração inicial)", padrao: 16128.56, oficial: true, retpFator: 0 },
+  { val: "maj_rs_fin", text: "MAJ PM — Major PMRS (remuneração final)", padrao: 29837.83, oficial: true, retpFator: 0 },
+  { val: "cap_rs_ini", text: "CAP PM — Capitão PMRS (remuneração inicial)", padrao: 14515.71, oficial: true, retpFator: 0 },
+  { val: "cap_rs_fin", text: "CAP PM — Capitão PMRS (remuneração final)", padrao: 26854.06, oficial: true, retpFator: 0 },
+  { val: "cap_qoem_rs_edital", text: "CAP PM — Capitão PMRS / QOEM (referência edital 2025)", padrao: 21513.44, oficial: true, retpFator: 0 },
+  { val: "alof_rs", text: "AL OF PM — Aluno-Oficial PMRS / bolsa CSPM", padrao: 10756.72, oficial: false, retpFator: 0 },
+  { val: "ten1_rs_ini", text: "1º TEN PM — 1º Tenente PMRS (remuneração inicial)", padrao: 8960.29, oficial: true, retpFator: 0 },
+  { val: "ten1_rs_fin", text: "1º TEN PM — 1º Tenente PMRS (remuneração final)", padrao: 16576.54, oficial: true, retpFator: 0 },
+  { val: "sgt1_rs_ini", text: "1º SGT PM — 1º Sargento PMRS (remuneração inicial)", padrao: 7168.20, oficial: true, retpFator: 0 },
+  { val: "sgt1_rs_fin", text: "1º SGT PM — 1º Sargento PMRS (remuneração final)", padrao: 13261.17, oficial: true, retpFator: 0 },
+  { val: "sgt2_rs_ini", text: "2º SGT PM — 2º Sargento PMRS (remuneração inicial)", padrao: 6769.98, oficial: true, retpFator: 0 },
+  { val: "sgt2_rs_fin", text: "2º SGT PM — 2º Sargento PMRS (remuneração final)", padrao: 12524.47, oficial: true, retpFator: 0 },
+  { val: "sgt3_rs_ini", text: "3º SGT PM — 3º Sargento PMRS (remuneração inicial)", padrao: 6172.64, oficial: true, retpFator: 0 },
+  { val: "sgt3_rs_fin", text: "3º SGT PM — 3º Sargento PMRS (remuneração final)", padrao: 11419.39, oficial: true, retpFator: 0 },
+  { val: "sd_rs_ini", text: "SD PM — Soldado PMRS (remuneração inicial RHE)", padrao: 5376.20, oficial: true, selected: true, retpFator: 0 },
+  { val: "sd_rs_fin", text: "SD PM — Soldado PMRS (remuneração final RHE)", padrao: 9945.98, oficial: true, retpFator: 0 },
+  { val: "sd1_rs_edital", text: "SD 1ª CL — Soldado PMRS (referência edital 2025)", padrao: 5944.85, oficial: true, retpFator: 0 }
+];
+
+const CARGOS_PCRS = [
+  // PCRS — cargos e evolução por classe com base em editais 2025, relação oficial RHE 11/2025 e tabelas de carreira divulgadas para a Lei Estadual RS nº 16.165/2024.
+  { val: "del_rs_1", text: "Delegado de Polícia PCRS — 1ª Classe", padrao: 23334.43, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_rs_2", text: "Delegado de Polícia PCRS — 2ª Classe", padrao: 25927.43, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_rs_3", text: "Delegado de Polícia PCRS — 3ª Classe", padrao: 28808.27, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_rs_4", text: "Delegado de Polícia PCRS — 4ª Classe", padrao: 32009.35, oficial: true, delegado: true, retpFator: 0 },
+  { val: "esc_rs_1", text: "Escrivão de Polícia PCRS — 1ª Classe", padrao: 7299.54, oficial: true, selected: true, retpFator: 0 },
+  { val: "esc_rs_2", text: "Escrivão de Polícia PCRS — 2ª Classe", padrao: 10617.47, oficial: true, retpFator: 0 },
+  { val: "esc_rs_3", text: "Escrivão de Polícia PCRS — 3ª Classe", padrao: 13271.83, oficial: true, retpFator: 0 },
+  { val: "esc_rs_4", text: "Escrivão de Polícia PCRS — 4ª Classe", padrao: 15926.26, oficial: true, retpFator: 0 },
+  { val: "insp_rs_1", text: "Inspetor de Polícia PCRS — 1ª Classe", padrao: 7299.54, oficial: true, retpFator: 0 },
+  { val: "insp_rs_2", text: "Inspetor de Polícia PCRS — 2ª Classe", padrao: 10617.47, oficial: true, retpFator: 0 },
+  { val: "insp_rs_3", text: "Inspetor de Polícia PCRS — 3ª Classe", padrao: 13271.83, oficial: true, retpFator: 0 },
+  { val: "insp_rs_4", text: "Inspetor de Polícia PCRS — 4ª Classe", padrao: 15926.26, oficial: true, retpFator: 0 },
+  { val: "comissario_rs", text: "Comissário de Polícia PCRS — topo da carreira", padrao: 19907.84, oficial: true, retpFator: 0 }
+];
+
 
 
 /* ============================================================ */
@@ -2780,6 +2889,54 @@ const ACOES_JUDICIAIS = {
     { titulo: "Insalubridade, periculosidade e risco de vida no subsídio", status: "Atenção jurídica", ano: "LC 259/2023", tipo: "individual", desc: "A legislação da PCPR indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida, sem prejuízo de discussão judicial específica quando houver tese ou decisão aplicável.", base: "LC PR 259/2023, art. 39, §3º, com observação de ADI indicada no texto legal.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
     { titulo: "Promoção por titulação e enquadramento", status: "Verificar requisitos", ano: "LC 259/2023 e alterações", tipo: "individual", desc: "A promoção por titulação para níveis específicos envolve tempo de carreira, formação, requisitos e regras de transição. Conferir cargo, nível, data de ingresso e documentação.", base: "Art. 83-A da LC PR 259/2023 e alterações posteriores.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
     { titulo: "Diária especial por jornada extrajornada voluntária", status: "Somente se autorizada", ano: "LC 259/2023", tipo: "individual", desc: "A diária especial por jornada extrajornada voluntária aparece entre parcelas possíveis, mas depende de autorização, disponibilidade orçamentária, escala e cumprimento efetivo.", base: "LC PR 259/2023, art. 39, rol de vantagens e indenizações.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" }
+  ],
+  pmrs: [
+    {
+      titulo: "Subsídio, auxílio-alimentação e enquadramento funcional",
+      status: "Verificar caso a caso",
+      ano: "Editais 2025",
+      tipo: "individual",
+      desc: "Conferência de subsídio/remuneração, auxílio-alimentação, ingresso, posto/graduação e eventuais diferenças deve partir do edital oficial, ficha funcional e contracheque. Não tratar verba condicionada como automática.",
+      base: "Editais oficiais da Brigada Militar/RS para Soldado e Oficialato; legislação estadual dos militares.",
+      fonte: "Brigada Militar/RS — Concursos 2025",
+      fonteUrl: "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+      atualizado: "Abril/2026"
+    },
+    {
+      titulo: "Reserva remunerada, reforma e contribuição previdenciária",
+      status: "Tema previdenciário",
+      ano: "EC 103/2019",
+      tipo: "individual",
+      desc: "A análise de reserva, reforma, abono de permanência e descontos previdenciários exige data de ingresso, tempo total, legislação estadual e demonstrativo de pagamento.",
+      base: "Constituição Federal, EC 103/2019 e normas estaduais/RS aplicáveis aos militares estaduais.",
+      fonte: "IPE Prev/RS e legislação estadual",
+      fonteUrl: "https://ipeprev.rs.gov.br/",
+      atualizado: "Abril/2026"
+    }
+  ],
+  pcrs: [
+    {
+      titulo: "Vencimentos de Escrivão, Inspetor e Delegado — classe inicial",
+      status: "Verificar caso a caso",
+      ano: "Editais 2025",
+      tipo: "individual",
+      desc: "Conferência de vencimentos, classe inicial, dedicação exclusiva, descontos e eventual diferença remuneratória deve usar edital, ato de nomeação e contracheque.",
+      base: "Editais nº 06/2025 (Escrivão/Inspetor) e nº 04/2025 (Delegado) da Polícia Civil/RS.",
+      fonte: "Polícia Civil/RS — Concursos 2025",
+      fonteUrl: "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
+      atualizado: "Abril/2026"
+    },
+    {
+      titulo: "Aposentadoria policial, abono e paridade/integralidade",
+      status: "Tema sensível",
+      ano: "EC 103/2019",
+      tipo: "individual",
+      desc: "A análise de aposentadoria policial e abono de permanência depende da data de ingresso, tempo de atividade policial, regra de transição e norma estadual efetivamente aplicada.",
+      base: "Lei Federal 14.735/2023, EC 103/2019, Lei Estadual RS 12.350/2005 e legislação previdenciária estadual.",
+      fonte: "Polícia Civil/RS — Editais e legislação",
+      fonteUrl: "https://www.pc.rs.gov.br/",
+      atualizado: "Abril/2026"
+    }
   ]
 };
 
@@ -2842,6 +2999,16 @@ const ASSOCIACOES = {
     { nome: "SINCLAPOL — Sindicato das Classes Policiais Civis do Paraná", tipo: "sindicato", publico: "Policiais civis do Paraná", acao: "Defesa de interesses da categoria, carreira, remuneração, condições de trabalho e pautas institucionais da Polícia Civil do Paraná.", site: "sinclapol.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, comunicação de pautas, assembleias, apoio jurídico conforme regras internas e defesa coletiva." },
     { nome: "ADEPOL-PR — Associação dos Delegados de Polícia do Paraná", tipo: "associação", publico: "Delegados de Polícia do Paraná", acao: "Representação institucional da carreira de Delegado, defesa de prerrogativas, valorização profissional e acompanhamento legislativo.", site: "adepolpr.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, notícias, eventos, defesa de prerrogativas e apoio institucional." },
     { nome: "Entidades e associações por carreira da PCPR", tipo: "associação", publico: "Agentes, Papiloscopistas, Delegados e demais carreiras da Polícia Civil", acao: "Representação específica por cargo, acompanhamento de promoções, subsídio, titulação, escalas e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, apoio institucional, pautas remuneratórias, acompanhamento legislativo e eventual orientação jurídica." }
+  ],
+  pmrs: [
+    { nome: "ASSTBM - Associação dos Sargentos, Subtenentes e Tenentes da Brigada Militar e Bombeiros Militares do RS", foco: "Militares estaduais da Brigada Militar e do Corpo de Bombeiros Militar do RS", acao: "Representação associativa, defesa institucional e acompanhamento de pautas de carreira dos militares estaduais.", site: "asstbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Apoio associativo, comunicação, atuação institucional, convênios e orientações aos associados." },
+    { nome: "ABAMF - Associação Beneficente Antônio Mendes Filho", foco: "Praças da Brigada Militar e Bombeiros Militares do Rio Grande do Sul", acao: "Atuação associativa e beneficente voltada à categoria, com acompanhamento de pautas funcionais e apoio aos associados.", site: "abamf.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Apoio associativo, notícias, representação, convênios e atendimento ao associado." },
+    { nome: "ASOFBM - Associação dos Oficiais da Brigada Militar", foco: "Oficiais da Brigada Militar do Rio Grande do Sul", acao: "Representação da oficialidade militar estadual, defesa institucional e valorização da carreira.", site: "www.asofbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, notícias, eventos, comunicação e apoio aos associados." }
+  ],
+  pcrs: [
+    { nome: "UGEIRM Sindicato - Sindicato dos Escrivães, Inspetores e Investigadores de Polícia do RS", foco: "Policiais civis do Estado do Rio Grande do Sul", acao: "Representação sindical em defesa de direitos, carreira, condições de trabalho e valorização dos policiais civis.", site: "ugeirmsindicato.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, mobilização, assembleias, convênios e atendimento sindical." },
+    { nome: "ASDEP-RS - Associação dos Delegados de Polícia do Rio Grande do Sul", foco: "Delegados de Polícia Civil do RS", acao: "Representação associativa da carreira de Delegado, defesa institucional e acompanhamento de pautas legislativas e administrativas.", site: "asdep.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "SINPOL-RS - Sindicato dos Policiais Civis do Rio Grande do Sul", foco: "Servidores policiais civis do Rio Grande do Sul", acao: "Atuação sindical e acompanhamento de pautas de valorização, direitos e condições de trabalho.", site: "sinpolrs.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, convênios e orientação aos filiados." }
   ]
 };
 
@@ -3017,6 +3184,40 @@ const CONCURSOS = {
     validade: "A definir no edital.",
     previsao: "Novo certame previsto para 2026; tratar informações de banca, vagas e cronograma como previsão até publicação do edital oficial.",
     site: "https://www.pcpr.pr.gov.br/Pagina/Concursos"
+  },
+  pmrs: {
+    edital: "Brigada Militar RS — Soldado 1ª Classe e Oficialato 2025",
+    salario: "Soldado: R$ 5.944,85 + auxílio-alimentação de R$ 400,00. Oficialato: durante o CSPM, bolsa de 50% da remuneração de Capitão; após o curso, Capitão com remuneração de R$ 21.513,44 + auxílio-alimentação de R$ 400,00.",
+    vagas: "Soldado: 1.200 vagas. Oficialato: 120 vagas.",
+    cotas: "Conforme editais: ampla concorrência e reservas para pessoas com deficiência, pessoas negras, trans e indígenas; conferir distribuição por cargo.",
+    idade: "Soldado: idade máxima de 25 anos; Oficialato: idade máxima de 29 anos, com regra específica para militares estaduais do RS.",
+    escolaridade: "Soldado: ensino médio completo e CNH B. Oficialato: curso superior em Direito, além dos demais requisitos do edital.",
+    banca: "Soldado: FUNDATEC. Oficialato: IBADE.",
+    inscritos: "Consultar banca/edital e atos posteriores.",
+    materias: "Soldado: Língua Portuguesa, Legislação Específica, Conhecimentos Gerais, Matemática, Direitos Humanos e Cidadania e Informática. Oficialato: disciplinas jurídicas e institucionais conforme edital.",
+    etapas: "Prova escrita/intelectual, exames de saúde, teste de aptidão física e avaliação psicológica. Oficialato também prevê etapas específicas como prova discursiva, prova oral e avaliação de títulos, conforme edital.",
+    cfsd: "Soldado: Curso Básico de Formação Policial Militar (CBFPM). Oficialato: Curso Superior Policial Militar (CSPM), com bolsa de 50% da remuneração de Capitão durante o curso.",
+    estagio: "Estágio/probatório e inclusão conforme estatuto e edital.",
+    validade: "Soldado: 2 anos, prorrogável uma vez por igual período. Oficialato: conferir edital específico.",
+    previsao: "Concursos 2025 publicados; acompanhar página oficial de concursos da Brigada Militar para novos atos, convocações e retificações.",
+    site: "https://www.brigadamilitar.rs.gov.br/concursos-2025"
+  },
+  pcrs: {
+    edital: "Polícia Civil RS — Editais 2025: Escrivão, Inspetor e Delegado",
+    salario: "Escrivão/Inspetor: R$ 7.299,54. Delegado: R$ 23.334,43.",
+    vagas: "Escrivão: 360 vagas. Inspetor: 360 vagas. Delegado: 30 vagas.",
+    cotas: "Reserva para pessoas com deficiência, pessoas negras, trans e indígenas conforme editais.",
+    idade: "Mínimo de 18 anos até a matrícula no Curso de Formação Profissional; demais requisitos conforme edital.",
+    escolaridade: "Escrivão/Inspetor: nível superior completo e CNH B. Delegado: bacharelado em Direito e requisitos próprios do edital.",
+    banca: "FUNDATEC",
+    inscritos: "Consultar atos de homologação da FUNDATEC/ACADEPOL.",
+    materias: "Conforme edital do cargo: prova de capacitação intelectual, redação/discursiva e disciplinas específicas da carreira policial.",
+    etapas: "Prova de capacitação intelectual, teste de aptidão física, avaliação psicológica/psiquiátrica, exame de saúde, sindicância de vida pregressa e Curso de Formação. Delegado possui etapas próprias como prova discursiva, prova oral e títulos, conforme edital.",
+    cfsd: "Curso de Formação Profissional pela ACADEPOL/RS.",
+    estagio: "Estágio probatório conforme regime estatutário.",
+    validade: "Conferir edital e atos posteriores.",
+    previsao: "Editais 2025 publicados e acompanhados por atos no site oficial da Polícia Civil/RS.",
+    site: "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025"
   }
 };
 
@@ -3026,7 +3227,7 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr','pmrs','pcrs'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
@@ -3117,7 +3318,9 @@ function atualizarHeaderDesc(descInstituicao) {
     pmba: 'Polícia Militar da Bahia',
     pcba: 'Polícia Civil da Bahia',
     pmpr: 'Polícia Militar do Paraná',
-    pcpr: 'Polícia Civil do Paraná'
+    pcpr: 'Polícia Civil do Paraná',
+    pmrs: 'Brigada Militar do Rio Grande do Sul',
+    pcrs: 'Polícia Civil do Rio Grande do Sul'
   };
   const el = document.getElementById('header-desc');
   if (el) el.textContent = (descInstituicao || descs[currInst] || descs.pmesp) + ' — ' + getNomeAbaAtual();
@@ -3147,7 +3350,8 @@ function popularCargos(inst) {
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
-    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR
+    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
+    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS
   };
   currTabela = map[inst] || CARGOS_PM;
 
@@ -3222,6 +3426,14 @@ const REMUNERACAO_FONTES_OFICIAIS = {
   pcpr: {
     nome: 'Legislação/PR — Lei Complementar nº 259/2023 e Lei nº 22.208/2024',
     url: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1'
+  },
+  pmrs: {
+    nome: 'Governo do RS/RHE — Relação de Remuneração — competência 11/2025; editais BMRS 2025 para ingresso',
+    url: 'https://tesouro-admin.fazenda.rs.gov.br/upload/arquivos/202512/12090345-cargos-venc-gov3032-112025.pdf'
+  },
+  pcrs: {
+    nome: 'Governo do RS/RHE — Relação de Remuneração — competência 11/2025; editais PCRS 2025 para ingresso',
+    url: 'https://tesouro-admin.fazenda.rs.gov.br/upload/arquivos/202512/12090345-cargos-venc-gov3032-112025.pdf'
   },
   pr_auxilio: {
     nome: 'Legislação/PR — auxílio-alimentação de R$ 834,74',
@@ -3300,6 +3512,8 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `Regime por subsídio: o subsídio pode compreender adicionais como insalubridade, periculosidade e risco de vida, conforme LC PR 259/2023 e aplicação vigente. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Verbas específicas/eventuais não foram somadas.`;
   }
 
+  if (inst === 'pmrs') return `<strong>RHE/RS:</strong> linhas inicial e final por posto/graduação, com competência 11/2025. <strong>Editais BM/RS 2025:</strong> referências de ingresso para Soldado, Aluno-Oficial e Capitão. <strong>Auxílio-alimentação BM/RS:</strong> ${fmt(AUX_ALIM_RS_BM)} informado em edital; não somado automaticamente ao bruto.`;
+  if (inst === 'pcrs') return '<strong>Carreira PCRS:</strong> classes de Delegado, Escrivão, Inspetor e Comissário, com valores de referência dos editais/tabelas 2025 e conferência na relação RHE 11/2025. <strong>Adicionais/indenizações:</strong> dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 
@@ -3397,7 +3611,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
-    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR
+    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
+    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS
   };
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
@@ -3438,6 +3653,16 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     beneficios = AUX_ALIM_PR_PADRAO;
     criterio = 'Subsídio bruto mensal por cargo/classe.';
     benefDesc = `Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}.`;
+  } else if (inst === 'pmrs') {
+    remuneracao = padrao;
+    beneficios = AUX_ALIM_RS_BM;
+    criterio = 'Remuneração bruta mensal de referência por posto/graduação conforme RHE/RS 11/2025 e editais oficiais BMRS 2025 para linhas de ingresso.';
+    benefDesc = `Auxílio-alimentação BM/RS informado em edital: ${fmt(AUX_ALIM_RS_BM)}.`;
+  } else if (inst === 'pcrs') {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = 'Subsídio/vencimento bruto mensal por cargo/classe conforme editais PCRS 2025, tabelas de carreira e relação RHE/RS 11/2025.';
+    benefDesc = 'Adicionais, indenizações e auxílios dependem de rubrica, lotação e situação funcional; não somados automaticamente.';
   }
 
   return { remuneracao, beneficios, total: remuneracao + beneficios, criterio, benefDesc, fonteKey, badge };
@@ -3544,7 +3769,9 @@ function mudarInstituicao(novaInstituicao) {
     pmba:  { titulo: "PMBA",  desc: "Polícia Militar da Bahia",             cor: "#967117", alertaPrev: "Funprev-BA — 14% sobre soldo, GAP, anuênios e CET." },
     pcba:  { titulo: "PCBA",  desc: "Polícia Civil da Bahia",                cor: "#333333", alertaPrev: "Funprev-BA — 14% sobre vencimento, anuênios, CET, GIP e GQUAL." },
     pmpr:  { titulo: "PMPR",  desc: "Polícia Militar do Paraná",              cor: "#2f6b3f", alertaPrev: "ParanáPrevidência/Sistema de Proteção Social Militar: contribuição previdenciária estimada em 14% sobre base remuneratória. FASPM é facultativo e calculado somente se selecionado." },
-    pcpr:  { titulo: "PCPR",  desc: "Polícia Civil do Paraná",                 cor: "#1f5e89", alertaPrev: "ParanáPrevidência: contribuição previdenciária estimada em 14% sobre base remuneratória. Verbas indenizatórias ficam destacadas sem incidência automática." }
+    pcpr:  { titulo: "PCPR",  desc: "Polícia Civil do Paraná",                 cor: "#1f5e89", alertaPrev: "ParanáPrevidência: contribuição previdenciária estimada em 14% sobre base remuneratória. Verbas indenizatórias ficam destacadas sem incidência automática." },
+    pmrs:  { titulo: "PMRS",  desc: "Brigada Militar do Rio Grande do Sul",     cor: "#0f3d75", alertaPrev: "IPE Prev/RS e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, rubricas e auxílio-alimentação no contracheque." },
+    pcrs:  { titulo: "PCRS",  desc: "Polícia Civil do Rio Grande do Sul",       cor: "#5b6472", alertaPrev: "IPE Prev/RS: contribuição previdenciária conforme regra estadual; adicionais e indenizações dependem de rubrica e situação funcional." }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -3618,11 +3845,12 @@ function analisarDireitos() {
 
   const nomesInst = {
     pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
-    pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA', pmpr: 'PMPR', pcpr: 'PCPR'
+    pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA', pmpr: 'PMPR', pcpr: 'PCPR',
+    pmrs: 'PMRS', pcrs: 'PCRS'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr'].includes(inst);
-  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : '';
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs'].includes(inst);
+  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
@@ -3692,6 +3920,10 @@ function analisarDireitos() {
     html += direitoItem('Planserv Bahia', 'condicionado',
       'Assistência à saúde dos servidores públicos baianos, sujeita a adesão, contribuição, dependentes e regras administrativas.',
       'Base: normas do Planserv e legislação estadual da Bahia.');
+  } else if (inst === 'pmrs' || inst === 'pcrs') {
+    html += direitoItem('Assistência à saúde / sistema estadual RS', 'condicionado',
+      getSaudeTexto(inst),
+      getSaudeBase(inst));
   }
 
   // ===== VANTAGENS REMUNERATÓRIAS =====
@@ -3849,7 +4081,9 @@ function getSaudeTexto(inst) {
     pmba: 'PMBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
     pcba: 'PCBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
     pmpr: 'PMPR: assistência pode envolver FASPM, sistema próprio de saúde militar e regras de adesão/dependentes.',
-    pcpr: 'PCPR: assistência pode envolver o Sistema de Assistência à Saúde do Paraná e regras administrativas do Estado.'
+    pcpr: 'PCPR: assistência pode envolver o Sistema de Assistência à Saúde do Paraná e regras administrativas do Estado.',
+    pmrs: 'PMRS: assistência pode envolver IPE Saúde, Hospital da Brigada Militar e regras próprias dos militares estaduais do RS.',
+    pcrs: 'PCRS: assistência pode envolver IPE Saúde e regras administrativas do Estado do Rio Grande do Sul.'
   };
   return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
 }
@@ -3859,6 +4093,7 @@ function getSaudeBase(inst) {
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
   if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
   if (inst === 'pcpr') return 'SAS/Paraná, legislação estadual e normas internas da PCPR/SEAP, conforme vínculo e adesão.';
+  if (inst === 'pmrs' || inst === 'pcrs') return 'IPE Saúde/RS, Hospital da Brigada Militar quando aplicável, normas estaduais e regras de adesão/dependentes.';
   return 'Regulamento institucional, estatuto da carreira, órgão de saúde estadual e regras de contribuição/dependentes.';
 }
 
@@ -3870,6 +4105,8 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'pmba' || inst === 'pcba') return `Na Bahia, há referência a anuênios/adicionais por tempo conforme carreira. Pelo tempo informado, a referência inicial é de <strong>${Math.min(35, tempo)}</strong> ano(s) de serviço.`;
   if (inst === 'pmpr') return `Na PMPR, a carreira é estruturada por subsídio, posto/graduação e classes. A progressão/promoção por classe deve ser conferida no enquadramento funcional; o tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício.`;
   if (inst === 'pcpr') return `Na PCPR, a carreira é estruturada por subsídio, cargo e níveis/classes. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de promoção, progressão e regras de titulação.`;
+  if (inst === 'pmrs') return `Na PMRS, posto/graduação, promoções, interstícios e eventuais vantagens devem ser conferidos conforme estatuto e ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
+  if (inst === 'pcrs') return `Na PCRS, cargo, classe, tempo de carreira e regras de promoção/progressão devem ser conferidos na ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
   return 'Verificar adicional por tempo de serviço conforme legislação da carreira.';
 }
 
@@ -3880,6 +4117,8 @@ function getTempoServicoBase(inst) {
   if (inst === 'pmba' || inst === 'pcba') return 'Base: estatuto/lei orgânica e normas remuneratórias do Estado da Bahia.';
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e Lei PR 17.169/2012, com enquadramento por classes.';
   if (inst === 'pcpr') return 'Base: Lei Complementar PR 259/2023 e alterações posteriores, com estrutura por subsídio e níveis/classes.';
+  if (inst === 'pmrs') return 'Base: estatuto dos militares estaduais do RS, normas remuneratórias e ficha funcional.';
+  if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023, normas estaduais e ficha funcional.';
   return 'Base: estatuto, lei de remuneração e ficha funcional.';
 }
 
@@ -3888,6 +4127,8 @@ function getInsalubridadeTexto(inst) {
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
   if (inst === 'pmpr') return 'Na PMPR, a remuneração é por subsídio. Não computar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
+  if (inst === 'pmrs') return 'Na PMRS, não lançar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
+  if (inst === 'pcrs') return 'Na PCRS, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; não é verba universal automática.';
   return 'Pode existir quando houver exposição reconhecida a agente insalubre, mediante laudo, enquadramento e previsão legal da instituição.';
 }
 
@@ -3895,13 +4136,15 @@ function getInsalubridadeBase(inst) {
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
+  if (inst === 'pmrs' || inst === 'pcrs') return 'Base: legislação estadual do RS, laudo, rubrica de pagamento e enquadramento do local/função.';
   return 'Depende de laudo, legislação estadual e enquadramento do local/função.';
 }
 
 function getPericulosidadeTexto(inst) {
   if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende o risco de vida e a periculosidade. Tratar como verba separada somente diante de rubrica, decisão ou tese específica.';
-  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
+  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
   return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
 }
 
@@ -3909,6 +4152,8 @@ function getPericulosidadeBase(inst) {
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º, e decisões judiciais aplicáveis.';
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e regime de subsídio dos militares estaduais do Paraná.';
+  if (inst === 'pmrs') return 'Base: estatuto e normas remuneratórias dos militares estaduais do RS.';
+  if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
   return 'Base: estatuto e lei de remuneração da instituição; não usar regra genérica para todas as carreiras.';
 }
 
@@ -3962,6 +4207,20 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('Diária especial / extrajornada voluntária', 'condicionado',
       'Pode existir quando houver escala, autorização e cumprimento de jornada extraordinária prevista em norma. Não é verba fixa mensal.',
       'Base: LC PR 259/2023, rol de vantagens/indenizações e regulamentação administrativa.');
+  } else if (inst === 'pmrs') {
+    html += direitoItem('Auxílio-Alimentação BM/RS', 'automatico',
+      'Valor de R$ 400,00 informado nos editais oficiais 2025 de Soldado e Oficialato da Brigada Militar.',
+      'Base: editais oficiais da Brigada Militar/RS.');
+    html += direitoItem('Diárias / serviço extraordinário', 'condicionado',
+      'Pode existir quando houver escala, autorização, deslocamento ou serviço extraordinário previsto em norma. Não é verba fixa mensal.',
+      'Conferir legislação estadual, publicação da escala e contracheque.');
+  } else if (inst === 'pcrs') {
+    html += direitoItem('Dedicação exclusiva / jornada de 40 horas', 'condicionado',
+      'Editais da PCRS indicam regime estatutário, 40 horas semanais e dedicação exclusiva para os cargos policiais.',
+      'Base: editais oficiais 2025 da Polícia Civil/RS.');
+    html += direitoItem('Diárias / indenizações / serviço extraordinário', 'condicionado',
+      'Podem existir conforme lotação, deslocamento, autorização e legislação estadual. Não são verbas fixas universais.',
+      'Conferir rubrica, contracheque, legislação estadual e normas internas.');
   }
   return html;
 }
@@ -3973,7 +4232,7 @@ function getStatusAposentadoria(tempo, idade, requisitosApos) {
 }
 
 function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
-  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
   if (requisitosApos === 'sim') {
     return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
   }
