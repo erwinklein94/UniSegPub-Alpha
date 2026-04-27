@@ -3512,8 +3512,8 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `Regime por subsídio: o subsídio pode compreender adicionais como insalubridade, periculosidade e risco de vida, conforme LC PR 259/2023 e aplicação vigente. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Verbas específicas/eventuais não foram somadas.`;
   }
 
-  if (inst === 'pmrs') return `<strong>RHE/RS:</strong> linhas inicial e final por posto/graduação, com competência 11/2025. <strong>Editais BM/RS 2025:</strong> referências de ingresso para Soldado, Aluno-Oficial e Capitão. <strong>Auxílio-alimentação BM/RS:</strong> ${fmt(AUX_ALIM_RS_BM)} informado em edital; não somado automaticamente ao bruto.`;
-  if (inst === 'pcrs') return '<strong>Carreira PCRS:</strong> classes de Delegado, Escrivão, Inspetor e Comissário, com valores de referência dos editais/tabelas 2025 e conferência na relação RHE 11/2025. <strong>Adicionais/indenizações:</strong> dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
+  if (inst === 'pmrs') return `RHE/RS: linhas inicial e final por posto/graduação, com competência 11/2025. Editais BM/RS 2025: referências de ingresso para Soldado, Aluno-Oficial e Capitão. Auxílio-alimentação BM/RS: ${fmt(AUX_ALIM_RS_BM)} informado em edital; não somado automaticamente ao bruto.`;
+  if (inst === 'pcrs') return 'Carreira PCRS: classes de Delegado, Escrivão, Inspetor e Comissário, com valores de referência dos editais/tabelas 2025 e conferência na relação RHE 11/2025. Adicionais/indenizações: dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 
