@@ -41,10 +41,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas e auxílio-alimentação por instituição">
-<title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -225,6 +221,7 @@
   .sidebar-ad a:hover { border-color: var(--vermelho); transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); }
   .sidebar-ad img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border-input); }
   .sidebar-ad span { display: block; padding: 12px; font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; color: var(--text-main); text-align: center; text-transform: uppercase; }
+  .sidebar-ad a.img-indisponivel::before { content: "Imagem não encontrada"; display: block; padding: 18px 10px; color: var(--text-muted); font-size: 12px; text-align: center; background: var(--item-bg); border-bottom: 1px solid var(--border-input); }
 
   /* BLOCO 02.7 — Controle de páginas/abas */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
@@ -654,7 +651,36 @@
   .linha.grupo .desc { color: var(--text-main); }
   .linha.grupo .val { display: none; }
   .linha.info .val { color: var(--text-muted); }
-  @media (max-width: 640px) { .calc-toolbar-top { flex-direction: column; } .calc-mode-toggle { width: 100%; } .calc-mode-toggle button { flex: 1; } }
+  .calc-section-title {
+    grid-column: 1 / -1;
+    margin: 8px 0 2px 0;
+    padding: 10px 12px;
+    border-left: 4px solid var(--vermelho);
+    border-radius: 8px;
+    background: var(--item-bg);
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .calc-field-note {
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .calc-field-note strong { color: var(--text-main); }
+  @media (max-width: 640px) {
+    .calc-toolbar-top { flex-direction: column; }
+    .calc-mode-toggle { width: 100%; }
+    .calc-mode-toggle button { flex: 1; }
+    label { flex-wrap: wrap; align-items: flex-start; }
+    label .calc-badge { margin-left: 0; margin-top: 3px; padding: 2px 5px; font-size: 8px; }
+    .calc-legenda span { font-size: 9px; padding: 3px 6px; }
+    .calc-section-title { font-size: 12px; padding: 9px 10px; }
+  }
 
 
   /* BLOCO 02.20 — Responsividade final para celular */
@@ -756,15 +782,15 @@
 
   <!-- BLOCO 03.4.2 — Links das abas/páginas -->
   <nav class="sidebar-nav" aria-label="Páginas">
-    <a onclick="switchPage('principal')" id="menu-principal" class="active" tabindex="0" role="link">Principal</a>
-    <a onclick="switchPage('acoes')" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
-    <a onclick="switchPage('associacoes')" id="menu-associacoes" tabindex="0" role="link">Associações e Sindicatos</a>
-    <a onclick="switchPage('calculadora')" id="menu-calculadora" tabindex="0" role="link">Calculadora de Vencimentos</a>
-    <a onclick="switchPage('concursos')" id="menu-concursos" tabindex="0" role="link">Concursos</a>
-    <a onclick="switchPage('cursos')" id="menu-cursos" tabindex="0" role="link">Cursos</a>
-    <a onclick="switchPage('direitos')" id="menu-direitos" tabindex="0" role="link">Direitos e Vantagens</a>
-    <a onclick="switchPage('livros')" id="menu-livros" tabindex="0" role="link">Livros</a>
-    <a onclick="switchPage('parceiros')" id="menu-parceiros" tabindex="0" role="link">Parceiros - Anuncie aqui!</a>
+    <a href="#principal" onclick="switchPage('principal'); return false;" id="menu-principal" class="active" tabindex="0" role="link">Principal</a>
+    <a href="#acoes" onclick="switchPage('acoes'); return false;" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
+    <a href="#associacoes" onclick="switchPage('associacoes'); return false;" id="menu-associacoes" tabindex="0" role="link">Associações e Sindicatos</a>
+    <a href="#calculadora" onclick="switchPage('calculadora'); return false;" id="menu-calculadora" tabindex="0" role="link">Calculadora de Vencimentos</a>
+    <a href="#concursos" onclick="switchPage('concursos'); return false;" id="menu-concursos" tabindex="0" role="link">Concursos</a>
+    <a href="#cursos" onclick="switchPage('cursos'); return false;" id="menu-cursos" tabindex="0" role="link">Cursos</a>
+    <a href="#direitos" onclick="switchPage('direitos'); return false;" id="menu-direitos" tabindex="0" role="link">Direitos e Vantagens</a>
+    <a href="#livros" onclick="switchPage('livros'); return false;" id="menu-livros" tabindex="0" role="link">Livros</a>
+    <a href="#parceiros" onclick="switchPage('parceiros'); return false;" id="menu-parceiros" tabindex="0" role="link">Parceiros - Anuncie aqui!</a>
     <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">Instagram</a>
   </nav>
 
@@ -773,11 +799,11 @@
   <div class="sidebar-ad" aria-label="Produtos parceiros">
     <p>Policial padrão precisa de<br>equipamento padrão!</p>
     <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
-      <img src="IMG_0868.jpeg" alt="Coldre Tático" loading="lazy">
+      <img src="IMG_0868.jpeg" alt="Coldre Tático" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver na Shopee</span>
     </a>
     <a href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
-      <img src="IMG_0865.jpeg" alt="Suporte Articulado 3D" loading="lazy">
+      <img src="IMG_0865.jpeg" alt="Suporte Articulado 3D" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver na Shopee</span>
     </a>
   </div>
@@ -911,6 +937,7 @@
       <div class="form-grid">
 
         <!-- BLOCO 05.2.1 — VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
+        <div class="calc-section-title">Auxílios de alimentação e valores por dia/mês</div>
         <!-- VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
         <div class="field sp-only">
           <label for="auxalim_sp_dia">SP — VA/VR por dia (UFESP 2026) <span class="tip" data-tip="Valor indenizatório por dia efetivamente trabalhado. Por padrão, o simulador usa 1 UFESP de 2026 (R$ 38,42) por dia. Ajuste se o holerite/órgão usar regra diferente.">?</span></label>
@@ -926,6 +953,7 @@
         </div>
 
         <!-- BLOCO 05.2.2 — TEMPO DE SERVIÇO -->
+        <div class="calc-section-title">Tempo de serviço e adicionais permanentes</div>
         <!-- TEMPO DE SERVIÇO -->
         <div class="field pm-only">
           <label for="quinquenios">Quinquênios (5% cada) <span class="tip" data-tip="Adicional por tempo de serviço. PMESP: 5% a cada 5 anos completos, calculado sobre a soma do padrão e da RETP. Quando houver pro labore legalmente aplicável, confira o holerite/ato específico.">?</span></label>
@@ -986,6 +1014,7 @@
         </div>
 
         <!-- BLOCO 05.2.4 — ADE / VPNI / GRATIFICAÇÕES ESPECÍFICAS -->
+        <div class="calc-section-title">Gratificações específicas e verbas de carreira</div>
         <!-- ADE / VPNI -->
         <div class="field pmmg-only">
           <label for="ade_mg_pm">ADE (Adic. Desempenho %) <span class="tip" data-tip="Adicional de Desempenho concedido com base nas avaliações periódicas. Aplica-se sobre o subsídio.">?</span></label>
@@ -1007,12 +1036,13 @@
         <!-- BLOCO 05.2.5 — PCERJ: AAP, representação, GHP, GATC e verbas específicas -->
         <!-- PCERJ AAP / Representação / GHP / GATC -->
         <div class="field pcerj-only">
-          <label for="periculosidade_rj">AAP / Representação <span class="tip" data-tip="Conforme a Lei 11.003/2025: AAP de 230% sobre o vencimento-base para policiais civis, exceto Delegados; Delegados recebem verba de representação de 212% sobre o vencimento-base.">?</span></label>
+          <label for="periculosidade_rj" id="label_periculosidade_rj">AAP / Representação automática <span class="tip" data-tip="Conforme a Lei 11.003/2025: AAP de 230% sobre o vencimento-base para policiais civis, exceto Delegados; Delegados recebem verba de representação de 212% sobre o vencimento-base.">?</span></label>
           <select id="periculosidade_rj">
             <option value="auto" selected>Automático conforme cargo</option>
-            <option value="1">Forçar AAP 230% (não Delegado)</option>
+            <option value="1">Forçar AAP 230% (somente não Delegado)</option>
             <option value="0">Não computar</option>
           </select>
+          <div id="nota_periculosidade_rj" class="calc-field-note">O simulador ajusta automaticamente entre AAP e representação conforme o cargo escolhido.</div>
         </div>
         <div class="field pcerj-only">
           <label for="ghp_rj_pc">GHP PCERJ <span class="tip" data-tip="O Caderno de Remuneração RJ apresenta GHP no valor máximo: 100% para a maioria dos cargos e 105% para Delegados. Use 'não computar' caso o servidor não receba a parcela máxima.">?</span></label>
@@ -1025,9 +1055,10 @@
           <label for="gtc_rj">GATC Técnico-Científica <span class="tip" data-tip="Gratificação de Atividade Técnico-Científica de 100% sobre o vencimento-base, aplicada aos cargos técnico-científicos indicados na tabela remuneratória oficial.">?</span></label>
           <select id="gtc_rj">
             <option value="auto" selected>Automático conforme cargo</option>
-            <option value="1">Forçar GATC 100%</option>
+            <option value="1">Forçar GATC 100% (use só se constar no contracheque)</option>
             <option value="0">Não computar</option>
           </select>
+          <div id="nota_gatc_rj" class="calc-field-note">No modo automático, a GATC só entra nos cargos técnico-científicos previstos na tabela.</div>
         </div>
         <div class="field pcerj-only">
           <label for="adictransf_rj">Adicional de Transferência (R$) <span class="tip" data-tip="Concedido ao policial transferido para localidade diversa da residência.">?</span></label>
@@ -1039,11 +1070,12 @@
         </div>
         <div class="field span-2 pcerj-only">
           <div class="alerta legal">
-            <strong>PCERJ:</strong> remuneração reestruturada pela Lei 11.003/2025 e conferida pelo Caderno de Remuneração RJ/2026. AAP/representação, GHP e GATC são calculadas por parcelas separadas para evitar duplicidade. O auxílio-alimentação é informado como total mensal estimado.
+            <strong>PCERJ:</strong> remuneração reestruturada pela Lei 11.003/2025 e conferida pelo Caderno de Remuneração RJ/2026. AAP/representação, GHP e GATC são calculadas por parcelas separadas para evitar duplicidade. O auxílio-alimentação é informado como total mensal estimado; padrão de R$ 704,00 equivale a 22 dias × R$ 32,00 e deve ser ajustado conforme o contracheque.
           </div>
         </div>
 
         <!-- BLOCO 05.2.6 — INSALUBRIDADE / PERICULOSIDADE / VERBAS DE RISCO -->
+        <div class="calc-section-title">Insalubridade, risco e verbas variáveis</div>
         <!-- INSALUBRIDADE -->
         <div class="field pm-only">
           <label for="insalubridade">Insalubridade (grau) <span class="tip" data-tip="Adicional de insalubridade calculado sobre o salário-mínimo nacional 2026 (R$ 1.621). Mínimo 10%, médio 20%, máximo 40%.">?</span></label>
@@ -1201,7 +1233,7 @@
           </select>
         </div>
         <div class="field pcba-only">
-          <label for="gip_ba_pc">GIP / Verba variável informada no contracheque (R$) <span class="tip" data-tip="Campo manual para verbas variáveis, metas, produtividade ou valores específicos que apareçam no contracheque e não estejam na tabela fixa de vencimento + GAJ/GAPJ.">?</span></label>
+          <label for="gip_ba_pc">GIP / Verba variável remuneratória (R$) <span class="tip" data-tip="Campo manual para GIP ou verba variável remuneratória informada no contracheque. Nesta versão, entra na base remuneratória para manter coerência com o alerta da PCBA sobre incidência previdenciária/tributária.">?</span></label>
           <input type="number" id="gip_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
@@ -1220,6 +1252,7 @@
         </div>
 
         <!-- VERBAS GERAIS -->
+        <div class="calc-section-title">Verbas eventuais e parcelas não mensais</div>
         <div class="field span-2">
           <div class="alerta">
             <strong>Verbas eventuais:</strong> 13º, férias, abono, licença-prêmio, fardamento e retroativos aparecem separados no holerite para não serem confundidos com o salário mensal normal.
@@ -1260,6 +1293,7 @@
       <h2 class="pcba-only">Trabalho Extra — Plantão Extraordinário</h2>
 
       <div class="form-grid">
+        <div class="calc-section-title">Plantões, diárias, escalas extras e valores manuais</div>
         <div class="field pm-only">
           <label for="qtddejem">Qtd. de DEJEM (diárias 8h, máx 10/mês) <span class="tip" data-tip="Diária Especial por Jornada Extraordinária Militar. Limite legal de 10 diárias/mês. Calculada sobre 8 UFESPs.">?</span></label>
           <input type="number" id="qtddejem" value="0" min="0" max="10"/>
@@ -1389,6 +1423,7 @@
       <!-- BLOCO 05.4 — Descontos, contribuições, previdência, IRRF e abatimentos -->
       <h2>Descontos e Contribuições</h2>
       <div class="form-grid">
+        <div class="calc-section-title">Previdência, imposto, consignados, saúde e associações</div>
         <div class="field">
           <label for="emprestimo">Empréstimos / Consignados</label>
           <input type="number" id="emprestimo" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
@@ -2915,45 +2950,12 @@
   .principal-hero-top {
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 18px;
+    display: block;
     margin-bottom: 16px;
   }
 
   .principal-title-area {
     min-width: 0;
-    flex: 1;
-  }
-
-  .theme-toggle-hero {
-    flex: 0 0 auto;
-    min-height: 34px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.86);
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 8px 22px rgba(0, 0, 0, 0.18);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
-  }
-
-  .theme-toggle-hero:hover,
-  .theme-toggle-hero:focus-visible {
-    border-color: var(--vermelho);
-    background: color-mix(in srgb, var(--vermelho) 16%, rgba(255, 255, 255, 0.08));
-    color: #ffffff;
-    transform: translateY(-1px);
-    outline: none;
   }
 
   .principal-grid {
@@ -2965,18 +2967,6 @@
   }
 
   @media (max-width: 640px) {
-    .principal-hero-top {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .theme-toggle-hero {
-      align-self: flex-start;
-      padding: 7px 11px;
-      font-size: 10px;
-    }
-
     .principal-grid { grid-template-columns: 1fr; }
   }
 
@@ -3595,11 +3585,7 @@ function toggleTheme() {
 
 function initTheme() {
   const tema = document.documentElement.getAttribute('data-theme');
-  const btn = document.getElementById('theme-toggle');
-  const btnHero = document.getElementById('theme-toggle-hero');
   const btnHeader = document.getElementById('theme-toggle-header');
-  if (btn) btn.innerHTML = tema === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Escuro';
-  if (btnHero) btnHero.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
   if (btnHeader) btnHeader.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
 }
 
@@ -3667,7 +3653,6 @@ function mudarInstituicao(novaInstituicao) {
     const el = document.getElementById(id);
     if (el) el.textContent = valor;
   };
-  atualizarTexto('txt-inst-principal', config.titulo);
   atualizarTexto('txt-inst-dir', config.titulo);
   atualizarTexto('txt-inst-concursos', config.titulo);
   atualizarTexto('txt-inst-cursos', config.titulo);
@@ -3884,12 +3869,37 @@ function compararCenarioSalvo(exibirToast = true) {
 /* === CÁLCULO PRINCIPAL ====================================== */
 /* ============================================================ */
 /* BLOCO 15.10.1 — Função principal da calculadora */
+function atualizarCamposPCERJ(c, inst) {
+  if (inst !== 'pcerj') return;
+  const labelAAP = document.getElementById('label_periculosidade_rj');
+  const notaAAP = document.getElementById('nota_periculosidade_rj');
+  const selAAP = document.getElementById('periculosidade_rj');
+  const optForcarAAP = selAAP?.querySelector('option[value="1"]');
+  if (c?.delegado) {
+    if (labelAAP) labelAAP.innerHTML = 'Representação do Delegado <span class="tip" data-tip="Delegados recebem verba de representação de 212% sobre o vencimento-base. A opção de forçar AAP é desabilitada para evitar duplicidade.">?</span>';
+    if (notaAAP) notaAAP.innerHTML = '<strong>Delegado:</strong> o cálculo usa automaticamente verba de representação de 212%; AAP de 230% não deve ser forçada.';
+    if (optForcarAAP) optForcarAAP.disabled = true;
+    if (selAAP && selAAP.value === '1') selAAP.value = 'auto';
+  } else {
+    if (labelAAP) labelAAP.innerHTML = 'AAP — Atividade Perigosa <span class="tip" data-tip="Para cargos não Delegado, a AAP é calculada em 230% sobre o vencimento-base quando aplicável.">?</span>';
+    if (notaAAP) notaAAP.innerHTML = 'Cargo não Delegado: o modo automático usa AAP de 230% quando aplicável. Use “não computar” se não constar no contracheque.';
+    if (optForcarAAP) optForcarAAP.disabled = false;
+  }
+
+  const notaGATC = document.getElementById('nota_gatc_rj');
+  if (notaGATC) {
+    if (c?.gatcPct) notaGATC.innerHTML = '<strong>GATC automática:</strong> este cargo está marcado como técnico-científico na tabela da calculadora.';
+    else notaGATC.innerHTML = 'No modo automático, a GATC fica zerada para este cargo. Force 100% somente se a verba constar no contracheque.';
+  }
+}
+
 function calcular() {
   const cargoVal = document.getElementById('cargo').value;
   const c = currTabela.find(x => x.val === cargoVal);
   if (!c) return;
 
   const inst = currInst;
+  atualizarCamposPCERJ(c, inst);
   const dias = Math.min(30, Math.max(0, valEl('dias')));
   const diasVA = Math.min(31, Math.max(0, valEl('dias_va')));
   const fatorDias = dias / 30;
@@ -4117,40 +4127,53 @@ function calcular() {
   const lpremioVal = valEl('lpremio') * baseEventosRemuneratorios;
 
   // ===== TOTAL BRUTO =====
-  // Verbas remuneratórias (incidência previdência e IRRF)
-  const baseRemuneratoria = padrao + retpOuVerba + tempoVal + sextaVal + insalVal + dsVal +
+  // Separação lógica: mensal normal x eventos. Isso evita que 13º/férias/retroativos pareçam salário mensal comum.
+  const baseRemuneratoriaMensalNormal = padrao + retpOuVerba + tempoVal + sextaVal + insalVal + dsVal +
                             gatVal + gas_pc + ale_pm + ensino + adicNoturno_pm +
                             gretRj + ghpRj + gramRj + lotacaoRj + ghpPcRj + pericRj + gtcRj + locespRj +
                             adeMgPm + vpniMgPm + adeMgPc + gapMgPc +
-                            cetBaPm + gapBaValor + cetBaPc + gratBaPc + gqualBaPc +
-                            decimoVal + feriasVal;
+                            cetBaPm + gapBaValor + cetBaPc + gratBaPc + gipBaPc + gqualBaPc;
 
-  // Verbas indenizatórias (sem previdência nem IRRF)
-  const baseIndenizatoria = auxalimSp + auxfard_pm + auxalimRj + auxtranspRj + auxfardRj +
+  const baseRemuneratoriaEventos = decimoVal + feriasVal;
+  const baseRemuneratoria = baseRemuneratoriaMensalNormal + baseRemuneratoriaEventos;
+
+  // Verbas indenizatórias/sem incidência, também separadas entre mensal e eventual.
+  const baseIndenizatoriaMensalNormal = auxalimSp + auxalimRj + auxtranspRj +
                             auxalimRjPc + auxtranspRjPc + adictransfRj +
-                            fardamentoMgPm + auxalimMgPm + vestimentaMgPc + auxalimMgPc +
-                            auxalimBa + auxfardBaPm + auxalimBaPc +
-                            qualif_pc + acaoInsalVal + abonoTransfVal + lpremioVal +
-                            extraVal + gipBaPc;
+                            auxalimMgPm + auxalimMgPc + auxalimBa + auxalimBaPc + qualif_pc;
 
-  const bruto = baseRemuneratoria + baseIndenizatoria;
+  const baseIndenizatoriaEventos = acaoInsalVal + auxfard_pm + auxfardRj + fardamentoMgPm +
+                            vestimentaMgPc + auxfardBaPm + abonoTransfVal + lpremioVal + extraVal;
 
-  const eventosRemuneratorios = decimoVal + feriasVal;
-  const eventosIndenizatorios = acaoInsalVal + auxfard_pm + auxfardRj + fardamentoMgPm + vestimentaMgPc + auxfardBaPm + abonoTransfVal + lpremioVal + extraVal;
-  const totalEventos = eventosRemuneratorios + eventosIndenizatorios;
-  const brutoMensalNormal = bruto - totalEventos;
+  const baseIndenizatoria = baseIndenizatoriaMensalNormal + baseIndenizatoriaEventos;
+  const brutoMensalNormal = baseRemuneratoriaMensalNormal + baseIndenizatoriaMensalNormal;
+  const totalEventos = baseRemuneratoriaEventos + baseIndenizatoriaEventos;
+  const bruto = brutoMensalNormal + totalEventos;
 
   // ===== DESCONTOS =====
-  // Previdência
+  // Previdência: mensal normal e eventos remuneratórios calculados separadamente para maior clareza.
   let aliqPrev = ALIQ_PREV;
   if (inst === 'pmmg') aliqPrev = ALIQ_IPSM; // 10,5%
   if (inst === 'pcmg') aliqPrev = 0.11;
-  const previdencia = baseRemuneratoria * aliqPrev;
+  const previdenciaMensal = baseRemuneratoriaMensalNormal * aliqPrev;
+  const previdenciaEventos = baseRemuneratoriaEventos * aliqPrev;
+  const previdencia = previdenciaMensal + previdenciaEventos;
 
-  // IRRF 2026: compara deduções legais (previdência + dependentes) com desconto simplificado mensal.
-  const deducoesIRRFLegais = previdencia + (dependentes * IRRF_DEP_DEDUCAO);
-  const baseIRRF = Math.max(0, baseRemuneratoria - deducoesIRRFLegais);
-  const irrf = calcularIRRF(baseRemuneratoria, deducoesIRRFLegais);
+  // IRRF 2026: calcula mensal normal e eventos remuneratórios separadamente.
+  // Observação: 13º, férias e retroativos podem ter tratamento próprio no contracheque real; aqui ficam destacados para evitar distorção do líquido mensal comum.
+  const deducoesIRRFLegaisMensal = previdenciaMensal + (dependentes * IRRF_DEP_DEDUCAO);
+  const baseIRRF = Math.max(0, baseRemuneratoriaMensalNormal - deducoesIRRFLegaisMensal);
+  const irrfMensal = calcularIRRF(baseRemuneratoriaMensalNormal, deducoesIRRFLegaisMensal);
+  const detalheIRRFMensal = ultimoDetalheIRRF ? { ...ultimoDetalheIRRF } : null;
+
+  let irrfEventos = 0;
+  let detalheIRRFEventos = null;
+  if (baseRemuneratoriaEventos > 0.005) {
+    irrfEventos = calcularIRRF(baseRemuneratoriaEventos, previdenciaEventos);
+    detalheIRRFEventos = ultimoDetalheIRRF ? { ...ultimoDetalheIRRF } : null;
+  }
+  ultimoDetalheIRRF = detalheIRRFMensal;
+  const irrf = irrfMensal + irrfEventos;
 
   // Outros descontos por instituição
   let descPM = 0, descPMERJ = 0, descPCERJ = 0, descPMMG = 0, descPCMG = 0, descPMBA = 0, descPCBA = 0, descGeral = 0;
@@ -4199,10 +4222,13 @@ function calcular() {
   const naturezas = document.getElementById('naturezas');
   if (naturezas) {
     naturezas.innerHTML =
-      linha('Base remuneratória tributável', baseRemuneratoria, 'info') +
-      linha('Base IRRF usada (' + (ultimoDetalheIRRF ? ultimoDetalheIRRF.metodo : 'deduções legais') + ')', ultimoDetalheIRRF ? ultimoDetalheIRRF.baseUsada : baseIRRF, 'info') +
-      linha('Redutor IRRF Lei 15.270/2025', ultimoDetalheIRRF ? ultimoDetalheIRRF.redutor : 0, 'info') +
-      linha('Base indenizatória / sem incidência', baseIndenizatoria, 'info') +
+      linha('Base remuneratória mensal normal', baseRemuneratoriaMensalNormal, 'info') +
+      linha('Base remuneratória de eventos', baseRemuneratoriaEventos, 'info') +
+      linha('Base IRRF mensal usada (' + (ultimoDetalheIRRF ? ultimoDetalheIRRF.metodo : 'deduções legais') + ')', ultimoDetalheIRRF ? ultimoDetalheIRRF.baseUsada : baseIRRF, 'info') +
+      linha('Redutor IRRF mensal Lei 15.270/2025', ultimoDetalheIRRF ? ultimoDetalheIRRF.redutor : 0, 'info') +
+      (detalheIRRFEventos ? linha('Base IRRF de eventos (' + detalheIRRFEventos.metodo + ')', detalheIRRFEventos.baseUsada, 'info') : '') +
+      linha('Base indenizatória mensal normal', baseIndenizatoriaMensalNormal, 'info') +
+      linha('Base indenizatória/eventual sem incidência', baseIndenizatoriaEventos, 'info') +
       linha('Bruto mensal normal estimado', brutoMensalNormal, 'info') +
       linha('Eventos, extras e parcelas eventuais', totalEventos, 'info') +
       subtotal('Total bruto estimado', bruto);
@@ -4266,8 +4292,10 @@ function calcular() {
   proventos += subtotal("Total Bruto", bruto);
 
   let descontos = "";
-  descontos += linha(`Previdência (${(aliqPrev*100).toFixed(1)}%)`, previdencia, "desconto");
-  descontos += linha("IRRF (Lei 15.270/2025" + (ultimoDetalheIRRF ? " — " + ultimoDetalheIRRF.metodo : "") + ")", irrf, "desconto");
+  descontos += linha(`Previdência mensal (${(aliqPrev*100).toFixed(1)}%)`, previdenciaMensal, "desconto");
+  if (previdenciaEventos > 0) descontos += linha(`Previdência sobre eventos (${(aliqPrev*100).toFixed(1)}%)`, previdenciaEventos, "desconto");
+  descontos += linha("IRRF mensal (Lei 15.270/2025" + (ultimoDetalheIRRF ? " — " + ultimoDetalheIRRF.metodo : "") + ")", irrfMensal, "desconto");
+  if (irrfEventos > 0) descontos += linha("IRRF sobre eventos" + (detalheIRRFEventos ? " — " + detalheIRRFEventos.metodo : "") + "", irrfEventos, "desconto");
   if (descPM > 0) descontos += linha(inst === 'pcsp' ? "IAMSPE / Sindicato" : "Descontos Institucionais", descPM, "desconto");
   if (descPMERJ > 0) descontos += linha("Saúde / Cooperativa", descPMERJ, "desconto");
   if (descPCERJ > 0) descontos += linha("FUSPOL / Sindicato", descPCERJ, "desconto");
