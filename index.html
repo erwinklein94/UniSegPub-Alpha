@@ -457,7 +457,7 @@
   .remuneracao-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 840px;
+    min-width: 1120px;
   }
   .remuneracao-table th,
   .remuneracao-table td {
@@ -484,6 +484,14 @@
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
+  }
+  .remuneracao-table td.adicionais {
+    color: var(--text-muted);
+    line-height: 1.45;
+    min-width: 280px;
+  }
+  .remuneracao-table td.adicionais strong {
+    color: var(--text-main);
   }
   .remuneracao-fonte {
     display: inline-block;
@@ -937,7 +945,7 @@
   <div class="card">
     <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
     <div class="remuneracao-intro">
-      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal e o link da fonte usada, sem descontos e sem adicionais individuais.
+      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, uma coluna informativa sobre adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
     </div>
 
     <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
@@ -961,12 +969,13 @@
           <tr>
             <th>Cargo / Classe</th>
             <th>Remuneração bruta</th>
+            <th>Adicionais / auxílios informativos</th>
             <th>Critério / fonte</th>
           </tr>
         </thead>
         <tbody id="lista-remuneracao">
           <tr>
-            <td colspan="3">Selecione uma instituição para carregar a tabela.</td>
+            <td colspan="4">Selecione uma instituição para carregar a tabela.</td>
           </tr>
         </tbody>
       </table>
@@ -3228,6 +3237,72 @@ function linhaRemuneracaoOficial(cargo, remuneracao, beneficios, criterio, benef
   return { cargo, remuneracao: Number(remuneracao || 0), beneficios: 0, total: Number(remuneracao || 0), criterio, benefDesc, fonteKey, badge };
 }
 
+function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
+  inst = normalizarInstituicao(inst);
+  const cargo = String(linha.cargo || '').toLowerCase();
+
+  if (inst === 'pmesp') {
+    const representacao = /(cmt g|coronel|cel|ten cel)/i.test(linha.cargo || '')
+      ? ' Gratificação de representação: pode existir para postos/funções específicas e já aparece incorporada quando constar na fonte oficial.'
+      : '';
+    return `RETP: em regra 100% sobre o padrão/vencimento-base, já considerado no bruto oficial desta tabela. Quinquênio: 5% por período aquisitivo; sexta-parte: 1/6 após requisito temporal. Auxílio-alimentação: ${fmt(AUX_ALIM_SP_DIA_PADRAO)} por dia efetivamente trabalhado. Insalubridade: possível conforme grau, laudo e enquadramento.${representacao}`;
+  }
+
+  if (inst === 'pcsp') {
+    const carreiraDelegado = /delegado/i.test(linha.cargo || '');
+    return `RETP: em regra 100% sobre o padrão/vencimento-base, já considerado no bruto oficial desta tabela. ${carreiraDelegado ? 'Delegados podem ter verbas próprias de representação quando previstas. ' : ''}Quinquênio: 5% por período aquisitivo; sexta-parte: 1/6 após requisito temporal. Auxílio-alimentação: ${fmt(AUX_ALIM_SP_DIA_PADRAO)} por dia efetivamente trabalhado. Insalubridade: possível conforme grau, laudo e enquadramento.`;
+  }
+
+  if (inst === 'pmerj') {
+    let gret = '150%';
+    let ghp = '110%';
+    if (/cel|ten cel/i.test(linha.cargo || '')) { gret = '192,5%'; ghp = '160%'; }
+    else if (/maj/i.test(linha.cargo || '')) { gret = '192,5%'; ghp = '110%'; }
+    else if (/cabo|sd pm|soldado a\/b\/c/i.test(linha.cargo || '')) { ghp = '75%'; }
+    else if (/aluno|soldado-aluno|sd aluno|esfo/i.test(linha.cargo || '')) { gret = '122,5%'; ghp = 'não aplicada na linha'; }
+    return `GRET: ${gret} sobre o soldo; GHP: ${ghp}; GRAM: 62,5% sobre soldo + GRET + GHP. Essas parcelas já compõem a remuneração bruta exibida. Auxílio-alimentação PMERJ: ${fmt(AUX_ALIM_RJ_PM)} mensais, sem somar no bruto.`;
+  }
+
+  if (inst === 'pcerj') {
+    if (/delegado/i.test(linha.cargo || '')) {
+      return 'Verba de representação: 212% sobre o vencimento-base; GHP: 105%. Essas parcelas já compõem a remuneração bruta exibida. Auxílio-alimentação: R$ 704,00/mês; auxílio-transporte: R$ 100,00/mês, sem somar no bruto.';
+    }
+    const gatc = /perito|médico|medico|eng\.?|telecomunicações|telecomunicacoes/i.test(linha.cargo || '')
+      ? ' GATC: 100% sobre o vencimento-base quando aplicável ao cargo.'
+      : ' GATC: pode existir quando prevista para o cargo/função.';
+    return `AAP: 230% sobre o vencimento-base; GHP: até 100%.${gatc} Essas parcelas já compõem a remuneração bruta exibida quando aplicáveis. Auxílio-alimentação: R$ 704,00/mês; auxílio-transporte: R$ 100,00/mês, sem somar no bruto.`;
+  }
+
+  if (inst === 'pmmg') {
+    return `Ajuda de custo para alimentação: ${fmt(AUX_ALIM_MG_DIA_PADRAO)} por dia efetivamente trabalhado, quando atendidos os critérios. Outros adicionais, gratificações ou indenizações dependem de função, local, escala, ato específico ou situação individual e não foram somados ao bruto.`;
+  }
+
+  if (inst === 'pcmg') {
+    return `Ajuda de custo para alimentação: ${fmt(AUX_ALIM_MG_DIA_PADRAO)} por dia efetivamente trabalhado, quando atendidos os critérios. Adicionais funcionais, gratificações ou indenizações específicas dependem de cargo, lotação, ato próprio ou situação individual e não foram somados ao bruto.`;
+  }
+
+  if (inst === 'pmba') {
+    const ref = (linha.cargo || '').match(/GAP Ref\.\s*([IVX]+)/i)?.[1] || 'informada';
+    return `GAP: gratificação por atividade policial na referência ${ref}, já considerada na remuneração bruta da linha. Auxílio-fardamento: R$ 256,18 mensais. Auxílio-alimentação: referência geral BA de ${fmt(AUX_ALIM_BA_40H)} para 40h ou ${fmt(AUX_ALIM_BA_30H)} para 30h, quando aplicável; não somado ao bruto.`;
+  }
+
+  if (inst === 'pcba') {
+    const verba = /delegado/i.test(linha.cargo || '') ? 'GAJ' : 'GAPJ';
+    const ref = (linha.cargo || '').match(/Ref\.\s*([IVX]+)/i)?.[1] || 'informada';
+    return `${verba}: gratificação da carreira na referência ${ref}, já considerada na remuneração bruta da linha. CET, GIP, GQUAL ou outras vantagens podem existir conforme função, titulação, lotação ou ato específico. Auxílio-alimentação: referência geral BA de ${fmt(AUX_ALIM_BA_40H)} para 40h ou ${fmt(AUX_ALIM_BA_30H)} para 30h, quando aplicável; não somado ao bruto.`;
+  }
+
+  if (inst === 'pmpr') {
+    return `Regime por subsídio: a remuneração bruta da linha corresponde ao subsídio do cargo/classe. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Outras indenizações ou gratificações específicas dependem de previsão própria, escala, local ou situação individual e não foram somadas.`;
+  }
+
+  if (inst === 'pcpr') {
+    return `Regime por subsídio: o subsídio pode compreender adicionais como insalubridade, periculosidade e risco de vida, conforme LC PR 259/2023 e aplicação vigente. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Verbas específicas/eventuais não foram somadas.`;
+  }
+
+  return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
+}
+
 const REMUNERACAO_SP_OFICIAL = {
   pmesp: [
     linhaRemuneracaoOficial('CMT G — Comandante Geral PM', 22587.35, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
@@ -3419,7 +3494,7 @@ function carregarRemuneracaoTabelada() {
   const linhas = gerarRemuneracaoTabelada(inst);
 
   if (!linhas.length) {
-    tbody.innerHTML = '<tr><td colspan="3">Não há dados cadastrados para esta instituição.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4">Não há dados cadastrados para esta instituição.</td></tr>';
     return;
   }
 
@@ -3443,6 +3518,7 @@ function carregarRemuneracaoTabelada() {
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
         <td class="valor">${fmt(l.remuneracao)}</td>
+        <td class="adicionais">${escapeHtml(getAdicionaisRemuneracaoResumo(inst, l))}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
           <span class="remuneracao-fonte">${escapeHtml(fonte.nome)}</span><br>
