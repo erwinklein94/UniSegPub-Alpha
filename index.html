@@ -936,16 +936,19 @@
 <!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()" aria-hidden="true"></div>
 
-<!-- BLOCO 03.4 — Menu lateral: navegação, instituição, tema, Instagram e anúncios -->
+<!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
 <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
   <div class="sidebar-header">
-    <h2>Menu</h2>
+    <div class="sidebar-brand" aria-label="Identidade da navegação">
+      <strong>Universo Segurança Pública</strong>
+      <span>Navegação por instituição</span>
+    </div>
     <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">✕</button>
   </div>
 
   <!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
-  <div class="inst-selector">
-    <label for="instituicao">Instituição</label>
+  <div class="inst-selector sidebar-inst-panel">
+    <label for="instituicao">Instituição selecionada</label>
     <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
       <optgroup label="São Paulo">
         <option value="pmesp" selected>PMESP - Polícia Militar</option>
@@ -980,34 +983,92 @@
         <option value="pces">PCES - Polícia Civil</option>
       </optgroup>
     </select>
+    <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
   </div>
 
-  <!-- BLOCO 03.4.2 — Links das abas/páginas -->
-  <nav class="sidebar-nav" aria-label="Páginas">
-    <a href="#principal" onclick="switchPage('principal'); return false;" id="menu-principal" class="active" tabindex="0" role="link">Principal</a>
-    <a href="#acoes" onclick="switchPage('acoes'); return false;" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
-    <a href="#associacoes" onclick="switchPage('associacoes'); return false;" id="menu-associacoes" tabindex="0" role="link">Associações e Sindicatos</a>
-    <a href="#remuneracao" onclick="switchPage('remuneracao'); return false;" id="menu-remuneracao" tabindex="0" role="link">Remuneração Tabelada</a>
-    <a href="#concursos" onclick="switchPage('concursos'); return false;" id="menu-concursos" tabindex="0" role="link">Concursos</a>
-    <a href="#cursos" onclick="switchPage('cursos'); return false;" id="menu-cursos" tabindex="0" role="link">Cursos</a>
-    <a href="#direitos" onclick="switchPage('direitos'); return false;" id="menu-direitos" tabindex="0" role="link">Direitos e Vantagens</a>
-    <a href="#livros" onclick="switchPage('livros'); return false;" id="menu-livros" tabindex="0" role="link">Livros</a>
-    <a href="#parceiros" onclick="switchPage('parceiros'); return false;" id="menu-parceiros" tabindex="0" role="link">Parceiros - Anuncie aqui!</a>
-    <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">Instagram</a>
+  <!-- BLOCO 03.4.2 — Links internos organizados por finalidade -->
+  <nav class="sidebar-nav" aria-label="Páginas do portal">
+    <div class="sidebar-nav-group" aria-label="Consultas principais">
+      <div class="sidebar-nav-title">Consultas principais</div>
+      <a href="#principal" onclick="switchPage('principal'); return false;" id="menu-principal" class="active" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🏠</span>
+        <span class="sidebar-link-text">Principal</span>
+        <small>Início do portal</small>
+      </a>
+      <a href="#remuneracao" onclick="switchPage('remuneracao'); return false;" id="menu-remuneracao" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">💰</span>
+        <span class="sidebar-link-text">Remuneração Tabelada</span>
+        <small>Valores brutos por cargo</small>
+      </a>
+      <a href="#direitos" onclick="switchPage('direitos'); return false;" id="menu-direitos" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">⚖️</span>
+        <span class="sidebar-link-text">Direitos e Vantagens</span>
+        <small>Benefícios e alertas</small>
+      </a>
+      <a href="#concursos" onclick="switchPage('concursos'); return false;" id="menu-concursos" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">📋</span>
+        <span class="sidebar-link-text">Concursos</span>
+        <small>Editais e requisitos</small>
+      </a>
+    </div>
+
+    <div class="sidebar-nav-group" aria-label="Apoio jurídico e institucional">
+      <div class="sidebar-nav-title">Apoio jurídico e institucional</div>
+      <a href="#acoes" onclick="switchPage('acoes'); return false;" id="menu-acoes" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🧾</span>
+        <span class="sidebar-link-text">Ações Judiciais</span>
+        <small>Teses e orientações</small>
+      </a>
+      <a href="#associacoes" onclick="switchPage('associacoes'); return false;" id="menu-associacoes" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🛡️</span>
+        <span class="sidebar-link-text">Associações e Sindicatos</span>
+        <small>Entidades de apoio</small>
+      </a>
+    </div>
+
+    <div class="sidebar-nav-group" aria-label="Conteúdos e parceiros">
+      <div class="sidebar-nav-title">Conteúdos e parceiros</div>
+      <a href="#cursos" onclick="switchPage('cursos'); return false;" id="menu-cursos" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🎓</span>
+        <span class="sidebar-link-text">Cursos</span>
+        <small>Preparação e carreira</small>
+      </a>
+      <a href="#livros" onclick="switchPage('livros'); return false;" id="menu-livros" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">📚</span>
+        <span class="sidebar-link-text">Livros</span>
+        <small>Estudo e desenvolvimento</small>
+      </a>
+      <a href="#parceiros" onclick="switchPage('parceiros'); return false;" id="menu-parceiros" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🤝</span>
+        <span class="sidebar-link-text">Parceiros</span>
+        <small>Anuncie aqui</small>
+      </a>
+    </div>
   </nav>
 
+  <!-- BLOCO 03.4.3 — Rede social destacada -->
+  <div class="sidebar-social" aria-label="Redes sociais">
+    <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" class="sidebar-social-btn" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">
+      <span aria-hidden="true">📷</span>
+      <strong>Seguir no Instagram</strong>
+    </a>
+  </div>
 
   <!-- BLOCO 03.4.4 — Produtos parceiros no menu lateral -->
   <div class="sidebar-ad" aria-label="Produtos parceiros">
-    <p>Policial padrão precisa de<br>equipamento padrão!</p>
-    <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
-      <img src="IMG_0868.jpeg" alt="Coldre Tático" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
-      <span>Ver na Shopee</span>
+    <div class="sidebar-ad-title">
+      <strong>Produtos selecionados</strong>
+      <span>Itens úteis para a rotina operacional</span>
+    </div>
+    <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
+      <img src="IMG_0868.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
+      <span>Ver produto</span>
     </a>
-    <a href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
-      <img src="IMG_0865.jpeg" alt="Suporte Articulado 3D" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
-      <span>Ver na Shopee</span>
+    <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
+      <img src="IMG_0865.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
+      <span>Ver produto</span>
     </a>
+    <small class="sidebar-affiliate-note">Links de parceiros podem gerar comissão sem custo adicional ao usuário.</small>
   </div>
 </aside>
 
@@ -2989,6 +3050,297 @@
     }
   }
 
+
+
+  /* BLOCO 14.20 — Sidebar profissional: hierarquia, grupos, rede social e parceiros */
+  .sidebar {
+    width: 330px;
+    left: -360px;
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--vermelho) 52%, var(--border-input)) transparent;
+  }
+
+  .sidebar.active { left: 0; }
+
+  .sidebar::-webkit-scrollbar { width: 8px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--vermelho) 44%, var(--border-input));
+    border-radius: 999px;
+  }
+
+  .sidebar-header {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 22px 20px;
+  }
+
+  .sidebar-brand {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .sidebar-brand strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    line-height: 1.05;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sidebar-brand span {
+    color: rgba(255,255,255,0.64);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-inst-panel {
+    margin: 14px 14px 10px;
+    padding: 16px;
+    border-bottom: 0;
+  }
+
+  .sidebar-inst-panel label {
+    color: var(--text-main);
+    margin-bottom: 10px;
+  }
+
+  .sidebar-selector-hint {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .sidebar-nav {
+    padding: 8px 0 10px;
+    gap: 12px;
+  }
+
+  .sidebar-nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 0 2px;
+  }
+
+  .sidebar-nav-title {
+    margin: 8px 20px 4px;
+    color: var(--text-muted);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-nav a {
+    position: relative;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    grid-template-areas:
+      "icon text"
+      "icon meta";
+    align-items: center;
+    column-gap: 9px;
+    min-height: 58px;
+    margin: 2px 14px;
+    padding: 11px 13px;
+    text-transform: none;
+    overflow: hidden;
+  }
+
+  .sidebar-nav a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 48%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  .sidebar-nav a:hover::after,
+  .sidebar-nav a.active::after { opacity: 1; }
+
+  .sidebar-nav a.active::before {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 30px;
+    margin-right: 0;
+    border-radius: 999px;
+    vertical-align: initial;
+  }
+
+  .sidebar-link-icon {
+    grid-area: icon;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--vermelho) 12%, var(--item-bg));
+    border: 1px solid color-mix(in srgb, var(--vermelho) 22%, var(--border-input));
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  .sidebar-link-text {
+    grid-area: text;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .sidebar-nav a small {
+    grid-area: meta;
+    display: block;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .sidebar-nav a.active .sidebar-link-icon {
+    background: var(--vermelho);
+    border-color: var(--vermelho);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--vermelho) 46%, transparent);
+  }
+
+  .sidebar-nav a.active .sidebar-link-text {
+    color: var(--vermelho);
+  }
+
+  .sidebar-social {
+    padding: 4px 14px 12px;
+  }
+
+  .sidebar-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    text-decoration: none;
+    color: var(--text-main);
+    background: var(--glass-panel-soft);
+    border: 1px solid var(--glass-border-strong);
+    border-radius: 999px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+
+  .sidebar-social-btn:hover,
+  .sidebar-social-btn:focus-visible {
+    border-color: var(--vermelho);
+    color: var(--vermelho);
+    background: color-mix(in srgb, var(--vermelho) 10%, var(--glass-panel-soft));
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .sidebar-social-btn strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-ad {
+    margin: 0 14px 22px;
+    padding-top: 4px;
+    gap: 12px;
+  }
+
+  .sidebar-ad-title {
+    text-align: center;
+    padding: 14px 12px 2px;
+  }
+
+  .sidebar-ad-title strong {
+    display: block;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-ad-title span {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .sidebar-product {
+    position: relative;
+  }
+
+  .sidebar-product span,
+  .sidebar-ad span {
+    padding: 11px 12px;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .sidebar-ad a.img-indisponivel::before {
+    content: "Imagem indisponível\A Produto parceiro";
+    white-space: pre-line;
+    padding: 22px 12px;
+    color: var(--text-muted);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-affiliate-note {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10.5px;
+    line-height: 1.35;
+    text-align: center;
+    opacity: 0.86;
+    padding: 0 8px 4px;
+  }
+
+  @media (max-width: 420px) {
+    .sidebar {
+      width: min(88vw, 340px);
+      left: -92vw;
+    }
+
+    .sidebar.active { left: 0; }
+
+    .sidebar-header { padding: 20px 16px; }
+    .sidebar-brand strong { font-size: 17px; }
+    .sidebar-inst-panel { margin: 12px 12px 8px; padding: 14px; }
+    .sidebar-nav a { margin-left: 12px; margin-right: 12px; }
+    .sidebar-ad { margin-left: 12px; margin-right: 12px; }
+  }
 </style>
 <script>
 /* =======================================================
