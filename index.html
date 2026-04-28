@@ -1167,6 +1167,11 @@
         <span class="sidebar-link-text">Concursos</span>
         <small>Editais e requisitos</small>
       </a>
+      <a href="#comparar" onclick="switchPage('comparar'); return false;" id="menu-comparar" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">⚔️</span>
+        <span class="sidebar-link-text">Comparar Carreiras</span>
+        <small>Salários, vagas e bancas</small>
+      </a>
     </div>
 
     <div class="sidebar-nav-group" aria-label="Apoio jurídico e institucional">
@@ -1581,6 +1586,68 @@
       Abaixo estão os dados consolidados do último edital de referência, requisitos legais, etapas de seleção e perspectivas para 2026.
     </div>
     <div class="result-list" id="lista-concursos"></div>
+  </div>
+</main>
+
+<!-- BLOCO 07.1 — PÁGINA COMPARAR CARREIRAS -->
+<main id="page-comparar" class="page-section" role="main">
+  <div class="card">
+    <h2>Comparar Carreiras</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 20px;">
+      Selecione duas ou mais instituições para comparar lado a lado remuneração, benefícios, vantagens, edital de referência, vagas, banca, inscritos, previsão de próximo concurso, matérias cobradas e fontes oficiais cadastradas no portal.
+    </div>
+
+    <div class="comparador-topo">
+      <div class="comparador-topo-texto">
+        <strong>Escolha as carreiras que deseja comparar</strong>
+        <span>O comparador usa as mesmas bases já cadastradas nas abas de Remuneração Tabelada e Concursos.</span>
+      </div>
+      <div class="comparador-acoes">
+        <button class="btn-secondary" type="button" onclick="comparadorSelecionarEstadoAtual()">Selecionar estado atual</button>
+        <button class="btn-secondary" type="button" onclick="comparadorSelecionarTodas()">Selecionar todas</button>
+        <button class="btn-secondary" type="button" onclick="comparadorLimparSelecao()">Limpar</button>
+      </div>
+    </div>
+
+    <div class="comparador-selecao" aria-label="Seleção de instituições para comparação">
+      <div class="comparador-select-panel">
+        <label class="comparador-select-label" for="comparador-selecao">Instituições para comparar</label>
+        <div class="comparador-multiselect" aria-label="Selecione duas ou mais instituições para comparar">
+          <button class="comparador-toggle-lista" id="comparador-toggle-lista" type="button" onclick="toggleComparadorLista()" aria-expanded="false" aria-controls="comparador-selecao">
+            <span>Escolher instituições</span>
+            <small id="comparador-contador-selecao">0 selecionadas</small>
+          </button>
+          <div id="comparador-selecao" class="comparador-check-list" role="group" aria-label="Instituições disponíveis para comparação"></div>
+        </div>
+        <small class="comparador-select-help">Marque ou desmarque as carreiras pelos botões de seleção abaixo. Não precisa usar Ctrl.</small>
+        <div id="comparador-selecionadas" class="comparador-selecionadas" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="comparador-resumo-grid" id="comparador-resumo" aria-live="polite"></div>
+
+    <div class="comparador-table-wrap" id="comparador-tabela-wrap">
+      <table class="comparador-table" aria-label="Tabela comparativa de carreiras">
+        <thead>
+          <tr>
+            <th>Instituição</th>
+            <th>Remuneração</th>
+            <th>Benefícios / vantagens</th>
+            <th>Último edital / próximo concurso</th>
+            <th>Vagas / inscritos</th>
+            <th>Banca / matérias</th>
+            <th>Fonte</th>
+          </tr>
+        </thead>
+        <tbody id="comparador-tabela"></tbody>
+      </table>
+    </div>
+
+    <div id="comparador-cards" class="comparador-cards"></div>
+
+    <div class="alerta legal" style="margin-top: 18px;">
+      <strong>Aviso:</strong> use o comparativo como triagem inicial. Remuneração final, vantagens, etapas e cronogramas podem mudar por edital, lei estadual, retificação, lotação, escala, decisão orçamentária ou publicação oficial posterior.
+    </div>
   </div>
 </main>
 
@@ -4344,6 +4411,398 @@
     }
   }
 
+
+  /* BLOCO 14.11 — Aba Comparar Carreiras */
+  #page-comparar.active { display: block; }
+  #page-comparar {
+    max-width: 1180px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .comparador-topo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 16px;
+    background: var(--item-bg);
+  }
+
+  .comparador-topo-texto strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 4px;
+  }
+
+  .comparador-topo-texto span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .comparador-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  .comparador-acoes .btn-secondary {
+    padding: 10px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .comparador-selecao {
+    margin-bottom: 18px;
+  }
+
+  .comparador-select-panel {
+    padding: 14px;
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 16px;
+    background: var(--bg-card);
+  }
+
+  .comparador-select-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .comparador-multiselect {
+    width: 100%;
+  }
+
+  .comparador-toggle-lista {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 12px;
+    border: 1px solid var(--border-input);
+    border-radius: 10px;
+    background: var(--bg-input);
+    color: var(--text-main);
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+  }
+
+  .comparador-toggle-lista:hover,
+  .comparador-toggle-lista:focus-visible {
+    border-color: var(--vermelho);
+    outline: none;
+  }
+
+  .comparador-toggle-lista small {
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: var(--vermelho);
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+  }
+
+  .comparador-check-list {
+    display: none;
+    max-height: 230px;
+    overflow-y: auto;
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid var(--border-input);
+    border-radius: 10px;
+    background: var(--bg-input);
+  }
+
+  .comparador-check-list.aberta {
+    display: grid;
+    gap: 8px;
+  }
+
+  .comparador-check-grupo {
+    display: grid;
+    gap: 6px;
+  }
+
+  .comparador-check-grupo + .comparador-check-grupo {
+    padding-top: 8px;
+    border-top: 1px solid var(--border-card);
+  }
+
+  .comparador-check-titulo {
+    color: var(--vermelho);
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .comparador-check-option {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 9px;
+    align-items: start;
+    padding: 9px 10px;
+    border: 1px solid var(--border-card);
+    border-radius: 9px;
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  .comparador-check-option:hover {
+    border-color: var(--vermelho);
+    background: var(--item-hover);
+  }
+
+  .comparador-check-option input {
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    accent-color: var(--vermelho);
+    cursor: pointer;
+  }
+
+  .comparador-check-option strong {
+    display: block;
+    color: var(--text-main);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .comparador-check-option small {
+    display: block;
+    margin-top: 2px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .comparador-check-option:has(input:checked) {
+    border-color: var(--vermelho);
+    box-shadow: inset 3px 0 0 var(--vermelho);
+  }
+
+  .comparador-select-help {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .comparador-selecionadas {
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .comparador-selecionadas strong {
+    color: var(--text-main);
+  }
+
+  .comparador-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 999px;
+    border: 1px solid var(--border-input);
+    background: var(--item-bg);
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .comparador-resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .comparador-stat {
+    padding: 14px;
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 16px;
+    background: var(--item-bg);
+  }
+
+  .comparador-stat span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .comparador-stat strong {
+    display: block;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .comparador-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border-card);
+    border-radius: 18px;
+    background: var(--bg-card);
+  }
+
+  .comparador-table {
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: collapse;
+  }
+
+  .comparador-table th,
+  .comparador-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-card);
+    text-align: left;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .comparador-table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--header-bg);
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .comparador-table tbody tr:hover {
+    background: var(--item-hover);
+  }
+
+  .comparador-table td strong {
+    color: var(--text-main);
+  }
+
+  .comparador-table a,
+  .comparador-card a {
+    color: var(--vermelho);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .comparador-table a:hover,
+  .comparador-card a:hover {
+    text-decoration: underline;
+  }
+
+  .comparador-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .comparador-card {
+    padding: 16px;
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 18px;
+    background: var(--item-bg);
+  }
+
+  .comparador-card h3 {
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .comparador-card p {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+  .comparador-card ul {
+    margin: 10px 0 0 18px;
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .comparador-card li {
+    margin-bottom: 5px;
+  }
+
+  .comparador-vazio {
+    padding: 18px;
+    border: 1px dashed var(--border-input);
+    border-radius: 16px;
+    background: var(--item-bg);
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1020px) {
+    .comparador-topo { grid-template-columns: 1fr; }
+    .comparador-acoes { justify-content: flex-start; }
+    .comparador-resumo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .comparador-cards { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    #page-comparar { margin: 20px auto; }
+    .comparador-resumo-grid { grid-template-columns: 1fr; }
+    .comparador-topo,
+    .comparador-select-panel,
+    .comparador-stat,
+    .comparador-card { border-radius: 14px; }
+  }
+
 </style>
 <script>
 /* =======================================================
@@ -5939,6 +6398,7 @@ function switchPage(page) {
   // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
+  else if (page === 'comparar') inicializarComparadorCarreiras();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
@@ -5971,6 +6431,7 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
+    comparar: 'Comparar Carreiras',
     cursos: 'Cursos',
     direitos: 'Direitos e Vantagens',
     livros: 'Livros',
@@ -6892,6 +7353,7 @@ function mudarInstituicao(novaInstituicao) {
   };
   atualizarTexto('txt-inst-dir', config.titulo);
   atualizarTexto('txt-inst-concursos', config.titulo);
+  atualizarTexto('txt-inst-comparar', config.titulo);
   atualizarTexto('txt-inst-cursos', config.titulo);
   atualizarTexto('txt-inst-remuneracao', config.titulo);
   atualizarTexto('txt-inst-acoes', config.titulo);
@@ -6904,6 +7366,7 @@ function mudarInstituicao(novaInstituicao) {
   carregarAcoes();
   carregarAssociacoes();
   carregarRemuneracaoTabelada();
+  if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
 }
 
 
@@ -7494,6 +7957,334 @@ function getAssociacoesPoliciaPenal(inst) {
     { nome: `Associação/Sindicato dos Policiais Penais — ${info.uf}`, foco: `${info.orgao}`, acao: `Acompanhamento de pautas ligadas a ${info.criacao}, implantação da carreira, adicionais, concurso, formação, segurança das unidades e direitos funcionais.`, site: 'Consultar canais oficiais e redes da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento associativo, comunicação, assembleias, convênios, acompanhamento legislativo e eventual suporte jurídico conforme contrato.' }
   ];
 }
+
+
+/* ============================================================ */
+/* === COMPARADOR DE CARREIRAS ================================ */
+/* ============================================================ */
+/* BLOCO 15.14.1 — Comparar remuneração, benefícios, concursos e fontes entre instituições */
+function getRamoComparador(inst) {
+  inst = String(inst || '');
+  if (inst.startsWith('pp')) return 'Penal';
+  if (inst.startsWith('pc')) return 'Civil';
+  if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Militar / Brigada' : 'Militar';
+  return 'Carreira';
+}
+
+function getOrdemComparador(inst) {
+  const estado = getEstadoDaInstituicao(inst);
+  const dadosEstado = HEADER_ESTADOS[estado] || {};
+  if (dadosEstado.pm === inst) return 1;
+  if (dadosEstado.pc === inst) return 2;
+  if (dadosEstado.pp === inst) return 3;
+  return 9;
+}
+
+function getInstituicoesComparador() {
+  return INSTITUICOES_VALIDAS
+    .filter(inst => HEADER_INSTITUICOES_INFO[inst])
+    .map(inst => {
+      const estado = getEstadoDaInstituicao(inst);
+      const dadosEstado = HEADER_ESTADOS[estado] || HEADER_ESTADOS.sp;
+      const info = HEADER_INSTITUICOES_INFO[inst] || {};
+      return {
+        inst,
+        estado,
+        uf: dadosEstado.sigla || estado.toUpperCase(),
+        estadoNome: dadosEstado.nome || estado.toUpperCase(),
+        sigla: info.titulo || inst.toUpperCase(),
+        nome: info.desc || inst.toUpperCase(),
+        ramo: getRamoComparador(inst)
+      };
+    })
+    .sort((a, b) => {
+      const estadoComp = Object.keys(HEADER_ESTADOS).indexOf(a.estado) - Object.keys(HEADER_ESTADOS).indexOf(b.estado);
+      return estadoComp || getOrdemComparador(a.inst) - getOrdemComparador(b.inst);
+    });
+}
+
+function inicializarComparadorCarreiras() {
+  const selecao = document.getElementById('comparador-selecao');
+  if (!selecao) return;
+
+  if (!selecao.dataset.renderizado) {
+    const instituicoes = getInstituicoesComparador();
+    const ordemEstados = Object.keys(HEADER_ESTADOS);
+    selecao.innerHTML = ordemEstados.map(estado => {
+      const dadosEstado = HEADER_ESTADOS[estado] || {};
+      const itens = instituicoes.filter(item => item.estado === estado);
+      if (!itens.length) return '';
+      return `
+        <div class="comparador-check-grupo" role="group" aria-label="${escapeHtml(dadosEstado.nome || estado.toUpperCase())}">
+          <div class="comparador-check-titulo">${escapeHtml(dadosEstado.nome || estado.toUpperCase())}</div>
+          ${itens.map(item => `
+            <label class="comparador-check-option">
+              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}" onchange="carregarComparadorCarreiras()">
+              <span>
+                <strong>${escapeHtml(item.sigla)}</strong>
+                <small>${escapeHtml(item.nome)} · ${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)}</small>
+              </span>
+            </label>
+          `).join('')}
+        </div>
+      `;
+    }).join('');
+    selecao.dataset.renderizado = 'true';
+  }
+
+  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
+  carregarComparadorCarreiras();
+}
+
+function getComparadorSelect() {
+  return document.getElementById('comparador-selecao');
+}
+
+function getComparadorCheckboxes() {
+  const selecao = getComparadorSelect();
+  return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
+}
+
+function toggleComparadorLista() {
+  const lista = getComparadorSelect();
+  const botao = document.getElementById('comparador-toggle-lista');
+  if (!lista || !botao) return;
+  const aberta = !lista.classList.contains('aberta');
+  lista.classList.toggle('aberta', aberta);
+  botao.setAttribute('aria-expanded', aberta ? 'true' : 'false');
+}
+
+function setSelecionadasComparador(valores) {
+  const checkboxes = getComparadorCheckboxes();
+  const setValores = new Set((valores || []).filter(Boolean));
+  checkboxes.forEach(check => { check.checked = setValores.has(check.value); });
+}
+
+function atualizarResumoSelecaoComparador() {
+  const resumoSelecao = document.getElementById('comparador-selecionadas');
+  const contador = document.getElementById('comparador-contador-selecao');
+  if (!resumoSelecao) return;
+
+  const selecionadas = getComparadorCheckboxes()
+    .filter(check => check.checked)
+    .map(check => check.dataset.sigla || check.value.toUpperCase())
+    .filter(Boolean);
+
+  if (contador) contador.textContent = `${selecionadas.length} selecionada${selecionadas.length === 1 ? '' : 's'}`;
+
+  if (!selecionadas.length) {
+    resumoSelecao.innerHTML = 'Nenhuma instituição selecionada.';
+    return;
+  }
+
+  resumoSelecao.innerHTML = `<strong>Selecionadas (${selecionadas.length}):</strong> ${escapeHtml(selecionadas.join(', '))}`;
+}
+
+function comparadorSelecionarEstadoAtual(exibirToast = true) {
+  const estadoAtivo = getEstadoDaInstituicao(currInst);
+  const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
+  const valores = [dadosEstado.pm, dadosEstado.pc, dadosEstado.pp].filter(Boolean);
+  setSelecionadasComparador(valores);
+  carregarComparadorCarreiras();
+  if (exibirToast) mostrarToast(`Comparando carreiras de ${dadosEstado.nome}.`);
+}
+
+function comparadorSelecionarTodas() {
+  const checkboxes = getComparadorCheckboxes();
+  checkboxes.forEach(check => { check.checked = true; });
+  carregarComparadorCarreiras();
+  mostrarToast('Todas as instituições foram selecionadas para comparação.');
+}
+
+function comparadorLimparSelecao() {
+  const checkboxes = getComparadorCheckboxes();
+  checkboxes.forEach(check => { check.checked = false; });
+  carregarComparadorCarreiras();
+}
+
+function getConcursoComparador(inst) {
+  return CONCURSOS[inst] || getConcursoPoliciaPenal(inst) || {
+    edital: 'Concurso de referência não cadastrado',
+    salario: 'Consultar edital vigente',
+    vagas: 'Consultar edital vigente',
+    inscritos: 'Consultar banca e órgão oficial',
+    banca: 'Consultar edital',
+    materias: 'Consultar edital do cargo',
+    previsao: 'Acompanhar Diário Oficial, órgão e banca.',
+    escolaridade: 'Consultar edital',
+    etapas: 'Consultar edital',
+    site: REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
+  };
+}
+
+function limitarTextoComparador(texto, limite = 220) {
+  texto = String(texto || '').replace(/\s+/g, ' ').trim();
+  return texto.length > limite ? texto.slice(0, limite - 1).trim() + '…' : texto;
+}
+
+function getResumoRemuneracaoComparador(inst) {
+  const linhas = gerarRemuneracaoTabelada(inst) || [];
+  const validas = linhas.filter(l => Number(l.remuneracao || 0) > 0);
+  const menor = validas.length ? Math.min(...validas.map(l => Number(l.remuneracao || 0))) : 0;
+  const maior = validas.length ? Math.max(...validas.map(l => Number(l.remuneracao || 0))) : 0;
+  const linhaMenor = validas.find(l => Number(l.remuneracao || 0) === menor) || linhas[0] || {};
+  const linhaMaior = validas.find(l => Number(l.remuneracao || 0) === maior) || linhas[0] || {};
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+  const adicionais = getAdicionaisRemuneracaoResumo(inst, linhaMenor);
+  return {
+    totalCargos: linhas.length,
+    menor,
+    maior,
+    cargoMenor: linhaMenor.cargo || 'Cargo inicial/de referência',
+    cargoMaior: linhaMaior.cargo || 'Topo de carreira/de referência',
+    adicionais,
+    fonteNome: fonte.nome || 'Fonte oficial da carreira',
+    fonteUrl: fonte.url || '#'
+  };
+}
+
+function getDadosComparador(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  const estado = getEstadoDaInstituicao(inst);
+  const dadosEstado = HEADER_ESTADOS[estado] || HEADER_ESTADOS.sp;
+  const concurso = getConcursoComparador(inst);
+  const remuneracao = getResumoRemuneracaoComparador(inst);
+  return {
+    inst,
+    sigla: info.titulo || inst.toUpperCase(),
+    nome: info.desc || inst.toUpperCase(),
+    estado: dadosEstado.nome || estado.toUpperCase(),
+    uf: dadosEstado.sigla || estado.toUpperCase(),
+    ramo: getRamoComparador(inst),
+    concurso,
+    remuneracao
+  };
+}
+
+function getSelecionadasComparador() {
+  return getComparadorCheckboxes()
+    .filter(check => check.checked)
+    .map(check => check.value)
+    .filter(inst => INSTITUICOES_VALIDAS.includes(inst));
+}
+
+function linkComparador(url, texto = 'Abrir fonte') {
+  if (!url || url === '#') return '<span>Consultar fonte oficial</span>';
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
+}
+
+function carregarComparadorCarreiras() {
+  const tbody = document.getElementById('comparador-tabela');
+  const cards = document.getElementById('comparador-cards');
+  const resumo = document.getElementById('comparador-resumo');
+  const wrap = document.getElementById('comparador-tabela-wrap');
+  if (!tbody || !cards || !resumo || !wrap) return;
+
+  atualizarResumoSelecaoComparador();
+  const selecionadas = getSelecionadasComparador();
+  if (selecionadas.length < 2) {
+    resumo.innerHTML = '';
+    tbody.innerHTML = '';
+    cards.innerHTML = '<div class="comparador-vazio">Selecione pelo menos duas instituições para gerar o comparativo de carreiras.</div>';
+    wrap.style.display = 'none';
+    return;
+  }
+
+  wrap.style.display = '';
+  const dados = selecionadas.map(getDadosComparador);
+
+  const menores = dados.map(d => d.remuneracao.menor).filter(v => v > 0);
+  const maiores = dados.map(d => d.remuneracao.maior).filter(v => v > 0);
+  const melhorInicial = dados
+    .filter(d => d.remuneracao.menor > 0)
+    .sort((a, b) => b.remuneracao.menor - a.remuneracao.menor)[0];
+  const melhorTopo = dados
+    .filter(d => d.remuneracao.maior > 0)
+    .sort((a, b) => b.remuneracao.maior - a.remuneracao.maior)[0];
+
+  resumo.innerHTML = `
+    <div class="comparador-stat">
+      <span>Instituições comparadas</span>
+      <strong>${dados.length}</strong>
+    </div>
+    <div class="comparador-stat">
+      <span>Menor remuneração encontrada</span>
+      <strong>${menores.length ? fmt(Math.min(...menores)) : 'A confirmar'}</strong>
+    </div>
+    <div class="comparador-stat">
+      <span>Maior remuneração encontrada</span>
+      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'A confirmar'}</strong>
+    </div>
+    <div class="comparador-stat">
+      <span>Destaques</span>
+      <strong>${melhorInicial ? escapeHtml(melhorInicial.sigla) + ' menor base' : 'Sem base'} · ${melhorTopo ? escapeHtml(melhorTopo.sigla) + ' topo' : 'Sem topo'}</strong>
+    </div>
+  `;
+
+  tbody.innerHTML = dados.map(d => {
+    const c = d.concurso;
+    const r = d.remuneracao;
+    return `
+      <tr>
+        <td>
+          <strong>${escapeHtml(d.sigla)}</strong><br>
+          ${escapeHtml(d.nome)}<br>
+          <span class="comparador-pill">${escapeHtml(d.uf)}</span>
+          <span class="comparador-pill">${escapeHtml(d.ramo)}</span>
+        </td>
+        <td>
+          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'}<br>
+          <small>${escapeHtml(r.cargoMenor)}</small><br>
+          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'A confirmar'}<br>
+          <small>${escapeHtml(r.cargoMaior)}</small>
+        </td>
+        <td>
+          ${escapeHtml(limitarTextoComparador(r.adicionais, 260))}
+        </td>
+        <td>
+          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Edital de referência')}<br>
+          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Consultar edital')}<br>
+          <strong>Próximo concurso / andamento:</strong> ${escapeHtml(limitarTextoComparador(c.previsao, 180))}
+        </td>
+        <td>
+          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}<br>
+          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Consultar banca')}
+        </td>
+        <td>
+          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}<br>
+          <strong>Matérias:</strong> ${escapeHtml(limitarTextoComparador(c.materias, 230))}
+        </td>
+        <td>
+          ${linkComparador(c.site || r.fonteUrl, 'Concurso')}<br>
+          ${linkComparador(r.fonteUrl, 'Remuneração')}
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  cards.innerHTML = dados.map(d => {
+    const c = d.concurso;
+    const r = d.remuneracao;
+    return `
+      <article class="comparador-card">
+        <h3>${escapeHtml(d.sigla)} — ${escapeHtml(d.uf)}</h3>
+        <p><strong>${escapeHtml(d.nome)}</strong> · ${escapeHtml(d.ramo)}</p>
+        <ul>
+          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'} até ${r.maior ? fmt(r.maior) : 'A confirmar'}.</li>
+          <li><strong>Referência inferior:</strong> ${escapeHtml(r.cargoMenor)}.</li>
+          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Consultar edital vigente')}.</li>
+          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}.</li>
+          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}.</li>
+          <li><strong>Escolaridade:</strong> ${escapeHtml(limitarTextoComparador(c.escolaridade, 180))}.</li>
+          <li><strong>Etapas:</strong> ${escapeHtml(limitarTextoComparador(c.etapas, 200))}.</li>
+        </ul>
+        <p><strong>Vantagens/benefícios:</strong> ${escapeHtml(limitarTextoComparador(r.adicionais, 260))}</p>
+        <p>${linkComparador(c.site || r.fonteUrl, 'Ver fonte do concurso')} · ${linkComparador(r.fonteUrl, 'Ver fonte remuneratória')}</p>
+      </article>
+    `;
+  }).join('');
+}
+
 
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
