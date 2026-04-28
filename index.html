@@ -534,9 +534,51 @@
     color: var(--text-muted);
     line-height: 1.35;
     min-width: 0;
+    padding: 8px;
   }
   .remuneracao-table td.adicionais strong {
     color: var(--text-main);
+  }
+  .adicionais-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+  }
+  .adicionais-lista li {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-left: 3px solid var(--vermelho);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: var(--text-muted);
+    font-size: 11.5px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .adicionais-lista li strong {
+    display: inline;
+    color: var(--text-main);
+    font-weight: 700;
+  }
+  .adicionais-vazio {
+    display: block;
+    background: var(--bg-card);
+    border: 1px dashed var(--border-input);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  @media (max-width: 900px) {
+    .adicionais-lista li {
+      font-size: 12px;
+      padding: 8px 9px;
+    }
   }
   .remuneracao-fonte {
     display: inline-block;
@@ -5473,6 +5515,29 @@ function gerarRemuneracaoTabelada(inst) {
   });
 }
 
+function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
+  const resumo = String(getAdicionaisRemuneracaoResumo(inst, linha) || '').replace(/\s+/g, ' ').trim();
+
+  if (!resumo) {
+    return '<span class="adicionais-vazio">Sem adicionais ou auxílios específicos cadastrados para esta linha.</span>';
+  }
+
+  const partes = resumo
+    .split(/;\s+|\.\s+/)
+    .map(parte => parte.trim().replace(/[.;]$/, ''))
+    .filter(Boolean);
+
+  const itens = partes.length ? partes : [resumo];
+
+  return `<ul class="adicionais-lista">${itens.map(texto => {
+    const match = texto.match(/^([^:]{2,52}):\s*(.+)$/);
+    if (match) {
+      return `<li><strong>${escapeHtml(match[1])}:</strong> ${escapeHtml(match[2])}</li>`;
+    }
+    return `<li>${escapeHtml(texto)}</li>`;
+  }).join('')}</ul>`;
+}
+
 function carregarRemuneracaoTabelada() {
   const inst = normalizarInstituicao(currInst);
   const tbody = document.getElementById('lista-remuneracao');
@@ -5505,7 +5570,7 @@ function carregarRemuneracaoTabelada() {
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
         <td class="valor">${fmt(l.remuneracao)}</td>
-        <td class="adicionais">${escapeHtml(getAdicionaisRemuneracaoResumo(inst, l))}</td>
+        <td class="adicionais">${formatarAdicionaisRemuneracaoHtml(inst, l)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
           <span class="remuneracao-fonte">${escapeHtml(fonte.nome)}</span><br>
