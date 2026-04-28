@@ -243,12 +243,12 @@
   /* BLOCO 02.7 — Controle de páginas/abas */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
-  #page-principal.active, #page-remuneracao.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
+  #page-principal.active, #page-remuneracao.active, #page-direitos.active, #page-concursos.active, #page-produtos.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-principal { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-  #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-concursos, #page-produtos, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
   #page-remuneracao { max-width: 920px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-principal, #page-remuneracao { margin: 20px auto; } }
@@ -423,6 +423,10 @@
   .curso-detalhes summary { cursor: pointer; font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--vermelho); }
   .curso-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 18px; padding: 13px 18px; background: var(--vermelho); color: #ffffff; border-radius: 4px; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: 0.2s ease; }
   .curso-cta:hover { background: var(--vermelho-escuro); transform: translateY(-2px); }
+  .produto-imagem { margin-bottom: 14px; border: 1px solid var(--border-input); background: var(--bg-card); border-radius: 6px; overflow: hidden; }
+  .produto-imagem img { width: 100%; max-height: 220px; object-fit: contain; display: block; padding: 10px; }
+  .produto-imagem.img-indisponivel { display: none; }
+  .produto-aviso-compra { margin-top: 18px; font-size: 12px; color: var(--text-muted); line-height: 1.45; }
 
 
   /* BLOCO 02.9.1 — Remuneração tabelada */
@@ -1190,15 +1194,10 @@
 
     <div class="sidebar-nav-group" aria-label="Conteúdos e parceiros">
       <div class="sidebar-nav-title">Conteúdos e parceiros</div>
-      <a href="#cursos" onclick="switchPage('cursos'); return false;" id="menu-cursos" tabindex="0" role="link">
-        <span class="sidebar-link-icon" aria-hidden="true">🎓</span>
-        <span class="sidebar-link-text">Cursos</span>
-        <small>Preparação e carreira</small>
-      </a>
-      <a href="#livros" onclick="switchPage('livros'); return false;" id="menu-livros" tabindex="0" role="link">
-        <span class="sidebar-link-icon" aria-hidden="true">📚</span>
-        <span class="sidebar-link-text">Livros</span>
-        <small>Estudo e desenvolvimento</small>
+      <a href="#produtos" onclick="switchPage('produtos'); return false;" id="menu-produtos" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🛒</span>
+        <span class="sidebar-link-text">Produtos</span>
+        <small>Cursos, livros e produtos</small>
       </a>
       <a href="#parceiros" onclick="switchPage('parceiros'); return false;" id="menu-parceiros" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🤝</span>
@@ -1296,7 +1295,7 @@
       </div>
       <div class="como-usar-step">
         <strong>3</strong>
-        <span>Acesse fontes, cursos, livros e parceiros quando quiser se aprofundar.</span>
+        <span>Acesse fontes, produtos, materiais de estudo e parceiros quando quiser se aprofundar.</span>
       </div>
     </div>
   </section>
@@ -1360,26 +1359,17 @@
   <section class="principal-area" aria-labelledby="conteudos-parceiros-titulo">
     <div class="principal-section-title">
       <h2 id="conteudos-parceiros-titulo">Conteúdos e parceiros</h2>
-      <p>Materiais de apoio, indicações e espaços comerciais ficam separados das consultas principais.</p>
+      <p>Produtos, materiais de apoio, indicações e espaços comerciais ficam separados das consultas principais.</p>
     </div>
 
     <div class="principal-grid conteudos-parceiros" aria-label="Conteúdos complementares e parceiros">
-      <article class="principal-card" onclick="switchPage('cursos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('cursos')" aria-label="Abrir cursos">
+      <article class="principal-card" onclick="switchPage('produtos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('produtos')" aria-label="Abrir produtos">
         <div class="principal-card-header">
-          <span class="principal-card-icon" aria-hidden="true">🎓</span>
-          <h3>Cursos</h3>
+          <span class="principal-card-icon" aria-hidden="true">🛒</span>
+          <h3>Produtos</h3>
         </div>
-        <p>Encontre cursos e materiais úteis para preparação, carreira e desenvolvimento profissional.</p>
-        <span class="principal-tag">Ver cursos</span>
-      </article>
-
-      <article class="principal-card" onclick="switchPage('livros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('livros')" aria-label="Abrir livros">
-        <div class="principal-card-header">
-          <span class="principal-card-icon" aria-hidden="true">📚</span>
-          <h3>Livros</h3>
-        </div>
-        <p>Espaço destinado a livros, e-books e materiais de desenvolvimento pessoal, produtividade, liderança e concursos.</p>
-        <span class="principal-tag">Ver livros</span>
+        <p>Cursos, livros, e-books, produtos físicos e outras indicações reunidos em uma única aba.</p>
+        <span class="principal-tag">Ver produtos</span>
       </article>
 
       <article class="principal-card" onclick="switchPage('parceiros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('parceiros')" aria-label="Abrir parceiros">
@@ -1651,471 +1641,239 @@
   </div>
 </main>
 
-<!-- BLOCO 08 — PÁGINA CURSOS -->
-<main id="page-cursos" class="page-section" role="main">
+<!-- BLOCO 08 — PÁGINA PRODUTOS -->
+<main id="page-produtos" class="page-section" role="main">
   <div class="card">
-    <h2>Cursos Preparatórios (<span id="txt-inst-cursos">PMESP</span>)</h2>
+    <h2>Produtos (<span id="txt-inst-produtos">PMESP</span>)</h2>
 
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      <strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
+    </div>
+
+    <script>
+      function carregarImagemProduto(img) {
+        const base = img.dataset.imgBase || img.getAttribute('src');
+        const extensoes = ['png', 'jpg', 'jpeg', 'webp'];
+        const tentativaAtual = Number(img.dataset.tentativa || 0);
+
+        if (base && tentativaAtual < extensoes.length) {
+          img.dataset.tentativa = tentativaAtual + 1;
+          img.src = `${base}.${extensoes[tentativaAtual]}`;
+          return;
+        }
+
+        img.style.display = 'none';
+        const container = img.closest('.produto-imagem');
+        if (container) {
+          container.classList.add('img-indisponivel');
+          container.style.display = 'none';
+        }
+      }
+    </script>
+
+    <div class="curso-section-title">Produtos físicos</div>
+    <div class="curso-grid" aria-label="Produtos físicos com link de compra">
+      <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Abrir barra fixa para porta">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="barrafixa01" data-img-base="barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Barra fixa para porta</h3>
+        <p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
+        <div class="curso-meta" aria-label="Destaques do produto">
+          <span>Produto físico</span>
+          <span>TAF</span>
+          <span>Treino em casa</span>
+        </div>
+        <span class="curso-cta">Comprar aqui</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Abrir Power Rack Funcional">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="barrafixa02" data-img-base="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Power Rack Funcional com paralelas</h3>
+        <p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
+        <div class="curso-meta" aria-label="Destaques do produto">
+          <span>Produto físico</span>
+          <span>TAF</span>
+          <span>Treino completo</span>
+        </div>
+        <span class="curso-cta">Comprar aqui</span>
+      </a>
+    </div>
+
+    <div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
     <div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
-      Espaço destinado a cursos preparatórios, mentorias e materiais de estudo.
+      Espaço destinado a cursos preparatórios, mentorias e materiais de estudo. Em breve, novos produtos específicos serão adicionados para esta instituição.
     </div>
 
     <div class="curso-grid curso-pmesp-only">
-      <div class="curso-card">
-        <h3>Curso Preparatório - SARGENTO PMESP</h3>
-        <p>
-          O Centro Educacional ao Bem Estar Policial - CABEP - é um curso online no modelo de recorrência anual, que aborda "ponto a ponto" dos tópicos exigidos nos principais editais dos Concursos Internos de Formação para as Carreiras: Soldado, Cabo, Sargento (CFS) e Chacal (CHQAOPM).
-        </p>
-        <p style="margin-top: 10px;">
-          Oferecendo aos seus alunos um <strong>MÉTODO REVOLUCIONÁRIO e EFICAZ</strong>.
-        </p>
-        <p style="margin-top: 10px;">
-          O CABEP conta como o melhor corpo docente especializado em cada área do conhecimento específico. Todo o conteúdo fica disponível na plataforma para acesso e consulta durante sua assinatura.
-        </p>
-        <p style="margin-top: 10px;">
-          Centro Educacional ao Bem Estar Policial - CABEP.
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do curso">
-          <span>Garantia de 7 dias</span>
-          <span>Qualquer dispositivo</span>
-          <span>100 aulas</span>
-          <span>200 horas</span>
-          <span>100% avaliações positivas</span>
-          <span>Para Policiais Militares</span>
+      <a class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="curso-sargento-pmesp" data-img-base="curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
-
-        <div class="curso-section-title">Conteúdo das aulas</div>
-
-        <details class="curso-detalhes">
-          <summary>Direito Penal - Parte Geral</summary>
-          <ol class="curso-lista-aulas">
-            <li>Aula 1. Descrição de Crime e Contravenção Penal</li>
-            <li>Aula 2. Lei Penal no Tempo</li>
-            <li>Aula 3. Tempo e lugar do crime</li>
-            <li>Aula 4. Iter Criminis e o Crime Consumado</li>
-            <li>Aula 5. Tentativa - 1ª parte</li>
-            <li>Aula 6. Tentativa - 2ª Parte</li>
-            <li>Aula 7. Crime Doloso</li>
-            <li>Aula 8. Crime Culposo</li>
-            <li>Aula 09. Excludentes de Ilicitude</li>
-            <li>Aula 10. Estado de Necessidade - 1ª parte</li>
-            <li>Aula 11. Estado de Necessidade - 2ª parte</li>
-            <li>Aula 12. Legítima Defesa - 1ª parte</li>
-            <li>Aula 13. Legítima Defesa - 2ª parte</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>Língua Portuguesa</summary>
-          <ol class="curso-lista-aulas">
-            <li>AULA 01. Língua, linguagem e fala</li>
-            <li>AULA 02. Acentuação Gráfica</li>
-            <li>AULA 03. Acentuação Gráfica - 2ª parte</li>
-            <li>AULA 04. Ortografia</li>
-            <li>AULA 05. Morfologia / Morfossintaxe / Classe de palavras</li>
-            <li>AULA 06. Morfologia / Morfossintaxe / Classe de palavras - 2ª parte</li>
-            <li>AULA 07. Hora de treinar - Morfologia / Morfossintaxe / Classe de palavras - 3ª parte</li>
-            <li>AULA 08. Morfologia / Morfossintaxe / Classe de palavras - 4ª parte</li>
-            <li>AULA 09. Morfologia / Morfossintaxe / Classe de palavras - 5ª parte</li>
-            <li>AULA 10. Período Composto</li>
-            <li>AULA 11. Período Composto - 2ª parte</li>
-            <li>AULA 12. Períodos Compostos - 3ª parte</li>
-            <li>Aula 13. Análise Sintática - Termos da Oração</li>
-            <li>Aula 14. Análise Sintática - Termos da Oração - 2ª Parte</li>
-            <li>Aula 15. Análise Sintática - Termos da Oração - 3ª parte</li>
-            <li>Aula 16. Sintaxe de Regência Verbal e Nominal</li>
-            <li>Aula 17. Regência em Período Composto - Pronomes</li>
-            <li>AULA 18. Sintaxe - Regência de Verbos</li>
-            <li>AULA 19. Crase</li>
-            <li>AULA 20. Crase - 2ª Parte</li>
-            <li>AULA 21. Vozes Verbais e Funções do SE</li>
-            <li>AULA 22. Sintaxe - Concordância Nominal</li>
-            <li>AULA 23. Concordância Nominal e Verbal</li>
-            <li>AULA 24. Concordância Verbal</li>
-            <li>AULA 25. Normas de Pontuação</li>
-            <li>AULA 26. Normas de Pontuação - 2ª parte</li>
-            <li>AULA 27. Pontuação e Orações Coordenadas Assindéticas e Sindéticas</li>
-            <li>AULA 28. Verbos</li>
-            <li>AULA 29. Verbos - 2ª parte</li>
-            <li>AULA 30. Verbos - 3ª parte</li>
-            <li>AULA 31. Processo de Interpretação</li>
-            <li>AULA 32. Erros Clássicos de Interpretação</li>
-            <li>AULA 33. Técnica de Leitura: palavras e ideias-chave</li>
-            <li>AULA 34. Coesão e Coerência</li>
-            <li>AULA 35. Semântica (sentido)</li>
-            <li>AULA 36. Informações Implícitas - Encerramento</li>
-          </ol>
-        </details>
-
-        <a class="curso-cta" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
-        <h3>Curso Preparatório PMESP Completo</h3>
-        <p>
-          Escola especializada em Concursos Policiais e desenvolvimento de potenciais. Trabalho realizado com disciplina, objetividade e seriedade, com foco no resultado de esforços e de sonhos que pareciam inalcançáveis.
-        </p>
-        <p style="margin-top: 10px;">
-          A Oficialcon trabalha com a prova preambular, treinamento físico, exame médico, avaliação psicológica, investigação social, recursos para ações judiciais, laudos periciais e demais fases pertinentes ao concurso.
-        </p>
-        <p style="margin-top: 10px;">
-          O curso foi desenvolvido especificamente para quem quer auxílio em todas as fases, tem dificuldades no aprendizado rápido e quer aprender a partir do básico para entender e resolver as questões da prova da VUNESP. Contém exercícios de cada matéria para fixar o aprendizado.
-        </p>
-        <p style="margin-top: 10px;">
-          No material está incluso todo conteúdo necessário para sua aprovação no concurso da PMESP Soldado 2ª Classe. Disponibilize tempo para estudar, resolver as questões juntamente com os professores e, com esforço, você alcançará seu APTO.
-        </p>
-
+        <h3>Curso Preparatório - SARGENTO PMESP</h3>
+        <p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
         <div class="curso-meta" aria-label="Destaques do curso">
-          <span>Garantia de 7 dias</span>
-          <span>Qualquer dispositivo</span>
-          <span>130 aulas</span>
-          <span>190 horas</span>
-          <span>PMESP Soldado 2ª Classe</span>
+          <span>Curso online</span>
+          <span>PMESP</span>
+          <span>Concursos internos</span>
+          <span>Curso online</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="curso-pmesp-completo" data-img-base="curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Curso Preparatório PMESP Completo</h3>
+        <p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
+        <div class="curso-meta" aria-label="Destaques do curso">
+          <span>Curso online</span>
+          <span>PMESP</span>
+          <span>Soldado 2ª Classe</span>
           <span>VUNESP</span>
         </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
 
-        <div class="curso-section-title">Para quem é esse produto?</div>
-        <p>
-          Concursando para Polícia Militar de São Paulo.
-        </p>
-
-        <div class="curso-section-title">Conteúdo incluso</div>
-        <ul class="curso-lista-aulas">
-          <li>Prova escrita: Português, Redação, Matemática, História, Geografia, Informática e Legislação.</li>
-          <li>Fase do Psicológico: avaliação presencial ou online mediante agendamento.</li>
-          <li>Investigação Social: apoio da Oficialcon após aprovação em todas as fases.</li>
-          <li>TAF, apostilas e indicação de livros.</li>
-        </ul>
-
-        <details class="curso-detalhes">
-          <summary>Português</summary>
-          <ol class="curso-lista-aulas">
-            <li>Português - Aula 1 - Texto Literário e Não Literário</li>
-            <li>Aula 2 - Português - Crase</li>
-            <li>Português - Aula 3 - Pronomes</li>
-            <li>Aula 4 - Português - Concordância Nominal</li>
-            <li>Português - Aula 5 - Concordância Verbal</li>
-            <li>Português - Aula 6 - Substantivo (Parte 1)</li>
-            <li>Português - Aula 6 - Substantivo (Parte 2)</li>
-            <li>Português - Aula 7 - Adjetivos</li>
-            <li>Português - Aula 8 - Advérbios</li>
-            <li>Português - Aula 9 - Numeral</li>
-            <li>Português - Aula 10 - Verbos</li>
-            <li>Português - Aula 11 - Artigos</li>
-            <li>Português - Aula 12 - Conjunções</li>
-            <li>Português - Aula 13 - Preposições</li>
-            <li>Português - Aula 14 - Regência Verbal e Nominal</li>
-            <li>Português - Aula 15 - Pontuação (Parte 1)</li>
-            <li>Português - Aula 15 - Pontuação (Parte 2)</li>
-            <li>Português - Aula 16 - Redação (Artigo de Opinião)</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>Matemática</summary>
-          <ol class="curso-lista-aulas">
-            <li>Matemática - Aula 1 - Parte 1 - As Quatro Operações</li>
-            <li>Matemática - Aula 1 Parte 2 - Regra de Sinais</li>
-            <li>Matemática - Aula 1 Parte 3 - Potenciação</li>
-            <li>Matemática - Aula 1 Parte 4 - Radiciação</li>
-            <li>Matemática - Aula 1 Parte 5 - Expressões Numéricas</li>
-            <li>Matemática - Aula 1 - Resolução de Questões</li>
-            <li>Matemática - Aula 2 - Frações</li>
-            <li>Matemática - Aula 2 - Resolução de Questões</li>
-            <li>Matemática - Aula 3 - Números Decimais Parte 1</li>
-            <li>Matemática - Aula 3 - Números Decimais Parte 2</li>
-            <li>Matemática - Aula 3 - Resolução de Questões</li>
-            <li>Matemática - Aula 4 - Critério de Divisibilidade</li>
-            <li>Matemática - Aula 5 - MMC</li>
-            <li>Matemática - Aula 6 - Razão e Proporção</li>
-            <li>Matemática - Aula 6 - Resolução de Questões</li>
-            <li>Matemática - Aula 7 - Grandezas Proporcionais</li>
-            <li>Matemática - Aula 8 - Porcentagem</li>
-            <li>Matemática - Aula 8 - Resolução de Questões</li>
-            <li>Matemática - Aula 9 - Média Aritmética</li>
-            <li>Matemática - Aula 9 - Resolução de Questões</li>
-            <li>Matemática - Aula 10 - Equação de Primeiro Grau</li>
-            <li>Matemática - Aula 10 - Resolução de Questões</li>
-            <li>Matemática - Aula 11 - Sistemas de Equação</li>
-            <li>Matemática - Aula 11 - Resolução de Questões</li>
-            <li>Matemática - Aula 12 - Transformação de Medidas</li>
-            <li>Matemática - Aula 12 - Transformação de Medidas (Parte 2)</li>
-            <li>Matemática - Aula 12 - Resolução de Questões</li>
-            <li>Matemática - Aula 13 - Tabelas e Gráficos</li>
-            <li>Matemática - Aula 13 - Resolução de Questões</li>
-            <li>Matemática - Aula 14 - Geometria</li>
-            <li>Matemática - Aula 14 - Resolução de Questões pt1</li>
-            <li>Matemática - Aula 14 - Resolução de Questões pt2</li>
-            <li>Matemática - Aula 15 - Raciocínio Lógico</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>História</summary>
-          <ol class="curso-lista-aulas">
-            <li>História - Introdução</li>
-            <li>História - Aula 1 - História do Brasil (Introdução)</li>
-            <li>História - Aula 2 - Estrutura Política e Movimentos Sociais no Período Militar Parte 1</li>
-            <li>História - Aula 2 - Estrutura Política e Movimentos Sociais no Período Militar Parte 2</li>
-            <li>História - Aula 3 - Abertura Política e Redemocratização do Brasil</li>
-            <li>História - Aula 4 - Constituições Republicanas Parte 1</li>
-            <li>História - Aula 4 - Constituições Republicanas Parte 2</li>
-            <li>História - Aula 5 - Era Vargas Parte 1</li>
-            <li>História - Aula 5 - Era Vargas Parte 2</li>
-            <li>História - Aula 6 - Globalização</li>
-            <li>História - Aula 7 - Neoliberalismo</li>
-            <li>História - Aula 8 - Primeira Guerra Mundial parte 1</li>
-            <li>História - Aula 8 - Primeira Guerra Mundial Parte 2</li>
-            <li>História - Aula 8 - Primeira Guerra Mundial Parte 3</li>
-            <li>História - Aula 9 - Nazifacismo</li>
-            <li>História - Aula 9 - Nazismo (Segunda Guerra Mundial) Parte 1</li>
-            <li>História - Aula 9 - Nazismo (Segunda Guerra Mundial) Parte 2</li>
-            <li>História - Resolução de Questões</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>Geografia</summary>
-          <ol class="curso-lista-aulas">
-            <li>Geografia - Aula 1 - Atividades Econômicas no Brasil</li>
-            <li>Geografia - Aula 2 - Impactos Ambientais no Brasil</li>
-            <li>Geografia - Aula 3 - Natureza Brasileira</li>
-            <li>Geografia - Aula 4 - O Clima Brasileiro</li>
-            <li>Geografia - Aula 5 - Vegetação</li>
-            <li>Geografia - Aula 6 - Nova Ordem Mundial</li>
-            <li>Geografia - Aula 7 - PIB</li>
-            <li>Geografia - Aula 8 - População Brasileira</li>
-            <li>Geografia - Aula 9 - Problemas Ambientais</li>
-            <li>Geografia - Aula 10 - Resolução de Questões Parte 1</li>
-            <li>Geografia - Aula 11 - Resolução de Questões Parte 2</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>Informática</summary>
-          <ol class="curso-lista-aulas">
-            <li>Informática - Aula 01 - Apresentação</li>
-            <li>Informática - Aula 01 - Windows 10 Parte 1</li>
-            <li>Informática - Aula 01 - Windows 10 Parte 2</li>
-            <li>Informática - Aula 03 - Windows 10 Resolução de Questões</li>
-            <li>Informática - Aula 04 - Word (parte 1)</li>
-            <li>Informática - Aula 04 - Word (parte 2)</li>
-            <li>Informática - Aula 05 - Word Parte 2</li>
-            <li>Informática - Aula 06 - Word Parte 3</li>
-            <li>Informática - Aula 07 - Excel Parte 1</li>
-            <li>Informática - Aula 08 - Excel Parte 2</li>
-            <li>Informática - Aula 09 - Excel Parte 3</li>
-            <li>Informática - Aula 10 - Excel Parte 4</li>
-            <li>Informática - Aula 11 - Powerpoint Parte 1</li>
-            <li>Informática - Aula 12 - Powerpoint Parte 2</li>
-            <li>Informática - Aula 13 - Powerpoint Parte 3</li>
-            <li>Informática - Aula 14 - Powerpoint Parte 4</li>
-            <li>Informática - Aula 15 - Internet</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>Legislação</summary>
-          <ol class="curso-lista-aulas">
-            <li>Legislação - Apresentação</li>
-            <li>Legislação - Aula 1 - Artigo 5 Inciso 12</li>
-            <li>Legislação - Aula 1 - Artigo 5 Parte 1</li>
-            <li>Legislação - Aula 1 - Artigo 5 Parte 2</li>
-            <li>Legislação - Aula 1 - Artigo 5 Parte 3</li>
-            <li>Legislação - Aula 2 - Artigo 6</li>
-            <li>Legislação - Aula 3 - Artigo 14 Parte 1</li>
-            <li>Legislação - Aula 3 - Artigo 14 Parte 2</li>
-            <li>Legislação - Aula 4 - Artigo 15</li>
-            <li>Legislação - Aula 5 - Artigo 18</li>
-            <li>Legislação - Aula 6 - Artigo 33</li>
-            <li>Legislação - Aula 7 - Artigo 37</li>
-            <li>Legislação - Aula 7 - Artigo 37 Parte 2</li>
-            <li>Legislação - Aula 8 - Artigo 40 e Artigo 54</li>
-            <li>Legislação - Aula 9 - Artigo 81</li>
-            <li>Legislação - Aula 10 - Artigo 136, 137 e 138</li>
-            <li>Legislação - Competentes para Classificar</li>
-            <li>Legislação - Constituição Do Estado de São Paulo</li>
-            <li>Legislação - Lei 12.527</li>
-            <li>Legislação - Militares</li>
-            <li>Legislação - Regulamento Militar</li>
-            <li>Legislação - Regulamento PMESP Parte 1</li>
-            <li>Legislação - Regulamento PMESP Parte 2</li>
-            <li>Legislação - Resolução de Questões 01</li>
-            <li>Legislação - Resolução de Questões 02</li>
-            <li>Legislação - Resolução de Questões 03</li>
-            <li>Legislação - Resolução de Questões 04</li>
-            <li>Legislação - Resolução de Questões 05</li>
-            <li>Legislação - Resolução de Questões 06</li>
-            <li>Legislação - Servidores Públicos</li>
-            <li>Legislação - Valores dos Policiais Militares</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>TAF</summary>
-          <ol class="curso-lista-aulas">
-            <li>TAF - Introdução</li>
-            <li>TAF - Tiro 50 Metros</li>
-            <li>TAF - Barra Fixa</li>
-            <li>TAF - Abdominal Remador</li>
-            <li>TAF - Corrida 12 Metros</li>
-            <li>TAF - Flexões</li>
-          </ol>
-        </details>
-
-        <details class="curso-detalhes">
-          <summary>Apostilas e indicação de livros</summary>
-          <ul class="curso-lista-aulas">
-            <li>Apostilas e indicação de livros para apoio aos estudos.</li>
-          </ul>
-        </details>
-
-        <a class="curso-cta" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
-        <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
-        <p>
-          Observando os altos índices de reprovação nos testes psicológicos das carreiras policiais, criamos um método simples e prático para a evolução pessoal dos candidatos, bem como seu enquadramento nas exigências estabelecidas pelos editais.
-        </p>
-        <p style="margin-top: 10px;">
-          Nossa abordagem visa abordar aspectos importantes e é válida para quaisquer corporações ou instituições.
-        </p>
-        <p style="margin-top: 10px;">
-          Ao todo são 24 vídeo aulas, com vasto conteúdo esclarecedor. É importante salientar que nosso programa procura levar os concurseiros direto ao ponto de interesse, sem enrolação!
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do curso">
-          <span>Garantia de 7 dias</span>
-          <span>Qualquer dispositivo</span>
-          <span>23 aulas</span>
-          <span>Conteúdo original</span>
-          <span>100% avaliações positivas</span>
-          <span>Para concurseiros</span>
+      <a class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="curso-psicotecnico-carreiras-policiais" data-img-base="curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
-
-        <div class="curso-section-title">Para quem é esse produto?</div>
-        <p>
-          Concurseiros.
-        </p>
-
-        <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Click e Compre</a>
-      </div>
+        <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
+        <p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
+        <div class="curso-meta" aria-label="Destaques do curso">
+          <span>Curso online</span>
+          <span>Psicotécnico</span>
+          <span>Carreiras policiais</span>
+          <span>Concurseiros</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
     </div>
 
     <div class="curso-grid curso-pcsp-only">
-      <div class="curso-card">
+      <a class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="curso-raciocinio-logico-pcsp" data-img-base="curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
         <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
-        <p>
-          O curso de Raciocínio Lógico visa preparar os candidatos de forma imersiva para o concurso da Polícia Civil de São Paulo (PCSP).
-        </p>
-        <p style="margin-top: 10px;">
-          Por meio de uma metodologia com foco na banca VUNESP, o aluno aprenderá de forma rápida e prática Raciocínio Lógico.
-        </p>
-        <p style="margin-top: 10px;">
-          Olha só alguns tópicos de tudo o que você vai aprender a partir de hoje.
-        </p>
-
-        <ul class="curso-lista-aulas">
-          <li>Fazer mais RAPIDAMENTE as questões.</li>
-          <li>Dominar as TÉCNICAS de resolução de questões.</li>
-          <li>Passos simples para identificar os pontos-chaves.</li>
-          <li>Os passos mentais usados para APRENDER DE FORMA DEFINITIVA.</li>
-        </ul>
-
-        <p style="margin-top: 10px;">
-          Escolha uma das matérias ou o combo e comece a estudar ainda hoje.
-        </p>
-
-        <div class="curso-section-title">Diferenciais do curso</div>
-        <ol class="curso-lista-aulas">
-          <li><strong>Preparação específica para o concurso da Polícia Civil de São Paulo (PCSP):</strong> o curso de Raciocínio Lógico foi desenvolvido com foco no conteúdo exigido no concurso da PCSP, garantindo que os candidatos estejam preparados de forma adequada e direcionada para as provas.</li>
-          <li><strong>Metodologia voltada para a banca VUNESP:</strong> a metodologia do curso foi elaborada levando em consideração o perfil da banca examinadora VUNESP, conhecida por suas características específicas de elaboração de questões. Isso permite que os alunos se familiarizem com o estilo de perguntas e estejam mais preparados para enfrentar o exame.</li>
-          <li><strong>Aprendizado rápido e prático:</strong> o curso de Raciocínio Lógico proporciona aos alunos um aprendizado eficiente e prático, permitindo que eles adquiram as habilidades necessárias para resolver as questões de forma rápida e eficaz. Isso é especialmente importante em concursos, onde o tempo é um fator crucial.</li>
-          <li><strong>Domínio das técnicas de resolução de questões:</strong> o curso oferece aos alunos o conhecimento e as técnicas necessárias para resolver questões de Raciocínio Lógico de forma eficiente. Isso inclui identificar os pontos-chave das questões, utilizar passos mentais para aprender de forma definitiva e realizar as resoluções de maneira mais rápida.</li>
-        </ol>
-
+        <p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
         <div class="curso-meta" aria-label="Destaques do curso">
-          <span>Garantia de 7 dias</span>
-          <span>Qualquer dispositivo</span>
-          <span>+300 estudantes</span>
-          <span>94% avaliações positivas</span>
-          <span>Para concurseiros</span>
+          <span>Curso online</span>
           <span>PCSP</span>
+          <span>Raciocínio lógico</span>
           <span>VUNESP</span>
         </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
 
-        <div class="curso-section-title">Material do curso</div>
-        <details class="curso-detalhes">
-          <summary>Conteúdo de Raciocínio Lógico</summary>
-          <ul class="curso-lista-aulas">
-            <li>Lógica Proposicional</li>
-            <li>Questões de Lógica Proposicional</li>
-            <li>Proposição Composta</li>
-            <li>Sinônimos dos Conectivos</li>
-            <li>Sinônimos do Conectivo SE..., ENTÃO</li>
-            <li>Sinônimos do Conectivo SE, e SOMENTE SE</li>
-            <li>Questões de Conectivos</li>
-            <li>Tabela Verdade</li>
-            <li>Questões de Tabela Verdade</li>
-            <li>Estrutura Lógica das Relações Arbitrárias Entre Pessoas, Lugares, Coisas e Eventos Fictícios</li>
-            <li>Sequências Lógicas - Parte I e II</li>
-            <li>Sequências Lógicas - Parte III e IV</li>
-            <li>Negação</li>
-            <li>Equivalências Lógicas</li>
-            <li>Quantificadores</li>
-            <li>Negação dos Quantificadores</li>
-            <li>Diagramas Lógicos</li>
-            <li>Questões de Diagramas Lógicos</li>
-            <li>Questões de Argumentos Hipotéticos</li>
-            <li>Questões de Associações de Informações</li>
-            <li>Diagrama de Venn</li>
-          </ul>
-        </details>
-
-        <a class="curso-cta" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir curso de Raciocínio Lógico para PCSP na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
+      <a class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso de Informática PCSP">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="curso-informatica-pcsp" data-img-base="curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
         <h3>PCSP - Curso de Informática - Edital Completo</h3>
-        <p>
-          Curso preparatório para concursos públicos na disciplina de Informática, com o professor Pablo Leonardo, carga horária de 24 horas, modalidade teoria + exercícios e foco total na banca VUNESP.
-        </p>
-
+        <p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
         <div class="curso-meta" aria-label="Destaques do curso">
-          <span>Garantia de 7 dias</span>
-          <span>Qualquer dispositivo</span>
-          <span>24 horas</span>
-          <span>Teoria + exercícios</span>
-          <span>Videoaulas</span>
-          <span>PDFs</span>
-          <span>Listas de questões</span>
-          <span>100% avaliações positivas</span>
+          <span>Curso online</span>
+          <span>PCSP</span>
+          <span>Informática</span>
           <span>VUNESP</span>
         </div>
-
-        <div class="curso-section-title">Descrição do curso</div>
-        <ul class="curso-lista-aulas">
-          <li>Curso preparatório para concursos públicos.</li>
-          <li>Disciplina: Informática.</li>
-          <li>Professor: Pablo Leonardo.</li>
-          <li>Carga horária: 24 horas.</li>
-          <li>Modalidade: teoria + exercícios.</li>
-          <li>Materiais disponíveis: videoaulas, PDFs e listas de questões.</li>
-          <li>Foco total na banca VUNESP.</li>
-        </ul>
-
-        <div class="curso-section-title">Para quem é esse produto?</div>
-        <p>
-          Pessoas que querem ser aprovadas no concurso de Delegado da Polícia Civil de São Paulo.
-        </p>
-
-        <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Click e Compre</a>
-      </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
     </div>
+
+    <div class="curso-section-title">Livros e e-books</div>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
+      Livros, e-books e materiais de desenvolvimento para estudo, carreira, disciplina, produtividade e transição profissional.
+    </div>
+
+    <div class="curso-grid" aria-label="Livros e e-books com link de compra">
+      <a class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="pacote-viva-sem-procrastinar" data-img-base="pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Pacote - Viva Sem Procrastinar</h3>
+        <p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
+        <div class="curso-meta" aria-label="Destaques do produto">
+          <span>Material digital</span>
+          <span>Procrastinação</span>
+          <span>Saúde mental</span>
+          <span>Desenvolvimento pessoal</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="otimizando-cerebro-concursos" data-img-base="otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Otimizando o Cérebro para Concursos Públicos</h3>
+        <p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>E-book</span>
+          <span>Concursos</span>
+          <span>Neurociências</span>
+          <span>Produtividade</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="alem-da-farda-codigo-travessia" data-img-base="alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Além da Farda: O Código da Travessia</h3>
+        <p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Livro digital</span>
+          <span>Transição</span>
+          <span>Carreira</span>
+          <span>Vida pós-farda</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" target="_blank" rel="noopener noreferrer" aria-label="Abrir Método DMA">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="metodo-dma-procrastinacao" data-img-base="metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
+        <p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>Material digital</span>
+          <span>Planejamento</span>
+          <span>Gestão de tempo</span>
+          <span>Disciplina</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="taticas-lideranca-militar" data-img-base="taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
+        <p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
+        <div class="curso-meta" aria-label="Destaques do livro">
+          <span>E-book</span>
+          <span>Liderança</span>
+          <span>Disciplina</span>
+          <span>Tomada de decisão</span>
+        </div>
+        <span class="curso-cta">Comprar</span>
+      </a>
+    </div>
+
+    <p class="produto-aviso-compra">
+      Antes de comprar, confira preço, prazo, avaliações, garantia, política de reembolso e descrição atualizada diretamente na página do produto.
+    </p>
   </div>
 </main>
+
 
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <main id="page-acoes" class="page-section" role="main">
@@ -2140,158 +1898,7 @@
 </main>
 
 
-<!-- BLOCO 11 — PÁGINA LIVROS -->
-<main id="page-livros" class="page-section" role="main">
-  <div class="card">
-    <h2>Livros e E-books</h2>
-    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Espaço destinado a livros, e-books e materiais de desenvolvimento pessoal, produtividade, liderança e preparação para concursos.
-    </div>
-
-    <div class="curso-grid">
-      <div class="curso-card">
-        <h3>Pacote - Viva Sem Procrastinar</h3>
-        <p>
-          Descubra como melhorar sua saúde mental e eliminar a procrastinação de uma vez por todas. Com este pacote completo, você terá acesso a materiais voltados para mudança de vida, superação de medos, expectativas e construção de atitude prática.
-        </p>
-        <p style="margin-top: 10px;">
-          O pacote busca mostrar a causa número 1 da procrastinação e apresenta um guia rápido e eficaz para quem está cansado de sentir preguiça, tentar melhorar de vida e não conseguir manter um plano por muito tempo.
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do livro">
-          <span>Garantia de 21 dias</span>
-          <span>80% avaliações positivas</span>
-          <span>Desenvolvimento pessoal</span>
-          <span>Procrastinação</span>
-        </div>
-
-        <div class="curso-section-title">O que contém</div>
-        <ul class="curso-lista-aulas">
-          <li>Ebook Viva Sem Procrastinar (34 páginas).</li>
-          <li>Mini-ebook bônus: Trate esse teu Medo (14 páginas).</li>
-          <li>Mini-ebook bônus: Saiba que é possível (11 páginas).</li>
-          <li>Mini-ebook bônus: O Homem é um Ser Triunfante (10 páginas).</li>
-          <li>Mini-ebook bônus: A arte de Fazer Algo (9 páginas).</li>
-        </ul>
-
-        <div class="curso-section-title">Para quem é esse produto?</div>
-        <p>
-          Pessoas que sofrem com a procrastinação, estão cansadas de sentir preguiça e tentam melhorar de vida, mas não conseguem manter um plano por muito tempo.
-        </p>
-
-        <a class="curso-cta" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
-        <h3>Otimizando o Cérebro para Concursos Públicos</h3>
-        <p>
-          Livro escrito por quem entende do assunto, tanto pela experiência de já ter sido aprovado em mais de 5 processos seletivos, como pela formação em Neurociências e mestrado em Psicologia.
-        </p>
-        <p style="margin-top: 10px;">
-          O e-book oferece técnicas para melhorar memória, concentração, aprendizado, organização do tempo, motivação e controle de distrações durante a preparação para concursos públicos.
-        </p>
-        <p style="margin-top: 10px;">
-          Na compra deste e-book, o aluno ainda ganha gratuitamente o livro Manual sobre Procrastinação, Sono e Administração do Tempo.
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do livro">
-          <span>Garantia de 7 dias</span>
-          <span>Concursos públicos</span>
-          <span>Neurociências</span>
-          <span>Estudos</span>
-          <span>Produtividade</span>
-        </div>
-
-        <div class="curso-section-title">Para quem é esse produto?</div>
-        <p>
-          Concurseiros, estudantes e universitários.
-        </p>
-
-        <a class="curso-cta" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
-        <h3>Além da Farda: O Código da Travessia</h3>
-        <p>
-          Um manual de desarmamento emocional e reconstrução de identidade, voltado para quem deseja fazer a transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor pessoal.
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do livro">
-          <span>Garantia de 7 dias</span>
-          <span>Identidade</span>
-          <span>Carreira</span>
-          <span>Transição</span>
-          <span>Vida pós-farda</span>
-        </div>
-
-        <div class="curso-section-title">O que você vai dominar</div>
-        <ul class="curso-lista-aulas">
-          <li>O fim da Síndrome do B.O. Familiar: desligar o “Modo Ocorrência” e transformar sua casa de quartel em santuário.</li>
-          <li>Do tempo institucional ao tempo de CEO: parar de ser escravo da escala e gerir a agenda com o Método Cronos.</li>
-          <li>A Simbiose Midas &amp; Valquírias: usar a disciplina militar no mundo dos negócios sem perder identidade e presença.</li>
-          <li>A Tradução de Competências: transformar anos de caserna em currículo executivo valorizado pelo mercado.</li>
-        </ul>
-
-        <a class="curso-cta" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
-        <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
-        <p>
-          Este método apresenta técnicas de planejamento pessoal e financeiro, gestão de tempo, atitude sob pressão, rotina disciplinada e desenvolvimento pessoal para quem deseja conquistar mais resultado na vida profissional e pessoal.
-        </p>
-        <p style="margin-top: 10px;">
-          O conteúdo é apresentado por Pedro, militar com mais de 6 anos de experiência e formação de destaque no Exército, que aplica lições do quartel na vida civil e nos negócios.
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do livro">
-          <span>Planejamento</span>
-          <span>Gestão de tempo</span>
-          <span>Disciplina</span>
-          <span>Desenvolvimento pessoal</span>
-        </div>
-
-        <a class="curso-cta" href="https://go.hotmart.com/V105563143D" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Método DMA na Hotmart">Click e Compre</a>
-      </div>
-
-      <div class="curso-card">
-        <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
-        <p>
-          E-book criado para pessoas que desejam alcançar mais controle, disciplina e resultados no trabalho, nos estudos ou em projetos pessoais, aplicando princípios de liderança militar no cotidiano.
-        </p>
-        <p style="margin-top: 10px;">
-          O material mostra como tomar decisões com clareza sob pressão, organizar a rotina como uma operação bem-sucedida, comunicar-se de forma objetiva e manter a calma em momentos desafiadores.
-        </p>
-
-        <div class="curso-meta" aria-label="Destaques do livro">
-          <span>Garantia de 7 dias</span>
-          <span>Liderança</span>
-          <span>Disciplina</span>
-          <span>Tomada de decisão</span>
-          <span>Para líderes</span>
-        </div>
-
-        <div class="curso-section-title">Principais temas</div>
-        <ul class="curso-lista-aulas">
-          <li>Desenvolvimento de disciplina e foco.</li>
-          <li>Aplicação de táticas de liderança militar na produtividade diária.</li>
-          <li>Gestão eficiente de crises.</li>
-          <li>Tomada de decisão rápida e precisa mesmo sob pressão.</li>
-          <li>Comunicação clara, planejamento e comando da própria rotina.</li>
-        </ul>
-
-        <div class="curso-section-title">Para quem é esse produto?</div>
-        <p>
-          Líderes e pessoas que desejam assumir mais controle sobre metas, decisões e rotina.
-        </p>
-
-        <a class="curso-cta" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia na Hotmart">Click e Compre</a>
-      </div>
-    </div>
-  </div>
-</main>
-
-<!-- BLOCO 12 — PÁGINA PARCEIROS E CONTATO -->
+<!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
 <main id="page-parceiros" class="page-section" role="main">
   <div class="card">
     <h2>Parceiros e Contato</h2>
@@ -6432,9 +6039,8 @@ function getNomeAbaAtual() {
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
     comparar: 'Comparar Carreiras',
-    cursos: 'Cursos',
+    produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
-    livros: 'Livros',
     parceiros: 'Parceiros - Anuncie aqui!'
   };
   return nomes[page] || 'Principal';
@@ -7354,7 +6960,7 @@ function mudarInstituicao(novaInstituicao) {
   atualizarTexto('txt-inst-dir', config.titulo);
   atualizarTexto('txt-inst-concursos', config.titulo);
   atualizarTexto('txt-inst-comparar', config.titulo);
-  atualizarTexto('txt-inst-cursos', config.titulo);
+  atualizarTexto('txt-inst-produtos', config.titulo);
   atualizarTexto('txt-inst-remuneracao', config.titulo);
   atualizarTexto('txt-inst-acoes', config.titulo);
   atualizarTexto('txt-inst-assoc', config.titulo);
@@ -8310,7 +7916,7 @@ function carregarConcursos() {
       ${c.site ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : ''}
     </div>
 
-    <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="sponsored noopener noreferrer" aria-label="Ver barra fixa para porta na Shopee, produto útil para treino de TAF">
+    <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
         <img src="barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa01.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa01.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa01.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa01.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
       </div>
@@ -8322,7 +7928,7 @@ function carregarConcursos() {
       </div>
     </a>
 
-    <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="sponsored noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela na Shopee, produto útil para treino de TAF">
+    <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
         <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
       </div>
