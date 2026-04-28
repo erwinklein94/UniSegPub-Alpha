@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA, PR e RS - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA, PR, RS e SC - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,6 +106,8 @@
   body[data-inst="pcpr"] { --vermelho: #1f5e89; --vermelho-escuro: #123a56; }
   body[data-inst="pmrs"] { --vermelho: #0f3d75; --vermelho-escuro: #09274d; }
   body[data-inst="pcrs"] { --vermelho: #5b6472; --vermelho-escuro: #323946; }
+  body[data-inst="pmsc"] { --vermelho: #1b4f8a; --vermelho-escuro: #0f2f55; }
+  body[data-inst="pcsc"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -597,8 +599,8 @@
   .field.span-2 { grid-column: span 2; }
 
   /* BLOCO 02.12 — Exibição condicional por instituição/estado */
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only,
-  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only,
+  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only {
     display: none !important;
   }
 
@@ -614,6 +616,8 @@
   body[data-inst="pcpr"] .field.pcpr-only, body[data-inst="pcpr"] h2.pcpr-only { display: flex !important; }
   body[data-inst="pmrs"] .field.pmrs-only, body[data-inst="pmrs"] h2.pmrs-only { display: flex !important; }
   body[data-inst="pcrs"] .field.pcrs-only, body[data-inst="pcrs"] h2.pcrs-only { display: flex !important; }
+  body[data-inst="pmsc"] .field.pmsc-only, body[data-inst="pmsc"] h2.pmsc-only { display: flex !important; }
+  body[data-inst="pcsc"] .field.pcsc-only, body[data-inst="pcsc"] h2.pcsc-only { display: flex !important; }
 
   body[data-inst="pmesp"] .field.sp-only,
   body[data-inst="pcsp"] .field.sp-only,
@@ -624,7 +628,9 @@
   body[data-inst="pmpr"] .field.pr-only,
   body[data-inst="pcpr"] .field.pr-only,
   body[data-inst="pmrs"] .field.rs-only,
-  body[data-inst="pcrs"] .field.rs-only { display: flex !important; }
+  body[data-inst="pcrs"] .field.rs-only,
+  body[data-inst="pmsc"] .field.sc-only,
+  body[data-inst="pcsc"] .field.sc-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -638,6 +644,8 @@
   body[data-inst="pcpr"] div.alerta.pcpr-only { display: block !important; }
   body[data-inst="pmrs"] div.alerta.pmrs-only { display: block !important; }
   body[data-inst="pcrs"] div.alerta.pcrs-only { display: block !important; }
+  body[data-inst="pmsc"] div.alerta.pmsc-only { display: block !important; }
+  body[data-inst="pcsc"] div.alerta.pcsc-only { display: block !important; }
 
   /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
@@ -854,6 +862,10 @@
             <option value="pmrs">PMRS - Brigada Militar</option>
             <option value="pcrs">PCRS - Polícia Civil</option>
           </optgroup>
+          <optgroup label="Santa Catarina">
+            <option value="pmsc">PMSC - Polícia Militar</option>
+            <option value="pcsc">PCSC - Polícia Civil</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -903,6 +915,10 @@
       <optgroup label="Rio Grande do Sul">
         <option value="pmrs">PMRS - Brigada Militar</option>
         <option value="pcrs">PCRS - Polícia Civil</option>
+      </optgroup>
+      <optgroup label="Santa Catarina">
+        <option value="pmsc">PMSC - Polícia Militar</option>
+        <option value="pcsc">PCSC - Polícia Civil</option>
       </optgroup>
     </select>
   </div>
@@ -2484,6 +2500,7 @@ const AUX_ALIM_BA_30H = 286.00;            // Decreto BA 22.863/2024
 const AUX_ALIM_RJ_PM = 433.80;             // Decreto RJ 50.081/2026 (PMERJ)
 const AUX_ALIM_PR_PADRAO = 834.74;         // Lei PR 22.208/2024 — auxílio-alimentação dos servidores ativos
 const AUX_ALIM_RS_BM = 400.00;              // Editais BM/RS 2025 — auxílio-alimentação informado para Soldado e Oficialato
+const AUX_ALIM_SC_PADRAO = 550.00;          // Lei SC 18.796/2023, com redação da Lei 19.059/2024 — auxílio-alimentação de 40h
 const FASPM_PR_TITULAR = 0.005;            // Lei PR 17.169/2012 — 0,5% do subsídio (facultativo)
 const FASPM_PR_DEPENDENTE = 0.002;         // Lei PR 17.169/2012 — 0,2% por dependente
 const FASPM_PR_LIMITE = 0.02;              // Limite de 2% do subsídio
@@ -2822,6 +2839,49 @@ const CARGOS_PCRS = [
   { val: "comissario_rs", text: "Comissário de Polícia PCRS — topo da carreira", padrao: 19907.84, oficial: true, retpFator: 0 }
 ];
 
+const CARGOS_PMSC = [
+  // PMSC — valores calculados a partir da LC SC 765/2020, reajustes da LC SC 776/2021 e reajuste total da LC SC 872/2025. Soldado unificado pela LC SC 880/2025.
+  { val: "cel_sc", text: "CEL PM — Coronel PMSC", padrao: 39623.58, oficial: true, retpFator: 0 },
+  { val: "tc_sc", text: "TEN CEL PM — Tenente-Coronel PMSC", padrao: 35661.46, oficial: true, retpFator: 0 },
+  { val: "maj_sc", text: "MAJ PM — Major PMSC", padrao: 31699.35, oficial: true, retpFator: 0 },
+  { val: "cap_sc", text: "CAP PM — Capitão PMSC", padrao: 27737.23, oficial: true, retpFator: 0 },
+  { val: "ten1_sc", text: "1º TEN PM — 1º Tenente PMSC", padrao: 25359.48, oficial: true, retpFator: 0 },
+  { val: "ten2_sc", text: "2º TEN PM — 2º Tenente PMSC", padrao: 22585.63, oficial: true, retpFator: 0 },
+  { val: "asp_sc", text: "ASP OF PM — Aspirante a Oficial PMSC", padrao: 19811.79, oficial: true, retpFator: 0 },
+  { val: "cad_sc", text: "AL OF PM / Cadete — referência equivalente a Aspirante", padrao: 19811.79, oficial: true, retpFator: 0 },
+  { val: "subten_sc", text: "SUBTEN PM — Subtenente PMSC", padrao: 19440.00, oficial: true, retpFator: 0 },
+  { val: "sgt1_sc", text: "1º SGT PM — 1º Sargento PMSC", padrao: 15181.42, oficial: true, retpFator: 0 },
+  { val: "sgt2_sc", text: "2º SGT PM — 2º Sargento PMSC", padrao: 12904.51, oficial: true, retpFator: 0 },
+  { val: "sgt3_sc", text: "3º SGT PM — 3º Sargento PMSC", padrao: 10969.02, oficial: true, retpFator: 0 },
+  { val: "cabo_sc", text: "CABO PM — Cabo PMSC", padrao: 9720.00, oficial: true, retpFator: 0 },
+  { val: "sd_sc", text: "SD PM — Soldado PMSC", padrao: 8505.00, oficial: true, selected: true, retpFator: 0 }
+];
+
+const CARGOS_PCSC = [
+  // PCSC — valores calculados a partir da LC SC 765/2020, reajustes da LC SC 776/2021 e reajuste total da LC SC 872/2025; Agente/Escrivão conferidos pelos editais PCSC 2025.
+  { val: "del_sc_ee", text: "Delegado de Polícia PCSC — Entrância Especial", padrao: 39623.58, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_sc_final", text: "Delegado de Polícia PCSC — Entrância Final", padrao: 35661.46, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_sc_inicial", text: "Delegado de Polícia PCSC — Entrância Inicial", padrao: 31699.35, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_sc_sub", text: "Delegado de Polícia PCSC — Substituto", padrao: 27737.23, oficial: true, delegado: true, retpFator: 0 },
+  { val: "agente_sc_i", text: "Agente de Polícia Civil PCSC — Classe I", padrao: 7290.00, oficial: true, selected: true, retpFator: 0 },
+  { val: "agente_sc_ii", text: "Agente de Polícia Civil PCSC — Classe II", padrao: 7897.50, oficial: true, retpFator: 0 },
+  { val: "agente_sc_iii", text: "Agente de Polícia Civil PCSC — Classe III", padrao: 8505.00, oficial: true, retpFator: 0 },
+  { val: "agente_sc_iv", text: "Agente de Polícia Civil PCSC — Classe IV", padrao: 9720.00, oficial: true, retpFator: 0 },
+  { val: "agente_sc_v", text: "Agente de Polícia Civil PCSC — Classe V", padrao: 10969.02, oficial: true, retpFator: 0 },
+  { val: "agente_sc_vi", text: "Agente de Polícia Civil PCSC — Classe VI", padrao: 12904.51, oficial: true, retpFator: 0 },
+  { val: "agente_sc_vii", text: "Agente de Polícia Civil PCSC — Classe VII", padrao: 15181.42, oficial: true, retpFator: 0 },
+  { val: "agente_sc_viii", text: "Agente de Polícia Civil PCSC — Classe VIII", padrao: 19440.00, oficial: true, retpFator: 0 },
+  { val: "esc_sc_iv", text: "Escrivão de Polícia Civil PCSC — Classe IV", padrao: 9720.00, oficial: true, retpFator: 0 },
+  { val: "esc_sc_v", text: "Escrivão de Polícia Civil PCSC — Classe V", padrao: 10969.02, oficial: true, retpFator: 0 },
+  { val: "esc_sc_vi", text: "Escrivão de Polícia Civil PCSC — Classe VI", padrao: 12904.51, oficial: true, retpFator: 0 },
+  { val: "esc_sc_vii", text: "Escrivão de Polícia Civil PCSC — Classe VII", padrao: 15181.42, oficial: true, retpFator: 0 },
+  { val: "esc_sc_viii", text: "Escrivão de Polícia Civil PCSC — Classe VIII", padrao: 19440.00, oficial: true, retpFator: 0 },
+  { val: "psico_sc_vi", text: "Psicólogo Policial Civil PCSC — Classe VI", padrao: 12904.51, oficial: true, retpFator: 0 },
+  { val: "psico_sc_vii", text: "Psicólogo Policial Civil PCSC — Classe VII", padrao: 15181.42, oficial: true, retpFator: 0 },
+  { val: "psico_sc_viii", text: "Psicólogo Policial Civil PCSC — Classe VIII", padrao: 19440.00, oficial: true, retpFator: 0 }
+];
+
+
 
 
 /* ============================================================ */
@@ -2938,6 +2998,15 @@ const ACOES_JUDICIAIS = {
       atualizado: "Abril/2026"
     }
   ]
+,
+  pmsc: [
+    { titulo: "Subsídio, enquadramento e promoções na carreira militar estadual", status: "Conferência individual", ano: "Regime SC", tipo: "individual", desc: "Discussões podem envolver enquadramento no regime remuneratório especial, progressão de praças, posto/graduação, interstício, ficha funcional e eventual diferença de subsídio.", base: "LC SC 765/2020, LC SC 776/2021, LC SC 872/2025, LC SC 880/2025 e estatuto militar estadual.", fonte: "ALESC — legislação SC", fonteUrl: "https://leis.alesc.sc.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma, paridade e contribuição previdenciária", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "O direito depende da data de ingresso, tempo de serviço, regra de transição, situação funcional, cálculo do benefício e eventuais regras de paridade/integralidade.", base: "Sistema de proteção social dos militares estaduais, regras estaduais e ficha funcional.", fonte: "IPREV/SC e legislação estadual", fonteUrl: "https://www.iprev.sc.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pcsc: [
+    { titulo: "Subsídio, classe inicial e progressão funcional", status: "Conferência individual", ano: "Regime SC", tipo: "individual", desc: "Pode exigir conferência de cargo, classe, data de ingresso, enquadramento, progressões e reflexos remuneratórios. A comparação deve partir da tabela legal e do contracheque.", base: "Lei SC 6.843/1986, LC SC 765/2020, LC SC 776/2021 e LC SC 872/2025.", fonte: "ALESC — legislação SC", fonteUrl: "https://leis.alesc.sc.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial, abono de permanência e paridade", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "A análise depende de tempo de contribuição, tempo em atividade policial, idade, sexo, data de ingresso, regra de transição e situação no cargo.", base: "Lei Orgânica Nacional das Polícias Civis, estatuto da PCSC, regras previdenciárias estaduais e ficha funcional.", fonte: "PCSC/IPREV/SC", fonteUrl: "https://www.iprev.sc.gov.br/", atualizado: "Abril/2026" }
+  ],
 };
 
 /* BLOCO 15.5 — Base de dados das associações e sindicatos */
@@ -3010,6 +3079,15 @@ const ASSOCIACOES = {
     { nome: "ASDEP-RS - Associação dos Delegados de Polícia do Rio Grande do Sul", foco: "Delegados de Polícia Civil do RS", acao: "Representação associativa da carreira de Delegado, defesa institucional e acompanhamento de pautas legislativas e administrativas.", site: "asdep.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
     { nome: "SINPOL-RS - Sindicato dos Policiais Civis do Rio Grande do Sul", foco: "Servidores policiais civis do Rio Grande do Sul", acao: "Atuação sindical e acompanhamento de pautas de valorização, direitos e condições de trabalho.", site: "sinpolrs.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, convênios e orientação aos filiados." }
   ]
+,
+  pmsc: [
+    { nome: "APRASC — Associação de Praças de Santa Catarina", foco: "Praças militares estaduais de Santa Catarina", acao: "Representação associativa, institucional e defesa de interesses da categoria, com acompanhamento de pautas de carreira, remuneração e condições de trabalho.", site: "www.aprasc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação institucional, representação, notícias, atuação associativa, convênios e orientação aos associados." },
+    { nome: "ACORS — Associação de Oficiais Militares de SC", foco: "Oficiais da Polícia Militar e do Corpo de Bombeiros Militar de Santa Catarina", acao: "Representação institucional da oficialidade militar estadual, defesa de prerrogativas, valorização profissional e acompanhamento legislativo.", site: "www.acors.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, comunicação institucional, eventos, convênios e apoio aos associados." }
+  ],
+  pcsc: [
+    { nome: "SINPOL-SC — Sindicato dos Policiais Civis de Santa Catarina", foco: "Policiais civis de Santa Catarina", acao: "Representação sindical em pautas de carreira, direitos, remuneração, condições de trabalho e defesa coletiva da categoria.", site: "sinpolsc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, orientação, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "ADEPOL-SC — Associação dos Delegados de Polícia de Santa Catarina", foco: "Delegados de Polícia de Santa Catarina", acao: "Representação associativa da carreira de Delegado, defesa institucional, acompanhamento legislativo e valorização da Polícia Judiciária.", site: "adepolsc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." }
+  ],
 };
 
 
@@ -3218,6 +3296,40 @@ const CONCURSOS = {
     validade: "Conferir edital e atos posteriores.",
     previsao: "Editais 2025 publicados e acompanhados por atos no site oficial da Polícia Civil/RS.",
     site: "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025"
+  },
+  pmsc: {
+    edital: "PMSC — concursos e processos seletivos oficiais da Polícia Militar de Santa Catarina",
+    salario: "Carreira PMSC em regime de subsídio. Referência atual da tabela: Soldado PMSC R$ 8.505,00, Cabo R$ 9.720,00 e demais postos/graduações conforme LC 765/2020, LC 776/2021, LC 872/2025 e LC 880/2025.",
+    vagas: "Conferir edital vigente na página oficial da PMSC. A instituição mantém páginas específicas para concursos de Oficiais, Soldados e processos seletivos temporários.",
+    cotas: "Conferir edital específico; reservas e critérios dependem do concurso publicado.",
+    idade: "Conferir edital vigente; requisitos de idade podem variar conforme cargo, quadro e concurso.",
+    escolaridade: "Conferir edital vigente. Em regra, cargos de carreira exigem escolaridade compatível com Soldado, Oficial ou quadro específico.",
+    banca: "Conferir edital vigente",
+    inscritos: "Consultar atos oficiais da PMSC e da banca organizadora.",
+    materias: "Conforme edital: disciplinas gerais, legislação, conhecimentos específicos e demais conteúdos previstos para o cargo.",
+    etapas: "Prova objetiva, exames/avaliações, teste físico, investigação social, curso de formação e demais etapas conforme edital específico.",
+    cfsd: "Curso de Formação de Praças ou Curso de Formação de Oficiais, conforme o cargo.",
+    estagio: "Estágio probatório e regras de carreira conforme legislação estadual.",
+    validade: "Conferir edital e atos posteriores.",
+    previsao: "Acompanhar a página oficial de concursos da PMSC para novos editais, retificações e convocações.",
+    site: "https://www.pm.sc.gov.br/concursos"
+  },
+  pcsc: {
+    edital: "PCSC — Agente e Escrivão — editais 01/2025 e 02/2025",
+    salario: "Agente: R$ 7.290,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 7.840,00. Escrivão: R$ 9.720,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 10.270,00, valores previstos para abril/2026.",
+    vagas: "300 vagas: 200 para Agente de Polícia Civil e 100 para Escrivão de Polícia Civil, ambas de nível superior.",
+    cotas: "Agente: 190 ampla concorrência e 10 PcD. Escrivão: 95 ampla concorrência e 5 PcD, conforme divulgação oficial.",
+    idade: "Conferir edital. Exige cumprimento dos requisitos legais até a posse/matrícula conforme regra do certame.",
+    escolaridade: "Nível superior completo para Agente e Escrivão, conforme editais 2025.",
+    banca: "IDECAN",
+    inscritos: "Consultar IDECAN e atos oficiais da PCSC.",
+    materias: "Noções de Direito Penal, Processo Penal, Constitucional, Administrativo, Direitos Humanos, Legislação Institucional, TI, Segurança Cibernética, Crimes Digitais, Contabilidade, Português e Raciocínio Lógico-Matemático.",
+    etapas: "Prova objetiva, prova de capacidade física, avaliação psicológica, investigação social, exame toxicológico de larga janela de detecção e avaliação de títulos.",
+    cfsd: "Curso/formação conforme regras da ACADEPOL/PCSC e edital.",
+    estagio: "Estágio probatório conforme regime estatutário estadual.",
+    validade: "Conferir edital e atos posteriores.",
+    previsao: "Editais 2025 publicados; acompanhar PCSC, DOE/SC e IDECAN para atos posteriores.",
+    site: "https://pc.sc.gov.br/?p=35166"
   }
 };
 
@@ -3227,7 +3339,7 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr','pmrs','pcrs'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr','pmrs','pcrs','pmsc','pcsc'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
@@ -3320,7 +3432,9 @@ function atualizarHeaderDesc(descInstituicao) {
     pmpr: 'Polícia Militar do Paraná',
     pcpr: 'Polícia Civil do Paraná',
     pmrs: 'Brigada Militar do Rio Grande do Sul',
-    pcrs: 'Polícia Civil do Rio Grande do Sul'
+    pcrs: 'Polícia Civil do Rio Grande do Sul',
+    pmsc: 'Polícia Militar de Santa Catarina',
+    pcsc: 'Polícia Civil de Santa Catarina'
   };
   const el = document.getElementById('header-desc');
   if (el) el.textContent = (descInstituicao || descs[currInst] || descs.pmesp) + ' — ' + getNomeAbaAtual();
@@ -3351,7 +3465,8 @@ function popularCargos(inst) {
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
-    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS
+    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,
+    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC
   };
   currTabela = map[inst] || CARGOS_PM;
 
@@ -3435,6 +3550,18 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'Governo do RS/RHE — Relação de Remuneração — competência 11/2025; editais PCRS 2025 para ingresso',
     url: 'https://tesouro-admin.fazenda.rs.gov.br/upload/arquivos/202512/12090345-cargos-venc-gov3032-112025.pdf'
   },
+  pmsc: {
+    nome: 'ALESC/SC — LC 765/2020, LC 776/2021, LC 872/2025 e LC 880/2025 — PMSC',
+    url: 'https://leis.alesc.sc.gov.br/ato-normativo/20899'
+  },
+  pcsc: {
+    nome: 'ALESC/SC — LC 765/2020, LC 776/2021 e LC 872/2025; PCSC editais 2025',
+    url: 'https://pc.sc.gov.br/?p=35166'
+  },
+  sc_auxilio: {
+    nome: 'ALESC/SC — Lei 18.796/2023, redação da Lei 19.059/2024 — auxílio-alimentação',
+    url: 'https://leis.alesc.sc.gov.br/ato-normativo/22251'
+  },
   pr_auxilio: {
     nome: 'Legislação/PR — auxílio-alimentação de R$ 834,74',
     url: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=257965&indice=1'
@@ -3514,6 +3641,8 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
 
   if (inst === 'pmrs') return `RHE/RS: linhas inicial e final por posto/graduação, com competência 11/2025. Editais BM/RS 2025: referências de ingresso para Soldado, Aluno-Oficial e Capitão. Auxílio-alimentação BM/RS: ${fmt(AUX_ALIM_RS_BM)} informado em edital; não somado automaticamente ao bruto.`;
   if (inst === 'pcrs') return 'Carreira PCRS: classes de Delegado, Escrivão, Inspetor e Comissário, com valores de referência dos editais/tabelas 2025 e conferência na relação RHE 11/2025. Adicionais/indenizações: dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
+  if (inst === 'pmsc') return `Regime por subsídio da PMSC: valores atualizados pela LC SC 872/2025 e Soldado unificado pela LC SC 880/2025. Auxílio-alimentação SC de referência: ${fmt(AUX_ALIM_SC_PADRAO)}, verba indenizatória não somada ao bruto. Diárias, indenizações e eventuais serviços extraordinários dependem de escala, local, função ou situação funcional.`;
+  if (inst === 'pcsc') return `Regime por subsídio da PCSC: classes de Delegado, Agente, Escrivão e Psicólogo Policial conforme legislação estadual. Auxílio-alimentação SC: ${fmt(AUX_ALIM_SC_PADRAO)}, já citado nos editais de Agente/Escrivão 2025, mas não somado automaticamente ao bruto.`;
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 
@@ -3612,7 +3741,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
-    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS
+    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,
+    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC
   };
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
@@ -3663,6 +3793,16 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     beneficios = 0;
     criterio = 'Subsídio/vencimento bruto mensal por cargo/classe conforme editais PCRS 2025, tabelas de carreira e relação RHE/RS 11/2025.';
     benefDesc = 'Adicionais, indenizações e auxílios dependem de rubrica, lotação e situação funcional; não somados automaticamente.';
+  } else if (inst === 'pmsc') {
+    remuneracao = padrao;
+    beneficios = AUX_ALIM_SC_PADRAO;
+    criterio = 'Subsídio bruto mensal por posto/graduação conforme LC SC 765/2020, LC SC 776/2021, LC SC 872/2025 e LC SC 880/2025.';
+    benefDesc = `Auxílio-alimentação SC de referência: ${fmt(AUX_ALIM_SC_PADRAO)}; verba indenizatória não somada automaticamente ao bruto.`;
+  } else if (inst === 'pcsc') {
+    remuneracao = padrao;
+    beneficios = AUX_ALIM_SC_PADRAO;
+    criterio = 'Subsídio bruto mensal por cargo/classe conforme LC SC 765/2020, LC SC 776/2021, LC SC 872/2025 e estatuto da PCSC; Agente/Escrivão conferidos nos editais PCSC 2025.';
+    benefDesc = `Auxílio-alimentação SC de referência: ${fmt(AUX_ALIM_SC_PADRAO)}; nos editais PCSC 2025 aparece compondo o total divulgado de Agente e Escrivão.`;
   }
 
   return { remuneracao, beneficios, total: remuneracao + beneficios, criterio, benefDesc, fonteKey, badge };
@@ -3771,7 +3911,9 @@ function mudarInstituicao(novaInstituicao) {
     pmpr:  { titulo: "PMPR",  desc: "Polícia Militar do Paraná",              cor: "#2f6b3f", alertaPrev: "ParanáPrevidência/Sistema de Proteção Social Militar: contribuição previdenciária estimada em 14% sobre base remuneratória. FASPM é facultativo e calculado somente se selecionado." },
     pcpr:  { titulo: "PCPR",  desc: "Polícia Civil do Paraná",                 cor: "#1f5e89", alertaPrev: "ParanáPrevidência: contribuição previdenciária estimada em 14% sobre base remuneratória. Verbas indenizatórias ficam destacadas sem incidência automática." },
     pmrs:  { titulo: "PMRS",  desc: "Brigada Militar do Rio Grande do Sul",     cor: "#0f3d75", alertaPrev: "IPE Prev/RS e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, rubricas e auxílio-alimentação no contracheque." },
-    pcrs:  { titulo: "PCRS",  desc: "Polícia Civil do Rio Grande do Sul",       cor: "#5b6472", alertaPrev: "IPE Prev/RS: contribuição previdenciária conforme regra estadual; adicionais e indenizações dependem de rubrica e situação funcional." }
+    pcrs:  { titulo: "PCRS",  desc: "Polícia Civil do Rio Grande do Sul",       cor: "#5b6472", alertaPrev: "IPE Prev/RS: contribuição previdenciária conforme regra estadual; adicionais e indenizações dependem de rubrica e situação funcional." },
+    pmsc:  { titulo: "PMSC",  desc: "Polícia Militar de Santa Catarina",        cor: "#1b4f8a", alertaPrev: "IPREV/SC e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, subsídio, rubricas e auxílio-alimentação no contracheque." },
+    pcsc:  { titulo: "PCSC",  desc: "Polícia Civil de Santa Catarina",          cor: "#4b5563", alertaPrev: "IPREV/SC: contribuição previdenciária conforme regra estadual; classes, subsídios e indenizações dependem de cargo, rubrica e situação funcional." }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -3846,11 +3988,11 @@ function analisarDireitos() {
   const nomesInst = {
     pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
     pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA', pmpr: 'PMPR', pcpr: 'PCPR',
-    pmrs: 'PMRS', pcrs: 'PCRS'
+    pmrs: 'PMRS', pcrs: 'PCRS', pmsc: 'PMSC', pcsc: 'PCSC'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs'].includes(inst);
-  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : '';
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc'].includes(inst);
+  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' : '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
@@ -3922,6 +4064,10 @@ function analisarDireitos() {
       'Base: normas do Planserv e legislação estadual da Bahia.');
   } else if (inst === 'pmrs' || inst === 'pcrs') {
     html += direitoItem('Assistência à saúde / sistema estadual RS', 'condicionado',
+      getSaudeTexto(inst),
+      getSaudeBase(inst));
+  } else if (inst === 'pmsc' || inst === 'pcsc') {
+    html += direitoItem('Assistência à saúde / sistema estadual SC', 'condicionado',
       getSaudeTexto(inst),
       getSaudeBase(inst));
   }
@@ -4083,7 +4229,9 @@ function getSaudeTexto(inst) {
     pmpr: 'PMPR: assistência pode envolver FASPM, sistema próprio de saúde militar e regras de adesão/dependentes.',
     pcpr: 'PCPR: assistência pode envolver o Sistema de Assistência à Saúde do Paraná e regras administrativas do Estado.',
     pmrs: 'PMRS: assistência pode envolver IPE Saúde, Hospital da Brigada Militar e regras próprias dos militares estaduais do RS.',
-    pcrs: 'PCRS: assistência pode envolver IPE Saúde e regras administrativas do Estado do Rio Grande do Sul.'
+    pcrs: 'PCRS: assistência pode envolver IPE Saúde e regras administrativas do Estado do Rio Grande do Sul.',
+    pmsc: 'PMSC: assistência pode envolver SC Saúde, IPREV/SC e regras próprias do sistema dos militares estaduais de Santa Catarina.',
+    pcsc: 'PCSC: assistência pode envolver SC Saúde/IPREV-SC e regras administrativas do Estado de Santa Catarina.'
   };
   return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
 }
@@ -4094,6 +4242,7 @@ function getSaudeBase(inst) {
   if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
   if (inst === 'pcpr') return 'SAS/Paraná, legislação estadual e normas internas da PCPR/SEAP, conforme vínculo e adesão.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'IPE Saúde/RS, Hospital da Brigada Militar quando aplicável, normas estaduais e regras de adesão/dependentes.';
+  if (inst === 'pmsc' || inst === 'pcsc') return 'SC Saúde, IPREV/SC, normas estaduais e regras de adesão/dependentes conforme cargo e situação funcional.';
   return 'Regulamento institucional, estatuto da carreira, órgão de saúde estadual e regras de contribuição/dependentes.';
 }
 
@@ -4107,6 +4256,8 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'pcpr') return `Na PCPR, a carreira é estruturada por subsídio, cargo e níveis/classes. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de promoção, progressão e regras de titulação.`;
   if (inst === 'pmrs') return `Na PMRS, posto/graduação, promoções, interstícios e eventuais vantagens devem ser conferidos conforme estatuto e ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
   if (inst === 'pcrs') return `Na PCRS, cargo, classe, tempo de carreira e regras de promoção/progressão devem ser conferidos na ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
+  if (inst === 'pmsc') return `Na PMSC, posto/graduação, promoções, interstícios e eventuais vantagens devem ser conferidos conforme estatuto, LC SC 801/2022, LC SC 880/2025 e ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
+  if (inst === 'pcsc') return `Na PCSC, cargo, classe, tempo de carreira e regras de promoção/progressão devem ser conferidos no estatuto e na ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
   return 'Verificar adicional por tempo de serviço conforme legislação da carreira.';
 }
 
@@ -4119,6 +4270,8 @@ function getTempoServicoBase(inst) {
   if (inst === 'pcpr') return 'Base: Lei Complementar PR 259/2023 e alterações posteriores, com estrutura por subsídio e níveis/classes.';
   if (inst === 'pmrs') return 'Base: estatuto dos militares estaduais do RS, normas remuneratórias e ficha funcional.';
   if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023, normas estaduais e ficha funcional.';
+  if (inst === 'pmsc') return 'Base: estatuto dos militares estaduais de SC, LC SC 801/2022, LC SC 880/2025 e ficha funcional.';
+  if (inst === 'pcsc') return 'Base: Lei SC 6.843/1986, Lei Federal 14.735/2023, normas estaduais e ficha funcional.';
   return 'Base: estatuto, lei de remuneração e ficha funcional.';
 }
 
@@ -4129,6 +4282,8 @@ function getInsalubridadeTexto(inst) {
   if (inst === 'pmpr') return 'Na PMPR, a remuneração é por subsídio. Não computar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
   if (inst === 'pmrs') return 'Na PMRS, não lançar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
   if (inst === 'pcrs') return 'Na PCRS, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; não é verba universal automática.';
+  if (inst === 'pmsc') return 'Na PMSC, não lançar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
+  if (inst === 'pcsc') return 'Na PCSC, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; não é verba universal automática.';
   return 'Pode existir quando houver exposição reconhecida a agente insalubre, mediante laudo, enquadramento e previsão legal da instituição.';
 }
 
@@ -4137,6 +4292,7 @@ function getInsalubridadeBase(inst) {
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'Base: legislação estadual do RS, laudo, rubrica de pagamento e enquadramento do local/função.';
+  if (inst === 'pmsc' || inst === 'pcsc') return 'Base: legislação estadual de SC, laudo, rubrica de pagamento e enquadramento do local/função.';
   return 'Depende de laudo, legislação estadual e enquadramento do local/função.';
 }
 
@@ -4144,7 +4300,8 @@ function getPericulosidadeTexto(inst) {
   if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende o risco de vida e a periculosidade. Tratar como verba separada somente diante de rubrica, decisão ou tese específica.';
   if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
-  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  if (inst === 'pcsc') return 'Na PCSC, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
+  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
   return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
 }
 
@@ -4154,6 +4311,8 @@ function getPericulosidadeBase(inst) {
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e regime de subsídio dos militares estaduais do Paraná.';
   if (inst === 'pmrs') return 'Base: estatuto e normas remuneratórias dos militares estaduais do RS.';
   if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
+  if (inst === 'pmsc') return 'Base: estatuto e normas remuneratórias dos militares estaduais de SC.';
+  if (inst === 'pcsc') return 'Base: Lei SC 6.843/1986, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
   return 'Base: estatuto e lei de remuneração da instituição; não usar regra genérica para todas as carreiras.';
 }
 
@@ -4221,6 +4380,20 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('Diárias / indenizações / serviço extraordinário', 'condicionado',
       'Podem existir conforme lotação, deslocamento, autorização e legislação estadual. Não são verbas fixas universais.',
       'Conferir rubrica, contracheque, legislação estadual e normas internas.');
+  } else if (inst === 'pmsc') {
+    html += direitoItem('Auxílio-Alimentação PMSC', 'automatico',
+      'Valor de referência de R$ 550,00 para 40h em Santa Catarina, com caráter indenizatório e sem incorporação ao subsídio.',
+      'Base: Lei SC 18.796/2023, com redação da Lei SC 19.059/2024.');
+    html += direitoItem('Diárias / serviço extraordinário / indenizações', 'condicionado',
+      'Podem existir conforme escala, deslocamento, autorização, local de serviço e norma específica. Não são verbas fixas mensais.',
+      'Conferir legislação estadual, publicação da escala, ordem de serviço e contracheque.');
+  } else if (inst === 'pcsc') {
+    html += direitoItem('Auxílio-Alimentação PCSC', 'automatico',
+      'Valor de referência de R$ 550,00 para 40h. Nos editais PCSC 2025, aparece compondo o total divulgado para Agente e Escrivão.',
+      'Base: Lei SC 18.796/2023, Lei SC 19.059/2024 e editais PCSC 2025.');
+    html += direitoItem('Dedicação exclusiva / regime policial civil', 'condicionado',
+      'A carreira policial civil exige conferência do cargo, classe, jornada, lotação e regras próprias do estatuto e da Lei Orgânica Nacional.',
+      'Base: Lei SC 6.843/1986, Lei Federal 14.735/2023 e regulamentação estadual.');
   }
   return html;
 }
@@ -4232,7 +4405,7 @@ function getStatusAposentadoria(tempo, idade, requisitosApos) {
 }
 
 function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
-  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
   if (requisitosApos === 'sim') {
     return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
   }
