@@ -892,17 +892,65 @@
 
     <div class="header-text" id="header-text">
       <section class="header-institution-card" aria-label="Instituição selecionada">
-        <div class="header-current-identity">
-          <div class="current-flag-frame" aria-hidden="true">
-            <img id="header-active-flag" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="">
+        <div class="header-institution-main">
+          <div class="header-current-identity">
+            <div class="current-flag-frame" aria-hidden="true">
+              <img id="header-active-flag" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="">
+            </div>
+
+            <div class="header-current-copy">
+              <span class="header-current-label">Instituição ativa</span>
+              <strong id="header-active-sigla">PMESP</strong>
+              <p id="header-active-name">Polícia Militar de São Paulo</p>
+              <small id="header-desc">Principal</small>
+            </div>
           </div>
 
-          <div class="header-current-copy">
-            <span class="header-current-label">Instituição ativa</span>
-            <strong id="header-active-sigla">PMESP</strong>
-            <p id="header-active-name">Polícia Militar de São Paulo</p>
-            <small id="header-desc">Principal</small>
-          </div>
+          <aside class="header-facts-panel" aria-label="Resumo institucional atualizado">
+            <div class="header-facts-head">
+              <span>Resumo institucional</span>
+              <strong id="header-resumo-atualizado">Atualizado em 28/04/2026</strong>
+            </div>
+
+            <div class="header-facts-grid">
+              <div class="header-fact">
+                <span>Criação</span>
+                <strong id="header-resumo-criacao">15/12/1831</strong>
+              </div>
+              <div class="header-fact">
+                <span>Efetivo ativo</span>
+                <strong id="header-resumo-ativa">≈ 82 mil</strong>
+              </div>
+              <div class="header-fact">
+                <span>Reserva/inativos</span>
+                <strong id="header-resumo-reserva">≈ 90 mil</strong>
+              </div>
+              <div class="header-fact">
+                <span>Efetivo total</span>
+                <strong id="header-resumo-total">≈ 172 mil</strong>
+              </div>
+              <div class="header-fact">
+                <span>População UF</span>
+                <strong id="header-resumo-populacao">46.081.801</strong>
+              </div>
+              <div class="header-fact">
+                <span>Relação ativa</span>
+                <strong id="header-resumo-relacao">1 ativo / 562 hab.</strong>
+              </div>
+            </div>
+
+            <div class="header-leadership">
+              <div class="header-leadership-item">
+                <span>Chefe do Executivo</span>
+                <strong id="header-resumo-governador">Tarcísio de Freitas</strong>
+              </div>
+              <div class="header-leadership-item">
+                <span>Comando atual</span>
+                <strong id="header-resumo-comando">Cel PM José Augusto Coutinho — Comandante-Geral</strong>
+              </div>
+            </div>
+
+          </aside>
         </div>
 
         <div class="header-controls-grid">
@@ -3248,6 +3296,104 @@
     pointer-events: none;
   }
 
+
+  .header-institution-main {
+    display: grid;
+    grid-template-columns: minmax(235px, 0.55fr) minmax(420px, 1fr);
+    gap: 16px;
+    align-items: stretch;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-facts-panel {
+    min-width: 0;
+    padding: 13px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035));
+    border: 1px solid rgba(255,255,255,0.13);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 28px rgba(0,0,0,0.18);
+    backdrop-filter: blur(14px) saturate(130%);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+  }
+
+  .header-facts-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .header-facts-head span {
+    color: rgba(255,255,255,0.66);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.35px;
+    text-transform: uppercase;
+  }
+
+  .header-facts-head strong {
+    flex: 0 0 auto;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--vermelho) 22%, rgba(0,0,0,0.18));
+    border: 1px solid color-mix(in srgb, var(--vermelho) 46%, rgba(255,255,255,0.16));
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .header-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .header-fact,
+  .header-leadership-item {
+    min-width: 0;
+    padding: 9px 10px;
+    border-radius: 13px;
+    background: rgba(0,0,0,0.20);
+    border: 1px solid rgba(255,255,255,0.09);
+  }
+
+  .header-fact span,
+  .header-leadership-item span {
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(255,255,255,0.54);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .header-fact strong,
+  .header-leadership-item strong {
+    display: block;
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.18;
+    overflow-wrap: anywhere;
+  }
+
+  .header-leadership {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+
   .header-current-identity {
     display: flex;
     align-items: center;
@@ -3542,7 +3688,16 @@
       padding: 14px 0 16px;
     }
 
+    .header-institution-main,
     .header-controls-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .header-facts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header-leadership {
       grid-template-columns: 1fr;
     }
 
@@ -3593,6 +3748,32 @@
     .header-current-identity {
       align-items: flex-start;
       gap: 11px;
+    }
+
+    .header-facts-panel {
+      padding: 11px;
+      border-radius: 17px;
+    }
+
+    .header-facts-head {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .header-facts-grid {
+      gap: 7px;
+    }
+
+    .header-fact,
+    .header-leadership-item {
+      padding: 8px 9px;
+      border-radius: 12px;
+    }
+
+    .header-fact strong,
+    .header-leadership-item strong {
+      font-size: 12px;
     }
 
     .current-flag-frame {
@@ -5664,6 +5845,68 @@ const HEADER_INSTITUICOES_INFO = {
   pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' }
 };
 
+const HEADER_INSTITUICOES_RESUMO = {
+  pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },
+  pmerj: { criacao: '13/05/1809', ativa: 43000, reserva: 40000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcerj: { criacao: 'Origem histórica: 1808', ativa: 9000, reserva: 10000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Delegado Delmir Gouveia — Secretário de Estado de Polícia Civil', atualizado: 'Atualizado em 28/04/2026' },
+  pmmg:  { criacao: '09/06/1775', ativa: 40000, reserva: 45000, populacao: 21393441, governador: 'Mateus Simões', comando: 'Cel PM Carlos Frederico Otoni Garcia — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcmg:  { criacao: 'Origem histórica: 1891', ativa: 10000, reserva: 11000, populacao: 21393441, governador: 'Mateus Simões', comando: 'Delegada-Geral Letícia Baptista Gamboge Reis — Chefe da Polícia Civil', atualizado: 'Atualizado em 28/04/2026' },
+  pmba:  { criacao: '17/02/1825', ativa: 30000, reserva: 27000, populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'Cel PM Antônio Carlos Silva Magalhães — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcba:  { criacao: 'Origem histórica: 1833', ativa: 6000, reserva: 7000, populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'Delegado André Viana — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pmpr:  { criacao: '10/08/1854', ativa: 18000, reserva: 20000, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Cel PM Jefferson Silva — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcpr:  { criacao: 'Origem histórica: 1853', ativa: 5000, reserva: 6000, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Delegado Silvio Jacob Rockembach — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pmrs:  { criacao: '18/11/1837', ativa: 18000, reserva: 23000, populacao: 11233263, governador: 'Eduardo Leite', comando: 'Cel PM Luigi Gustavo Soares Pereira — Comandante-Geral da Brigada Militar', atualizado: 'Atualizado em 28/04/2026' },
+  pcrs:  { criacao: 'Origem histórica: 1841', ativa: 5500, reserva: 7000, populacao: 11233263, governador: 'Eduardo Leite', comando: 'Delegado Heraldo Chaves Guerreiro — Chefe de Polícia', atualizado: 'Atualizado em 28/04/2026' },
+  pmsc:  { criacao: '05/05/1835', ativa: 10500, reserva: 12000, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Cel PM Emerson Fernandes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcsc:  { criacao: 'Origem histórica: 1812', ativa: 3500, reserva: 4500, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Delegado Ulisses Gabriel — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pmes:  { criacao: '06/04/1835', ativa: 8000, reserva: 7000, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Cel PM Ríodo Lopes Rubim — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pces:  { criacao: 'Origem histórica: 1896', ativa: 2500, reserva: 3500, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Delegado-Geral Jordano Bruno — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' }
+};
+
+function formatarNumeroHeader(valor) {
+  return Number(valor || 0).toLocaleString('pt-BR');
+}
+
+function formatarEfetivoHeader(valor) {
+  const numero = Number(valor || 0);
+  if (!numero) return 'Não informado';
+  if (numero >= 1000) {
+    const mil = numero / 1000;
+    const texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    return `≈ ${texto} mil`;
+  }
+  return `≈ ${formatarNumeroHeader(numero)}`;
+}
+
+function calcularRelacaoHeader(populacao, ativa) {
+  const pop = Number(populacao || 0);
+  const ativo = Number(ativa || 0);
+  if (!pop || !ativo) return 'Não informado';
+  const habitantesPorAtivo = Math.round(pop / ativo);
+  const percentual = ((ativo / pop) * 100).toFixed(3).replace('.', ',');
+  return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
+}
+
+function atualizarHeaderResumo(inst) {
+  const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
+  const totalEfetivo = Number(dados.ativa || 0) + Number(dados.reserva || 0);
+  const setTexto = (id, valor) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  };
+
+  setTexto('header-resumo-atualizado', dados.atualizado || 'Atualizado');
+  setTexto('header-resumo-criacao', dados.criacao || 'Não informado');
+  setTexto('header-resumo-ativa', formatarEfetivoHeader(dados.ativa));
+  setTexto('header-resumo-reserva', formatarEfetivoHeader(dados.reserva));
+  setTexto('header-resumo-total', totalEfetivo ? formatarEfetivoHeader(totalEfetivo) : 'Não informado');
+  setTexto('header-resumo-populacao', dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado');
+  setTexto('header-resumo-relacao', calcularRelacaoHeader(dados.populacao, dados.ativa));
+  setTexto('header-resumo-governador', dados.governador || 'Não informado');
+  setTexto('header-resumo-comando', dados.comando || 'Não informado');
+}
+
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
@@ -5726,6 +5969,8 @@ function atualizarHeaderInstitucional(inst) {
     btnPc.classList.toggle('active', ativo);
     btnPc.setAttribute('aria-pressed', ativo ? 'true' : 'false');
   }
+
+  atualizarHeaderResumo(inst);
 }
 
 function atualizarFlagsEstado(inst) {
