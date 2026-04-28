@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA, PR, RS e SC - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA, PR, RS, SC e ES - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,6 +108,8 @@
   body[data-inst="pcrs"] { --vermelho: #5b6472; --vermelho-escuro: #323946; }
   body[data-inst="pmsc"] { --vermelho: #1b4f8a; --vermelho-escuro: #0f2f55; }
   body[data-inst="pcsc"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
+  body[data-inst="pmes"] { --vermelho: #0b5c9e; --vermelho-escuro: #063a63; }
+  body[data-inst="pces"] { --vermelho: #4b3f72; --vermelho-escuro: #2c2545; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -599,8 +601,8 @@
   .field.span-2 { grid-column: span 2; }
 
   /* BLOCO 02.12 — Exibição condicional por instituição/estado */
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only,
-  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only, .pmes-only, .pces-only,
+  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only, .es-only {
     display: none !important;
   }
 
@@ -618,6 +620,8 @@
   body[data-inst="pcrs"] .field.pcrs-only, body[data-inst="pcrs"] h2.pcrs-only { display: flex !important; }
   body[data-inst="pmsc"] .field.pmsc-only, body[data-inst="pmsc"] h2.pmsc-only { display: flex !important; }
   body[data-inst="pcsc"] .field.pcsc-only, body[data-inst="pcsc"] h2.pcsc-only { display: flex !important; }
+  body[data-inst="pmes"] .field.pmes-only, body[data-inst="pmes"] h2.pmes-only { display: flex !important; }
+  body[data-inst="pces"] .field.pces-only, body[data-inst="pces"] h2.pces-only { display: flex !important; }
 
   body[data-inst="pmesp"] .field.sp-only,
   body[data-inst="pcsp"] .field.sp-only,
@@ -630,7 +634,9 @@
   body[data-inst="pmrs"] .field.rs-only,
   body[data-inst="pcrs"] .field.rs-only,
   body[data-inst="pmsc"] .field.sc-only,
-  body[data-inst="pcsc"] .field.sc-only { display: flex !important; }
+  body[data-inst="pcsc"] .field.sc-only,
+  body[data-inst="pmes"] .field.es-only,
+  body[data-inst="pces"] .field.es-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -646,6 +652,8 @@
   body[data-inst="pcrs"] div.alerta.pcrs-only { display: block !important; }
   body[data-inst="pmsc"] div.alerta.pmsc-only { display: block !important; }
   body[data-inst="pcsc"] div.alerta.pcsc-only { display: block !important; }
+  body[data-inst="pmes"] div.alerta.pmes-only { display: block !important; }
+  body[data-inst="pces"] div.alerta.pces-only { display: block !important; }
 
   /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
@@ -866,6 +874,10 @@
             <option value="pmsc">PMSC - Polícia Militar</option>
             <option value="pcsc">PCSC - Polícia Civil</option>
           </optgroup>
+          <optgroup label="Espírito Santo">
+            <option value="pmes">PMES - Polícia Militar</option>
+            <option value="pces">PCES - Polícia Civil</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -919,6 +931,10 @@
       <optgroup label="Santa Catarina">
         <option value="pmsc">PMSC - Polícia Militar</option>
         <option value="pcsc">PCSC - Polícia Civil</option>
+      </optgroup>
+      <optgroup label="Espírito Santo">
+        <option value="pmes">PMES - Polícia Militar</option>
+        <option value="pces">PCES - Polícia Civil</option>
       </optgroup>
     </select>
   </div>
@@ -2501,6 +2517,7 @@ const AUX_ALIM_RJ_PM = 433.80;             // Decreto RJ 50.081/2026 (PMERJ)
 const AUX_ALIM_PR_PADRAO = 834.74;         // Lei PR 22.208/2024 — auxílio-alimentação dos servidores ativos
 const AUX_ALIM_RS_BM = 400.00;              // Editais BM/RS 2025 — auxílio-alimentação informado para Soldado e Oficialato
 const AUX_ALIM_SC_PADRAO = 550.00;          // Lei SC 18.796/2023, com redação da Lei 19.059/2024 — auxílio-alimentação de 40h
+const AUX_ALIM_ES_PADRAO = 800.00;          // PCES/OIP 2025 — auxílio-alimentação informado oficialmente; usado como referência ES, sem somar automaticamente ao bruto
 const FASPM_PR_TITULAR = 0.005;            // Lei PR 17.169/2012 — 0,5% do subsídio (facultativo)
 const FASPM_PR_DEPENDENTE = 0.002;         // Lei PR 17.169/2012 — 0,2% por dependente
 const FASPM_PR_LIMITE = 0.02;              // Limite de 2% do subsídio
@@ -2881,6 +2898,69 @@ const CARGOS_PCSC = [
   { val: "psico_sc_viii", text: "Psicólogo Policial Civil PCSC — Classe VIII", padrao: 19440.00, oficial: true, retpFator: 0 }
 ];
 
+const CARGOS_PMES = [
+  // PMES — Polícia Militar do Espírito Santo. Subsídio por posto/graduação em referências; valores de referência da tabela PM/CBM a partir de 01/12/2025 e edital CFO/2024 retificado.
+  { val: "cel_es_ref1", text: "CEL PM — Coronel PMES — Referência 1", padrao: 25197.24, oficial: true, retpFator: 0 },
+  { val: "cel_es_ref15", text: "CEL PM — Coronel PMES — Referência 15", padrao: 33247.22, oficial: true, retpFator: 0 },
+  { val: "tc_es_ref1", text: "TEN CEL PM — Tenente-Coronel PMES — Referência 1", padrao: 22906.55, oficial: true, retpFator: 0 },
+  { val: "tc_es_ref15", text: "TEN CEL PM — Tenente-Coronel PMES — Referência 15", padrao: 30224.76, oficial: true, retpFator: 0 },
+  { val: "maj_es_ref1", text: "MAJ PM — Major PMES — Referência 1", padrao: 19088.81, oficial: true, retpFator: 0 },
+  { val: "maj_es_ref15", text: "MAJ PM — Major PMES — Referência 15", padrao: 25187.30, oficial: true, retpFator: 0 },
+  { val: "cap_es_ref1", text: "CAP PM — Capitão PMES — Referência 1", padrao: 15519.36, oficial: true, retpFator: 0 },
+  { val: "cap_es_ref15", text: "CAP PM — Capitão PMES — Referência 15", padrao: 20477.47, oficial: true, retpFator: 0 },
+  { val: "ten1_es_ref1", text: "1º TEN PM — 1º Tenente PMES — Referência 1", padrao: 13364.21, oficial: true, retpFator: 0 },
+  { val: "ten1_es_ref15", text: "1º TEN PM — 1º Tenente PMES — Referência 15", padrao: 17633.78, oficial: true, retpFator: 0 },
+  { val: "ten2_es_ref1", text: "2º TEN PM — 2º Tenente PMES — Referência 1", padrao: 12452.99, oficial: true, retpFator: 0 },
+  { val: "ten2_es_ref15", text: "2º TEN PM — 2º Tenente PMES — Referência 15", padrao: 16431.48, oficial: true, retpFator: 0 },
+  { val: "asp_es_ref1", text: "ASP OF PM — Aspirante a Oficial PMES — Referência 1", padrao: 10630.61, oficial: true, retpFator: 0 },
+  { val: "asp_es_ref15", text: "ASP OF PM — Aspirante a Oficial PMES — Referência 15", padrao: 14026.88, oficial: true, retpFator: 0 },
+  { val: "subten_es_ref1", text: "SUBTEN PM — Subtenente PMES — Referência 1", padrao: 10326.86, oficial: true, retpFator: 0 },
+  { val: "subten_es_ref15", text: "SUBTEN PM — Subtenente PMES — Referência 15", padrao: 13626.12, oficial: true, retpFator: 0 },
+  { val: "sgt1_es_ref1", text: "1º SGT PM — 1º Sargento PMES — Referência 1", padrao: 9719.42, oficial: true, retpFator: 0 },
+  { val: "sgt1_es_ref15", text: "1º SGT PM — 1º Sargento PMES — Referência 15", padrao: 12824.58, oficial: true, retpFator: 0 },
+  { val: "sgt2_es_ref1", text: "2º SGT PM — 2º Sargento PMES — Referência 1", padrao: 8808.23, oficial: true, retpFator: 0 },
+  { val: "sgt2_es_ref15", text: "2º SGT PM — 2º Sargento PMES — Referência 15", padrao: 11622.30, oficial: true, retpFator: 0 },
+  { val: "sgt3_es_ref1", text: "3º SGT PM — 3º Sargento PMES — Referência 1", padrao: 7897.06, oficial: true, retpFator: 0 },
+  { val: "sgt3_es_ref15", text: "3º SGT PM — 3º Sargento PMES — Referência 15", padrao: 10419.99, oficial: true, retpFator: 0 },
+  { val: "cabo_es_ref1", text: "CABO PM — Cabo PMES — Referência 1", padrao: 6378.37, oficial: true, retpFator: 0 },
+  { val: "cabo_es_ref15", text: "CABO PM — Cabo PMES — Referência 15", padrao: 8416.16, oficial: true, retpFator: 0 },
+  { val: "sd_es_ref1", text: "SD PM — Soldado PMES — Referência 1", padrao: 5741.46, oficial: true, selected: true, retpFator: 0 },
+  { val: "sd_es_ref15", text: "SD PM — Soldado PMES — Referência 15", padrao: 7575.15, oficial: true, retpFator: 0 },
+  { val: "alof_es_1", text: "AL OF PM — Aluno-Oficial PMES — 1º ano CFO 2024 retificado", padrao: 4536.14, oficial: true, retpFator: 0 },
+  { val: "alof_es_2", text: "AL OF PM — Aluno-Oficial PMES — 2º ano CFO 2024 retificado", padrao: 5410.85, oficial: true, retpFator: 0 },
+  { val: "alof_es_3", text: "AL OF PM — Aluno-Oficial PMES — 3º ano CFO 2024 retificado", padrao: 5848.19, oficial: true, retpFator: 0 },
+  { val: "asp_es_edital", text: "ASP OF PM — Aspirante a Oficial PMES — referência edital CFO 2024 retificado", padrao: 10381.57, oficial: true, retpFator: 0 }
+];
+
+const CARGOS_PCES = [
+  // PCES — Polícia Civil do Espírito Santo. OIP criado pela LC ES 1.093/2024; Delegado por tabela própria; perícia oficial sinalizada como PCIES após segregação institucional.
+  { val: "del_es_esp_1", text: "Delegado de Polícia PCES — Categoria Especial — Ref. 1", padrao: 24486.24, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_esp_15", text: "Delegado de Polícia PCES — Categoria Especial — Ref. 15", padrao: 32309.07, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_1_1", text: "Delegado de Polícia PCES — 1ª Categoria — Ref. 1", padrao: 21669.23, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_1_15", text: "Delegado de Polícia PCES — 1ª Categoria — Ref. 15", padrao: 28592.10, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_2_1", text: "Delegado de Polícia PCES — 2ª Categoria — Ref. 1", padrao: 18680.38, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_2_15", text: "Delegado de Polícia PCES — 2ª Categoria — Ref. 15", padrao: 24648.36, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_3_1", text: "Delegado de Polícia PCES — 3ª Categoria — Ref. 1", padrao: 16829.16, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_es_3_15", text: "Delegado de Polícia PCES — 3ª Categoria — Ref. 15", padrao: 22205.73, oficial: true, delegado: true, retpFator: 0 },
+  { val: "oip_es_esp_1", text: "Oficial Investigador de Polícia PCES — Categoria Especial — Ref. 1", padrao: 12925.14, oficial: true, retpFator: 0 },
+  { val: "oip_es_esp_15", text: "Oficial Investigador de Polícia PCES — Categoria Especial — Ref. 15", padrao: 17054.45, oficial: true, retpFator: 0 },
+  { val: "oip_es_1_1", text: "Oficial Investigador de Polícia PCES — 1ª Categoria — Ref. 1", padrao: 11464.04, oficial: true, retpFator: 0 },
+  { val: "oip_es_1_15", text: "Oficial Investigador de Polícia PCES — 1ª Categoria — Ref. 15", padrao: 14829.95, oficial: true, retpFator: 0 },
+  { val: "oip_es_2_1", text: "Oficial Investigador de Polícia PCES — 2ª Categoria — Ref. 1", padrao: 9968.73, oficial: true, retpFator: 0 },
+  { val: "oip_es_2_15", text: "Oficial Investigador de Polícia PCES — 2ª Categoria — Ref. 15", padrao: 12895.61, oficial: true, retpFator: 0 },
+  { val: "oip_es_3_1", text: "Oficial Investigador de Polícia PCES — 3ª Categoria — Ref. 1", padrao: 8668.46, oficial: true, selected: true, retpFator: 0 },
+  { val: "oip_es_3_15", text: "Oficial Investigador de Polícia PCES — 3ª Categoria — Ref. 15", padrao: 11213.57, oficial: true, retpFator: 0 },
+  { val: "perito_es_esp_1", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — Categoria Especial — Ref. 1", padrao: 14857.44, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_esp_15", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — Categoria Especial — Ref. 15", padrao: 19604.07, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_1_1", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — 1ª Categoria — Ref. 1", padrao: 12919.51, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_1_15", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — 1ª Categoria — Ref. 15", padrao: 17047.02, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_2_1", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — 2ª Categoria — Ref. 1", padrao: 11234.36, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_2_15", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — 2ª Categoria — Ref. 15", padrao: 14823.49, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_3_1", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — 3ª Categoria — Ref. 1", padrao: 9769.00, oficial: true, perito: true, retpFator: 0 },
+  { val: "perito_es_3_15", text: "Perito Oficial Criminal / Médico-Legista — PCIES/Perícia Oficial — 3ª Categoria — Ref. 15", padrao: 12889.99, oficial: true, perito: true, retpFator: 0 },
+  { val: "assist_pericia_es_3_1", text: "Assistente de Perícia — PCIES/Perícia Oficial — 3ª Categoria — Ref. 1", padrao: 3803.80, oficial: true, retpFator: 0 },
+  { val: "assist_pericia_es_esp_15", text: "Assistente de Perícia — PCIES/Perícia Oficial — Categoria Especial — Ref. 15", padrao: 7633.32, oficial: true, retpFator: 0 }
+];
 
 
 
@@ -3007,6 +3087,19 @@ const ACOES_JUDICIAIS = {
     { titulo: "Subsídio, classe inicial e progressão funcional", status: "Conferência individual", ano: "Regime SC", tipo: "individual", desc: "Pode exigir conferência de cargo, classe, data de ingresso, enquadramento, progressões e reflexos remuneratórios. A comparação deve partir da tabela legal e do contracheque.", base: "Lei SC 6.843/1986, LC SC 765/2020, LC SC 776/2021 e LC SC 872/2025.", fonte: "ALESC — legislação SC", fonteUrl: "https://leis.alesc.sc.gov.br/", atualizado: "Abril/2026" },
     { titulo: "Aposentadoria policial, abono de permanência e paridade", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "A análise depende de tempo de contribuição, tempo em atividade policial, idade, sexo, data de ingresso, regra de transição e situação no cargo.", base: "Lei Orgânica Nacional das Polícias Civis, estatuto da PCSC, regras previdenciárias estaduais e ficha funcional.", fonte: "PCSC/IPREV/SC", fonteUrl: "https://www.iprev.sc.gov.br/", atualizado: "Abril/2026" }
   ],
+  pmes: [
+    { titulo: "Subsídio PMES, referência e enquadramento", status: "Conferência individual", ano: "Regime ES", tipo: "individual", desc: "Discussões podem envolver posto/graduação, referência na tabela de subsídio, progressão horizontal, promoção, ficha funcional e diferenças remuneratórias.", base: "LC ES 420/2007, estatuto dos militares estaduais, tabela PM/CBM e ficha funcional.", fonte: "PMES — legislação", fonteUrl: "https://pm.es.gov.br/legislacao", atualizado: "Abril/2026" },
+    { titulo: "Serviço extraordinário e escalas especiais", status: "Depende de escala", ano: "LC ES 420/2007", tipo: "individual", desc: "A LC ES 420/2007 admite parcela eventual de serviço extraordinário, condicionada à escala prévia e efetiva prestação do serviço, sem incorporação aos proventos.", base: "LC ES 420/2007, escala, ordem de serviço e contracheque.", fonte: "LC ES 420/2007", fonteUrl: "https://pm.es.gov.br/Media/PMES/Leis%203/36-Lei%20que%20Disp%C3%B5e%20sobre%20a%20remunera%C3%A7%C3%A3o%20por%20subs%C3%ADdio%20-%20Lei_Complementar_420.pdf", atualizado: "Abril/2026" },
+    { titulo: "Auxílio-fardamento e indenizações", status: "Conferir rubrica", ano: "Tema recorrente", tipo: "individual", desc: "Pode envolver pagamento anual, fornecimento, indenização ou diferenças conforme edital, norma interna, situação funcional e contracheque.", base: "Editais PMES, normas internas, legislação estadual e ficha financeira.", fonte: "PMES — concursos e legislação", fonteUrl: "https://pm.es.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma e contribuição previdenciária", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "Depende de data de ingresso, tempo de serviço, regra de transição, situação funcional, proventos, paridade/integralidade quando cabíveis e normas do sistema estadual.", base: "Sistema de proteção social dos militares estaduais, LC ES 420/2007, estatuto e legislação previdenciária estadual.", fonte: "IPAJM/ES e legislação estadual", fonteUrl: "https://ipajm.es.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pces: [
+    { titulo: "OIP PCES — enquadramento, categoria e referência", status: "Conferência individual", ano: "LC ES 1.093/2024", tipo: "individual", desc: "O Oficial Investigador de Polícia foi criado com carreira própria, organizada em categorias e referências. Diferenças podem envolver enquadramento, progressão, promoção, categoria, referência e rubricas de transição.", base: "LC ES 1.093/2024, LC ES 1.123/2025, edital OIP 2025 e ficha funcional.", fonte: "LC ES 1.093/2024", fonteUrl: "https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf", atualizado: "Abril/2026" },
+    { titulo: "Delegado PCES — categoria, referência e subsídio", status: "Conferência individual", ano: "Tabelas 2025", tipo: "individual", desc: "A análise deve comparar categoria, referência, data de progressão/promoção e tabela vigente com o contracheque e a ficha funcional.", base: "Tabelas de subsídio dos Delegados de Polícia do ES, legislação estadual e ficha funcional.", fonte: "ALEES/ES — legislação", fonteUrl: "https://www.al.es.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Serviço extraordinário do OIP", status: "Depende de escala", ano: "LC ES 1.093/2024", tipo: "individual", desc: "A LC ES 1.093/2024 prevê prestação de serviço extraordinário conforme interesse público, disponibilidade, candidatura prévia e escala, com regra própria de cálculo e sem incorporação à inatividade.", base: "LC ES 1.093/2024, escala, autorização administrativa e contracheque.", fonte: "LC ES 1.093/2024", fonteUrl: "https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial, abono e paridade/integralidade", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo em atividade policial, regra de transição, norma estadual aplicada, abono de permanência e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação previdenciária estadual e ficha funcional.", fonte: "PCES/IPAJM/ES", fonteUrl: "https://pc.es.gov.br/", atualizado: "Abril/2026" }
+  ]
+
 };
 
 /* BLOCO 15.5 — Base de dados das associações e sindicatos */
@@ -3088,6 +3181,17 @@ const ASSOCIACOES = {
     { nome: "SINPOL-SC — Sindicato dos Policiais Civis de Santa Catarina", foco: "Policiais civis de Santa Catarina", acao: "Representação sindical em pautas de carreira, direitos, remuneração, condições de trabalho e defesa coletiva da categoria.", site: "sinpolsc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, orientação, convênios e eventual apoio jurídico conforme regras internas." },
     { nome: "ADEPOL-SC — Associação dos Delegados de Polícia de Santa Catarina", foco: "Delegados de Polícia de Santa Catarina", acao: "Representação associativa da carreira de Delegado, defesa institucional, acompanhamento legislativo e valorização da Polícia Judiciária.", site: "adepolsc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." }
   ],
+  pmes: [
+    { nome: "ASPRA-ES — Associação de Praças da PM e BM do Espírito Santo", foco: "Praças militares estaduais do Espírito Santo", acao: "Representação associativa, acompanhamento de pautas de carreira, remuneração, promoção, previdência e condições de trabalho.", site: "aspraes.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação institucional, representação, notícias, orientação associativa, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades da oficialidade militar estadual do ES", foco: "Oficiais da Polícia Militar e do Corpo de Bombeiros Militar do Espírito Santo", acao: "Atuação institucional e associativa em pautas da oficialidade, carreira, prerrogativas, subsídio e sistema de proteção social.", site: "Consultar canais oficiais da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, acompanhamento legislativo, comunicação institucional e orientação aos associados." },
+    { nome: "Entidades representativas locais da PMES", foco: "Militares estaduais ativos, veteranos e pensionistas", acao: "Apoio associativo em temas de promoção, subsídio, escalas, fardamento, saúde, previdência e valorização profissional.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento de pautas de classe e eventual suporte jurídico/administrativo conforme contrato." }
+  ],
+  pces: [
+    { nome: "SINDIPOL/ES — Sindicato dos Policiais Civis do Espírito Santo", foco: "Policiais civis do Espírito Santo", acao: "Representação sindical em pautas de carreira, remuneração, condições de trabalho, direitos, aposentadoria e valorização da Polícia Civil.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, assembleias, orientação e eventual apoio jurídico conforme regras internas." },
+    { nome: "ADEPOL-ES — Associação dos Delegados de Polícia do Espírito Santo", foco: "Delegados de Polícia Civil do Espírito Santo", acao: "Representação associativa da carreira de Delegado, defesa de prerrogativas, acompanhamento legislativo e valorização institucional.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "Entidades por carreira da PCES/PCIES", foco: "Oficial Investigador, Delegados, Perícia Oficial e demais carreiras ligadas à segurança pública estadual", acao: "Atuação por carreira em pautas de subsídio, enquadramento, progressão, saúde, aposentadoria, escalas e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento legislativo, pautas remuneratórias e eventual suporte jurídico conforme contrato." }
+  ]
+
 };
 
 
@@ -3330,7 +3434,42 @@ const CONCURSOS = {
     validade: "Conferir edital e atos posteriores.",
     previsao: "Editais 2025 publicados; acompanhar PCSC, DOE/SC e IDECAN para atos posteriores.",
     site: "https://pc.sc.gov.br/?p=35166"
+  },
+  pmes: {
+    edital: "PMES — Curso de Formação de Oficiais 2024/2025 e concursos de Soldado conforme página oficial",
+    salario: "CFO retificado: Aluno-Oficial 1º ano R$ 4.536,14, 2º ano R$ 5.410,85, 3º ano R$ 5.848,19; Aspirante a Oficial R$ 10.381,57. Tabela PM/CBM 12/2025: Soldado Ref. 1 R$ 5.741,46 e Ref. 15 R$ 7.575,15.",
+    vagas: "CFO 2024 retificado: 37 ampla concorrência, 10 negros e 3 indígenas. Para Soldado e demais quadros, conferir edital vigente na página oficial da PMES.",
+    cotas: "Reserva de vagas conforme edital, legislação estadual e regras específicas do certame.",
+    idade: "Conferir edital vigente; requisitos podem variar por cargo, quadro, ingresso e legislação específica.",
+    escolaridade: "CFO 2024: nível médio completo conforme edital; demais cargos conforme certame específico.",
+    banca: "IDECAN no CFO 2024; demais certames conforme edital.",
+    inscritos: "Consultar atos oficiais da PMES e da banca organizadora.",
+    materias: "Conforme edital: conteúdos gerais, legislação, conhecimentos específicos, história/geografia do ES quando previstas, além das demais disciplinas do cargo.",
+    etapas: "Prova objetiva, prova discursiva/redação quando prevista, TAF, avaliação psicológica, investigação social, exame de saúde, entrega de documentação e curso de formação, conforme edital.",
+    cfsd: "Curso de Formação de Soldados ou Curso de Formação de Oficiais, conforme o cargo.",
+    estagio: "Estágio/probatório e regras de carreira conforme legislação estadual e atos da corporação.",
+    validade: "Conferir edital e publicações posteriores.",
+    previsao: "Acompanhar a página oficial de concursos da PMES para novos editais, retificações e convocações.",
+    site: "https://pm.es.gov.br/concursos"
+  },
+  pces: {
+    edital: "PCES — Oficial Investigador de Polícia — Edital 2025",
+    salario: "OIP: subsídio inicial de R$ 8.539,00 + R$ 800,00 de auxílio-alimentação, podendo chegar a aproximadamente R$ 17 mil no topo da carreira. Delegado, OIP e carreiras periciais possuem tabelas próprias por categoria/referência.",
+    vagas: "1.052 vagas para Oficial Investigador de Polícia, conforme divulgação oficial da PCES.",
+    cotas: "Conferir edital; reservas e regras específicas dependem do certame.",
+    idade: "Divulgação oficial informa que não há limite de idade para o concurso OIP; demais cargos dependem do edital específico.",
+    escolaridade: "OIP: curso superior de bacharelado e CNH categoria B. Delegado: bacharelado em Direito quando houver edital específico. Perícia oficial: requisitos próprios da PCIES/Perícia Oficial.",
+    banca: "IBADE para o concurso OIP 2025.",
+    inscritos: "Consultar PCES, IBADE e atos oficiais posteriores.",
+    materias: "Conforme edital OIP 2025 e banca; conteúdos gerais, jurídicos, institucionais e específicos do cargo.",
+    etapas: "Prova objetiva, exame de aptidão física, exame de saúde, exame psicotécnico, investigação criminal e social e curso de formação profissional pela Acadepol.",
+    cfsd: "Curso de Formação Profissional pela Academia de Polícia Civil — Acadepol.",
+    estagio: "Estágio probatório conforme regime estatutário e legislação da carreira.",
+    validade: "Conferir edital e atos posteriores.",
+    previsao: "Concurso OIP 2025 em andamento; acompanhar publicações da PCES e IBADE para cronograma, convocações e resultados.",
+    site: "https://pc.es.gov.br/"
   }
+
 };
 
 
@@ -3339,7 +3478,7 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr','pmrs','pcrs','pmsc','pcsc'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr','pmrs','pcrs','pmsc','pcsc','pmes','pces'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
@@ -3434,7 +3573,9 @@ function atualizarHeaderDesc(descInstituicao) {
     pmrs: 'Brigada Militar do Rio Grande do Sul',
     pcrs: 'Polícia Civil do Rio Grande do Sul',
     pmsc: 'Polícia Militar de Santa Catarina',
-    pcsc: 'Polícia Civil de Santa Catarina'
+    pcsc: 'Polícia Civil de Santa Catarina',
+    pmes: 'Polícia Militar do Espírito Santo',
+    pces: 'Polícia Civil do Espírito Santo'
   };
   const el = document.getElementById('header-desc');
   if (el) el.textContent = (descInstituicao || descs[currInst] || descs.pmesp) + ' — ' + getNomeAbaAtual();
@@ -3466,7 +3607,8 @@ function popularCargos(inst) {
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,
-    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC
+    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,
+    pmes: CARGOS_PMES,   pces: CARGOS_PCES
   };
   currTabela = map[inst] || CARGOS_PM;
 
@@ -3558,6 +3700,14 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'ALESC/SC — LC 765/2020, LC 776/2021 e LC 872/2025; PCSC editais 2025',
     url: 'https://pc.sc.gov.br/?p=35166'
   },
+  pmes: {
+    nome: 'PMES/ES — LC 420/2007, legislação PMES e tabela PM/CBM a partir de 01/12/2025',
+    url: 'https://pm.es.gov.br/legislacao'
+  },
+  pces: {
+    nome: 'PCES/ES — LC 1.093/2024, concurso OIP 2025, tabelas de Delegado e PCIES/Perícia Oficial',
+    url: 'https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf'
+  },
   sc_auxilio: {
     nome: 'ALESC/SC — Lei 18.796/2023, redação da Lei 19.059/2024 — auxílio-alimentação',
     url: 'https://leis.alesc.sc.gov.br/ato-normativo/22251'
@@ -3643,6 +3793,8 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   if (inst === 'pcrs') return 'Carreira PCRS: classes de Delegado, Escrivão, Inspetor e Comissário, com valores de referência dos editais/tabelas 2025 e conferência na relação RHE 11/2025. Adicionais/indenizações: dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
   if (inst === 'pmsc') return `Regime por subsídio da PMSC: valores atualizados pela LC SC 872/2025 e Soldado unificado pela LC SC 880/2025. Auxílio-alimentação SC de referência: ${fmt(AUX_ALIM_SC_PADRAO)}, verba indenizatória não somada ao bruto. Diárias, indenizações e eventuais serviços extraordinários dependem de escala, local, função ou situação funcional.`;
   if (inst === 'pcsc') return `Regime por subsídio da PCSC: classes de Delegado, Agente, Escrivão e Psicólogo Policial conforme legislação estadual. Auxílio-alimentação SC: ${fmt(AUX_ALIM_SC_PADRAO)}, já citado nos editais de Agente/Escrivão 2025, mas não somado automaticamente ao bruto.`;
+  if (inst === 'pmes') return `Regime por subsídio da PMES: tabela PM/CBM por posto/graduação e referências, com base na LC ES 420/2007 e valores de referência a partir de 01/12/2025. Auxílio-alimentação ES de referência: ${fmt(AUX_ALIM_ES_PADRAO)}; não somado automaticamente ao bruto.`;
+  if (inst === 'pces') return `Regime por subsídio da PCES: Delegado e Oficial Investigador por categorias/referências. Carreiras periciais aparecem sinalizadas como PCIES/Perícia Oficial após segregação institucional. Auxílio-alimentação ES de referência: ${fmt(AUX_ALIM_ES_PADRAO)}; não somado automaticamente ao bruto.`;
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 
@@ -3742,7 +3894,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,
-    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC
+    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,
+    pmes: CARGOS_PMES,   pces: CARGOS_PCES
   };
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
@@ -3803,6 +3956,16 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     beneficios = AUX_ALIM_SC_PADRAO;
     criterio = 'Subsídio bruto mensal por cargo/classe conforme LC SC 765/2020, LC SC 776/2021, LC SC 872/2025 e estatuto da PCSC; Agente/Escrivão conferidos nos editais PCSC 2025.';
     benefDesc = `Auxílio-alimentação SC de referência: ${fmt(AUX_ALIM_SC_PADRAO)}; nos editais PCSC 2025 aparece compondo o total divulgado de Agente e Escrivão.`;
+  } else if (inst === 'pmes') {
+    remuneracao = padrao;
+    beneficios = AUX_ALIM_ES_PADRAO;
+    criterio = 'Subsídio bruto mensal por posto/graduação conforme regime de subsídio dos militares estaduais do ES, tabela PM/CBM a partir de 01/12/2025 e editais PMES para linhas de formação.';
+    benefDesc = `Auxílio-alimentação ES de referência: ${fmt(AUX_ALIM_ES_PADRAO)}; não somado automaticamente ao bruto. Auxílio-fardamento e serviço extraordinário dependem de regra, escala e situação funcional.`;
+  } else if (inst === 'pces') {
+    remuneracao = padrao;
+    beneficios = AUX_ALIM_ES_PADRAO;
+    criterio = 'Subsídio bruto mensal por cargo/categoria/referência conforme tabelas de Delegado, OIP/PCES e carreiras periciais PCIES vinculadas à legislação estadual do ES.';
+    benefDesc = `Auxílio-alimentação ES de referência: ${fmt(AUX_ALIM_ES_PADRAO)}; não somado automaticamente ao bruto. Para carreiras por subsídio, vantagens pessoais podem estar absorvidas conforme opção/regime legal.`;
   }
 
   return { remuneracao, beneficios, total: remuneracao + beneficios, criterio, benefDesc, fonteKey, badge };
@@ -3913,7 +4076,9 @@ function mudarInstituicao(novaInstituicao) {
     pmrs:  { titulo: "PMRS",  desc: "Brigada Militar do Rio Grande do Sul",     cor: "#0f3d75", alertaPrev: "IPE Prev/RS e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, rubricas e auxílio-alimentação no contracheque." },
     pcrs:  { titulo: "PCRS",  desc: "Polícia Civil do Rio Grande do Sul",       cor: "#5b6472", alertaPrev: "IPE Prev/RS: contribuição previdenciária conforme regra estadual; adicionais e indenizações dependem de rubrica e situação funcional." },
     pmsc:  { titulo: "PMSC",  desc: "Polícia Militar de Santa Catarina",        cor: "#1b4f8a", alertaPrev: "IPREV/SC e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, subsídio, rubricas e auxílio-alimentação no contracheque." },
-    pcsc:  { titulo: "PCSC",  desc: "Polícia Civil de Santa Catarina",          cor: "#4b5563", alertaPrev: "IPREV/SC: contribuição previdenciária conforme regra estadual; classes, subsídios e indenizações dependem de cargo, rubrica e situação funcional." }
+    pcsc:  { titulo: "PCSC",  desc: "Polícia Civil de Santa Catarina",          cor: "#4b5563", alertaPrev: "IPREV/SC: contribuição previdenciária conforme regra estadual; classes, subsídios e indenizações dependem de cargo, rubrica e situação funcional." },
+    pmes:  { titulo: "PMES",  desc: "Polícia Militar do Espírito Santo",        cor: "#0b5c9e", alertaPrev: "IPAJM/ES e sistema estadual: conferir subsídio, referência, auxílio-alimentação, fardamento, serviço extra e demais rubricas no contracheque." },
+    pces:  { titulo: "PCES",  desc: "Polícia Civil do Espírito Santo",          cor: "#4b3f72", alertaPrev: "IPAJM/ES: contribuição previdenciária conforme regra estadual; OIP, Delegado e demais carreiras exigem conferência de categoria, referência e rubricas." }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -3988,11 +4153,12 @@ function analisarDireitos() {
   const nomesInst = {
     pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
     pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA', pmpr: 'PMPR', pcpr: 'PCPR',
-    pmrs: 'PMRS', pcrs: 'PCRS', pmsc: 'PMSC', pcsc: 'PCSC'
+    pmrs: 'PMRS', pcrs: 'PCRS', pmsc: 'PMSC', pcsc: 'PCSC', pmes: 'PMES', pces: 'PCES'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc'].includes(inst);
-  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' : '';
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces'].includes(inst);
+  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' :
+             inst.includes('es') ? 'ES' : '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
@@ -4068,6 +4234,10 @@ function analisarDireitos() {
       getSaudeBase(inst));
   } else if (inst === 'pmsc' || inst === 'pcsc') {
     html += direitoItem('Assistência à saúde / sistema estadual SC', 'condicionado',
+      getSaudeTexto(inst),
+      getSaudeBase(inst));
+  } else if (inst === 'pmes' || inst === 'pces') {
+    html += direitoItem('Assistência à saúde / sistema estadual ES', 'condicionado',
       getSaudeTexto(inst),
       getSaudeBase(inst));
   }
@@ -4231,7 +4401,9 @@ function getSaudeTexto(inst) {
     pmrs: 'PMRS: assistência pode envolver IPE Saúde, Hospital da Brigada Militar e regras próprias dos militares estaduais do RS.',
     pcrs: 'PCRS: assistência pode envolver IPE Saúde e regras administrativas do Estado do Rio Grande do Sul.',
     pmsc: 'PMSC: assistência pode envolver SC Saúde, IPREV/SC e regras próprias do sistema dos militares estaduais de Santa Catarina.',
-    pcsc: 'PCSC: assistência pode envolver SC Saúde/IPREV-SC e regras administrativas do Estado de Santa Catarina.'
+    pcsc: 'PCSC: assistência pode envolver SC Saúde/IPREV-SC e regras administrativas do Estado de Santa Catarina.',
+    pmes: 'PMES: assistência pode envolver IPAJM/ES, assistência médica/odontológica prevista em edital e normas próprias dos militares estaduais do Espírito Santo.',
+    pces: 'PCES: assistência pode envolver IPAJM/ES, regras administrativas do Estado do Espírito Santo e normas da carreira policial civil.'
   };
   return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
 }
@@ -4243,6 +4415,7 @@ function getSaudeBase(inst) {
   if (inst === 'pcpr') return 'SAS/Paraná, legislação estadual e normas internas da PCPR/SEAP, conforme vínculo e adesão.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'IPE Saúde/RS, Hospital da Brigada Militar quando aplicável, normas estaduais e regras de adesão/dependentes.';
   if (inst === 'pmsc' || inst === 'pcsc') return 'SC Saúde, IPREV/SC, normas estaduais e regras de adesão/dependentes conforme cargo e situação funcional.';
+  if (inst === 'pmes' || inst === 'pces') return 'IPAJM/ES, legislação estadual do Espírito Santo, normas de adesão/dependentes e regras administrativas da instituição.';
   return 'Regulamento institucional, estatuto da carreira, órgão de saúde estadual e regras de contribuição/dependentes.';
 }
 
@@ -4258,6 +4431,8 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'pcrs') return `Na PCRS, cargo, classe, tempo de carreira e regras de promoção/progressão devem ser conferidos na ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
   if (inst === 'pmsc') return `Na PMSC, posto/graduação, promoções, interstícios e eventuais vantagens devem ser conferidos conforme estatuto, LC SC 801/2022, LC SC 880/2025 e ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
   if (inst === 'pcsc') return `Na PCSC, cargo, classe, tempo de carreira e regras de promoção/progressão devem ser conferidos no estatuto e na ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
+  if (inst === 'pmes') return `Na PMES, posto/graduação, referência, progressão horizontal, promoções e eventuais vantagens devem ser conferidos conforme estatuto, LC ES 420/2007, ficha funcional e atos da corporação. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
+  if (inst === 'pces') return `Na PCES, cargo, categoria, referências, progressões e promoções devem ser conferidos na ficha funcional e na lei da carreira. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
   return 'Verificar adicional por tempo de serviço conforme legislação da carreira.';
 }
 
@@ -4272,6 +4447,8 @@ function getTempoServicoBase(inst) {
   if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023, normas estaduais e ficha funcional.';
   if (inst === 'pmsc') return 'Base: estatuto dos militares estaduais de SC, LC SC 801/2022, LC SC 880/2025 e ficha funcional.';
   if (inst === 'pcsc') return 'Base: Lei SC 6.843/1986, Lei Federal 14.735/2023, normas estaduais e ficha funcional.';
+  if (inst === 'pmes') return 'Base: Lei ES 3.196/1978, LC ES 420/2007, LC ES 910/2019, LC ES 911/2019 e ficha funcional.';
+  if (inst === 'pces') return 'Base: Estatuto da PCES, LC ES 1.093/2024, Lei Federal 14.735/2023 e ficha funcional.';
   return 'Base: estatuto, lei de remuneração e ficha funcional.';
 }
 
@@ -4284,6 +4461,8 @@ function getInsalubridadeTexto(inst) {
   if (inst === 'pcrs') return 'Na PCRS, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; não é verba universal automática.';
   if (inst === 'pmsc') return 'Na PMSC, não lançar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
   if (inst === 'pcsc') return 'Na PCSC, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; não é verba universal automática.';
+  if (inst === 'pmes') return 'Na PMES, não lançar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
+  if (inst === 'pces') return 'Na PCES, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; em carreiras por subsídio pode haver absorção de vantagens conforme regime/lei.';
   return 'Pode existir quando houver exposição reconhecida a agente insalubre, mediante laudo, enquadramento e previsão legal da instituição.';
 }
 
@@ -4293,6 +4472,7 @@ function getInsalubridadeBase(inst) {
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'Base: legislação estadual do RS, laudo, rubrica de pagamento e enquadramento do local/função.';
   if (inst === 'pmsc' || inst === 'pcsc') return 'Base: legislação estadual de SC, laudo, rubrica de pagamento e enquadramento do local/função.';
+  if (inst === 'pmes' || inst === 'pces') return 'Base: legislação estadual do ES, laudo, rubrica de pagamento e enquadramento do local/função.';
   return 'Depende de laudo, legislação estadual e enquadramento do local/função.';
 }
 
@@ -4301,7 +4481,8 @@ function getPericulosidadeTexto(inst) {
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende o risco de vida e a periculosidade. Tratar como verba separada somente diante de rubrica, decisão ou tese específica.';
   if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
   if (inst === 'pcsc') return 'Na PCSC, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
-  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  if (inst === 'pces') return 'Na PCES, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; no OIP e demais carreiras por subsídio, verificar se a vantagem foi absorvida pelo regime legal.';
+  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc' || inst === 'pmes') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
   return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
 }
 
@@ -4313,6 +4494,8 @@ function getPericulosidadeBase(inst) {
   if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
   if (inst === 'pmsc') return 'Base: estatuto e normas remuneratórias dos militares estaduais de SC.';
   if (inst === 'pcsc') return 'Base: Lei SC 6.843/1986, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
+  if (inst === 'pmes') return 'Base: LC ES 420/2007, estatuto da PMES e normas remuneratórias dos militares estaduais do ES.';
+  if (inst === 'pces') return 'Base: LC ES 1.093/2024, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
   return 'Base: estatuto e lei de remuneração da instituição; não usar regra genérica para todas as carreiras.';
 }
 
@@ -4394,6 +4577,20 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('Dedicação exclusiva / regime policial civil', 'condicionado',
       'A carreira policial civil exige conferência do cargo, classe, jornada, lotação e regras próprias do estatuto e da Lei Orgânica Nacional.',
       'Base: Lei SC 6.843/1986, Lei Federal 14.735/2023 e regulamentação estadual.');
+  } else if (inst === 'pmes') {
+    html += direitoItem('Auxílio-Alimentação PMES', 'condicionado',
+      `Auxílio-alimentação deve ser conferido por edital, norma e rubrica vigente. O simulador usa referência ES de ${fmt(AUX_ALIM_ES_PADRAO)} apenas como verba informativa, sem somar automaticamente ao bruto.`,
+      'Base: editais PMES, legislação estadual e contracheque.');
+    html += direitoItem('Auxílio-Fardamento / serviço extraordinário', 'condicionado',
+      'Pode existir conforme regra própria, fornecimento ou indenização de fardamento, escala e autorização de serviço extra.',
+      'Base: LC ES 420/2007, editais PMES, legislação de fardamento/indenização e atos internos.');
+  } else if (inst === 'pces') {
+    html += direitoItem('Auxílio-Alimentação PCES', 'automatico',
+      `Concurso OIP 2025 informa auxílio-alimentação de ${fmt(AUX_ALIM_ES_PADRAO)} além da remuneração inicial. Conferir rubrica e regra vigente para cada carreira.`,
+      'Base: divulgação oficial PCES do concurso OIP 2025.');
+    html += direitoItem('Serviço extraordinário / escalas especiais', 'condicionado',
+      'Para OIP, a LC ES 1.093/2024 prevê possibilidade de serviço extraordinário sujeito a disponibilidade, interesse de serviço, candidatura prévia e escala, com limite mensal.',
+      'Base: LC ES 1.093/2024 e regulamentação do Estado.');
   }
   return html;
 }
@@ -4405,7 +4602,7 @@ function getStatusAposentadoria(tempo, idade, requisitosApos) {
 }
 
 function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
-  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
   if (requisitosApos === 'sim') {
     return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
   }
