@@ -125,6 +125,7 @@
   body[data-inst="ppes"] { --vermelho: #5e548e; --vermelho-escuro: #342f5a; }
   body[data-inst="ppms"] { --vermelho: #516b3b; --vermelho-escuro: #2f3f23; }
   body[data-inst="ppmt"] { --vermelho: #6b5f2f; --vermelho-escuro: #3d361b; }
+  body[data-inst="portal"] { --vermelho: #DFB63E; --vermelho-escuro: #8f6a16; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -895,7 +896,7 @@
 </style>
 
 </head>
-<body data-inst="pmesp">
+<body data-inst="portal">
 
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
@@ -925,59 +926,59 @@
       <section class="header-institution-card" aria-label="Instituição selecionada">
         <div class="header-institution-main">
           <div class="header-current-identity">
-            <div class="current-flag-frame" aria-hidden="true">
-              <img id="header-active-flag" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="">
+            <div class="current-flag-frame brand-logo-frame" aria-hidden="true">
+              <img id="header-active-flag" src="logoleao" data-img-base="logoleao" alt="Logo Universo Segurança Pública" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='logoleao.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='logoleao.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='logoleao.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='logoleao.webp';}else{this.style.display='none';}">
             </div>
 
             <div class="header-current-copy">
               <span class="header-current-label"> </span>
-              <strong id="header-active-sigla">PMESP</strong>
-              <p id="header-active-name">Polícia Militar de São Paulo</p>
-              <small id="header-desc">Principal</small>
+              <strong id="header-active-sigla">Universo</strong>
+              <p id="header-active-name">Segurança Pública</p>
+              <small id="header-desc">Escolha uma instituição</small>
             </div>
           </div>
 
           <aside class="header-facts-panel" aria-label="Resumo institucional atualizado">
             <div class="header-facts-head">
-              <span>Resumo institucional</span>
-              <strong id="header-resumo-atualizado">Atualizado em 28/04/2026</strong>
+              <span id="header-resumo-titulo">Resumo do portal</span>
+              <strong id="header-resumo-atualizado">Visão geral do portal</strong>
             </div>
 
             <div class="header-facts-grid">
               <div class="header-fact">
-                <span>Criação</span>
-                <strong id="header-resumo-criacao">15/12/1831</strong>
+                <span id="header-label-criacao">Instituições</span>
+                <strong id="header-resumo-criacao">30</strong>
               </div>
               <div class="header-fact">
-                <span>Efetivo ativo</span>
-                <strong id="header-resumo-ativa">≈ 82 mil</strong>
+                <span id="header-label-ativa">Ativos estimados</span>
+                <strong id="header-resumo-ativa">≈ 323,8 mil+</strong>
               </div>
               <div class="header-fact">
-                <span>Reserva/inativos</span>
-                <strong id="header-resumo-reserva">≈ 90 mil</strong>
+                <span id="header-label-reserva">Reserva/inativos</span>
+                <strong id="header-resumo-reserva">≈ 348 mil+</strong>
               </div>
               <div class="header-fact">
-                <span>Efetivo total</span>
-                <strong id="header-resumo-total">≈ 172 mil</strong>
+                <span id="header-label-total">Total abrangido</span>
+                <strong id="header-resumo-total">≈ 671,8 mil+</strong>
               </div>
               <div class="header-fact">
-                <span>População UF</span>
-                <strong id="header-resumo-populacao">46.081.801</strong>
+                <span id="header-label-populacao">População abrangida</span>
+                <strong id="header-resumo-populacao">141.825.649</strong>
               </div>
               <div class="header-fact">
-                <span>Relação ativa</span>
-                <strong id="header-resumo-relacao">1 ativo / 562 hab.</strong>
+                <span id="header-label-relacao">Estados</span>
+                <strong id="header-resumo-relacao">10 estados</strong>
               </div>
             </div>
 
             <div class="header-leadership">
               <div class="header-leadership-item">
-                <span>Chefe do Executivo</span>
-                <strong id="header-resumo-governador">Tarcísio de Freitas</strong>
+                <span id="header-label-governador">Cobertura</span>
+                <strong id="header-resumo-governador">Polícias militares, civis e penais</strong>
               </div>
               <div class="header-leadership-item">
-                <span>Comando atual</span>
-                <strong id="header-resumo-comando">Cel PM José Augusto Coutinho — Comandante-Geral</strong>
+                <span id="header-label-comando">Primeiro passo</span>
+                <strong id="header-resumo-comando">Selecione uma instituição para ver os dados específicos</strong>
               </div>
             </div>
 
@@ -988,8 +989,9 @@
           <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
             <label for="instituicao_header">Consultar instituição</label>
             <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
+              <option value="" selected disabled>Escolha uma instituição</option>
               <optgroup label="São Paulo">
-                <option value="pmesp" selected>PMESP - Polícia Militar</option>
+                <option value="pmesp">PMESP - Polícia Militar</option>
                 <option value="pcsp">PCSP - Polícia Civil</option>
         <option value="ppsp">PPSP - Polícia Penal</option>
               </optgroup>
@@ -1044,16 +1046,16 @@
           <div class="header-branch-switcher" aria-label="Alternar entre instituição militar, civil e penal do estado selecionado">
             <span>Carreira do estado</span>
             <div class="branch-buttons">
-              <button class="branch-option active" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="true">
-                <strong id="header-pm-sigla">PMESP</strong>
+              <button class="branch-option" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="false" disabled>
+                <strong id="header-pm-sigla">PM</strong>
                 <small>Militar</small>
               </button>
-              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" onclick="selecionarRamo('pc')" aria-pressed="false">
-                <strong id="header-pc-sigla">PCSP</strong>
+              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" onclick="selecionarRamo('pc')" aria-pressed="false" disabled>
+                <strong id="header-pc-sigla">PC</strong>
                 <small>Civil</small>
               </button>
-              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" onclick="selecionarRamo('pp')" aria-pressed="false">
-                <strong id="header-pp-sigla">PPSP</strong>
+              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" onclick="selecionarRamo('pp')" aria-pressed="false" disabled>
+                <strong id="header-pp-sigla">PP</strong>
                 <small>Penal</small>
               </button>
             </div>
@@ -1064,7 +1066,7 @@
       <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
         <div class="state-flags-title">Estados disponíveis</div>
 
-        <button class="state-flag active" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="true">
+        <button class="state-flag" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="Bandeira de São Paulo">
           <span>SP</span>
         </button>
@@ -1141,8 +1143,9 @@
   <div class="inst-selector sidebar-inst-panel">
     <label for="instituicao">Instituição selecionada</label>
     <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
+      <option value="" selected disabled>Escolha uma instituição</option>
       <optgroup label="São Paulo">
-        <option value="pmesp" selected>PMESP - Polícia Militar</option>
+        <option value="pmesp">PMESP - Polícia Militar</option>
         <option value="pcsp">PCSP - Polícia Civil</option>
         <option value="ppsp">PPSP - Polícia Penal</option>
       </optgroup>
@@ -2951,6 +2954,15 @@
     flex: 1;
   }
 
+
+  body[data-inst="portal"] .header-brand-block {
+    display: none;
+  }
+
+  body[data-inst="portal"] .header-topbar {
+    justify-content: flex-start;
+  }
+
   .header-kicker {
     margin-bottom: 5px;
     color: color-mix(in srgb, var(--vermelho) 76%, #ffffff);
@@ -3192,6 +3204,37 @@
     display: block;
     object-fit: cover;
     border-radius: 50%;
+  }
+
+  .current-flag-frame.brand-logo-frame {
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(223,182,62,0.30), rgba(255,255,255,0.05));
+    border-color: rgba(223,182,62,0.42);
+  }
+
+  .current-flag-frame.brand-logo-frame img {
+    object-fit: contain;
+    border-radius: 16px;
+    padding: 4px;
+    background: rgba(0,0,0,0.18);
+  }
+
+
+  body[data-inst="portal"] .current-flag-frame.brand-logo-frame {
+    width: clamp(112px, 13vw, 152px);
+    height: clamp(112px, 13vw, 152px);
+    padding: 7px;
+    border-radius: 30px;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.34), 0 0 0 1px rgba(223,182,62,0.14);
+  }
+
+  body[data-inst="portal"] .current-flag-frame.brand-logo-frame img {
+    border-radius: 24px;
+    padding: 7px;
+  }
+
+  body[data-inst="portal"] .header-current-identity {
+    gap: 20px;
   }
 
   .header-current-copy {
@@ -3563,6 +3606,23 @@
     .current-flag-frame {
       width: 52px;
       height: 52px;
+    }
+
+
+    body[data-inst="portal"] .current-flag-frame.brand-logo-frame {
+      width: 88px;
+      height: 88px;
+      padding: 5px;
+      border-radius: 24px;
+    }
+
+    body[data-inst="portal"] .current-flag-frame.brand-logo-frame img {
+      border-radius: 19px;
+      padding: 5px;
+    }
+
+    body[data-inst="portal"] .header-current-identity {
+      gap: 13px;
     }
 
     .header-current-copy strong {
@@ -6605,6 +6665,7 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
+let headerModoInicialPortal = true;
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
@@ -6725,6 +6786,12 @@ function getNomeAbaAtual() {
 }
 
 function atualizarHeaderDesc(descInstituicao) {
+  if (headerModoInicialPortal) {
+    const el = document.getElementById('header-desc');
+    if (el) el.textContent = getNomeAbaAtual() === 'Principal' ? 'Escolha uma instituição' : getNomeAbaAtual();
+    return;
+  }
+
   const descs = {
     pmesp: 'Polícia Militar de São Paulo',
     pcsp: 'Polícia Civil de São Paulo',
@@ -6752,7 +6819,11 @@ function atualizarHeaderDesc(descInstituicao) {
     ppes: 'Polícia Penal do Espírito Santo',
     pmms: 'Polícia Militar de Mato Grosso do Sul',
     pcms: 'Polícia Civil de Mato Grosso do Sul',
-    ppms: 'Polícia Penal de Mato Grosso do Sul',};
+    ppms: 'Polícia Penal de Mato Grosso do Sul',
+    pmmt: 'Polícia Militar de Mato Grosso',
+    pcmt: 'Polícia Judiciária Civil de Mato Grosso',
+    ppmt: 'Polícia Penal de Mato Grosso'
+  };
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
   const el = document.getElementById('header-desc');
@@ -7553,20 +7624,20 @@ const HEADER_INSTITUICOES_RESUMO = {
   pcsc:  { criacao: 'Origem histórica: 1812', ativa: 3500, reserva: 4500, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Delegado Ulisses Gabriel — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pmes:  { criacao: '06/04/1835', ativa: 8000, reserva: 7000, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Cel PM Ríodo Lopes Rubim — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pces:  { criacao: 'Origem histórica: 1896', ativa: 2500, reserva: 3500, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Delegado-Geral Jordano Bruno — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppsp: { criacao: POLICIAS_PENAIS_INFO.ppsp.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppsp.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppsp.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppsp.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppsp.relacaoLabel, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: POLICIAS_PENAIS_INFO.ppsp.direcao, atualizado: POLICIAS_PENAIS_INFO.ppsp.atualizado },
-  pprj: { criacao: POLICIAS_PENAIS_INFO.pprj.criacao, ativaLabel: POLICIAS_PENAIS_INFO.pprj.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.pprj.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.pprj.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.pprj.relacaoLabel, populacao: 17223547, governador: 'Ricardo Couto — Governador em exercício', comando: POLICIAS_PENAIS_INFO.pprj.direcao, atualizado: POLICIAS_PENAIS_INFO.pprj.atualizado },
-  ppmg: { criacao: POLICIAS_PENAIS_INFO.ppmg.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppmg.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppmg.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppmg.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppmg.relacaoLabel, populacao: 21393441, governador: 'Mateus Simões', comando: POLICIAS_PENAIS_INFO.ppmg.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmg.atualizado },
-  ppba: { criacao: POLICIAS_PENAIS_INFO.ppba.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppba.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppba.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppba.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppba.relacaoLabel, populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: POLICIAS_PENAIS_INFO.ppba.direcao, atualizado: POLICIAS_PENAIS_INFO.ppba.atualizado },
-  pppr: { criacao: POLICIAS_PENAIS_INFO.pppr.criacao, ativaLabel: POLICIAS_PENAIS_INFO.pppr.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.pppr.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.pppr.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.pppr.relacaoLabel, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: POLICIAS_PENAIS_INFO.pppr.direcao, atualizado: POLICIAS_PENAIS_INFO.pppr.atualizado },
-  pprs: { criacao: POLICIAS_PENAIS_INFO.pprs.criacao, ativaLabel: POLICIAS_PENAIS_INFO.pprs.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.pprs.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.pprs.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.pprs.relacaoLabel, populacao: 11233263, governador: 'Eduardo Leite', comando: POLICIAS_PENAIS_INFO.pprs.direcao, atualizado: POLICIAS_PENAIS_INFO.pprs.atualizado },
-  ppsc: { criacao: POLICIAS_PENAIS_INFO.ppsc.criacao, ativa: POLICIAS_PENAIS_INFO.ppsc.efetivoAtivo, reservaLabel: POLICIAS_PENAIS_INFO.ppsc.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppsc.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppsc.relacaoLabel, populacao: 8187029, governador: 'Jorginho Mello', comando: POLICIAS_PENAIS_INFO.ppsc.direcao, atualizado: POLICIAS_PENAIS_INFO.ppsc.atualizado },
-  ppes: { criacao: POLICIAS_PENAIS_INFO.ppes.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppes.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppes.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppes.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppes.relacaoLabel, populacao: 4126854, governador: 'Ricardo Ferraço', comando: POLICIAS_PENAIS_INFO.ppes.direcao, atualizado: POLICIAS_PENAIS_INFO.ppes.atualizado },
-  pmms: { criacao: 'Instalação estadual: 1979', ativaLabel: 'Conferir PMMS/Portal da Transparência', reservaLabel: 'Conferir AGEPREV/MS', totalLabel: 'Conferir PMMS', relacaoLabel: 'Não calcular sem efetivo oficial consolidado', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Cel QOPM Renato dos Anjos Garnes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcms: { criacao: 'Origem estadual: 1979', ativaLabel: 'Conferir PCMS/Portal da Transparência', reservaLabel: 'Conferir AGEPREV/MS', totalLabel: 'Conferir PCMS', relacaoLabel: 'Não calcular sem efetivo oficial consolidado', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Delegado Lupérsio Degerone Lúcio — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppms: { criacao: POLICIAS_PENAIS_INFO.ppms.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppms.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppms.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppms.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppms.relacaoLabel, populacao: 2924631, governador: 'Eduardo Riedel', comando: POLICIAS_PENAIS_INFO.ppms.direcao, atualizado: POLICIAS_PENAIS_INFO.ppms.atualizado },
-  pmmt: { criacao: '05/09/1835', ativaLabel: 'Conferir PMMT/Portal da Transparência', reservaLabel: 'Conferir MTPREV/Portal MT', totalLabel: 'Conferir PMMT', relacaoLabel: 'Não calcular sem efetivo oficial consolidado', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Cel PM Claudio Fernando Carneiro Tinoco — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcmt: { criacao: 'Origem estadual: conferir PJC-MT', ativaLabel: 'Conferir PJC-MT/Portal da Transparência', reservaLabel: 'Conferir MTPREV/Portal MT', totalLabel: 'Conferir PJC-MT', relacaoLabel: 'Não calcular sem efetivo oficial consolidado', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Delegada Daniela Silveira Maidel — Delegada-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppmt: { criacao: POLICIAS_PENAIS_INFO.ppmt.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppmt.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppmt.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppmt.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppmt.relacaoLabel, populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado }
+  ppsp: { criacao: 'EC 104/2019 · EC SP 51/2022 · LC SP 1.416/2024', ativaLabel: 'Carreira em implantação · concurso SAP/2025 com 1.100 vagas', reservaLabel: 'Inativos: SPPREV/SAP · quadro de origem em transição', totalLabel: 'Órgão permanente de segurança pública da SAP/SP', relacaoLabel: 'Relação ativa será consolidada após provimento oficial do quadro', populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Rodrigo Santos Andrade — Diretor-Geral da Polícia Penal/SP', atualizado: 'Atualizado em 28/04/2026' },
+  pprj: { criacao: 'EC 104/2019 · Secretaria de Estado de Polícia Penal/SEAP-RJ', ativaLabel: 'Ativo: conferir SEAP/RJ · operação 2026 mobilizou 2.355 policiais penais', reservaLabel: 'Inativos: RioPrevidência/SEAP-RJ', totalLabel: 'Carreira de Inspetor de Polícia Penal · concurso/renovação em acompanhamento', relacaoLabel: 'Relação depende do efetivo ativo consolidado pela SEAP/RJ', populacao: 17223547, governador: 'Ricardo Couto — Governador em exercício', comando: 'Secretaria de Estado de Polícia Penal do Rio de Janeiro — SEAP/SEPPEN', atualizado: 'Atualizado em 28/04/2026' },
+  ppmg: { criacao: 'EC 104/2019 · carreira estadual da Polícia Penal/MG', ativaLabel: 'Concurso SEJUSP/MG 2025: 1.178 vagas · carreira em expansão', reservaLabel: 'Inativos: IPSEMG/regime estadual', totalLabel: 'Sistema prisional mineiro reforçado por nomeações recentes', relacaoLabel: 'Relação depende de efetivo ativo consolidado pela SEJUSP/MG', populacao: 21393441, governador: 'Mateus Simões', comando: 'Leonardo Mattos Alves Badaró — Diretor-Geral do Departamento Penitenciário/MG', atualizado: 'Atualizado em 28/04/2026' },
+  ppba: { criacao: 'EC 104/2019 · estrutura estadual da SEAP/BA', ativaLabel: 'Efetivo oficial: conferir SEAP/BA · GEOP e unidades prisionais em operação', reservaLabel: 'Inativos: Funprev/BA', totalLabel: 'Sistema prisional baiano com ACADEPPEN, GEOP e segurança prisional', relacaoLabel: 'Relação depende de efetivo ativo consolidado pela SEAP/BA', populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'José Castro — Secretário da SEAP/BA · Luiz Cláudio — Superintendência · Archimedes Neto — Segurança Prisional', atualizado: 'Atualizado em 28/04/2026' },
+  pppr: { criacao: 'EC 104/2019 · QPPP modernizado pela LC PR 245/2022 e LC PR 283/2025', ativaLabel: '429 novos policiais penais nomeados em 2025', reservaLabel: 'Inativos: ParanáPrevidência', totalLabel: '1.181 promoções autorizadas após reestruturação do QPPP', relacaoLabel: 'Relação depende do efetivo ativo consolidado pela Polícia Penal/PR', populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Ananda Chalegre dos Santos — Diretora-Geral da Polícia Penal/PR', atualizado: 'Atualizado em 28/04/2026' },
+  pprs: { criacao: 'EC 104/2019 · EC RS 82/2022 · LC RS 16.449/2025', ativaLabel: 'Quadro legal: 6.938 cargos de Policial Penal', reservaLabel: 'Inativos: IPE Prev/RS', totalLabel: '5.364 nomeações desde 2019 · 643 novos servidores em formação em 2026', relacaoLabel: 'Relação aproximada depende do provimento efetivo dos cargos', populacao: 11233263, governador: 'Eduardo Leite', comando: 'Sergio Dalcol — Superintendente da Polícia Penal/RS · Jorge Pozzobom — Secretário da SSPS', atualizado: 'Atualizado em 28/04/2026' },
+  ppsc: { criacao: 'EC 104/2019 · EC SC 80/2020 · LC SC 774/2021', ativa: 4809, ativaLabel: '4.809 profissionais informados pelo Governo/SC', reservaLabel: 'Inativos: IPREV/SC', totalLabel: '1.644 nomeações informadas em 2025 · carreira estruturada em 8 classes', relacaoLabel: '1 profissional / 1.703 hab. · cálculo aproximado com efetivo divulgado', populacao: 8187029, governador: 'Jorginho Mello', comando: 'Maicon Ronald Alves — Diretor-Geral do Departamento de Polícia Penal/SC', atualizado: 'Atualizado em 28/04/2026' },
+  ppes: { criacao: 'EC 104/2019 · LC ES 1.059/2023 · LC ES 1.061/2023', ativaLabel: 'Meta institucional: 3.300 policiais penais concursados · concurso com 600 vagas', reservaLabel: 'Inativos: IPAJM/ES', totalLabel: 'Órgão próprio vinculado à SEJUS/ES · carreira em consolidação', relacaoLabel: 'Relação aproximada depende do provimento e da lotação efetiva', populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'José Franco Morais Junior — Diretor-Geral da Polícia Penal/ES', atualizado: 'Atualizado em 28/04/2026' },
+  pmms: { criacao: '05/09/1835 · MS estruturada em 1979', ativa: 10602, ativaLabel: 'Efetivo legal: 10.602 PMs', reservaLabel: 'Reserva/inativos: AGEPREV/MS', totalLabel: 'Ativo legal 10.602 · reserva à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Cel QOPM Renato dos Anjos Garnes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcms: { criacao: 'Abril/1979 · LC MS 114/2005', ativa: 2373, ativaLabel: '2.373 policiais na ativa', reservaLabel: 'Inativos: AGEPREV/MS', totalLabel: '2.373 ativos · inativos à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Delegado Lupérsio Degerone Lúcio — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  ppms: { criacao: 'EC 104/2019 · EC MS 88/2021 · Lei MS 5.846/2022', ativa: 1903, ativaLabel: '≈ 1.903 servidores ativos AGEPEN/PP', reservaLabel: 'Inativos: AGEPREV/MS', totalLabel: 'Ativo informado ≈ 1.903 · inativos à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: POLICIAS_PENAIS_INFO.ppms.direcao, atualizado: POLICIAS_PENAIS_INFO.ppms.atualizado },
+  pmmt: { criacao: '05/09/1835 · LC MT 529/2014', ativa: 7275, ativaLabel: 'Ativo informado: 7.275 PMs', reservaLabel: 'Reserva/inativos: MTPREV/MT', totalLabel: 'Efetivo legal previsto: 12.495 PMs', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Cel PM Claudio Fernando Carneiro Tinoco — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcmt: { criacao: 'Lei MT 7.935/2003 · LC MT 407/2010', ativa: 2983, ativaLabel: 'Ativo informado: 2.983 policiais civis', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: 'Efetivo legal: 5.600 cargos PJC', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Delegada Daniela Silveira Maidel — Delegada-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  ppmt: { criacao: 'EC 104/2019 · SEJUS/MT · Polícia Penal MT', ativa: 2620, ativaLabel: 'Ativo informado: 2.620 policiais penais', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: '2.620 ativos · inativos à parte', populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado }
 };
 
 function formatarNumeroHeader(valor) {
@@ -7593,7 +7664,120 @@ function calcularRelacaoHeader(populacao, ativa) {
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
 }
 
+function atualizarLabelsHeaderResumo(labels = {}) {
+  const padrao = {
+    'header-label-criacao': 'Criação',
+    'header-label-ativa': 'Efetivo ativo',
+    'header-label-reserva': 'Reserva/inativos',
+    'header-label-total': 'Efetivo total',
+    'header-label-populacao': 'População UF',
+    'header-label-relacao': 'Relação ativa',
+    'header-label-governador': 'Chefe do Executivo',
+    'header-label-comando': 'Comando atual'
+  };
+
+  Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  });
+}
+
+function calcularResumoPortalHeader() {
+  const instituicoes = INSTITUICOES_VALIDAS.length;
+  const estados = Object.keys(HEADER_ESTADOS).length;
+  let ativa = 0;
+  let reserva = 0;
+  let populacao = 0;
+
+  INSTITUICOES_VALIDAS.forEach(inst => {
+    const dados = HEADER_INSTITUICOES_RESUMO[inst] || {};
+    const infoPenal = POLICIAS_PENAIS_INFO?.[inst] || {};
+    ativa += Number(dados.ativa || infoPenal.efetivoAtivo || 0);
+    reserva += Number(dados.reserva || 0);
+  });
+
+  Object.values(HEADER_ESTADOS).forEach(estado => {
+    const ref = HEADER_INSTITUICOES_RESUMO[estado.pm] || HEADER_INSTITUICOES_RESUMO[estado.pc] || HEADER_INSTITUICOES_RESUMO[estado.pp] || {};
+    populacao += Number(ref.populacao || 0);
+  });
+
+  return { instituicoes, estados, ativa, reserva, total: ativa + reserva, populacao };
+}
+
+function aplicarHeaderInicialPortal() {
+  headerModoInicialPortal = true;
+  document.body.setAttribute('data-inst', 'portal');
+
+  const resumoPortal = calcularResumoPortalHeader();
+  const setTexto = (id, valor) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  };
+
+  const flagAtual = document.getElementById('header-active-flag');
+  if (flagAtual) {
+    flagAtual.style.display = '';
+    flagAtual.dataset.imgBase = 'logoleao';
+    flagAtual.dataset.retry = '';
+    flagAtual.src = 'logoleao';
+    flagAtual.alt = 'Logo Universo Segurança Pública';
+    const moldura = flagAtual.closest('.current-flag-frame');
+    if (moldura) moldura.classList.add('brand-logo-frame');
+  }
+
+  setTexto('header-active-sigla', 'Universo');
+  setTexto('header-active-name', 'Segurança Pública');
+  setTexto('header-desc', 'Escolha uma instituição');
+  setTexto('header-resumo-titulo', 'Resumo do portal');
+  setTexto('header-resumo-atualizado', 'Visão geral do portal');
+
+  atualizarLabelsHeaderResumo({
+    'header-label-criacao': 'Instituições',
+    'header-label-ativa': 'Ativos estimados',
+    'header-label-reserva': 'Reserva/inativos',
+    'header-label-total': 'Total abrangido',
+    'header-label-populacao': 'População abrangida',
+    'header-label-relacao': 'Estados',
+    'header-label-governador': 'Cobertura',
+    'header-label-comando': 'Primeiro passo'
+  });
+
+  setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
+  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
+  setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
+  setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.total)}+`);
+  setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
+  setTexto('header-resumo-relacao', `${resumoPortal.estados} estados`);
+  setTexto('header-resumo-governador', 'Polícias militares, civis e penais');
+  setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
+
+  ['instituicao', 'instituicao_header'].forEach(id => {
+    const seletor = document.getElementById(id);
+    if (seletor) seletor.value = '';
+  });
+
+  [['header-pm-sigla', 'PM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
+  ['header-branch-pm', 'header-branch-pc', 'header-branch-pp'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.disabled = true;
+    btn.classList.remove('active');
+    btn.setAttribute('aria-pressed', 'false');
+  });
+
+  document.querySelectorAll('.state-flag').forEach(flag => {
+    flag.classList.remove('active');
+    flag.setAttribute('aria-pressed', 'false');
+  });
+
+  atualizarVisibilidadeResumoInstitucional('principal');
+}
+
 function atualizarHeaderResumo(inst) {
+  atualizarLabelsHeaderResumo();
+  const tituloResumo = document.getElementById('header-resumo-titulo');
+  if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
+
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
   const totalEfetivo = Number(dados.ativa || 0) + Number(dados.reserva || 0);
   const setTexto = (id, valor) => {
@@ -7648,6 +7832,11 @@ function atualizarHeaderInstitucional(inst) {
 
   const flagAtual = document.getElementById('header-active-flag');
   if (flagAtual) {
+    const moldura = flagAtual.closest('.current-flag-frame');
+    if (moldura) moldura.classList.remove('brand-logo-frame');
+    flagAtual.style.display = '';
+    flagAtual.removeAttribute('data-retry');
+    flagAtual.removeAttribute('onerror');
     flagAtual.src = dadosEstado.flag;
     flagAtual.alt = `Bandeira de ${dadosEstado.nome}`;
   }
@@ -7707,6 +7896,8 @@ function atualizarFlagsEstado(inst) {
 }
 
 function mudarInstituicao(novaInstituicao) {
+  if (novaInstituicao === '') return;
+
   const configs = {
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
@@ -7749,6 +7940,7 @@ function mudarInstituicao(novaInstituicao) {
     try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* silencioso */ }
   }
 
+  headerModoInicialPortal = false;
   currInst = inst;
   document.body.setAttribute('data-inst', inst);
 
@@ -8854,9 +9046,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Popula cargos usados na aba Direitos e Vantagens.
   popularCargos('pmesp');
 
-  // Aplica configuração da instituição (textos e visibilidade).
-  mudarInstituicao();
-  atualizarVisibilidadeResumoInstitucional('principal');
+  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
+  aplicarHeaderInicialPortal();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
   ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
