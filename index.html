@@ -829,96 +829,134 @@
      Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
      ======================================================= -->
 
-<!-- BLOCO 03.1 — Cabeçalho superior com botão de menu e seletor rápido de instituição -->
-<header role="banner">
-  <div class="header-content">
-    <div class="header-menu-tools" aria-label="Controles rápidos">
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
-        <span></span><span></span><span></span>
-      </button>
-      <button class="theme-toggle-header" onclick="toggleTheme()" id="theme-toggle-header" type="button" aria-label="Alternar tema claro/escuro">
-        ☀️ Claro
-      </button>
-    </div>
-    <div class="header-text" id="header-text">
-      <h1>Universo <span>Segurança Pública</span></h1>
-      <p id="header-desc">Polícia Militar de São Paulo — Principal</p>
-      <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
-        <label for="instituicao_header">Instituição</label>
-        <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
-          <optgroup label="São Paulo">
-            <option value="pmesp" selected>PMESP - Polícia Militar</option>
-            <option value="pcsp">PCSP - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Rio de Janeiro">
-            <option value="pmerj">PMERJ - Polícia Militar</option>
-            <option value="pcerj">PCERJ - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Minas Gerais">
-            <option value="pmmg">PMMG - Polícia Militar</option>
-            <option value="pcmg">PCMG - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Bahia">
-            <option value="pmba">PMBA - Polícia Militar</option>
-            <option value="pcba">PCBA - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Paraná">
-            <option value="pmpr">PMPR - Polícia Militar</option>
-            <option value="pcpr">PCPR - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Rio Grande do Sul">
-            <option value="pmrs">PMRS - Brigada Militar</option>
-            <option value="pcrs">PCRS - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Santa Catarina">
-            <option value="pmsc">PMSC - Polícia Militar</option>
-            <option value="pcsc">PCSC - Polícia Civil</option>
-          </optgroup>
-          <optgroup label="Espírito Santo">
-            <option value="pmes">PMES - Polícia Militar</option>
-            <option value="pces">PCES - Polícia Civil</option>
-          </optgroup>
-        </select>
+<!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
+<header role="banner" class="site-header">
+  <div class="header-content header-shell">
+    <div class="header-topbar">
+      <div class="header-menu-tools" aria-label="Controles rápidos">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="theme-toggle-header" onclick="toggleTheme()" id="theme-toggle-header" type="button" aria-label="Alternar tema claro/escuro">
+          ☀️ Claro
+        </button>
       </div>
-      <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
-        <div class="state-flags-title">Escolha um estado</div>
 
-        <button class="state-flag active" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo">
+      <div class="header-brand-block" aria-label="Identidade do site">
+        <div class="header-kicker">Consulta rápida por instituição</div>
+        <h1>Universo <span>Segurança Pública</span></h1>
+      </div>
+    </div>
+
+    <div class="header-text" id="header-text">
+      <section class="header-institution-card" aria-label="Instituição selecionada">
+        <div class="header-current-identity">
+          <div class="current-flag-frame" aria-hidden="true">
+            <img id="header-active-flag" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="">
+          </div>
+
+          <div class="header-current-copy">
+            <span class="header-current-label">Instituição ativa</span>
+            <strong id="header-active-sigla">PMESP</strong>
+            <p id="header-active-name">Polícia Militar de São Paulo</p>
+            <small id="header-desc">Polícia Militar de São Paulo — Principal</small>
+          </div>
+        </div>
+
+        <div class="header-controls-grid">
+          <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
+            <label for="instituicao_header">Consultar instituição</label>
+            <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
+              <optgroup label="São Paulo">
+                <option value="pmesp" selected>PMESP - Polícia Militar</option>
+                <option value="pcsp">PCSP - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Rio de Janeiro">
+                <option value="pmerj">PMERJ - Polícia Militar</option>
+                <option value="pcerj">PCERJ - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Minas Gerais">
+                <option value="pmmg">PMMG - Polícia Militar</option>
+                <option value="pcmg">PCMG - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Bahia">
+                <option value="pmba">PMBA - Polícia Militar</option>
+                <option value="pcba">PCBA - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Paraná">
+                <option value="pmpr">PMPR - Polícia Militar</option>
+                <option value="pcpr">PCPR - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Rio Grande do Sul">
+                <option value="pmrs">PMRS - Brigada Militar</option>
+                <option value="pcrs">PCRS - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Santa Catarina">
+                <option value="pmsc">PMSC - Polícia Militar</option>
+                <option value="pcsc">PCSC - Polícia Civil</option>
+              </optgroup>
+              <optgroup label="Espírito Santo">
+                <option value="pmes">PMES - Polícia Militar</option>
+                <option value="pces">PCES - Polícia Civil</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="header-branch-switcher" aria-label="Alternar entre instituição militar e civil do estado selecionado">
+            <span>Carreira do estado</span>
+            <div class="branch-buttons">
+              <button class="branch-option active" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="true">
+                <strong id="header-pm-sigla">PMESP</strong>
+                <small>Militar</small>
+              </button>
+              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" onclick="selecionarRamo('pc')" aria-pressed="false">
+                <strong id="header-pc-sigla">PCSP</strong>
+                <small>Civil</small>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
+        <div class="state-flags-title">Estados disponíveis</div>
+
+        <button class="state-flag active" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="true">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="Bandeira de São Paulo">
           <span>SP</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="rj" title="Rio de Janeiro" onclick="selecionarEstado('rj')" aria-label="Selecionar Rio de Janeiro">
+        <button class="state-flag" type="button" data-estado="rj" title="Rio de Janeiro" onclick="selecionarEstado('rj')" aria-label="Selecionar Rio de Janeiro" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_do_Rio_de_Janeiro.svg" alt="Bandeira do Rio de Janeiro">
           <span>RJ</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="mg" title="Minas Gerais" onclick="selecionarEstado('mg')" aria-label="Selecionar Minas Gerais">
+        <button class="state-flag" type="button" data-estado="mg" title="Minas Gerais" onclick="selecionarEstado('mg')" aria-label="Selecionar Minas Gerais" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg" alt="Bandeira de Minas Gerais">
           <span>MG</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ba" title="Bahia" onclick="selecionarEstado('ba')" aria-label="Selecionar Bahia">
+        <button class="state-flag" type="button" data-estado="ba" title="Bahia" onclick="selecionarEstado('ba')" aria-label="Selecionar Bahia" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg" alt="Bandeira da Bahia">
           <span>BA</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="pr" title="Paraná" onclick="selecionarEstado('pr')" aria-label="Selecionar Paraná">
+        <button class="state-flag" type="button" data-estado="pr" title="Paraná" onclick="selecionarEstado('pr')" aria-label="Selecionar Paraná" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg" alt="Bandeira do Paraná">
           <span>PR</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="rs" title="Rio Grande do Sul" onclick="selecionarEstado('rs')" aria-label="Selecionar Rio Grande do Sul">
+        <button class="state-flag" type="button" data-estado="rs" title="Rio Grande do Sul" onclick="selecionarEstado('rs')" aria-label="Selecionar Rio Grande do Sul" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg" alt="Bandeira do Rio Grande do Sul">
           <span>RS</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="sc" title="Santa Catarina" onclick="selecionarEstado('sc')" aria-label="Selecionar Santa Catarina">
+        <button class="state-flag" type="button" data-estado="sc" title="Santa Catarina" onclick="selecionarEstado('sc')" aria-label="Selecionar Santa Catarina" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg" alt="Bandeira de Santa Catarina">
           <span>SC</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="es" title="Espírito Santo" onclick="selecionarEstado('es')" aria-label="Selecionar Espírito Santo">
+        <button class="state-flag" type="button" data-estado="es" title="Espírito Santo" onclick="selecionarEstado('es')" aria-label="Selecionar Espírito Santo" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg" alt="Bandeira do Espírito Santo">
           <span>ES</span>
         </button>
@@ -3007,6 +3045,573 @@
     text-shadow: 0 0 18px color-mix(in srgb, var(--vermelho) 48%, transparent);
   }
 
+  /* BLOCO 14.20 — Cabeçalho institucional premium
+     Objetivo: deixar o topo mais claro, compacto e profissional sem alterar as abas ou cálculos. */
+  header.site-header {
+    padding: 18px 0 20px;
+    background:
+      radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--vermelho) 26%, transparent), transparent 34%),
+      linear-gradient(135deg, rgba(5, 6, 10, 0.96) 0%, rgba(16, 18, 26, 0.94) 56%, rgba(0, 0, 0, 0.98) 100%);
+    border-bottom: 1px solid color-mix(in srgb, var(--vermelho) 54%, rgba(255,255,255,0.16));
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  }
+
+  header.site-header::before {
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.08), transparent 24%, rgba(255,255,255,0.04) 62%, transparent),
+      repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 56px);
+  }
+
+  header.site-header::after {
+    content: "";
+    position: absolute;
+    left: max(20px, calc((100% - 1200px) / 2 + 20px));
+    right: max(20px, calc((100% - 1200px) / 2 + 20px));
+    bottom: 0;
+    height: 3px;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
+    opacity: 0.92;
+    pointer-events: none;
+  }
+
+  .header-shell {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .header-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-brand-block {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .header-kicker {
+    margin-bottom: 5px;
+    color: color-mix(in srgb, var(--vermelho) 76%, #ffffff);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  .header-text {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-text h1,
+  .header-brand-block h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1.02;
+    text-shadow: 0 8px 26px rgba(0,0,0,0.34);
+  }
+
+  .header-text h1 span,
+  .header-brand-block h1 span {
+    color: var(--vermelho);
+  }
+
+  .header-menu-tools {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+  }
+
+  .menu-btn {
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.075);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 10px 28px rgba(0,0,0,0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .menu-btn span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .menu-btn:hover,
+  .menu-btn:focus-visible {
+    border-color: var(--vermelho);
+    background: color-mix(in srgb, var(--vermelho) 14%, rgba(255,255,255,0.08));
+    outline: none;
+  }
+
+  .theme-toggle-header {
+    min-height: 34px;
+    padding: 8px 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.075);
+    color: rgba(255,255,255,0.88);
+    font-size: 10px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 10px 28px rgba(0,0,0,0.18);
+  }
+
+  .header-institution-card {
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 22px;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 13%, transparent), transparent 48%),
+      rgba(255,255,255,0.072);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.26), inset 0 1px 0 rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .header-institution-card::after {
+    content: "";
+    position: absolute;
+    top: -38px;
+    right: -38px;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--vermelho) 18%, transparent);
+    filter: blur(4px);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .header-current-identity {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .current-flag-frame {
+    width: 66px;
+    height: 66px;
+    flex: 0 0 auto;
+    padding: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.30), rgba(255,255,255,0.04));
+    border: 1px solid rgba(255,255,255,0.20);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+  }
+
+  .current-flag-frame img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .header-current-copy {
+    min-width: 0;
+  }
+
+  .header-current-label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 4px;
+    color: rgba(255,255,255,0.62);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  .header-current-copy strong {
+    display: block;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(27px, 4vw, 43px);
+    line-height: 0.98;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+
+  .header-current-copy p {
+    margin-top: 5px;
+    color: rgba(255,255,255,0.90);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-transform: none;
+  }
+
+  .header-current-copy small {
+    display: inline-flex;
+    margin-top: 7px;
+    padding: 5px 9px;
+    border: 1px solid rgba(255,255,255,0.11);
+    border-radius: 999px;
+    color: rgba(255,255,255,0.64);
+    background: rgba(0,0,0,0.18);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .header-controls-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 0.72fr);
+    gap: 14px;
+    margin-top: 17px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-inst-selector {
+    margin: 0;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    clip-path: none;
+  }
+
+  .header-inst-selector label,
+  .header-branch-switcher > span {
+    margin: 0;
+    color: rgba(255,255,255,0.58);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  .header-inst-selector select {
+    width: 100%;
+    height: 48px;
+    padding: 0 42px 0 14px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04)),
+      rgba(0,0,0,0.22);
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.25px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  .header-inst-selector select:hover,
+  .header-inst-selector select:focus {
+    border-color: var(--vermelho);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--vermelho) 18%, transparent), inset 0 1px 0 rgba(255,255,255,0.10);
+  }
+
+  .header-inst-selector optgroup,
+  .header-inst-selector option {
+    color: #111827;
+    background: #ffffff;
+  }
+
+  .header-branch-switcher {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .branch-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .branch-option {
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(0,0,0,0.18);
+    color: rgba(255,255,255,0.82);
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+  }
+
+  .branch-option strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .branch-option small {
+    color: rgba(255,255,255,0.52);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  .branch-option:hover,
+  .branch-option:focus-visible {
+    transform: translateY(-1px);
+    border-color: var(--vermelho);
+    outline: none;
+  }
+
+  .branch-option.active {
+    border-color: color-mix(in srgb, var(--vermelho) 82%, #ffffff);
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 76%, #111827), var(--vermelho-escuro));
+    color: #ffffff;
+    box-shadow: 0 12px 30px color-mix(in srgb, var(--vermelho) 28%, transparent);
+  }
+
+  .branch-option.active small {
+    color: rgba(255,255,255,0.78);
+  }
+
+  .header-state-flags {
+    max-width: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 0;
+    padding: 2px 2px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--vermelho) transparent;
+  }
+
+  .header-state-flags::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .header-state-flags::-webkit-scrollbar-thumb {
+    background: var(--vermelho);
+    border-radius: 999px;
+  }
+
+  .state-flags-title {
+    flex: 0 0 auto;
+    align-self: center;
+    margin-right: 4px;
+    color: rgba(255,255,255,0.56);
+    white-space: nowrap;
+  }
+
+  .state-flag {
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 6px 11px 6px 7px;
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.065);
+    color: rgba(255,255,255,0.82);
+    opacity: 1;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .state-flag:hover,
+  .state-flag:focus-visible {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--vermelho) 70%, rgba(255,255,255,0.20));
+    outline: none;
+  }
+
+  .state-flag img {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.20);
+  }
+
+  .state-flag span {
+    color: rgba(255,255,255,0.82);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+
+  .state-flag.active {
+    border-color: var(--vermelho);
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 26%, transparent), rgba(255,255,255,0.08));
+    box-shadow: 0 10px 28px color-mix(in srgb, var(--vermelho) 22%, transparent), inset 0 1px 0 rgba(255,255,255,0.10);
+  }
+
+  .state-flag.active img {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--vermelho) 60%, transparent), 0 8px 18px rgba(0,0,0,0.24);
+  }
+
+  .state-flag.active span {
+    color: #ffffff;
+    text-shadow: none;
+  }
+
+  @media (max-width: 900px) {
+    header.site-header {
+      padding: 14px 0 16px;
+    }
+
+    .header-controls-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .header-institution-card {
+      padding: 16px;
+      border-radius: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header-shell {
+      gap: 12px;
+      padding: 0 14px;
+    }
+
+    .header-topbar {
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .header-menu-tools {
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .menu-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+    }
+
+    .theme-toggle-header {
+      min-height: 25px;
+      padding: 5px 8px;
+      font-size: 9px;
+    }
+
+    .header-kicker {
+      font-size: 9px;
+      letter-spacing: 1.25px;
+    }
+
+    .header-brand-block h1 {
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .header-current-identity {
+      align-items: flex-start;
+      gap: 11px;
+    }
+
+    .current-flag-frame {
+      width: 52px;
+      height: 52px;
+    }
+
+    .header-current-copy strong {
+      font-size: 28px;
+    }
+
+    .header-current-copy p {
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .header-current-copy small {
+      font-size: 9px;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    .header-controls-grid {
+      gap: 11px;
+      margin-top: 14px;
+    }
+
+    .header-inst-selector select {
+      height: 46px;
+      font-size: 13px;
+    }
+
+    .branch-option {
+      min-height: 44px;
+      padding: 8px 10px;
+    }
+
+    .branch-option strong {
+      font-size: 14px;
+    }
+
+    .header-state-flags {
+      margin-left: -2px;
+      padding-bottom: 6px;
+    }
+
+    .state-flags-title {
+      font-size: 9px;
+    }
+
+    .state-flag {
+      min-height: 36px;
+      padding: 5px 9px 5px 6px;
+    }
+
+    .state-flag img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
   @media (max-width: 900px) {
     .principal-stats {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4422,8 +5027,17 @@ function atualizarHeaderDesc(descInstituicao) {
     pmes: 'Polícia Militar do Espírito Santo',
     pces: 'Polícia Civil do Espírito Santo'
   };
+  const textoAba = getNomeAbaAtual();
+  const desc = descInstituicao || descs[currInst] || descs.pmesp;
   const el = document.getElementById('header-desc');
-  if (el) el.textContent = (descInstituicao || descs[currInst] || descs.pmesp) + ' — ' + getNomeAbaAtual();
+  if (el) el.textContent = desc + ' — ' + textoAba;
+
+  const info = HEADER_INSTITUICOES_INFO?.[currInst];
+  const siglaAtual = document.getElementById('header-active-sigla');
+  if (siglaAtual && info) siglaAtual.textContent = info.titulo;
+
+  const nomeAtual = document.getElementById('header-active-name');
+  if (nomeAtual) nomeAtual.textContent = desc;
 }
 
 function toggleTheme() {
@@ -4907,54 +5521,156 @@ function carregarRemuneracaoTabelada() {
 /* === TROCA INSTITUIÇÃO ====================================== */
 /* ============================================================ */
 
+const HEADER_ESTADOS = {
+  sp: {
+    nome: 'São Paulo',
+    sigla: 'SP',
+    pm: 'pmesp',
+    pc: 'pcsp',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg'
+  },
+  rj: {
+    nome: 'Rio de Janeiro',
+    sigla: 'RJ',
+    pm: 'pmerj',
+    pc: 'pcerj',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_do_Rio_de_Janeiro.svg'
+  },
+  mg: {
+    nome: 'Minas Gerais',
+    sigla: 'MG',
+    pm: 'pmmg',
+    pc: 'pcmg',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg'
+  },
+  ba: {
+    nome: 'Bahia',
+    sigla: 'BA',
+    pm: 'pmba',
+    pc: 'pcba',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg'
+  },
+  pr: {
+    nome: 'Paraná',
+    sigla: 'PR',
+    pm: 'pmpr',
+    pc: 'pcpr',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg'
+  },
+  rs: {
+    nome: 'Rio Grande do Sul',
+    sigla: 'RS',
+    pm: 'pmrs',
+    pc: 'pcrs',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg'
+  },
+  sc: {
+    nome: 'Santa Catarina',
+    sigla: 'SC',
+    pm: 'pmsc',
+    pc: 'pcsc',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg'
+  },
+  es: {
+    nome: 'Espírito Santo',
+    sigla: 'ES',
+    pm: 'pmes',
+    pc: 'pces',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg'
+  }
+};
+
+const HEADER_INSTITUICOES_INFO = {
+  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar de São Paulo' },
+  pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil de São Paulo' },
+  pmerj: { titulo: 'PMERJ', desc: 'Polícia Militar do Rio de Janeiro' },
+  pcerj: { titulo: 'PCERJ', desc: 'Polícia Civil do Rio de Janeiro' },
+  pmmg:  { titulo: 'PMMG',  desc: 'Polícia Militar de Minas Gerais' },
+  pcmg:  { titulo: 'PCMG',  desc: 'Polícia Civil de Minas Gerais' },
+  pmba:  { titulo: 'PMBA',  desc: 'Polícia Militar da Bahia' },
+  pcba:  { titulo: 'PCBA',  desc: 'Polícia Civil da Bahia' },
+  pmpr:  { titulo: 'PMPR',  desc: 'Polícia Militar do Paraná' },
+  pcpr:  { titulo: 'PCPR',  desc: 'Polícia Civil do Paraná' },
+  pmrs:  { titulo: 'PMRS',  desc: 'Brigada Militar do Rio Grande do Sul' },
+  pcrs:  { titulo: 'PCRS',  desc: 'Polícia Civil do Rio Grande do Sul' },
+  pmsc:  { titulo: 'PMSC',  desc: 'Polícia Militar de Santa Catarina' },
+  pcsc:  { titulo: 'PCSC',  desc: 'Polícia Civil de Santa Catarina' },
+  pmes:  { titulo: 'PMES',  desc: 'Polícia Militar do Espírito Santo' },
+  pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' }
+};
+
+function getEstadoDaInstituicao(inst) {
+  return Object.keys(HEADER_ESTADOS).find(estado => {
+    const item = HEADER_ESTADOS[estado];
+    return item.pm === inst || item.pc === inst;
+  }) || 'sp';
+}
+
 function selecionarEstado(estado) {
   const estadoNormalizado = String(estado || '').toLowerCase();
-  const instituicaoInicialPorEstado = {
-    sp: 'pmesp',
-    rj: 'pmerj',
-    mg: 'pmmg',
-    ba: 'pmba',
-    pr: 'pmpr',
-    rs: 'pmrs',
-    sc: 'pmsc',
-    es: 'pmes'
-  };
+  const dadosEstado = HEADER_ESTADOS[estadoNormalizado];
+  if (!dadosEstado) return;
 
-  const nomesEstado = {
-    sp: 'São Paulo',
-    rj: 'Rio de Janeiro',
-    mg: 'Minas Gerais',
-    ba: 'Bahia',
-    pr: 'Paraná',
-    rs: 'Rio Grande do Sul',
-    sc: 'Santa Catarina',
-    es: 'Espírito Santo'
-  };
-
-  const instituicao = instituicaoInicialPorEstado[estadoNormalizado];
-  if (!instituicao) return;
-
-  mudarInstituicao(instituicao);
+  mudarInstituicao(dadosEstado.pm);
   switchPage('principal');
-  mostrarToast(`${nomesEstado[estadoNormalizado]} selecionado. Para alternar entre Polícia Militar e Civil, use o seletor de instituição.`);
+  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar ou Civil no botão ao lado do seletor.`);
+}
+
+function selecionarRamo(ramo) {
+  const estadoAtivo = getEstadoDaInstituicao(currInst);
+  const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
+  const instituicao = ramo === 'pc' ? dadosEstado.pc : dadosEstado.pm;
+  mudarInstituicao(instituicao);
+}
+
+function atualizarHeaderInstitucional(inst) {
+  const instituicao = HEADER_INSTITUICOES_INFO[inst] || HEADER_INSTITUICOES_INFO.pmesp;
+  const estadoAtivo = getEstadoDaInstituicao(inst);
+  const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
+
+  const flagAtual = document.getElementById('header-active-flag');
+  if (flagAtual) {
+    flagAtual.src = dadosEstado.flag;
+    flagAtual.alt = `Bandeira de ${dadosEstado.nome}`;
+  }
+
+  const siglaAtual = document.getElementById('header-active-sigla');
+  if (siglaAtual) siglaAtual.textContent = instituicao.titulo;
+
+  const nomeAtual = document.getElementById('header-active-name');
+  if (nomeAtual) nomeAtual.textContent = instituicao.desc;
+
+  const pmInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pm];
+  const pcInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pc];
+
+  const pmSigla = document.getElementById('header-pm-sigla');
+  if (pmSigla && pmInfo) pmSigla.textContent = pmInfo.titulo;
+
+  const pcSigla = document.getElementById('header-pc-sigla');
+  if (pcSigla && pcInfo) pcSigla.textContent = pcInfo.titulo;
+
+  const btnPm = document.getElementById('header-branch-pm');
+  const btnPc = document.getElementById('header-branch-pc');
+  if (btnPm) {
+    const ativo = inst === dadosEstado.pm;
+    btnPm.classList.toggle('active', ativo);
+    btnPm.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+  }
+  if (btnPc) {
+    const ativo = inst === dadosEstado.pc;
+    btnPc.classList.toggle('active', ativo);
+    btnPc.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+  }
 }
 
 function atualizarFlagsEstado(inst) {
-  const mapaEstados = {
-    pmesp: 'sp', pcsp: 'sp',
-    pmerj: 'rj', pcerj: 'rj',
-    pmmg: 'mg', pcmg: 'mg',
-    pmba: 'ba', pcba: 'ba',
-    pmpr: 'pr', pcpr: 'pr',
-    pmrs: 'rs', pcrs: 'rs',
-    pmsc: 'sc', pcsc: 'sc',
-    pmes: 'es', pces: 'es'
-  };
-
-  const estadoAtivo = mapaEstados[inst] || 'sp';
+  const estadoAtivo = getEstadoDaInstituicao(inst);
   document.querySelectorAll('.state-flag').forEach(flag => {
-    flag.classList.toggle('active', flag.dataset.estado === estadoAtivo);
+    const ativo = flag.dataset.estado === estadoAtivo;
+    flag.classList.toggle('active', ativo);
+    flag.setAttribute('aria-pressed', ativo ? 'true' : 'false');
   });
+  atualizarHeaderInstitucional(inst);
 }
 
 function mudarInstituicao(novaInstituicao) {
