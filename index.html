@@ -901,7 +901,7 @@
             <span class="header-current-label">Instituição ativa</span>
             <strong id="header-active-sigla">PMESP</strong>
             <p id="header-active-name">Polícia Militar de São Paulo</p>
-            <small id="header-desc">Polícia Militar de São Paulo — Principal</small>
+            <small id="header-desc">Principal</small>
           </div>
         </div>
 
@@ -5072,7 +5072,7 @@ function atualizarHeaderDesc(descInstituicao) {
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
   const el = document.getElementById('header-desc');
-  if (el) el.textContent = desc + ' — ' + textoAba;
+  if (el) el.textContent = textoAba;
 
   const info = HEADER_INSTITUICOES_INFO?.[currInst];
   const siglaAtual = document.getElementById('header-active-sigla');
