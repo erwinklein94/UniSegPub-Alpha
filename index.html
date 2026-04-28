@@ -4169,6 +4169,129 @@
     .sidebar-nav a { margin-left: 12px; margin-right: 12px; }
     .sidebar-ad { margin-left: 12px; margin-right: 12px; }
   }
+
+  /* BLOCO 14.10 — Produto parceiro contextual na aba Concursos / TAF */
+  #page-concursos .taf-produto-card {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-top: 16px;
+    padding: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    background: var(--glass-panel, var(--item-bg));
+    border: 1px solid var(--glass-border, var(--border-card));
+    border-left: 4px solid var(--vermelho);
+    border-radius: var(--radius-xl, 14px);
+    box-shadow: var(--glass-shadow-soft, 0 8px 18px rgba(0,0,0,0.14));
+    overflow: hidden;
+    transition: 0.2s ease;
+  }
+
+  #page-concursos .taf-produto-card:hover,
+  #page-concursos .taf-produto-card:focus-visible {
+    border-color: var(--vermelho);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px color-mix(in srgb, var(--vermelho) 22%, transparent);
+    outline: none;
+  }
+
+  #page-concursos .taf-produto-imagem {
+    min-height: 128px;
+    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    overflow: hidden;
+  }
+
+  #page-concursos .taf-produto-imagem img {
+    display: block;
+    width: 100%;
+    height: 132px;
+    object-fit: cover;
+  }
+
+  #page-concursos .taf-produto-card.img-indisponivel .taf-produto-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    text-align: center;
+  }
+
+  #page-concursos .taf-produto-card.img-indisponivel .taf-produto-imagem::before {
+    content: "Imagem barrafixa01 não encontrada";
+    color: var(--text-muted);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  #page-concursos .taf-produto-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #page-concursos .taf-produto-selo {
+    align-self: flex-start;
+    padding: 4px 9px;
+    border: 1px solid var(--vermelho);
+    border-radius: 999px;
+    color: var(--vermelho);
+    background: color-mix(in srgb, var(--vermelho) 10%, transparent);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  #page-concursos .taf-produto-conteudo strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: var(--text-main);
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+  #page-concursos .taf-produto-conteudo p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  #page-concursos .taf-produto-cta {
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--vermelho), var(--vermelho-escuro));
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 620px) {
+    #page-concursos .taf-produto-card {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 14px;
+    }
+
+    #page-concursos .taf-produto-imagem img {
+      height: auto;
+      max-height: 240px;
+    }
+  }
+
 </style>
 <script>
 /* =======================================================
@@ -6565,6 +6688,18 @@ function carregarConcursos() {
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
       ${c.site ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : ''}
     </div>
+
+    <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="sponsored noopener noreferrer" aria-label="Ver barra fixa para porta na Shopee, produto útil para treino de TAF">
+      <div class="taf-produto-imagem" aria-hidden="true">
+        <img src="barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa01.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa01.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa01.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa01.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
+      </div>
+      <div class="taf-produto-conteudo">
+        <span class="taf-produto-selo">Produto útil para o TAF</span>
+        <strong>Barra fixa para porta</strong>
+        <p>Ajuda o candidato a treinar em casa um dos exercícios que mais reprovam no TAF. Com constância, a barra fortalece costas, braços, pegada e resistência, facilitando a evolução para cumprir as repetições exigidas nos testes físicos das polícias.</p>
+        <span class="taf-produto-cta">Comprar</span>
+      </div>
+    </a>
   `;
 }
 
