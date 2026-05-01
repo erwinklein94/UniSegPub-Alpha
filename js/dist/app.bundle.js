@@ -1,7 +1,3 @@
-/* UniSegPub app bundle - gerado a partir dos fontes organizados. */
-
-
-/* ===== js/data/parametros-cargos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -829,11 +825,6 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
-
-;
-
-
-/* ===== js/data/policia-penal.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1179,11 +1170,11 @@ const POLICIAS_PENAIS_INFO = {
     nome: 'Polícia Penal do Estado do Acre',
     uf: 'Acre',
     criacao: 'EC 104/2019 · IAPEN/AC · Polícia Penal do Acre',
-    marco: 'O concurso SEAD/IAPEN 2023 tratou expressamente do IAPEN/AC e da Polícia Penal do Acre, com resultado final/homologação publicados em 2025 e nomeações posteriores.',
+    marco: 'O edital SEAD/IAPEN 001/2023 tratou expressamente do IAPEN/AC e da Polícia Penal do Acre, com 329 vagas totais, incluindo 261 para Agente de Polícia Penal, e atos de resultado/homologação publicados posteriormente.',
     orgao: 'Instituto de Administração Penitenciária do Acre (IAPEN/AC) / Secretaria de Estado de Justiça e Segurança Pública (SEJUSP/AC)',
-    direcao: 'Marcos Frank Costa — Presidente do IAPEN/AC',
+    direcao: 'Marcos Frank Costa e Silva — Presidente do IAPEN/AC',
     subordinacao: 'Sistema penitenciário estadual do Acre, com atuação em segurança prisional, custódia, escoltas, controle, disciplina, monitoramento e execução penal.',
-    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 261 vagas de Agente de Polícia Penal; 170 policiais penais nomeados em 2025',
+    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 329 vagas totais, incluindo 261 para Agente de Polícia Penal; efetivo real deve ser conferido no IAPEN/AC e atos de nomeação' ,
     reservaLabel: 'Inativos: conferir Acreprevidência e atos do IAPEN/AC',
     totalLabel: 'Sistema em reforço após curso de formação e nomeações de 2025',
     relacaoLabel: 'Relação depende do efetivo ativo consolidado pelo IAPEN/AC',
@@ -1197,13 +1188,13 @@ const POLICIAS_PENAIS_INFO = {
     saude: 'Conferir IAPEN/AC, SEAD/AC, Acreprevidência e normas estaduais de assistência ao servidor.',
     previdencia: 'Regime próprio estadual/Acreprevidência; aposentadoria policial, transições e abono de permanência exigem análise individual.',
     concurso: {
-      vagas: 'Edital 001/2023 SEAD/IAPEN: 261 vagas para Agente de Polícia Penal, além de cargos administrativos e de nível superior do IAPEN/AC.',
+      vagas: 'Edital 001/2023 SEAD/IAPEN: 329 vagas totais, sendo 261 para Agente de Polícia Penal e as demais para cargos administrativos/superiores do IAPEN/AC.',
       salario: 'Agente de Polícia Penal: R$ 4.366,60 no edital 2023; cargos de apoio tinham remunerações próprias no mesmo edital.',
       banca: 'IBFC',
       escolaridade: 'Superior completo e CNH B para Agente de Polícia Penal; requisitos específicos para os demais cargos.'
     },
     associacaoBusca: 'associação ou sindicato dos policiais penais do Acre',
-    fonte: 'SEAD/IAPEN/AC — Edital 001/2023, publicações de homologação/curso de formação 2025; Portal do Estado do Acre — Lei 2.180/IAPEN',
+    fonte: 'SEAD/IAPEN/AC — Edital 001/2023 e publicações posteriores; Portal do Estado do Acre — Lei 2.180/IAPEN e tabelas salariais' ,
     url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/',
     atualizado: 'Atualizado em 01/05/2026'
   }
@@ -1619,26 +1610,24 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
-
-;
-
-
-/* ===== js/data/bases-conteudo.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
 const ACOES_JUDICIAIS = {
   pmac: [
     { titulo: 'PMAC — sexta-parte e adicionais por tempo de serviço', status: 'Verificar ficha individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir se sexta-parte, adicional por tempo de serviço e reflexos foram implantados corretamente após o cumprimento dos requisitos legais e se a base usada no contracheque corresponde à legislação estadual.', base: 'LC AC 39/1993, LC AC 164/2006 e tabela remuneratória estadual; depende de histórico funcional e ficha financeira.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
-    { titulo: 'PMAC — serviço complementar, localização especial e chefia', status: 'Depende de escala/designação', ano: 'Tema de conferência', tipo: 'individual', desc: 'Pode haver discussão quando houver serviço complementar, lotação especial, designação de chefia ou ato funcional formal com pagamento ausente, incompleto ou calculado em base divergente.', base: 'Tabela PMAC/CBMAC e normas estaduais de vantagens; exige ordem de serviço, boletins, escalas e contracheques.', fonte: 'Portal do Estado do Acre — tabela LC 164', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+    { titulo: 'PMAC — serviço complementar, localização especial e chefia', status: 'Depende de escala/designação', ano: 'Tema de conferência', tipo: 'individual', desc: 'Pode haver discussão quando houver serviço complementar, lotação especial, designação de chefia ou ato funcional formal com pagamento ausente, incompleto ou calculado em base divergente.', base: 'Tabela PMAC/CBMAC e normas estaduais de vantagens; exige ordem de serviço, boletins, escalas e contracheques.', fonte: 'Portal do Estado do Acre — tabela LC 164', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PMAC — reserva, reforma e abono de permanência', status: 'Análise previdenciária individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir regra aplicada, data de ingresso, idade, tempo militar, tempo de contribuição, paridade/integralidade quando cabível, reforma por incapacidade e eventual abono de permanência.', base: 'Constituição Federal, EC 103/2019, normas estaduais, Acreprevidência e ficha funcional.', fonte: 'Acreprevidência / Portal do Estado do Acre', fonteUrl: 'https://estado.ac.gov.br/', atualizado: 'Maio/2026' }
   ],
   pcac: [
     { titulo: 'PCAC — titulação e progressão por classe', status: 'Conferir cargo e classe', ano: 'Tema permanente', tipo: 'individual', desc: 'Verificar enquadramento na classe correta e pagamento de titulação, progressão e vantagens pessoais para Delegado, Perito, Médico-Legista, Agente, Escrivão, Papiloscopista e Auxiliar de Necropsia.', base: 'LC AC 303/2015, Lei AC 3.107/2015, Lei AC 3.228/2017 e tabelas salariais oficiais.', fonte: 'Portal do Estado do Acre — tabelas PCAC', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
-    { titulo: 'PCAC — serviço complementar e vantagens absorvidas', status: 'Análise por contracheque', ano: 'Tema de conferência', tipo: 'individual', desc: 'As tabelas indicam serviço complementar e regras de absorção de vantagens. A ação só deve ser cogitada após comparar lei, ato funcional, classe, cargo, fichas financeiras e rubricas efetivamente pagas.', base: 'Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015 e normas remuneratórias da PCAC.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+    { titulo: 'PCAC — serviço complementar e vantagens absorvidas', status: 'Análise por contracheque', ano: 'Tema de conferência', tipo: 'individual', desc: 'As tabelas indicam serviço complementar e regras de absorção de vantagens. A ação só deve ser cogitada após comparar lei, ato funcional, classe, cargo, fichas financeiras e rubricas efetivamente pagas.', base: 'Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015 e normas remuneratórias da PCAC.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PCAC — aposentadoria policial, paridade e abono', status: 'Verificar regra individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Policiais civis devem conferir regra de aposentadoria policial, transições, tempo no cargo, idade, ingresso anterior à EC 103/2019, abono de permanência e cálculo aplicado pelo regime próprio.', base: 'Lei Orgânica Nacional das Polícias Civis, EC 103/2019, legislação estadual do Acre e Acreprevidência.', fonte: 'Acreprevidência / PCAC / Portal do Estado do Acre', fonteUrl: 'https://estado.ac.gov.br/', atualizado: 'Maio/2026' }
   ],
   ppac: [
     { titulo: 'PPAC — enquadramento, posse e nomeações do concurso IAPEN 2023', status: 'Acompanhar atos oficiais', ano: '2023–2025', tipo: 'coletivo/individual', desc: 'Para aprovados e nomeados, conferir ordem de classificação, convocação, posse, lotação, curso de formação e eventuais efeitos financeiros conforme atos publicados pela SEAD/IAPEN.', base: 'Edital SEAD/IAPEN 001/2023, homologação de 2025 e atos de nomeação/posse.', fonte: 'SEAD/AC — editais IAPEN', fonteUrl: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/', atualizado: 'Maio/2026' },
-    { titulo: 'PPAC — risco de vida, etapa alimentação, auxílio saúde e titulação', status: 'Verificar cargo/rubrica', ano: 'Tema permanente', tipo: 'individual', desc: 'A tabela do IAPEN e o edital indicam vantagens específicas, mas o cálculo depende do cargo, legislação vigente, lotação, jornada, contracheque e eventuais atos administrativos.', base: 'Lei AC 2.180/IAPEN, LC AC 392/2021, edital SEAD/IAPEN 2023 e contracheques.', fonte: 'Portal do Estado do Acre e SEAD/IAPEN', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+    { titulo: 'PPAC — risco de vida, etapa alimentação, auxílio saúde e titulação', status: 'Verificar cargo/rubrica', ano: 'Tema permanente', tipo: 'individual', desc: 'A tabela do IAPEN e o edital indicam vantagens específicas, mas o cálculo depende do cargo, legislação vigente, lotação, jornada, contracheque e eventuais atos administrativos.', base: 'Lei AC 2.180/IAPEN, LC AC 392/2021, edital SEAD/IAPEN 2023 e contracheques.', fonte: 'Portal do Estado do Acre e SEAD/IAPEN', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PPAC — aposentadoria policial e abono de permanência', status: 'Verificar regra individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir data de ingresso, tempo no cargo, tempo policial, idade, regra de transição, contribuição previdenciária e eventual abono de permanência.', base: 'EC 104/2019, EC 103/2019, normas estaduais, Acreprevidência e legislação da Polícia Penal/IAPEN.', fonte: 'Acreprevidência / SEAD/IAPEN', fonteUrl: 'https://estado.ac.gov.br/', atualizado: 'Maio/2026' }
   ],
   pmesp: [
     { titulo: "Quinquênio e sexta-parte — base de cálculo", status: "Verificar caso a caso", ano: "Tema recorrente", tipo: "individual", desc: "Discussão sobre a base de cálculo dos adicionais temporais. Exige análise do holerite, verba discutida, período cobrado e entendimento judicial atual.", base: "Constituição do Estado de SP, art. 129; conferir ficha financeira e decisões recentes da carreira.", fonte: "Constituição do Estado de São Paulo", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/constituicao/1989/constituicao-0-05.10.1989.html", atualizado: "Abril/2026" },
@@ -1955,14 +1944,14 @@ const CONCURSOS = {
     estagio: 'Conferir estatuto e edital.',
     validade: 'A definir no edital.',
     previsao: 'Governo anunciou novo concurso PCAC em abril de 2026; edital e banca ainda devem ser acompanhados nos canais oficiais.',
-    site: 'https://agencia.ac.gov.br/'
+    site: 'https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/'
   },
   ppac: {
     edital: 'IAPEN/PPAC — Edital nº 001/2023 SEAD/IAPEN — Agente de Polícia Penal',
     salario: 'Agente de Polícia Penal: R$ 4.366,60, 40h semanais, dedicação exclusiva e escala.',
-    vagas: '261 vagas para Agente de Polícia Penal, além de cargos de apoio do IAPEN/AC',
+    vagas: '329 vagas totais no edital, sendo 261 para Agente de Polícia Penal e as demais para cargos administrativos/superiores do IAPEN/AC',
     cotas: 'Conferir edital SEAD/IAPEN 001/2023',
-    idade: 'Conferir requisitos do edital',
+    idade: 'Agente de Polícia Penal: entre 18 e 55 anos na inscrição, conforme edital; demais cargos exigem conferência específica.',
     escolaridade: 'Superior completo e CNH categoria B até o curso de formação para Agente de Polícia Penal.',
     materias: 'Língua Portuguesa, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Execução Penal, Direitos Humanos e legislação específica conforme edital.',
     banca: 'IBFC',
@@ -1970,7 +1959,7 @@ const CONCURSOS = {
     etapas: 'Prova objetiva, prova discursiva, títulos, TAF, avaliação psicológica, avaliação médica, investigação social e curso de formação.',
     cfsd: 'Curso de formação com convocações e publicações pela SEAD/IAPEN.',
     estagio: 'Conferir LC estadual, edital e atos de posse.',
-    validade: 'Resultado final/homologação publicados em 2025; acompanhar prorrogação, nomeações e atos oficiais.',
+    validade: 'Edital prevê validade de 2 anos após a homologação do resultado final, prorrogável uma vez por igual período; acompanhar atos oficiais.',
     previsao: 'Concurso 2023 teve resultado/homologação em 2025 e nomeações posteriores; acompanhar novas convocações e eventual novo certame.',
     site: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/'
   },
@@ -2327,11 +2316,6 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
-
-;
-
-
-/* ===== js/ui/navegacao-ui.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2586,11 +2570,6 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
-
-;
-
-
-/* ===== js/services/remuneracao.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3199,11 +3178,6 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
-
-;
-
-
-/* ===== js/ui/header-estados.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3481,67 +3455,1792 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
 
 
 const HEADER_INSTITUICOES_RESUMO = {
-  pmac: {
-    nome: 'Polícia Militar do Acre', sigla: 'PMAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Militar',
-    criacao: '1916 · instituição centenária', marco: 'A PMAC completou 110 anos em 2026; a data institucional é celebrada em maio.',
-    ativaLabel: 'Efetivo: conferir PMAC/Portal da Transparência', reservaLabel: 'Reserva/reforma: conferir Acreprevidência e atos estaduais', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
-    populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral',
-    ingresso: 'Concurso público, curso de formação, TAF, exames, investigação social e requisitos específicos do edital.',
-    remuneracao: 'Tabela PMAC/CBMAC cadastrada com total bruto oficial de julho/2018; edital PMAC 2023 indicou R$ 8.129,55 para Aluno Oficial e R$ 10.423,73 para 2º Tenente Estagiário de Saúde.',
-    fonte: 'IBGE, Governadoria/PMAC, Portal do Estado do Acre e Edital FGV PMAC 2023', atualizado: 'Atualizado em 01/05/2026'
+  "pmesp": {
+    "nome": "Polícia Militar de São Paulo",
+    "sigla": "PMESP",
+    "estado": "São Paulo",
+    "estadoSigla": "SP",
+    "tipo": "Polícia Militar",
+    "criacao": "15/12/1831",
+    "ativa": 80037,
+    "ativaLabel": "80.037",
+    "reserva": 90000,
+    "reservaLabel": "90.000",
+    "femininas": 10405,
+    "femininasLabel": "10.405 · estimado",
+    "populacao": 46081801,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 576 hab. · 0,174%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Tarcísio de Freitas",
+    "comando": "Cel PM José Augusto Coutinho — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
   },
-  pcac: {
-    nome: 'Polícia Civil do Acre', sigla: 'PCAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Civil',
-    criacao: 'Órgão estadual de polícia judiciária', marco: 'Em 2026, o Governo do Acre anunciou Pedro Paulo Buzolin como Delegado-Geral e novo concurso PCAC com 139 vagas.',
-    ativaLabel: 'Efetivo: conferir PCAC/Portal da Transparência', reservaLabel: 'Inativos: conferir Acreprevidência', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
-    populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Pedro Paulo Buzolin — Delegado-Geral da Polícia Civil do Acre',
-    ingresso: 'Concurso público conforme edital; anúncio de 2026 prevê Delegado, Oficial Investigador de Polícia e Perito.',
-    remuneracao: 'Tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais da PCAC, com alertas para atualização por lei e contracheque.',
-    fonte: 'Agência de Notícias do Acre, Portal do Estado do Acre e tabelas salariais PCAC', atualizado: 'Atualizado em 01/05/2026'
+  "pcsp": {
+    "nome": "Polícia Civil de São Paulo",
+    "sigla": "PCSP",
+    "estado": "São Paulo",
+    "estadoSigla": "SP",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1841",
+    "ativa": 21089,
+    "ativaLabel": "21.089",
+    "reserva": 35000,
+    "reservaLabel": "35.000",
+    "femininas": 5483,
+    "femininasLabel": "5.483 · estimado",
+    "populacao": 46081801,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.185 hab. · 0,046%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Tarcísio de Freitas",
+    "comando": "Delegado Artur José Dian — Delegado-Geral de Polícia",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
   },
-  ppac: {
-    nome: 'Polícia Penal do Acre', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
-    criacao: POLICIAS_PENAIS_INFO.ppac.criacao, marco: POLICIAS_PENAIS_INFO.ppac.marco,
-    ativaLabel: POLICIAS_PENAIS_INFO.ppac.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppac.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppac.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppac.relacaoLabel,
-    populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: POLICIAS_PENAIS_INFO.ppac.direcao,
-    ingresso: POLICIAS_PENAIS_INFO.ppac.ingresso,
-    remuneracao: POLICIAS_PENAIS_INFO.ppac.remuneracao,
-    fonte: POLICIAS_PENAIS_INFO.ppac.fonte, atualizado: POLICIAS_PENAIS_INFO.ppac.atualizado
+  "ppsp": {
+    "nome": "Polícia Penal de São Paulo",
+    "sigla": "PPSP",
+    "estado": "São Paulo",
+    "estadoSigla": "SP",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 24758,
+    "ativaLabel": "24.758",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 2926,
+    "femininasLabel": "2.926",
+    "populacao": 213401,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 9 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Tarcísio de Freitas",
+    "comando": "Rodrigo Santos Andrade — Diretor-Geral da Polícia Penal/SP",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
   },
-  pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },
-  pmerj: { criacao: '13/05/1809', ativa: 43000, reserva: 40000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcerj: { criacao: 'Origem histórica: 1808', ativa: 9000, reserva: 10000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Delegado Delmir Gouveia — Secretário de Estado de Polícia Civil', atualizado: 'Atualizado em 28/04/2026' },
-  pmmg:  { criacao: '09/06/1775', ativa: 40000, reserva: 45000, populacao: 21393441, governador: 'Mateus Simões', comando: 'Cel PM Carlos Frederico Otoni Garcia — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcmg:  { criacao: 'Origem histórica: 1891', ativa: 10000, reserva: 11000, populacao: 21393441, governador: 'Mateus Simões', comando: 'Delegada-Geral Letícia Baptista Gamboge Reis — Chefe da Polícia Civil', atualizado: 'Atualizado em 28/04/2026' },
-  pmba:  { criacao: '17/02/1825', ativa: 30000, reserva: 27000, populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'Cel PM Antônio Carlos Silva Magalhães — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcba:  { criacao: 'Origem histórica: 1833', ativa: 6000, reserva: 7000, populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'Delegado André Viana — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pmpr:  { criacao: '10/08/1854', ativa: 18000, reserva: 20000, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Cel PM Jefferson Silva — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcpr:  { criacao: 'Origem histórica: 1853', ativa: 5000, reserva: 6000, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Delegado Silvio Jacob Rockembach — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pmrs:  { criacao: '18/11/1837', ativa: 18000, reserva: 23000, populacao: 11233263, governador: 'Eduardo Leite', comando: 'Cel PM Luigi Gustavo Soares Pereira — Comandante-Geral da Brigada Militar', atualizado: 'Atualizado em 28/04/2026' },
-  pcrs:  { criacao: 'Origem histórica: 1841', ativa: 5500, reserva: 7000, populacao: 11233263, governador: 'Eduardo Leite', comando: 'Delegado Heraldo Chaves Guerreiro — Chefe de Polícia', atualizado: 'Atualizado em 28/04/2026' },
-  pmsc:  { criacao: '05/05/1835', ativa: 10500, reserva: 12000, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Cel PM Emerson Fernandes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcsc:  { criacao: 'Origem histórica: 1812', ativa: 3500, reserva: 4500, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Delegado Ulisses Gabriel — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pmes:  { criacao: '06/04/1835', ativa: 8000, reserva: 7000, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Cel PM Ríodo Lopes Rubim — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pces:  { criacao: 'Origem histórica: 1896', ativa: 2500, reserva: 3500, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Delegado-Geral Jordano Bruno — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppsp: { criacao: 'EC 104/2019 · EC SP 51/2022 · LC SP 1.416/2024', ativaLabel: 'Carreira em implantação · concurso SAP/2025 com 1.100 vagas', reservaLabel: 'Inativos: SPPREV/SAP · quadro de origem em transição', totalLabel: 'Órgão permanente de segurança pública da SAP/SP', relacaoLabel: 'Relação ativa será consolidada após provimento oficial do quadro', populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Rodrigo Santos Andrade — Diretor-Geral da Polícia Penal/SP', atualizado: 'Atualizado em 28/04/2026' },
-  pprj: { criacao: 'EC 104/2019 · Secretaria de Estado de Polícia Penal/SEAP-RJ', ativaLabel: 'Ativo: conferir SEAP/RJ · operação 2026 mobilizou 2.355 policiais penais', reservaLabel: 'Inativos: RioPrevidência/SEAP-RJ', totalLabel: 'Carreira de Inspetor de Polícia Penal · concurso/renovação em acompanhamento', relacaoLabel: 'Relação depende do efetivo ativo consolidado pela SEAP/RJ', populacao: 17223547, governador: 'Ricardo Couto — Governador em exercício', comando: 'Secretaria de Estado de Polícia Penal do Rio de Janeiro — SEAP/SEPPEN', atualizado: 'Atualizado em 28/04/2026' },
-  ppmg: { criacao: 'EC 104/2019 · carreira estadual da Polícia Penal/MG', ativaLabel: 'Concurso SEJUSP/MG 2025: 1.178 vagas · carreira em expansão', reservaLabel: 'Inativos: IPSEMG/regime estadual', totalLabel: 'Sistema prisional mineiro reforçado por nomeações recentes', relacaoLabel: 'Relação depende de efetivo ativo consolidado pela SEJUSP/MG', populacao: 21393441, governador: 'Mateus Simões', comando: 'Leonardo Mattos Alves Badaró — Diretor-Geral do Departamento Penitenciário/MG', atualizado: 'Atualizado em 28/04/2026' },
-  ppba: { criacao: 'EC 104/2019 · estrutura estadual da SEAP/BA', ativaLabel: 'Efetivo oficial: conferir SEAP/BA · GEOP e unidades prisionais em operação', reservaLabel: 'Inativos: Funprev/BA', totalLabel: 'Sistema prisional baiano com ACADEPPEN, GEOP e segurança prisional', relacaoLabel: 'Relação depende de efetivo ativo consolidado pela SEAP/BA', populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'José Castro — Secretário da SEAP/BA · Luiz Cláudio — Superintendência · Archimedes Neto — Segurança Prisional', atualizado: 'Atualizado em 28/04/2026' },
-  pppr: { criacao: 'EC 104/2019 · QPPP modernizado pela LC PR 245/2022 e LC PR 283/2025', ativaLabel: '429 novos policiais penais nomeados em 2025', reservaLabel: 'Inativos: ParanáPrevidência', totalLabel: '1.181 promoções autorizadas após reestruturação do QPPP', relacaoLabel: 'Relação depende do efetivo ativo consolidado pela Polícia Penal/PR', populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Ananda Chalegre dos Santos — Diretora-Geral da Polícia Penal/PR', atualizado: 'Atualizado em 28/04/2026' },
-  pprs: { criacao: 'EC 104/2019 · EC RS 82/2022 · LC RS 16.449/2025', ativaLabel: 'Quadro legal: 6.938 cargos de Policial Penal', reservaLabel: 'Inativos: IPE Prev/RS', totalLabel: '5.364 nomeações desde 2019 · 643 novos servidores em formação em 2026', relacaoLabel: 'Relação aproximada depende do provimento efetivo dos cargos', populacao: 11233263, governador: 'Eduardo Leite', comando: 'Sergio Dalcol — Superintendente da Polícia Penal/RS · Jorge Pozzobom — Secretário da SSPS', atualizado: 'Atualizado em 28/04/2026' },
-  ppsc: { criacao: 'EC 104/2019 · EC SC 80/2020 · LC SC 774/2021', ativa: 4809, ativaLabel: '4.809 profissionais informados pelo Governo/SC', reservaLabel: 'Inativos: IPREV/SC', totalLabel: '1.644 nomeações informadas em 2025 · carreira estruturada em 8 classes', relacaoLabel: '1 profissional / 1.703 hab. · cálculo aproximado com efetivo divulgado', populacao: 8187029, governador: 'Jorginho Mello', comando: 'Maicon Ronald Alves — Diretor-Geral do Departamento de Polícia Penal/SC', atualizado: 'Atualizado em 28/04/2026' },
-  ppes: { criacao: 'EC 104/2019 · LC ES 1.059/2023 · LC ES 1.061/2023', ativaLabel: 'Meta institucional: 3.300 policiais penais concursados · concurso com 600 vagas', reservaLabel: 'Inativos: IPAJM/ES', totalLabel: 'Órgão próprio vinculado à SEJUS/ES · carreira em consolidação', relacaoLabel: 'Relação aproximada depende do provimento e da lotação efetiva', populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'José Franco Morais Junior — Diretor-Geral da Polícia Penal/ES', atualizado: 'Atualizado em 28/04/2026' },
-  pmms: { criacao: '05/09/1835 · MS estruturada em 1979', ativa: 10602, ativaLabel: 'Efetivo legal: 10.602 PMs', reservaLabel: 'Reserva/inativos: AGEPREV/MS', totalLabel: 'Ativo legal 10.602 · reserva à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Cel QOPM Renato dos Anjos Garnes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcms: { criacao: 'Abril/1979 · LC MS 114/2005', ativa: 2373, ativaLabel: '2.373 policiais na ativa', reservaLabel: 'Inativos: AGEPREV/MS', totalLabel: '2.373 ativos · inativos à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Delegado Lupérsio Degerone Lúcio — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppms: { criacao: 'EC 104/2019 · EC MS 88/2021 · Lei MS 5.846/2022', ativa: 1903, ativaLabel: '≈ 1.903 servidores ativos AGEPEN/PP', reservaLabel: 'Inativos: AGEPREV/MS', totalLabel: 'Ativo informado ≈ 1.903 · inativos à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: POLICIAS_PENAIS_INFO.ppms.direcao, atualizado: POLICIAS_PENAIS_INFO.ppms.atualizado },
-  pmmt: { criacao: '05/09/1835 · LC MT 529/2014', ativa: 7275, ativaLabel: 'Ativo informado: 7.275 PMs', reservaLabel: 'Reserva/inativos: MTPREV/MT', totalLabel: 'Efetivo legal previsto: 12.495 PMs', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Cel PM Claudio Fernando Carneiro Tinoco — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pcmt: { criacao: 'Lei MT 7.935/2003 · LC MT 407/2010', ativa: 2983, ativaLabel: 'Ativo informado: 2.983 policiais civis', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: 'Efetivo legal: 5.600 cargos PJC', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Delegada Daniela Silveira Maidel — Delegada-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppmt: { criacao: 'EC 104/2019 · SEJUS/MT · Polícia Penal MT', ativa: 2620, ativaLabel: 'Ativo informado: 2.620 policiais penais', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: '2.620 ativos · inativos à parte', populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado }
+  "pmerj": {
+    "nome": "Polícia Militar do Rio de Janeiro",
+    "sigla": "PMERJ",
+    "estado": "Rio de Janeiro",
+    "estadoSigla": "RJ",
+    "tipo": "Polícia Militar",
+    "criacao": "13/05/1809",
+    "ativa": 43362,
+    "ativaLabel": "43.362",
+    "reserva": 40000,
+    "reservaLabel": "40.000",
+    "femininas": 5637,
+    "femininasLabel": "5.637 · estimado",
+    "populacao": 17223547,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 397 hab. · 0,252%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Ricardo Couto — Governador em exercício",
+    "comando": "Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcerj": {
+    "nome": "Polícia Civil do Rio de Janeiro",
+    "sigla": "PCERJ",
+    "estado": "Rio de Janeiro",
+    "estadoSigla": "RJ",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1808",
+    "ativa": 6694,
+    "ativaLabel": "6.694",
+    "reserva": 10000,
+    "reservaLabel": "10.000",
+    "femininas": 1740,
+    "femininasLabel": "1.740 · estimado",
+    "populacao": 17223547,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.573 hab. · 0,039%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Ricardo Couto — Governador em exercício",
+    "comando": "Delegado Delmir Gouveia — Secretário de Estado de Polícia Civil",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pprj": {
+    "nome": "Polícia Penal do Rio de Janeiro",
+    "sigla": "PPRJ",
+    "estado": "Rio de Janeiro",
+    "estadoSigla": "RJ",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2260,
+    "ativaLabel": "2.260",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 359,
+    "femininasLabel": "359",
+    "populacao": 46354,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 21 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Ricardo Couto — Governador em exercício",
+    "comando": "Secretaria de Estado de Polícia Penal do Rio de Janeiro — SEAP/SEPPEN",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmmg": {
+    "nome": "Polícia Militar de Minas Gerais",
+    "sigla": "PMMG",
+    "estado": "Minas Gerais",
+    "estadoSigla": "MG",
+    "tipo": "Polícia Militar",
+    "criacao": "09/06/1775",
+    "ativa": 36362,
+    "ativaLabel": "36.362",
+    "reserva": 45000,
+    "reservaLabel": "45.000",
+    "femininas": 4727,
+    "femininasLabel": "4.727 · estimado",
+    "populacao": 21393441,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 588 hab. · 0,170%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Mateus Simões",
+    "comando": "Cel PM Carlos Frederico Otoni Garcia — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcmg": {
+    "nome": "Polícia Civil de Minas Gerais",
+    "sigla": "PCMG",
+    "estado": "Minas Gerais",
+    "estadoSigla": "MG",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1891",
+    "ativa": 8957,
+    "ativaLabel": "8.957",
+    "reserva": 11000,
+    "reservaLabel": "11.000",
+    "femininas": 2329,
+    "femininasLabel": "2.329 · estimado",
+    "populacao": 21393441,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.388 hab. · 0,042%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Mateus Simões",
+    "comando": "Delegada-Geral Letícia Baptista Gamboge Reis — Chefe da Polícia Civil",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppmg": {
+    "nome": "Polícia Penal de Minas Gerais",
+    "sigla": "PPMG",
+    "estado": "Minas Gerais",
+    "estadoSigla": "MG",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 15045,
+    "ativaLabel": "15.045",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 2337,
+    "femininasLabel": "2.337",
+    "populacao": 72149,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 5 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Mateus Simões",
+    "comando": "Leonardo Mattos Alves Badaró — Diretor-Geral do Departamento Penitenciário/MG",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmba": {
+    "nome": "Polícia Militar da Bahia",
+    "sigla": "PMBA",
+    "estado": "Bahia",
+    "estadoSigla": "BA",
+    "tipo": "Polícia Militar",
+    "criacao": "17/02/1825",
+    "ativa": 29887,
+    "ativaLabel": "29.887",
+    "reserva": 27000,
+    "reservaLabel": "27.000",
+    "femininas": 3885,
+    "femininasLabel": "3.885 · estimado",
+    "populacao": 14870907,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 498 hab. · 0,201%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Jerônimo Rodrigues",
+    "comando": "Cel PM Antônio Carlos Silva Magalhães — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcba": {
+    "nome": "Polícia Civil da Bahia",
+    "sigla": "PCBA",
+    "estado": "Bahia",
+    "estadoSigla": "BA",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1833",
+    "ativa": 4370,
+    "ativaLabel": "4.370",
+    "reserva": 7000,
+    "reservaLabel": "7.000",
+    "femininas": 1136,
+    "femininasLabel": "1.136 · estimado",
+    "populacao": 14870907,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 3.403 hab. · 0,029%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Jerônimo Rodrigues",
+    "comando": "Delegado André Viana — Delegado-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppba": {
+    "nome": "Polícia Penal da Bahia",
+    "sigla": "PPBA",
+    "estado": "Bahia",
+    "estadoSigla": "BA",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2706,
+    "ativaLabel": "2.706",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 533,
+    "femininasLabel": "533",
+    "populacao": 15185,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 6 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Jerônimo Rodrigues",
+    "comando": "José Castro — Secretário da SEAP/BA · Luiz Cláudio — Superintendência · Archimedes Neto — Segurança Prisional",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmpr": {
+    "nome": "Polícia Militar do Paraná",
+    "sigla": "PMPR",
+    "estado": "Paraná",
+    "estadoSigla": "PR",
+    "tipo": "Polícia Militar",
+    "criacao": "10/08/1854",
+    "ativa": 17036,
+    "ativaLabel": "17.036",
+    "reserva": 20000,
+    "reservaLabel": "20.000",
+    "femininas": 2215,
+    "femininasLabel": "2.215 · estimado",
+    "populacao": 11890517,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 698 hab. · 0,143%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Carlos Massa Ratinho Junior",
+    "comando": "Cel PM Jefferson Silva — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcpr": {
+    "nome": "Polícia Civil do Paraná",
+    "sigla": "PCPR",
+    "estado": "Paraná",
+    "estadoSigla": "PR",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1853",
+    "ativa": 3716,
+    "ativaLabel": "3.716",
+    "reserva": 6000,
+    "reservaLabel": "6.000",
+    "femininas": 966,
+    "femininasLabel": "966 · estimado",
+    "populacao": 11890517,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 3.200 hab. · 0,031%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Carlos Massa Ratinho Junior",
+    "comando": "Delegado Silvio Jacob Rockembach — Delegado-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pppr": {
+    "nome": "Polícia Penal do Paraná",
+    "sigla": "PPPR",
+    "estado": "Paraná",
+    "estadoSigla": "PR",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 4190,
+    "ativaLabel": "4.190",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 670,
+    "femininasLabel": "670",
+    "populacao": 41743,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 10 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Carlos Massa Ratinho Junior",
+    "comando": "Ananda Chalegre dos Santos — Diretora-Geral da Polícia Penal/PR",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmrs": {
+    "nome": "Brigada Militar do Rio Grande do Sul",
+    "sigla": "PMRS",
+    "estado": "Rio Grande do Sul",
+    "estadoSigla": "RS",
+    "tipo": "Polícia Militar",
+    "criacao": "18/11/1837",
+    "ativa": 17962,
+    "ativaLabel": "17.962",
+    "reserva": 23000,
+    "reservaLabel": "23.000",
+    "femininas": 3772,
+    "femininasLabel": "3.772 · estimado",
+    "populacao": 11233263,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 625 hab. · 0,160%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Eduardo Leite",
+    "comando": "Cel PM Luigi Gustavo Soares Pereira — Comandante-Geral da Brigada Militar",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcrs": {
+    "nome": "Polícia Civil do Rio Grande do Sul",
+    "sigla": "PCRS",
+    "estado": "Rio Grande do Sul",
+    "estadoSigla": "RS",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1841",
+    "ativa": 5711,
+    "ativaLabel": "5.711",
+    "reserva": 7000,
+    "reservaLabel": "7.000",
+    "femininas": 1485,
+    "femininasLabel": "1.485 · estimado",
+    "populacao": 11233263,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.967 hab. · 0,051%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Eduardo Leite",
+    "comando": "Delegado Heraldo Chaves Guerreiro — Chefe de Polícia",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pprs": {
+    "nome": "Polícia Penal do Rio Grande do Sul",
+    "sigla": "PPRS",
+    "estado": "Rio Grande do Sul",
+    "estadoSigla": "RS",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 4881,
+    "ativaLabel": "4.881",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 1509,
+    "femininasLabel": "1.509",
+    "populacao": 38519,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 8 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Eduardo Leite",
+    "comando": "Sergio Dalcol — Superintendente da Polícia Penal/RS · Jorge Pozzobom — Secretário da SSPS",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmsc": {
+    "nome": "Polícia Militar de Santa Catarina",
+    "sigla": "PMSC",
+    "estado": "Santa Catarina",
+    "estadoSigla": "SC",
+    "tipo": "Polícia Militar",
+    "criacao": "05/05/1835",
+    "ativa": 9580,
+    "ativaLabel": "9.580",
+    "reserva": 12000,
+    "reservaLabel": "12.000",
+    "femininas": 1245,
+    "femininasLabel": "1.245 · estimado",
+    "populacao": 8187029,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 855 hab. · 0,117%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Jorginho Mello",
+    "comando": "Cel PM Emerson Fernandes — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcsc": {
+    "nome": "Polícia Civil de Santa Catarina",
+    "sigla": "PCSC",
+    "estado": "Santa Catarina",
+    "estadoSigla": "SC",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1812",
+    "ativa": 3408,
+    "ativaLabel": "3.408",
+    "reserva": 4500,
+    "reservaLabel": "4.500",
+    "femininas": 886,
+    "femininasLabel": "886 · estimado",
+    "populacao": 8187029,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.402 hab. · 0,042%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Jorginho Mello",
+    "comando": "Delegado Ulisses Gabriel — Delegado-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppsc": {
+    "nome": "Polícia Penal de Santa Catarina",
+    "sigla": "PPSC",
+    "estado": "Santa Catarina",
+    "estadoSigla": "SC",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 3487,
+    "ativaLabel": "3.487",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 754,
+    "femininasLabel": "754",
+    "populacao": 28975,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 8 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Jorginho Mello",
+    "comando": "Maicon Ronald Alves — Diretor-Geral do Departamento de Polícia Penal/SC",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmes": {
+    "nome": "Polícia Militar do Espírito Santo",
+    "sigla": "PMES",
+    "estado": "Espírito Santo",
+    "estadoSigla": "ES",
+    "tipo": "Polícia Militar",
+    "criacao": "06/04/1835",
+    "ativa": 7890,
+    "ativaLabel": "7.890",
+    "reserva": 7000,
+    "reservaLabel": "7.000",
+    "femininas": 1026,
+    "femininasLabel": "1.026 · estimado",
+    "populacao": 4126854,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 523 hab. · 0,191%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Ricardo Ferraço",
+    "comando": "Cel PM Ríodo Lopes Rubim — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pces": {
+    "nome": "Polícia Civil do Espírito Santo",
+    "sigla": "PCES",
+    "estado": "Espírito Santo",
+    "estadoSigla": "ES",
+    "tipo": "Polícia Civil",
+    "criacao": "Origem histórica: 1896",
+    "ativa": 1867,
+    "ativaLabel": "1.867",
+    "reserva": 3500,
+    "reservaLabel": "3.500",
+    "femininas": 485,
+    "femininasLabel": "485 · estimado",
+    "populacao": 4126854,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.210 hab. · 0,045%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Ricardo Ferraço",
+    "comando": "Delegado-Geral Jordano Bruno — Delegado-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppes": {
+    "nome": "Polícia Penal do Espírito Santo",
+    "sigla": "PPES",
+    "estado": "Espírito Santo",
+    "estadoSigla": "ES",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2836,
+    "ativaLabel": "2.836",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 678,
+    "femininasLabel": "678",
+    "populacao": 25021,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 9 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Ricardo Ferraço",
+    "comando": "José Franco Morais Junior — Diretor-Geral da Polícia Penal/ES",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmms": {
+    "nome": "Polícia Militar de Mato Grosso do Sul",
+    "sigla": "PMMS",
+    "estado": "Mato Grosso do Sul",
+    "estadoSigla": "MS",
+    "tipo": "Polícia Militar",
+    "criacao": "05/09/1835 · estrutura de MS em 1979",
+    "ativa": 5237,
+    "ativaLabel": "5.237",
+    "reserva": 5499,
+    "reservaLabel": "5.499 · estimativa técnica",
+    "femininas": 681,
+    "femininasLabel": "681 · estimado",
+    "populacao": 2924631,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 558 hab. · 0,179%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Eduardo Riedel",
+    "comando": "Cel QOPM Renato dos Anjos Garnes — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcms": {
+    "nome": "Polícia Civil de Mato Grosso do Sul",
+    "sigla": "PCMS",
+    "estado": "Mato Grosso do Sul",
+    "estadoSigla": "MS",
+    "tipo": "Polícia Civil",
+    "criacao": "Abril/1979 · LC MS 114/2005",
+    "ativa": 1971,
+    "ativaLabel": "1.971",
+    "reserva": 2168,
+    "reservaLabel": "2.168 · estimativa técnica",
+    "femininas": 512,
+    "femininasLabel": "512 · estimado",
+    "populacao": 2924631,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.484 hab. · 0,067%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Eduardo Riedel",
+    "comando": "Delegado Lupérsio Degerone Lúcio — Delegado-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppms": {
+    "nome": "Polícia Penal de Mato Grosso do Sul",
+    "sigla": "PPMS",
+    "estado": "Mato Grosso do Sul",
+    "estadoSigla": "MS",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 1232,
+    "ativaLabel": "1.232",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 428,
+    "femininasLabel": "428",
+    "populacao": 17478,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 14 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Eduardo Riedel",
+    "comando": "Direção da Polícia Penal de Mato Grosso do Sul — AGEPEN/MS",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmmt": {
+    "nome": "Polícia Militar de Mato Grosso",
+    "sigla": "PMMT",
+    "estado": "Mato Grosso",
+    "estadoSigla": "MT",
+    "tipo": "Polícia Militar",
+    "criacao": "05/09/1835",
+    "ativa": 6752,
+    "ativaLabel": "6.752",
+    "reserva": 7090,
+    "reservaLabel": "7.090 · estimativa técnica",
+    "femininas": 608,
+    "femininasLabel": "608 · estimado",
+    "populacao": 3893659,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 577 hab. · 0,173%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Otaviano Pivetta",
+    "comando": "Cel PM Claudio Fernando Carneiro Tinoco — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcmt": {
+    "nome": "Polícia Judiciária Civil de Mato Grosso",
+    "sigla": "PCMT",
+    "estado": "Mato Grosso",
+    "estadoSigla": "MT",
+    "tipo": "Polícia Civil",
+    "criacao": "Lei MT 7.935/2003 · LC MT 407/2010",
+    "ativa": 2887,
+    "ativaLabel": "2.887",
+    "reserva": 3176,
+    "reservaLabel": "3.176 · estimativa técnica",
+    "femininas": 751,
+    "femininasLabel": "751 · estimado",
+    "populacao": 3893659,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.349 hab. · 0,074%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Otaviano Pivetta",
+    "comando": "Delegada Daniela Silveira Maidel — Delegada-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppmt": {
+    "nome": "Polícia Penal de Mato Grosso",
+    "sigla": "PPMT",
+    "estado": "Mato Grosso",
+    "estadoSigla": "MT",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2096,
+    "ativaLabel": "2.096",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 623,
+    "femininasLabel": "623",
+    "populacao": 14770,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 7 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Otaviano Pivetta",
+    "comando": "Direção da Polícia Penal de Mato Grosso — SEJUS/MT",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmac": {
+    "nome": "Polícia Militar do Acre",
+    "sigla": "PMAC",
+    "estado": "Acre",
+    "estadoSigla": "AC",
+    "tipo": "Polícia Militar",
+    "criacao": "1916",
+    "ativa": 2540,
+    "ativaLabel": "2.540",
+    "reserva": 2667,
+    "reservaLabel": "2.667 · estimativa técnica",
+    "femininas": 330,
+    "femininasLabel": "330 · estimado",
+    "populacao": 884372,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 348 hab. · 0,287%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Mailza Assis Cameli",
+    "comando": "Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcac": {
+    "nome": "Polícia Civil do Acre",
+    "sigla": "PCAC",
+    "estado": "Acre",
+    "estadoSigla": "AC",
+    "tipo": "Polícia Civil",
+    "criacao": "Órgão estadual de polícia judiciária · origem republicana",
+    "ativa": 893,
+    "ativaLabel": "893",
+    "reserva": 982,
+    "reservaLabel": "982 · estimativa técnica",
+    "femininas": 232,
+    "femininasLabel": "232 · estimado",
+    "populacao": 884372,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 990 hab. · 0,101%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Mailza Assis Cameli",
+    "comando": "Pedro Paulo Buzolin — Delegado-Geral da Polícia Civil do Acre",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppac": {
+    "nome": "Polícia Penal do Acre",
+    "sigla": "PPAC",
+    "estado": "Acre",
+    "estadoSigla": "AC",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 651,
+    "ativaLabel": "651",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 114,
+    "femininasLabel": "114",
+    "populacao": 5528,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 8 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Mailza Assis Cameli",
+    "comando": "Direção da Polícia Penal do Acre — IAPEN/AC",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmal": {
+    "nome": "Polícia Militar de Alagoas",
+    "sigla": "PMAL",
+    "estado": "Alagoas",
+    "estadoSigla": "AL",
+    "tipo": "Polícia Militar",
+    "criacao": "03/02/1832",
+    "ativa": 6960,
+    "ativaLabel": "6.960",
+    "reserva": 7308,
+    "reservaLabel": "7.308 · estimativa técnica",
+    "femininas": 905,
+    "femininasLabel": "905 · estimado",
+    "populacao": 3220848,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 463 hab. · 0,216%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Paulo Dantas",
+    "comando": "Cel PM Paulo Amorim — Comandante-Geral da PMAL",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcal": {
+    "nome": "Polícia Civil de Alagoas",
+    "sigla": "PCAL",
+    "estado": "Alagoas",
+    "estadoSigla": "AL",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1810,
+    "ativaLabel": "1.810",
+    "reserva": 1991,
+    "reservaLabel": "1.991 · estimativa técnica",
+    "femininas": 471,
+    "femininasLabel": "471 · estimado",
+    "populacao": 3220848,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.779 hab. · 0,056%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Paulo Dantas",
+    "comando": "Delegado Gustavo Xavier — Delegado-Geral da Polícia Civil de Alagoas",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppal": {
+    "nome": "Polícia Penal de Alagoas",
+    "sigla": "PPAL",
+    "estado": "Alagoas",
+    "estadoSigla": "AL",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 508,
+    "ativaLabel": "508",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 153,
+    "femininasLabel": "153",
+    "populacao": 5536,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 11 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Paulo Dantas",
+    "comando": "Diretor/Secretário da PPAL — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmam": {
+    "nome": "Polícia Militar do Amazonas",
+    "sigla": "PMAM",
+    "estado": "Amazonas",
+    "estadoSigla": "AM",
+    "tipo": "Polícia Militar",
+    "criacao": "04/04/1837",
+    "ativa": 8250,
+    "ativaLabel": "8.250",
+    "reserva": 8662,
+    "reservaLabel": "8.662 · estimativa técnica",
+    "femininas": 1072,
+    "femininasLabel": "1.072 · estimado",
+    "populacao": 4321616,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 524 hab. · 0,191%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Roberto Cidade — Governador em exercício",
+    "comando": "Comandante-Geral da PMAM — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcam": {
+    "nome": "Polícia Civil do Amazonas",
+    "sigla": "PCAM",
+    "estado": "Amazonas",
+    "estadoSigla": "AM",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1867,
+    "ativaLabel": "1.867",
+    "reserva": 2054,
+    "reservaLabel": "2.054 · estimativa técnica",
+    "femininas": 485,
+    "femininasLabel": "485 · estimado",
+    "populacao": 4321616,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.315 hab. · 0,043%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Roberto Cidade — Governador em exercício",
+    "comando": "Delegado-Geral da PCAM — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppam": {
+    "nome": "Polícia Penal do Amazonas",
+    "sigla": "PPAM",
+    "estado": "Amazonas",
+    "estadoSigla": "AM",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 1125,
+    "ativaLabel": "1.125",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 159,
+    "femininasLabel": "159",
+    "populacao": 5657,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 5 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Roberto Cidade — Governador em exercício",
+    "comando": "Diretor/Secretário da PPAM — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmap": {
+    "nome": "Polícia Militar do Amapá",
+    "sigla": "PMAP",
+    "estado": "Amapá",
+    "estadoSigla": "AP",
+    "tipo": "Polícia Militar",
+    "criacao": "17/02/1944",
+    "ativa": 3109,
+    "ativaLabel": "3.109",
+    "reserva": 3264,
+    "reservaLabel": "3.264 · estimativa técnica",
+    "femininas": 871,
+    "femininasLabel": "871 · estimado",
+    "populacao": 806517,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 259 hab. · 0,385%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Clécio Luís",
+    "comando": "Comandante-Geral da PMAP — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcap": {
+    "nome": "Polícia Civil do Amapá",
+    "sigla": "PCAP",
+    "estado": "Amapá",
+    "estadoSigla": "AP",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · estrutura estadual",
+    "ativa": 1010,
+    "ativaLabel": "1.010",
+    "reserva": 1111,
+    "reservaLabel": "1.111 · estimativa técnica",
+    "femininas": 263,
+    "femininasLabel": "263 · estimado",
+    "populacao": 806517,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 799 hab. · 0,125%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Clécio Luís",
+    "comando": "Delegado-Geral da PCAP — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppap": {
+    "nome": "Polícia Penal do Amapá",
+    "sigla": "PPAP",
+    "estado": "Amapá",
+    "estadoSigla": "AP",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 767,
+    "ativaLabel": "767",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 216,
+    "femininasLabel": "216",
+    "populacao": 3781,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 5 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Clécio Luís",
+    "comando": "Diretor/Secretário da PPAP — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmce": {
+    "nome": "Polícia Militar do Ceará",
+    "sigla": "PMCE",
+    "estado": "Ceará",
+    "estadoSigla": "CE",
+    "tipo": "Polícia Militar",
+    "criacao": "24/05/1835",
+    "ativa": 22427,
+    "ativaLabel": "22.427",
+    "reserva": 23548,
+    "reservaLabel": "23.548 · estimativa técnica",
+    "femininas": 1346,
+    "femininasLabel": "1.346 · estimado",
+    "populacao": 9268836,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 413 hab. · 0,242%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Elmano de Freitas",
+    "comando": "Comandante-Geral da PMCE — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcce": {
+    "nome": "Polícia Civil do Ceará",
+    "sigla": "PCCE",
+    "estado": "Ceará",
+    "estadoSigla": "CE",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 4149,
+    "ativaLabel": "4.149",
+    "reserva": 4564,
+    "reservaLabel": "4.564 · estimativa técnica",
+    "femininas": 1079,
+    "femininasLabel": "1.079 · estimado",
+    "populacao": 9268836,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.234 hab. · 0,045%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Elmano de Freitas",
+    "comando": "Delegado-Geral da PCCE — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppce": {
+    "nome": "Polícia Penal do Ceará",
+    "sigla": "PPCE",
+    "estado": "Ceará",
+    "estadoSigla": "CE",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2959,
+    "ativaLabel": "2.959",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 555,
+    "femininasLabel": "555",
+    "populacao": 23832,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 8 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Elmano de Freitas",
+    "comando": "Diretor/Secretário da PPCE — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmdf": {
+    "nome": "Polícia Militar do Distrito Federal",
+    "sigla": "PMDF",
+    "estado": "Distrito Federal",
+    "estadoSigla": "DF",
+    "tipo": "Polícia Militar",
+    "criacao": "13/05/1809 · PMDF organizada no DF",
+    "ativa": 10567,
+    "ativaLabel": "10.567",
+    "reserva": 11095,
+    "reservaLabel": "11.095 · estimativa técnica",
+    "femininas": 1374,
+    "femininasLabel": "1.374 · estimado",
+    "populacao": 2996899,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 284 hab. · 0,353%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Celina Leão",
+    "comando": "Comandante-Geral da PMDF — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcdf": {
+    "nome": "Polícia Civil do Distrito Federal",
+    "sigla": "PCDF",
+    "estado": "Distrito Federal",
+    "estadoSigla": "DF",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil do Distrito Federal · estrutura distrital",
+    "ativa": 3440,
+    "ativaLabel": "3.440",
+    "reserva": 3784,
+    "reservaLabel": "3.784 · estimativa técnica",
+    "femininas": 894,
+    "femininasLabel": "894 · estimado",
+    "populacao": 2996899,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 871 hab. · 0,115%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Celina Leão",
+    "comando": "Delegado-Geral da PCDF — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppdf": {
+    "nome": "Polícia Penal do Distrito Federal",
+    "sigla": "PPDF",
+    "estado": "Distrito Federal",
+    "estadoSigla": "DF",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 1523,
+    "ativaLabel": "1.523",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 457,
+    "femininasLabel": "457",
+    "populacao": 16455,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 11 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Celina Leão",
+    "comando": "Diretor/Secretário da PPDF — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmgo": {
+    "nome": "Polícia Militar de Goiás",
+    "sigla": "PMGO",
+    "estado": "Goiás",
+    "estadoSigla": "GO",
+    "tipo": "Polícia Militar",
+    "criacao": "28/07/1858",
+    "ativa": 10987,
+    "ativaLabel": "10.987",
+    "reserva": 11536,
+    "reservaLabel": "11.536 · estimativa técnica",
+    "femininas": 1428,
+    "femininasLabel": "1.428 · estimado",
+    "populacao": 7423629,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 676 hab. · 0,148%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Daniel Vilela",
+    "comando": "Comandante-Geral da PMGO — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcgo": {
+    "nome": "Polícia Civil de Goiás",
+    "sigla": "PCGO",
+    "estado": "Goiás",
+    "estadoSigla": "GO",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 2884,
+    "ativaLabel": "2.884",
+    "reserva": 3172,
+    "reservaLabel": "3.172 · estimativa técnica",
+    "femininas": 750,
+    "femininasLabel": "750 · estimado",
+    "populacao": 7423629,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.574 hab. · 0,039%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Daniel Vilela",
+    "comando": "Delegado-Geral da PCGO — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppgo": {
+    "nome": "Polícia Penal de Goiás",
+    "sigla": "PPGO",
+    "estado": "Goiás",
+    "estadoSigla": "GO",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2517,
+    "ativaLabel": "2.517",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 401,
+    "femininasLabel": "401",
+    "populacao": 18658,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 7 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Daniel Vilela",
+    "comando": "Josimar Pires — Diretor-Geral da Polícia Penal de Goiás",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmma": {
+    "nome": "Polícia Militar do Maranhão",
+    "sigla": "PMMA",
+    "estado": "Maranhão",
+    "estadoSigla": "MA",
+    "tipo": "Polícia Militar",
+    "criacao": "17/06/1836",
+    "ativa": 11022,
+    "ativaLabel": "11.022",
+    "reserva": 11573,
+    "reservaLabel": "11.573 · estimativa técnica",
+    "femininas": 1433,
+    "femininasLabel": "1.433 · estimado",
+    "populacao": 7018211,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 637 hab. · 0,157%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Carlos Brandão Júnior",
+    "comando": "Comandante-Geral da PMMA — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcma": {
+    "nome": "Polícia Civil do Maranhão",
+    "sigla": "PCMA",
+    "estado": "Maranhão",
+    "estadoSigla": "MA",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1782,
+    "ativaLabel": "1.782",
+    "reserva": 1960,
+    "reservaLabel": "1.960 · estimativa técnica",
+    "femininas": 463,
+    "femininasLabel": "463 · estimado",
+    "populacao": 7018211,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 3.938 hab. · 0,025%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Carlos Brandão Júnior",
+    "comando": "Delegado-Geral da PCMA — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppma": {
+    "nome": "Polícia Penal do Maranhão",
+    "sigla": "PPMA",
+    "estado": "Maranhão",
+    "estadoSigla": "MA",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 3741,
+    "ativaLabel": "3.741",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 473,
+    "femininasLabel": "473",
+    "populacao": 12551,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 3 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Carlos Brandão Júnior",
+    "comando": "Diretor/Secretário da PPMA — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmpa": {
+    "nome": "Polícia Militar do Pará",
+    "sigla": "PMPA",
+    "estado": "Pará",
+    "estadoSigla": "PA",
+    "tipo": "Polícia Militar",
+    "criacao": "25/09/1818",
+    "ativa": 17734,
+    "ativaLabel": "17.734",
+    "reserva": 18621,
+    "reservaLabel": "18.621 · estimativa técnica",
+    "femininas": 2305,
+    "femininasLabel": "2.305 · estimado",
+    "populacao": 8711196,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 491 hab. · 0,204%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Hana Ghassan",
+    "comando": "Comandante-Geral da PMPA — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcpa": {
+    "nome": "Polícia Civil do Pará",
+    "sigla": "PCPA",
+    "estado": "Pará",
+    "estadoSigla": "PA",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 3476,
+    "ativaLabel": "3.476",
+    "reserva": 3824,
+    "reservaLabel": "3.824 · estimativa técnica",
+    "femininas": 904,
+    "femininasLabel": "904 · estimado",
+    "populacao": 8711196,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.506 hab. · 0,040%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Hana Ghassan",
+    "comando": "Delegado-Geral da PCPA — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pppa": {
+    "nome": "Polícia Penal do Pará",
+    "sigla": "PPPA",
+    "estado": "Pará",
+    "estadoSigla": "PA",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 2399,
+    "ativaLabel": "2.399",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 411,
+    "femininasLabel": "411",
+    "populacao": 16349,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 7 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Hana Ghassan",
+    "comando": "Diretor/Secretário da PPPA — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmpb": {
+    "nome": "Polícia Militar da Paraíba",
+    "sigla": "PMPB",
+    "estado": "Paraíba",
+    "estadoSigla": "PB",
+    "tipo": "Polícia Militar",
+    "criacao": "03/02/1832",
+    "ativa": 8865,
+    "ativaLabel": "8.865",
+    "reserva": 9308,
+    "reservaLabel": "9.308 · estimativa técnica",
+    "femininas": 798,
+    "femininasLabel": "798 · estimado",
+    "populacao": 4164468,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 470 hab. · 0,213%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Lucas Ribeiro",
+    "comando": "Comandante-Geral da PMPB — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcpb": {
+    "nome": "Polícia Civil da Paraíba",
+    "sigla": "PCPB",
+    "estado": "Paraíba",
+    "estadoSigla": "PB",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1640,
+    "ativaLabel": "1.640",
+    "reserva": 1804,
+    "reservaLabel": "1.804 · estimativa técnica",
+    "femininas": 426,
+    "femininasLabel": "426 · estimado",
+    "populacao": 4164468,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.539 hab. · 0,039%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Lucas Ribeiro",
+    "comando": "Delegado-Geral da PCPB — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pppb": {
+    "nome": "Polícia Penal da Paraíba",
+    "sigla": "PPPB",
+    "estado": "Paraíba",
+    "estadoSigla": "PB",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 1372,
+    "ativaLabel": "1.372",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 194,
+    "femininasLabel": "194",
+    "populacao": 13238,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 10 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Lucas Ribeiro",
+    "comando": "Diretor/Secretário da PPPB — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmpe": {
+    "nome": "Polícia Militar de Pernambuco",
+    "sigla": "PMPE",
+    "estado": "Pernambuco",
+    "estadoSigla": "PE",
+    "tipo": "Polícia Militar",
+    "criacao": "11/06/1825",
+    "ativa": 16563,
+    "ativaLabel": "16.563",
+    "reserva": 17391,
+    "reservaLabel": "17.391 · estimativa técnica",
+    "femininas": 2153,
+    "femininasLabel": "2.153 · estimado",
+    "populacao": 9562007,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 577 hab. · 0,173%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Raquel Lyra",
+    "comando": "Comandante-Geral da PMPE — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcpe": {
+    "nome": "Polícia Civil de Pernambuco",
+    "sigla": "PCPE",
+    "estado": "Pernambuco",
+    "estadoSigla": "PE",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 4663,
+    "ativaLabel": "4.663",
+    "reserva": 5129,
+    "reservaLabel": "5.129 · estimativa técnica",
+    "femininas": 1212,
+    "femininasLabel": "1.212 · estimado",
+    "populacao": 9562007,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.051 hab. · 0,049%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Raquel Lyra",
+    "comando": "Delegado-Geral da PCPE — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pppe": {
+    "nome": "Polícia Penal de Pernambuco",
+    "sigla": "PPPE",
+    "estado": "Pernambuco",
+    "estadoSigla": "PE",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 1360,
+    "ativaLabel": "1.360",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 248,
+    "femininasLabel": "248",
+    "populacao": 29869,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 22 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Raquel Lyra",
+    "comando": "Diretor/Secretário da PPPE — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmpi": {
+    "nome": "Polícia Militar do Piauí",
+    "sigla": "PMPI",
+    "estado": "Piauí",
+    "estadoSigla": "PI",
+    "tipo": "Polícia Militar",
+    "criacao": "25/06/1835",
+    "ativa": 6707,
+    "ativaLabel": "6.707",
+    "reserva": 7042,
+    "reservaLabel": "7.042 · estimativa técnica",
+    "femininas": 604,
+    "femininasLabel": "604 · estimado",
+    "populacao": 3384547,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 505 hab. · 0,198%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Rafael Fonteles",
+    "comando": "Comandante-Geral da PMPI — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcpi": {
+    "nome": "Polícia Civil do Piauí",
+    "sigla": "PCPI",
+    "estado": "Piauí",
+    "estadoSigla": "PI",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1621,
+    "ativaLabel": "1.621",
+    "reserva": 1783,
+    "reservaLabel": "1.783 · estimativa técnica",
+    "femininas": 421,
+    "femininasLabel": "421 · estimado",
+    "populacao": 3384547,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.088 hab. · 0,048%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Rafael Fonteles",
+    "comando": "Delegado-Geral da PCPI — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pppi": {
+    "nome": "Polícia Penal do Piauí",
+    "sigla": "PPPI",
+    "estado": "Piauí",
+    "estadoSigla": "PI",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 801,
+    "ativaLabel": "801",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 251,
+    "femininasLabel": "251",
+    "populacao": 7777,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 10 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Rafael Fonteles",
+    "comando": "Diretor/Secretário da PPPI — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmrn": {
+    "nome": "Polícia Militar do Rio Grande do Norte",
+    "sigla": "PMRN",
+    "estado": "Rio Grande do Norte",
+    "estadoSigla": "RN",
+    "tipo": "Polícia Militar",
+    "criacao": "27/06/1834",
+    "ativa": 8191,
+    "ativaLabel": "8.191",
+    "reserva": 8601,
+    "reservaLabel": "8.601 · estimativa técnica",
+    "femininas": 491,
+    "femininasLabel": "491 · estimado",
+    "populacao": 3455236,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 422 hab. · 0,237%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Fátima Bezerra",
+    "comando": "Comandante-Geral da PMRN — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcrn": {
+    "nome": "Polícia Civil do Rio Grande do Norte",
+    "sigla": "PCRN",
+    "estado": "Rio Grande do Norte",
+    "estadoSigla": "RN",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1561,
+    "ativaLabel": "1.561",
+    "reserva": 1717,
+    "reservaLabel": "1.717 · estimativa técnica",
+    "femininas": 406,
+    "femininasLabel": "406 · estimado",
+    "populacao": 3455236,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 2.213 hab. · 0,045%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Fátima Bezerra",
+    "comando": "Delegado-Geral da PCRN — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pprn": {
+    "nome": "Polícia Penal do Rio Grande do Norte",
+    "sigla": "PPRN",
+    "estado": "Rio Grande do Norte",
+    "estadoSigla": "RN",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 995,
+    "ativaLabel": "995",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 229,
+    "femininasLabel": "229",
+    "populacao": 7907,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 8 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Fátima Bezerra",
+    "comando": "Regina Ribeiro — Diretora-Geral da Polícia Penal do RN",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmro": {
+    "nome": "Polícia Militar de Rondônia",
+    "sigla": "PMRO",
+    "estado": "Rondônia",
+    "estadoSigla": "RO",
+    "tipo": "Polícia Militar",
+    "criacao": "26/11/1975",
+    "ativa": 4955,
+    "ativaLabel": "4.955",
+    "reserva": 5203,
+    "reservaLabel": "5.203 · estimativa técnica",
+    "femininas": 644,
+    "femininasLabel": "644 · estimado",
+    "populacao": 1751950,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 354 hab. · 0,283%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Marcos Rocha",
+    "comando": "Comandante-Geral da PMRO — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcro": {
+    "nome": "Polícia Civil de Rondônia",
+    "sigla": "PCRO",
+    "estado": "Rondônia",
+    "estadoSigla": "RO",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · estrutura estadual",
+    "ativa": 1332,
+    "ativaLabel": "1.332",
+    "reserva": 1465,
+    "reservaLabel": "1.465 · estimativa técnica",
+    "femininas": 346,
+    "femininasLabel": "346 · estimado",
+    "populacao": 1751950,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.315 hab. · 0,076%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Marcos Rocha",
+    "comando": "Delegado-Geral da PCRO — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppro": {
+    "nome": "Polícia Penal de Rondônia",
+    "sigla": "PPRO",
+    "estado": "Rondônia",
+    "estadoSigla": "RO",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 1590,
+    "ativaLabel": "1.590",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 229,
+    "femininasLabel": "229",
+    "populacao": 7528,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 5 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Marcos Rocha",
+    "comando": "Diretor/Secretário da PPRO — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmrr": {
+    "nome": "Polícia Militar de Roraima",
+    "sigla": "PMRR",
+    "estado": "Roraima",
+    "estadoSigla": "RR",
+    "tipo": "Polícia Militar",
+    "criacao": "21/11/1975",
+    "ativa": 2485,
+    "ativaLabel": "2.485",
+    "reserva": 2609,
+    "reservaLabel": "2.609 · estimativa técnica",
+    "femininas": 522,
+    "femininasLabel": "522 · estimado",
+    "populacao": 738772,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 297 hab. · 0,336%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Soldado Sampaio — Governador em exercício",
+    "comando": "Comandante-Geral da PMRR — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcrr": {
+    "nome": "Polícia Civil de Roraima",
+    "sigla": "PCRR",
+    "estado": "Roraima",
+    "estadoSigla": "RR",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · estrutura estadual",
+    "ativa": 673,
+    "ativaLabel": "673",
+    "reserva": 740,
+    "reservaLabel": "740 · estimativa técnica",
+    "femininas": 175,
+    "femininasLabel": "175 · estimado",
+    "populacao": 738772,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.098 hab. · 0,091%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Soldado Sampaio — Governador em exercício",
+    "comando": "Delegado-Geral da PCRR — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pprr": {
+    "nome": "Polícia Penal de Roraima",
+    "sigla": "PPRR",
+    "estado": "Roraima",
+    "estadoSigla": "RR",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 399,
+    "ativaLabel": "399",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 91,
+    "femininasLabel": "91",
+    "populacao": 3209,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 8 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Soldado Sampaio — Governador em exercício",
+    "comando": "Diretor/Secretário da PPRR — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmse": {
+    "nome": "Polícia Militar de Sergipe",
+    "sigla": "PMSE",
+    "estado": "Sergipe",
+    "estadoSigla": "SE",
+    "tipo": "Polícia Militar",
+    "criacao": "28/02/1835",
+    "ativa": 5870,
+    "ativaLabel": "5.870",
+    "reserva": 6164,
+    "reservaLabel": "6.164 · estimativa técnica",
+    "femininas": 763,
+    "femininasLabel": "763 · estimado",
+    "populacao": 2299425,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 392 hab. · 0,255%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Fábio Mitidieri",
+    "comando": "Comandante-Geral da PMSE — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcse": {
+    "nome": "Polícia Civil de Sergipe",
+    "sigla": "PCSE",
+    "estado": "Sergipe",
+    "estadoSigla": "SE",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · origem histórica republicana",
+    "ativa": 1308,
+    "ativaLabel": "1.308",
+    "reserva": 1439,
+    "reservaLabel": "1.439 · estimativa técnica",
+    "femininas": 340,
+    "femininasLabel": "340 · estimado",
+    "populacao": 2299425,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.758 hab. · 0,057%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Fábio Mitidieri",
+    "comando": "Delegado-Geral da PCSE — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppse": {
+    "nome": "Polícia Penal de Sergipe",
+    "sigla": "PPSE",
+    "estado": "Sergipe",
+    "estadoSigla": "SE",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 890,
+    "ativaLabel": "890",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 167,
+    "femininasLabel": "167",
+    "populacao": 6022,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 7 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Fábio Mitidieri",
+    "comando": "Diretor/Secretário da PPSE — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pmto": {
+    "nome": "Polícia Militar do Tocantins",
+    "sigla": "PMTO",
+    "estado": "Tocantins",
+    "estadoSigla": "TO",
+    "tipo": "Polícia Militar",
+    "criacao": "01/01/1989",
+    "ativa": 3534,
+    "ativaLabel": "3.534",
+    "reserva": 3711,
+    "reservaLabel": "3.711 · estimativa técnica",
+    "femininas": 459,
+    "femininasLabel": "459 · estimado",
+    "populacao": 1586859,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 449 hab. · 0,223%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Wanderlei Barbosa",
+    "comando": "Comandante-Geral da PMTO — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "pcto": {
+    "nome": "Polícia Civil do Tocantins",
+    "sigla": "PCTO",
+    "estado": "Tocantins",
+    "estadoSigla": "TO",
+    "tipo": "Polícia Civil",
+    "criacao": "Polícia Civil estadual · estrutura do Tocantins",
+    "ativa": 1129,
+    "ativaLabel": "1.129",
+    "reserva": 1242,
+    "reservaLabel": "1.242 · estimativa técnica",
+    "femininas": 294,
+    "femininasLabel": "294 · estimado",
+    "populacao": 1586859,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 1.406 hab. · 0,071%",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Wanderlei Barbosa",
+    "comando": "Delegado-Geral da PCTO — nome a confirmar em fonte oficial",
+    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "ppto": {
+    "nome": "Polícia Penal do Tocantins",
+    "sigla": "PPTO",
+    "estado": "Tocantins",
+    "estadoSigla": "TO",
+    "tipo": "Polícia Penal",
+    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "ativa": 881,
+    "ativaLabel": "881",
+    "reserva": 0,
+    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "femininas": 106,
+    "femininasLabel": "106",
+    "populacao": 4145,
+    "populacaoTitulo": "Presos atendidos",
+    "relacaoLabel": "1 servidor / 5 presos",
+    "relacaoTitulo": "Relação ativa/presos",
+    "governador": "Wanderlei Barbosa",
+    "comando": "Diretor/Secretário da PPTO — nome a confirmar em fonte oficial",
+    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
+    "atualizado": "Base numérica inserida em 01/05/2026"
+  }
 };
+
+
+
 
 /* ============================================================ */
 /* === ESTRUTURA-BASE PARA UFs FALTANTES ======================= */
@@ -3837,9 +5536,9 @@ function atualizarLabelsHeaderResumo(labels = {}) {
     'header-label-criacao': 'Criação',
     'header-label-ativa': 'Efetivo ativo',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Efetivo total',
-    'header-label-populacao': 'População UF',
-    'header-label-relacao': 'Relação ativa',
+    'header-label-total': 'Integrantes femininas',
+    'header-label-populacao': 'População do Estado',
+    'header-label-relacao': 'Relação ativa/população',
     'header-label-governador': 'Chefe do Executivo',
     'header-label-comando': 'Comando atual'
   };
@@ -3855,6 +5554,7 @@ function calcularResumoPortalHeader() {
   const estados = Object.keys(HEADER_ESTADOS).length;
   let ativa = 0;
   let reserva = 0;
+  let femininas = 0;
   let populacao = 0;
 
   INSTITUICOES_VALIDAS.forEach(inst => {
@@ -3862,6 +5562,7 @@ function calcularResumoPortalHeader() {
     const infoPenal = POLICIAS_PENAIS_INFO?.[inst] || {};
     ativa += Number(dados.ativa || infoPenal.efetivoAtivo || 0);
     reserva += Number(dados.reserva || 0);
+    femininas += Number(dados.femininas || 0);
   });
 
   Object.values(HEADER_ESTADOS).forEach(estado => {
@@ -3869,7 +5570,7 @@ function calcularResumoPortalHeader() {
     populacao += Number(ref.populacao || 0);
   });
 
-  return { instituicoes, estados, ativa, reserva, total: ativa + reserva, populacao };
+  return { instituicoes, estados, ativa, reserva, femininas, total: ativa + reserva, populacao };
 }
 
 function aplicarHeaderInicialPortal() {
@@ -3907,7 +5608,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-criacao': 'Instituições',
     'header-label-ativa': 'Ativos estimados',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Total abrangido',
+    'header-label-total': 'Integrantes femininas',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'Estados',
     'header-label-governador': 'Cobertura',
@@ -3917,7 +5618,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
   setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
-  setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.total)}+`);
+  setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
   setTexto('header-resumo-relacao', `${resumoPortal.estados} estados`);
   setTexto('header-resumo-governador', 'Polícias militares, civis e penais');
@@ -3946,12 +5647,15 @@ function aplicarHeaderInicialPortal() {
 }
 
 function atualizarHeaderResumo(inst) {
-  atualizarLabelsHeaderResumo();
   const tituloResumo = document.getElementById('header-resumo-titulo');
   if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
 
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
-  const totalEfetivo = Number(dados.ativa || 0) + Number(dados.reserva || 0);
+  atualizarLabelsHeaderResumo({
+    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
+  });
+
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
     if (el) el.textContent = valor;
@@ -3959,14 +5663,14 @@ function atualizarHeaderResumo(inst) {
 
   const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
-  const totalTexto = dados.totalLabel || (totalEfetivo ? formatarEfetivoHeader(totalEfetivo) : 'Não informado');
+  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : 'Não informado');
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
 
   setTexto('header-resumo-atualizado', dados.atualizado || 'Atualizado');
   setTexto('header-resumo-criacao', dados.criacao || 'Não informado');
   setTexto('header-resumo-ativa', ativaTexto);
   setTexto('header-resumo-reserva', reservaTexto);
-  setTexto('header-resumo-total', totalTexto);
+  setTexto('header-resumo-total', femininasTexto);
   setTexto('header-resumo-populacao', dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado');
   setTexto('header-resumo-relacao', relacaoTexto);
   setTexto('header-resumo-governador', dados.governador || 'Não informado');
@@ -4159,11 +5863,6 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
-
-;
-
-
-/* ===== js/services/direitos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -4189,7 +5888,7 @@ function analisarDireitos() {
   if (!c) return;
 
   const nomesInst = {
-    pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
+    pmac: 'PMAC', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
     pmmg: 'PMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
@@ -4438,6 +6137,8 @@ function getSaudeTexto(inst) {
     return `${info.sigla}: ${info.saude} Não confundir assistência à saúde com adicional, indenização ou verba remuneratória.`;
   }
   const textos = {
+    pmac: 'PMAC: assistência à saúde e proteção social devem ser conferidas na PMAC, SEAD/AC, Acreprevidência e normas estaduais; benefício, cobertura e dependentes variam por vínculo, contribuição e ato funcional.',
+    pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes.',
     pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
     pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
@@ -4463,6 +6164,7 @@ function getSaudeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.orgao}; ${info.previdencia}`;
   }
+  if (inst === 'pmac' || inst === 'pcac') return 'Base: PMAC/PCAC, SEAD/AC, Acreprevidência, estatutos e normas estaduais. Conferir adesão, contribuição, dependentes, perícia e cobertura vigente.';
   if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
   if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
@@ -4478,6 +6180,8 @@ function getTempoServicoTexto(inst, tempo) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: ${info.quadro} O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício, progressão, promoção, aposentadoria e vantagens condicionadas.`;
   }
+  if (inst === 'pmac') return `Na PMAC, o tempo de serviço deve ser conferido para adicional temporal, sexta-parte quando aplicável, promoções, reserva/reforma e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
+  if (inst === 'pcac') return `Na PCAC, o tempo de serviço deve ser conferido para adicional temporal, progressão por classe, titulação, aposentadoria policial e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
   if (inst === 'pmerj') return `Na PMERJ, o adicional por tempo de serviço deve ser conferido conforme regra estadual e ficha funcional. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência de triênio, se aplicável.`;
   if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
@@ -4499,6 +6203,8 @@ function getTempoServicoBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; ${info.fonte}; ficha funcional e tabela remuneratória vigente.`;
   }
+  if (inst === 'pmac') return 'Base: Lei Complementar AC 39/1993, Lei Complementar AC 164/2006, tabelas salariais PMAC/CBMAC, ficha funcional e contracheque.';
+  if (inst === 'pcac') return 'Base: Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015, Lei AC 3.107/2015, tabelas salariais PCAC, ficha funcional e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
   if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
   if (inst === 'pmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
@@ -4519,6 +6225,8 @@ function getInsalubridadeTexto(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: ${info.vantagens} Insalubridade, periculosidade, risco de vida ou adicional de atividade penitenciária só devem ser tratados como verba quando houver lei local, laudo, lotação, rubrica e contracheque.`;
   }
+  if (inst === 'pmac') return 'Na PMAC, insalubridade, risco, serviço operacional ou verba equivalente devem ser tratados com cautela: dependem de lei local, laudo, lotação, rubrica, escala e contracheque. Não lançar como direito automático universal.';
+  if (inst === 'pcac') return 'Na PCAC, eventual insalubridade ou adicional ligado à atividade deve ser conferido por cargo, lotação, laudo, legislação estadual, rubrica e contracheque; não é verba universal automática.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
@@ -4537,6 +6245,7 @@ function getInsalubridadeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; laudo/ato administrativo, rubrica, lotação, escala e contracheque.`;
   }
+  if (inst === 'pmac' || inst === 'pcac') return 'Base: legislação estadual do Acre, tabela salarial oficial, laudo/ato administrativo, lotação, escala, rubrica e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
@@ -4551,6 +6260,8 @@ function getPericulosidadeTexto(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: a atividade penal envolve custódia, vigilância, escolta, inteligência e segurança prisional. Eventual adicional de risco/periculosidade/atividade penitenciária depende da legislação da UF, rubrica e contracheque.`;
   }
+  if (inst === 'pmac') return 'PMAC: risco operacional, serviço complementar, localização especial ou gratificações semelhantes devem ser conferidos pela legislação acreana, escala, ato de designação e rubrica no contracheque. Não aplicar regra de outro Estado.';
+  if (inst === 'pcac') return 'PCAC: adicional de atividade, risco, serviço complementar ou verba semelhante depende da lei local, cargo/classe, ato administrativo e contracheque. Não aplicar automaticamente percentuais de outros Estados.';
   if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende o risco de vida e a periculosidade. Tratar como verba separada somente diante de rubrica, decisão ou tese específica.';
   if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
@@ -4565,6 +6276,8 @@ function getPericulosidadeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; ${info.fonte}; legislação remuneratória e contracheque.`;
   }
+  if (inst === 'pmac') return 'Base: LC AC 164/2006, LC AC 39/1993, tabelas PMAC/CBMAC, escalas, boletins, atos de designação e contracheque.';
+  if (inst === 'pcac') return 'Base: leis remuneratórias da PCAC, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escalas e contracheque.';
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º, e decisões judiciais aplicáveis.';
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e regime de subsídio dos militares estaduais do Paraná.';
@@ -4595,7 +6308,27 @@ function getVantagensEspecificas(inst) {
       'A análise exige data de ingresso, tempo no cargo, sexo, idade, regra de transição, contribuição e ficha funcional.');
     return html;
   }
-  if (inst === 'pmesp') {
+  if (inst === 'pmac') {
+    html += direitoItem('PMAC — serviço complementar / escala extraordinária', 'condicionado',
+      'Pode existir remuneração ou indenização vinculada a escala extraordinária, serviço complementar, missão, deslocamento ou ato formal. Só considerar quando houver convocação, escala, boletim, ordem de serviço e rubrica.',
+      'Base: normas estaduais do Acre, atos internos da PMAC, tabela oficial, escala e contracheque.');
+    html += direitoItem('PMAC — localização especial, chefia e representação', 'condicionado',
+      'Verbas de localidade, chefia, representação, função ou vantagem pessoal exigem conferência do posto/graduação, lotação, ato de designação e período trabalhado.',
+      'Base: LC AC 164/2006, LC AC 39/1993, Portal de Tabelas Salariais do Acre e ficha funcional.');
+    html += direitoItem('PMAC — reserva, reforma e proteção previdenciária', 'verificar',
+      'Reserva remunerada, reforma, abono de permanência e regra de transição exigem análise individual de ingresso, idade, tempo militar, tempo de contribuição e atos da Acreprevidência.',
+      'Base: Constituição Federal, EC 103/2019, normas estaduais, Acreprevidência e histórico funcional.');
+  } else if (inst === 'pcac') {
+    html += direitoItem('PCAC — progressão por classe, titulação e enquadramento', 'condicionado',
+      'Delegado, Perito, Médico-Legista, Agente, Escrivão, Papiloscopista e Auxiliar de Necropsia têm tabelas e regras próprias. Conferir classe, cargo, titulação aceita, ato de progressão e rubricas pagas.',
+      'Base: Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015, Lei AC 3.107/2015, tabela oficial e ficha funcional.');
+    html += direitoItem('PCAC — serviço complementar e vantagens pessoais', 'condicionado',
+      'Serviço complementar, vantagens absorvidas, indenizações e plantões devem ser analisados pela lei local, autorização, período, escala e contracheque, sem soma automática ao vencimento-base.',
+      'Base: Portal do Estado do Acre — Tabelas Salariais, atos da PCAC/SEAD e demonstrativos de pagamento.');
+    html += direitoItem('PCAC — aposentadoria policial e abono de permanência', 'verificar',
+      'Aposentadoria policial, paridade/integralidade quando cabível, transições e abono de permanência dependem da data de ingresso, tempo no cargo, tempo policial, idade e regra aplicada.',
+      'Base: Lei Orgânica Nacional das Polícias Civis, EC 103/2019, Acreprevidência e ficha funcional.');
+  } else if (inst === 'pmesp') {
     html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
       'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',
       'Depende de escala, disponibilidade, limite mensal e norma vigente.');
@@ -4710,11 +6443,6 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
-
-;
-
-
-/* ===== js/pages/concursos-comparador.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -5193,11 +6921,6 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
-
-;
-
-
-/* ===== js/pages/contato-init.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -5320,11 +7043,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-;
-
-
-/* ===== js/ui/event-bindings.js ===== */
 /* =======================================================
    Eventos centralizados.
    Remove a dependência de onclick/onchange/oninput inline no HTML.
@@ -5449,5 +7167,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, true);
 })();
-
-;

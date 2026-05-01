@@ -23,7 +23,7 @@ function analisarDireitos() {
   if (!c) return;
 
   const nomesInst = {
-    pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
+    pmac: 'PMAC', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
     pmmg: 'PMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
@@ -272,6 +272,8 @@ function getSaudeTexto(inst) {
     return `${info.sigla}: ${info.saude} Não confundir assistência à saúde com adicional, indenização ou verba remuneratória.`;
   }
   const textos = {
+    pmac: 'PMAC: assistência à saúde e proteção social devem ser conferidas na PMAC, SEAD/AC, Acreprevidência e normas estaduais; benefício, cobertura e dependentes variam por vínculo, contribuição e ato funcional.',
+    pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes.',
     pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
     pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
@@ -297,6 +299,7 @@ function getSaudeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.orgao}; ${info.previdencia}`;
   }
+  if (inst === 'pmac' || inst === 'pcac') return 'Base: PMAC/PCAC, SEAD/AC, Acreprevidência, estatutos e normas estaduais. Conferir adesão, contribuição, dependentes, perícia e cobertura vigente.';
   if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
   if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
@@ -312,6 +315,8 @@ function getTempoServicoTexto(inst, tempo) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: ${info.quadro} O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício, progressão, promoção, aposentadoria e vantagens condicionadas.`;
   }
+  if (inst === 'pmac') return `Na PMAC, o tempo de serviço deve ser conferido para adicional temporal, sexta-parte quando aplicável, promoções, reserva/reforma e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
+  if (inst === 'pcac') return `Na PCAC, o tempo de serviço deve ser conferido para adicional temporal, progressão por classe, titulação, aposentadoria policial e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
   if (inst === 'pmerj') return `Na PMERJ, o adicional por tempo de serviço deve ser conferido conforme regra estadual e ficha funcional. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência de triênio, se aplicável.`;
   if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
@@ -333,6 +338,8 @@ function getTempoServicoBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; ${info.fonte}; ficha funcional e tabela remuneratória vigente.`;
   }
+  if (inst === 'pmac') return 'Base: Lei Complementar AC 39/1993, Lei Complementar AC 164/2006, tabelas salariais PMAC/CBMAC, ficha funcional e contracheque.';
+  if (inst === 'pcac') return 'Base: Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015, Lei AC 3.107/2015, tabelas salariais PCAC, ficha funcional e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
   if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
   if (inst === 'pmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
@@ -353,6 +360,8 @@ function getInsalubridadeTexto(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: ${info.vantagens} Insalubridade, periculosidade, risco de vida ou adicional de atividade penitenciária só devem ser tratados como verba quando houver lei local, laudo, lotação, rubrica e contracheque.`;
   }
+  if (inst === 'pmac') return 'Na PMAC, insalubridade, risco, serviço operacional ou verba equivalente devem ser tratados com cautela: dependem de lei local, laudo, lotação, rubrica, escala e contracheque. Não lançar como direito automático universal.';
+  if (inst === 'pcac') return 'Na PCAC, eventual insalubridade ou adicional ligado à atividade deve ser conferido por cargo, lotação, laudo, legislação estadual, rubrica e contracheque; não é verba universal automática.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
@@ -371,6 +380,7 @@ function getInsalubridadeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; laudo/ato administrativo, rubrica, lotação, escala e contracheque.`;
   }
+  if (inst === 'pmac' || inst === 'pcac') return 'Base: legislação estadual do Acre, tabela salarial oficial, laudo/ato administrativo, lotação, escala, rubrica e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
@@ -385,6 +395,8 @@ function getPericulosidadeTexto(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: a atividade penal envolve custódia, vigilância, escolta, inteligência e segurança prisional. Eventual adicional de risco/periculosidade/atividade penitenciária depende da legislação da UF, rubrica e contracheque.`;
   }
+  if (inst === 'pmac') return 'PMAC: risco operacional, serviço complementar, localização especial ou gratificações semelhantes devem ser conferidos pela legislação acreana, escala, ato de designação e rubrica no contracheque. Não aplicar regra de outro Estado.';
+  if (inst === 'pcac') return 'PCAC: adicional de atividade, risco, serviço complementar ou verba semelhante depende da lei local, cargo/classe, ato administrativo e contracheque. Não aplicar automaticamente percentuais de outros Estados.';
   if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende o risco de vida e a periculosidade. Tratar como verba separada somente diante de rubrica, decisão ou tese específica.';
   if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
@@ -399,6 +411,8 @@ function getPericulosidadeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; ${info.fonte}; legislação remuneratória e contracheque.`;
   }
+  if (inst === 'pmac') return 'Base: LC AC 164/2006, LC AC 39/1993, tabelas PMAC/CBMAC, escalas, boletins, atos de designação e contracheque.';
+  if (inst === 'pcac') return 'Base: leis remuneratórias da PCAC, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escalas e contracheque.';
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º, e decisões judiciais aplicáveis.';
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e regime de subsídio dos militares estaduais do Paraná.';
@@ -429,7 +443,27 @@ function getVantagensEspecificas(inst) {
       'A análise exige data de ingresso, tempo no cargo, sexo, idade, regra de transição, contribuição e ficha funcional.');
     return html;
   }
-  if (inst === 'pmesp') {
+  if (inst === 'pmac') {
+    html += direitoItem('PMAC — serviço complementar / escala extraordinária', 'condicionado',
+      'Pode existir remuneração ou indenização vinculada a escala extraordinária, serviço complementar, missão, deslocamento ou ato formal. Só considerar quando houver convocação, escala, boletim, ordem de serviço e rubrica.',
+      'Base: normas estaduais do Acre, atos internos da PMAC, tabela oficial, escala e contracheque.');
+    html += direitoItem('PMAC — localização especial, chefia e representação', 'condicionado',
+      'Verbas de localidade, chefia, representação, função ou vantagem pessoal exigem conferência do posto/graduação, lotação, ato de designação e período trabalhado.',
+      'Base: LC AC 164/2006, LC AC 39/1993, Portal de Tabelas Salariais do Acre e ficha funcional.');
+    html += direitoItem('PMAC — reserva, reforma e proteção previdenciária', 'verificar',
+      'Reserva remunerada, reforma, abono de permanência e regra de transição exigem análise individual de ingresso, idade, tempo militar, tempo de contribuição e atos da Acreprevidência.',
+      'Base: Constituição Federal, EC 103/2019, normas estaduais, Acreprevidência e histórico funcional.');
+  } else if (inst === 'pcac') {
+    html += direitoItem('PCAC — progressão por classe, titulação e enquadramento', 'condicionado',
+      'Delegado, Perito, Médico-Legista, Agente, Escrivão, Papiloscopista e Auxiliar de Necropsia têm tabelas e regras próprias. Conferir classe, cargo, titulação aceita, ato de progressão e rubricas pagas.',
+      'Base: Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015, Lei AC 3.107/2015, tabela oficial e ficha funcional.');
+    html += direitoItem('PCAC — serviço complementar e vantagens pessoais', 'condicionado',
+      'Serviço complementar, vantagens absorvidas, indenizações e plantões devem ser analisados pela lei local, autorização, período, escala e contracheque, sem soma automática ao vencimento-base.',
+      'Base: Portal do Estado do Acre — Tabelas Salariais, atos da PCAC/SEAD e demonstrativos de pagamento.');
+    html += direitoItem('PCAC — aposentadoria policial e abono de permanência', 'verificar',
+      'Aposentadoria policial, paridade/integralidade quando cabível, transições e abono de permanência dependem da data de ingresso, tempo no cargo, tempo policial, idade e regra aplicada.',
+      'Base: Lei Orgânica Nacional das Polícias Civis, EC 103/2019, Acreprevidência e ficha funcional.');
+  } else if (inst === 'pmesp') {
     html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
       'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',
       'Depende de escala, disponibilidade, limite mensal e norma vigente.');

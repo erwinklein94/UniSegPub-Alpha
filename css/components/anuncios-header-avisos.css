@@ -685,3 +685,25 @@ footer .footer-credit {
     padding: 9px 10px;
   }
 }
+
+/* Botão do produto no banner lateral */
+.ad-placeholder-link--product .ad-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--vermelho);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ad-slot--sidebar .ad-placeholder-link--product .ad-button {
+  font-size: 11px;
+  padding: 7px 14px;
+}

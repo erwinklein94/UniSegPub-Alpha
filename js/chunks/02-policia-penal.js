@@ -343,11 +343,11 @@ const POLICIAS_PENAIS_INFO = {
     nome: 'Polícia Penal do Estado do Acre',
     uf: 'Acre',
     criacao: 'EC 104/2019 · IAPEN/AC · Polícia Penal do Acre',
-    marco: 'O concurso SEAD/IAPEN 2023 tratou expressamente do IAPEN/AC e da Polícia Penal do Acre, com resultado final/homologação publicados em 2025 e nomeações posteriores.',
+    marco: 'O edital SEAD/IAPEN 001/2023 tratou expressamente do IAPEN/AC e da Polícia Penal do Acre, com 329 vagas totais, incluindo 261 para Agente de Polícia Penal, e atos de resultado/homologação publicados posteriormente.',
     orgao: 'Instituto de Administração Penitenciária do Acre (IAPEN/AC) / Secretaria de Estado de Justiça e Segurança Pública (SEJUSP/AC)',
-    direcao: 'Marcos Frank Costa — Presidente do IAPEN/AC',
+    direcao: 'Marcos Frank Costa e Silva — Presidente do IAPEN/AC',
     subordinacao: 'Sistema penitenciário estadual do Acre, com atuação em segurança prisional, custódia, escoltas, controle, disciplina, monitoramento e execução penal.',
-    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 261 vagas de Agente de Polícia Penal; 170 policiais penais nomeados em 2025',
+    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 329 vagas totais, incluindo 261 para Agente de Polícia Penal; efetivo real deve ser conferido no IAPEN/AC e atos de nomeação' ,
     reservaLabel: 'Inativos: conferir Acreprevidência e atos do IAPEN/AC',
     totalLabel: 'Sistema em reforço após curso de formação e nomeações de 2025',
     relacaoLabel: 'Relação depende do efetivo ativo consolidado pelo IAPEN/AC',
@@ -361,13 +361,13 @@ const POLICIAS_PENAIS_INFO = {
     saude: 'Conferir IAPEN/AC, SEAD/AC, Acreprevidência e normas estaduais de assistência ao servidor.',
     previdencia: 'Regime próprio estadual/Acreprevidência; aposentadoria policial, transições e abono de permanência exigem análise individual.',
     concurso: {
-      vagas: 'Edital 001/2023 SEAD/IAPEN: 261 vagas para Agente de Polícia Penal, além de cargos administrativos e de nível superior do IAPEN/AC.',
+      vagas: 'Edital 001/2023 SEAD/IAPEN: 329 vagas totais, sendo 261 para Agente de Polícia Penal e as demais para cargos administrativos/superiores do IAPEN/AC.',
       salario: 'Agente de Polícia Penal: R$ 4.366,60 no edital 2023; cargos de apoio tinham remunerações próprias no mesmo edital.',
       banca: 'IBFC',
       escolaridade: 'Superior completo e CNH B para Agente de Polícia Penal; requisitos específicos para os demais cargos.'
     },
     associacaoBusca: 'associação ou sindicato dos policiais penais do Acre',
-    fonte: 'SEAD/IAPEN/AC — Edital 001/2023, publicações de homologação/curso de formação 2025; Portal do Estado do Acre — Lei 2.180/IAPEN',
+    fonte: 'SEAD/IAPEN/AC — Edital 001/2023 e publicações posteriores; Portal do Estado do Acre — Lei 2.180/IAPEN e tabelas salariais' ,
     url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/',
     atualizado: 'Atualizado em 01/05/2026'
   }
