@@ -3440,8 +3440,8 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   setHeaderHeroImage(fallbackBandeira || 'img/logoleao.webp');
   setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.webp');
 
-  // Página da instituição: usa o brasão/logo da instituição como plano de fundo geral.
-  setPageInstitutionBackgroundImage(imagemInstituicao || fallbackBandeira || 'img/logoleao.webp');
+  // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
+  setPageInstitutionBackgroundImage('img/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';

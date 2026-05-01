@@ -1,0 +1,335 @@
+/*
+  Correção aplicada: exibe o logoleao como plano de fundo em todas as páginas grandes.
+  Este arquivo é carregado depois de css/dist/main.min.css para vencer regras antigas/minificadas.
+*/
+
+:root {
+  --usp-logoleao-bg: url("../img/logoleao.webp");
+}
+
+body,
+body[data-inst="portal"],
+body:not([data-inst="portal"]),
+[data-theme="dark"] body,
+[data-theme="dark"] body:not([data-inst="portal"]) {
+  --page-institution-image: var(--usp-logoleao-bg) !important;
+  background-color: var(--bg-site) !important;
+  background-image:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.88) 0%, rgba(238, 242, 247, 0.78) 48%, rgba(229, 231, 235, 0.92) 100%),
+    var(--usp-logoleao-bg) !important;
+  background-size: cover, min(820px, 74vw) auto !important;
+  background-position: center center, right 4vw center !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed !important;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] body:not([data-inst="portal"]) {
+  background-image:
+    linear-gradient(135deg, rgba(5, 6, 10, 0.88) 0%, rgba(10, 14, 23, 0.78) 52%, rgba(17, 24, 39, 0.92) 100%),
+    var(--usp-logoleao-bg) !important;
+}
+
+/* Marca d'água dentro de cada página principal/aba grande. */
+main.page-section.active {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+main.page-section.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--usp-logoleao-bg);
+  background-size: min(780px, 68vw) auto;
+  background-position: right 4vw top 70px;
+  background-repeat: no-repeat;
+  opacity: 0.13;
+  filter: saturate(1.04) contrast(1.04);
+}
+
+[data-theme="dark"] main.page-section.active::before {
+  opacity: 0.18;
+}
+
+main.page-section.active > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Deixa os cards levemente translúcidos para o fundo aparecer sem prejudicar leitura. */
+.card,
+.principal-hero,
+.result-section,
+.comparison-container,
+.produtos-layout,
+.produto-card,
+.acoes-grid,
+.associacoes-grid,
+.parceiros-grid,
+.ad-slot,
+.info-card,
+.stat-card,
+.benefit-card,
+.rights-card,
+.remuneracao-card,
+.concurso-card {
+  backdrop-filter: blur(10px) saturate(112%);
+  -webkit-backdrop-filter: blur(10px) saturate(112%);
+}
+
+html:not([data-theme="dark"]) body .card,
+html:not([data-theme="dark"]) body .principal-hero,
+html:not([data-theme="dark"]) body .result-section,
+html:not([data-theme="dark"]) body .comparison-container,
+html:not([data-theme="dark"]) body .produtos-layout,
+html:not([data-theme="dark"]) body .produto-card,
+html:not([data-theme="dark"]) body .acoes-grid,
+html:not([data-theme="dark"]) body .associacoes-grid,
+html:not([data-theme="dark"]) body .parceiros-grid,
+html:not([data-theme="dark"]) body .ad-slot,
+html:not([data-theme="dark"]) body .info-card,
+html:not([data-theme="dark"]) body .stat-card,
+html:not([data-theme="dark"]) body .benefit-card,
+html:not([data-theme="dark"]) body .rights-card,
+html:not([data-theme="dark"]) body .remuneracao-card,
+html:not([data-theme="dark"]) body .concurso-card {
+  background-color: rgba(255, 255, 255, 0.91) !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .principal-hero,
+[data-theme="dark"] .result-section,
+[data-theme="dark"] .comparison-container,
+[data-theme="dark"] .produtos-layout,
+[data-theme="dark"] .produto-card,
+[data-theme="dark"] .acoes-grid,
+[data-theme="dark"] .associacoes-grid,
+[data-theme="dark"] .parceiros-grid,
+[data-theme="dark"] .ad-slot,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .benefit-card,
+[data-theme="dark"] .rights-card,
+[data-theme="dark"] .remuneracao-card,
+[data-theme="dark"] .concurso-card {
+  background-color: rgba(20, 21, 24, 0.88) !important;
+}
+
+@media (max-width: 780px) {
+  body,
+  body[data-inst="portal"],
+  body:not([data-inst="portal"]),
+  [data-theme="dark"] body,
+  [data-theme="dark"] body:not([data-inst="portal"]) {
+    background-size: cover, min(620px, 118vw) auto !important;
+    background-position: center center, center top 185px !important;
+  }
+
+  main.page-section.active::before {
+    background-size: min(560px, 112vw) auto;
+    background-position: center top 52px;
+    opacity: 0.10;
+  }
+}
+
+/* ============================================================
+   Ampliação dos brasões no cabeçalho + visualização ao clique
+   ============================================================ */
+
+.header-current-identity {
+  min-height: clamp(360px, 34vw, 430px) !important;
+  align-items: center !important;
+  gap: clamp(18px, 2.4vw, 34px) !important;
+}
+
+.header-institution-main {
+  min-height: clamp(360px, 34vw, 430px) !important;
+  grid-template-columns: minmax(620px, 1fr) minmax(420px, 0.95fr) !important;
+}
+
+.current-flag-frame.institution-logo-frame,
+.current-flag-frame.brand-logo-frame {
+  width: clamp(216px, 21vw, 288px) !important;
+  height: clamp(216px, 21vw, 288px) !important;
+  min-width: 216px !important;
+  min-height: 216px !important;
+  padding: clamp(10px, 1vw, 14px) !important;
+  border-radius: clamp(32px, 3vw, 44px) !important;
+}
+
+.current-flag-frame.institution-logo-frame img,
+.current-flag-frame.brand-logo-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: clamp(24px, 2.4vw, 34px) !important;
+  cursor: zoom-in !important;
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.current-flag-frame.institution-logo-frame img:hover,
+.current-flag-frame.brand-logo-frame img:hover,
+.current-flag-frame.institution-logo-frame img:focus-visible,
+.current-flag-frame.brand-logo-frame img:focus-visible {
+  transform: scale(1.035) !important;
+  filter: saturate(1.08) contrast(1.04) !important;
+  outline: 3px solid color-mix(in srgb, var(--vermelho) 72%, #ffffff) !important;
+  outline-offset: 5px !important;
+}
+
+.brasao-header-clickable {
+  cursor: zoom-in !important;
+}
+
+body.brasao-lightbox-open {
+  overflow: hidden !important;
+}
+
+.brasao-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 4vw, 54px);
+}
+
+.brasao-lightbox.is-open {
+  display: flex;
+}
+
+.brasao-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.84);
+  backdrop-filter: blur(8px) saturate(115%);
+  -webkit-backdrop-filter: blur(8px) saturate(115%);
+}
+
+.brasao-lightbox__content {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 760px);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: clamp(22px, 3vw, 34px);
+  background: linear-gradient(135deg, rgba(18, 22, 32, 0.96), rgba(5, 6, 10, 0.94));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.brasao-lightbox__img {
+  display: block;
+  max-width: min(82vw, 620px);
+  max-height: min(74vh, 620px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: clamp(12px, 2.4vw, 22px);
+  border-radius: clamp(20px, 2.6vw, 30px);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.45);
+}
+
+.brasao-lightbox__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.brasao-lightbox__close:hover,
+.brasao-lightbox__close:focus-visible {
+  transform: scale(1.06);
+  outline: 3px solid color-mix(in srgb, var(--vermelho) 72%, #ffffff);
+  outline-offset: 3px;
+}
+
+.brasao-lightbox__caption {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+@media (max-width: 1040px) {
+  .header-institution-main {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .header-current-identity {
+    min-height: clamp(320px, 52vw, 400px) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-current-identity {
+    min-height: 330px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 24px 8px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: clamp(192px, 58vw, 240px) !important;
+    height: clamp(192px, 58vw, 240px) !important;
+    min-width: 192px !important;
+    min-height: 192px !important;
+  }
+
+  .brasao-lightbox__content {
+    width: 94vw;
+    padding: 54px 14px 18px;
+  }
+
+  .brasao-lightbox__img {
+    max-width: 84vw;
+    max-height: 68vh;
+  }
+}
+
+/* ============================================================
+   Correção: remove foto duplicada do plano anterior do cabeçalho
+   ------------------------------------------------------------
+   Mantém intactos:
+   - a imagem principal do brasão/logo no card;
+   - a bandeira dentro do card institucional;
+   - o plano de fundo grande da página.
+
+   O que sai daqui é apenas a imagem aplicada no ::before do
+   header inteiro, que ficava atrás do card e repetia logo/bandeira.
+   ============================================================ */
+header.site-header::before,
+body[data-inst="portal"] header.site-header::before,
+body:not([data-inst="portal"]) header.site-header::before {
+  background-image:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--vermelho) 24%, transparent), transparent 24%),
+    linear-gradient(120deg, rgba(255,255,255,0.08), transparent 38%),
+    repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 56px) !important;
+  background-size: auto, auto, auto !important;
+  background-position: center, center, center !important;
+  background-repeat: no-repeat, no-repeat, repeat !important;
+  opacity: 0.42 !important;
+}
