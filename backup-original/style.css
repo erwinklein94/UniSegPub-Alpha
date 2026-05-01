@@ -1,0 +1,11 @@
+/* =======================================================
+   CSS principal dividido em chunks.
+   O index.html carrega css/chunks/*.css diretamente para permitir downloads paralelos.
+   Este arquivo permanece como fallback de compatibilidade.
+   Backup integral preservado em css/style-original.css.
+   ======================================================= */
+@import url('chunks/01-base.css');
+@import url('chunks/02-glass-layout.css');
+@import url('chunks/03-componentes.css');
+@import url('chunks/04-comparador-produtos.css');
+@import url('chunks/05-anuncios-header-avisos.css');

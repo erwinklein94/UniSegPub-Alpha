@@ -1,0 +1,10 @@
+/* =======================================================
+   Fonte CSS organizada por responsabilidade.
+   Em produção, o index.html carrega css/dist/main.min.css.
+   ======================================================= */
+
+@import url('base/base.css');
+@import url('layout/glass-layout.css');
+@import url('components/componentes.css');
+@import url('pages/comparador-produtos.css');
+@import url('components/anuncios-header-avisos.css');

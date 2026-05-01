@@ -13,7 +13,7 @@
 <!-- BLOCO 01.2 — Google Ads -->
 <!-- Google Ads tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18121830612"></script>
-<script src="js/ui/head.js"></script>
+<script src="js/head.js"></script>
 <!-- BLOCO 01.3 — Conversão do Google Ads -->
 <!-- Event snippet for Visualização de página conversion page -->
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
@@ -26,8 +26,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
-<link rel="preload" href="css/dist/main.min.css" as="style">
-<link rel="stylesheet" href="css/dist/main.min.css">
+<link rel="stylesheet" href="css/chunks/01-base.css">
+<link rel="stylesheet" href="css/chunks/02-glass-layout.css">
+<link rel="stylesheet" href="css/chunks/03-componentes.css">
+<link rel="stylesheet" href="css/chunks/04-comparador-produtos.css">
+<link rel="stylesheet" href="css/chunks/05-anuncios-header-avisos.css">
 
 </head>
 <body data-inst="portal">
@@ -42,10 +45,10 @@
   <div class="header-content header-shell">
     <div class="header-topbar">
       <div class="header-menu-tools" aria-label="Controles rápidos">
-        <button class="menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
           <span></span><span></span><span></span>
         </button>
-        <button class="theme-toggle-header" id="theme-toggle-header" type="button" aria-label="Alternar tema claro/escuro">
+        <button class="theme-toggle-header" onclick="toggleTheme()" id="theme-toggle-header" type="button" aria-label="Alternar tema claro/escuro">
           ☀️ Claro
         </button>
       </div>
@@ -62,7 +65,7 @@
         <div class="header-institution-main">
           <div class="header-current-identity">
             <div class="current-flag-frame brand-logo-frame" aria-hidden="true">
-              <img id="header-active-flag" src="img/logoleao.webp" data-img-base="img/logoleao" alt="Logo Universo Segurança Pública">
+              <img id="header-active-flag" src="img/logoleao.jpeg" data-img-base="img/logoleao" alt="Logo Universo Segurança Pública" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='img/logoleao.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='img/logoleao.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='img/logoleao.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='img/logoleao.webp';}else{this.style.display='none';}">
             </div>
 
             <div class="header-current-copy">
@@ -123,7 +126,7 @@
         <div class="header-controls-grid">
           <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
             <label for="instituicao_header">Consultar instituição</label>
-            <select id="instituicao_header" aria-label="Selecione a instituição no topo do site">
+            <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
               <option value="" selected disabled>Escolha uma instituição</option>
               <optgroup label="São Paulo">
                 <option value="pmesp">PMESP - Polícia Militar</option>
@@ -266,15 +269,15 @@
           <div class="header-branch-switcher" aria-label="Alternar entre instituição militar, civil e penal do estado selecionado">
             <span>Carreira do estado</span>
             <div class="branch-buttons">
-              <button class="branch-option" id="header-branch-pm" type="button" data-branch="pm" aria-pressed="false" disabled>
+              <button class="branch-option" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="false" disabled>
                 <strong id="header-pm-sigla">PM</strong>
                 <small>Militar</small>
               </button>
-              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" aria-pressed="false" disabled>
+              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" onclick="selecionarRamo('pc')" aria-pressed="false" disabled>
                 <strong id="header-pc-sigla">PC</strong>
                 <small>Civil</small>
               </button>
-              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" aria-pressed="false" disabled>
+              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" onclick="selecionarRamo('pp')" aria-pressed="false" disabled>
                 <strong id="header-pp-sigla">PP</strong>
                 <small>Penal</small>
               </button>
@@ -290,137 +293,137 @@
       <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
         <div class="state-flags-title">Estados disponíveis</div>
 
-        <button class="state-flag" type="button" data-estado="sp" title="São Paulo" aria-label="Selecionar São Paulo" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="Bandeira de São Paulo">
           <span>SP</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="rj" title="Rio de Janeiro" aria-label="Selecionar Rio de Janeiro" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="rj" title="Rio de Janeiro" onclick="selecionarEstado('rj')" aria-label="Selecionar Rio de Janeiro" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_do_Rio_de_Janeiro.svg" alt="Bandeira do Rio de Janeiro">
           <span>RJ</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="mg" title="Minas Gerais" aria-label="Selecionar Minas Gerais" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="mg" title="Minas Gerais" onclick="selecionarEstado('mg')" aria-label="Selecionar Minas Gerais" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg" alt="Bandeira de Minas Gerais">
           <span>MG</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ba" title="Bahia" aria-label="Selecionar Bahia" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ba" title="Bahia" onclick="selecionarEstado('ba')" aria-label="Selecionar Bahia" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg" alt="Bandeira da Bahia">
           <span>BA</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="pr" title="Paraná" aria-label="Selecionar Paraná" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="pr" title="Paraná" onclick="selecionarEstado('pr')" aria-label="Selecionar Paraná" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg" alt="Bandeira do Paraná">
           <span>PR</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="rs" title="Rio Grande do Sul" aria-label="Selecionar Rio Grande do Sul" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="rs" title="Rio Grande do Sul" onclick="selecionarEstado('rs')" aria-label="Selecionar Rio Grande do Sul" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg" alt="Bandeira do Rio Grande do Sul">
           <span>RS</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="sc" title="Santa Catarina" aria-label="Selecionar Santa Catarina" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="sc" title="Santa Catarina" onclick="selecionarEstado('sc')" aria-label="Selecionar Santa Catarina" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg" alt="Bandeira de Santa Catarina">
           <span>SC</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="es" title="Espírito Santo" aria-label="Selecionar Espírito Santo" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="es" title="Espírito Santo" onclick="selecionarEstado('es')" aria-label="Selecionar Espírito Santo" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg" alt="Bandeira do Espírito Santo">
           <span>ES</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ms" title="Mato Grosso do Sul" aria-label="Selecionar Mato Grosso do Sul" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ms" title="Mato Grosso do Sul" onclick="selecionarEstado('ms')" aria-label="Selecionar Mato Grosso do Sul" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg" alt="Bandeira de Mato Grosso do Sul">
           <span>MS</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="mt" title="Mato Grosso" aria-label="Selecionar Mato Grosso" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="mt" title="Mato Grosso" onclick="selecionarEstado('mt')" aria-label="Selecionar Mato Grosso" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg" alt="Bandeira de Mato Grosso">
           <span>MT</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ac" title="Acre" aria-label="Selecionar Acre" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ac" title="Acre" onclick="selecionarEstado('ac')" aria-label="Selecionar Acre" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg" alt="Bandeira de Acre">
           <span>AC</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="al" title="Alagoas" aria-label="Selecionar Alagoas" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="al" title="Alagoas" onclick="selecionarEstado('al')" aria-label="Selecionar Alagoas" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg" alt="Bandeira de Alagoas">
           <span>AL</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="am" title="Amazonas" aria-label="Selecionar Amazonas" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="am" title="Amazonas" onclick="selecionarEstado('am')" aria-label="Selecionar Amazonas" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg" alt="Bandeira de Amazonas">
           <span>AM</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ap" title="Amapá" aria-label="Selecionar Amapá" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ap" title="Amapá" onclick="selecionarEstado('ap')" aria-label="Selecionar Amapá" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg" alt="Bandeira de Amapá">
           <span>AP</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ce" title="Ceará" aria-label="Selecionar Ceará" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ce" title="Ceará" onclick="selecionarEstado('ce')" aria-label="Selecionar Ceará" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Cear%C3%A1.svg" alt="Bandeira de Ceará">
           <span>CE</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="df" title="Distrito Federal" aria-label="Selecionar Distrito Federal" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="df" title="Distrito Federal" onclick="selecionarEstado('df')" aria-label="Selecionar Distrito Federal" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Distrito_Federal_(Brasil).svg" alt="Bandeira de Distrito Federal">
           <span>DF</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="go" title="Goiás" aria-label="Selecionar Goiás" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="go" title="Goiás" onclick="selecionarEstado('go')" aria-label="Selecionar Goiás" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg" alt="Bandeira de Goiás">
           <span>GO</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ma" title="Maranhão" aria-label="Selecionar Maranhão" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ma" title="Maranhão" onclick="selecionarEstado('ma')" aria-label="Selecionar Maranhão" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Maranh%C3%A3o.svg" alt="Bandeira de Maranhão">
           <span>MA</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="pa" title="Pará" aria-label="Selecionar Pará" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="pa" title="Pará" onclick="selecionarEstado('pa')" aria-label="Selecionar Pará" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Par%C3%A1.svg" alt="Bandeira de Pará">
           <span>PA</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="pb" title="Paraíba" aria-label="Selecionar Paraíba" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="pb" title="Paraíba" onclick="selecionarEstado('pb')" aria-label="Selecionar Paraíba" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Para%C3%ADba.svg" alt="Bandeira de Paraíba">
           <span>PB</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="pe" title="Pernambuco" aria-label="Selecionar Pernambuco" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="pe" title="Pernambuco" onclick="selecionarEstado('pe')" aria-label="Selecionar Pernambuco" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Pernambuco.svg" alt="Bandeira de Pernambuco">
           <span>PE</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="pi" title="Piauí" aria-label="Selecionar Piauí" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="pi" title="Piauí" onclick="selecionarEstado('pi')" aria-label="Selecionar Piauí" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Piau%C3%AD.svg" alt="Bandeira de Piauí">
           <span>PI</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="rn" title="Rio Grande do Norte" aria-label="Selecionar Rio Grande do Norte" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="rn" title="Rio Grande do Norte" onclick="selecionarEstado('rn')" aria-label="Selecionar Rio Grande do Norte" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Norte.svg" alt="Bandeira de Rio Grande do Norte">
           <span>RN</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="ro" title="Rondônia" aria-label="Selecionar Rondônia" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="ro" title="Rondônia" onclick="selecionarEstado('ro')" aria-label="Selecionar Rondônia" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Rond%C3%B4nia.svg" alt="Bandeira de Rondônia">
           <span>RO</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="rr" title="Roraima" aria-label="Selecionar Roraima" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="rr" title="Roraima" onclick="selecionarEstado('rr')" aria-label="Selecionar Roraima" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Roraima.svg" alt="Bandeira de Roraima">
           <span>RR</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="se" title="Sergipe" aria-label="Selecionar Sergipe" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="se" title="Sergipe" onclick="selecionarEstado('se')" aria-label="Selecionar Sergipe" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Sergipe.svg" alt="Bandeira de Sergipe">
           <span>SE</span>
         </button>
 
-        <button class="state-flag" type="button" data-estado="to" title="Tocantins" aria-label="Selecionar Tocantins" aria-pressed="false">
+        <button class="state-flag" type="button" data-estado="to" title="Tocantins" onclick="selecionarEstado('to')" aria-label="Selecionar Tocantins" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg" alt="Bandeira de Tocantins">
           <span>TO</span>
         </button>
@@ -436,7 +439,7 @@
 </div>
 
 <!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
-<div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()" aria-hidden="true"></div>
 
 <!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
 <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
@@ -445,13 +448,13 @@
       <strong>Universo Segurança Pública</strong>
       <span>Navegação por instituição</span>
     </div>
-    <button class="close-btn" aria-label="Fechar menu">✕</button>
+    <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">✕</button>
   </div>
 
   <!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
   <div class="inst-selector sidebar-inst-panel">
     <label for="instituicao">Instituição selecionada</label>
-    <select id="instituicao" aria-label="Selecione a instituição">
+    <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
       <option value="" selected disabled>Escolha uma instituição</option>
       <optgroup label="São Paulo">
         <option value="pmesp">PMESP - Polícia Militar</option>
@@ -597,27 +600,27 @@
   <nav class="sidebar-nav" aria-label="Páginas do portal">
     <div class="sidebar-nav-group" aria-label="Consultas principais">
       <div class="sidebar-nav-title">Consultas principais</div>
-      <a href="#principal" id="menu-principal" class="active" tabindex="0" role="link">
+      <a href="#principal" onclick="abrirPaginaInicial(); return false;" id="menu-principal" class="active" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🏠</span>
         <span class="sidebar-link-text">Principal</span>
         <small>Início do portal</small>
       </a>
-      <a href="#remuneracao" id="menu-remuneracao" tabindex="0" role="link">
+      <a href="#remuneracao" onclick="switchPage('remuneracao'); return false;" id="menu-remuneracao" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">💰</span>
         <span class="sidebar-link-text">Remuneração Tabelada</span>
         <small>Valores brutos por cargo</small>
       </a>
-      <a href="#direitos" id="menu-direitos" tabindex="0" role="link">
+      <a href="#direitos" onclick="switchPage('direitos'); return false;" id="menu-direitos" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">⚖️</span>
         <span class="sidebar-link-text">Direitos e Vantagens</span>
         <small>Benefícios e alertas</small>
       </a>
-      <a href="#concursos" id="menu-concursos" tabindex="0" role="link">
+      <a href="#concursos" onclick="switchPage('concursos'); return false;" id="menu-concursos" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">📋</span>
         <span class="sidebar-link-text">Concursos</span>
         <small>Editais e requisitos</small>
       </a>
-      <a href="#comparar" id="menu-comparar" tabindex="0" role="link">
+      <a href="#comparar" onclick="switchPage('comparar'); return false;" id="menu-comparar" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">⚔️</span>
         <span class="sidebar-link-text">Comparar Carreiras</span>
         <small>Salários, vagas e bancas</small>
@@ -626,12 +629,12 @@
 
     <div class="sidebar-nav-group" aria-label="Apoio jurídico e institucional">
       <div class="sidebar-nav-title">Apoio jurídico e institucional</div>
-      <a href="#acoes" id="menu-acoes" tabindex="0" role="link">
+      <a href="#acoes" onclick="switchPage('acoes'); return false;" id="menu-acoes" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🧾</span>
         <span class="sidebar-link-text">Ações Judiciais</span>
         <small>Teses e orientações</small>
       </a>
-      <a href="#associacoes" id="menu-associacoes" tabindex="0" role="link">
+      <a href="#associacoes" onclick="switchPage('associacoes'); return false;" id="menu-associacoes" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🛡️</span>
         <span class="sidebar-link-text">Associações e Sindicatos</span>
         <small>Entidades de apoio</small>
@@ -640,12 +643,12 @@
 
     <div class="sidebar-nav-group" aria-label="Conteúdos e parceiros">
       <div class="sidebar-nav-title">Conteúdos e parceiros</div>
-      <a href="#produtos" id="menu-produtos" tabindex="0" role="link">
+      <a href="#produtos" onclick="switchPage('produtos'); return false;" id="menu-produtos" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🛒</span>
         <span class="sidebar-link-text">Produtos</span>
         <small>Cursos, livros e produtos</small>
       </a>
-      <a href="#parceiros" id="menu-parceiros" tabindex="0" role="link">
+      <a href="#parceiros" onclick="switchPage('parceiros'); return false;" id="menu-parceiros" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🤝</span>
         <span class="sidebar-link-text">Parceiros</span>
         <small>Anuncie aqui</small>
@@ -663,7 +666,7 @@
 
   <!-- BLOCO 03.4.3A — Espaço comercial lateral -->
   <aside class="ad-slot ad-slot--sidebar" data-ad-area="menu_lateral" aria-label="Espaço de anúncio: Menu lateral">
-    <a class="ad-placeholder-link" href="#parceiros">
+    <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('menu_lateral'); return false;">
       <span class="ad-label">Publicidade</span>
       <strong>Anuncie aqui</strong>
       <small>Espaço fixo no menu para marcas, cursos, equipamentos, consultorias ou convênios.</small>
@@ -677,11 +680,11 @@
       <span>Itens úteis para a rotina operacional</span>
     </div>
     <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
-      <img decoding="async" src="img/IMG_0868.webp" data-hide-on-error="true" alt="Produto parceiro selecionado" loading="lazy">
+      <img decoding="async" src="IMG_0868.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
     <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
-      <img decoding="async" src="img/IMG_0865.webp" data-hide-on-error="true" alt="Produto parceiro selecionado" loading="lazy">
+      <img decoding="async" src="IMG_0865.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
     <small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
@@ -709,15 +712,15 @@
       <strong>Importante:</strong> este é um portal informativo independente. Não é site oficial do governo, não representa órgãos públicos e não pertence às instituições mencionadas.
     </p>
     <div class="principal-actions" aria-label="Ações principais da página inicial">
-      <button class="principal-btn" type="button" data-page="remuneracao">Consultar Remuneração</button>
-      <button class="principal-btn secundario" type="button" data-page="direitos">Ver Direitos</button>
-      <button class="principal-btn secundario" type="button" data-page="concursos">Ver Concursos</button>
+      <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Consultar Remuneração</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('direitos')">Ver Direitos</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Ver Concursos</button>
     </div>
   </section>
 
   <!-- BLOCO 04.1A — Espaço comercial de topo da página principal -->
   <aside class="ad-slot ad-slot--hero" data-ad-area="home_topo" aria-label="Espaço de anúncio: Topo da página principal">
-    <a class="ad-placeholder-link" href="#parceiros">
+    <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('home_topo'); return false;">
       <span class="ad-label">Publicidade</span>
       <strong>Anuncie aqui</strong>
       <small>Destaque acima das consultas para anunciante que deseja ser visto logo na entrada do portal.</small>
@@ -775,7 +778,7 @@
     </div>
 
     <div class="principal-grid consultas-principais" aria-label="Consultas principais do site">
-      <article class="principal-card destaque" tabindex="0" role="button" aria-label="Abrir remuneração tabelada" data-page="remuneracao">
+      <article class="principal-card destaque" onclick="switchPage('remuneracao')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('remuneracao')" aria-label="Abrir remuneração tabelada">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">💰</span>
           <h3>Remuneração Tabelada</h3>
@@ -784,7 +787,7 @@
         <span class="principal-tag">Ver tabela grátis</span>
       </article>
 
-      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir direitos e vantagens" data-page="direitos">
+      <article class="principal-card" onclick="switchPage('direitos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('direitos')" aria-label="Abrir direitos e vantagens">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">⚖️</span>
           <h3>Direitos e Vantagens</h3>
@@ -793,7 +796,7 @@
         <span class="principal-tag">Consultar direitos</span>
       </article>
 
-      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir concursos" data-page="concursos">
+      <article class="principal-card" onclick="switchPage('concursos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('concursos')" aria-label="Abrir concursos">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">📋</span>
           <h3>Concursos</h3>
@@ -802,7 +805,7 @@
         <span class="principal-tag">Ver editais</span>
       </article>
 
-      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir ações judiciais" data-page="acoes">
+      <article class="principal-card" onclick="switchPage('acoes')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('acoes')" aria-label="Abrir ações judiciais">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">🧾</span>
           <h3>Ações Judiciais</h3>
@@ -811,7 +814,7 @@
         <span class="principal-tag">Ver ações</span>
       </article>
 
-      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir associações e sindicatos" data-page="associacoes">
+      <article class="principal-card" onclick="switchPage('associacoes')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('associacoes')" aria-label="Abrir associações e sindicatos">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">🛡️</span>
           <h3>Associações e Sindicatos</h3>
@@ -825,14 +828,14 @@
   <!-- BLOCO 04.4A — Espaços comerciais entre consultas e conteúdos -->
   <section class="ad-grid ad-grid--duo" aria-label="Espaços de anúncio na página principal">
     <aside class="ad-slot ad-slot--card" data-ad-area="home_meio_consultas" aria-label="Espaço de anúncio: Meio da página principal">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('home_meio_consultas'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Ideal para cursos, planos de saúde, seguros, equipamentos ou serviços voltados à carreira policial.</small>
       </a>
     </aside>
     <aside class="ad-slot ad-slot--card" data-ad-area="home_meio_produtos" aria-label="Espaço de anúncio: Chamada comercial antes de produtos">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('home_meio_produtos'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Boa posição para ofertas que complementam estudo, preparo físico, operação ou vida profissional.</small>
@@ -848,7 +851,7 @@
     </div>
 
     <div class="principal-grid conteudos-parceiros" aria-label="Conteúdos complementares e parceiros">
-      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir produtos" data-page="produtos">
+      <article class="principal-card" onclick="switchPage('produtos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('produtos')" aria-label="Abrir produtos">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">🛒</span>
           <h3>Produtos</h3>
@@ -857,7 +860,7 @@
         <span class="principal-tag">Ver produtos</span>
       </article>
 
-      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir parceiros" data-page="parceiros">
+      <article class="principal-card" onclick="switchPage('parceiros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('parceiros')" aria-label="Abrir parceiros">
         <div class="principal-card-header">
           <span class="principal-card-icon" aria-hidden="true">🤝</span>
           <h3>Parceiros</h3>
@@ -900,7 +903,7 @@
 
     <!-- BLOCO 05.1A — Espaço comercial contextual da remuneração -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="remuneracao_antes_tabela" aria-label="Espaço de anúncio: Remuneração antes da tabela">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('remuneracao_antes_tabela'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Posição contextual para bancos, crédito responsável, previdência, seguros, associações ou soluções financeiras.</small>
@@ -961,11 +964,11 @@
       </div>
       <div class="field">
         <label for="idade_dir">Idade</label>
-        <input type="number" id="idade_dir" value="35" min="18" max="80"/>
+        <input type="number" id="idade_dir" value="35" min="18" max="80" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
         <label for="sexo_dir">Sexo para regra previdenciária</label>
-        <select id="sexo_dir">
+        <select id="sexo_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="masculino">Masculino</option>
           <option value="feminino">Feminino</option>
@@ -973,11 +976,11 @@
       </div>
       <div class="field">
         <label for="ingresso_dir">Data de ingresso na carreira</label>
-        <input type="date" id="ingresso_dir"/>
+        <input type="date" id="ingresso_dir" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
         <label for="dependente_dir">Tem filho/dependente até 14 anos ou inválido?</label>
-        <select id="dependente_dir">
+        <select id="dependente_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="sim">Sim</option>
           <option value="nao">Não</option>
@@ -985,11 +988,11 @@
       </div>
       <div class="field">
         <label for="renda_dir">Remuneração bruta aproximada (R$)</label>
-        <input type="number" id="renda_dir" value="0" min="0" step="0.01" placeholder="Use para salário-família"/>
+        <input type="number" id="renda_dir" value="0" min="0" step="0.01" placeholder="Use para salário-família" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
         <label for="local_especial_dir">Atua em localidade/unidade especial?</label>
-        <select id="local_especial_dir">
+        <select id="local_especial_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="sim">Sim</option>
           <option value="nao">Não</option>
@@ -997,7 +1000,7 @@
       </div>
       <div class="field">
         <label for="requisitos_apos_dir">Já cumpriu requisitos de aposentadoria?</label>
-        <select id="requisitos_apos_dir">
+        <select id="requisitos_apos_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não sei / verificar</option>
           <option value="sim">Sim</option>
           <option value="nao">Não</option>
@@ -1009,7 +1012,7 @@
   <div class="card">
     <!-- BLOCO 06.1A — Espaço comercial entre formulário e parecer -->
   <aside class="ad-slot ad-slot--inline" data-ad-area="direitos_entre_formulario_parecer" aria-label="Espaço de anúncio: Direitos entre formulário e parecer">
-    <a class="ad-placeholder-link" href="#parceiros">
+    <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('direitos_entre_formulario_parecer'); return false;">
       <span class="ad-label">Publicidade</span>
       <strong>Anuncie aqui</strong>
       <small>Local forte para advocacia, entidades, consultorias previdenciárias, seguros e apoio funcional.</small>
@@ -1037,7 +1040,7 @@
     </div>
     <!-- BLOCO 07.0A — Espaço comercial contextual de concursos -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="concursos_antes_lista" aria-label="Espaço de anúncio: Concursos antes da lista">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('concursos_antes_lista'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Destaque para cursos preparatórios, materiais de estudo, TAF, psicotécnico, mentorias e equipamentos.</small>
@@ -1062,9 +1065,9 @@
         <span>O comparador usa as mesmas bases já cadastradas nas abas de Remuneração Tabelada e Concursos.</span>
       </div>
       <div class="comparador-acoes">
-        <button class="btn-secondary" type="button" data-action="comparador-estado-atual">Selecionar estado atual</button>
-        <button class="btn-secondary" type="button" data-action="comparador-todas">Selecionar todas</button>
-        <button class="btn-secondary" type="button" data-action="comparador-limpar">Limpar</button>
+        <button class="btn-secondary" type="button" onclick="comparadorSelecionarEstadoAtual()">Selecionar estado atual</button>
+        <button class="btn-secondary" type="button" onclick="comparadorSelecionarTodas()">Selecionar todas</button>
+        <button class="btn-secondary" type="button" onclick="comparadorLimparSelecao()">Limpar</button>
       </div>
     </div>
 
@@ -1072,7 +1075,7 @@
       <div class="comparador-select-panel">
         <label class="comparador-select-label" for="comparador-selecao">Instituições para comparar</label>
         <div class="comparador-multiselect" aria-label="Selecione duas ou mais instituições para comparar">
-          <button class="comparador-toggle-lista" id="comparador-toggle-lista" type="button" aria-expanded="false" aria-controls="comparador-selecao">
+          <button class="comparador-toggle-lista" id="comparador-toggle-lista" type="button" onclick="toggleComparadorLista()" aria-expanded="false" aria-controls="comparador-selecao">
             <span>Escolher instituições</span>
             <small id="comparador-contador-selecao">0 selecionadas</small>
           </button>
@@ -1085,7 +1088,7 @@
 
     <!-- BLOCO 07.1A — Espaço comercial no comparador de carreiras -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="comparador_antes_resultado" aria-label="Espaço de anúncio: Comparador antes do resultado">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('comparador_antes_resultado'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Boa vitrine para marcas que querem aparecer no momento de decisão entre carreiras e estados.</small>
@@ -1129,7 +1132,7 @@
     </div>
 <!-- BLOCO 08.0A — Espaço comercial principal da aba produtos -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="produtos_topo" aria-label="Espaço de anúncio: Topo da aba produtos">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('produtos_topo'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Espaço premium para lançamentos, ofertas, afiliados, cursos e produtos físicos de maior conversão.</small>
@@ -1140,7 +1143,7 @@
     <div class="curso-grid" aria-label="Produtos físicos com link de compra">
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Abrir barra fixa para porta">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Barra fixa para porta" loading="lazy">
+          <img decoding="async" src="barrafixa01" data-img-base="barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Barra fixa para porta</h3>
         <p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
@@ -1154,7 +1157,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="noopener noreferrer" aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/botaacero.webp" data-img-base="img/botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy">
+          <img decoding="async" src="botaacero" data-img-base="botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
         <p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
@@ -1168,7 +1171,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Abrir Power Rack Funcional">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+          <img decoding="async" src="barrafixa02" data-img-base="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Power Rack Funcional com paralelas</h3>
         <p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
@@ -1189,7 +1192,7 @@
     <div class="curso-grid curso-pmesp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-sargento-pmesp.webp" data-img-base="img/curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy">
+          <img decoding="async" src="curso-sargento-pmesp" data-img-base="curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Curso Preparatório - SARGENTO PMESP</h3>
         <p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
@@ -1204,7 +1207,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-pmesp-completo.webp" data-img-base="img/curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy">
+          <img decoding="async" src="curso-pmesp-completo" data-img-base="curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Curso Preparatório PMESP Completo</h3>
         <p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
@@ -1219,7 +1222,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-psicotecnico-carreiras-policiais.webp" data-img-base="img/curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy">
+          <img decoding="async" src="curso-psicotecnico-carreiras-policiais" data-img-base="curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
         <p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
@@ -1236,7 +1239,7 @@
     <div class="curso-grid curso-pcsp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-raciocinio-logico-pcsp.webp" data-img-base="img/curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy">
+          <img decoding="async" src="curso-raciocinio-logico-pcsp" data-img-base="curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
         <p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
@@ -1251,7 +1254,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso de Informática PCSP">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-informatica-pcsp.webp" data-img-base="img/curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy">
+          <img decoding="async" src="curso-informatica-pcsp" data-img-base="curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>PCSP - Curso de Informática - Edital Completo</h3>
         <p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
@@ -1273,7 +1276,7 @@
     <div class="curso-grid" aria-label="Livros e e-books com link de compra">
       <a class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/pacote-viva-sem-procrastinar.webp" data-img-base="img/pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy">
+          <img decoding="async" src="pacote-viva-sem-procrastinar" data-img-base="pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Pacote - Viva Sem Procrastinar</h3>
         <p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
@@ -1288,7 +1291,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/otimizando-cerebro-concursos.webp" data-img-base="img/otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy">
+          <img decoding="async" src="otimizando-cerebro-concursos" data-img-base="otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Otimizando o Cérebro para Concursos Públicos</h3>
         <p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
@@ -1303,7 +1306,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/alem-da-farda-codigo-travessia.webp" data-img-base="img/alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy">
+          <img decoding="async" src="alem-da-farda-codigo-travessia" data-img-base="alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Além da Farda: O Código da Travessia</h3>
         <p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
@@ -1318,7 +1321,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" target="_blank" rel="noopener noreferrer" aria-label="Abrir Método DMA">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/metodo-dma-procrastinacao.webp" data-img-base="img/metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy">
+          <img decoding="async" src="metodo-dma-procrastinacao" data-img-base="metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
         <p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
@@ -1333,7 +1336,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/taticas-lideranca-militar.webp" data-img-base="img/taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy">
+          <img decoding="async" src="taticas-lideranca-militar" data-img-base="taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
         <p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
@@ -1363,7 +1366,7 @@
     </div>
     <!-- BLOCO 09.0A — Espaço comercial contextual de ações judiciais -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="acoes_antes_lista" aria-label="Espaço de anúncio: Ações judiciais antes da lista">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('acoes_antes_lista'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Local indicado para escritórios, assessorias, associações e serviços de orientação jurídica.</small>
@@ -1383,7 +1386,7 @@
     </div>
     <!-- BLOCO 10.0A — Espaço comercial contextual de associações -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="associacoes_antes_lista" aria-label="Espaço de anúncio: Associações antes da lista">
-      <a class="ad-placeholder-link" href="#parceiros">
+      <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('associacoes_antes_lista'); return false;">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
         <small>Boa posição para convênios, benefícios, planos, clubes, seguros, sindicatos e entidades parceiras.</small>
@@ -1413,7 +1416,7 @@
       </ul>
     </section>
 
-    <form class="form-grid" style="margin-bottom: 0;" data-form="contato" novalidate>
+    <form class="form-grid" style="margin-bottom: 0;" onsubmit="enviarEmailContato(event)" novalidate>
       <div class="field span-2">
         <label for="contato_nome">Nome da Empresa ou Usuário</label>
         <input type="text" id="contato_nome" required placeholder="Digite o nome..." minlength="2" />
@@ -1434,7 +1437,7 @@
       </div>
       <div class="field span-2">
         <label for="contato_mensagem">Descrição / Mensagem</label>
-        <textarea id="contato_mensagem" required placeholder="Escreva sua mensagem detalhada aqui..." maxlength="2000"></textarea>
+        <textarea id="contato_mensagem" required placeholder="Escreva sua mensagem detalhada aqui..." maxlength="2000" oninput="atualizarContador()"></textarea>
         <div class="char-counter" id="char-counter">0 / 2000 caracteres</div>
       </div>
       <div class="field span-2">
@@ -1450,7 +1453,7 @@
 
 <!-- BLOCO 12.5 — Espaço comercial antes do rodapé -->
 <aside class="ad-slot ad-slot--footer" data-ad-area="rodape_geral" aria-label="Espaço de anúncio antes do rodapé">
-  <a class="ad-placeholder-link" href="#parceiros">
+  <a class="ad-placeholder-link" href="#parceiros" onclick="abrirContatoAnuncio('rodape_geral'); return false;">
     <span class="ad-label">Publicidade</span>
     <strong>Anuncie aqui</strong>
     <small>Espaço final para reforço de marca, campanhas institucionais e chamadas comerciais gerais.</small>
@@ -1476,9 +1479,16 @@
      Camada visual final: apenas aparência, sem alterar HTML funcional ou JavaScript.
      ======================================================= -->
 <!-- CSS movido para css/style.css -->
-<!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
-     Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js" defer></script>
+<!-- JavaScript dividido em chunks e carregado com defer para preservar ordem sem bloquear renderização -->
+<script src="js/chunks/01-parametros-cargos.js" defer></script>
+<script src="js/chunks/02-policia-penal.js" defer></script>
+<script src="js/chunks/03-bases-conteudo.js" defer></script>
+<script src="js/chunks/04-navegacao-ui.js" defer></script>
+<script src="js/chunks/05-remuneracao.js" defer></script>
+<script src="js/chunks/06-header-estados.js" defer></script>
+<script src="js/chunks/07-direitos.js" defer></script>
+<script src="js/chunks/08-concursos-comparador.js" defer></script>
+<script src="js/chunks/09-contato-init.js" defer></script>
 
 </body>
 </html>
