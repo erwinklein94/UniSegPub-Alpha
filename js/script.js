@@ -2302,6 +2302,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 let headerModoInicialPortal = true;
+const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
@@ -2369,6 +2370,16 @@ function toggleMenu(forceOpen) {
 
 function closeMenu() {
   toggleMenu(false);
+}
+
+function abrirPaginaInicial() {
+  // Volta ao mesmo estado visual da primeira entrada no portal:
+  // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
+  aplicarHeaderInicialPortal();
+  switchPage('principal');
+  try {
+    if (window.location.hash !== '#principal') window.history.replaceState(null, '', '#principal');
+  } catch (e) { /* navegação silenciosa */ }
 }
 
 function switchPage(page) {
@@ -3291,11 +3302,21 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcto: 'pcto.jpeg', ppma: 'ppma.jpeg', pmma: 'pmma.jpeg', pcma: 'pcma.jpeg'
 };
 
+
+function setHeaderHeroImage(src) {
+  const card = document.querySelector('.header-institution-card');
+  if (!card) return;
+  const imagem = String(src || 'logoleao.jpeg').replace(/["\\]/g, '\\$&');
+  card.style.setProperty('--header-hero-image', `url("${imagem}")`);
+}
+
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   if (!img) return;
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
+
+  setHeaderHeroImage(fallbackBandeira || imagemInstituicao || 'logoleao.jpeg');
 
   img.style.display = '';
   img.removeAttribute('data-retry');
@@ -3732,6 +3753,7 @@ function aplicarHeaderInicialPortal() {
     flagAtual.dataset.retry = '';
     flagAtual.src = 'logoleao';
     flagAtual.alt = 'Logo Universo Segurança Pública';
+    setHeaderHeroImage('logoleao.jpeg');
     const moldura = flagAtual.closest('.current-flag-frame');
     if (moldura) {
       moldura.classList.remove('institution-logo-frame');

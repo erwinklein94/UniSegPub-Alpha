@@ -19,7 +19,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de todas as unidades da federação brasileira - estrutura ampliada para 27 UFs e preenchimento progressivo de dados por estado">
+<meta name="description" content="Portal informativo independente sobre remuneração, direitos, concursos e informações públicas de segurança pública, com dados organizados a partir de fontes públicas e oficiais dos governos estaduais quando disponíveis.">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +52,7 @@
       <div class="header-brand-block" aria-label="Identidade do site">
         <div class="header-kicker"> </div>
         <h1>Universo <span>Segurança Pública</span></h1>
+        <p class="header-independent-note" aria-label="Aviso de independência institucional">Portal informativo independente • Não governamental</p>
       </div>
     </div>
 
@@ -279,6 +280,10 @@
             </div>
           </div>
         </div>
+
+        <p class="header-disclaimer-note" aria-label="Aviso sobre natureza do portal">
+          <strong>Portal informativo independente.</strong> Não somos órgão governamental, não representamos governos estaduais e não pertencemos às instituições exibidas. As informações são organizadas a partir de fontes públicas e oficiais quando disponíveis.
+        </p>
       </section>
 
       <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
@@ -584,13 +589,14 @@
       </optgroup>
     </select>
     <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
+    <p class="sidebar-independent-note">Portal independente, sem vínculo governamental. Confirme atos oficiais nos canais da respectiva instituição.</p>
   </div>
 
   <!-- BLOCO 03.4.2 — Links internos organizados por finalidade -->
   <nav class="sidebar-nav" aria-label="Páginas do portal">
     <div class="sidebar-nav-group" aria-label="Consultas principais">
       <div class="sidebar-nav-title">Consultas principais</div>
-      <a href="#principal" onclick="switchPage('principal'); return false;" id="menu-principal" class="active" tabindex="0" role="link">
+      <a href="#principal" onclick="abrirPaginaInicial(); return false;" id="menu-principal" class="active" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🏠</span>
         <span class="sidebar-link-text">Principal</span>
         <small>Início do portal</small>
@@ -697,6 +703,9 @@
     </div>
     <p class="principal-subtitle">
       Selecione sua instituição e acesse dados organizados sobre salários, benefícios, concursos, ações judiciais, associações e materiais úteis para profissionais da segurança pública.
+    </p>
+    <p class="portal-disclaimer portal-disclaimer--hero" aria-label="Aviso institucional do portal">
+      <strong>Importante:</strong> este é um portal informativo independente. Não é site oficial do governo, não representa órgãos públicos e não pertence às instituições mencionadas.
     </p>
     <div class="principal-actions" aria-label="Ações principais da página inicial">
       <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Consultar Remuneração</button>
@@ -859,8 +868,8 @@
   </section>
 
   <!-- BLOCO 04.6 — Nota de confiabilidade e transparência -->
-  <section class="principal-nota confiabilidade" aria-label="Aviso de confiabilidade">
-    <strong>Transparência:</strong> as informações são organizadas com base em fontes públicas, editais, legislações e referências oficiais sempre que disponíveis. Valores e direitos podem variar conforme cargo, classe, lotação, legislação vigente, rubricas do contracheque e situação individual.
+  <section class="principal-nota confiabilidade" aria-label="Aviso de confiabilidade e independência">
+    <strong>Transparência:</strong> o Universo Segurança Pública é um portal informativo independente. As informações são organizadas com base em fontes públicas, editais, legislações e referências oficiais sempre que disponíveis. Valores e direitos podem variar conforme cargo, classe, lotação, legislação vigente, rubricas do contracheque e situação individual.
   </section>
 </main>
 
@@ -870,7 +879,7 @@
   <div class="card">
     <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
     <div class="remuneracao-intro">
-      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, uma coluna informativa sobre adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
+      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, organizada por este portal independente a partir de fontes públicas e oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, uma coluna informativa sobre adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
     </div>
 
     <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
@@ -916,7 +925,7 @@
     </div>
 
     <div class="alerta legal">
-      <strong>Observação:</strong> Os valores são uma consulta rápida de remuneração bruta. Benefícios condicionados, indenizações variáveis ou verbas que dependem de escala, local, classificação, habilitação, tempo de serviço ou situação individual não são somados automaticamente para não inflar o total. Não inclui IRRF, previdência, pensão, empréstimos, plantões, extras, férias, 13º ou verbas eventuais.
+      <strong>Observação:</strong> Os valores são uma consulta rápida de remuneração bruta produzida por portal informativo independente. Benefícios condicionados, indenizações variáveis ou verbas que dependem de escala, local, classificação, habilitação, tempo de serviço ou situação individual não são somados automaticamente para não inflar o total. Não inclui IRRF, previdência, pensão, empréstimos, plantões, extras, férias, 13º ou verbas eventuais.
     </div>
   </div>
 </main>
@@ -929,7 +938,7 @@
     <!-- BLOCO 06.1 — Formulário para análise de direitos -->
     <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
     <div class="direitos-intro">
-      Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+      Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
     </div>
 
     <div class="form-grid" style="margin-bottom: 0;">
@@ -1023,7 +1032,7 @@
   <div class="card">
     <h2>Informações de Concursos (<span id="txt-inst-concursos">PMESP</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Abaixo estão os dados consolidados do último edital de referência, requisitos legais, etapas de seleção e perspectivas para 2026.
+      Abaixo estão dados informativos consolidados a partir de editais, leis e fontes públicas. Este portal não é banca organizadora, órgão oficial ou canal de inscrição; confirme sempre prazos e regras no edital e nos canais governamentais competentes.
     </div>
     <!-- BLOCO 07.0A — Espaço comercial contextual de concursos -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="concursos_antes_lista" aria-label="Espaço de anúncio: Concursos antes da lista">
@@ -1043,7 +1052,7 @@
   <div class="card">
     <h2>Comparar Carreiras</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 20px;">
-      Selecione duas ou mais instituições para comparar lado a lado remuneração, benefícios, vantagens, edital de referência, vagas, banca, inscritos, previsão de próximo concurso, matérias cobradas e fontes oficiais cadastradas no portal.
+      Selecione duas ou mais instituições para comparar lado a lado remuneração, benefícios, vantagens, edital de referência, vagas, banca, inscritos, previsão de próximo concurso, matérias cobradas e fontes oficiais cadastradas no portal. Comparação informativa, independente e sem vínculo com as instituições citadas.
     </div>
 
     <div class="comparador-topo">
@@ -1369,7 +1378,7 @@
   <div class="card">
     <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Entidades representativas e de apoio relacionadas à instituição selecionada. Consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
+      Entidades representativas e de apoio relacionadas à instituição selecionada. Listagem informativa e independente: consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
     </div>
     <!-- BLOCO 10.0A — Espaço comercial contextual de associações -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="associacoes_antes_lista" aria-label="Espaço de anúncio: Associações antes da lista">
@@ -1390,7 +1399,7 @@
   <div class="card">
     <h2>Parceiros e Contato</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Esta área é destinada a empresas interessadas em parcerias, anúncios e a usuários que desejam sugerir alterações, correções ou melhorias.
+      Esta área é destinada a empresas interessadas em parcerias, anúncios e a usuários que desejam sugerir alterações, correções ou melhorias. O portal é independente e aceita correções para manter as informações alinhadas às fontes públicas e oficiais.
     </div>
     <section class="ad-guide" aria-label="Áreas disponíveis para anúncios">
       <h3>Áreas disponíveis para anúncio</h3>
@@ -1449,8 +1458,11 @@
 
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
-  <p>Desenvolvido por <strong>LOCKSTAGE</strong> — Conteúdo informativo baseado em fontes públicas.</p>
-  <p class="small-note">Os valores são estimativas e referências. Confira sempre o holerite oficial e o regulamento institucional.</p>
+  <div class="footer-disclaimer" aria-label="Aviso institucional do portal">
+    <p><strong>Universo Segurança Pública</strong> é um portal informativo independente. Não é órgão governamental, não representa governos estaduais e não pertence às instituições mencionadas.</p>
+    <p class="small-note">As informações são organizadas a partir de fontes públicas, legislações, editais e canais oficiais quando disponíveis. Valores, direitos, requisitos e prazos podem mudar: confira sempre o holerite, o regulamento, o edital e os canais oficiais da instituição.</p>
+    <p class="small-note footer-credit">Desenvolvido por <strong>LOCKSTAGE</strong>.</p>
+  </div>
 </footer>
 
 
