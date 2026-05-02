@@ -3291,6 +3291,9 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
+  bmsp: 'img/bmsp.png',
+  bmrj: 'img/bmrj.png',
+  bmmg: 'img/bmmg.png',
   pmesp: 'img/pmesp.webp',
   pcsp: 'img/pcsp.webp',
   pmerj: 'img/pmerj.webp',
@@ -3327,7 +3330,6 @@ const HEADER_INSTITUICOES_IMAGENS = {
   ppba: 'img/ppba.webp',
   pppr: 'img/pppr.webp',
   pprs: 'img/pprs.jpeg',
-  ppsc: 'img/ppsc.jpeg',
   ppes: 'img/ppes.webp',
   ppms: 'img/ppms.webp',
   ppmt: 'img/ppmt.webp',
@@ -3335,8 +3337,7 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcma: 'img/pcma.webp',
   ppma: 'img/ppma.webp',
   pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp',
-  ppto: 'img/ppto.jpeg'
+  pcto: 'img/pcto.webp'
 };
 
 
@@ -5494,7 +5495,8 @@ function formatarEfetivoHeader(valor) {
   if (!numero) return 'Não informado';
   if (numero >= 1000) {
     const mil = numero / 1000;
-    const texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
     return `≈ ${texto} mil`;
   }
   return `≈ ${formatarNumeroHeader(numero)}`;
@@ -5588,7 +5590,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Integrantes femininas',
     'header-label-populacao': 'População abrangida',
-    'header-label-relacao': 'Estados',
+    'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
@@ -5598,7 +5600,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
-  setTexto('header-resumo-relacao', `${resumoPortal.estados} estados`);
+  setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
   setTexto('header-resumo-governador', 'Polícias militares, civis e penais');
   setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
 

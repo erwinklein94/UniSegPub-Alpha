@@ -132,6 +132,9 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
+  bmsp: 'img/bmsp.png',
+  bmrj: 'img/bmrj.png',
+  bmmg: 'img/bmmg.png',
   pmesp: 'img/pmesp.webp',
   pcsp: 'img/pcsp.webp',
   pmerj: 'img/pmerj.webp',
@@ -154,21 +157,11 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pmmt: 'img/pmmt.webp',
   pcmt: 'img/pcmt.webp',
   ppsp: 'img/ppsp.webp',
-  pmac: 'img/pmac.webp',
-  pcac: 'img/pcac.webp',
-  ppac: 'img/ppac.webp',
-  pmal: 'img/pmal.webp',
-  pcal: 'img/pcal.webp',
-  ppal: 'img/ppal.webp',
-  pmam: 'img/pmam.webp',
-  pcam: 'img/pcam.webp',
-  ppam: 'img/ppam.webp',
   pprj: 'img/pprj.webp',
   ppmg: 'img/ppmg.webp',
   ppba: 'img/ppba.webp',
   pppr: 'img/pppr.webp',
-  pprs: 'img/pprs.jpeg',
-  ppsc: 'img/ppsc.jpeg',
+  pprs: 'img/pprs.webp',
   ppes: 'img/ppes.webp',
   ppms: 'img/ppms.webp',
   ppmt: 'img/ppmt.webp',
@@ -176,8 +169,7 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcma: 'img/pcma.webp',
   ppma: 'img/ppma.webp',
   pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp',
-  ppto: 'img/ppto.jpeg'
+  pcto: 'img/pcto.webp'
 };
 
 
@@ -218,7 +210,7 @@ function configurarLogoInicialHeader(img) {
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
+    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -251,10 +243,20 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
   img.onerror = function () {
+    if (imagemInstituicao && !this.dataset.fallbackJpegAplicado) {
+      const jpegFallback = imagemInstituicao.replace(/\.webp$/i, '.jpeg');
+      if (jpegFallback && jpegFallback !== this.getAttribute('src')) {
+        this.dataset.fallbackJpegAplicado = 'true';
+        this.src = jpegFallback;
+        return;
+      }
+    }
+
     if (this.dataset.fallbackAplicado === 'bandeira') {
       this.onerror = null;
       return;
     }
+
     this.dataset.fallbackAplicado = 'bandeira';
     this.src = fallbackBandeira;
     this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
@@ -2130,6 +2132,29 @@ function criarCargosPmEstrutura(inst, sigla) {
   ];
 }
 
+
+function criarCargosBombeiroEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'cmtg', `${sigla} — Comandante-Geral`, true),
+    criarCargoEstrutural(inst, 'subcmtg', `${sigla} — Subcomandante-Geral`, true),
+    criarCargoEstrutural(inst, 'cel', `${sigla} — Coronel BM`, true),
+    criarCargoEstrutural(inst, 'tencel', `${sigla} — Tenente-Coronel BM`, true),
+    criarCargoEstrutural(inst, 'maj', `${sigla} — Major BM`, true),
+    criarCargoEstrutural(inst, 'cap', `${sigla} — Capitão BM`, true),
+    criarCargoEstrutural(inst, '1ten', `${sigla} — 1º Tenente BM`, true),
+    criarCargoEstrutural(inst, '2ten', `${sigla} — 2º Tenente BM`, true),
+    criarCargoEstrutural(inst, 'aspof', `${sigla} — Aspirante a Oficial BM`, true),
+    criarCargoEstrutural(inst, 'alof', `${sigla} — Aluno-Oficial / CFO BM`, false),
+    criarCargoEstrutural(inst, 'subten', `${sigla} — Subtenente BM`, false),
+    criarCargoEstrutural(inst, '1sgt', `${sigla} — 1º Sargento BM`, false),
+    criarCargoEstrutural(inst, '2sgt', `${sigla} — 2º Sargento BM`, false),
+    criarCargoEstrutural(inst, '3sgt', `${sigla} — 3º Sargento BM`, false),
+    criarCargoEstrutural(inst, 'cabo', `${sigla} — Cabo BM`, false),
+    criarCargoEstrutural(inst, 'sd1', `${sigla} — Soldado BM 1ª Classe`, false, true),
+    criarCargoEstrutural(inst, 'sd2', `${sigla} — Soldado BM 2ª Classe / Aluno-Soldado`, false)
+  ];
+}
+
 function criarCargosPcEstrutura(inst, sigla) {
   return [
     criarCargoEstrutural(inst, 'delegado_geral', `${sigla} — Delegado-Geral / Direção Superior`, true),
@@ -2207,10 +2232,10 @@ function criarConcursoEstrutura(inst, info, ramo) {
     banca: 'A definir/preencher conforme edital.',
     inscritos: 'Preencher quando houver dado oficial.',
     materias: 'Preencher disciplinas conforme edital do cargo.',
-    etapas: ramo === 'pm'
-      ? 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação e demais etapas do edital.'
+    etapas: ['pm', 'bm'].includes(ramo)
+      ? 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação militar e demais etapas do edital.'
       : 'Prova objetiva/discursiva quando prevista, exames, investigação social, TAF quando aplicável, avaliação psicológica, curso de formação e demais etapas do edital.',
-    cfsd: ramo === 'pm' ? 'Curso de Formação de Soldados/Oficiais — preencher.' : 'Curso de formação profissional — preencher.',
+    cfsd: ['pm', 'bm'].includes(ramo) ? 'Curso de Formação de Soldados/Oficiais — preencher.' : 'Curso de formação profissional — preencher.',
     estagio: 'Estágio probatório e desenvolvimento na carreira — preencher conforme lei local.',
     validade: 'Preencher conforme edital e atos de homologação/prorrogação.',
     previsao: 'Acompanhar Diário Oficial, órgão oficial e banca. Não afirmar concurso aberto sem publicação oficial.',
@@ -2231,6 +2256,127 @@ function criarAssociacoesEstrutura(info, estadoNome) {
     { nome: `Associação/Sindicato — ${info.titulo}`, foco: `${estadoNome} — ${info.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
     { nome: `Entidade representativa estadual — ${estadoNome}`, foco: `Profissionais ativos, inativos e pensionistas vinculados à ${info.titulo}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe existentes na unidade federativa.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
   ];
+}
+
+
+const BOMBEIROS_MILITARES_ESTRUTURA = [
+  { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
+  { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'BMAL', desc: 'Corpo de Bombeiros Militar de Alagoas' },
+  { estado: 'am', nome: 'Amazonas', sigla: 'AM', inst: 'bmam', titulo: 'BMAM', desc: 'Corpo de Bombeiros Militar do Amazonas' },
+  { estado: 'ap', nome: 'Amapá', sigla: 'AP', inst: 'bmap', titulo: 'BMAP', desc: 'Corpo de Bombeiros Militar do Amapá' },
+  { estado: 'ba', nome: 'Bahia', sigla: 'BA', inst: 'bmba', titulo: 'BMBA', desc: 'Corpo de Bombeiros Militar da Bahia' },
+  { estado: 'ce', nome: 'Ceará', sigla: 'CE', inst: 'bmce', titulo: 'BMCE', desc: 'Corpo de Bombeiros Militar do Ceará' },
+  { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', inst: 'bmdf', titulo: 'BMDF', desc: 'Corpo de Bombeiros Militar do Distrito Federal' },
+  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'bmes', titulo: 'BMES', desc: 'Corpo de Bombeiros Militar do Espírito Santo' },
+  { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'bmgo', titulo: 'BMGO', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
+  { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'bmma', titulo: 'BMMA', desc: 'Corpo de Bombeiros Militar do Maranhão' },
+  { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'bmmg', titulo: 'BMMG', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
+  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'BMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
+  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'BMMT', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
+  { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'bmpa', titulo: 'BMPA', desc: 'Corpo de Bombeiros Militar do Pará' },
+  { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'BMPB', desc: 'Corpo de Bombeiros Militar da Paraíba' },
+  { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'bmpe', titulo: 'BMPE', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
+  { estado: 'pi', nome: 'Piauí', sigla: 'PI', inst: 'bmpi', titulo: 'BMPI', desc: 'Corpo de Bombeiros Militar do Piauí' },
+  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'bmpr', titulo: 'BMPR', desc: 'Corpo de Bombeiros Militar do Paraná' },
+  { estado: 'rj', nome: 'Rio de Janeiro', sigla: 'RJ', inst: 'bmrj', titulo: 'BMRJ', desc: 'Corpo de Bombeiros Militar do Rio de Janeiro' },
+  { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', inst: 'bmrn', titulo: 'BMRN', desc: 'Corpo de Bombeiros Militar do Rio Grande do Norte' },
+  { estado: 'ro', nome: 'Rondônia', sigla: 'RO', inst: 'bmro', titulo: 'BMRO', desc: 'Corpo de Bombeiros Militar de Rondônia' },
+  { estado: 'rr', nome: 'Roraima', sigla: 'RR', inst: 'bmrr', titulo: 'BMRR', desc: 'Corpo de Bombeiros Militar de Roraima' },
+  { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'bmrs', titulo: 'BMRS', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
+  { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'bmsc', titulo: 'BMSC', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
+  { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'bmse', titulo: 'BMSE', desc: 'Corpo de Bombeiros Militar de Sergipe' },
+  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'BMSP', desc: 'Corpo de Bombeiros Militar de São Paulo' },
+  { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'BMTO', desc: 'Corpo de Bombeiros Militar do Tocantins' }
+];
+
+function criarResumoBombeiroEstrutura(estado, item) {
+  return {
+    nome: item.desc,
+    sigla: item.titulo,
+    estado: estado.nome || item.nome,
+    estadoSigla: estado.sigla || item.sigla,
+    tipo: 'Bombeiro Militar',
+    criacao: 'A preencher',
+    ativa: 0,
+    ativaLabel: 'Efetivo ativo — preencher',
+    reserva: 0,
+    reservaLabel: 'Reserva/inativos — preencher',
+    femininas: 0,
+    femininasLabel: 'Integrantes femininas — preencher',
+    populacao: 0,
+    populacaoTitulo: 'População atendida',
+    relacaoLabel: 'Relação ativo/população — preencher após informar efetivo',
+    relacaoTitulo: 'Relação ativo/população',
+    governador: 'Chefe do Executivo — preencher',
+    comando: 'Comando-Geral do Corpo de Bombeiros — preencher',
+    fonte: `Fontes oficiais do ${item.titulo}, Diário Oficial e portal de transparência de ${estado.nome || item.nome} — preencher`,
+    atualizado: 'Estrutura de Bombeiros criada para preenchimento'
+  };
+}
+
+function criarAcoesBombeiroEstrutura(info) {
+  return [
+    { titulo: `${info.titulo} — adicionais, gratificações e escalas`, status: 'A preencher', ano: 'Base local pendente', tipo: 'individual', desc: 'Espaço reservado para temas típicos de bombeiros militares: serviço operacional, sobreaviso/plantões, adicional de risco/insalubridade/periculosidade quando previsto, indenizações, diárias, fardamento e diferenças de escala.', base: 'Preencher com estatuto militar estadual, leis remuneratórias, boletins, escalas, laudos, contracheques e atos de designação.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${info.titulo} — promoções, cursos e quadro militar`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Reservado para regras de promoção, interstício, cursos de formação/aperfeiçoamento/habilitação, antiguidade, merecimento e enquadramento no quadro de oficiais ou praças bombeiro militar.', base: 'Lei de organização básica, estatuto, regulamento de promoções e boletins internos.', fonte: 'Legislação e atos internos a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${info.titulo} — reserva, reforma e proteção social militar`, status: 'Análise individual', ano: 'Regra local a preencher', tipo: 'individual', desc: 'Espaço para regras de reserva remunerada, reforma, pensão militar, contribuição ao sistema de proteção social, paridade/integralidade quando cabível e averbações.', base: 'Data de ingresso, tempo militar, tempo de contribuição, posto/graduação, legislação estadual/distrital e documentos funcionais.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' }
+  ];
+}
+
+function criarAssociacoesBombeiroEstrutura(info, estadoNome) {
+  return [
+    { nome: `Associação de Bombeiros Militares — ${info.titulo}`, foco: `${estadoNome} — bombeiros militares ativos, inativos e pensionistas`, acao: 'Espaço reservado para entidade representativa da carreira bombeiro militar, pautas remuneratórias, previdenciárias, jurídicas e valorização profissional.', site: 'Consultar site oficial da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
+    { nome: `Entidade representativa militar estadual — ${estadoNome}`, foco: `Oficiais e praças vinculados ao ${info.titulo}`, acao: 'Cadastrar aqui associações, clubes, caixas beneficentes e entidades de classe que atendam bombeiros militares na unidade federativa.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
+  ];
+}
+
+function aplicarEstruturaBombeirosMilitaresDados() {
+  BOMBEIROS_MILITARES_ESTRUTURA.forEach(item => {
+    const estado = HEADER_ESTADOS[item.estado] || { nome: item.nome, sigla: item.sigla, flag: HEADER_BRASIL_FLAG };
+    const tituloBombeiro = String(item.titulo || item.inst || '').toUpperCase();
+    item.titulo = tituloBombeiro;
+
+    if (!HEADER_ESTADOS[item.estado]) HEADER_ESTADOS[item.estado] = estado;
+    estado.bm = item.inst;
+
+    if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
+    HEADER_INSTITUICOES_INFO[item.inst] = { titulo: tituloBombeiro, desc: item.desc };
+    if (!HEADER_INSTITUICOES_RESUMO[item.inst]) HEADER_INSTITUICOES_RESUMO[item.inst] = criarResumoBombeiroEstrutura(estado, item);
+    if (!REMUNERACAO_FONTES_OFICIAIS[item.inst]) {
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: `${tituloBombeiro} — fonte oficial a preencher`, url: '#' };
+    }
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+      titulo: tituloBombeiro,
+      desc: item.desc,
+      cor: '#b91c1c',
+      alertaPrev: `${tituloBombeiro}: estrutura aberta para preenchimento. Conferir sistema de proteção social militar, remuneração, adicionais, auxílios, escalas, ingresso e direitos conforme legislação de ${estado.nome || item.nome}.`
+    };
+    CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoEstrutura(item.inst, item, 'bm');
+    ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesBombeiroEstrutura(item);
+    ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesBombeiroEstrutura(item, estado.nome || item.nome);
+    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) CARGOS_ESTRUTURA_GENERICAS[item.inst] = criarCargosBombeiroEstrutura(item.inst, tituloBombeiro);
+  });
+}
+
+function inserirOptionBombeiroNoSelect(select, item) {
+  if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
+  let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === item.nome);
+  if (!grupo) {
+    grupo = document.createElement('optgroup');
+    grupo.label = item.nome;
+    select.appendChild(grupo);
+  }
+
+  const opt = criarOptionInstituicao(item.inst, `${item.titulo} - Bombeiros Militares`);
+  const pmOption = Array.from(grupo.querySelectorAll('option')).find(option => String(option.value || '').startsWith('pm'));
+  if (pmOption && pmOption.nextSibling) grupo.insertBefore(opt, pmOption.nextSibling);
+  else grupo.appendChild(opt);
+}
+
+function aplicarEstruturaBombeirosMilitaresNoHtml() {
+  BOMBEIROS_MILITARES_ESTRUTURA.forEach(item => {
+    inserirOptionBombeiroNoSelect(document.getElementById('instituicao_header'), item);
+    inserirOptionBombeiroNoSelect(document.getElementById('instituicao'), item);
+  });
 }
 
 function aplicarEstruturaEstadosFaltantesDados() {
@@ -2322,9 +2468,12 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
       flags.appendChild(btn);
     });
   }
+
+  aplicarEstruturaBombeirosMilitaresNoHtml();
 }
 
 aplicarEstruturaEstadosFaltantesDados();
+aplicarEstruturaBombeirosMilitaresDados();
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -2335,7 +2484,8 @@ function formatarEfetivoHeader(valor) {
   if (!numero) return 'Não informado';
   if (numero >= 1000) {
     const mil = numero / 1000;
-    const texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
     return `≈ ${texto} mil`;
   }
   return `≈ ${formatarNumeroHeader(numero)}`;
@@ -2429,7 +2579,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Integrantes femininas',
     'header-label-populacao': 'População abrangida',
-    'header-label-relacao': 'Estados',
+    'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
@@ -2439,8 +2589,8 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
-  setTexto('header-resumo-relacao', `${resumoPortal.estados} estados`);
-  setTexto('header-resumo-governador', 'Polícias militares, civis e penais');
+  setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
+  setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
   setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
 
   ['instituicao', 'instituicao_header'].forEach(id => {
@@ -2448,8 +2598,8 @@ function aplicarHeaderInicialPortal() {
     if (seletor) seletor.value = '';
   });
 
-  [['header-pm-sigla', 'PM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
-  ['header-branch-pm', 'header-branch-pc', 'header-branch-pp'].forEach(id => {
+  [['header-pm-sigla', 'PM'], ['header-bm-sigla', 'CBM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
+  ['header-branch-pm', 'header-branch-bm', 'header-branch-pc', 'header-branch-pp'].forEach(id => {
     const btn = document.getElementById(id);
     if (!btn) return;
     btn.disabled = true;
@@ -2499,7 +2649,7 @@ function atualizarHeaderResumo(inst) {
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
-    return item.pm === inst || item.pc === inst || item.pp === inst;
+    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
   }) || 'sp';
 }
 
@@ -2510,7 +2660,7 @@ function selecionarEstado(estado) {
 
   mudarInstituicao(dadosEstado.pm || dadosEstado.pc || dadosEstado.pp);
   switchPage('principal');
-  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar, Civil ou Penal no botão ao lado do seletor.`);
+  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar, Bombeiros, Civil ou Penal no botão ao lado do seletor.`);
 }
 
 function selecionarRamo(ramo) {
@@ -2542,11 +2692,15 @@ function atualizarHeaderInstitucional(inst) {
   if (nomeAtual) nomeAtual.textContent = instituicao.desc;
 
   const pmInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pm];
+  const bmInfo = HEADER_INSTITUICOES_INFO[dadosEstado.bm];
   const pcInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pc];
   const ppInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pp];
 
   const pmSigla = document.getElementById('header-pm-sigla');
   if (pmSigla) pmSigla.textContent = pmInfo ? pmInfo.titulo : '—';
+
+  const bmSigla = document.getElementById('header-bm-sigla');
+  if (bmSigla) bmSigla.textContent = bmInfo ? bmInfo.titulo : 'CBM';
 
   const pcSigla = document.getElementById('header-pc-sigla');
   if (pcSigla) pcSigla.textContent = pcInfo ? pcInfo.titulo : '—';
@@ -2555,6 +2709,7 @@ function atualizarHeaderInstitucional(inst) {
   if (ppSigla) ppSigla.textContent = ppInfo ? ppInfo.titulo : 'PP';
 
   const btnPm = document.getElementById('header-branch-pm');
+  const btnBm = document.getElementById('header-branch-bm');
   const btnPc = document.getElementById('header-branch-pc');
   const btnPp = document.getElementById('header-branch-pp');
   if (btnPm) {
@@ -2562,6 +2717,12 @@ function atualizarHeaderInstitucional(inst) {
     btnPm.disabled = !dadosEstado.pm;
     btnPm.classList.toggle('active', ativo);
     btnPm.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+  }
+  if (btnBm) {
+    const ativo = !!dadosEstado.bm && inst === dadosEstado.bm;
+    btnBm.disabled = !dadosEstado.bm;
+    btnBm.classList.toggle('active', ativo);
+    btnBm.setAttribute('aria-pressed', ativo ? 'true' : 'false');
   }
   if (btnPc) {
     const ativo = !!dadosEstado.pc && inst === dadosEstado.pc;
