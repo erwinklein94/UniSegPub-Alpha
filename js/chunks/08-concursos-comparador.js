@@ -411,6 +411,18 @@ function carregarConcursos() {
       </div>
     </a>
 
+    <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
+      <div class="taf-produto-imagem" aria-hidden="true">
+        <img src="img/mochilaimpermeavel50l.jpeg" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+      </div>
+      <div class="taf-produto-conteudo">
+        <span class="taf-produto-selo">Produto útil para rotina operacional</span>
+        <strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
+        <p>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</p>
+        <span class="taf-produto-cta">Comprar</span>
+      </div>
+    </a>
+
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
         <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">

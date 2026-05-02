@@ -911,3 +911,24 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+
+.ad-product-banner .ad-product-banner__media.img-indisponivel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 14px;
+  text-align: center;
+}
+
+.ad-product-banner .ad-product-banner__media.img-indisponivel::before {
+  content: "Imagem mochilaimpermeavel50l não encontrada";
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+#page-concursos .taf-produto-card-mochilaimpermeavel50l.img-indisponivel .taf-produto-imagem::before {
+  content: "Imagem mochilaimpermeavel50l não encontrada";
+}

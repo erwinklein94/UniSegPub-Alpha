@@ -77,7 +77,15 @@
     });
 
     bindClick('.ad-slot .ad-placeholder-link', event => {
-      const area = event.currentTarget.closest('[data-ad-area]')?.dataset.adArea;
+      const link = event.currentTarget;
+      const href = link.getAttribute('href') || '';
+
+      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
+      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
+        return;
+      }
+
+      const area = link.closest('[data-ad-area]')?.dataset.adArea;
       if (!area) return;
       event.preventDefault();
       safeCall('abrirContatoAnuncio', [area]);
