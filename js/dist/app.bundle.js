@@ -3334,15 +3334,15 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pmmt: 'img/pmmt.webp',
   pcmt: 'img/pcmt.webp',
   ppsp: 'img/ppsp.webp',
-  pmac: 'img/pmac.jpeg',
-  pcac: 'img/pcac.jpeg',
-  ppac: 'img/ppac.jpeg',
-  pmal: 'img/pmal.png',
-  pcal: 'img/pcal.png',
-  ppal: 'img/ppal.png',
-  pmam: 'img/pmam.png',
-  pcam: 'img/pcam.png',
-  ppam: 'img/ppam.png',
+  pmac: 'img/pmac.webp',
+  pcac: 'img/pcac.webp',
+  ppac: 'img/ppac.webp',
+  pmal: 'img/pmal.webp',
+  pcal: 'img/pcal.webp',
+  ppal: 'img/ppal.webp',
+  pmam: 'img/pmam.webp',
+  pcam: 'img/pcam.webp',
+  ppam: 'img/ppam.webp',
   pprj: 'img/pprj.webp',
   ppmg: 'img/ppmg.webp',
   ppba: 'img/ppba.webp',
@@ -3398,7 +3398,7 @@ function configurarLogoInicialHeader(img) {
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.jpeg', 'img/logoleao.jpg', 'img/logoleao.png'];
+    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -6867,7 +6867,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.jpeg" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>

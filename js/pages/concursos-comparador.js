@@ -413,7 +413,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.jpeg" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>

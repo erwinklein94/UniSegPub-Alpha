@@ -586,3 +586,20 @@ header.site-header,
     font-size: clamp(29px, 12vw, 44px) !important;
   }
 }
+
+
+/* Performance: reduz custo de repaint em mobile e respeita usuários com menos animação. */
+@media (max-width: 900px) {
+  body:not([data-inst="portal"]),
+  [data-theme="dark"] body:not([data-inst="portal"]) {
+    background-attachment: scroll, scroll, scroll, scroll !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

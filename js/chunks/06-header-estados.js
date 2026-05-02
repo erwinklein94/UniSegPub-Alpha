@@ -132,58 +132,58 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
-  pmesp: 'img/pmesp.jpeg',
-  pcsp: 'img/pcsp.jpeg',
-  pmerj: 'img/pmerj.jpeg',
-  pcerj: 'img/pcrj.jpeg',
-  pmmg: 'img/pmmg.jpeg',
-  pcmg: 'img/pcmg.jpeg',
-  pmba: 'img/pmba.jpeg',
-  pcba: 'img/pcba.jpeg',
-  pmpr: 'img/pmpr.jpeg',
-  pcpr: 'img/pcpr.jpeg',
-  pmrs: 'img/pmrs.jpeg',
-  pcrs: 'img/pcrs.jpeg',
-  pmsc: 'img/pmsc.jpeg',
-  pcsc: 'img/pcsc.jpeg',
-  pmes: 'img/pmes.jpeg',
-  pces: 'img/pces.jpeg',
-  pmgo: 'img/pmgo.jpeg',
-  pmms: 'img/pmms.jpeg',
-  pcms: 'img/pcms.jpeg',
-  pmmt: 'img/pmmt.jpeg',
-  pcmt: 'img/pcmt.jpeg',
-  ppsp: 'img/ppsp.jpeg',
-  pmac: 'img/pmac.jpeg',
-  pcac: 'img/pcac.jpeg',
-  ppac: 'img/ppac.jpeg',
-  pmal: 'img/pmal.png',
-  pcal: 'img/pcal.png',
-  ppal: 'img/ppal.png',
-  pmam: 'img/pmam.png',
-  pcam: 'img/pcam.png',
-  ppam: 'img/ppam.png',
-  pprj: 'img/pprj.jpeg',
-  ppmg: 'img/ppmg.jpeg',
-  ppba: 'img/ppba.jpeg',
-  pppr: 'img/pppr.jpeg',
+  pmesp: 'img/pmesp.webp',
+  pcsp: 'img/pcsp.webp',
+  pmerj: 'img/pmerj.webp',
+  pcerj: 'img/pcrj.webp',
+  pmmg: 'img/pmmg.webp',
+  pcmg: 'img/pcmg.webp',
+  pmba: 'img/pmba.webp',
+  pcba: 'img/pcba.webp',
+  pmpr: 'img/pmpr.webp',
+  pcpr: 'img/pcpr.webp',
+  pmrs: 'img/pmrs.webp',
+  pcrs: 'img/pcrs.webp',
+  pmsc: 'img/pmsc.webp',
+  pcsc: 'img/pcsc.webp',
+  pmes: 'img/pmes.webp',
+  pces: 'img/pces.webp',
+  pmgo: 'img/pmgo.webp',
+  pmms: 'img/pmms.webp',
+  pcms: 'img/pcms.webp',
+  pmmt: 'img/pmmt.webp',
+  pcmt: 'img/pcmt.webp',
+  ppsp: 'img/ppsp.webp',
+  pmac: 'img/pmac.webp',
+  pcac: 'img/pcac.webp',
+  ppac: 'img/ppac.webp',
+  pmal: 'img/pmal.webp',
+  pcal: 'img/pcal.webp',
+  ppal: 'img/ppal.webp',
+  pmam: 'img/pmam.webp',
+  pcam: 'img/pcam.webp',
+  ppam: 'img/ppam.webp',
+  pprj: 'img/pprj.webp',
+  ppmg: 'img/ppmg.webp',
+  ppba: 'img/ppba.webp',
+  pppr: 'img/pppr.webp',
   pprs: 'img/pprs.jpeg',
   ppsc: 'img/ppsc.jpeg',
-  ppes: 'img/ppes.jpeg',
-  ppms: 'img/ppms.jpeg',
-  ppmt: 'img/ppmt.jpeg',
-  pmma: 'img/pmma.jpeg',
-  pcma: 'img/pcma.jpeg',
-  ppma: 'img/ppma.jpeg',
-  pmto: 'img/pmto.jpeg',
-  pcto: 'img/pcto.jpeg',
+  ppes: 'img/ppes.webp',
+  ppms: 'img/ppms.webp',
+  ppmt: 'img/ppmt.webp',
+  pmma: 'img/pmma.webp',
+  pcma: 'img/pcma.webp',
+  ppma: 'img/ppma.webp',
+  pmto: 'img/pmto.webp',
+  pcto: 'img/pcto.webp',
   ppto: 'img/ppto.jpeg'
 };
 
 
-function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.jpeg') {
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.webp') {
   if (!elemento || !nomeVariavel) return;
-  const imagemOriginal = String(src || fallback || 'img/logoleao.jpeg');
+  const imagemOriginal = String(src || fallback || 'img/logoleao.webp');
   const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
   elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
   return imagemOriginal;
@@ -218,7 +218,7 @@ function configurarLogoInicialHeader(img) {
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.png', 'img/logoleao.jpg', 'img/logoleao.webp'];
+    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -228,7 +228,7 @@ function configurarLogoInicialHeader(img) {
     this.onerror = null;
     this.style.display = 'none';
   };
-  img.src = 'img/logoleao.jpeg';
+  img.src = 'img/logoleao.webp';
 }
 
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
@@ -240,8 +240,8 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
   // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
-  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.jpeg');
-  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.jpeg');
+  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.webp');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.webp');
 
   // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
   setPageInstitutionBackgroundImage('img/logoleao.webp');
@@ -2395,9 +2395,9 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
-  setHeaderHeroImage('img/logoleao.jpeg');
-  setSiteHeaderBackgroundImage('img/logoleao.jpeg');
-  setPageInstitutionBackgroundImage('img/logoleao.jpeg');
+  setHeaderHeroImage('img/logoleao.webp');
+  setSiteHeaderBackgroundImage('img/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/logoleao.webp');
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.add('header-portal-home');
 

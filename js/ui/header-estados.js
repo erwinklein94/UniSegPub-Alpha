@@ -209,7 +209,7 @@ function configurarLogoInicialHeader(img) {
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.jpeg', 'img/logoleao.jpg', 'img/logoleao.png'];
+    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
