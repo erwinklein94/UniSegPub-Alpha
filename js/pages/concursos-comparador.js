@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
+/* Módulo organizado por responsabilidade — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === CONCURSOS (RICO) ======================================= */

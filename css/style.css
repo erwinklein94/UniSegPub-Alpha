@@ -1,5 +1,0 @@
-/* Compatibilidade: fonte CSS reorganizada.
-   O index.html usa css/dist/main.min.css em produção.
-   Para desenvolvimento, use css/main.css.
-*/
-@import url('main.css');

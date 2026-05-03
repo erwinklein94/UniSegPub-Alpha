@@ -1850,3 +1850,41 @@ body[data-inst="portal"] .header-current-copy strong {
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* Seletor institucional exclusivo da página inicial */
+.home-institution-selector-wrap {
+  width: min(1200px, calc(100% - 40px));
+  margin: 18px auto 0;
+}
+
+.home-institution-selector {
+  margin: 0 0 18px !important;
+}
+
+.home-institution-selector .consulta-instituicao-grid--home {
+  grid-template-columns: minmax(240px, 560px);
+}
+
+.home-institution-selector .field {
+  max-width: 560px;
+}
+
+@media (max-width: 760px) {
+  .home-institution-selector-wrap {
+    width: min(100% - 24px, 1200px);
+    margin-top: 12px;
+  }
+
+  .home-institution-selector {
+    margin-bottom: 14px !important;
+  }
+
+  .home-institution-selector .consulta-instituicao-grid--home {
+    grid-template-columns: 1fr;
+  }
+
+  .home-institution-selector .field {
+    max-width: none;
+  }
+}

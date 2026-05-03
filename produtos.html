@@ -27,19 +27,121 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260502comparadorv1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260502appsoft1" rel="stylesheet"/>
-<link href="produtos.html" rel="canonical"/></head>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503homeinst1" rel="stylesheet"/>
+
+<!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
+<style>
+  .page-produtos #page-produtos .produtos-vitrine {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+    margin-bottom: 24px;
+  }
+
+  .page-produtos #page-produtos .curso-pmesp-only.produtos-vitrine,
+  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine {
+    display: none !important;
+  }
+
+  body[data-inst="pmesp"] #page-produtos .curso-pmesp-only.produtos-vitrine,
+  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine {
+    display: grid !important;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    padding: 18px !important;
+  }
+
+  .page-produtos #page-produtos .produto-imagem {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border-card);
+    background: var(--bg-card);
+  }
+
+  .page-produtos #page-produtos .produto-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card h3 {
+    min-height: 2.6em;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card p {
+    margin-bottom: 14px;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .curso-meta {
+    margin-bottom: 16px;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .curso-cta {
+    width: 100%;
+    min-height: 48px;
+    margin-top: auto !important;
+    border-radius: 999px !important;
+    text-align: center;
+  }
+
+  .page-produtos #page-produtos .produto-card--destaque .ad-label {
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 980px) {
+    .page-produtos #page-produtos .produtos-vitrine {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .page-produtos #page-produtos .produtos-vitrine {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<!-- BLOCO SEO GERADO --
+     Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
+     Gerado na revisão de manutenção.
+     -->
+<link href="https://universosegpub.com.br/produtos.html" rel="canonical"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="Universo Segurança Pública"/>
+<meta property="og:title" content="Produtos para Segurança Pública - Universo Segurança Pública"/>
+<meta property="og:description" content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos."/>
+<meta property="og:url" content="https://universosegpub.com.br/produtos.html"/>
+<meta property="og:image" content="https://universosegpub.com.br/img/LOGO/logoleao.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Produtos para Segurança Pública - Universo Segurança Pública"/>
+<meta name="twitter:description" content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos."/>
+<meta name="twitter:image" content="https://universosegpub.com.br/img/LOGO/logoleao.webp"/>
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebPage","name":"Produtos para Segurança Pública - Universo Segurança Pública","description":"Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos.","url":"https://universosegpub.com.br/produtos.html","isPartOf":{"@type":"WebSite","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/"},"publisher":{"@type":"Organization","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/","logo":{"@type":"ImageObject","url":"https://universosegpub.com.br/img/LOGO/logoleao.webp"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://universosegpub.com.br/"},{"@type":"ListItem","position":2,"name":"Produtos para Segurança Pública","item":"https://universosegpub.com.br/produtos.html"}]}]
+</script>
+<!-- /BLOCO SEO GERADO --></head>
 <body class="app-soft-theme" data-inst="portal" data-page="produtos">
 <div aria-label="Controles rápidos do visual app" class="app-floating-actions">
 <a aria-label="Voltar para a página inicial" class="app-floating-action app-floating-action--back" href="index.html">←</a>
-<button aria-label="Alternar tema claro e escuro" class="app-floating-action app-floating-action--theme" data-theme-toggle="true" data-toggle-style="icon" type="button">☀️</button>
+<button aria-label="Alternar tema claro e escuro" class="app-floating-action app-floating-action--theme" data-theme-toggle="true" data-toggle-style="icon" type="button"><span aria-hidden="true">☀️</span></button>
 </div>
 <nav aria-label="Navegação rápida inferior" class="app-bottom-nav">
-<a class="app-bottom-item" href="index.html"><span class="app-bottom-icon">⌂</span><span class="app-bottom-label">Início</span></a>
-<a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon">◈</span><span class="app-bottom-label">Remun.</span></a>
-<a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon">▤</span><span class="app-bottom-label">Concursos</span></a>
-<a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon">⇄</span><span class="app-bottom-label">Comparar</span></a>
-<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon">☰</span><span class="app-bottom-label">Menu</span></button>
+<a class="app-bottom-item" href="index.html"><span class="app-bottom-icon" aria-hidden="true">⌂</span><span class="app-bottom-label">Início</span></a>
+<a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon" aria-hidden="true">◈</span><span class="app-bottom-label">Remun.</span></a>
+<a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon" aria-hidden="true">▤</span><span class="app-bottom-label">Concursos</span></a>
+<a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon" aria-hidden="true">⇄</span><span class="app-bottom-label">Comparar</span></a>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon" aria-hidden="true">☰</span><span class="app-bottom-label">Menu</span></button>
 </nav>
 
 <!-- =======================================================
@@ -55,7 +157,7 @@
 <span></span><span></span><span></span>
 </button>
 <button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" data-theme-toggle="true" data-toggle-style="text" id="theme-toggle-header" type="button">
-          ☀️ Claro
+          <span aria-hidden="true">☀️</span> Claro
         </button>
 </div>
 <div aria-label="Identidade do site" class="header-brand-block">
@@ -116,15 +218,19 @@
 <span id="header-label-relacao">UFs</span>
 <strong id="header-resumo-relacao">27 UFs</strong>
 </div>
+<div class="header-fact header-fact--dados-atualizados">
+<span id="header-label-dados-atualizados">Dados Atualizados do site</span>
+<strong id="header-resumo-dados-atualizados">Calculando...</strong>
+</div>
 </div>
 <div class="header-leadership">
 <div class="header-leadership-item">
 <span id="header-label-governador">Cobertura</span>
 <strong id="header-resumo-governador">Polícias militares, bombeiros militares, civis e penais</strong>
 </div>
-<div class="header-leadership-item">
-<span id="header-label-comando">Primeiro passo</span>
-<strong id="header-resumo-comando">Selecione uma instituição para ver os dados específicos</strong>
+<div class="header-leadership-item header-command-item is-hidden" hidden>
+<span id="header-label-comando">Comando/Direção</span>
+<strong id="header-resumo-comando">—</strong>
 </div>
 </div>
 </aside>
@@ -134,141 +240,6 @@
 <label for="instituicao_header">Consultar instituição</label>
 <select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
 <option disabled="" selected="" value="">Escolha uma instituição</option>
-<optgroup label="São Paulo">
-<option value="pmesp">PMESP - Polícia Militar</option>
-<option value="pcsp">PCSP - Polícia Civil</option>
-<option value="ppsp">PPSP - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rio de Janeiro">
-<option value="pmerj">PMERJ - Polícia Militar</option>
-<option value="pcerj">PCERJ - Polícia Civil</option>
-<option value="pprj">PPRJ - Polícia Penal</option>
-</optgroup>
-<optgroup label="Minas Gerais">
-<option value="pmmg">PMMG - Polícia Militar</option>
-<option value="pcmg">PCMG - Polícia Civil</option>
-<option value="ppmg">PPMG - Polícia Penal</option>
-</optgroup>
-<optgroup label="Bahia">
-<option value="pmba">PMBA - Polícia Militar</option>
-<option value="pcba">PCBA - Polícia Civil</option>
-<option value="ppba">PPBA - Polícia Penal</option>
-</optgroup>
-<optgroup label="Paraná">
-<option value="pmpr">PMPR - Polícia Militar</option>
-<option value="pcpr">PCPR - Polícia Civil</option>
-<option value="pppr">PPPR - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rio Grande do Sul">
-<option value="pmrs">PMRS - Brigada Militar</option>
-<option value="pcrs">PCRS - Polícia Civil</option>
-<option value="pprs">PPRS - Polícia Penal</option>
-</optgroup>
-<optgroup label="Santa Catarina">
-<option value="pmsc">PMSC - Polícia Militar</option>
-<option value="pcsc">PCSC - Polícia Civil</option>
-<option value="ppsc">PPSC - Polícia Penal</option>
-</optgroup>
-<optgroup label="Espírito Santo">
-<option value="pmes">PMES - Polícia Militar</option>
-<option value="pces">PCES - Polícia Civil</option>
-<option value="ppes">PPES - Polícia Penal</option>
-</optgroup>
-<optgroup label="Mato Grosso do Sul">
-<option value="pmms">PMMS - Polícia Militar</option>
-<option value="pcms">PCMS - Polícia Civil</option>
-<option value="ppms">PPMS - Polícia Penal</option>
-</optgroup>
-<optgroup label="Mato Grosso">
-<option value="pmmt">PMMT - Polícia Militar</option>
-<option value="pcmt">PCMT - Polícia Civil</option>
-<option value="ppmt">PPMT - Polícia Penal</option>
-</optgroup>
-<optgroup label="Acre">
-<option value="pmac">PMAC - Polícia Militar</option>
-<option value="pcac">PCAC - Polícia Civil</option>
-<option value="ppac">PPAC - Polícia Penal</option>
-</optgroup>
-<optgroup label="Alagoas">
-<option value="pmal">PMAL - Polícia Militar</option>
-<option value="pcal">PCAL - Polícia Civil</option>
-<option value="ppal">PPAL - Polícia Penal</option>
-</optgroup>
-<optgroup label="Amazonas">
-<option value="pmam">PMAM - Polícia Militar</option>
-<option value="pcam">PCAM - Polícia Civil</option>
-<option value="ppam">PPAM - Polícia Penal</option>
-</optgroup>
-<optgroup label="Amapá">
-<option value="pmap">PMAP - Polícia Militar</option>
-<option value="pcap">PCAP - Polícia Civil</option>
-<option value="ppap">PPAP - Polícia Penal</option>
-</optgroup>
-<optgroup label="Ceará">
-<option value="pmce">PMCE - Polícia Militar</option>
-<option value="pcce">PCCE - Polícia Civil</option>
-<option value="ppce">PPCE - Polícia Penal</option>
-</optgroup>
-<optgroup label="Distrito Federal">
-<option value="pmdf">PMDF - Polícia Militar</option>
-<option value="pcdf">PCDF - Polícia Civil</option>
-<option value="ppdf">PPDF - Polícia Penal</option>
-</optgroup>
-<optgroup label="Goiás">
-<option value="pmgo">PMGO - Polícia Militar</option>
-<option value="pcgo">PCGO - Polícia Civil</option>
-<option value="ppgo">PPGO - Polícia Penal</option>
-</optgroup>
-<optgroup label="Maranhão">
-<option value="pmma">PMMA - Polícia Militar</option>
-<option value="pcma">PCMA - Polícia Civil</option>
-<option value="ppma">PPMA - Polícia Penal</option>
-</optgroup>
-<optgroup label="Pará">
-<option value="pmpa">PMPA - Polícia Militar</option>
-<option value="pcpa">PCPA - Polícia Civil</option>
-<option value="pppa">PPPA - Polícia Penal</option>
-</optgroup>
-<optgroup label="Paraíba">
-<option value="pmpb">PMPB - Polícia Militar</option>
-<option value="pcpb">PCPB - Polícia Civil</option>
-<option value="pppb">PPPB - Polícia Penal</option>
-</optgroup>
-<optgroup label="Pernambuco">
-<option value="pmpe">PMPE - Polícia Militar</option>
-<option value="pcpe">PCPE - Polícia Civil</option>
-<option value="pppe">PPPE - Polícia Penal</option>
-</optgroup>
-<optgroup label="Piauí">
-<option value="pmpi">PMPI - Polícia Militar</option>
-<option value="pcpi">PCPI - Polícia Civil</option>
-<option value="pppi">PPPI - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rio Grande do Norte">
-<option value="pmrn">PMRN - Polícia Militar</option>
-<option value="pcrn">PCRN - Polícia Civil</option>
-<option value="pprn">PPRN - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rondônia">
-<option value="pmro">PMRO - Polícia Militar</option>
-<option value="pcro">PCRO - Polícia Civil</option>
-<option value="ppro">PPRO - Polícia Penal</option>
-</optgroup>
-<optgroup label="Roraima">
-<option value="pmrr">PMRR - Polícia Militar</option>
-<option value="pcrr">PCRR - Polícia Civil</option>
-<option value="pprr">PPRR - Polícia Penal</option>
-</optgroup>
-<optgroup label="Sergipe">
-<option value="pmse">PMSE - Polícia Militar</option>
-<option value="pcse">PCSE - Polícia Civil</option>
-<option value="ppse">PPSE - Polícia Penal</option>
-</optgroup>
-<optgroup label="Tocantins">
-<option value="pmto">PMTO - Polícia Militar</option>
-<option value="pcto">PCTO - Polícia Civil</option>
-<option value="ppto">PPTO - Polícia Penal</option>
-</optgroup>
 </select>
 </div>
 <div aria-label="Alternar entre instituição militar, bombeiros, civil e penal do estado selecionado" class="header-branch-switcher">
@@ -293,14 +264,11 @@
 </div>
 </div>
 </div>
-<p aria-label="Aviso sobre natureza do portal" class="header-disclaimer-note">
-<strong>Portal informativo independente.</strong> Não somos órgão governamental, não representamos governos estaduais e não pertencemos às instituições exibidas. As informações são organizadas a partir de fontes públicas e oficiais quando disponíveis.
-        </p>
 </section>
 <div aria-label="Bandeiras dos estados disponíveis no site" class="header-state-flags">
 <div class="state-flags-title">Estados disponíveis</div>
 <button aria-label="Selecionar São Paulo" aria-pressed="false" class="state-flag" data-estado="sp" title="São Paulo" type="button">
-<img alt="Bandeira de São Paulo" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg"/>
 <span>SP</span>
 </button>
 <button aria-label="Selecionar Rio de Janeiro" aria-pressed="false" class="state-flag" data-estado="rj" title="Rio de Janeiro" type="button">
@@ -308,7 +276,7 @@
 <span>RJ</span>
 </button>
 <button aria-label="Selecionar Minas Gerais" aria-pressed="false" class="state-flag" data-estado="mg" title="Minas Gerais" type="button">
-<img alt="Bandeira de Minas Gerais" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg"/>
 <span>MG</span>
 </button>
 <button aria-label="Selecionar Bahia" aria-pressed="false" class="state-flag" data-estado="ba" title="Bahia" type="button">
@@ -324,7 +292,7 @@
 <span>RS</span>
 </button>
 <button aria-label="Selecionar Santa Catarina" aria-pressed="false" class="state-flag" data-estado="sc" title="Santa Catarina" type="button">
-<img alt="Bandeira de Santa Catarina" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg"/>
 <span>SC</span>
 </button>
 <button aria-label="Selecionar Espírito Santo" aria-pressed="false" class="state-flag" data-estado="es" title="Espírito Santo" type="button">
@@ -332,79 +300,79 @@
 <span>ES</span>
 </button>
 <button aria-label="Selecionar Mato Grosso do Sul" aria-pressed="false" class="state-flag" data-estado="ms" title="Mato Grosso do Sul" type="button">
-<img alt="Bandeira de Mato Grosso do Sul" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg"/>
 <span>MS</span>
 </button>
 <button aria-label="Selecionar Mato Grosso" aria-pressed="false" class="state-flag" data-estado="mt" title="Mato Grosso" type="button">
-<img alt="Bandeira de Mato Grosso" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg"/>
 <span>MT</span>
 </button>
 <button aria-label="Selecionar Acre" aria-pressed="false" class="state-flag" data-estado="ac" title="Acre" type="button">
-<img alt="Bandeira de Acre" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg"/>
 <span>AC</span>
 </button>
 <button aria-label="Selecionar Alagoas" aria-pressed="false" class="state-flag" data-estado="al" title="Alagoas" type="button">
-<img alt="Bandeira de Alagoas" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg"/>
 <span>AL</span>
 </button>
 <button aria-label="Selecionar Amazonas" aria-pressed="false" class="state-flag" data-estado="am" title="Amazonas" type="button">
-<img alt="Bandeira de Amazonas" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg"/>
 <span>AM</span>
 </button>
 <button aria-label="Selecionar Amapá" aria-pressed="false" class="state-flag" data-estado="ap" title="Amapá" type="button">
-<img alt="Bandeira de Amapá" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg"/>
 <span>AP</span>
 </button>
 <button aria-label="Selecionar Ceará" aria-pressed="false" class="state-flag" data-estado="ce" title="Ceará" type="button">
-<img alt="Bandeira de Ceará" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Cear%C3%A1.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Cear%C3%A1.svg"/>
 <span>CE</span>
 </button>
 <button aria-label="Selecionar Distrito Federal" aria-pressed="false" class="state-flag" data-estado="df" title="Distrito Federal" type="button">
-<img alt="Bandeira de Distrito Federal" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Distrito_Federal_(Brasil).svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Distrito_Federal_(Brasil).svg"/>
 <span>DF</span>
 </button>
 <button aria-label="Selecionar Goiás" aria-pressed="false" class="state-flag" data-estado="go" title="Goiás" type="button">
-<img alt="Bandeira de Goiás" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg"/>
 <span>GO</span>
 </button>
 <button aria-label="Selecionar Maranhão" aria-pressed="false" class="state-flag" data-estado="ma" title="Maranhão" type="button">
-<img alt="Bandeira de Maranhão" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Maranh%C3%A3o.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Maranh%C3%A3o.svg"/>
 <span>MA</span>
 </button>
 <button aria-label="Selecionar Pará" aria-pressed="false" class="state-flag" data-estado="pa" title="Pará" type="button">
-<img alt="Bandeira de Pará" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Par%C3%A1.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Par%C3%A1.svg"/>
 <span>PA</span>
 </button>
 <button aria-label="Selecionar Paraíba" aria-pressed="false" class="state-flag" data-estado="pb" title="Paraíba" type="button">
-<img alt="Bandeira de Paraíba" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Para%C3%ADba.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Para%C3%ADba.svg"/>
 <span>PB</span>
 </button>
 <button aria-label="Selecionar Pernambuco" aria-pressed="false" class="state-flag" data-estado="pe" title="Pernambuco" type="button">
-<img alt="Bandeira de Pernambuco" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Pernambuco.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Pernambuco.svg"/>
 <span>PE</span>
 </button>
 <button aria-label="Selecionar Piauí" aria-pressed="false" class="state-flag" data-estado="pi" title="Piauí" type="button">
-<img alt="Bandeira de Piauí" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Piau%C3%AD.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Piau%C3%AD.svg"/>
 <span>PI</span>
 </button>
 <button aria-label="Selecionar Rio Grande do Norte" aria-pressed="false" class="state-flag" data-estado="rn" title="Rio Grande do Norte" type="button">
-<img alt="Bandeira de Rio Grande do Norte" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Norte.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Norte.svg"/>
 <span>RN</span>
 </button>
 <button aria-label="Selecionar Rondônia" aria-pressed="false" class="state-flag" data-estado="ro" title="Rondônia" type="button">
-<img alt="Bandeira de Rondônia" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Rond%C3%B4nia.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Rond%C3%B4nia.svg"/>
 <span>RO</span>
 </button>
 <button aria-label="Selecionar Roraima" aria-pressed="false" class="state-flag" data-estado="rr" title="Roraima" type="button">
-<img alt="Bandeira de Roraima" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Roraima.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Roraima.svg"/>
 <span>RR</span>
 </button>
 <button aria-label="Selecionar Sergipe" aria-pressed="false" class="state-flag" data-estado="se" title="Sergipe" type="button">
-<img alt="Bandeira de Sergipe" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Sergipe.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Sergipe.svg"/>
 <span>SE</span>
 </button>
 <button aria-label="Selecionar Tocantins" aria-pressed="false" class="state-flag" data-estado="to" title="Tocantins" type="button">
-<img alt="Bandeira de Tocantins" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg"/>
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg"/>
 <span>TO</span>
 </button>
 </div>
@@ -426,148 +394,13 @@
 <strong>Universo Segurança Pública</strong>
 <span>Escolha o que consultar</span>
 </div>
-<button aria-label="Fechar menu" class="close-btn">✕</button>
+<button aria-label="Fechar menu" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
 </div>
 <!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
 <div class="inst-selector sidebar-inst-panel">
 <label for="instituicao">Instituição selecionada</label>
 <select aria-label="Selecione a instituição" id="instituicao">
 <option disabled="" selected="" value="">Escolha uma instituição</option>
-<optgroup label="São Paulo">
-<option value="pmesp">PMESP - Polícia Militar</option>
-<option value="pcsp">PCSP - Polícia Civil</option>
-<option value="ppsp">PPSP - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rio de Janeiro">
-<option value="pmerj">PMERJ - Polícia Militar</option>
-<option value="pcerj">PCERJ - Polícia Civil</option>
-<option value="pprj">PPRJ - Polícia Penal</option>
-</optgroup>
-<optgroup label="Minas Gerais">
-<option value="pmmg">PMMG - Polícia Militar</option>
-<option value="pcmg">PCMG - Polícia Civil</option>
-<option value="ppmg">PPMG - Polícia Penal</option>
-</optgroup>
-<optgroup label="Bahia">
-<option value="pmba">PMBA - Polícia Militar</option>
-<option value="pcba">PCBA - Polícia Civil</option>
-<option value="ppba">PPBA - Polícia Penal</option>
-</optgroup>
-<optgroup label="Paraná">
-<option value="pmpr">PMPR - Polícia Militar</option>
-<option value="pcpr">PCPR - Polícia Civil</option>
-<option value="pppr">PPPR - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rio Grande do Sul">
-<option value="pmrs">PMRS - Brigada Militar</option>
-<option value="pcrs">PCRS - Polícia Civil</option>
-<option value="pprs">PPRS - Polícia Penal</option>
-</optgroup>
-<optgroup label="Santa Catarina">
-<option value="pmsc">PMSC - Polícia Militar</option>
-<option value="pcsc">PCSC - Polícia Civil</option>
-<option value="ppsc">PPSC - Polícia Penal</option>
-</optgroup>
-<optgroup label="Espírito Santo">
-<option value="pmes">PMES - Polícia Militar</option>
-<option value="pces">PCES - Polícia Civil</option>
-<option value="ppes">PPES - Polícia Penal</option>
-</optgroup>
-<optgroup label="Mato Grosso do Sul">
-<option value="pmms">PMMS - Polícia Militar</option>
-<option value="pcms">PCMS - Polícia Civil</option>
-<option value="ppms">PPMS - Polícia Penal</option>
-</optgroup>
-<optgroup label="Mato Grosso">
-<option value="pmmt">PMMT - Polícia Militar</option>
-<option value="pcmt">PCMT - Polícia Civil</option>
-<option value="ppmt">PPMT - Polícia Penal</option>
-</optgroup>
-<optgroup label="Acre">
-<option value="pmac">PMAC - Polícia Militar</option>
-<option value="pcac">PCAC - Polícia Civil</option>
-<option value="ppac">PPAC - Polícia Penal</option>
-</optgroup>
-<optgroup label="Alagoas">
-<option value="pmal">PMAL - Polícia Militar</option>
-<option value="pcal">PCAL - Polícia Civil</option>
-<option value="ppal">PPAL - Polícia Penal</option>
-</optgroup>
-<optgroup label="Amazonas">
-<option value="pmam">PMAM - Polícia Militar</option>
-<option value="pcam">PCAM - Polícia Civil</option>
-<option value="ppam">PPAM - Polícia Penal</option>
-</optgroup>
-<optgroup label="Amapá">
-<option value="pmap">PMAP - Polícia Militar</option>
-<option value="pcap">PCAP - Polícia Civil</option>
-<option value="ppap">PPAP - Polícia Penal</option>
-</optgroup>
-<optgroup label="Ceará">
-<option value="pmce">PMCE - Polícia Militar</option>
-<option value="pcce">PCCE - Polícia Civil</option>
-<option value="ppce">PPCE - Polícia Penal</option>
-</optgroup>
-<optgroup label="Distrito Federal">
-<option value="pmdf">PMDF - Polícia Militar</option>
-<option value="pcdf">PCDF - Polícia Civil</option>
-<option value="ppdf">PPDF - Polícia Penal</option>
-</optgroup>
-<optgroup label="Goiás">
-<option value="pmgo">PMGO - Polícia Militar</option>
-<option value="pcgo">PCGO - Polícia Civil</option>
-<option value="ppgo">PPGO - Polícia Penal</option>
-</optgroup>
-<optgroup label="Maranhão">
-<option value="pmma">PMMA - Polícia Militar</option>
-<option value="pcma">PCMA - Polícia Civil</option>
-<option value="ppma">PPMA - Polícia Penal</option>
-</optgroup>
-<optgroup label="Pará">
-<option value="pmpa">PMPA - Polícia Militar</option>
-<option value="pcpa">PCPA - Polícia Civil</option>
-<option value="pppa">PPPA - Polícia Penal</option>
-</optgroup>
-<optgroup label="Paraíba">
-<option value="pmpb">PMPB - Polícia Militar</option>
-<option value="pcpb">PCPB - Polícia Civil</option>
-<option value="pppb">PPPB - Polícia Penal</option>
-</optgroup>
-<optgroup label="Pernambuco">
-<option value="pmpe">PMPE - Polícia Militar</option>
-<option value="pcpe">PCPE - Polícia Civil</option>
-<option value="pppe">PPPE - Polícia Penal</option>
-</optgroup>
-<optgroup label="Piauí">
-<option value="pmpi">PMPI - Polícia Militar</option>
-<option value="pcpi">PCPI - Polícia Civil</option>
-<option value="pppi">PPPI - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rio Grande do Norte">
-<option value="pmrn">PMRN - Polícia Militar</option>
-<option value="pcrn">PCRN - Polícia Civil</option>
-<option value="pprn">PPRN - Polícia Penal</option>
-</optgroup>
-<optgroup label="Rondônia">
-<option value="pmro">PMRO - Polícia Militar</option>
-<option value="pcro">PCRO - Polícia Civil</option>
-<option value="ppro">PPRO - Polícia Penal</option>
-</optgroup>
-<optgroup label="Roraima">
-<option value="pmrr">PMRR - Polícia Militar</option>
-<option value="pcrr">PCRR - Polícia Civil</option>
-<option value="pprr">PPRR - Polícia Penal</option>
-</optgroup>
-<optgroup label="Sergipe">
-<option value="pmse">PMSE - Polícia Militar</option>
-<option value="pcse">PCSE - Polícia Civil</option>
-<option value="ppse">PPSE - Polícia Penal</option>
-</optgroup>
-<optgroup label="Tocantins">
-<option value="pmto">PMTO - Polícia Militar</option>
-<option value="pcto">PCTO - Polícia Civil</option>
-<option value="ppto">PPTO - Polícia Penal</option>
-</optgroup>
 </select>
 <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
 <p class="sidebar-independent-note">Portal independente, sem vínculo governamental. Confirme atos oficiais nos canais da respectiva instituição.</p>
@@ -652,7 +485,7 @@
 <span class="ad-label">Produto em destaque</span>
 <strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
 <small>Mochila tática de 24 L para rotina operacional, estudos, treinos e deslocamento diário.</small>
-<span class="ad-button">Comprar</span>
+<span class="ad-button">Comprar por afiliado</span>
 </a>
 </aside>
 <!-- BLOCO 03.4.4 — Produtos parceiros no menu lateral -->
@@ -665,15 +498,15 @@
 <img alt="Mochila Coban Tática Militar Reforçada 24 L" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
 <strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
 <p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário.</p>
-<span>Comprar</span>
+<span>Comprar por afiliado</span>
 </a>
 <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" rel="noopener noreferrer" target="_blank">
 <img alt="Produto parceiro selecionado" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/IMG_0868.webp"/>
-<span>Ver produto</span>
+<span>Comprar por afiliado</span>
 </a>
 <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" rel="noopener noreferrer" target="_blank">
 <img alt="Produto parceiro selecionado" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/IMG_0865.webp"/>
-<span>Ver produto</span>
+<span>Comprar por afiliado</span>
 </a>
 <small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
 </div>
@@ -694,22 +527,18 @@
 <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
 <strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
     </div>
-<!-- BLOCO 08.0A — Espaço comercial principal da aba produtos -->
-<aside aria-label="Produto em destaque: Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="ad-slot ad-slot--inline" data-ad-area="produtos_topo">
-<a aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="ad-placeholder-link ad-placeholder-link--product ad-product-banner" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
-<div aria-hidden="true" class="produto-imagem ad-product-banner__media">
+<div class="curso-section-title">Produtos físicos</div>
+<div aria-label="Produtos físicos com link de compra" class="curso-grid produtos-vitrine">
+<!-- BLOCO 08.0A — Produto em destaque realocado para a vitrine -->
+<a aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="curso-card produto-card produto-card--destaque" data-ad-area="produtos_topo" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
 <img alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" data-img-base="img/SHOPEE/mochilaimpermeavel50l" decoding="async" loading="lazy" src="img/SHOPEE/mochilaimpermeavel50l.webp"/>
 </div>
-<div class="ad-product-banner__conteudo">
 <span class="ad-label">Produto em destaque</span>
-<strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
-<small>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</small>
-<span class="ad-button">Comprar</span>
-</div>
+<h3>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</h3>
+<p>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</p>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
-</aside>
-<div class="curso-section-title">Produtos físicos</div>
-<div aria-label="Produtos físicos com link de compra" class="curso-grid">
 <a aria-label="Abrir Mochila Coban Tática Militar Reforçada 24 L" class="curso-card produto-card" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Mochila Coban Tática Militar Reforçada 24 L" data-img-base="img/SHOPEE/mochilacoban" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
@@ -721,7 +550,7 @@
 <span>Uso operacional</span>
 <span>24 L</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir barra fixa para porta" class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -734,7 +563,7 @@
 <span>TAF</span>
 <span>Treino em casa</span>
 </div>
-<span class="curso-cta">Comprar aqui</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -747,7 +576,7 @@
 <span>Uso operacional</span>
 <span>Conforto e proteção</span>
 </div>
-<span class="curso-cta">Comprar aqui</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Power Rack Funcional" class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -760,14 +589,14 @@
 <span>TAF</span>
 <span>Treino completo</span>
 </div>
-<span class="curso-cta">Comprar aqui</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
 <div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
 <div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
       Espaço destinado a cursos preparatórios, mentorias e materiais de estudo. Em breve, novos produtos específicos serão adicionados para esta instituição.
     </div>
-<div class="curso-grid curso-pmesp-only">
+<div class="curso-grid produtos-vitrine curso-pmesp-only">
 <a aria-label="Abrir Curso Preparatório Sargento PMESP" class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Curso Preparatório Sargento PMESP" data-img-base="img/HOTMART/curso-sargento-pmesp" decoding="async" loading="lazy" src="img/HOTMART/curso-sargento-pmesp.webp"/>
@@ -780,7 +609,7 @@
 <span>Concursos internos</span>
 <span>Curso online</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Curso Preparatório PMESP Completo" class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -794,7 +623,7 @@
 <span>Soldado 2ª Classe</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais" class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -808,10 +637,10 @@
 <span>Carreiras policiais</span>
 <span>Concurseiros</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
-<div class="curso-grid curso-pcsp-only">
+<div class="curso-grid produtos-vitrine curso-pcsp-only">
 <a aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo" class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" data-img-base="img/HOTMART/curso-raciocinio-logico-pcsp" decoding="async" loading="lazy" src="img/HOTMART/curso-raciocinio-logico-pcsp.webp"/>
@@ -824,7 +653,7 @@
 <span>Raciocínio lógico</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Curso de Informática PCSP" class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -838,14 +667,14 @@
 <span>Informática</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
 <div class="curso-section-title">Livros e e-books</div>
 <div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
       Livros, e-books e materiais de desenvolvimento para estudo, carreira, disciplina, produtividade e transição profissional.
     </div>
-<div aria-label="Livros e e-books com link de compra" class="curso-grid">
+<div aria-label="Livros e e-books com link de compra" class="curso-grid produtos-vitrine">
 <a aria-label="Abrir Pacote Viva Sem Procrastinar" class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Pacote Viva Sem Procrastinar" data-img-base="img/HOTMART/pacote-viva-sem-procrastinar" decoding="async" loading="lazy" src="img/HOTMART/pacote-viva-sem-procrastinar.webp"/>
@@ -858,7 +687,7 @@
 <span>Saúde mental</span>
 <span>Desenvolvimento pessoal</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Otimizando o Cérebro para Concursos Públicos" class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -872,7 +701,7 @@
 <span>Neurociências</span>
 <span>Produtividade</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Além da Farda O Código da Travessia" class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -886,7 +715,7 @@
 <span>Carreira</span>
 <span>Vida pós-farda</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Método DMA" class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -900,7 +729,7 @@
 <span>Gestão de tempo</span>
 <span>Disciplina</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia" class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -914,7 +743,7 @@
 <span>Disciplina</span>
 <span>Tomada de decisão</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
 <p class="produto-aviso-compra">
@@ -949,18 +778,18 @@
      BLOCO 14 — CSS VISUAL GLASS / MODERNIZAÇÃO DE APARÊNCIA
      Camada visual final: apenas aparência, sem alterar HTML funcional ou JavaScript.
      ======================================================= -->
-<!-- CSS movido para css/style.css -->
+<!-- CSS centralizado em css/dist/main.min.css e ajustes complementares -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
 <!-- Scripts divididos por página para evitar carregar funcionalidades desnecessárias. -->
 <script defer="" src="js/data/parametros-cargos.js"></script>
 <script defer="" src="js/data/policia-penal.js"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
-<script defer="" src="js/ui/navegacao-ui.js"></script>
+<script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
 <script defer="" src="js/services/remuneracao.js"></script>
-<script defer="" src="js/ui/header-estados.js"></script>
-<script defer="" src="js/pages/contato-init.js"></script>
-<script defer="" src="js/ui/event-bindings.js"></script>
+<script defer="" src="js/ui/header-estados.js?v=20260503homeinst1"></script>
+<script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
+<script defer="" src="js/ui/event-bindings.js?v=20260503homeinst1"></script>
 <script defer="" src="js/core/page-context.js"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 </body>

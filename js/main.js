@@ -1,6 +1,6 @@
 /* Fonte JS organizada por responsabilidade.
-   Produção: index.html carrega js/dist/app.bundle.js.
-   Desenvolvimento: mantenha a ordem abaixo caso queira carregar arquivos separados.
+   As páginas públicas carregam os arquivos individuais na ordem abaixo.
+   Não há bundle gerado em runtime; isto evita manter um artefato grande e não utilizado.
 */
 const UNISEGPUB_JS_ORDER = [
   'js/data/parametros-cargos.js',
@@ -13,5 +13,7 @@ const UNISEGPUB_JS_ORDER = [
   'js/pages/concursos-comparador.js',
   'js/pages/poderes-deveres.js',
   'js/pages/contato-init.js',
-  'js/ui/event-bindings.js'
+  'js/ui/event-bindings.js',
+  'js/core/page-context.js',
+  'js/brasao-lightbox.js'
 ];

@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
+/* Módulo organizado por responsabilidade — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */
@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
   aplicarHeaderInicialPortal();
+  if (typeof prepararSelectInstituicaoHome === 'function') prepararSelectInstituicaoHome();
   if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.

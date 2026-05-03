@@ -1,6 +1,6 @@
 # Partials HTML
 
-O `index.html` foi mantido como arquivo estático principal para preservar SEO e compatibilidade com GitHub Pages.
+O site permanece como MPA estático para preservar SEO e compatibilidade com GitHub Pages.
 
 Para uma futura etapa de componentização completa, a divisão recomendada é:
 
@@ -17,4 +17,4 @@ Para uma futura etapa de componentização completa, a divisão recomendada é:
 - `pages/parceiros.html`
 - `footer.html`
 
-A refatoração aplicada nesta versão removeu eventos inline, separou CSS/JS por responsabilidade e passou o carregamento de produção para bundles otimizados.
+Nesta revisão, a limpeza removeu backups e chunks legados não carregados pelas páginas públicas atuais. A próxima etapa boa é gerar `header`, `sidebar` e `footer` em build-time para acabar com a repetição entre páginas sem prejudicar indexação.

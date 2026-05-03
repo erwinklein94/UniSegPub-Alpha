@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
+/* Módulo organizado por responsabilidade — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* BLOCO 15.3.1 — Cargos-base e dossiê informativo da Polícia Penal por Estado
@@ -9,37 +9,38 @@
 const POLICIAS_PENAIS_INFO = {
   ppsp: {
     sigla: 'PPSP',
-    nome: 'Polícia Penal do Estado de São Paulo',
+    nome: 'Polícia Penal do Estado de São Paulo — PPESP/PPSP',
     uf: 'São Paulo',
-    criacao: 'EC 104/2019 · EC Estadual 51/2022 · LC SP 1.416/2024',
-    marco: 'A Polícia Penal paulista foi estruturada pela LC SP 1.416/2024 e iniciou atividades em fevereiro de 2025, com carreira própria no quadro da SAP.',
+    criacao: 'EC 104/2019 · EC Estadual 51/2022 · LC SP 1.416/2024 · atividades iniciadas em fevereiro de 2025',
+    marco: 'A Polícia Penal paulista foi estruturada pela LC SP 1.416/2024, iniciou atividades em fevereiro de 2025 e atua como órgão permanente de segurança pública subordinado à SAP/SP.',
     orgao: 'Secretaria da Administração Penitenciária do Estado de São Paulo (SAP/SP)',
-    direcao: 'Diretoria-Geral da Polícia Penal/SP — estrutura própria da SAP',
-    subordinacao: 'Órgão permanente de segurança pública, subordinado à SAP/SP, responsável pela segurança dos estabelecimentos penais estaduais.',
-    efetivoAtivoLabel: 'Quadro em implantação',
-    reservaLabel: 'Inativos: conferir SAP/SPPREV',
-    totalLabel: 'Conferir SAP/SP',
-    relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
-    quadro: 'Carreira de Policial Penal criada no quadro da SAP/SP. Há concurso recente para 1.100 vagas de ingresso, com remuneração inicial por subsídio informada em edital.',
-    ingresso: 'Concurso público, investigação social, TAF, exames, avaliação psicológica, curso de formação e posse conforme edital e atos da SAP.',
-    escolaridade: 'Conferir edital vigente da SAP/AOCP; requisitos podem envolver escolaridade, CNH, aptidão física, conduta social e demais condições legais.',
-    formacao: 'Curso de formação e capacitação continuada para atuação em segurança prisional, escoltas, custódia, muralhas, canil, GIR, inteligência e proteção de unidades.',
-    atribuicoes: 'Segurança interna e externa dos estabelecimentos penais, custódia, vigilância, escolta, recambiamento, manutenção da ordem e disciplina, proteção de instalações e apoio ao enfrentamento do crime organizado no ambiente prisional.',
-    remuneracao: 'Subsídio/remuneração deve ser conferido no edital, tabela oficial, Diário Oficial e holerite; não somar rubricas sem fonte oficial.',
-    vantagens: 'Podem existir auxílio-alimentação, verbas de escala, indenizações, adicionais e vantagens conforme lei paulista, lotação, escala, laudo e rubrica individual.',
-    saude: 'Assistência e perícias devem ser conferidas conforme SAP/SP, SPPREV, IAMSPE e regras do vínculo funcional.',
-    previdencia: 'Regime próprio estadual/SPPREV; aposentadoria policial, regras de transição e contribuição exigem análise individual.',
+    direcao: 'Rodrigo Santos Andrade — Diretor-Geral da Polícia Penal; Odirlei Arruda de Lima — Diretor-Geral Adjunto',
+    subordinacao: 'Órgão permanente de segurança pública, subordinado à SAP/SP, responsável pela segurança dos estabelecimentos penais estaduais e pela execução penal administrativa.',
+    efetivoAtivoLabel: '25 mil+ · aproximadamente 25 mil a 26 mil homens e mulheres · fonte SAP/2025',
+    reservaLabel: '35+ · recorte AEVP aposentados · referência Transparência/SP',
+    totalLabel: '182 estabelecimentos penais e 160 unidades de reintegração social · fonte SAP/2025',
+    relacaoLabel: '1 policial penal / 9 pessoas custodiadas · estimado',
+    quadro: 'Carreira de Policial Penal organizada em níveis I a VII. O Nível I possui Categoria Ingresso e Categoria A; os níveis II a VII possuem categorias A, B e C.',
+    ingresso: 'Ingresso por concurso público para a Categoria Ingresso do Nível I, com provas, aptidão física, aferição de estatura, aptidão psicológica, investigação social, curso de formação e posse conforme LC SP 1.416/2024 e edital.',
+    escolaridade: 'Requisitos legais principais: nível superior, nacionalidade brasileira, idade de 18 a 35 anos na inscrição, CNH B, saúde compatível, capacidade física, aptidão psicológica e idoneidade.',
+    formacao: 'Curso de formação e capacitação continuada para atuação em segurança prisional, escoltas, custódia, muralhas, canil, GIR, inteligência, disciplina, proteção de unidades e reintegração social.',
+    atribuicoes: 'Segurança interna e externa dos estabelecimentos penais, custódia, vigilância, escolta, recambiamento, manutenção da ordem e disciplina, proteção de instalações, inteligência penitenciária e apoio ao enfrentamento do crime organizado no ambiente prisional.',
+    remuneracao: 'Tabela oficial SGGD/SP julho/2025: subsídio mensal de R$ 4.695,60 no Nível I/Ingresso a R$ 10.502,23 no Nível VII/Categoria C; adicional de insalubridade conforme grau.',
+    vantagens: '13º salário, férias com 1/3, abono de permanência, adicional de insalubridade, Bonificação por Resultados, retribuição por direção/chefia/assessoramento, verbas indenizatórias e DEJEP.',
+    saude: 'Assistência médica e hospitalar pelo IAMSPE para contribuintes e beneficiários, além das regras próprias da SAP/SP, SPPREV e vínculo funcional.',
+    previdencia: 'Regime próprio estadual/SPPREV, com regras previdenciárias da LC SP 1.354/2020 e normas aplicáveis à carreira policial penal.',
     concurso: {
-      vagas: 'Concurso SAP/SP: 1.100 vagas para Policial Penal; conferir status no site da SAP, AOCP e Diário Oficial.',
-      salario: 'Subsídio inicial informado em edital recente: R$ 4.695,60 para nível I - ingresso; conferir atualizações oficiais antes de usar.',
-      banca: 'Instituto AOCP no concurso recente da SAP/SP.',
-      escolaridade: 'Conferir edital vigente; requisitos detalhados no edital da SAP/AOCP.'
+      vagas: 'Concurso SAP/SP — Polícia Penal: 1.100 vagas para Policial Penal, com participação de mulheres e homens após reabertura/retificação em 2026.',
+      salario: 'Subsídio inicial: R$ 4.695,60 para Nível I / Categoria Ingresso.',
+      banca: 'Instituto AOCP.',
+      escolaridade: 'Nível superior, CNH B e demais requisitos legais do cargo de Policial Penal.'
     },
     associacaoBusca: 'associação ou sindicato dos policiais penais de São Paulo',
-    fonte: 'ALESP/SAP-SP — LC SP 1.416/2024 e notícias oficiais da SAP',
-    url: 'https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/lei.complementar-1416-26.09.2024.html',
-    atualizado: 'Atualizado em 28/04/2026'
+    fonte: 'SAP/SP; ALESP; SGGD/SP; Governo de SP; Diário Oficial/SP; Instituto AOCP; Portal da Transparência/SP; SPPREV/IAMSPE',
+    url: 'https://www.sap.sp.gov.br/sec_adm_penitenciaria/unidades_administrativas_e_fundacoes/policia_penal',
+    atualizado: 'Atualizado em 03/05/2026'
   },
+
   pprj: {
     sigla: 'PPRJ',
     nome: 'Polícia Penal do Estado do Rio de Janeiro',
@@ -439,8 +440,8 @@ const CARGOS_PPSP = mapearTabelaPoliciaPenal('ppsp', [
   { id: 'nivel_vii_b', text: 'PPSP — Nível VII / Classe B', valor: 10199.35 },
   { id: 'nivel_vii_c', text: 'PPSP — Nível VII / Classe C', valor: 10502.23 },
 ],
-  'Subsídio mensal da carreira de Policial Penal/SP. Valores da LC SP 1.416/2024 reajustados em 5% pela LC SP 1.425/2025, conferindo o ingresso de R$ 4.695,60 publicado no concurso SAP 2025.',
-  'Insalubridade informada pela SAP em R$ 785,67 e DEJEP eventual podem existir conforme escala/lotação; não foram somadas ao subsídio da tabela.',
+  'Subsídio mensal da carreira de Policial Penal/SP conforme tabela oficial SGGD/SP de julho/2025, com valores de R$ 4.695,60 no Nível I/Ingresso a R$ 10.502,23 no Nível VII/Categoria C.',
+  'Adicional de insalubridade SGGD/SP: R$ 785,67, R$ 392,81 ou R$ 196,38 conforme grau. DEJEP: jornada extraordinária de 8h, até 10 mensais, com natureza indenizatória.',
   'ppsp'
 );
 

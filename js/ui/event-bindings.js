@@ -51,6 +51,10 @@
       safeCall('mudarInstituicao', [event.currentTarget.value]);
     });
 
+    bindChange('#instituicao_home', event => {
+      safeCall('selecionarInstituicaoPaginaInicial', [event.currentTarget.value]);
+    });
+
     bindChange('#poderes_instituicao', event => {
       safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
     });
@@ -60,7 +64,14 @@
     // que já existiam no DOM no momento do carregamento.
     document.addEventListener('change', event => {
       const alvo = event.target;
-      if (!alvo || !(alvo instanceof HTMLSelectElement)) return;
+      if (!alvo) return;
+
+      if (alvo.matches('#comparador-selecao input[type="checkbox"]')) {
+        safeCall('carregarComparadorCarreiras');
+        return;
+      }
+
+      if (!(alvo instanceof HTMLSelectElement)) return;
 
       if (alvo.matches('[data-consulta-esfera]')) {
         const page = alvo.dataset.consultaPage;
@@ -155,13 +166,6 @@
 
     bindChange('#comparador-instituicao', () => {
       safeCall('comparadorAdicionarInstituicaoSelecionada');
-    });
-
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
-        safeCall('carregarComparadorCarreiras');
-      }
     });
 
     bindInput('#contato_mensagem', () => safeCall('atualizarContador'));

@@ -1185,3 +1185,326 @@ html[data-theme="light"] .app-bottom-nav {
 html[data-theme="light"] .menu-overlay.active {
   background: rgba(180, 186, 196, .42) !important;
 }
+
+/* Acessibilidade: foco de teclado visível em elementos interativos */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--dourado, #f4c542);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+
+/* =======================================================
+   AJUSTE DE LEGIBILIDADE DOS TÍTULOS DOS CAMPOS
+   Mantém o desenho dos inputs/selects e só evita que o texto
+   do label seja recortado pelas bordas arredondadas do bloco.
+   ======================================================= */
+.field {
+  overflow: visible !important;
+}
+
+.field > label {
+  max-width: calc(100% - 32px) !important;
+  margin: 0 16px 7px 18px !important;
+  line-height: 1.25 !important;
+  min-height: 1.25em !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  flex-wrap: wrap !important;
+  position: relative;
+  z-index: 2;
+}
+
+.field > input,
+.field > select,
+.field > textarea {
+  position: relative;
+  z-index: 1;
+}
+
+/* =======================================================
+   AJUSTE DO RESUMO DO CABEÇALHO
+   Integra o resumo do portal/institucional em um painel único,
+   preservando as informações e garantindo a porcentagem no mobile.
+   ======================================================= */
+.header-facts-panel {
+  --usp-summary-panel-bg: linear-gradient(145deg, rgba(32, 35, 42, 0.84), rgba(18, 20, 27, 0.74));
+  --usp-summary-sheet-bg: rgba(255,255,255,0.035);
+  --usp-summary-divider: rgba(255,255,255,0.105);
+  --usp-summary-muted: rgba(255,255,255,0.66);
+  --usp-summary-text: #f8fafc;
+  --usp-summary-accent-bg: linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 24%, rgba(255,255,255,0.035)), rgba(255,255,255,0.035));
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: clamp(14px, 1.5vw, 18px) !important;
+  border: 1px solid rgba(255,255,255,0.13) !important;
+  border-left: 3px solid color-mix(in srgb, var(--vermelho) 70%, rgba(255,255,255,0.18)) !important;
+  border-radius: 24px !important;
+  background: var(--usp-summary-panel-bg) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 18px 42px rgba(0,0,0,0.24) !important;
+  overflow: hidden !important;
+}
+
+.header-facts-head {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 0 11px !important;
+  padding: 0 0 10px !important;
+  border-bottom: 1px solid var(--usp-summary-divider) !important;
+}
+
+.header-facts-head span {
+  color: var(--usp-summary-muted) !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  letter-spacing: .13em !important;
+  text-shadow: none !important;
+}
+
+.header-facts-head strong {
+  justify-self: end !important;
+  max-width: 100% !important;
+  padding: 5px 9px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 38%, var(--usp-summary-divider)) !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--vermelho) 16%, rgba(255,255,255,0.035)) !important;
+  color: var(--usp-summary-text) !important;
+  font-size: 10px !important;
+  line-height: 1.2 !important;
+  text-align: right !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  text-shadow: none !important;
+}
+
+.header-facts-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  border: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 18px !important;
+  background: var(--usp-summary-sheet-bg) !important;
+  overflow: hidden !important;
+}
+
+.header-fact,
+.header-leadership-item {
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 11px 12px !important;
+  border: 0 !important;
+  border-right: 1px solid var(--usp-summary-divider) !important;
+  border-bottom: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.header-fact:nth-child(4n) {
+  border-right: 0 !important;
+}
+
+.header-fact span,
+.header-leadership-item span {
+  min-height: 0 !important;
+  margin: 0 0 5px !important;
+  color: var(--usp-summary-muted) !important;
+  font-size: 8.5px !important;
+  line-height: 1.18 !important;
+  letter-spacing: .08em !important;
+  text-shadow: none !important;
+}
+
+.header-fact strong,
+.header-leadership-item strong {
+  margin: 0 !important;
+  color: var(--usp-summary-text) !important;
+  font-size: clamp(12px, 1vw, 14px) !important;
+  line-height: 1.22 !important;
+  overflow-wrap: anywhere !important;
+  text-shadow: none !important;
+}
+
+.header-fact--dados-atualizados {
+  display: grid !important;
+  grid-column: 1 / -1 !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 12px !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-top: 1px solid color-mix(in srgb, var(--vermelho) 34%, var(--usp-summary-divider)) !important;
+  background: var(--usp-summary-accent-bg) !important;
+}
+
+.header-fact--dados-atualizados span {
+  margin: 0 !important;
+  color: color-mix(in srgb, var(--dourado, #DFB63E) 82%, var(--usp-summary-text)) !important;
+  font-size: 9.5px !important;
+}
+
+.header-fact--dados-atualizados strong {
+  justify-self: end !important;
+  font-size: clamp(17px, 1.8vw, 22px) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.header-leadership {
+  display: grid !important;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 10px 0 0 !important;
+  border: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 18px !important;
+  background: var(--usp-summary-sheet-bg) !important;
+  overflow: hidden !important;
+}
+
+.header-leadership-item {
+  border-bottom: 0 !important;
+}
+
+.header-leadership-item:last-child {
+  border-right: 0 !important;
+}
+
+html[data-theme="light"] .header-facts-panel,
+body:not([data-theme="dark"]) .header-facts-panel {
+  --usp-summary-panel-bg: linear-gradient(145deg, rgba(248,249,251,0.94), rgba(226,231,239,0.88));
+  --usp-summary-sheet-bg: rgba(255,255,255,0.48);
+  --usp-summary-divider: rgba(105,112,125,0.18);
+  --usp-summary-muted: #657080;
+  --usp-summary-text: #151a22;
+  --usp-summary-accent-bg: linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 12%, rgba(255,255,255,0.86)), rgba(255,255,255,0.58));
+  border-color: rgba(255,255,255,0.78) !important;
+  box-shadow: 10px 10px 24px rgba(118,124,138,0.18), -10px -10px 24px rgba(255,255,255,0.72) !important;
+}
+
+body[data-theme="dark"] .header-facts-panel,
+[data-theme="dark"] body .header-facts-panel {
+  --usp-summary-panel-bg: linear-gradient(145deg, rgba(32, 35, 42, 0.84), rgba(18, 20, 27, 0.74));
+  --usp-summary-sheet-bg: rgba(255,255,255,0.035);
+  --usp-summary-divider: rgba(255,255,255,0.105);
+  --usp-summary-muted: rgba(255,255,255,0.66);
+  --usp-summary-text: #f8fafc;
+  --usp-summary-accent-bg: linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 24%, rgba(255,255,255,0.035)), rgba(255,255,255,0.035));
+  border-color: rgba(255,255,255,0.13) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.09), 0 18px 42px rgba(0,0,0,0.24) !important;
+}
+
+@media (max-width: 820px) {
+  .header-facts-panel {
+    display: block !important;
+    padding: 12px !important;
+    border-radius: 20px !important;
+  }
+
+  .header-facts-head {
+    grid-template-columns: 1fr !important;
+    justify-items: start !important;
+    gap: 6px !important;
+    margin-bottom: 9px !important;
+    padding-bottom: 9px !important;
+  }
+
+  .header-facts-head strong {
+    justify-self: start !important;
+    max-width: none !important;
+    padding: 4px 8px !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    border-radius: 16px !important;
+  }
+
+  .header-facts-grid .header-fact:nth-child(n+5):not(.header-fact--dados-atualizados) {
+    display: none !important;
+  }
+
+  .header-facts-grid .header-fact.header-fact--dados-atualizados {
+    display: grid !important;
+    grid-column: 1 / -1 !important;
+  }
+
+  .header-fact,
+  .header-leadership-item {
+    padding: 9px 10px !important;
+  }
+
+  .header-fact:nth-child(2n) {
+    border-right: 0 !important;
+  }
+
+  .header-fact--dados-atualizados {
+    grid-template-columns: 1fr auto !important;
+    gap: 10px !important;
+  }
+
+  .header-fact--dados-atualizados span {
+    font-size: 8.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .header-fact--dados-atualizados strong {
+    font-size: 18px !important;
+  }
+
+  .header-leadership {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    border-radius: 16px !important;
+  }
+
+  .header-leadership-item {
+    display: block !important;
+    border-right: 0 !important;
+  }
+
+  .header-leadership-item + .header-leadership-item {
+    border-top: 1px solid var(--usp-summary-divider) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-facts-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-fact,
+  .header-fact:nth-child(2n),
+  .header-fact:nth-child(4n) {
+    border-right: 0 !important;
+  }
+
+  .header-fact--dados-atualizados {
+    grid-template-columns: 1fr !important;
+    align-items: start !important;
+  }
+
+  .header-fact--dados-atualizados strong {
+    justify-self: start !important;
+  }
+}
+
+/* Oculta o bloco de comando no resumo inicial do portal; ele volta apenas quando uma instituição é selecionada. */
+.header-command-item[hidden],
+.header-command-item.is-hidden {
+  display: none !important;
+}

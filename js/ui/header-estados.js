@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
+/* Módulo organizado por responsabilidade — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === TROCA INSTITUIÇÃO ====================================== */
@@ -99,8 +99,8 @@ const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
   pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
   ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
-  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar de São Paulo' },
-  pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil de São Paulo' },
+  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar do Estado de São Paulo' },
+  pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil do Estado de São Paulo' },
   pmerj: { titulo: 'PMERJ', desc: 'Polícia Militar do Rio de Janeiro' },
   pcerj: { titulo: 'PCERJ', desc: 'Polícia Civil do Rio de Janeiro' },
   pmmg:  { titulo: 'PMMG',  desc: 'Polícia Militar de Minas Gerais' },
@@ -115,7 +115,7 @@ const HEADER_INSTITUICOES_INFO = {
   pcsc:  { titulo: 'PCSC',  desc: 'Polícia Civil de Santa Catarina' },
   pmes:  { titulo: 'PMES',  desc: 'Polícia Militar do Espírito Santo' },
   pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' },
-  ppsp: { titulo: 'PPSP', desc: 'Polícia Penal de São Paulo' },
+  ppsp: { titulo: 'PPSP', desc: 'Polícia Penal do Estado de São Paulo — PPESP/PPSP' },
   pprj: { titulo: 'PPRJ', desc: 'Polícia Penal do Rio de Janeiro' },
   ppmg: { titulo: 'PPMG', desc: 'Polícia Penal de Minas Gerais' },
   ppba: { titulo: 'PPBA', desc: 'Polícia Penal da Bahia' },
@@ -432,70 +432,99 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
 
 const HEADER_INSTITUICOES_RESUMO = {
   "pmesp": {
-    "nome": "Polícia Militar de São Paulo",
+    "nome": "Polícia Militar do Estado de São Paulo",
     "sigla": "PMESP",
     "estado": "São Paulo",
     "estadoSigla": "SP",
     "tipo": "Polícia Militar",
-    "criacao": "15/12/1831",
-    "ativa": 80037,
-    "ativaLabel": "80.037",
-    "reserva": 90000,
-    "reservaLabel": "90.000",
-    "femininas": 10405,
-    "femininasLabel": "10.405 · estimado",
+    "criacao": "15/12/1831 · origem histórica",
+    "ativa": 82000,
+    "ativaLabel": "82.000+",
+    "reserva": 72000,
+    "reservaLabel": "72.000+ inativos",
+    "femininas": 0,
+    "femininasLabel": "93.802 cargos fixados em lei",
     "populacao": 46081801,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 576 hab. · 0,174%",
+    "relacaoLabel": "1 ativo / 562 hab. · 0,178%",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Tarcísio de Freitas",
-    "comando": "Cel PM José Augusto Coutinho — Comandante-Geral",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Cel PM Glauce Anselmo Cavalli — Comandante-Geral",
+    "fonte": "PMESP; Governo de SP; SSP/SP Plano de Ação 2024; SGGD/SP; Leis SP 18.441/2026 e 18.442/2026; Portal da Transparência/SP",
+    "atualizado": "PMESP revisada em 03/05/2026 — números exatos não inferidos quando a fonte oficial informa faixa"
+  },
+  "bmsp": {
+    "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+    "sigla": "CBPMESP",
+    "siglaInterna": "BMSP",
+    "estado": "São Paulo",
+    "estadoSigla": "SP",
+    "tipo": "Bombeiro Militar / órgão da PMESP",
+    "criacao": "10/03/1880 · origem histórica",
+    "ativa": 8604,
+    "ativaLabel": "8.604 · ref. TCE/SP 2019/2020",
+    "reserva": 0,
+    "reservaLabel": "A confirmar · recorte CBPMESP",
+    "femininas": 0,
+    "femininasLabel": "A confirmar em fonte oficial",
+    "populacao": 46081801,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 5.356 hab. · ref. histórica",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Tarcísio de Freitas",
+    "comando": "Cel PM Alexandre Merlin — Comandante do Corpo de Bombeiros da PMESP",
+    "estrutura": "CCB — Comando do Corpo de Bombeiros, vinculado à PMESP; atuação em prevenção e combate a incêndios, busca e salvamento, salvamento aquático, defesa civil, fiscalização técnica e educação pública.",
+    "emergencia": "193",
+    "fonte": "CBPMESP; PMESP; Governo de SP; ALESP; SGGD/SP; TCE/SP; DOE/SP; Vunesp",
+    "atualizado": "CBPMESP/BMSP revisado em 03/05/2026 — chave interna bmsp preservada para compatibilidade"
   },
   "pcsp": {
-    "nome": "Polícia Civil de São Paulo",
+    "nome": "Polícia Civil do Estado de São Paulo",
     "sigla": "PCSP",
     "estado": "São Paulo",
     "estadoSigla": "SP",
     "tipo": "Polícia Civil",
-    "criacao": "Origem histórica: 1841",
+    "criacao": "Origem histórica: 1841 · confirmar fonte histórica oficial direta",
     "ativa": 21089,
-    "ativaLabel": "21.089",
+    "ativaLabel": "21.089 · ref. 2022/2023",
     "reserva": 35000,
-    "reservaLabel": "35.000",
+    "reservaLabel": "35.000 · estimado",
     "femininas": 5483,
     "femininasLabel": "5.483 · estimado",
     "populacao": 46081801,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 2.185 hab. · 0,046%",
+    "relacaoLabel": "1 ativo / 2.185 hab. · ref. histórica",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Tarcísio de Freitas",
-    "comando": "Delegado Artur José Dian — Delegado-Geral de Polícia",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Delegado Artur José Dian — Delegado-Geral da Polícia Civil",
+    "estrutura": "DGP; DGPAD; DAP; DIPOL; DPPC; DECAP; DEMACRO; DEINTER 1 a 10; DEIC; DHPP; DENARC; DOPE; ACADEPOL; CORREGEDORIA",
+    "sede": "Rua Brigadeiro Tobias, 527, São Paulo/SP, CEP 01032-902",
+    "fonte": "PCSP; Governo/SSP-SP; SGGD/SP; Portal da Transparência/SP; ALESP; editais PCSP/Vunesp; Lei 18.440/2026, Lei 18.441/2026 e Lei 18.443/2026",
+    "atualizado": "PCSP revisada em 03/05/2026 — efetivo ativo, inativos e feminino mantidos como estimativas/referência histórica a pedido"
   },
   "ppsp": {
-    "nome": "Polícia Penal de São Paulo",
+    "nome": "Polícia Penal do Estado de São Paulo — PPESP/PPSP",
     "sigla": "PPSP",
     "estado": "São Paulo",
     "estadoSigla": "SP",
     "tipo": "Polícia Penal",
-    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
-    "ativa": 24758,
-    "ativaLabel": "24.758",
-    "reserva": 0,
-    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "criacao": "EC 104/2019 · EC Estadual 51/2022 · LC SP 1.416/2024 · atividades desde fev/2025",
+    "ativa": 25000,
+    "ativaLabel": "25 mil+ · SAP/2025",
+    "reserva": 35,
+    "reservaLabel": "35+ · recorte AEVP/Transparência SP",
     "femininas": 2926,
-    "femininasLabel": "2.926",
+    "femininasLabel": "2.926 · estimado",
     "populacao": 213401,
-    "populacaoTitulo": "Presos atendidos",
-    "relacaoLabel": "1 servidor / 9 presos",
-    "relacaoTitulo": "Relação ativa/presos",
+    "populacaoTitulo": "Pessoas custodiadas/atendidas",
+    "relacaoLabel": "1 policial penal / 9 custodiados · estimado",
+    "relacaoTitulo": "Relação efetivo/custódia",
     "governador": "Tarcísio de Freitas",
-    "comando": "Rodrigo Santos Andrade — Diretor-Geral da Polícia Penal/SP",
-    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Rodrigo Santos Andrade — Diretor-Geral da Polícia Penal",
+    "estrutura": "Diretoria Geral; Diretoria Geral Adjunta; Corregedoria da Polícia Penal; Coordenadoria de Inteligência; Coordenadoria Geral de Administração Integrada; Coordenadoria Geral de Execução Penal; Departamento de Segurança Penal; Departamento de Controle e Execução Penal; Coordenadoria de Reintegração Social e Cidadania; Coordenadoria de Saúde do Sistema Penitenciário; coordenadorias regionais",
+    "sede": "Secretaria da Administração Penitenciária — São Paulo/SP",
+    "fonte": "SAP/SP; ALESP; SGGD/SP; Governo de SP; Diário Oficial/SP; Instituto AOCP; Portal da Transparência/SP; SPPREV/IAMSPE",
+    "atualizado": "PPSP revisada em 03/05/2026 — efetivo ativo SAP/2025; feminino estimado; inativos em recorte de transparência"
   },
   "pmerj": {
     "nome": "Polícia Militar do Rio de Janeiro",
@@ -2423,6 +2452,31 @@ const INSTITUICOES_FEDERAIS_ESTRUTURA = [
 ];
 
 function criarResumoFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return {
+      nome: 'Polícia Rodoviária Federal',
+      sigla: 'PRF',
+      estado: 'Brasil',
+      estadoSigla: 'BR',
+      tipo: 'Polícia Rodoviária Federal',
+      criacao: '24/07/1928 · Decreto nº 18.323/1928',
+      ativa: 13000,
+      ativaLabel: '13.000+ · PRF/2025',
+      reserva: 7000,
+      reservaLabel: '7.000+ aposentados e pensionistas · estimado/Transparência',
+      femininas: 1700,
+      femininasLabel: '1.700+ mulheres · estimado',
+      populacao: 77000,
+      populacaoTitulo: 'Rodovias federais fiscalizadas',
+      relacaoLabel: '1 PRF / 5,9 km de rodovia federal · estimado',
+      relacaoTitulo: 'Cobertura operacional',
+      governador: 'Governo Federal / Ministério da Justiça e Segurança Pública',
+      comando: 'Antônio Fernando Souza Oliveira — Diretor-Geral da PRF',
+      fonte: 'PRF, Portal da Transparência, MGI/Servidor, Decreto nº 11.759/2023 e legislação federal',
+      atualizado: 'Pesquisa em 03/05/2026 · efetivo ativo aprox. PRF/2025 · remuneração federal 2026'
+    };
+  }
+
   return {
     nome: item.desc,
     sigla: item.titulo,
@@ -2460,18 +2514,52 @@ function criarCargosPfEstrutura(inst, sigla) {
 }
 
 function criarCargosPrfEstrutura(inst, sigla) {
+  const fonteKey = 'prf';
+  const criterio = 'Subsídio federal da carreira de Policial Rodoviário Federal, referência 2026, conforme tabela remuneratória federal/MGI e Lei nº 14.875/2024.';
+  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, adicional de fronteira quando houver exercício em localidade prevista, diárias/indenizações e demais rubricas funcionais.';
   return [
-    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
-    criarCargoEstrutural(inst, 'classe_especial', `${sigla} — Policial Rodoviário Federal — Classe Especial`, false),
-    criarCargoEstrutural(inst, 'primeira_classe', `${sigla} — Policial Rodoviário Federal — 1ª Classe`, false),
-    criarCargoEstrutural(inst, 'segunda_classe', `${sigla} — Policial Rodoviário Federal — 2ª Classe`, false),
-    criarCargoEstrutural(inst, 'terceira_classe', `${sigla} — Policial Rodoviário Federal — 3ª Classe`, false, true),
-    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação Profissional`, false),
-    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+    { id: 'especial_iii', nome: `${sigla} — Policial Rodoviário Federal — Especial III`, padrao: 23000.00, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'especial_ii', nome: `${sigla} — Policial Rodoviário Federal — Especial II`, padrao: 22249.43, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'especial_i', nome: `${sigla} — Policial Rodoviário Federal — Especial I`, padrao: 21524.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_vi', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe VI`, padrao: 20306.21, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_v', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe V`, padrao: 19649.56, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_iv', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe IV`, padrao: 19015.88, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_iii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe III`, padrao: 18404.39, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_ii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe II`, padrao: 17814.28, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_i', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe I`, padrao: 17244.77, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_vi', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe VI`, padrao: 15949.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_v', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe V`, padrao: 15704.54, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_iv', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe IV`, padrao: 15467.49, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_iii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe III`, padrao: 15237.63, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_ii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe II`, padrao: 15014.50, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_i', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe I`, padrao: 14798.58, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'terceira_iii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe III`, padrao: 12646.11, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'terceira_ii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe II`, padrao: 12448.92, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'terceira_i', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe I`, padrao: 12253.84, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' }
   ];
 }
 
 function criarConcursoFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return {
+      edital: 'PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026',
+      salario: 'Inicial 2026: R$ 12.253,84 · Classe 3ª, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial III.',
+      vagas: '1.500 vagas no concurso PRF 2021; 521 nomeações em 2025 e posse coletiva de aproximadamente 300 profissionais em janeiro/2026.',
+      cotas: 'Regras federais de cotas e edital Cebraspe/PRF 2021.',
+      idade: 'CNH categoria B ou superior; requisitos físicos, médicos, psicológicos, investigação social e demais condições do edital.',
+      escolaridade: 'Nível superior completo em qualquer área, conforme carreira de Policial Rodoviário Federal.',
+      banca: 'Cebraspe',
+      inscritos: '304 mil+ inscritos · referência concurso PRF 2021/Cebraspe',
+      materias: 'Língua Portuguesa, Raciocínio Lógico, Informática, Física, Ética, Geopolítica, Língua Estrangeira, legislação de trânsito, Direito Constitucional, Administrativo, Penal, Processo Penal, Direitos Humanos e legislação especial.',
+      etapas: 'Provas objetiva e discursiva, TAF, avaliação psicológica, avaliação de saúde, investigação social, avaliação biopsicossocial/heteroidentificação quando aplicável, curso de formação profissional e nomeação.',
+      cfsd: 'Curso de Formação Policial na UniPRF; novas turmas em 2025/2026 reforçaram efetivo em áreas estratégicas.',
+      estagio: 'Estágio probatório e desenvolvimento na carreira conforme Lei nº 9.654/1998, Decreto nº 8.282/2014 e normas federais.',
+      validade: 'Concurso PRF 2021 prorrogado até junho/2026.',
+      previsao: 'Novo concurso solicitado/anunciado em estudos; sem edital novo publicado até a referência desta atualização.',
+      site: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/concursos'
+    };
+  }
+
   return {
     edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
     salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
@@ -2492,6 +2580,14 @@ function criarConcursoFederalEstrutura(item) {
 }
 
 function criarAcoesFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return [
+      { titulo: 'PRF — subsídio 2026, enquadramento e progressão', status: 'Tema permanente', ano: 'Lei 9.654/1998 · Lei 14.875/2024', tipo: 'individual/coletivo', desc: 'Conferência de classe e padrão da carreira de Policial Rodoviário Federal, progressão, promoção e aplicação do subsídio federal vigente em 2026.', base: 'Lei nº 9.654/1998, Lei nº 12.775/2012, Decreto nº 8.282/2014, Lei nº 14.875/2024 e tabela federal/MGI 2026.', fonte: 'PRF/MGI/Planalto', fonteUrl: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf', atualizado: 'Maio/2026' },
+      { titulo: 'PRF — adicional de fronteira, diárias e indenizações', status: 'Depende de lotação/escala', ano: 'Tema recorrente', tipo: 'individual', desc: 'Conferência de adicional de fronteira, diárias, indenizações, ajuda de custo, missões, deslocamentos, escalas e demais rubricas eventuais.', base: 'Lei nº 12.855/2013, portarias federais, escala, lotação, Sigepe/SouGov e ficha financeira.', fonte: 'Planalto/MGI/PRF', fonteUrl: 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12855.htm', atualizado: 'Maio/2026' },
+      { titulo: 'PRF — aposentadoria policial, integralidade, paridade e abono', status: 'Análise previdenciária', ano: 'EC 103/2019', tipo: 'individual', desc: 'Aplicação das regras de aposentadoria policial federal, transições, paridade/integralidade quando cabíveis, contribuição previdenciária e abono de permanência.', base: 'Constituição Federal, EC 103/2019, LC 51/1985, Lei Complementar 144/2014, Lei 9.654/1998 e histórico funcional.', fonte: 'Planalto/MGI/PRF', fonteUrl: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores', atualizado: 'Maio/2026' }
+    ];
+  }
+
   return [
     { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
     { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
@@ -2500,6 +2596,14 @@ function criarAcoesFederalEstrutura(item) {
 }
 
 function criarAssociacoesFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return [
+      { nome: 'FenaPRF — Federação Nacional dos Policiais Rodoviários Federais', foco: 'Policiais rodoviários federais ativos, aposentados e pensionistas', acao: 'Representação nacional da categoria, negociação coletiva, defesa institucional, previdência, saúde, segurança do trabalho e pautas remuneratórias.', site: 'https://fenaprf.org.br', telefone: 'Consultar canais oficiais da federação', mensalidade: 'Conforme sindicato estadual/filiado', servicos: 'Notícias da carreira, representação nacional, articulação legislativa, convênios e orientação institucional.' },
+      { nome: 'SINPRFs — Sindicatos estaduais dos Policiais Rodoviários Federais', foco: 'Policiais rodoviários federais por unidade da federação', acao: 'Representação regional, atendimento jurídico/administrativo, acompanhamento de escalas, lotação, remoção, saúde, remuneração e aposentadoria.', site: 'Consultar sindicato estadual da base', telefone: 'Consultar diretamente no sindicato local', mensalidade: 'Conforme regra de filiação', servicos: 'Atendimento sindical, jurídico, convênios, assembleias, comunicação e apoio ao associado.' },
+      { nome: 'Associações e entidades regionais da PRF', foco: 'Servidores PRF, familiares, aposentados e pensionistas', acao: 'Apoio associativo complementar, comunicação de classe, benefícios, atividades sociais e acompanhamento de pautas locais.', site: 'Consultar entidade regional', telefone: 'Consultar diretamente', mensalidade: 'Conforme entidade', servicos: 'Convênios, apoio social, comunicação institucional e suporte associativo.' }
+    ];
+  }
+
   return [
     { nome: `Associação/Sindicato — ${item.titulo}`, foco: `Brasil — ${item.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade nacional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
     { nome: `Entidade representativa federal — ${item.titulo}`, foco: `Profissionais ativos, aposentados e pensionistas vinculados à ${item.desc}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe nacionais/regionais existentes.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
@@ -2521,13 +2625,22 @@ function aplicarEstruturaFederaisDados() {
     if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
     HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
     HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
-    REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' };
-    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
-      titulo: item.titulo,
-      desc: item.desc,
-      cor: item.cor,
-      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
-    };
+    REMUNERACAO_FONTES_OFICIAIS[item.inst] = item.inst === 'prf'
+      ? { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' }
+      : (REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' });
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = item.inst === 'prf'
+      ? {
+          titulo: 'PRF',
+          desc: 'Polícia Rodoviária Federal',
+          cor: item.cor,
+          alertaPrev: 'PRF: carreira federal de Policial Rodoviário Federal, com atuação em patrulhamento ostensivo, fiscalização de trânsito, segurança viária, enfrentamento ao crime nas rodovias federais e operações integradas.'
+        }
+      : {
+          titulo: item.titulo,
+          desc: item.desc,
+          cor: item.cor,
+          alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
+        };
     CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
     ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
     ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
@@ -2552,8 +2665,7 @@ function inserirOptionFederalNoSelect(select, item) {
 
 function aplicarEstruturaFederaisNoHtml() {
   INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
-    inserirOptionFederalNoSelect(document.getElementById('instituicao_header'), item);
-    inserirOptionFederalNoSelect(document.getElementById('instituicao'), item);
+    ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => inserirOptionFederalNoSelect(document.getElementById(id), item));
   });
 
   const flags = document.querySelector('.header-state-flags');
@@ -2566,7 +2678,7 @@ function aplicarEstruturaFederaisNoHtml() {
     btn.setAttribute('aria-label', 'Selecionar instituições federais');
     btn.setAttribute('aria-pressed', 'false');
     btn.onclick = () => selecionarEstado('br');
-    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="Bandeira do Brasil"><span>BR</span>`;
+    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="" aria-hidden="true"><span>BR</span>`;
     flags.appendChild(btn);
   }
 }
@@ -2598,7 +2710,7 @@ const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'bmrs', titulo: 'BMRS', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
   { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'bmsc', titulo: 'BMSC', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
   { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'bmse', titulo: 'BMSE', desc: 'Corpo de Bombeiros Militar de Sergipe' },
-  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'BMSP', desc: 'Corpo de Bombeiros Militar de São Paulo' },
+  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'CBPMESP', desc: 'Corpo de Bombeiros da Polícia Militar do Estado de São Paulo' },
   { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'BMTO', desc: 'Corpo de Bombeiros Militar do Tocantins' }
 ];
 
@@ -2687,8 +2799,7 @@ function inserirOptionBombeiroNoSelect(select, item) {
 
 function aplicarEstruturaBombeirosMilitaresNoHtml() {
   BOMBEIROS_MILITARES_ESTRUTURA.forEach(item => {
-    inserirOptionBombeiroNoSelect(document.getElementById('instituicao_header'), item);
-    inserirOptionBombeiroNoSelect(document.getElementById('instituicao'), item);
+    ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => inserirOptionBombeiroNoSelect(document.getElementById(id), item));
   });
 }
 
@@ -2748,7 +2859,88 @@ function criarOptionInstituicao(inst, texto) {
   return opt;
 }
 
+
+function getRotuloRamoSelect(ramo, inst, info = {}) {
+  if (ramo === 'bm') return 'Bombeiros Militares';
+  if (ramo === 'pc') return 'Polícia Civil';
+  if (ramo === 'pp') return 'Polícia Penal';
+  if (inst === 'pmrs' || /Brigada Militar/i.test(info.desc || '')) return 'Brigada Militar';
+  return 'Polícia Militar';
+}
+
+function montarSelectInstituicoes(select) {
+  if (!select || select.dataset.instituicoesMontadas === 'true') return;
+
+  const valorAtual = select.value;
+  const fragmento = document.createDocumentFragment();
+  const placeholder = criarOptionInstituicao('', 'Escolha uma instituição');
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  fragmento.appendChild(placeholder);
+
+  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
+    if (!estado || ['br', 'municipal'].includes(uf)) return;
+
+    const grupo = document.createElement('optgroup');
+    grupo.label = estado.nome || String(uf).toUpperCase();
+
+    ['pm', 'bm', 'pc', 'pp'].forEach(ramo => {
+      const inst = estado[ramo];
+      if (!inst) return;
+      const info = HEADER_INSTITUICOES_INFO[inst] || {};
+      const titulo = info.titulo || String(inst).toUpperCase();
+      const rotulo = getRotuloRamoSelect(ramo, inst, info);
+      grupo.appendChild(criarOptionInstituicao(inst, `${titulo} - ${rotulo}`));
+    });
+
+    if (grupo.children.length) fragmento.appendChild(grupo);
+  });
+
+  select.innerHTML = '';
+  select.appendChild(fragmento);
+  select.dataset.instituicoesMontadas = 'true';
+
+  if (valorAtual && Array.from(select.options || []).some(opt => opt.value === valorAtual)) {
+    select.value = valorAtual;
+  }
+}
+
+function montarSelectsInstituicoes() {
+  document.querySelectorAll('#instituicao, #instituicao_header, #instituicao_home').forEach(montarSelectInstituicoes);
+}
+
+function prepararSelectInstituicaoHome() {
+  const seletor = document.getElementById('instituicao_home');
+  if (!seletor) return;
+
+  montarSelectInstituicoes(seletor);
+  const primeiraOpcao = seletor.options && seletor.options[0];
+  if (primeiraOpcao) {
+    primeiraOpcao.disabled = false;
+    primeiraOpcao.selected = true;
+    primeiraOpcao.textContent = 'Resumo do portal';
+    primeiraOpcao.value = '';
+  }
+  seletor.value = '';
+}
+
+function selecionarInstituicaoPaginaInicial(inst) {
+  const valor = String(inst || '').trim();
+  if (!valor) {
+    aplicarHeaderInicialPortal();
+    prepararSelectInstituicaoHome();
+    return;
+  }
+
+  mudarInstituicao(valor);
+  atualizarVisibilidadeResumoInstitucional('principal');
+  const info = HEADER_INSTITUICOES_INFO[valor];
+  if (info) mostrarToast(`${info.titulo} selecionada no resumo da página inicial.`);
+}
+
 function aplicarEstruturaEstadosFaltantesNoHtml() {
+  montarSelectsInstituicoes();
+
   const montarOptgroups = select => {
     if (!select) return;
     ESTADOS_ESTRUTURA_FALTANTES.forEach(estado => {
@@ -2762,8 +2954,7 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
     });
   };
 
-  montarOptgroups(document.getElementById('instituicao_header'));
-  montarOptgroups(document.getElementById('instituicao'));
+  ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => montarOptgroups(document.getElementById(id)));
 
   const flags = document.querySelector('.header-state-flags');
   if (flags) {
@@ -2777,7 +2968,7 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
       btn.setAttribute('aria-label', `Selecionar ${estado.nome}`);
       btn.setAttribute('aria-pressed', 'false');
       btn.onclick = () => selecionarEstado(estado.estado);
-      btn.innerHTML = `<img src="${estado.flag}" alt="Bandeira de ${estado.nome}"><span>${estado.sigla}</span>`;
+      btn.innerHTML = `<img src="${estado.flag}" alt="" aria-hidden="true"><span>${estado.sigla}</span>`;
       flags.appendChild(btn);
     });
   }
@@ -3072,11 +3263,186 @@ function aplicarPadraoDadosEmBreveGlobal() {
     POLICIAS_PENAIS_INFO,
     CONFIGS_INSTITUICOES_GENERICAS,
     CARGOS_ESTRUTURA_GENERICAS,
-    REMUNERACAO_FONTES_OFICIAIS
+    REMUNERACAO_FONTES_OFICIAIS,
+    typeof CARGOS_PM !== 'undefined' ? CARGOS_PM : null,
+    typeof CARGOS_PC !== 'undefined' ? CARGOS_PC : null,
+    typeof CARGOS_PMERJ !== 'undefined' ? CARGOS_PMERJ : null,
+    typeof CARGOS_PCERJ !== 'undefined' ? CARGOS_PCERJ : null,
+    typeof CARGOS_PMMG !== 'undefined' ? CARGOS_PMMG : null,
+    typeof CARGOS_PCMG !== 'undefined' ? CARGOS_PCMG : null,
+    typeof CARGOS_PMBA !== 'undefined' ? CARGOS_PMBA : null,
+    typeof CARGOS_PCBA !== 'undefined' ? CARGOS_PCBA : null,
+    typeof CARGOS_PMPR !== 'undefined' ? CARGOS_PMPR : null,
+    typeof CARGOS_PCPR !== 'undefined' ? CARGOS_PCPR : null,
+    typeof CARGOS_PMRS !== 'undefined' ? CARGOS_PMRS : null,
+    typeof CARGOS_PCRS !== 'undefined' ? CARGOS_PCRS : null,
+    typeof CARGOS_PMSC !== 'undefined' ? CARGOS_PMSC : null,
+    typeof CARGOS_PCSC !== 'undefined' ? CARGOS_PCSC : null,
+    typeof CARGOS_PMES !== 'undefined' ? CARGOS_PMES : null,
+    typeof CARGOS_PCES !== 'undefined' ? CARGOS_PCES : null,
+    typeof CARGOS_PMMS !== 'undefined' ? CARGOS_PMMS : null,
+    typeof CARGOS_PCMS !== 'undefined' ? CARGOS_PCMS : null,
+    typeof CARGOS_PMMT !== 'undefined' ? CARGOS_PMMT : null,
+    typeof CARGOS_PCMT !== 'undefined' ? CARGOS_PCMT : null,
+    typeof CARGOS_PMAC !== 'undefined' ? CARGOS_PMAC : null,
+    typeof CARGOS_PCAC !== 'undefined' ? CARGOS_PCAC : null,
+    typeof CARGOS_PPSP !== 'undefined' ? CARGOS_PPSP : null,
+    typeof CARGOS_PPRJ !== 'undefined' ? CARGOS_PPRJ : null,
+    typeof CARGOS_PPMG !== 'undefined' ? CARGOS_PPMG : null,
+    typeof CARGOS_PPBA !== 'undefined' ? CARGOS_PPBA : null,
+    typeof CARGOS_PPPR !== 'undefined' ? CARGOS_PPPR : null,
+    typeof CARGOS_PPRS !== 'undefined' ? CARGOS_PPRS : null,
+    typeof CARGOS_PPSC !== 'undefined' ? CARGOS_PPSC : null,
+    typeof CARGOS_PPES !== 'undefined' ? CARGOS_PPES : null,
+    typeof CARGOS_PPMS !== 'undefined' ? CARGOS_PPMS : null,
+    typeof CARGOS_PPMT !== 'undefined' ? CARGOS_PPMT : null,
+    typeof CARGOS_PPAC !== 'undefined' ? CARGOS_PPAC : null
   ].forEach(base => normalizarObjetoSemFonteSegura(base));
 }
 
 aplicarPadraoDadosEmBreveGlobal();
+
+/* ============================================================ */
+/* === INDICADOR DE ATUALIZAÇÃO DO PORTAL ====================== */
+/* ============================================================ */
+const CAMPOS_IGNORADOS_PERCENTUAL_PORTAL = new Set([
+  'id', 'inst', 'selected', 'cor', 'color', 'flag', 'brasao', 'imagem', 'img',
+  'logo', 'path', 'classe', 'className', 'data', 'tipoCalculo', 'grupo'
+]);
+
+function campoContaParaPercentualPortal(chave, valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'boolean' || typeof valor === 'function') return false;
+  if (!chave) return true;
+  return !CAMPOS_IGNORADOS_PERCENTUAL_PORTAL.has(String(chave));
+}
+
+function valorPreenchidoParaPercentualPortal(valor, chave = '') {
+  if (valor === undefined || valor === null) return false;
+  if (typeof valor === 'number') return Number.isFinite(valor) && valor > 0;
+  if (typeof valor === 'boolean' || typeof valor === 'function') return true;
+
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return false;
+  if (/dados em breve/i.test(texto)) return false;
+
+  if (/url|href|site|fonteurl/i.test(String(chave))) {
+    return /^https?:\/\//i.test(texto);
+  }
+
+  if (typeof dadoSemFonteSegura === 'function' && dadoSemFonteSegura(texto)) return false;
+  if (typeof resumoEhDadoPendente === 'function' && resumoEhDadoPendente(texto)) return false;
+  if (typeof concursoEhDadoPendente === 'function' && concursoEhDadoPendente(texto)) return false;
+  return true;
+}
+
+function adicionarBasePercentualPortal(bases, nome, valor) {
+  if (valor && typeof valor === 'object') bases.push({ nome, valor });
+}
+
+function getBasesPercentualAtualizacaoPortal() {
+  const bases = [];
+  adicionarBasePercentualPortal(bases, 'resumos institucionais', HEADER_INSTITUICOES_RESUMO);
+  adicionarBasePercentualPortal(bases, 'concursos', CONCURSOS);
+  adicionarBasePercentualPortal(bases, 'ações judiciais', ACOES_JUDICIAIS);
+  adicionarBasePercentualPortal(bases, 'associações e sindicatos', ASSOCIACOES);
+  adicionarBasePercentualPortal(bases, 'polícias penais', POLICIAS_PENAIS_INFO);
+  adicionarBasePercentualPortal(bases, 'fontes oficiais de remuneração', REMUNERACAO_FONTES_OFICIAIS);
+
+  [
+    ['cargos PM', typeof CARGOS_PM !== 'undefined' ? CARGOS_PM : null],
+    ['cargos PC', typeof CARGOS_PC !== 'undefined' ? CARGOS_PC : null],
+    ['cargos PMERJ', typeof CARGOS_PMERJ !== 'undefined' ? CARGOS_PMERJ : null],
+    ['cargos PCERJ', typeof CARGOS_PCERJ !== 'undefined' ? CARGOS_PCERJ : null],
+    ['cargos PMMG', typeof CARGOS_PMMG !== 'undefined' ? CARGOS_PMMG : null],
+    ['cargos PCMG', typeof CARGOS_PCMG !== 'undefined' ? CARGOS_PCMG : null],
+    ['cargos PMBA', typeof CARGOS_PMBA !== 'undefined' ? CARGOS_PMBA : null],
+    ['cargos PCBA', typeof CARGOS_PCBA !== 'undefined' ? CARGOS_PCBA : null],
+    ['cargos PMPR', typeof CARGOS_PMPR !== 'undefined' ? CARGOS_PMPR : null],
+    ['cargos PCPR', typeof CARGOS_PCPR !== 'undefined' ? CARGOS_PCPR : null],
+    ['cargos PMRS', typeof CARGOS_PMRS !== 'undefined' ? CARGOS_PMRS : null],
+    ['cargos PCRS', typeof CARGOS_PCRS !== 'undefined' ? CARGOS_PCRS : null],
+    ['cargos PMSC', typeof CARGOS_PMSC !== 'undefined' ? CARGOS_PMSC : null],
+    ['cargos PCSC', typeof CARGOS_PCSC !== 'undefined' ? CARGOS_PCSC : null],
+    ['cargos PMES', typeof CARGOS_PMES !== 'undefined' ? CARGOS_PMES : null],
+    ['cargos PCES', typeof CARGOS_PCES !== 'undefined' ? CARGOS_PCES : null],
+    ['cargos PMMS', typeof CARGOS_PMMS !== 'undefined' ? CARGOS_PMMS : null],
+    ['cargos PCMS', typeof CARGOS_PCMS !== 'undefined' ? CARGOS_PCMS : null],
+    ['cargos PMMT', typeof CARGOS_PMMT !== 'undefined' ? CARGOS_PMMT : null],
+    ['cargos PCMT', typeof CARGOS_PCMT !== 'undefined' ? CARGOS_PCMT : null],
+    ['cargos PMAC', typeof CARGOS_PMAC !== 'undefined' ? CARGOS_PMAC : null],
+    ['cargos PCAC', typeof CARGOS_PCAC !== 'undefined' ? CARGOS_PCAC : null],
+    ['cargos PPSP', typeof CARGOS_PPSP !== 'undefined' ? CARGOS_PPSP : null],
+    ['cargos PPRJ', typeof CARGOS_PPRJ !== 'undefined' ? CARGOS_PPRJ : null],
+    ['cargos PPMG', typeof CARGOS_PPMG !== 'undefined' ? CARGOS_PPMG : null],
+    ['cargos PPBA', typeof CARGOS_PPBA !== 'undefined' ? CARGOS_PPBA : null],
+    ['cargos PPPR', typeof CARGOS_PPPR !== 'undefined' ? CARGOS_PPPR : null],
+    ['cargos PPRS', typeof CARGOS_PPRS !== 'undefined' ? CARGOS_PPRS : null],
+    ['cargos PPSC', typeof CARGOS_PPSC !== 'undefined' ? CARGOS_PPSC : null],
+    ['cargos PPES', typeof CARGOS_PPES !== 'undefined' ? CARGOS_PPES : null],
+    ['cargos PPMS', typeof CARGOS_PPMS !== 'undefined' ? CARGOS_PPMS : null],
+    ['cargos PPMT', typeof CARGOS_PPMT !== 'undefined' ? CARGOS_PPMT : null],
+    ['cargos PPAC', typeof CARGOS_PPAC !== 'undefined' ? CARGOS_PPAC : null],
+    ['cargos estruturais genéricos', CARGOS_ESTRUTURA_GENERICAS]
+  ].forEach(([nome, valor]) => adicionarBasePercentualPortal(bases, nome, valor));
+
+  return bases;
+}
+
+function contabilizarPercentualAtualizacaoPortal(valor, stats, chave = '', visitados = new WeakSet()) {
+  if (valor && typeof valor === 'object') {
+    if (visitados.has(valor)) return stats;
+    visitados.add(valor);
+
+    if (Array.isArray(valor)) {
+      valor.forEach(item => contabilizarPercentualAtualizacaoPortal(item, stats, chave, visitados));
+      return stats;
+    }
+
+    Object.entries(valor).forEach(([subChave, subValor]) => {
+      contabilizarPercentualAtualizacaoPortal(subValor, stats, subChave, visitados);
+    });
+    return stats;
+  }
+
+  if (!campoContaParaPercentualPortal(chave, valor)) return stats;
+  stats.total += 1;
+  if (valorPreenchidoParaPercentualPortal(valor, chave)) stats.preenchidos += 1;
+  else stats.emBreve += 1;
+  return stats;
+}
+
+function calcularPercentualAtualizacaoPortal() {
+  const stats = { total: 0, preenchidos: 0, emBreve: 0 };
+  getBasesPercentualAtualizacaoPortal().forEach(base => {
+    contabilizarPercentualAtualizacaoPortal(base.valor, stats);
+  });
+
+  const percentual = stats.total ? (stats.preenchidos / stats.total) * 100 : 0;
+  return {
+    ...stats,
+    percentual,
+    percentualTexto: `${percentual.toFixed(percentual >= 99.5 || percentual < 10 ? 0 : 1).replace('.', ',')}%`
+  };
+}
+
+function atualizarIndicadorPercentualPortal() {
+  const indicador = calcularPercentualAtualizacaoPortal();
+  const valor = document.getElementById('header-resumo-dados-atualizados');
+  const label = document.getElementById('header-label-dados-atualizados');
+
+  if (label) label.textContent = 'Dados Atualizados do site';
+  if (valor) {
+    valor.textContent = indicador.percentualTexto;
+    valor.title = `${indicador.preenchidos.toLocaleString('pt-BR')} de ${indicador.total.toLocaleString('pt-BR')} campos com dados preenchidos; ${indicador.emBreve.toLocaleString('pt-BR')} em “Dados em breve”.`;
+    valor.setAttribute('aria-label', `${indicador.percentualTexto} dos dados cadastrados estão preenchidos`);
+    valor.dataset.totalCampos = String(indicador.total);
+    valor.dataset.camposPreenchidos = String(indicador.preenchidos);
+    valor.dataset.camposEmBreve = String(indicador.emBreve);
+  }
+
+  return indicador;
+}
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -3118,16 +3484,22 @@ function calcularEfetivoTotalResumoHeader(dados = {}) {
   return formatarEfetivoHeader(dados.ativa);
 }
 
+function calcularEfetivoAtivoResumoHeader(dados = {}) {
+  if (dados.ativaLabel) return dados.ativaLabel;
+  return formatarEfetivoHeader(dados.ativa);
+}
+
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
     'header-label-natureza': 'Natureza',
     'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
-    'header-label-ativa': 'Efetivo total',
+    'header-label-ativa': 'Efetivo na ativa',
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
+    'header-label-dados-atualizados': 'Dados Atualizados do site',
     'header-label-governador': 'Chefe do Executivo',
     'header-label-comando': 'Comando/Direção'
   };
@@ -3135,6 +3507,14 @@ function atualizarLabelsHeaderResumo(labels = {}) {
   Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
     const el = document.getElementById(id);
     if (el) el.textContent = valor;
+  });
+}
+
+
+function alternarHeaderComandoResumo(visivel) {
+  document.querySelectorAll('.header-command-item').forEach(item => {
+    item.hidden = !visivel;
+    item.classList.toggle('is-hidden', !visivel);
   });
 }
 
@@ -3196,6 +3576,8 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-titulo', 'Resumo do portal');
   setTexto('header-resumo-atualizado', 'Visão geral do portal');
 
+  alternarHeaderComandoResumo(false);
+
   atualizarLabelsHeaderResumo({
     'header-label-natureza': 'Escopo',
     'header-label-uf': 'Abrangência',
@@ -3205,8 +3587,9 @@ function aplicarHeaderInicialPortal() {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
+    'header-label-dados-atualizados': 'Dados Atualizados do site',
     'header-label-governador': 'Cobertura',
-    'header-label-comando': 'Primeiro passo'
+    'header-label-comando': 'Comando/Direção'
   });
 
   setTexto('header-resumo-natureza', 'Portal informativo');
@@ -3217,10 +3600,11 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
+  atualizarIndicadorPercentualPortal();
   setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
-  setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
+  setTexto('header-resumo-comando', '—');
 
-  ['instituicao', 'instituicao_header'].forEach(id => {
+  ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
     const seletor = document.getElementById(id);
     if (seletor) seletor.value = '';
   });
@@ -3252,12 +3636,27 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
   const ehFederal = ['pf', 'prf'].includes(instTexto) || dados.estadoSigla === 'BR';
   const ehMunicipal = instTexto === 'gm' || tipoTexto.includes('guarda municipal');
 
+  if (instTexto === 'pmesp') {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Origem histórica',
+      'header-label-ativa': 'Efetivo ativo oficial',
+      'header-label-reserva': 'Inativos (SSP)',
+      'header-label-total': 'Efetivo legal',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
   if (ehPenal) {
     return {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Base constitucional',
-      'header-label-ativa': 'Policiais penais',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Inativos/RPPS',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Presos atendidos',
@@ -3272,7 +3671,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3287,7 +3686,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3302,7 +3701,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Origem histórica',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Inativos estimados',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3317,7 +3716,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
       'header-label-criacao': 'Base legal/histórica',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Aposentados/inativos',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
@@ -3332,7 +3731,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
       'header-label-criacao': 'Base local',
-      'header-label-ativa': 'Efetivo municipal',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Regime previdenciário',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
@@ -3360,6 +3759,7 @@ function atualizarHeaderResumo(inst) {
   if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
 
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
+  alternarHeaderComandoResumo(true);
   atualizarLabelsHeaderResumo(getResumoHeaderLabelsPorInstituicao(inst, dados));
 
   const setTexto = (id, valor) => {
@@ -3367,7 +3767,7 @@ function atualizarHeaderResumo(inst) {
     if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
-  const ativaTexto = calcularEfetivoTotalResumoHeader(dados);
+  const ativaTexto = calcularEfetivoAtivoResumoHeader(dados);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
   const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
@@ -3382,6 +3782,7 @@ function atualizarHeaderResumo(inst) {
   setTexto('header-resumo-total', femininasTexto);
   setTexto('header-resumo-populacao', dados.populacaoLabel || (dados.populacao ? formatarNumeroHeader(dados.populacao) : RESUMO_DADOS_EM_BREVE));
   setTexto('header-resumo-relacao', relacaoTexto);
+  atualizarIndicadorPercentualPortal();
   setTexto('header-resumo-governador', dados.governador || RESUMO_DADOS_EM_BREVE);
   setTexto('header-resumo-comando', dados.comando || RESUMO_DADOS_EM_BREVE);
 }
@@ -3507,8 +3908,9 @@ function mudarInstituicao(novaInstituicao) {
     pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre', cor: '#006b3f', alertaPrev: 'PMAC: conferir Acreprevidência, LC AC 164/2006, tabela remuneratória, adicionais por tempo, serviço complementar, localização especial e contracheque.' },
     pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
     ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
-    pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
-    pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
+    pmesp: { titulo: "PMESP", desc: "Polícia Militar do Estado de São Paulo", cor: "#e60000", alertaPrev: "PMESP/SPPREV/SPSM: conferir a contribuição e a base de cálculo no holerite e na norma vigente. Não fixar percentual único sem validar cargo, situação funcional e rubricas." },
+    bmsp: { titulo: "CBPMESP", desc: "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo", cor: "#b91c1c", alertaPrev: "CBPMESP/BMSP: carreira militar estadual vinculada à PMESP; conferir SPPREV/SPSM, RETP, DEJEM, CBPM/Cruz Azul, insalubridade, escalas e rubricas no holerite e na norma vigente." },
+    pcsp:  { titulo: "PCSP",  desc: "Polícia Civil do Estado de São Paulo", cor: "#4f4f4f", alertaPrev: "PCSP/SPPREV/IAMSPE: conferir contribuição previdenciária, assistência, quinquênios, sexta-parte, RETP, DEJEC, insalubridade e demais rubricas no holerite e na norma vigente. Não tratar os 14% como regra isolada sem validar base e situação funcional." },
     pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
     pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento-base, AAP/representação, GHP, GATC e adicionais remuneratórios." },
     pmmg:  { titulo: "PMMG",  desc: "Polícia Militar de Minas Gerais",     cor: "#7c1a1a", alertaPrev: "IPSM — 10,5% (8% previdência + 2,5% saúde compulsória) sobre o subsídio." },
@@ -3554,7 +3956,7 @@ function mudarInstituicao(novaInstituicao) {
   currInst = inst;
   document.body.setAttribute('data-inst', inst);
 
-  ['instituicao', 'instituicao_header'].forEach(id => {
+  ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
     const seletor = document.getElementById(id);
     if (!seletor) return;
     const existeOpcao = Array.from(seletor.options || []).some(o => o.value === inst);
@@ -4119,11 +4521,14 @@ function getHistoricoPorTipo(inst, dados) {
 
   if (inst === 'pmesp') {
     return {
-      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Ao longo de sua trajetória, a instituição passou por reorganizações, profissionalização, expansão territorial e consolidação do policiamento ostensivo e da preservação da ordem pública no estado.`,
+      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Em 2026, a instituição teve atualização relevante de comando, efetivo legal e carreira, com a posse da Cel PM Glauce Anselmo Cavalli no Comando-Geral e a Lei SP 18.442/2026 reorganizando efetivo, quadros, regime jurídico e regras gerais de promoção.`,
       marcos: [
         'Criação da força pública paulista em 15/12/1831, associada ao governo provincial de Rafael Tobias de Aguiar.',
         'Consolidação como força militar estadual com atuação em policiamento ostensivo, preservação da ordem pública e apoio em crises.',
-        'Modernização de formação, policiamento especializado, radiopatrulhamento, policiamento comunitário, tecnologia, inteligência e atendimento emergencial.'
+        'Estrutura institucional organizada em órgãos de direção geral, direção setorial, apoio, execução e assessoria, conforme página oficial de organização da PMESP.',
+        'Lei SP 18.442/2026: efetivo legal de 93.802 cargos, com quadros QOEM, QOE, QOS, QOM, QORR e QP e regras gerais de promoção.',
+        'Lei SP 18.441/2026: vencimentos-base reclassificados a partir de 01/04/2026; remuneração total deve ser conferida em tabela oficial posterior quando disponível.',
+        '2026: Cel PM Glauce Anselmo Cavalli assume o Comando-Geral, primeira mulher a comandar a PMESP.'
       ]
     };
   }

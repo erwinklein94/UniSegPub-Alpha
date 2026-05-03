@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
+/* Módulo organizado por responsabilidade — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* =======================================================
@@ -81,24 +81,28 @@ const CARGOS_PM = [
 ];
 
 const CARGOS_PC = [
-  // PCSP — estrutura padrão + RETP (100%). Valores da 3ª classe ancorados nos vencimentos iniciais oficiais divulgados pela Polícia Civil/SP.
-  // Demais classes mantêm progressão estimativa do simulador, ajustada pela mesma referência proporcional quando não há tabela oficial legível no HTML.
-  { val: "del_esp", text: "Delegado de Polícia - Especial",   padrao: 9510.20, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_1",   text: "Delegado de Polícia - 1ª Classe",  padrao: 8765.41, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_2",   text: "Delegado de Polícia - 2ª Classe",  padrao: 8056.08, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_3",   text: "Delegado de Polícia - 3ª Classe",  padrao: 7519.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8134.16, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_1",   text: "Médico Legista / Perito - 1ª Classe", padrao: 7481.42, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_2",   text: "Médico Legista / Perito - 2ª Classe", padrao: 6878.89, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_3",   text: "Médico Legista / Perito - 3ª Classe", padrao: 6477.20, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "inv_esp", text: "Investigador / Escrivão - Especial",  padrao: 3957.96, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_1",   text: "Investigador / Escrivão - 1ª Classe", padrao: 3591.58, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_2",   text: "Investigador / Escrivão - 2ª Classe", padrao: 3243.71, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_3",   text: "Investigador / Escrivão - 3ª Classe", padrao: 2939.84, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
-  { val: "age_esp", text: "Agente / Aux. / Papi - Especial",     padrao: 3345.01, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_1",   text: "Agente / Aux. / Papi - 1ª Classe",    padrao: 2968.25, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_2",   text: "Agente / Aux. / Papi - 2ª Classe",    padrao: 2685.24, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_3",   text: "Agente / Aux. / Papi - 3ª Classe",    padrao: 2449.87, gratif: 0, oficial: false, retpFator: 1.0 }
+  // PCSP — referências remuneratórias totais da tabela oficial SGGD/SP de julho/2025.
+  // A Lei SP 18.441/2026 atualizou vencimentos-base desde 01/04/2026; conferir tabela posterior/holerite para total 2026.
+  { val: "del_esp", text: "Delegado de Polícia - Especial",   padrao: 18998.25, gratif: 0, oficial: true,  delegado: true, retpFator: 0 },
+  { val: "del_1",   text: "Delegado de Polícia - 1ª Classe",  padrao: 17935.65, gratif: 0, oficial: true,  delegado: true, retpFator: 0 },
+  { val: "del_2",   text: "Delegado de Polícia - 2ª Classe",  padrao: 16824.27, gratif: 0, oficial: true,  delegado: true, retpFator: 0 },
+  { val: "del_3",   text: "Delegado de Polícia - 3ª Classe",  padrao: 15789.88, gratif: 0, oficial: true,  delegado: true, selected: false, retpFator: 0 },
+  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 16357.24, gratif: 0, oficial: true, retpFator: 0 },
+  { val: "med_1",   text: "Médico Legista / Perito - 1ª Classe", padrao: 15445.98, gratif: 0, oficial: true, retpFator: 0 },
+  { val: "med_2",   text: "Médico Legista / Perito - 2ª Classe", padrao: 14491.16, gratif: 0, oficial: true, retpFator: 0 },
+  { val: "med_3",   text: "Médico Legista / Perito - 3ª Classe", padrao: 13602.12, gratif: 0, oficial: true, retpFator: 0 },
+  { val: "inv_esp", text: "Investigador / Escrivão - Especial",  padrao: 7804.58, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "inv_1",   text: "Investigador / Escrivão - 1ª Classe", padrao: 7086.34, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "inv_2",   text: "Investigador / Escrivão - 2ª Classe", padrao: 6613.20, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "inv_3",   text: "Investigador / Escrivão - 3ª Classe", padrao: 6173.66, gratif: 0, oficial: false, selected: true, retpFator: 0 },
+  { val: "age_esp", text: "Agente / Papi / Telecom - Especial",  padrao: 6852.94, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "age_1",   text: "Agente / Papi / Telecom - 1ª Classe", padrao: 6505.76, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "age_2",   text: "Agente / Papi / Telecom - 2ª Classe", padrao: 6141.88, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "age_3",   text: "Agente / Papi / Telecom - 3ª Classe", padrao: 5803.06, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "agpol_esp", text: "Agente Policial - Especial",      padrao: 5685.64, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "agpol_1",   text: "Agente Policial - 1ª Classe",     padrao: 5371.36, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "agpol_2",   text: "Agente Policial - 2ª Classe",     padrao: 5037.22, gratif: 0, oficial: false, retpFator: 0 },
+  { val: "agpol_3",   text: "Agente Policial - 3ª Classe",     padrao: 4725.36, gratif: 0, oficial: false, retpFator: 0 }
 ];
 
 const CARGOS_PMERJ = [

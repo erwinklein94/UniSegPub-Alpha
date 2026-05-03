@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
+/* Módulo organizado por responsabilidade — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
 function normalizarInstituicao(inst) {
@@ -37,9 +37,14 @@ function debounce(fn, ms = 150) {
 
 function mostrarToast(msg, tipo = 'success') {
   const toast = document.getElementById('toast');
+  if (!toast) return;
+
   toast.textContent = msg;
   toast.className = 'toast show' + (tipo === 'error' ? ' error' : '');
-  setTimeout(() => { toast.className = 'toast'; }, 3500);
+  window.clearTimeout(toast.__unisegToastTimer);
+  toast.__unisegToastTimer = window.setTimeout(() => {
+    toast.className = 'toast';
+  }, 3500);
 }
 
 function escapeHtml(str = '') {
@@ -121,21 +126,21 @@ function switchPage(page) {
 }
 
 function atualizarVisibilidadeResumoInstitucional(page = '') {
-  const ativa = document.querySelector('.page-section.active');
-  const pagina = page || (ativa ? ativa.id.replace('page-', '') : 'principal');
   const painelResumo = document.querySelector('.header-facts-panel');
   const cardInstitucional = document.querySelector('.header-institution-card');
   const blocoPrincipal = document.querySelector('.header-institution-main');
-  const mostrarResumo = pagina === 'principal';
 
+  // O resumo do cabeçalho deve existir em todas as páginas:
+  // começa como resumo do portal e vira resumo institucional somente quando
+  // a instituição for escolhida no seletor daquela própria página.
   if (painelResumo) {
-    painelResumo.hidden = !mostrarResumo;
-    painelResumo.style.display = mostrarResumo ? '' : 'none';
-    painelResumo.setAttribute('aria-hidden', mostrarResumo ? 'false' : 'true');
+    painelResumo.hidden = false;
+    painelResumo.style.display = '';
+    painelResumo.setAttribute('aria-hidden', 'false');
   }
 
-  if (cardInstitucional) cardInstitucional.classList.toggle('sem-resumo-institucional', !mostrarResumo);
-  if (blocoPrincipal) blocoPrincipal.classList.toggle('sem-resumo-institucional', !mostrarResumo);
+  if (cardInstitucional) cardInstitucional.classList.remove('sem-resumo-institucional');
+  if (blocoPrincipal) blocoPrincipal.classList.remove('sem-resumo-institucional');
 }
 
 function getNomeAbaAtual() {
@@ -165,8 +170,8 @@ function atualizarHeaderDesc(descInstituicao) {
   }
 
   const descs = {
-    pmesp: 'Polícia Militar de São Paulo',
-    pcsp: 'Polícia Civil de São Paulo',
+    pmesp: 'Polícia Militar do Estado de São Paulo',
+    pcsp: 'Polícia Civil do Estado de São Paulo',
     pmerj: 'Polícia Militar do Rio de Janeiro',
     pcerj: 'Polícia Civil do Rio de Janeiro',
     pmmg: 'Polícia Militar de Minas Gerais',
@@ -181,7 +186,7 @@ function atualizarHeaderDesc(descInstituicao) {
     pcsc: 'Polícia Civil de Santa Catarina',
     pmes: 'Polícia Militar do Espírito Santo',
     pces: 'Polícia Civil do Espírito Santo',
-    ppsp: 'Polícia Penal de São Paulo',
+    ppsp: 'Polícia Penal do Estado de São Paulo — PPESP/PPSP',
     pprj: 'Polícia Penal do Rio de Janeiro',
     ppmg: 'Polícia Penal de Minas Gerais',
     ppba: 'Polícia Penal da Bahia',
@@ -224,11 +229,15 @@ function initTheme() {
     const isDark = tema === 'dark';
 
     if (style === 'icon') {
-      btn.innerHTML = isDark ? '☀️' : '🌙';
+      btn.innerHTML = isDark
+        ? '<span aria-hidden="true">☀️</span>'
+        : '<span aria-hidden="true">🌙</span>';
       btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
       btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
     } else {
-      btn.innerHTML = isDark ? '☀️ Claro' : '🌙 Escuro';
+      btn.innerHTML = isDark
+        ? '<span aria-hidden="true">☀️</span> Claro'
+        : '<span aria-hidden="true">🌙</span> Escuro';
       btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
       btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
     }
