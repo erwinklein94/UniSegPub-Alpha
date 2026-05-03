@@ -527,26 +527,39 @@ const HEADER_INSTITUICOES_RESUMO = {
     "atualizado": "PPSP revisada em 03/05/2026 — efetivo ativo SAP/2025; feminino estimado; inativos em recorte de transparência"
   },
   "pmerj": {
-    "nome": "Polícia Militar do Rio de Janeiro",
+    "nome": "Polícia Militar do Estado do Rio de Janeiro",
     "sigla": "PMERJ",
     "estado": "Rio de Janeiro",
     "estadoSigla": "RJ",
     "tipo": "Polícia Militar",
     "criacao": "13/05/1809",
-    "ativa": 43362,
-    "ativaLabel": "43.362",
-    "reserva": 40000,
-    "reservaLabel": "40.000",
-    "femininas": 5637,
-    "femininasLabel": "5.637 · estimado",
+    "ativa": 43866,
+    "ativaLabel": "43.866 vínculos ativos · GESPERJ fev/2026",
+    "reserva": 26087,
+    "reservaLabel": "26.087 inativos/aposentados · GESPERJ fev/2026",
+    "femininas": 5703,
+    "femininasLabel": "5.703 · estimativa (13% do efetivo ativo)",
+    "efetivoTotalLabel": "60.445 cargos fixados em lei · Lei 11.041/2025",
     "populacao": 17223547,
-    "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 397 hab. · 0,252%",
+    "populacaoTitulo": "População do Estado · IBGE 2025",
+    "relacaoLabel": "1 ativo / 393 hab. · 0,255%",
     "relacaoTitulo": "Relação ativa/população",
-    "governador": "Ricardo Couto — Governador em exercício",
-    "comando": "Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "governador": "Ricardo Couto de Castro — Governador em exercício",
+    "comando": "Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado de Polícia Militar e Comandante-Geral da PMERJ",
+    "estrutura": "SEPM/CG; Gabinete do Comando-Geral; Subsecretaria-Geral/Estado-Maior Geral; Subsecretarias de Gestão Administrativa, Gestão Operacional, Comando e Controle e Inteligência; Corregedoria-Geral; comandos intermediários; batalhões, companhias independentes e unidades especializadas.",
+    "sede": "Quartel-General: Rua Evaristo da Veiga, 78, Centro, Rio de Janeiro/RJ — emergência 190.",
+    "linksOficiais": [
+      "https://sepm.rj.gov.br/",
+      "https://sepm.rj.gov.br/comando/",
+      "https://sepm.rj.gov.br/institucional/",
+      "https://sepm.rj.gov.br/hierarquia/",
+      "https://sepm.rj.gov.br/decreto-no-46-600-de-18-de-marco-de-2019/",
+      "https://concursos.sepm.rj.gov.br",
+      "https://www.rj.gov.br/gesperj",
+      "https://www.transparencia.rj.gov.br/"
+    ],
+    "fonte": "PMERJ/SEPM; GESPERJ/RJ — Caderno de RH fevereiro/2026; GESPERJ/RJ — Caderno de Remuneração janeiro/2026; ALERJ — Lei 11.041/2025; IBGE — população estimada 2025; FGV/SEPM — concursos PMERJ.",
+    "atualizado": "Referência: comando PMERJ 24/03/2026; concurso 06/04/2026; folha GESPERJ fev/2026; remuneração GESPERJ jan/2026; população IBGE 2025"
   },
   "pcerj": {
     "nome": "Polícia Civil do Rio de Janeiro",
@@ -2545,28 +2558,43 @@ function criarCargosPfEstrutura(inst, sigla) {
 
 function criarCargosPrfEstrutura(inst, sigla) {
   const fonteKey = 'prf';
-  const criterio = 'Subsídio federal da carreira de Policial Rodoviário Federal, referência 2026, conforme tabela remuneratória federal/MGI e Lei nº 14.875/2024.';
-  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, adicional de fronteira quando houver exercício em localidade prevista, diárias/indenizações e demais rubricas funcionais.';
-  return [
-    { id: 'especial_iii', nome: `${sigla} — Policial Rodoviário Federal — Especial III`, padrao: 23000.00, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'especial_ii', nome: `${sigla} — Policial Rodoviário Federal — Especial II`, padrao: 22249.43, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'especial_i', nome: `${sigla} — Policial Rodoviário Federal — Especial I`, padrao: 21524.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_vi', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe VI`, padrao: 20306.21, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_v', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe V`, padrao: 19649.56, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_iv', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe IV`, padrao: 19015.88, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_iii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe III`, padrao: 18404.39, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_ii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe II`, padrao: 17814.28, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_i', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe I`, padrao: 17244.77, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_vi', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe VI`, padrao: 15949.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_v', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe V`, padrao: 15704.54, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_iv', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe IV`, padrao: 15467.49, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_iii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe III`, padrao: 15237.63, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_ii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe II`, padrao: 15014.50, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_i', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe I`, padrao: 14798.58, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'terceira_iii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe III`, padrao: 12646.11, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'terceira_ii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe II`, padrao: 12448.92, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'terceira_i', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe I`, padrao: 12253.84, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' }
+  const criterio = 'Subsídio federal da carreira de Policial Rodoviário Federal, efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVII, que alterou o Anexo III da Lei nº 11.358/2006.';
+  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, indenização de fronteira quando houver exercício em localidade prevista, diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina e demais rubricas funcionais conforme legislação e situação individual.';
+  const linhas = [
+    ['especial_iii', 'Policial Rodoviário Federal — Classe Especial — Padrão III', 23000.00],
+    ['especial_ii', 'Policial Rodoviário Federal — Classe Especial — Padrão II', 22249.43],
+    ['especial_i', 'Policial Rodoviário Federal — Classe Especial — Padrão I', 21524.32],
+    ['primeira_vi', 'Policial Rodoviário Federal — 1ª Classe — Padrão VI', 20306.21],
+    ['primeira_v', 'Policial Rodoviário Federal — 1ª Classe — Padrão V', 19649.56],
+    ['primeira_iv', 'Policial Rodoviário Federal — 1ª Classe — Padrão IV', 19015.88],
+    ['primeira_iii', 'Policial Rodoviário Federal — 1ª Classe — Padrão III', 18404.39],
+    ['primeira_ii', 'Policial Rodoviário Federal — 1ª Classe — Padrão II', 17814.28],
+    ['primeira_i', 'Policial Rodoviário Federal — 1ª Classe — Padrão I', 17244.77],
+    ['segunda_vi', 'Policial Rodoviário Federal — 2ª Classe — Padrão VI', 15949.32],
+    ['segunda_v', 'Policial Rodoviário Federal — 2ª Classe — Padrão V', 15704.54],
+    ['segunda_iv', 'Policial Rodoviário Federal — 2ª Classe — Padrão IV', 15463.72],
+    ['segunda_iii', 'Policial Rodoviário Federal — 2ª Classe — Padrão III', 15226.76],
+    ['segunda_ii', 'Policial Rodoviário Federal — 2ª Classe — Padrão II', 14993.63],
+    ['segunda_i', 'Policial Rodoviário Federal — 2ª Classe — Padrão I', 14764.25],
+    ['terceira_iii', 'Policial Rodoviário Federal — 3ª Classe — Padrão III', 12630.98],
+    ['terceira_ii', 'Policial Rodoviário Federal — 3ª Classe — Padrão II', 12440.90],
+    ['terceira_i', 'Policial Rodoviário Federal — 3ª Classe — Padrão I', 12253.84]
   ];
+  return linhas.map(([id, nome, padrao], idx) => ({
+    id,
+    val: `${id}_${inst}`,
+    text: `${sigla} — ${nome}`,
+    nome: `${sigla} — ${nome}`,
+    padrao,
+    gratif: 0,
+    oficial: true,
+    selected: idx === linhas.length - 1,
+    retpFator: 0,
+    fonteKey,
+    criterio,
+    benefDesc,
+    badge: 'Federal 2026'
+  }));
 }
 
 function criarConcursoFederalEstrutura(item) {
@@ -3085,7 +3113,7 @@ const RESUMO_GOVERNADORES_UF_2026 = {
   pr: 'Ratinho Júnior',
   pe: 'Raquel Lyra',
   pi: 'Rafael Fonteles',
-  rj: 'Ricardo Couto (interino)',
+  rj: 'Ricardo Couto de Castro (governador em exercício)',
   rn: 'Fátima Bezerra',
   rs: 'Eduardo Leite',
   ro: 'Marcos Rocha',
@@ -3515,7 +3543,7 @@ function atualizarIndicadorPercentualPortal() {
   const valor = document.getElementById('header-resumo-dados-atualizados');
   const label = document.getElementById('header-label-dados-atualizados');
 
-  if (label) label.textContent = 'Dados Atualizados do site';
+  if (label) label.textContent = 'Dados de atualização do site';
   if (valor) {
     valor.textContent = indicador.percentualTexto;
     valor.title = `${indicador.preenchidos.toLocaleString('pt-BR')} de ${indicador.total.toLocaleString('pt-BR')} campos com dados preenchidos; ${indicador.emBreve.toLocaleString('pt-BR')} em “Dados em breve”.`;
@@ -3583,7 +3611,7 @@ function atualizarLabelsHeaderResumo(labels = {}) {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
-    'header-label-dados-atualizados': 'Dados Atualizados do site',
+    'header-label-dados-atualizados': 'Dados de atualização do site',
     'header-label-governador': 'Chefe do Executivo',
     'header-label-comando': 'Comando/Direção'
   };
@@ -3671,7 +3699,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
-    'header-label-dados-atualizados': 'Dados Atualizados do site',
+    'header-label-dados-atualizados': 'Dados de atualização do site',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Comando/Direção'
   });
@@ -3685,7 +3713,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
   atualizarIndicadorPercentualPortal();
-  setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
+  setTexto('header-resumo-governador', 'Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal');
   setTexto('header-resumo-comando', '—');
 
   ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
@@ -4588,6 +4616,7 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 
 function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
   const esfera = getEsferaConsultaInstituicao(inst);
   if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
   if (inst === 'prf') return 'União — estrutura federal vinculada à segurança pública e ao policiamento ostensivo das rodovias federais.';
@@ -4635,6 +4664,20 @@ function getHistoricoPorTipo(inst, dados) {
         'Reconhecimento constitucional como órgão permanente da segurança pública federal no art. 144 da Constituição.',
         'Fortalecimento da fiscalização de trânsito e do patrulhamento ostensivo nas rodovias federais.',
         'Atuação integrada no combate ao tráfico de drogas, armas, contrabando, crimes ambientais, roubo de cargas e crimes interestaduais.'
+      ]
+    };
+  }
+
+  if (inst === 'pmerj') {
+    return {
+      origem: `A ${nome} tem origem oficial em 13 de maio de 1809, com a criação da Divisão Militar da Guarda Real da Polícia da Corte. Hoje, a SEPM/PMERJ atua no policiamento ostensivo e na preservação da ordem pública no Estado do Rio de Janeiro, sob comando de Secretário de Estado que acumula o Comando-Geral da Corporação.`,
+      marcos: [
+        '1809: criação da Divisão Militar da Guarda Real da Polícia da Corte por D. João VI.',
+        '2019: Decreto 46.600 organiza a SEPM com Subsecretaria-Geral, Gestão Administrativa, Gestão Operacional, Comando e Controle, Inteligência, Corregedoria-Geral e Estado-Maior Geral.',
+        '2025: Lei 11.041/2025 readequa o efetivo legal da PMERJ para 60.445 integrantes, distribuídos entre postos e graduações.',
+        'Folha GESPERJ fev/2026: 43.866 vínculos ativos na SEPM e 26.087 inativos/aposentados.',
+        'Carreira militar organizada entre oficiais e praças, com postos e graduações de Coronel a Soldado, conforme hierarquia oficial.',
+        '2026: Cel PM Sylvio Ricardo Ciuffo Guerra assume como Secretário de Estado de Polícia Militar e Comandante-Geral da PMERJ.'
       ]
     };
   }

@@ -280,7 +280,7 @@ function getSaudeTexto(inst) {
     pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes; a contribuição deve ser conferida na CBPM conforme vínculo, retribuição-base, pensão e dependentes.',
     pcsp: 'PCSP: pode haver IAMSPE, auxílio-alimentação, DEJEC, insalubridade, quinquênios, sexta-parte e outras rubricas conforme vínculo, dias trabalhados, escala, laudo, contribuição e regras do Estado.',
-    pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
+    pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul, Diretoria de Assistência Social, Diretoria Geral de Odontologia e regras próprias da SEPM/PMERJ.',
     pcerj: 'PCERJ: verificar assistência disponível, convênios e regras administrativas da Polícia Civil/RJ.',
     pmmg: 'PMMG: assistência e previdência vinculadas ao IPSM, conforme contribuição, dependentes e rede credenciada.',
     pcmg: 'PCMG: assistência pode envolver IPSEMG ou outro plano, conforme adesão e regra estadual.',
@@ -322,7 +322,7 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'pmac') return `Na PMAC, o tempo de serviço deve ser conferido para adicional temporal, sexta-parte quando aplicável, promoções, reserva/reforma e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pcac') return `Na PCAC, o tempo de serviço deve ser conferido para adicional temporal, progressão por classe, titulação, aposentadoria policial e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
-  if (inst === 'pmerj') return `Na PMERJ, o adicional por tempo de serviço deve ser conferido conforme regra estadual e ficha funcional. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência de triênio, se aplicável.`;
+  if (inst === 'pmerj') return `Na PMERJ, o triênio/ATS incide sobre soldo + GHP + GRET + GRAM para quem preservou o direito. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência; para ingresso por edital publicado a partir de 01/01/2022, a LC RJ 194/2021 extinguiu o adicional.`;
   if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
   if (inst === 'pmmg' || inst === 'pcmg') return `Em MG, tratar o adicional por tempo de serviço com cautela: pode envolver quinquênio, ADE, VPNI ou regra de transição. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência para conferência.`;
   if (inst === 'pmba' || inst === 'pcba') return `Na Bahia, há referência a anuênios/adicionais por tempo conforme carreira. Pelo tempo informado, a referência inicial é de <strong>${Math.min(35, tempo)}</strong> ano(s) de serviço.`;
@@ -497,9 +497,18 @@ function getVantagensEspecificas(inst) {
       'Podem existir assistência pelo IAMSPE e auxílio-alimentação conforme vínculo, contribuição, dias efetivamente trabalhados e regras estaduais. Não somar automaticamente ao salário bruto.',
       'Base: IAMSPE/Lei SP 17.293/2020; Lei SP 7.524/1991; conferir cadastro, contracheque e situação funcional.');
   } else if (inst === 'pmerj') {
-    html += direitoItem('RAS / Serviço Adicional', 'condicionado',
-      'Pode haver remuneração por serviço adicional, escala extraordinária ou programa equivalente, conforme disponibilidade e autorização.',
-      'Depende de escala, publicação, limite e norma estadual.');
+    html += direitoItem('Triênio/ATS preservado', 'condicionado',
+      'Para ingressos por edital publicado até 31/12/2021, o adicional por tempo de serviço pode variar de 10% a 60% e incide sobre soldo + GHP + GRET + GRAM. Para editais publicados a partir de 01/01/2022, a LC RJ 194/2021 extinguiu o triênio.',
+      'Base: Lei RJ 1.608/1990, LC RJ 194/2021 e Caderno de Remuneração GESPERJ/RJ jan/2026.');
+    html += direitoItem('PROEIS / PROESP / RAS', 'condicionado',
+      'Vantagens de serviço adicional e programas operacionais dependem de escala, autorização, limite, cadastro e efetiva prestação do serviço.',
+      'Base: Decreto RJ 49.988/2025 e normas da SEPM/PMERJ.');
+    html += direitoItem('PTTC para inativos militares', 'condicionado',
+      'Militares inativos podem atuar em tarefa por tempo certo, com adicional próprio e regras de pagamento previstas para a PTTC.',
+      'Base: Lei RJ 5.271/2008, Lei RJ 11.042/2025 e Decreto RJ 50.126/2026.');
+    html += direitoItem('Assistência médica, medicamentos e assistência jurídica', 'condicionado',
+      'Lei estadual prevê assistência médica e fornecimento de remédios a policiais militares; o PRAJAS autoriza programa de assistência jurídica gratuita a agentes de segurança pública.',
+      'Base: Lei RJ 10.845/2025 e Lei RJ 10.850/2025.');
   } else if (inst === 'pcerj') {
     html += direitoItem('Gratificação Técnico-Científica', 'condicionado',
       'Pode ser aplicável a carreiras técnico-científicas, como peritos e médicos legistas, conforme enquadramento legal.',

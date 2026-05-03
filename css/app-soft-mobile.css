@@ -1508,3 +1508,178 @@ body[data-theme="dark"] .header-facts-panel,
 .header-command-item.is-hidden {
   display: none !important;
 }
+
+
+/* Ajuste 2026-05-03: cabeçalho inicial mais compacto, cobertura ampliada e dados de atualização discretos no rodapé do resumo. */
+body[data-inst="portal"] .header-institution-main {
+  align-items: stretch !important;
+}
+
+body[data-inst="portal"] .header-facts-panel {
+  align-self: end !important;
+  padding: clamp(10px, 1vw, 13px) !important;
+  border-radius: 20px !important;
+}
+
+body[data-inst="portal"] .header-facts-head {
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+body[data-inst="portal"] .header-facts-head span {
+  font-size: 8.4px !important;
+  letter-spacing: .11em !important;
+}
+
+body[data-inst="portal"] .header-facts-head strong {
+  padding: 4px 8px !important;
+  font-size: 8.6px !important;
+  line-height: 1.12 !important;
+}
+
+body[data-inst="portal"] .header-facts-grid {
+  border-radius: 15px !important;
+}
+
+body[data-inst="portal"] .header-fact,
+body[data-inst="portal"] .header-leadership-item {
+  padding: 8px 9px !important;
+}
+
+body[data-inst="portal"] .header-fact span,
+body[data-inst="portal"] .header-leadership-item span {
+  margin-bottom: 3px !important;
+  font-size: 7.4px !important;
+  line-height: 1.08 !important;
+  letter-spacing: .07em !important;
+}
+
+body[data-inst="portal"] .header-fact strong,
+body[data-inst="portal"] .header-leadership-item strong {
+  font-size: clamp(10.4px, .86vw, 12px) !important;
+  line-height: 1.14 !important;
+}
+
+body[data-inst="portal"] .header-leadership {
+  grid-template-columns: 1fr !important;
+  margin: 6px 0 0 !important;
+  border-radius: 14px !important;
+}
+
+body[data-inst="portal"] .header-leadership-item:first-child {
+  grid-column: 1 / -1 !important;
+}
+
+body[data-inst="portal"] #header-resumo-governador {
+  display: block !important;
+  font-size: clamp(8.8px, .72vw, 10.4px) !important;
+  font-weight: 700 !important;
+  line-height: 1.18 !important;
+  letter-spacing: .01em !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+}
+
+body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
+  display: flex !important;
+  grid-column: auto !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 6px 0 0 !important;
+  padding: 5px 8px !important;
+  border: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 11px !important;
+  background: rgba(255,255,255,0.035) !important;
+  box-shadow: none !important;
+  opacity: .82 !important;
+}
+
+body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
+  margin: 0 !important;
+  color: var(--usp-summary-muted) !important;
+  font-size: 6.9px !important;
+  line-height: 1.05 !important;
+  letter-spacing: .055em !important;
+}
+
+body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+  flex: 0 0 auto !important;
+  justify-self: auto !important;
+  color: var(--usp-summary-muted) !important;
+  font-size: 8.7px !important;
+  font-weight: 700 !important;
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+}
+
+html[data-theme="light"] body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados,
+body[data-inst="portal"]:not([data-theme="dark"]) .header-update-note.header-fact--dados-atualizados {
+  background: rgba(255,255,255,0.42) !important;
+}
+
+@media (max-width: 820px) {
+  body[data-inst="portal"] .header-facts-panel {
+    padding: 10px !important;
+  }
+
+  body[data-inst="portal"] .header-facts-head {
+    margin-bottom: 7px !important;
+    padding-bottom: 7px !important;
+  }
+
+  body[data-inst="portal"] .header-facts-grid .header-fact.header-fact--dados-atualizados {
+    display: flex !important;
+  }
+
+  body[data-inst="portal"] .header-fact,
+  body[data-inst="portal"] .header-leadership-item {
+    padding: 7px 8px !important;
+  }
+
+  body[data-inst="portal"] #header-resumo-governador {
+    font-size: 8.3px !important;
+    line-height: 1.14 !important;
+  }
+
+  body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
+    margin-top: 5px !important;
+    padding: 5px 7px !important;
+  }
+
+  body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+    font-size: 8.2px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body[data-inst="portal"] .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body[data-inst="portal"] .header-fact,
+  body[data-inst="portal"] .header-leadership-item {
+    padding: 6px 7px !important;
+  }
+
+  body[data-inst="portal"] .header-fact strong,
+  body[data-inst="portal"] .header-leadership-item strong {
+    font-size: 9.7px !important;
+  }
+
+  body[data-inst="portal"] #header-resumo-governador {
+    font-size: 7.7px !important;
+    line-height: 1.13 !important;
+  }
+
+  body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
+    font-size: 6.5px !important;
+  }
+
+  body[data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+    font-size: 7.8px !important;
+  }
+}

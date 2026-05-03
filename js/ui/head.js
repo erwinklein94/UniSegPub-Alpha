@@ -36,6 +36,13 @@ function carregarImagemProduto(img) {
     }
   }
 
+  const fallback = img.dataset.imgFallback || '';
+  if (fallback && img.dataset.fallbackTentado !== 'true') {
+    img.dataset.fallbackTentado = 'true';
+    img.src = fallback;
+    return;
+  }
+
   img.style.display = 'none';
   const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
   if (container) container.classList.add('img-indisponivel');

@@ -27,8 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503homeinst1" rel="stylesheet"/>
-
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerportal1" rel="stylesheet"/>
 <!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
 <style>
   .page-produtos #page-produtos .produtos-vitrine {
@@ -40,13 +39,19 @@
   }
 
   .page-produtos #page-produtos .curso-pmesp-only.produtos-vitrine,
-  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine {
+  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine,
+  .page-produtos #page-produtos .curso-pmto-only.produtos-vitrine {
     display: none !important;
   }
 
   body[data-inst="pmesp"] #page-produtos .curso-pmesp-only.produtos-vitrine,
-  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine {
+  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine,
+  body[data-inst="pmto"] #page-produtos .curso-pmto-only.produtos-vitrine {
     display: grid !important;
+  }
+
+  body[data-inst="pmto"] #page-produtos .curso-outra-inst-only {
+    display: none !important;
   }
 
   .page-produtos #page-produtos .produtos-vitrine .produto-card {
@@ -99,6 +104,56 @@
     margin-bottom: 10px;
   }
 
+  .page-produtos #page-produtos .cursos-preparatorios-geral {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 340px)) !important;
+    justify-content: start !important;
+    gap: 20px !important;
+    margin: 0 0 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .page-produtos #page-produtos .cursos-preparatorios-geral .produto-card--pmto {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .page-produtos #page-produtos .produto-imagem--pmto {
+    aspect-ratio: 1 / 1;
+  }
+
+  .page-produtos #page-produtos .descricao-afiliado {
+    font-size: .92em;
+    opacity: .82;
+  }
+
+  .page-produtos #page-produtos .curso-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 7px 11px;
+    border: 1px solid var(--border-input);
+    border-radius: 999px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .9px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .page-produtos #page-produtos .curso-section-title--destaque {
+    margin-top: 0;
+  }
+
   @media (max-width: 980px) {
     .page-produtos #page-produtos .produtos-vitrine {
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -116,17 +171,17 @@
      Gerado na revisão de manutenção.
      -->
 <link href="https://universosegpub.com.br/produtos.html" rel="canonical"/>
-<meta property="og:type" content="website"/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="og:site_name" content="Universo Segurança Pública"/>
-<meta property="og:title" content="Produtos para Segurança Pública - Universo Segurança Pública"/>
-<meta property="og:description" content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos."/>
-<meta property="og:url" content="https://universosegpub.com.br/produtos.html"/>
-<meta property="og:image" content="https://universosegpub.com.br/img/LOGO/logoleao.webp"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Produtos para Segurança Pública - Universo Segurança Pública"/>
-<meta name="twitter:description" content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos."/>
-<meta name="twitter:image" content="https://universosegpub.com.br/img/LOGO/logoleao.webp"/>
+<meta content="website" property="og:type"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="Universo Segurança Pública" property="og:site_name"/>
+<meta content="Produtos para Segurança Pública - Universo Segurança Pública" property="og:title"/>
+<meta content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos." property="og:description"/>
+<meta content="https://universosegpub.com.br/produtos.html" property="og:url"/>
+<meta content="https://universosegpub.com.br/img/LOGO/logoleao.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Produtos para Segurança Pública - Universo Segurança Pública" name="twitter:title"/>
+<meta content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos." name="twitter:description"/>
+<meta content="https://universosegpub.com.br/img/LOGO/logoleao.webp" name="twitter:image"/>
 <script type="application/ld+json">
 [{"@context":"https://schema.org","@type":"WebPage","name":"Produtos para Segurança Pública - Universo Segurança Pública","description":"Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos.","url":"https://universosegpub.com.br/produtos.html","isPartOf":{"@type":"WebSite","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/"},"publisher":{"@type":"Organization","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/","logo":{"@type":"ImageObject","url":"https://universosegpub.com.br/img/LOGO/logoleao.webp"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://universosegpub.com.br/"},{"@type":"ListItem","position":2,"name":"Produtos para Segurança Pública","item":"https://universosegpub.com.br/produtos.html"}]}]
 </script>
@@ -137,13 +192,12 @@
 <button aria-label="Alternar tema claro e escuro" class="app-floating-action app-floating-action--theme" data-theme-toggle="true" data-toggle-style="icon" type="button"><span aria-hidden="true">☀️</span></button>
 </div>
 <nav aria-label="Navegação rápida inferior" class="app-bottom-nav">
-<a class="app-bottom-item" href="index.html"><span class="app-bottom-icon" aria-hidden="true">⌂</span><span class="app-bottom-label">Início</span></a>
-<a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon" aria-hidden="true">◈</span><span class="app-bottom-label">Remun.</span></a>
-<a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon" aria-hidden="true">▤</span><span class="app-bottom-label">Concursos</span></a>
-<a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon" aria-hidden="true">⇄</span><span class="app-bottom-label">Comparar</span></a>
-<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon" aria-hidden="true">☰</span><span class="app-bottom-label">Menu</span></button>
+<a class="app-bottom-item" href="index.html"><span aria-hidden="true" class="app-bottom-icon">⌂</span><span class="app-bottom-label">Início</span></a>
+<a class="app-bottom-item" href="remuneracao.html"><span aria-hidden="true" class="app-bottom-icon">◈</span><span class="app-bottom-label">Remun.</span></a>
+<a class="app-bottom-item" href="concursos.html"><span aria-hidden="true" class="app-bottom-icon">▤</span><span class="app-bottom-label">Concursos</span></a>
+<a class="app-bottom-item" href="comparar-carreiras.html"><span aria-hidden="true" class="app-bottom-icon">⇄</span><span class="app-bottom-label">Comparar</span></a>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span aria-hidden="true" class="app-bottom-icon">☰</span><span class="app-bottom-label">Menu</span></button>
 </nav>
-
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
      Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
@@ -218,20 +272,20 @@
 <span id="header-label-relacao">UFs</span>
 <strong id="header-resumo-relacao">27 UFs</strong>
 </div>
-<div class="header-fact header-fact--dados-atualizados">
-<span id="header-label-dados-atualizados">Dados Atualizados do site</span>
-<strong id="header-resumo-dados-atualizados">Calculando...</strong>
-</div>
 </div>
 <div class="header-leadership">
 <div class="header-leadership-item">
 <span id="header-label-governador">Cobertura</span>
-<strong id="header-resumo-governador">Polícias militares, bombeiros militares, civis e penais</strong>
+<strong id="header-resumo-governador">Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal</strong>
 </div>
 <div class="header-leadership-item header-command-item is-hidden" hidden>
 <span id="header-label-comando">Comando/Direção</span>
 <strong id="header-resumo-comando">—</strong>
 </div>
+</div>
+<div class="header-fact header-fact--dados-atualizados header-update-note">
+<span id="header-label-dados-atualizados">Dados de atualização do site</span>
+<strong id="header-resumo-dados-atualizados">Calculando...</strong>
 </div>
 </aside>
 </div>
@@ -484,8 +538,8 @@
 <a aria-label="Comprar Mochila Coban Tática Militar Reforçada 24 L" class="ad-placeholder-link ad-placeholder-link--product" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
 <span class="ad-label">Produto em destaque</span>
 <strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
-<small>Mochila tática de 24 L para rotina operacional, estudos, treinos e deslocamento diário.</small>
-<span class="ad-button">Comprar por afiliado</span>
+<small>Mochila tática de 24 L para rotina operacional, estudos, treinos e deslocamento diário. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></small>
+<span class="ad-button">Comprar</span>
 </a>
 </aside>
 <!-- BLOCO 03.4.4 — Produtos parceiros no menu lateral -->
@@ -497,16 +551,16 @@
 <a aria-label="Comprar Mochila Coban Tática Militar Reforçada 24 L" class="sidebar-product sidebar-product--featured" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
 <img alt="Mochila Coban Tática Militar Reforçada 24 L" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
 <strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
-<p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário.</p>
-<span>Comprar por afiliado</span>
+<p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<span>Comprar</span>
 </a>
 <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" rel="noopener noreferrer" target="_blank">
 <img alt="Produto parceiro selecionado" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/IMG_0868.webp"/>
-<span>Comprar por afiliado</span>
+<span>Comprar</span>
 </a>
 <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" rel="noopener noreferrer" target="_blank">
 <img alt="Produto parceiro selecionado" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/IMG_0865.webp"/>
-<span>Comprar por afiliado</span>
+<span>Comprar</span>
 </a>
 <small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
 </div>
@@ -536,108 +590,282 @@
 </div>
 <span class="ad-label">Produto em destaque</span>
 <h3>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</h3>
-<p>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</p>
-<span class="curso-cta">Comprar por afiliado</span>
+<p>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Mochila Coban Tática Militar Reforçada 24 L" class="curso-card produto-card" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Mochila Coban Tática Militar Reforçada 24 L" data-img-base="img/SHOPEE/mochilacoban" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
 </div>
 <h3>Mochila Coban Tática Militar Reforçada 24 L</h3>
-<p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário. Uma opção prática para quem precisa transportar materiais com mais resistência e organização.</p>
+<p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário. Uma opção prática para quem precisa transportar materiais com mais resistência e organização. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do produto" class="curso-meta">
 <span>Produto físico</span>
 <span>Uso operacional</span>
 <span>24 L</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir barra fixa para porta" class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Barra fixa para porta" data-img-base="img/SHOPEE/barrafixa01" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa01.webp"/>
 </div>
 <h3>Barra fixa para porta</h3>
-<p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
+<p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do produto" class="curso-meta">
 <span>Produto físico</span>
 <span>TAF</span>
 <span>Treino em casa</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" data-img-base="img/SHOPEE/botaacero" decoding="async" loading="lazy" src="img/SHOPEE/botaacero.webp"/>
 </div>
 <h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
-<p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
+<p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do produto" class="curso-meta">
 <span>Produto físico</span>
 <span>Uso operacional</span>
 <span>Conforto e proteção</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Power Rack Funcional" class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" data-img-base="img/SHOPEE/barrafixa02" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa02.webp"/>
 </div>
 <h3>Power Rack Funcional com paralelas</h3>
-<p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
+<p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do produto" class="curso-meta">
 <span>Produto físico</span>
 <span>TAF</span>
 <span>Treino completo</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
+</a>
+<!-- BLOCO 08.0B — Produtos físicos Shopee adicionados conforme solicitação -->
+<a aria-label="Comprar Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" class="curso-card produto-card" href="https://s.shopee.com.br/8V5UTFtI4n" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" data-img-base="img/SHOPEE/coletepeito" decoding="async" loading="lazy" src="img/SHOPEE/coletepeito.webp"/>
+</div>
+<h3>Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)</h3>
+<p>Colete de peito unissex em preto, útil para corrida, caminhada, treino ao ar livre e deslocamentos rápidos. Ajuda a carregar celular, documentos e pequenos itens com mais praticidade e segurança. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Corrida e caminhada</span>
+<span>À prova d'água</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking" class="curso-card produto-card" href="https://s.shopee.com.br/9fHRseGBA0" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking" data-img-base="img/SHOPEE/calcadecarga1" decoding="async" loading="lazy" src="img/SHOPEE/calcadecarga1.webp"/>
+</div>
+<h3>Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking</h3>
+<p>Calça cargo tática masculina para uso externo, trilhas, caminhada e rotina operacional leve. Possui proposta resistente, bolsos utilitários e proteção para atividades ao ar livre. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Uso tático</span>
+<span>Outdoor</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão" class="curso-card produto-card" href="https://s.shopee.com.br/8Km4Irus3i" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão" data-img-base="img/SHOPEE/bonecaveira" decoding="async" loading="lazy" src="img/SHOPEE/bonecaveira.webp"/>
+</div>
+<h3>Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão</h3>
+<p>Boné camuflado com estampa de caveira, indicado para pesca, caminhada, treinos e uso casual em dias de sol. Uma opção leve para proteção e estilo tático no cotidiano. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Boné tático</span>
+<span>Uso outdoor</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping" class="curso-card produto-card" href="https://s.shopee.com.br/9Uy1hagpxm" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping" data-img-base="img/SHOPEE/lanterna" decoding="async" loading="lazy" src="img/SHOPEE/lanterna.webp"/>
+</div>
+<h3>Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping</h3>
+<p>Lanterna LED tática recarregável, pensada para camping, pesca, uso emergencial e atividades noturnas. Produto prático para quem precisa de iluminação forte e fácil transporte. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Lanterna tática</span>
+<span>Recarregável</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente" class="curso-card produto-card" href="https://s.shopee.com.br/2qR7lnxjWo" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente" data-img-base="img/SHOPEE/cintotatico" decoding="async" loading="lazy" src="img/SHOPEE/cintotatico.webp"/>
+</div>
+<h3>Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente</h3>
+<p>Cinto militar em nylon largo com fivela metálica e engate rápido. Boa alternativa para uso diário, trilhas, atividades externas e composição de equipamentos táticos leves. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Cinto tático</span>
+<span>Engate rápido</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança" class="curso-card produto-card" href="https://s.shopee.com.br/gMdCBBSkJ" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança" data-img-base="img/SHOPEE/presilha" decoding="async" loading="lazy" src="img/SHOPEE/presilha.webp"/>
+</div>
+<h3>Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança</h3>
+<p>Presilha em nylon para auxiliar na fixação de cinto tático, coldre e acessórios. Indicada para melhorar organização, firmeza e segurança no transporte de equipamentos. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Acessório tático</span>
+<span>Nylon</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Cinto Modular Tático Modular Militar Coyote Original Unistar" class="curso-card produto-card" href="https://s.shopee.com.br/7ppnjfBlrP" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Cinto Modular Tático Modular Militar Coyote Original Unistar" data-img-base="img/SHOPEE/cintomodular" decoding="async" loading="lazy" src="img/SHOPEE/cintomodular.webp"/>
+</div>
+<h3>Cinto Modular Tático Modular Militar Coyote Original Unistar</h3>
+<p>Cinto modular tático na cor coyote, voltado para organização de acessórios e equipamentos. Útil para atividades operacionais, treinamento e montagem de kit tático. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Cinto modular</span>
+<span>Uso tático</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro" class="curso-card produto-card" href="https://s.shopee.com.br/70GgkOPSbh" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro" data-img-base="img/SHOPEE/botaacero2" decoding="async" loading="lazy" src="img/SHOPEE/botaacero2.webp"/>
+</div>
+<h3>Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro</h3>
+<p>Coturno Acero militar em couro com zíper, indicado para rotina operacional, moto, trabalho e uso tático. Une proteção, resistência e praticidade no calce. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Coturno</span>
+<span>Couro e zíper</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40" class="curso-card produto-card" href="https://s.shopee.com.br/4LFvZrdWL3" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40" data-img-base="img/SHOPEE/tenisacero1" decoding="async" loading="lazy" src="img/SHOPEE/tenisacero1.webp"/>
+</div>
+<h3>Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40</h3>
+<p>Tênis/bota tática Acero em proposta unissex, com visual militar e material ripstop. Opção para quem busca calçado leve, resistente e versátil para rotina ou treino. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Calçado tático</span>
+<span>Unissex</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Organizador de Armário Porta Objetos Organizador Militar" class="curso-card produto-card" href="https://s.shopee.com.br/9ALBL0RrAD" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Organizador de Armário Porta Objetos Organizador Militar" data-img-base="img/SHOPEE/organizadorarmario" decoding="async" loading="lazy" src="img/SHOPEE/organizadorarmario.webp"/>
+</div>
+<h3>Organizador de Armário Porta Objetos Organizador Militar</h3>
+<p>Organizador militar para armário e porta objetos, útil para separar acessórios, roupas, itens operacionais e materiais de rotina com mais ordem e agilidade. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Organização</span>
+<span>Porta objetos</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Cantil + Porta Cantil Original – Resistência 950 ML" class="curso-card produto-card" href="https://s.shopee.com.br/8piKxfAxmV" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Cantil + Porta Cantil Original – Resistência 950 ML" data-img-base="img/SHOPEE/cantil950" decoding="async" loading="lazy" src="img/SHOPEE/cantil950.webp"/>
+</div>
+<h3>Cantil + Porta Cantil Original – Resistência 950 ML</h3>
+<p>Cantil com porta cantil de 950 ml, voltado para hidratação em treinos, trilhas, atividades externas e rotina operacional. Item simples, resistente e funcional. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Hidratação</span>
+<span>950 ml</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Comprar Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!" class="curso-card produto-card" href="https://s.shopee.com.br/3LNOPp1rnC" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!" data-img-base="img/SHOPEE/relogiotatico" decoding="async" loading="lazy" src="img/SHOPEE/relogiotatico.webp"/>
+</div>
+<h3>Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!</h3>
+<p>Relógio digital esportivo com cronômetro, LED e visual militar. Indicado para treino, rotina, atividades externas e controle de tempo no dia a dia. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Relógio esportivo</span>
+<span>Cronômetro</span>
+</div>
+<span class="curso-cta">Comprar</span>
 </a>
 </div>
 <div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
-<div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
-      Espaço destinado a cursos preparatórios, mentorias e materiais de estudo. Em breve, novos produtos específicos serão adicionados para esta instituição.
+<div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
+      Confira cursos preparatórios, mentorias e materiais de estudo disponíveis para candidatos e profissionais da segurança pública.
     </div>
+<div aria-label="Cursos preparatórios e materiais de estudo com link de compra" class="curso-grid produtos-vitrine cursos-preparatorios-geral">
+<a aria-label="Abrir MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins" class="curso-card produto-card produto-card--pmto" href="https://go.hotmart.com/P105668763H?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem produto-imagem--pmto">
+<img alt="MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins" data-img-base="img/HOTMART/cursopmto1" data-img-fallback="img/MILITAR/pmto.webp" decoding="async" loading="lazy" src="img/HOTMART/cursopmto1.webp"/>
+</div>
+<span class="curso-badge">Curso PMTO</span>
+<h3>MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins</h3>
+<p>Curso preparatório direcionado para candidatos da Polícia Militar do Tocantins, com método de estudo acelerado, organização da preparação e foco na aprovação no concurso da PMTO. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>PMTO</span>
+<span>Polícia Militar do Tocantins</span>
+<span>Preparação acelerada</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+</div>
 <div class="curso-grid produtos-vitrine curso-pmesp-only">
 <a aria-label="Abrir Curso Preparatório Sargento PMESP" class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Curso Preparatório Sargento PMESP" data-img-base="img/HOTMART/curso-sargento-pmesp" decoding="async" loading="lazy" src="img/HOTMART/curso-sargento-pmesp.webp"/>
 </div>
 <h3>Curso Preparatório - SARGENTO PMESP</h3>
-<p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
+<p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do curso" class="curso-meta">
 <span>Curso online</span>
 <span>PMESP</span>
 <span>Concursos internos</span>
 <span>Curso online</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Curso Preparatório PMESP Completo" class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Curso Preparatório PMESP Completo" data-img-base="img/HOTMART/curso-pmesp-completo" decoding="async" loading="lazy" src="img/HOTMART/curso-pmesp-completo.webp"/>
 </div>
 <h3>Curso Preparatório PMESP Completo</h3>
-<p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
+<p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do curso" class="curso-meta">
 <span>Curso online</span>
 <span>PMESP</span>
 <span>Soldado 2ª Classe</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais" class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Preparatório para o psicotécnico das carreiras policiais" data-img-base="img/HOTMART/curso-psicotecnico-carreiras-policiais" decoding="async" loading="lazy" src="img/HOTMART/curso-psicotecnico-carreiras-policiais.webp"/>
 </div>
 <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
-<p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
+<p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do curso" class="curso-meta">
 <span>Curso online</span>
 <span>Psicotécnico</span>
 <span>Carreiras policiais</span>
 <span>Concurseiros</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 </div>
 <div class="curso-grid produtos-vitrine curso-pcsp-only">
@@ -646,28 +874,28 @@
 <img alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" data-img-base="img/HOTMART/curso-raciocinio-logico-pcsp" decoding="async" loading="lazy" src="img/HOTMART/curso-raciocinio-logico-pcsp.webp"/>
 </div>
 <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
-<p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
+<p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do curso" class="curso-meta">
 <span>Curso online</span>
 <span>PCSP</span>
 <span>Raciocínio lógico</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Curso de Informática PCSP" class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="PCSP Curso de Informática Edital Completo" data-img-base="img/HOTMART/curso-informatica-pcsp" decoding="async" loading="lazy" src="img/HOTMART/curso-informatica-pcsp.webp"/>
 </div>
 <h3>PCSP - Curso de Informática - Edital Completo</h3>
-<p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
+<p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do curso" class="curso-meta">
 <span>Curso online</span>
 <span>PCSP</span>
 <span>Informática</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 </div>
 <div class="curso-section-title">Livros e e-books</div>
@@ -677,73 +905,73 @@
 <div aria-label="Livros e e-books com link de compra" class="curso-grid produtos-vitrine">
 <a aria-label="Abrir Pacote Viva Sem Procrastinar" class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
-<img alt="Pacote Viva Sem Procrastinar" data-img-base="img/HOTMART/pacote-viva-sem-procrastinar" decoding="async" loading="lazy" src="img/HOTMART/pacote-viva-sem-procrastinar.webp"/>
+<img alt="Pacote - Viva Sem Procrastinar" data-img-base="img/HOTMART/vivasemprocastinar" decoding="async" loading="lazy" src="img/HOTMART/vivasemprocastinar.webp"/>
 </div>
 <h3>Pacote - Viva Sem Procrastinar</h3>
-<p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
+<p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do produto" class="curso-meta">
 <span>Material digital</span>
 <span>Procrastinação</span>
 <span>Saúde mental</span>
 <span>Desenvolvimento pessoal</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Otimizando o Cérebro para Concursos Públicos" class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
-<img alt="Otimizando o Cérebro para Concursos Públicos" data-img-base="img/HOTMART/otimizando-cerebro-concursos" decoding="async" loading="lazy" src="img/HOTMART/otimizando-cerebro-concursos.webp"/>
+<img alt="OTIMIZANDO O CÉREBRO PARA CONCURSOS PÚBLICOS" data-img-base="img/HOTMART/otimizando" decoding="async" loading="lazy" src="img/HOTMART/otimizando.webp"/>
 </div>
 <h3>Otimizando o Cérebro para Concursos Públicos</h3>
-<p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
+<p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do livro" class="curso-meta">
 <span>E-book</span>
 <span>Concursos</span>
 <span>Neurociências</span>
 <span>Produtividade</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Além da Farda O Código da Travessia" class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
-<img alt="Além da Farda O Código da Travessia" data-img-base="img/HOTMART/alem-da-farda-codigo-travessia" decoding="async" loading="lazy" src="img/HOTMART/alem-da-farda-codigo-travessia.webp"/>
+<img alt="ALÉM DA FARDA: O Código da Travessia" data-img-base="img/HOTMART/alemdafarda" decoding="async" loading="lazy" src="img/HOTMART/alemdafarda.webp"/>
 </div>
 <h3>Além da Farda: O Código da Travessia</h3>
-<p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
+<p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do livro" class="curso-meta">
 <span>Livro digital</span>
 <span>Transição</span>
 <span>Carreira</span>
 <span>Vida pós-farda</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Método DMA" class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
-<img alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" data-img-base="img/HOTMART/metodo-dma-procrastinacao" decoding="async" loading="lazy" src="img/HOTMART/metodo-dma-procrastinacao.webp"/>
+<img alt="Método DMA: vença a procrastinação e alcance o sucesso em seus objetivos" data-img-base="img/HOTMART/disciplinamilitaraplicada" decoding="async" loading="lazy" src="img/HOTMART/disciplinamilitaraplicada.webp"/>
 </div>
 <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
-<p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
+<p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do livro" class="curso-meta">
 <span>Material digital</span>
 <span>Planejamento</span>
 <span>Gestão de tempo</span>
 <span>Disciplina</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 <a aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia" class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
-<img alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" data-img-base="img/LOGO/logoleao" decoding="async" loading="lazy" src="img/LOGO/logoleao.webp"/>
+<img alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" data-img-base="img/HOTMART/taticadeliderancamilitar" decoding="async" loading="lazy" src="img/HOTMART/taticadeliderancamilitar.webp"/>
 </div>
 <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
-<p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
+<p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares. <span class="descricao-afiliado">Exposição do produto em formato de afiliado.</span></p>
 <div aria-label="Destaques do livro" class="curso-meta">
 <span>E-book</span>
 <span>Liderança</span>
 <span>Disciplina</span>
 <span>Tomada de decisão</span>
 </div>
-<span class="curso-cta">Comprar por afiliado</span>
+<span class="curso-cta">Comprar</span>
 </a>
 </div>
 <p class="produto-aviso-compra">
@@ -786,8 +1014,8 @@
 <script defer="" src="js/data/policia-penal.js"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
 <script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
-<script defer="" src="js/services/remuneracao.js"></script>
-<script defer="" src="js/ui/header-estados.js?v=20260503homeinst1"></script>
+<script defer="" src="js/services/remuneracao.js?v=20260503prf1"></script>
+<script defer="" src="js/ui/header-estados.js?v=20260503headercompact1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
 <script defer="" src="js/ui/event-bindings.js?v=20260503homeinst1"></script>
 <script defer="" src="js/core/page-context.js"></script>

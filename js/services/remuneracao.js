@@ -225,6 +225,13 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, plantões e parcelas indenizatórias dependem de lei, escala, lotação e situação funcional; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.badge || 'Fonte oficial';
+  } else if (inst === 'pf' || inst === 'prf') {
+    remuneracao = padrao;
+    beneficios = Number(cargo.beneficios || 0);
+    criterio = cargo.criterio || 'Subsídio federal mensal da carreira, conforme tabela remuneratória federal vigente.';
+    benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
+    fonteKey = cargo.fonteKey || inst;
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
   } else if (inst === 'pmms') {
     remuneracao = padrao;
     beneficios = 0;
@@ -439,6 +446,13 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, plantões e parcelas indenizatórias dependem de lei, escala, lotação e situação funcional; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.badge || 'Fonte oficial';
+  } else if (inst === 'pf' || inst === 'prf') {
+    remuneracao = padrao;
+    beneficios = Number(cargo.beneficios || 0);
+    criterio = cargo.criterio || 'Subsídio federal mensal da carreira, conforme tabela remuneratória federal vigente.';
+    benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
+    fonteKey = cargo.fonteKey || inst;
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
   } else if (inst === 'pmms') {
     remuneracao = padrao;
     beneficios = 0;
@@ -566,7 +580,8 @@ function gerarRemuneracaoTabelada(inst) {
 
   return getTabelaCargosRemuneracao(inst).map(cargo => {
     const calc = calcularRemuneracaoTabelada(inst, cargo);
-    return linhaRemuneracaoOficial(cargo.text, calc.remuneracao, calc.beneficios, calc.criterio, calc.benefDesc, calc.fonteKey, calc.badge);
+    const cargoLabel = cargo.text || cargo.nome || cargo.cargo || cargo.label || cargo.id || cargo.val || 'Cargo não identificado';
+    return linhaRemuneracaoOficial(cargoLabel, calc.remuneracao, calc.beneficios, calc.criterio, calc.benefDesc, calc.fonteKey, calc.badge);
   });
 }
 
