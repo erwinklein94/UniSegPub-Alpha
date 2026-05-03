@@ -70,6 +70,10 @@ function closeMenu() {
 }
 
 function abrirPaginaInicial() {
+  if (document.body?.dataset?.page && document.body.dataset.page !== 'principal') {
+    window.location.href = (window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS.principal) || 'index.html';
+    return;
+  }
   // Volta ao mesmo estado visual da primeira entrada no portal:
   // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
   aplicarHeaderInicialPortal();
@@ -86,7 +90,11 @@ function switchPage(page) {
 
   const pageEl = document.getElementById('page-' + page);
   const menuEl = document.getElementById('menu-' + page);
-  if (!pageEl || !menuEl) return;
+  if (!pageEl || !menuEl) {
+    const destino = window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS[page];
+    if (destino) window.location.href = destino;
+    return;
+  }
 
   pageEl.classList.add('active');
   menuEl.classList.add('active');

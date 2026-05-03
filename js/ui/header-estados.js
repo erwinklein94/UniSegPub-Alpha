@@ -3586,14 +3586,17 @@ function mudarInstituicao(novaInstituicao) {
   atualizarTexto('txt-inst-assoc', config.titulo);
 
 
-  popularCargos(inst);
-  analisarDireitos();
-  carregarConcursos();
-  carregarAcoes();
-  carregarAssociacoes();
-  carregarRemuneracaoTabelada();
+  // Em modo MPA, cada página carrega apenas os scripts que precisa.
+  // Portanto, funções de outras páginas precisam ser opcionais para não travar
+  // a seleção de instituição quando o usuário estiver, por exemplo, em remuneração.
+  if (typeof popularCargos === 'function') popularCargos(inst);
+  if (typeof analisarDireitos === 'function') analisarDireitos();
+  if (typeof carregarConcursos === 'function') carregarConcursos();
+  if (typeof carregarAcoes === 'function') carregarAcoes();
+  if (typeof carregarAssociacoes === 'function') carregarAssociacoes();
+  if (typeof carregarRemuneracaoTabelada === 'function') carregarRemuneracaoTabelada();
   if (typeof sincronizarSeletoresConsulta === 'function') sincronizarSeletoresConsulta();
-  if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
+  if (document.getElementById('page-comparar')?.classList.contains('active') && typeof carregarComparadorCarreiras === 'function') carregarComparadorCarreiras();
 }
 
 

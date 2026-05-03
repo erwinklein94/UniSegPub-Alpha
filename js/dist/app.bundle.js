@@ -6790,14 +6790,17 @@ function mudarInstituicao(novaInstituicao) {
   atualizarTexto('txt-inst-assoc', config.titulo);
 
 
-  popularCargos(inst);
-  analisarDireitos();
-  carregarConcursos();
-  carregarAcoes();
-  carregarAssociacoes();
-  carregarRemuneracaoTabelada();
+  // Em modo MPA, cada página carrega apenas os scripts que precisa.
+  // Portanto, funções de outras páginas precisam ser opcionais para não travar
+  // a seleção de instituição quando o usuário estiver, por exemplo, em remuneração.
+  if (typeof popularCargos === 'function') popularCargos(inst);
+  if (typeof analisarDireitos === 'function') analisarDireitos();
+  if (typeof carregarConcursos === 'function') carregarConcursos();
+  if (typeof carregarAcoes === 'function') carregarAcoes();
+  if (typeof carregarAssociacoes === 'function') carregarAssociacoes();
+  if (typeof carregarRemuneracaoTabelada === 'function') carregarRemuneracaoTabelada();
   if (typeof sincronizarSeletoresConsulta === 'function') sincronizarSeletoresConsulta();
-  if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
+  if (document.getElementById('page-comparar')?.classList.contains('active') && typeof carregarComparadorCarreiras === 'function') carregarComparadorCarreiras();
 }
 
 
@@ -9685,7 +9688,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
+    bindClick('.menu-btn', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('toggleMenu');
+    });
+
+    bindClick('#menuOverlay, .close-btn', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('toggleMenu', [false]);
+    });
+
     bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
 
     bindChange('#instituicao, #instituicao_header', event => {
@@ -9696,14 +9710,23 @@ document.addEventListener('DOMContentLoaded', () => {
       safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
     });
 
-    bindChange('[data-consulta-esfera]', event => {
-      const page = event.currentTarget.dataset.consultaPage;
-      safeCall('alterarEsferaConsultaInstituicao', [page, event.currentTarget.value]);
-    });
+    // Os seletores internos de cada página são inseridos dinamicamente por page-context.js.
+    // Por isso, eles precisam de delegação de evento; bindChange() só pegaria elementos
+    // que já existiam no DOM no momento do carregamento.
+    document.addEventListener('change', event => {
+      const alvo = event.target;
+      if (!alvo || !(alvo instanceof HTMLSelectElement)) return;
 
-    bindChange('[data-consulta-instituicao]', event => {
-      const page = event.currentTarget.dataset.consultaPage;
-      safeCall('selecionarInstituicaoConsulta', [page, event.currentTarget.value]);
+      if (alvo.matches('[data-consulta-esfera]')) {
+        const page = alvo.dataset.consultaPage;
+        safeCall('alterarEsferaConsultaInstituicao', [page, alvo.value]);
+        return;
+      }
+
+      if (alvo.matches('[data-consulta-instituicao]')) {
+        const page = alvo.dataset.consultaPage;
+        safeCall('selecionarInstituicaoConsulta', [page, alvo.value]);
+      }
     });
 
     bindClick('.branch-option[data-branch]', event => {
@@ -9729,16 +9752,29 @@ document.addEventListener('DOMContentLoaded', () => {
       safeCall('switchPage', [page]);
     });
 
-    bindClick('[data-page]', event => {
-      const page = event.currentTarget.dataset.page;
+    bindClick('[data-page]:not(body)', event => {
+      const el = event.currentTarget;
+      const page = el.dataset.page;
       if (!page) return;
+
+      // Em páginas reais, links com href devem navegar normalmente.
+      // Botões/cards sem href ainda usam a compatibilidade com switchPage().
+      const href = el.getAttribute('href');
+      if (href && href !== '#') return;
+
+      event.preventDefault();
+      event.stopPropagation();
       safeCall('switchPage', [page]);
     });
 
-    document.querySelectorAll('[data-page]').forEach(el => {
+    document.querySelectorAll('[data-page]:not(body)').forEach(el => {
       el.addEventListener('keydown', event => {
         if (event.key === 'Enter' || event.key === ' ') {
+          const href = event.currentTarget.getAttribute('href');
+          if (href && href !== '#') return;
+
           event.preventDefault();
+          event.stopPropagation();
           safeCall('switchPage', [event.currentTarget.dataset.page]);
         }
       });

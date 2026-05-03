@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="page-principal" lang="pt-BR">
+<html class="page-produtos" lang="pt-BR">
 <head>
 <!-- =======================================================
      BLOCO 01 — HEAD / CONFIGURAÇÕES INICIAIS DO SITE
@@ -18,8 +18,8 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Portal independente para consultar remuneração, direitos, concursos, brasões, poderes e informações de instituições de segurança pública no Brasil." name="description"/>
-<title>Universo Segurança Pública - Portal de consultas 2026</title>
+<meta content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos." name="description"/>
+<title>Produtos para Segurança Pública - Universo Segurança Pública</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://www.googletagmanager.com" rel="preconnect"/>
@@ -28,8 +28,8 @@
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
 <link href="css/override-logoleao.css?v=20260502comparadorv1" rel="stylesheet"/>
-<link href="index.html" rel="canonical"/></head>
-<body data-inst="portal" data-page="principal">
+<link href="produtos.html" rel="canonical"/></head>
+<body data-inst="portal" data-page="produtos">
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
      Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
@@ -564,7 +564,7 @@
 <nav aria-label="Páginas do portal" class="sidebar-nav">
 <div aria-label="Consultas principais" class="sidebar-nav-group">
 <div class="sidebar-nav-title">Consultas principais</div>
-<a aria-current="page" class="active" href="index.html" id="menu-principal" role="link" tabindex="0">
+<a href="index.html" id="menu-principal" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🏠</span>
 <span class="sidebar-link-text">Principal</span>
 <small>Início do portal</small>
@@ -615,7 +615,7 @@
 </div>
 <div aria-label="Conteúdos e parceiros" class="sidebar-nav-group">
 <div class="sidebar-nav-title">Conteúdos e parceiros</div>
-<a href="produtos.html" id="menu-produtos" role="link" tabindex="0">
+<a aria-current="page" class="active" href="produtos.html" id="menu-produtos" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🛒</span>
 <span class="sidebar-link-text">Produtos</span>
 <small>Cursos, livros e produtos</small>
@@ -669,190 +669,6 @@
 <!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
-<main class="page-section active" id="page-principal" role="main">
-<!-- BLOCO 04.1 — Hero inicial e botões principais -->
-<section aria-labelledby="principal-titulo" class="principal-hero">
-<!-- BLOCO 04.1.1 — Título da página principal -->
-<div class="principal-hero-top">
-<div class="principal-title-area">
-<div class="principal-eyebrow">Portal prático para segurança pública</div>
-<h1 class="principal-title" id="principal-titulo">Consulte remuneração, direitos, concursos e informações da sua instituição em poucos <span>cliques</span></h1>
-</div>
-</div>
-<p class="principal-subtitle">
-      Primeiro escolha a aba que quer consultar. Dentro das abas institucionais, selecione a esfera — federal, estadual ou municipal — e depois a instituição específica para carregar as informações corretas.
-    </p>
-<p aria-label="Aviso institucional do portal" class="portal-disclaimer portal-disclaimer--hero">
-<strong>Importante:</strong> este é um portal informativo independente. Não é site oficial do governo, não representa órgãos públicos e não pertence às instituições mencionadas.
-    </p>
-<div aria-label="Ações principais da página inicial" class="principal-actions">
-<a class="principal-btn" href="remuneracao.html">Consultar Remuneração</a>
-<a class="principal-btn secundario" href="direitos.html">Ver Direitos</a>
-<a class="principal-btn secundario" href="poderes-deveres.html">Ver Poderes e Deveres</a>
-<a class="principal-btn secundario" href="brasoes.html">Brasões e história</a>
-<a class="principal-btn secundario" href="concursos.html">Ver Concursos</a>
-</div>
-</section>
-<!-- BLOCO 04.1A — Espaço comercial de topo da página principal -->
-<aside aria-label="Espaço de anúncio: Topo da página principal" class="ad-slot ad-slot--hero" data-ad-area="home_topo">
-<a class="ad-placeholder-link" href="anuncie.html?area=home_topo">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Destaque acima das consultas para anunciante que deseja ser visto logo na entrada do portal.</small>
-</a>
-</aside>
-<!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
-<section aria-label="Resumo de cobertura do site" class="principal-stats">
-<div class="principal-stat">
-<strong>27 UFs</strong>
-<span>UFs cobertas</span>
-</div>
-<div class="principal-stat">
-<strong>111</strong>
-<span>Seções institucionais</span>
-</div>
-<div class="principal-stat">
-<strong>2026</strong>
-<span>Dados em atualização</span>
-</div>
-<div class="principal-stat">
-<strong>Grátis</strong>
-<span>Consulta inicial</span>
-</div>
-</section>
-<!-- BLOCO 04.3 — Como usar a página inicial -->
-<section aria-labelledby="como-usar-titulo" class="principal-como-usar">
-<div class="principal-section-title">
-<h2 id="como-usar-titulo">Como usar o Universo Segurança Pública</h2>
-<p>Comece pela dúvida que quer resolver. A escolha da instituição aparece dentro da própria aba de consulta.</p>
-</div>
-<div class="como-usar-grid">
-<div class="como-usar-step">
-<strong>1</strong>
-<span>Clique na aba desejada: remuneração, direitos, poderes e deveres, brasões e história, concursos, ações ou associações.</span>
-</div>
-<div class="como-usar-step">
-<strong>2</strong>
-<span>Dentro da aba, escolha se a instituição é federal, estadual ou municipal.</span>
-</div>
-<div class="como-usar-step">
-<strong>3</strong>
-<span>Na segunda caixa, selecione a instituição específica para carregar as informações, foto e cor correspondente no cabeçalho.</span>
-</div>
-</div>
-</section>
-<!-- BLOCO 04.4 — Consultas principais -->
-<section aria-labelledby="consultas-principais-titulo" class="principal-area">
-<div class="principal-section-title">
-<h2 id="consultas-principais-titulo">Consultas principais</h2>
-<p>Áreas mais úteis para quem quer comparar cargos, entender direitos e acompanhar oportunidades.</p>
-</div>
-<div aria-label="Consultas principais do site" class="principal-grid consultas-principais">
-<a aria-label="Abrir remuneração tabelada" class="principal-card destaque" href="remuneracao.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">💰</span>
-<h3>Remuneração Tabelada</h3>
-</div>
-<p>Consulte, de forma simples e gratuita, os valores brutos de remuneração por cargo depois de escolher a instituição dentro da aba.</p>
-<span class="principal-tag">Ver tabela grátis</span>
-</a>
-<a aria-label="Abrir direitos e vantagens" class="principal-card" href="direitos.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">⚖️</span>
-<h3>Direitos e Vantagens</h3>
-</div>
-<p>Consulte vantagens, licenças, adicionais, aposentadoria, benefícios e observações importantes para a carreira.</p>
-<span class="principal-tag">Consultar direitos</span>
-</a>
-<a aria-label="Abrir poderes e deveres" class="principal-card" href="poderes-deveres.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">📜</span>
-<h3>Poderes e Deveres</h3>
-</div>
-<p>Entenda deveres, abrangência de poder, limites legais, leis oficiais e entendimentos recentes de cada instituição.</p>
-<span class="principal-tag">Ver legislação</span>
-</a>
-<a aria-label="Abrir brasões e história" class="principal-card destaque" href="brasoes.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">🛡️</span>
-<h3>Brasões e história</h3>
-</div>
-<p>Veja o brasão em destaque, dados institucionais, efetivo, presença feminina, criação, origem e marcos históricos da instituição escolhida.</p>
-<span class="principal-tag">Ver história</span>
-</a>
-<a aria-label="Abrir concursos" class="principal-card" href="concursos.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">📋</span>
-<h3>Concursos</h3>
-</div>
-<p>Veja requisitos, etapas, dados do último edital e informações úteis para quem quer ingressar na carreira policial.</p>
-<span class="principal-tag">Ver editais</span>
-</a>
-<a aria-label="Abrir ações judiciais" class="principal-card" href="acoes-judiciais.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">🧾</span>
-<h3>Ações Judiciais</h3>
-</div>
-<p>Resumo das principais teses e alertas jurídicos que podem interessar a policiais ativos, inativos e pensionistas.</p>
-<span class="principal-tag">Ver ações</span>
-</a>
-<a aria-label="Abrir associações e sindicatos" class="principal-card" href="associacoes-sindicatos.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">🛡️</span>
-<h3>Associações e Sindicatos</h3>
-</div>
-<p>Consulte entidades representativas, sindicatos e associações de apoio depois de escolher a instituição dentro da aba.</p>
-<span class="principal-tag">Ver entidades</span>
-</a>
-</div>
-</section>
-<!-- BLOCO 04.4A — Espaços comerciais entre consultas e conteúdos -->
-<section aria-label="Espaços de anúncio na página principal" class="ad-grid ad-grid--duo">
-<aside aria-label="Espaço de anúncio: Meio da página principal" class="ad-slot ad-slot--card" data-ad-area="home_meio_consultas">
-<a class="ad-placeholder-link" href="anuncie.html?area=home_meio_consultas">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Ideal para cursos, planos de saúde, seguros, equipamentos ou serviços voltados à carreira policial.</small>
-</a>
-</aside>
-<aside aria-label="Espaço de anúncio: Chamada comercial antes de produtos" class="ad-slot ad-slot--card" data-ad-area="home_meio_produtos">
-<a class="ad-placeholder-link" href="anuncie.html?area=home_meio_produtos">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Boa posição para ofertas que complementam estudo, preparo físico, operação ou vida profissional.</small>
-</a>
-</aside>
-</section>
-<!-- BLOCO 04.5 — Conteúdos complementares e parceiros -->
-<section aria-labelledby="conteudos-parceiros-titulo" class="principal-area">
-<div class="principal-section-title">
-<h2 id="conteudos-parceiros-titulo">Conteúdos e parceiros</h2>
-<p>Produtos, materiais de apoio, indicações e espaços comerciais ficam separados das consultas principais.</p>
-</div>
-<div aria-label="Conteúdos complementares e parceiros" class="principal-grid conteudos-parceiros">
-<a aria-label="Abrir produtos" class="principal-card" href="produtos.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">🛒</span>
-<h3>Produtos</h3>
-</div>
-<p>Cursos, livros, e-books, produtos físicos e outras indicações reunidos em uma única aba.</p>
-<span class="principal-tag">Ver produtos</span>
-</a>
-<a aria-label="Abrir parceiros" class="principal-card" href="anuncie.html">
-<div class="principal-card-header">
-<span aria-hidden="true" class="principal-card-icon">🤝</span>
-<h3>Parceiros</h3>
-</div>
-<p>Espaço para empresas anunciarem, sugerirem parcerias e apresentarem soluções ao público da segurança pública.</p>
-<span class="principal-tag">Anunciar aqui</span>
-</a>
-</div>
-</section>
-<!-- BLOCO 04.6 — Nota de confiabilidade e transparência -->
-<section aria-label="Aviso de confiabilidade e independência" class="principal-nota confiabilidade">
-<strong>Transparência:</strong> o Universo Segurança Pública é um portal informativo independente. As informações são organizadas com base em fontes públicas, editais, legislações e referências oficiais sempre que disponíveis. Valores e direitos podem variar conforme cargo, classe, lotação, legislação vigente, rubricas do contracheque e situação individual.
-  </section>
-</main>
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
 <!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
@@ -860,6 +676,240 @@
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <!-- BLOCO 07.1 — PÁGINA COMPARAR CARREIRAS -->
 <!-- BLOCO 08 — PÁGINA PRODUTOS -->
+<main class="page-section active" id="page-produtos" role="main">
+<div class="card">
+<h2>Produtos (<span id="txt-inst-produtos">PMESP</span>)</h2>
+<div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+<strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
+    </div>
+<!-- BLOCO 08.0A — Espaço comercial principal da aba produtos -->
+<aside aria-label="Produto em destaque: Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="ad-slot ad-slot--inline" data-ad-area="produtos_topo">
+<a aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="ad-placeholder-link ad-placeholder-link--product ad-product-banner" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem ad-product-banner__media">
+<img alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" data-img-base="img/SHOPEE/mochilaimpermeavel50l" decoding="async" loading="lazy" src="img/SHOPEE/mochilaimpermeavel50l.webp"/>
+</div>
+<div class="ad-product-banner__conteudo">
+<span class="ad-label">Produto em destaque</span>
+<strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
+<small>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</small>
+<span class="ad-button">Comprar</span>
+</div>
+</a>
+</aside>
+<div class="curso-section-title">Produtos físicos</div>
+<div aria-label="Produtos físicos com link de compra" class="curso-grid">
+<a aria-label="Abrir Mochila Coban Tática Militar Reforçada 24 L" class="curso-card produto-card" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Mochila Coban Tática Militar Reforçada 24 L" data-img-base="img/SHOPEE/mochilacoban" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
+</div>
+<h3>Mochila Coban Tática Militar Reforçada 24 L</h3>
+<p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário. Uma opção prática para quem precisa transportar materiais com mais resistência e organização.</p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Uso operacional</span>
+<span>24 L</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir barra fixa para porta" class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Barra fixa para porta" data-img-base="img/SHOPEE/barrafixa01" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa01.webp"/>
+</div>
+<h3>Barra fixa para porta</h3>
+<p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>TAF</span>
+<span>Treino em casa</span>
+</div>
+<span class="curso-cta">Comprar aqui</span>
+</a>
+<a aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" data-img-base="img/SHOPEE/botaacero" decoding="async" loading="lazy" src="img/SHOPEE/botaacero.webp"/>
+</div>
+<h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
+<p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>Uso operacional</span>
+<span>Conforto e proteção</span>
+</div>
+<span class="curso-cta">Comprar aqui</span>
+</a>
+<a aria-label="Abrir Power Rack Funcional" class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" data-img-base="img/SHOPEE/barrafixa02" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa02.webp"/>
+</div>
+<h3>Power Rack Funcional com paralelas</h3>
+<p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Produto físico</span>
+<span>TAF</span>
+<span>Treino completo</span>
+</div>
+<span class="curso-cta">Comprar aqui</span>
+</a>
+</div>
+<div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
+<div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
+      Espaço destinado a cursos preparatórios, mentorias e materiais de estudo. Em breve, novos produtos específicos serão adicionados para esta instituição.
+    </div>
+<div class="curso-grid curso-pmesp-only">
+<a aria-label="Abrir Curso Preparatório Sargento PMESP" class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Curso Preparatório Sargento PMESP" data-img-base="img/HOTMART/curso-sargento-pmesp" decoding="async" loading="lazy" src="img/HOTMART/curso-sargento-pmesp.webp"/>
+</div>
+<h3>Curso Preparatório - SARGENTO PMESP</h3>
+<p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>PMESP</span>
+<span>Concursos internos</span>
+<span>Curso online</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Curso Preparatório PMESP Completo" class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Curso Preparatório PMESP Completo" data-img-base="img/HOTMART/curso-pmesp-completo" decoding="async" loading="lazy" src="img/HOTMART/curso-pmesp-completo.webp"/>
+</div>
+<h3>Curso Preparatório PMESP Completo</h3>
+<p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>PMESP</span>
+<span>Soldado 2ª Classe</span>
+<span>VUNESP</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais" class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Preparatório para o psicotécnico das carreiras policiais" data-img-base="img/HOTMART/curso-psicotecnico-carreiras-policiais" decoding="async" loading="lazy" src="img/HOTMART/curso-psicotecnico-carreiras-policiais.webp"/>
+</div>
+<h3>Preparatório para o psicotécnico das carreiras policiais</h3>
+<p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>Psicotécnico</span>
+<span>Carreiras policiais</span>
+<span>Concurseiros</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+</div>
+<div class="curso-grid curso-pcsp-only">
+<a aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo" class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" data-img-base="img/HOTMART/curso-raciocinio-logico-pcsp" decoding="async" loading="lazy" src="img/HOTMART/curso-raciocinio-logico-pcsp.webp"/>
+</div>
+<h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
+<p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>PCSP</span>
+<span>Raciocínio lógico</span>
+<span>VUNESP</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Curso de Informática PCSP" class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="PCSP Curso de Informática Edital Completo" data-img-base="img/HOTMART/curso-informatica-pcsp" decoding="async" loading="lazy" src="img/HOTMART/curso-informatica-pcsp.webp"/>
+</div>
+<h3>PCSP - Curso de Informática - Edital Completo</h3>
+<p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>PCSP</span>
+<span>Informática</span>
+<span>VUNESP</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+</div>
+<div class="curso-section-title">Livros e e-books</div>
+<div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
+      Livros, e-books e materiais de desenvolvimento para estudo, carreira, disciplina, produtividade e transição profissional.
+    </div>
+<div aria-label="Livros e e-books com link de compra" class="curso-grid">
+<a aria-label="Abrir Pacote Viva Sem Procrastinar" class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Pacote Viva Sem Procrastinar" data-img-base="img/HOTMART/pacote-viva-sem-procrastinar" decoding="async" loading="lazy" src="img/HOTMART/pacote-viva-sem-procrastinar.webp"/>
+</div>
+<h3>Pacote - Viva Sem Procrastinar</h3>
+<p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
+<div aria-label="Destaques do produto" class="curso-meta">
+<span>Material digital</span>
+<span>Procrastinação</span>
+<span>Saúde mental</span>
+<span>Desenvolvimento pessoal</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Otimizando o Cérebro para Concursos Públicos" class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Otimizando o Cérebro para Concursos Públicos" data-img-base="img/HOTMART/otimizando-cerebro-concursos" decoding="async" loading="lazy" src="img/HOTMART/otimizando-cerebro-concursos.webp"/>
+</div>
+<h3>Otimizando o Cérebro para Concursos Públicos</h3>
+<p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
+<div aria-label="Destaques do livro" class="curso-meta">
+<span>E-book</span>
+<span>Concursos</span>
+<span>Neurociências</span>
+<span>Produtividade</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Além da Farda O Código da Travessia" class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Além da Farda O Código da Travessia" data-img-base="img/HOTMART/alem-da-farda-codigo-travessia" decoding="async" loading="lazy" src="img/HOTMART/alem-da-farda-codigo-travessia.webp"/>
+</div>
+<h3>Além da Farda: O Código da Travessia</h3>
+<p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
+<div aria-label="Destaques do livro" class="curso-meta">
+<span>Livro digital</span>
+<span>Transição</span>
+<span>Carreira</span>
+<span>Vida pós-farda</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Método DMA" class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" data-img-base="img/HOTMART/metodo-dma-procrastinacao" decoding="async" loading="lazy" src="img/HOTMART/metodo-dma-procrastinacao.webp"/>
+</div>
+<h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
+<p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
+<div aria-label="Destaques do livro" class="curso-meta">
+<span>Material digital</span>
+<span>Planejamento</span>
+<span>Gestão de tempo</span>
+<span>Disciplina</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+<a aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia" class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" data-img-base="img/LOGO/logoleao" decoding="async" loading="lazy" src="img/LOGO/logoleao.webp"/>
+</div>
+<h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
+<p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
+<div aria-label="Destaques do livro" class="curso-meta">
+<span>E-book</span>
+<span>Liderança</span>
+<span>Disciplina</span>
+<span>Tomada de decisão</span>
+</div>
+<span class="curso-cta">Comprar</span>
+</a>
+</div>
+<p class="produto-aviso-compra">
+      Antes de comprar, confira preço, prazo, avaliações, garantia, política de reembolso e descrição atualizada diretamente na página do produto.
+    </p>
+</div>
+</main>
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
