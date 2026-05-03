@@ -5,45 +5,61 @@
 /* ============================================================ */
 /* BLOCO 15.12 — Renderização das páginas de concursos, ações e associações */
 
+const TEXTO_DADOS_EM_BREVE = 'Dados em breve';
+
+function valorOuDadosEmBreve(valor) {
+  if (typeof normalizarTextoSemFonteSegura === 'function') return normalizarTextoSemFonteSegura(valor);
+  const texto = String(valor ?? '').trim();
+  if (!texto || texto === '#' || /(?:a preencher|preencher|a confirmar|a definir|consultar|conferir|sem informação|sem informacao|pendente|estrutura criada|estrutura aberta|espaço reservado|reservado para|não afirmar|nao afirmar)/i.test(texto)) return TEXTO_DADOS_EM_BREVE;
+  return texto;
+}
+
+function ehDadosEmBreve(valor) {
+  return valorOuDadosEmBreve(valor) === TEXTO_DADOS_EM_BREVE;
+}
+
+function itemUnicoDadosEmBreve(classe = 'acao') {
+  return `<div class="direito-item ${classe}"><span class="direito-nome">${TEXTO_DADOS_EM_BREVE}</span></div>`;
+}
+
+function urlPublicaValida(valor) {
+  return /^https?:\/\//i.test(String(valor || '').trim());
+}
+
 function getConcursoPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return null;
   const info = getInfoPoliciaPenal(inst);
-  return {
-    edital: `${info.sigla} — ${info.nome} — concursos, formação e carreira penal`,
-    salario: info.concurso.salario || info.remuneracao,
-    vagas: info.concurso.vagas || 'Conferir autorização, edital e Diário Oficial da unidade federativa.',
-    cotas: 'Reserva de vagas conforme legislação estadual, federal e regras do edital vigente.',
-    idade: 'Em regra, idade mínima de 18 anos; limites máximos, CNH, altura, aptidão física e demais requisitos dependem do edital e da legislação local.',
-    escolaridade: info.concurso.escolaridade || info.escolaridade,
-    materias: 'Português, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Direitos Humanos, Lei de Execução Penal, legislação penitenciária, atualidades e conhecimentos específicos, conforme edital.',
-    banca: info.concurso.banca || 'A definir conforme edital.',
-    inscritos: 'Sem informação automática; acompanhar Diário Oficial, portal do governo e site da banca.',
-    etapas: 'Prova objetiva, investigação social, exames médicos, avaliação psicológica, TAF, curso de formação e demais fases previstas no edital.',
-    cfsd: info.formacao,
-    estagio: 'Estágio probatório e avaliação de desempenho conforme regime jurídico e lei da carreira penal.',
-    validade: 'Conferir edital do certame.',
-    previsao: `Acompanhar publicações oficiais: ${info.fonte}. Não afirmar edital aberto sem publicação oficial.`,
-    site: info.url || REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
+  const dados = {
+    edital: `${info.sigla} — ${info.nome}`,
+    salario: valorOuDadosEmBreve(info.concurso?.salario || info.remuneracao),
+    vagas: valorOuDadosEmBreve(info.concurso?.vagas),
+    cotas: TEXTO_DADOS_EM_BREVE,
+    idade: TEXTO_DADOS_EM_BREVE,
+    escolaridade: valorOuDadosEmBreve(info.concurso?.escolaridade || info.escolaridade),
+    materias: TEXTO_DADOS_EM_BREVE,
+    banca: valorOuDadosEmBreve(info.concurso?.banca),
+    inscritos: TEXTO_DADOS_EM_BREVE,
+    etapas: TEXTO_DADOS_EM_BREVE,
+    cfsd: valorOuDadosEmBreve(info.formacao),
+    estagio: TEXTO_DADOS_EM_BREVE,
+    validade: TEXTO_DADOS_EM_BREVE,
+    previsao: TEXTO_DADOS_EM_BREVE,
+    site: urlPublicaValida(info.url) ? info.url : (REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#')
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function getAcoesPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return [];
-  const info = getInfoPoliciaPenal(inst);
   return [
-    { titulo: `${info.sigla} — Enquadramento, transformação de cargos e implantação da carreira`, status: 'Verificar caso a caso', ano: info.criacao, tipo: 'individual', desc: `Discussões podem envolver transformação de antigos cargos penitenciários em Polícia Penal, enquadramento, classe, referência, atribuições, efeitos financeiros e data de implantação. ${info.marco}`, base: `${info.criacao}; ato de enquadramento; ficha funcional; tabela remuneratória; Diário Oficial.`, fonte: info.fonte, fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Adicional penitenciário, risco, periculosidade, insalubridade e rubricas`, status: 'Tema dependente de rubrica e laudo', ano: 'Tema recorrente', tipo: 'individual', desc: info.vantagens, base: 'Lei estadual da carreira, laudo/ato administrativo, contracheques, lotação, escala e local de exercício.', fonte: info.fonte, fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Aposentadoria policial, transições e previdência`, status: 'Análise individual', ano: 'EC 103/2019, EC 104/2019 e normas locais', tipo: 'individual', desc: info.previdencia, base: 'Data de ingresso, tempo de contribuição, tempo no cargo/carreira, sexo, idade, regra aplicada e ficha funcional.', fonte: 'Conferência previdenciária individual', fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Plantões, escoltas, operações, diárias e serviço extraordinário`, status: 'Depende de escala e autorização', ano: 'Tema operacional', tipo: 'individual', desc: `Atribuições operacionais: ${info.atribuicoes} Diferenças dependem de escala, ordem de serviço, autorização, deslocamento e rubrica.`, base: 'Escalas, ordens de serviço, publicações, lei local, contracheques e atos administrativos.', fonte: 'Documentos funcionais e normas internas', fonteUrl: info.url, atualizado: 'Abril/2026' }
+    { titulo: TEXTO_DADOS_EM_BREVE, status: TEXTO_DADOS_EM_BREVE, ano: TEXTO_DADOS_EM_BREVE, tipo: 'individual', desc: TEXTO_DADOS_EM_BREVE, base: TEXTO_DADOS_EM_BREVE, fonte: TEXTO_DADOS_EM_BREVE, fonteUrl: '', atualizado: TEXTO_DADOS_EM_BREVE }
   ];
 }
 
 function getAssociacoesPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return [];
-  const info = getInfoPoliciaPenal(inst);
   return [
-    { nome: `Entidade representativa da ${info.sigla} — ${info.nome}`, foco: `${info.uf} — policiais penais ativos, aposentados e pensionistas quando abrangidos`, acao: `Representação da categoria em carreira, remuneração, saúde, aposentadoria policial, porte funcional, condições de trabalho, segurança prisional e valorização institucional. Busca sugerida: ${info.associacaoBusca}.`, site: 'Consultar site/canal oficial da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação sindical/associativa, notícias, mobilização, acompanhamento legislativo e eventual apoio jurídico conforme regras internas.' },
-    { nome: `Associação/Sindicato dos Policiais Penais — ${info.uf}`, foco: `${info.orgao}`, acao: `Acompanhamento de pautas ligadas a ${info.criacao}, implantação da carreira, adicionais, concurso, formação, segurança das unidades e direitos funcionais.`, site: 'Consultar canais oficiais e redes da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento associativo, comunicação, assembleias, convênios, acompanhamento legislativo e eventual suporte jurídico conforme contrato.' }
+    { nome: TEXTO_DADOS_EM_BREVE, foco: TEXTO_DADOS_EM_BREVE, acao: TEXTO_DADOS_EM_BREVE, site: '', telefone: TEXTO_DADOS_EM_BREVE, mensalidade: TEXTO_DADOS_EM_BREVE, servicos: TEXTO_DADOS_EM_BREVE }
   ];
 }
 
@@ -54,6 +70,9 @@ function getAssociacoesPoliciaPenal(inst) {
 /* BLOCO 15.14.1 — Comparar remuneração, benefícios, concursos e fontes entre instituições */
 function getRamoComparador(inst) {
   inst = String(inst || '');
+  if (inst === 'pf') return 'Federal';
+  if (inst === 'prf') return 'Rodoviária Federal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
   if (inst.startsWith('pp')) return 'Penal';
   if (inst.startsWith('pc')) return 'Civil';
   if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Militar / Brigada' : 'Militar';
@@ -64,8 +83,11 @@ function getOrdemComparador(inst) {
   const estado = getEstadoDaInstituicao(inst);
   const dadosEstado = HEADER_ESTADOS[estado] || {};
   if (dadosEstado.pm === inst) return 1;
-  if (dadosEstado.pc === inst) return 2;
-  if (dadosEstado.pp === inst) return 3;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (dadosEstado.pf === inst) return 1;
+  if (dadosEstado.prf === inst) return 2;
   return 9;
 }
 
@@ -121,7 +143,10 @@ function inicializarComparadorCarreiras() {
     selecao.dataset.renderizado = 'true';
   }
 
-  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
+  const esferaComparador = document.getElementById('comparador-esfera');
+  if (esferaComparador && esferaComparador.value) {
+    popularInstituicoesComparadorPorEsfera(esferaComparador.value);
+  }
   carregarComparadorCarreiras();
 }
 
@@ -132,6 +157,68 @@ function getComparadorSelect() {
 function getComparadorCheckboxes() {
   const selecao = getComparadorSelect();
   return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
+}
+
+function popularInstituicoesComparadorPorEsfera(esfera, valorPreferido = '') {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  if (!seletorInst) return;
+  const esferaNormalizada = String(esfera || '').trim().toLowerCase();
+  const itens = typeof getInstituicoesParaConsulta === 'function'
+    ? getInstituicoesParaConsulta(esferaNormalizada)
+    : getInstituicoesComparador().filter(item => !esferaNormalizada || getEsferaConsultaInstituicao(item.inst) === esferaNormalizada);
+
+  if (!esferaNormalizada) {
+    seletorInst.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esferaNormalizada === 'estadual'
+      ? `${item.estadoNome} (${item.uf})`
+      : (esferaNormalizada === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esferaNormalizada === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  seletorInst.value = valorPreferido && itens.some(item => item.inst === valorPreferido) ? valorPreferido : '';
+}
+
+function comparadorAlterarEsfera(esfera) {
+  popularInstituicoesComparadorPorEsfera(esfera, '');
+}
+
+function comparadorAdicionarInstituicaoSelecionada() {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  const inst = seletorInst?.value;
+  if (!inst) return;
+  const check = getComparadorCheckboxes().find(item => item.value === inst);
+  if (!check) return;
+  const jaSelecionada = check.checked;
+  check.checked = true;
+  carregarComparadorCarreiras();
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (typeof mostrarToast === 'function') {
+    mostrarToast(jaSelecionada ? `${info?.titulo || inst.toUpperCase()} já estava na comparação.` : `${info?.titulo || inst.toUpperCase()} adicionada à comparação.`);
+  }
 }
 
 function toggleComparadorLista() {
@@ -172,7 +259,7 @@ function atualizarResumoSelecaoComparador() {
 function comparadorSelecionarEstadoAtual(exibirToast = true) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const valores = [dadosEstado.pm, dadosEstado.pc, dadosEstado.pp].filter(Boolean);
+  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf].filter(Boolean);
   setSelecionadasComparador(valores);
   carregarComparadorCarreiras();
   if (exibirToast) mostrarToast(`Comparando carreiras de ${dadosEstado.nome}.`);
@@ -192,18 +279,27 @@ function comparadorLimparSelecao() {
 }
 
 function getConcursoComparador(inst) {
-  return CONCURSOS[inst] || getConcursoPoliciaPenal(inst) || {
-    edital: 'Concurso de referência não cadastrado',
-    salario: 'Consultar edital vigente',
-    vagas: 'Consultar edital vigente',
-    inscritos: 'Consultar banca e órgão oficial',
-    banca: 'Consultar edital',
-    materias: 'Consultar edital do cargo',
-    previsao: 'Acompanhar Diário Oficial, órgão e banca.',
-    escolaridade: 'Consultar edital',
-    etapas: 'Consultar edital',
+  if (CONCURSOS[inst]) return CONCURSOS[inst];
+  const penal = getConcursoPoliciaPenal(inst);
+  if (penal) return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, penal) : penal;
+  const dados = {
+    edital: HEADER_INSTITUICOES_INFO[inst]?.titulo || inst.toUpperCase(),
+    salario: 'Dados em breve',
+    vagas: 'Dados em breve',
+    cotas: 'Dados em breve',
+    idade: 'Dados em breve',
+    inscritos: 'Dados em breve',
+    banca: 'Dados em breve',
+    materias: 'Dados em breve',
+    previsao: 'Dados em breve',
+    escolaridade: 'Dados em breve',
+    etapas: 'Dados em breve',
+    cfsd: 'Dados em breve',
+    estagio: 'Dados em breve',
+    validade: 'Dados em breve',
     site: REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function limitarTextoComparador(texto, limite = 220) {
@@ -218,16 +314,16 @@ function getResumoRemuneracaoComparador(inst) {
   const maior = validas.length ? Math.max(...validas.map(l => Number(l.remuneracao || 0))) : 0;
   const linhaMenor = validas.find(l => Number(l.remuneracao || 0) === menor) || linhas[0] || {};
   const linhaMaior = validas.find(l => Number(l.remuneracao || 0) === maior) || linhas[0] || {};
-  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Dados em breve', url: '#' };
   const adicionais = getAdicionaisRemuneracaoResumo(inst, linhaMenor);
   return {
     totalCargos: linhas.length,
     menor,
     maior,
-    cargoMenor: linhaMenor.cargo || 'Cargo inicial/de referência',
-    cargoMaior: linhaMaior.cargo || 'Topo de carreira/de referência',
+    cargoMenor: linhaMenor.cargo || 'Dados em breve',
+    cargoMaior: linhaMaior.cargo || 'Dados em breve',
     adicionais,
-    fonteNome: fonte.nome || 'Fonte oficial da carreira',
+    fonteNome: fonte.nome || 'Dados em breve',
     fonteUrl: fonte.url || '#'
   };
 }
@@ -258,7 +354,7 @@ function getSelecionadasComparador() {
 }
 
 function linkComparador(url, texto = 'Abrir fonte') {
-  if (!url || url === '#') return '<span>Consultar fonte oficial</span>';
+  if (!url || url === '#') return '<span>Dados em breve</span>';
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
 }
 
@@ -298,11 +394,11 @@ function carregarComparadorCarreiras() {
     </div>
     <div class="comparador-stat">
       <span>Menor remuneração encontrada</span>
-      <strong>${menores.length ? fmt(Math.min(...menores)) : 'A confirmar'}</strong>
+      <strong>${menores.length ? fmt(Math.min(...menores)) : 'Dados em breve'}</strong>
     </div>
     <div class="comparador-stat">
       <span>Maior remuneração encontrada</span>
-      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'A confirmar'}</strong>
+      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'Dados em breve'}</strong>
     </div>
     <div class="comparador-stat">
       <span>Destaques</span>
@@ -322,25 +418,25 @@ function carregarComparadorCarreiras() {
           <span class="comparador-pill">${escapeHtml(d.ramo)}</span>
         </td>
         <td>
-          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'}<br>
+          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'}<br>
           <small>${escapeHtml(r.cargoMenor)}</small><br>
-          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'A confirmar'}<br>
+          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'Dados em breve'}<br>
           <small>${escapeHtml(r.cargoMaior)}</small>
         </td>
         <td>
           ${escapeHtml(limitarTextoComparador(r.adicionais, 260))}
         </td>
         <td>
-          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Edital de referência')}<br>
-          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Consultar edital')}<br>
+          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Dados em breve')}<br>
+          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Dados em breve')}<br>
           <strong>Próximo concurso / andamento:</strong> ${escapeHtml(limitarTextoComparador(c.previsao, 180))}
         </td>
         <td>
-          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}<br>
-          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Consultar banca')}
+          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}<br>
+          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Dados em breve')}
         </td>
         <td>
-          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}<br>
+          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}<br>
           <strong>Matérias:</strong> ${escapeHtml(limitarTextoComparador(c.materias, 230))}
         </td>
         <td>
@@ -359,11 +455,11 @@ function carregarComparadorCarreiras() {
         <h3>${escapeHtml(d.sigla)} — ${escapeHtml(d.uf)}</h3>
         <p><strong>${escapeHtml(d.nome)}</strong> · ${escapeHtml(d.ramo)}</p>
         <ul>
-          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'} até ${r.maior ? fmt(r.maior) : 'A confirmar'}.</li>
+          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'} até ${r.maior ? fmt(r.maior) : 'Dados em breve'}.</li>
           <li><strong>Referência inferior:</strong> ${escapeHtml(r.cargoMenor)}.</li>
-          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Consultar edital vigente')}.</li>
-          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}.</li>
-          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}.</li>
+          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Dados em breve')}.</li>
+          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}.</li>
+          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}.</li>
           <li><strong>Escolaridade:</strong> ${escapeHtml(limitarTextoComparador(c.escolaridade, 180))}.</li>
           <li><strong>Etapas:</strong> ${escapeHtml(limitarTextoComparador(c.etapas, 200))}.</li>
         </ul>
@@ -378,6 +474,10 @@ function carregarComparadorCarreiras() {
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('concursos');
+    return;
+  }
   const c = CONCURSOS[currInst] || getConcursoPoliciaPenal(currInst);
   if (!c) { cont.innerHTML = ""; return; }
 
@@ -396,12 +496,12 @@ function carregarConcursos() {
       <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
       <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
-      ${c.site ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : ''}
+      ${urlPublicaValida(c.site) ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
     </div>
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
+        <img src="img/SHOPEE/barrafixa01.webp" data-img-base="img/SHOPEE/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -413,7 +513,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>
@@ -425,7 +525,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+        <img src="img/SHOPEE/barrafixa02.webp" data-img-base="img/SHOPEE/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -443,22 +543,38 @@ function carregarConcursos() {
 function carregarAcoes() {
   const cont = document.getElementById('lista-acoes');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('acoes');
+    return;
+  }
   const lista = ACOES_JUDICIAIS[currInst] || getAcoesPoliciaPenal(currInst) || [];
 
+  if (!lista.length) {
+    cont.innerHTML = itemUnicoDadosEmBreve('acao');
+    return;
+  }
+
   cont.innerHTML = lista.map(a => {
-    const fonteHtml = a.fonte ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${a.fonteUrl ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : a.fonte}</span>` : '';
-    const atualizadoHtml = a.atualizado ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
+    const titulo = valorOuDadosEmBreve(a.titulo);
+    const campos = [a.status, a.ano, a.desc, a.base, a.fonte, a.atualizado].map(valorOuDadosEmBreve);
+    const semFonteSegura = titulo === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+    if (semFonteSegura) return itemUnicoDadosEmBreve('acao');
+
+    const fonteHtml = a.fonte && a.fonte !== TEXTO_DADOS_EM_BREVE
+      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
+      : `<span class="direito-desc">${TEXTO_DADOS_EM_BREVE}</span>`;
+    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
 
     return `
       <div class="direito-item acao">
-        <span class="direito-nome">${a.titulo}</span>
-        <span class="direito-status" style="color: var(--vermelho);">${a.status}</span>
+        <span class="direito-nome">${titulo}</span>
+        <span class="direito-status" style="color: var(--vermelho);">${valorOuDadosEmBreve(a.status)}</span>
         <div>
-          <span class="badge-info ${a.tipo}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
-          <span class="badge-info ativa">${a.ano}</span>
+          <span class="badge-info ${a.tipo === 'coletiva' ? 'coletiva' : 'individual'}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
+          <span class="badge-info ativa">${valorOuDadosEmBreve(a.ano)}</span>
         </div>
-        <span class="direito-desc">${a.desc}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${a.base}</span>
+        <span class="direito-desc">${valorOuDadosEmBreve(a.desc)}</span>
+        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${valorOuDadosEmBreve(a.base)}</span>
         ${fonteHtml}
         ${atualizadoHtml}
       </div>
@@ -472,18 +588,37 @@ function carregarAcoes() {
 function carregarAssociacoes() {
   const cont = document.getElementById('lista-associacoes');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('associacoes');
+    return;
+  }
   const lista = ASSOCIACOES[currInst] || getAssociacoesPoliciaPenal(currInst) || [];
-  cont.innerHTML = lista.map(a => `
-    <div class="direito-item associacao">
-      <span class="direito-nome">${a.nome}</span>
-      <span class="direito-desc"><strong>Foco:</strong> ${a.foco}</span>
-      <span class="direito-desc"><strong>Atuação atual:</strong> ${a.acao}</span>
-      <span class="direito-desc"><strong>Serviços:</strong> ${a.servicos}</span>
-      <span class="direito-desc"><strong>Mensalidade:</strong> ${a.mensalidade}</span>
-      <span class="direito-desc"><strong>Contato:</strong> ${a.telefone} · <a href="https://${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a></span>
-    </div>
-  `).join('');
+  if (!lista.length) {
+    cont.innerHTML = itemUnicoDadosEmBreve('associacao');
+    return;
+  }
+
+  cont.innerHTML = lista.map(a => {
+    const nome = valorOuDadosEmBreve(a.nome);
+    const campos = [a.foco, a.acao, a.servicos, a.mensalidade, a.telefone, a.site].map(valorOuDadosEmBreve);
+    const semFonteSegura = nome === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+    if (semFonteSegura) return itemUnicoDadosEmBreve('associacao');
+    const contato = urlPublicaValida(a.site)
+      ? `${valorOuDadosEmBreve(a.telefone)} · <a href="${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a>`
+      : TEXTO_DADOS_EM_BREVE;
+    return `
+      <div class="direito-item associacao">
+        <span class="direito-nome">${nome}</span>
+        <span class="direito-desc"><strong>Foco:</strong> ${valorOuDadosEmBreve(a.foco)}</span>
+        <span class="direito-desc"><strong>Atuação atual:</strong> ${valorOuDadosEmBreve(a.acao)}</span>
+        <span class="direito-desc"><strong>Serviços:</strong> ${valorOuDadosEmBreve(a.servicos)}</span>
+        <span class="direito-desc"><strong>Mensalidade:</strong> ${valorOuDadosEmBreve(a.mensalidade)}</span>
+        <span class="direito-desc"><strong>Contato:</strong> ${contato}</span>
+      </div>
+    `;
+  }).join('');
 }
+
 
 
 

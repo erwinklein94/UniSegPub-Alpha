@@ -28,7 +28,7 @@ function carregarImagemProduto(img) {
 
   const original = img.dataset.imgBase || img.getAttribute('src') || '';
   const base = String(original).replace(/\.(webp|png|jpe?g)$/i, '');
-  const extensoes = ['webp', 'jpg', 'jpeg', 'png'];
+  const extensoes = ['webp'];
   let tentativaAtual = Number(img.dataset.tentativa || 0);
   const srcAtual = String(img.getAttribute('src') || '');
 

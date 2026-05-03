@@ -4,7 +4,7 @@
 */
 
 :root {
-  --usp-logoleao-bg: url("../img/logoleao.webp");
+  --usp-logoleao-bg: url("../img/LOGO/logoleao.webp");
 }
 
 body,
@@ -601,5 +601,1252 @@ header.site-header,
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Aba Poderes e Deveres
+   ============================================================ */
+.poderes-form-grid {
+  align-items: end;
+}
+
+.poderes-resumo-card,
+.poderes-fontes-card,
+.poderes-entendimentos-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 22px;
+  margin: 22px 0;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+}
+
+.poderes-resumo-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 22px;
+}
+
+.poderes-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+
+.poderes-resumo-card h3,
+.poderes-fontes-card h3,
+.poderes-entendimentos-card h3 {
+  margin: 0 0 10px;
+}
+
+.poderes-resumo-card p,
+.poderes-fontes-card p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.poderes-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.poderes-meta-grid > div {
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255,255,255,.06);
+}
+
+.poderes-meta-grid span {
+  display: block;
+  font-size: .78rem;
+  opacity: .75;
+  margin-bottom: 5px;
+}
+
+.poderes-meta-grid strong {
+  display: block;
+  line-height: 1.35;
+}
+
+.poderes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.poderes-bloco-largo {
+  grid-column: 1 / -1;
+}
+
+.poderes-bloco ul,
+.poderes-entendimento-item ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.poderes-bloco li {
+  margin: 8px 0;
+  line-height: 1.55;
+}
+
+.poderes-fontes-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.poderes-fonte-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,.06);
+}
+
+.poderes-fonte-item span {
+  line-height: 1.5;
+}
+
+.poderes-dados-breve {
+  font-weight: 800;
+  opacity: .9;
+}
+
+
+
+.poderes-destaques-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 22px;
+}
+
+.poderes-destaque-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,.055);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.poderes-destaque-card span {
+  display: inline-flex;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  opacity: .78;
+  margin-bottom: 8px;
+}
+
+.poderes-destaque-card p {
+  margin: 0;
+  line-height: 1.58;
+}
+
+.poderes-bloco .direito-nome {
+  font-size: 1.02rem;
+}
+
+@media (max-width: 980px) {
+  .poderes-destaques-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .poderes-resumo-card,
+  .poderes-grid,
+  .poderes-fontes-lista {
+    grid-template-columns: 1fr;
+  }
+  .poderes-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Revisão de lógica — seleção da instituição dentro de cada aba */
+.header-controls-grid,
+.header-state-flags,
+.sidebar-inst-panel {
+  display: none !important;
+}
+
+.consulta-instituicao-card {
+  margin: 18px 0 24px;
+  padding: 18px;
+  border: 1px solid rgba(230, 0, 0, .18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(230,0,0,.06), rgba(255,255,255,.92));
+  box-shadow: 0 14px 34px rgba(0,0,0,.08);
+}
+
+.consulta-instituicao-texto {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.consulta-instituicao-texto span {
+  color: var(--vermelho);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+}
+
+.consulta-instituicao-texto strong {
+  color: var(--text-main);
+  font-size: 1.08rem;
+}
+
+.consulta-instituicao-texto small {
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.consulta-instituicao-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, .7fr) minmax(260px, 1.3fr);
+  gap: 14px;
+  align-items: end;
+}
+
+.consulta-instituicao-grid .field {
+  margin: 0;
+}
+
+.consulta-vazio {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px dashed rgba(230, 0, 0, .32);
+  background: rgba(230, 0, 0, .05);
+  color: var(--text-main);
+}
+
+.consulta-vazio strong {
+  color: var(--vermelho);
+  font-size: 1.02rem;
+}
+
+.consulta-vazio span {
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .consulta-instituicao-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   Revisão do cabeçalho institucional — resumo mais útil e compacto
+   ============================================================ */
+.header-institution-card {
+  padding: clamp(16px, 2vw, 22px) !important;
+}
+
+.header-institution-main {
+  min-height: clamp(230px, 23vw, 292px) !important;
+  grid-template-columns: minmax(330px, 0.82fr) minmax(560px, 1.18fr) !important;
+  gap: clamp(14px, 1.8vw, 22px) !important;
+  align-items: stretch !important;
+}
+
+.header-current-identity {
+  min-height: clamp(230px, 23vw, 292px) !important;
+  align-items: center !important;
+  gap: clamp(14px, 1.7vw, 20px) !important;
+  padding: clamp(18px, 2.8vw, 34px) 4px !important;
+}
+
+.header-current-identity::before {
+  height: 46% !important;
+  bottom: 10px !important;
+}
+
+.current-flag-frame.institution-logo-frame,
+.current-flag-frame.brand-logo-frame {
+  width: clamp(132px, 12vw, 174px) !important;
+  height: clamp(132px, 12vw, 174px) !important;
+  min-width: clamp(132px, 12vw, 174px) !important;
+  min-height: clamp(132px, 12vw, 174px) !important;
+  border-radius: clamp(24px, 2.4vw, 32px) !important;
+}
+
+.current-flag-frame.institution-logo-frame img,
+.current-flag-frame.brand-logo-frame img {
+  border-radius: clamp(18px, 2vw, 26px) !important;
+}
+
+.header-current-copy strong {
+  font-size: clamp(32px, 4.3vw, 50px) !important;
+  line-height: .96 !important;
+}
+
+.header-current-copy p {
+  max-width: 440px !important;
+  font-size: clamp(14px, 1.45vw, 18px) !important;
+  line-height: 1.16 !important;
+}
+
+.header-current-copy small {
+  margin-top: 8px !important;
+}
+
+.header-facts-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: clamp(12px, 1.35vw, 16px) !important;
+}
+
+.header-facts-head {
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.header-facts-head span {
+  font-size: 10px !important;
+  letter-spacing: .14em !important;
+}
+
+.header-facts-head strong {
+  font-size: 10.5px !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  text-align: right !important;
+}
+
+.header-facts-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 9px !important;
+}
+
+.header-fact,
+.header-leadership-item {
+  min-height: 0 !important;
+  padding: 10px 11px !important;
+}
+
+.header-fact span,
+.header-leadership-item span {
+  min-height: 18px !important;
+  font-size: 9px !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+}
+
+.header-fact strong {
+  margin-top: 5px !important;
+  font-size: clamp(13px, 1.08vw, 15px) !important;
+  line-height: 1.16 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.header-leadership {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+  gap: 9px !important;
+  margin-top: 9px !important;
+}
+
+.header-leadership-item strong {
+  margin-top: 5px !important;
+  font-size: clamp(12px, 0.95vw, 14px) !important;
+  line-height: 1.22 !important;
+  overflow-wrap: anywhere !important;
+}
+
+body[data-inst="portal"] .header-current-copy strong {
+  font-size: clamp(30px, 3.8vw, 44px) !important;
+}
+
+@media (max-width: 1040px) {
+  .header-institution-main {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .header-current-identity {
+    min-height: 230px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: clamp(120px, 19vw, 156px) !important;
+    height: clamp(120px, 19vw, 156px) !important;
+    min-width: clamp(120px, 19vw, 156px) !important;
+    min-height: clamp(120px, 19vw, 156px) !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .header-current-identity {
+    min-height: 248px !important;
+    padding: 20px 0 !important;
+  }
+
+  .header-institution-card::before {
+    height: 250px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: clamp(118px, 34vw, 148px) !important;
+    height: clamp(118px, 34vw, 148px) !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .header-leadership {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-facts-head strong {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-current-identity {
+    min-height: 238px !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================
+   Ajuste mobile do cabeçalho institucional
+   Objetivo: evitar que o cabeçalho/resumo ocupe a tela inteira em celulares.
+   ============================================================ */
+@media (max-width: 820px) {
+  header.site-header {
+    padding: 8px 0 10px !important;
+    border-bottom-width: 3px !important;
+  }
+
+  .header-content.header-shell,
+  .header-shell {
+    gap: 8px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .header-topbar {
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .menu-btn {
+    padding: 6px !important;
+    gap: 5px !important;
+  }
+
+  .menu-btn span {
+    width: 22px !important;
+    height: 2px !important;
+  }
+
+  .theme-toggle-header {
+    min-height: 28px !important;
+    padding: 6px 8px !important;
+    font-size: 9px !important;
+    letter-spacing: .45px !important;
+  }
+
+  .header-brand-block h1,
+  .header-text h1 {
+    font-size: clamp(22px, 7vw, 30px) !important;
+    line-height: .98 !important;
+    letter-spacing: .55px !important;
+  }
+
+  .header-independent-note,
+  .header-disclaimer-note {
+    margin-top: 4px !important;
+    padding: 4px 7px !important;
+    font-size: 7.4px !important;
+    letter-spacing: .55px !important;
+    line-height: 1.15 !important;
+  }
+
+  .header-institution-card {
+    min-height: 0 !important;
+    padding: 9px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .header-institution-card::before {
+    height: 112px !important;
+    width: 100% !important;
+    bottom: auto !important;
+    opacity: .64 !important;
+    background-position: center !important;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.74) 64%, transparent 100%) !important;
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.74) 64%, transparent 100%) !important;
+  }
+
+  .header-institution-card::after {
+    width: 120px !important;
+    height: 120px !important;
+    top: -36px !important;
+    right: -36px !important;
+    opacity: .32 !important;
+  }
+
+  .header-institution-main {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 8px !important;
+    min-height: 0 !important;
+  }
+
+  .header-current-identity {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 86px !important;
+    gap: 9px !important;
+    padding: 8px 6px !important;
+    text-align: left !important;
+  }
+
+  .header-current-identity::before {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    border-radius: 14px !important;
+    background: linear-gradient(90deg, rgba(0,0,0,.56), rgba(0,0,0,.22), rgba(0,0,0,.04)) !important;
+    filter: none !important;
+    opacity: .72 !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    min-height: 54px !important;
+    max-width: 54px !important;
+    max-height: 54px !important;
+    padding: 4px !important;
+    border-radius: 16px !important;
+    flex: 0 0 54px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame img,
+  .current-flag-frame.brand-logo-frame img {
+    border-radius: 12px !important;
+    padding: 2px !important;
+  }
+
+  .header-current-copy {
+    width: auto !important;
+    max-width: calc(100% - 66px) !important;
+    display: grid !important;
+    justify-items: start !important;
+    text-align: left !important;
+    min-width: 0 !important;
+  }
+
+  .header-current-copy strong {
+    font-size: clamp(24px, 8vw, 34px) !important;
+    line-height: .96 !important;
+    letter-spacing: .55px !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header-current-copy p {
+    max-width: 100% !important;
+    margin-top: 3px !important;
+    font-size: 12px !important;
+    line-height: 1.08 !important;
+    text-align: left !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .header-current-copy small {
+    max-width: 100% !important;
+    margin-top: 5px !important;
+    padding: 4px 7px !important;
+    font-size: 8px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header-facts-panel {
+    width: 100% !important;
+    margin-top: 0 !important;
+    padding: 9px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  }
+
+  .header-facts-head {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .header-facts-head span {
+    font-size: 8px !important;
+    letter-spacing: .08em !important;
+    line-height: 1 !important;
+  }
+
+  .header-facts-head strong {
+    max-width: 54% !important;
+    padding: 3px 6px !important;
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .header-fact,
+  .header-leadership-item {
+    min-height: 52px !important;
+    padding: 7px 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .header-fact span,
+  .header-leadership-item span {
+    min-height: 0 !important;
+    font-size: 7.5px !important;
+    line-height: 1.05 !important;
+    letter-spacing: .055em !important;
+  }
+
+  .header-fact strong,
+  .header-leadership-item strong {
+    margin-top: 4px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .header-fact.is-empty-data,
+  .header-leadership-item.is-empty-data,
+  .header-facts-grid .header-fact:nth-child(n+5),
+  .header-leadership {
+    display: none !important;
+  }
+
+  .header-controls-grid {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-content.header-shell,
+  .header-shell {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .header-fact strong,
+  .header-leadership-item strong {
+    font-size: 10.5px !important;
+  }
+}
+
+
+/* ============================================================ */
+/* Brasões e história — aba institucional informativa            */
+/* ============================================================ */
+.brasoes-historia-resultado {
+  display: grid;
+  gap: 18px;
+}
+
+.brasoes-hero {
+  display: grid;
+  grid-template-columns: minmax(180px, 300px) 1fr;
+  align-items: center;
+  gap: 22px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  overflow: hidden;
+}
+
+.brasoes-imagem-wrap {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  border-radius: 22px;
+  background: radial-gradient(circle at center, rgba(255,255,255,.16), rgba(0,0,0,.16));
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 18px;
+}
+
+.brasoes-imagem {
+  display: block;
+  width: auto;
+  max-width: min(280px, 72vw);
+  height: auto;
+  max-height: min(320px, 48vh);
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.35));
+}
+
+.brasoes-hero-copy {
+  min-width: 0;
+}
+
+.brasoes-kicker,
+.brasoes-section-title span,
+.brasoes-resumo-item span {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.62);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.brasoes-hero-copy h3 {
+  margin: 8px 0 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.02;
+  color: #fff;
+}
+
+.brasoes-hero-copy p {
+  color: rgba(255,255,255,.78);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.brasoes-hero-copy small,
+.brasoes-observacao small {
+  color: rgba(255,255,255,.62);
+  line-height: 1.5;
+}
+
+.brasoes-resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.brasoes-resumo-item {
+  min-height: 98px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brasoes-resumo-item strong {
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 17px;
+  line-height: 1.22;
+}
+
+.brasoes-historia-card {
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.16);
+}
+
+.brasoes-section-title {
+  margin-bottom: 12px;
+}
+
+.brasoes-section-title h3 {
+  margin: 5px 0 0;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.brasoes-historia-card p,
+.brasoes-marcos li {
+  color: rgba(255,255,255,.78);
+  line-height: 1.65;
+  font-size: 15.5px;
+}
+
+.brasoes-marcos {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.brasoes-observacao {
+  border-left: 4px solid var(--vermelho);
+}
+
+.brasoes-observacao strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 860px) {
+  .brasoes-hero {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .brasoes-imagem-wrap {
+    min-height: auto;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .brasoes-imagem {
+    max-width: min(260px, 78vw);
+    max-height: min(280px, 42vh);
+  }
+
+  .brasoes-hero-copy h3 {
+    font-size: clamp(24px, 9vw, 34px);
+  }
+
+  .brasoes-resumo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .brasoes-resumo-item {
+    min-height: auto;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  .brasoes-resumo-item span {
+    font-size: 10px;
+    letter-spacing: .10em;
+  }
+
+  .brasoes-resumo-item strong {
+    font-size: 14.5px;
+  }
+
+  .brasoes-historia-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .brasoes-section-title h3 {
+    font-size: 21px;
+  }
+
+  .brasoes-historia-card p,
+  .brasoes-marcos li {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 460px) {
+  .brasoes-resumo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brasoes-imagem {
+    max-width: min(230px, 74vw);
+    max-height: 230px;
+  }
+
+  .brasoes-hero-copy p {
+    font-size: 15px;
+  }
+}
+
+
+/* ============================================================
+   Revisão Comparar Carreiras — seletor e tamanhos desktop/mobile
+   ============================================================ */
+#page-comparar {
+  max-width: min(1140px, 100%);
+  margin-top: clamp(18px, 3vw, 32px) !important;
+  margin-bottom: clamp(18px, 3vw, 32px) !important;
+}
+
+#page-comparar > .card {
+  padding: clamp(16px, 2.2vw, 24px) !important;
+}
+
+#page-comparar h2 {
+  margin-bottom: 10px !important;
+}
+
+#page-comparar .alerta {
+  padding: 12px 14px !important;
+  margin-bottom: 14px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-topo,
+.comparador-selector-rapido,
+.comparador-select-panel,
+.comparador-stat,
+.comparador-card,
+.comparador-vazio {
+  border-radius: 14px !important;
+}
+
+.comparador-topo {
+  padding: 13px 14px !important;
+  gap: 12px !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-topo-texto strong {
+  font-size: 15px !important;
+  margin-bottom: 2px !important;
+}
+
+.comparador-topo-texto span {
+  font-size: 12.5px !important;
+  line-height: 1.35 !important;
+}
+
+.comparador-acoes {
+  gap: 6px !important;
+}
+
+.comparador-acoes .btn-secondary,
+.comparador-add-btn {
+  min-height: 40px;
+  padding: 9px 11px !important;
+  font-size: 10.5px !important;
+}
+
+.comparador-selector-rapido.consulta-instituicao-card {
+  margin: 12px 0 14px !important;
+  padding: 14px !important;
+}
+
+.comparador-selector-rapido .consulta-instituicao-texto {
+  margin-bottom: 10px !important;
+}
+
+.comparador-select-duplo {
+  grid-template-columns: minmax(160px, .58fr) minmax(260px, 1.05fr) auto !important;
+  gap: 10px !important;
+}
+
+.comparador-select-duplo select {
+  min-height: 40px !important;
+}
+
+.comparador-add-btn {
+  align-self: end;
+  white-space: nowrap;
+}
+
+.comparador-selecao {
+  margin-bottom: 12px !important;
+}
+
+.comparador-select-panel {
+  padding: 12px !important;
+}
+
+.comparador-select-label {
+  margin-bottom: 6px !important;
+  font-size: 12px !important;
+}
+
+.comparador-toggle-lista {
+  padding: 10px 11px !important;
+  min-height: 40px !important;
+  font-size: 12px !important;
+}
+
+.comparador-check-list {
+  max-height: min(260px, 42vh) !important;
+  padding: 7px !important;
+}
+
+.comparador-check-option {
+  padding: 8px 9px !important;
+}
+
+.comparador-select-help,
+.comparador-selecionadas {
+  font-size: 11.5px !important;
+}
+
+.comparador-resumo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 9px !important;
+  margin: 12px 0 !important;
+}
+
+.comparador-stat {
+  padding: 11px 12px !important;
+}
+
+.comparador-stat span {
+  font-size: 9px !important;
+  margin-bottom: 3px !important;
+}
+
+.comparador-stat strong {
+  font-size: 16px !important;
+}
+
+.comparador-table-wrap {
+  border-radius: 14px !important;
+  margin-top: 10px !important;
+}
+
+.comparador-table {
+  min-width: 980px !important;
+}
+
+.comparador-table th,
+.comparador-table td {
+  padding: 9px 10px !important;
+  font-size: 11.5px !important;
+  line-height: 1.34 !important;
+}
+
+.comparador-table th {
+  font-size: 10px !important;
+}
+
+@media (min-width: 861px) {
+  #page-comparar .comparador-cards {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1020px) {
+  .comparador-topo {
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-acoes {
+    justify-content: flex-start !important;
+  }
+
+  .comparador-select-duplo {
+    grid-template-columns: 1fr 1fr auto !important;
+  }
+
+  .comparador-resumo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #page-comparar {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-top: 12px !important;
+  }
+
+  #page-comparar > .card {
+    padding: 13px !important;
+    border-radius: 18px !important;
+  }
+
+  #page-comparar h2 {
+    font-size: 22px !important;
+    line-height: 1.05 !important;
+  }
+
+  #page-comparar .alerta {
+    font-size: 12.5px !important;
+    padding: 10px 11px !important;
+  }
+
+  .comparador-topo,
+  .comparador-selector-rapido.consulta-instituicao-card,
+  .comparador-select-panel {
+    padding: 11px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .comparador-topo-texto strong,
+  .comparador-select-label {
+    font-size: 12.5px !important;
+  }
+
+  .comparador-topo-texto span,
+  .comparador-selector-rapido .consulta-instituicao-texto small,
+  .comparador-select-help,
+  .comparador-selecionadas {
+    font-size: 11.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .comparador-select-duplo {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .comparador-add-btn {
+    width: 100%;
+    min-height: 38px;
+  }
+
+  .comparador-acoes {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100%;
+  }
+
+  .comparador-acoes .btn-secondary {
+    width: 100%;
+    white-space: normal !important;
+    min-height: 38px;
+    padding: 8px 9px !important;
+  }
+
+  .comparador-acoes .btn-secondary[data-action="comparador-limpar"] {
+    grid-column: 1 / -1;
+  }
+
+  .comparador-toggle-lista {
+    font-size: 11px !important;
+    gap: 8px !important;
+  }
+
+  .comparador-toggle-lista small {
+    font-size: 9px !important;
+    padding: 3px 7px !important;
+  }
+
+  .comparador-check-list {
+    max-height: 190px !important;
+  }
+
+  .comparador-check-option strong {
+    font-size: 12px !important;
+  }
+
+  .comparador-check-option small {
+    font-size: 10px !important;
+  }
+
+  .comparador-resumo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .comparador-stat {
+    padding: 9px 10px !important;
+  }
+
+  .comparador-stat strong {
+    font-size: 14.5px !important;
+  }
+
+  #page-comparar .comparador-table-wrap {
+    display: none !important;
+  }
+
+  #page-comparar .comparador-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+  }
+
+  .comparador-card {
+    padding: 12px !important;
+  }
+
+  .comparador-card h3 {
+    font-size: 15px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .comparador-card p,
+  .comparador-card ul {
+    font-size: 12.3px !important;
+    line-height: 1.38 !important;
+    margin-top: 7px !important;
+  }
+
+  .comparador-card li {
+    margin-bottom: 3px !important;
+  }
+
+  .comparador-vazio {
+    padding: 12px !important;
+    font-size: 12.8px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .comparador-resumo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-acoes {
+    grid-template-columns: 1fr !important;
   }
 }

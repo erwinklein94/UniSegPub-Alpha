@@ -100,11 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   aplicarEstruturaEstadosFaltantesNoHtml();
 
-  // Popula cargos usados na aba Direitos e Vantagens.
-  popularCargos('pmesp');
+  // Monta os seletores internos das abas institucionais, sem escolher PMESP automaticamente.
+  if (typeof montarSeletoresConsultaInstituicao === 'function') montarSeletoresConsultaInstituicao();
 
   // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
   aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
   ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {

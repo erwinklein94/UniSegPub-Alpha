@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260501c">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502comparadorv1">
 
 </head>
 <body data-inst="portal">
@@ -64,7 +64,7 @@
         <div class="header-institution-main">
           <div class="header-current-identity">
             <div class="current-flag-frame brand-logo-frame" aria-label="Imagem do brasão selecionado">
-              <img id="header-active-flag" src="img/logoleao.webp" data-img-base="img/logoleao" alt="Logo Universo Segurança Pública" fetchpriority="high" decoding="async" width="96" height="96">
+              <img id="header-active-flag" src="img/LOGO/logoleao.webp" data-img-base="img/LOGO/logoleao" alt="Logo Universo Segurança Pública" fetchpriority="high" decoding="async" width="96" height="96">
             </div>
 
             <div class="header-current-copy">
@@ -83,19 +83,27 @@
 
             <div class="header-facts-grid">
               <div class="header-fact">
-                <span id="header-label-criacao">Instituições</span>
-                <strong id="header-resumo-criacao">108</strong>
+                <span id="header-label-natureza">Escopo</span>
+                <strong id="header-resumo-natureza">Portal informativo</strong>
               </div>
               <div class="header-fact">
-                <span id="header-label-ativa">Ativos estimados</span>
-                <strong id="header-resumo-ativa">≈ 588,7 mil+</strong>
+                <span id="header-label-uf">Abrangência</span>
+                <strong id="header-resumo-uf">Brasil</strong>
+              </div>
+              <div class="header-fact">
+                <span id="header-label-criacao">Instituições</span>
+                <strong id="header-resumo-criacao">111</strong>
+              </div>
+              <div class="header-fact">
+                <span id="header-label-ativa">Efetivo total estimado</span>
+                <strong id="header-resumo-ativa">≈ 1,2 milhão+</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-reserva">Reserva/inativos</span>
                 <strong id="header-resumo-reserva">≈ 563 mil+</strong>
               </div>
               <div class="header-fact">
-                <span id="header-label-total">Integrantes femininas</span>
+                <span id="header-label-total">Mulheres no efetivo</span>
                 <strong id="header-resumo-total">≈ 91,9 mil+</strong>
               </div>
               <div class="header-fact">
@@ -449,7 +457,7 @@
   <div class="sidebar-header">
     <div class="sidebar-brand" aria-label="Identidade da navegação">
       <strong>Universo Segurança Pública</strong>
-      <span>Navegação por instituição</span>
+      <span>Escolha o que consultar</span>
     </div>
     <button class="close-btn" aria-label="Fechar menu">✕</button>
   </div>
@@ -618,6 +626,16 @@
         <span class="sidebar-link-text">Direitos e Vantagens</span>
         <small>Benefícios e alertas</small>
       </a>
+      <a href="#poderes" id="menu-poderes" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">📜</span>
+        <span class="sidebar-link-text">Poderes e Deveres</span>
+        <small>Leis, limites e competências</small>
+      </a>
+      <a href="#brasoes" id="menu-brasoes" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🛡️</span>
+        <span class="sidebar-link-text">Brasões e história</span>
+        <small>Origem, brasão e dados</small>
+      </a>
       <a href="#concursos" id="menu-concursos" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">📋</span>
         <span class="sidebar-link-text">Concursos</span>
@@ -684,17 +702,17 @@
       <span>Itens úteis para a rotina operacional</span>
     </div>
     <a class="sidebar-product sidebar-product--featured" href="https://s.shopee.com.br/8V5RQXr16n" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Coban Tática Militar Reforçada 24 L">
-      <img decoding="async" src="img/mochilacoban.webp" data-hide-on-error="true" alt="Mochila Coban Tática Militar Reforçada 24 L" loading="lazy">
+      <img decoding="async" src="img/SHOPEE/mochilacoban.webp" data-hide-on-error="true" alt="Mochila Coban Tática Militar Reforçada 24 L" loading="lazy">
       <strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
       <p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário.</p>
       <span>Comprar</span>
     </a>
     <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
-      <img decoding="async" src="img/IMG_0868.webp" data-hide-on-error="true" alt="Produto parceiro selecionado" loading="lazy">
+      <img decoding="async" src="img/SHOPEE/IMG_0868.webp" data-hide-on-error="true" alt="Produto parceiro selecionado" loading="lazy">
       <span>Ver produto</span>
     </a>
     <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
-      <img decoding="async" src="img/IMG_0865.webp" data-hide-on-error="true" alt="Produto parceiro selecionado" loading="lazy">
+      <img decoding="async" src="img/SHOPEE/IMG_0865.webp" data-hide-on-error="true" alt="Produto parceiro selecionado" loading="lazy">
       <span>Ver produto</span>
     </a>
     <small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
@@ -716,7 +734,7 @@
       </div>
     </div>
     <p class="principal-subtitle">
-      Selecione sua instituição e acesse dados organizados sobre salários, benefícios, concursos, ações judiciais, associações e materiais úteis para profissionais da segurança pública.
+      Primeiro escolha a aba que quer consultar. Dentro das abas institucionais, selecione a esfera — federal, estadual ou municipal — e depois a instituição específica para carregar as informações corretas.
     </p>
     <p class="portal-disclaimer portal-disclaimer--hero" aria-label="Aviso institucional do portal">
       <strong>Importante:</strong> este é um portal informativo independente. Não é site oficial do governo, não representa órgãos públicos e não pertence às instituições mencionadas.
@@ -724,6 +742,8 @@
     <div class="principal-actions" aria-label="Ações principais da página inicial">
       <button class="principal-btn" type="button" data-page="remuneracao">Consultar Remuneração</button>
       <button class="principal-btn secundario" type="button" data-page="direitos">Ver Direitos</button>
+      <button class="principal-btn secundario" type="button" data-page="poderes">Ver Poderes e Deveres</button>
+      <button class="principal-btn secundario" type="button" data-page="brasoes">Brasões e história</button>
       <button class="principal-btn secundario" type="button" data-page="concursos">Ver Concursos</button>
     </div>
   </section>
@@ -744,7 +764,7 @@
       <span>UFs cobertas</span>
     </div>
     <div class="principal-stat">
-      <strong>108</strong>
+      <strong>111</strong>
       <span>Seções institucionais</span>
     </div>
     <div class="principal-stat">
@@ -761,21 +781,21 @@
   <section class="principal-como-usar" aria-labelledby="como-usar-titulo">
     <div class="principal-section-title">
       <h2 id="como-usar-titulo">Como usar o Universo Segurança Pública</h2>
-      <p>Comece pela instituição e vá direto para a consulta que resolve sua dúvida.</p>
+      <p>Comece pela dúvida que quer resolver. A escolha da instituição aparece dentro da própria aba de consulta.</p>
     </div>
 
     <div class="como-usar-grid">
       <div class="como-usar-step">
         <strong>1</strong>
-        <span>Escolha sua instituição no topo do site ou pelas bandeiras dos estados.</span>
+        <span>Clique na aba desejada: remuneração, direitos, poderes e deveres, brasões e história, concursos, ações ou associações.</span>
       </div>
       <div class="como-usar-step">
         <strong>2</strong>
-        <span>Consulte remuneração, direitos, concursos, ações judiciais ou entidades.</span>
+        <span>Dentro da aba, escolha se a instituição é federal, estadual ou municipal.</span>
       </div>
       <div class="como-usar-step">
         <strong>3</strong>
-        <span>Acesse fontes, produtos, materiais de estudo e parceiros quando quiser se aprofundar.</span>
+        <span>Na segunda caixa, selecione a instituição específica para carregar as informações, foto e cor correspondente no cabeçalho.</span>
       </div>
     </div>
   </section>
@@ -793,7 +813,7 @@
           <span class="principal-card-icon" aria-hidden="true">💰</span>
           <h3>Remuneração Tabelada</h3>
         </div>
-        <p>Consulte, de forma simples e gratuita, os valores brutos de remuneração por cargo da instituição selecionada.</p>
+        <p>Consulte, de forma simples e gratuita, os valores brutos de remuneração por cargo depois de escolher a instituição dentro da aba.</p>
         <span class="principal-tag">Ver tabela grátis</span>
       </article>
 
@@ -804,6 +824,24 @@
         </div>
         <p>Consulte vantagens, licenças, adicionais, aposentadoria, benefícios e observações importantes para a carreira.</p>
         <span class="principal-tag">Consultar direitos</span>
+      </article>
+
+      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir poderes e deveres" data-page="poderes">
+        <div class="principal-card-header">
+          <span class="principal-card-icon" aria-hidden="true">📜</span>
+          <h3>Poderes e Deveres</h3>
+        </div>
+        <p>Entenda deveres, abrangência de poder, limites legais, leis oficiais e entendimentos recentes de cada instituição.</p>
+        <span class="principal-tag">Ver legislação</span>
+      </article>
+
+      <article class="principal-card destaque" tabindex="0" role="button" aria-label="Abrir brasões e história" data-page="brasoes">
+        <div class="principal-card-header">
+          <span class="principal-card-icon" aria-hidden="true">🛡️</span>
+          <h3>Brasões e história</h3>
+        </div>
+        <p>Veja o brasão em destaque, dados institucionais, efetivo, presença feminina, criação, origem e marcos históricos da instituição escolhida.</p>
+        <span class="principal-tag">Ver história</span>
       </article>
 
       <article class="principal-card" tabindex="0" role="button" aria-label="Abrir concursos" data-page="concursos">
@@ -829,7 +867,7 @@
           <span class="principal-card-icon" aria-hidden="true">🛡️</span>
           <h3>Associações e Sindicatos</h3>
         </div>
-        <p>Consulte entidades representativas, sindicatos e associações de apoio relacionadas à instituição selecionada.</p>
+        <p>Consulte entidades representativas, sindicatos e associações de apoio depois de escolher a instituição dentro da aba.</p>
         <span class="principal-tag">Ver entidades</span>
       </article>
     </div>
@@ -891,9 +929,9 @@
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <main id="page-remuneracao" class="page-section" role="main">
   <div class="card">
-    <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
+    <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">—</span>)</h2>
     <div class="remuneracao-intro">
-      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, organizada por este portal independente a partir de fontes públicas e oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, uma coluna informativa sobre adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
+      Consulta simples e gratuita com valores brutos por cargo. Escolha a esfera e a instituição nesta aba para carregar a tabela correspondente, organizada por este portal independente a partir de fontes públicas e oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
     </div>
 
     <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
@@ -952,7 +990,7 @@
     <!-- BLOCO 06.1 — Formulário para análise de direitos -->
     <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
     <div class="direitos-intro">
-      Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+      Escolha a esfera e a instituição nesta aba. Depois preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
     </div>
 
     <div class="form-grid" style="margin-bottom: 0;">
@@ -1030,7 +1068,7 @@
   </aside>
 
   <!-- BLOCO 06.2 — Resultado da análise de direitos -->
-    <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
+    <h2>Parecer de Direitos (<span id="txt-inst-dir">—</span>)</h2>
     <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
       <strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
     </div>
@@ -1041,12 +1079,44 @@
   </div>
 </main>
 
+<!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
+<main id="page-poderes" class="page-section" role="main">
+  <div class="card">
+    <h2>Poderes e Deveres (<span id="txt-inst-poderes">—</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Esta aba reúne uma síntese prática e revisada sobre competências, deveres, limites, cautelas e fontes oficiais. Escolha a esfera e a instituição nesta aba para atualizar o conteúdo, a foto e a cor do cabeçalho.
+    </div>
+    <!-- Seletor de instituição inserido automaticamente pelo JavaScript nesta aba. -->
+<aside class="ad-slot ad-slot--inline" data-ad-area="poderes_antes_conteudo" aria-label="Espaço de anúncio: Poderes e Deveres antes do conteúdo">
+      <a class="ad-placeholder-link" href="#parceiros">
+        <span class="ad-label">Publicidade</span>
+        <strong>Anuncie aqui</strong>
+        <small>Espaço para advocacia, consultoria jurídica, entidades de classe, cursos e materiais de legislação aplicada à segurança pública.</small>
+      </a>
+    </aside>
+
+    <div id="poderes_resultado" class="poderes-resultado"></div>
+  </div>
+</main>
+
+<!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
+<main id="page-brasoes" class="page-section" role="main">
+  <div class="card">
+    <h2>Brasões e história (<span id="txt-inst-brasoes">—</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Escolha a esfera e a instituição nesta aba para visualizar o brasão em destaque, um resumo institucional mais completo e uma breve história com criação, origem, marcos históricos e dados de efetivo quando disponíveis.
+    </div>
+    <!-- Seletor de instituição inserido automaticamente pelo JavaScript nesta aba. -->
+    <div id="brasoes_historia_resultado" class="brasoes-historia-resultado"></div>
+  </div>
+</main>
+
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main id="page-concursos" class="page-section" role="main">
   <div class="card">
-    <h2>Informações de Concursos (<span id="txt-inst-concursos">PMESP</span>)</h2>
+    <h2>Informações de Concursos (<span id="txt-inst-concursos">—</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Abaixo estão dados informativos consolidados a partir de editais, leis e fontes públicas. Este portal não é banca organizadora, órgão oficial ou canal de inscrição; confirme sempre prazos e regras no edital e nos canais governamentais competentes.
+      Escolha a esfera e a instituição nesta aba para carregar dados informativos consolidados a partir de editais, leis e fontes públicas. Este portal não é banca organizadora, órgão oficial ou canal de inscrição; confirme sempre prazos e regras no edital e nos canais governamentais competentes.
     </div>
     <!-- BLOCO 07.0A — Espaço comercial contextual de concursos -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="concursos_antes_lista" aria-label="Espaço de anúncio: Concursos antes da lista">
@@ -1072,14 +1142,40 @@
     <div class="comparador-topo">
       <div class="comparador-topo-texto">
         <strong>Escolha as carreiras que deseja comparar</strong>
-        <span>O comparador usa as mesmas bases já cadastradas nas abas de Remuneração Tabelada e Concursos.</span>
+        <span>Use as caixas abaixo para adicionar instituições por esfera. Depois compare remuneração, benefícios, concursos e fontes oficiais lado a lado.</span>
       </div>
       <div class="comparador-acoes">
-        <button class="btn-secondary" type="button" data-action="comparador-estado-atual">Selecionar estado atual</button>
+        <button class="btn-secondary" type="button" data-action="comparador-estado-atual">Adicionar estado atual</button>
         <button class="btn-secondary" type="button" data-action="comparador-todas">Selecionar todas</button>
         <button class="btn-secondary" type="button" data-action="comparador-limpar">Limpar</button>
       </div>
     </div>
+
+    <section class="comparador-selector-rapido consulta-instituicao-card" aria-label="Adicionar instituição à comparação">
+      <div class="consulta-instituicao-texto">
+        <span>Adicionar à comparação</span>
+        <strong>Escolha por esfera e instituição</strong>
+        <small>Selecione Federal, Estadual ou Municipal; depois escolha a instituição que entrará no comparativo.</small>
+      </div>
+      <div class="consulta-instituicao-grid comparador-select-duplo">
+        <div class="field">
+          <label for="comparador-esfera">Tipo de instituição</label>
+          <select id="comparador-esfera" aria-label="Selecione se a instituição é federal, estadual ou municipal">
+            <option value="" selected>Escolha a esfera</option>
+            <option value="federal">Federal</option>
+            <option value="estadual">Estadual</option>
+            <option value="municipal">Municipal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="comparador-instituicao">Instituição</label>
+          <select id="comparador-instituicao" aria-label="Selecione a instituição para adicionar à comparação" disabled>
+            <option value="">Escolha primeiro a esfera</option>
+          </select>
+        </div>
+        <button class="btn-primary comparador-add-btn" type="button" data-action="comparador-adicionar-instituicao">Adicionar</button>
+      </div>
+    </section>
 
     <div class="comparador-selecao" aria-label="Seleção de instituições para comparação">
       <div class="comparador-select-panel">
@@ -1144,7 +1240,7 @@
     <aside class="ad-slot ad-slot--inline" data-ad-area="produtos_topo" aria-label="Produto em destaque: Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA">
       <a class="ad-placeholder-link ad-placeholder-link--product ad-product-banner" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA">
         <div class="produto-imagem ad-product-banner__media" aria-hidden="true">
-          <img decoding="async" src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+          <img decoding="async" src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
         </div>
         <div class="ad-product-banner__conteudo">
           <span class="ad-label">Produto em destaque</span>
@@ -1159,7 +1255,7 @@
     <div class="curso-grid" aria-label="Produtos físicos com link de compra">
       <a class="curso-card produto-card" href="https://s.shopee.com.br/8V5RQXr16n" target="_blank" rel="noopener noreferrer" aria-label="Abrir Mochila Coban Tática Militar Reforçada 24 L">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/mochilacoban.webp" data-img-base="img/mochilacoban" alt="Mochila Coban Tática Militar Reforçada 24 L" loading="lazy">
+          <img decoding="async" src="img/SHOPEE/mochilacoban.webp" data-img-base="img/SHOPEE/mochilacoban" alt="Mochila Coban Tática Militar Reforçada 24 L" loading="lazy">
         </div>
         <h3>Mochila Coban Tática Militar Reforçada 24 L</h3>
         <p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário. Uma opção prática para quem precisa transportar materiais com mais resistência e organização.</p>
@@ -1173,7 +1269,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Abrir barra fixa para porta">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Barra fixa para porta" loading="lazy">
+          <img decoding="async" src="img/SHOPEE/barrafixa01.webp" data-img-base="img/SHOPEE/barrafixa01" alt="Barra fixa para porta" loading="lazy">
         </div>
         <h3>Barra fixa para porta</h3>
         <p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
@@ -1187,7 +1283,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="noopener noreferrer" aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/botaacero.webp" data-img-base="img/botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy">
+          <img decoding="async" src="img/SHOPEE/botaacero.webp" data-img-base="img/SHOPEE/botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy">
         </div>
         <h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
         <p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
@@ -1201,7 +1297,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Abrir Power Rack Funcional">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+          <img decoding="async" src="img/SHOPEE/barrafixa02.webp" data-img-base="img/SHOPEE/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
         </div>
         <h3>Power Rack Funcional com paralelas</h3>
         <p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
@@ -1222,7 +1318,7 @@
     <div class="curso-grid curso-pmesp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-sargento-pmesp.webp" data-img-base="img/curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy">
+          <img decoding="async" src="img/HOTMART/curso-sargento-pmesp.webp" data-img-base="img/HOTMART/curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy">
         </div>
         <h3>Curso Preparatório - SARGENTO PMESP</h3>
         <p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
@@ -1237,7 +1333,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-pmesp-completo.webp" data-img-base="img/curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy">
+          <img decoding="async" src="img/HOTMART/curso-pmesp-completo.webp" data-img-base="img/HOTMART/curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy">
         </div>
         <h3>Curso Preparatório PMESP Completo</h3>
         <p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
@@ -1252,7 +1348,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-psicotecnico-carreiras-policiais.webp" data-img-base="img/curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy">
+          <img decoding="async" src="img/HOTMART/curso-psicotecnico-carreiras-policiais.webp" data-img-base="img/HOTMART/curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy">
         </div>
         <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
         <p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
@@ -1269,7 +1365,7 @@
     <div class="curso-grid curso-pcsp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-raciocinio-logico-pcsp.webp" data-img-base="img/curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy">
+          <img decoding="async" src="img/HOTMART/curso-raciocinio-logico-pcsp.webp" data-img-base="img/HOTMART/curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy">
         </div>
         <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
         <p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
@@ -1284,7 +1380,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso de Informática PCSP">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/curso-informatica-pcsp.webp" data-img-base="img/curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy">
+          <img decoding="async" src="img/HOTMART/curso-informatica-pcsp.webp" data-img-base="img/HOTMART/curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy">
         </div>
         <h3>PCSP - Curso de Informática - Edital Completo</h3>
         <p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
@@ -1306,7 +1402,7 @@
     <div class="curso-grid" aria-label="Livros e e-books com link de compra">
       <a class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/pacote-viva-sem-procrastinar.webp" data-img-base="img/pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy">
+          <img decoding="async" src="img/HOTMART/pacote-viva-sem-procrastinar.webp" data-img-base="img/HOTMART/pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy">
         </div>
         <h3>Pacote - Viva Sem Procrastinar</h3>
         <p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
@@ -1321,7 +1417,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/otimizando-cerebro-concursos.webp" data-img-base="img/otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy">
+          <img decoding="async" src="img/HOTMART/otimizando-cerebro-concursos.webp" data-img-base="img/HOTMART/otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy">
         </div>
         <h3>Otimizando o Cérebro para Concursos Públicos</h3>
         <p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
@@ -1336,7 +1432,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/alem-da-farda-codigo-travessia.webp" data-img-base="img/alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy">
+          <img decoding="async" src="img/HOTMART/alem-da-farda-codigo-travessia.webp" data-img-base="img/HOTMART/alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy">
         </div>
         <h3>Além da Farda: O Código da Travessia</h3>
         <p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
@@ -1351,7 +1447,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" target="_blank" rel="noopener noreferrer" aria-label="Abrir Método DMA">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/metodo-dma-procrastinacao.webp" data-img-base="img/metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy">
+          <img decoding="async" src="img/HOTMART/metodo-dma-procrastinacao.webp" data-img-base="img/HOTMART/metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy">
         </div>
         <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
         <p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
@@ -1366,7 +1462,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia">
         <div class="produto-imagem" aria-hidden="true">
-          <img decoding="async" src="img/logoleao.webp" data-img-base="img/logoleao" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy">
+          <img decoding="async" src="img/LOGO/logoleao.webp" data-img-base="img/LOGO/logoleao" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy">
         </div>
         <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
         <p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
@@ -1390,7 +1486,7 @@
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <main id="page-acoes" class="page-section" role="main">
   <div class="card">
-    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
+    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">—</span>)</h2>
     <div class="alerta legal" style="margin-top: 0; margin-bottom: 24px;">
       <strong>Aviso legal:</strong> conteúdo meramente informativo. As teses abaixo dependem de análise individual, documentos funcionais, holerites, data de ingresso, situação ativa/inativa e entendimento judicial atualizado. Em regra, pretensões contra a Fazenda Pública observam prescrição quinquenal, sem prejuízo de regras específicas. Consulte advogado, associação ou sindicato antes de tomar decisão.
     </div>
@@ -1410,9 +1506,9 @@
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <main id="page-associacoes" class="page-section" role="main">
   <div class="card">
-    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
+    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">—</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Entidades representativas e de apoio relacionadas à instituição selecionada. Listagem informativa e independente: consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
+      Escolha a esfera e a instituição nesta aba para consultar entidades representativas e de apoio relacionadas à carreira. Listagem informativa e independente: consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
     </div>
     <!-- BLOCO 10.0A — Espaço comercial contextual de associações -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="associacoes_antes_lista" aria-label="Espaço de anúncio: Associações antes da lista">
@@ -1511,7 +1607,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502comparadorv1" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>

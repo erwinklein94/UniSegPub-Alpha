@@ -3291,59 +3291,200 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
-  bmsp: 'img/bmsp.png',
-  bmrj: 'img/bmrj.png',
-  bmmg: 'img/bmmg.png',
-  pmesp: 'img/pmesp.webp',
-  pcsp: 'img/pcsp.webp',
-  pmerj: 'img/pmerj.webp',
-  pcerj: 'img/pcrj.webp',
-  pmmg: 'img/pmmg.webp',
-  pcmg: 'img/pcmg.webp',
-  pmba: 'img/pmba.webp',
-  pcba: 'img/pcba.webp',
-  pmpr: 'img/pmpr.webp',
-  pcpr: 'img/pcpr.webp',
-  pmrs: 'img/pmrs.webp',
-  pcrs: 'img/pcrs.webp',
-  pmsc: 'img/pmsc.webp',
-  pcsc: 'img/pcsc.webp',
-  pmes: 'img/pmes.webp',
-  pces: 'img/pces.webp',
-  pmgo: 'img/pmgo.webp',
-  pmms: 'img/pmms.webp',
-  pcms: 'img/pcms.webp',
-  pmmt: 'img/pmmt.webp',
-  pcmt: 'img/pcmt.webp',
-  ppsp: 'img/ppsp.webp',
-  pmac: 'img/pmac.webp',
-  pcac: 'img/pcac.webp',
-  ppac: 'img/ppac.webp',
-  pmal: 'img/pmal.webp',
-  pcal: 'img/pcal.webp',
-  ppal: 'img/ppal.webp',
-  pmam: 'img/pmam.webp',
-  pcam: 'img/pcam.webp',
-  ppam: 'img/ppam.webp',
-  pprj: 'img/pprj.webp',
-  ppmg: 'img/ppmg.webp',
-  ppba: 'img/ppba.webp',
-  pppr: 'img/pppr.webp',
-  pprs: 'img/pprs.jpeg',
-  ppes: 'img/ppes.webp',
-  ppms: 'img/ppms.webp',
-  ppmt: 'img/ppmt.webp',
-  pmma: 'img/pmma.webp',
-  pcma: 'img/pcma.webp',
-  ppma: 'img/ppma.webp',
-  pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp'
+  pmac: 'img/MILITAR/pmac.webp',
+  pmal: 'img/MILITAR/pmal.webp',
+  pmam: 'img/MILITAR/pmam.webp',
+  pmba: 'img/MILITAR/pmba.webp',
+  pmdf: 'img/MILITAR/pmdf.webp',
+  pmerj: 'img/MILITAR/pmerj.webp',
+  pmes: 'img/MILITAR/pmes.webp',
+  pmesp: 'img/MILITAR/pmesp.webp',
+  pmgo: 'img/MILITAR/pmgo.webp',
+  pmma: 'img/MILITAR/pmma.webp',
+  pmmg: 'img/MILITAR/pmmg.webp',
+  pmms: 'img/MILITAR/pmms.webp',
+  pmmt: 'img/MILITAR/pmmt.webp',
+  pmpr: 'img/MILITAR/pmpr.webp',
+  pmrs: 'img/MILITAR/pmrs.webp',
+  pmsc: 'img/MILITAR/pmsc.webp',
+  pmto: 'img/MILITAR/pmto.webp',
+  pcac: 'img/CIVIL/pcac.webp',
+  pcal: 'img/CIVIL/pcal.webp',
+  pcam: 'img/CIVIL/pcam.webp',
+  pcba: 'img/CIVIL/pcba.webp',
+  pcdf: 'img/CIVIL/pcdf.webp',
+  pcerj: 'img/CIVIL/pcrj.webp',
+  pces: 'img/CIVIL/pces.webp',
+  pcma: 'img/CIVIL/pcma.webp',
+  pcmg: 'img/CIVIL/pcmg.webp',
+  pcms: 'img/CIVIL/pcms.webp',
+  pcmt: 'img/CIVIL/pcmt.webp',
+  pcpr: 'img/CIVIL/pcpr.webp',
+  pcrs: 'img/CIVIL/pcrs.webp',
+  pcsc: 'img/CIVIL/pcsc.webp',
+  pcsp: 'img/CIVIL/pcsp.webp',
+  pcto: 'img/CIVIL/pcto.webp',
+  ppac: 'img/PENAL/ppac.webp',
+  ppal: 'img/PENAL/ppal.webp',
+  ppam: 'img/PENAL/ppam.webp',
+  ppap: 'img/PENAL/ppap.webp',
+  ppba: 'img/PENAL/ppba.webp',
+  ppce: 'img/PENAL/ppce.webp',
+  ppdf: 'img/PENAL/ppdf.webp',
+  ppes: 'img/PENAL/ppes.webp',
+  ppgo: 'img/PENAL/ppgo.webp',
+  ppma: 'img/PENAL/ppma.webp',
+  ppmg: 'img/PENAL/ppmg.webp',
+  ppms: 'img/PENAL/ppms.webp',
+  ppmt: 'img/PENAL/ppmt.webp',
+  pppa: 'img/PENAL/pppa.webp',
+  pppb: 'img/PENAL/pppb.webp',
+  pppe: 'img/PENAL/pppe.webp',
+  pppi: 'img/PENAL/pppi.webp',
+  pppr: 'img/PENAL/pppr.webp',
+  pprj: 'img/PENAL/pprj.webp',
+  pprn: 'img/PENAL/pprn.webp',
+  ppro: 'img/PENAL/ppro.webp',
+  pprr: 'img/PENAL/pprr.webp',
+  pprs: 'img/PENAL/pprs.webp',
+  ppsc: 'img/PENAL/ppsc.webp',
+  ppse: 'img/PENAL/ppse.webp',
+  ppsp: 'img/PENAL/ppsp.webp',
+  ppto: 'img/PENAL/ppto.webp',
+  bmac: 'img/BOMBEIRO/bmac.webp',
+  bmal: 'img/BOMBEIRO/bmal.webp',
+  bmam: 'img/BOMBEIRO/bmam.webp',
+  bmap: 'img/BOMBEIRO/bmap.webp',
+  bmba: 'img/BOMBEIRO/bmba.webp',
+  bmce: 'img/BOMBEIRO/bmce.webp',
+  bmdf: 'img/BOMBEIRO/bmdf.webp',
+  bmes: 'img/BOMBEIRO/bmes.webp',
+  bmgo: 'img/BOMBEIRO/bmgo.webp',
+  bmma: 'img/BOMBEIRO/bmma.webp',
+  bmmg: 'img/BOMBEIRO/bmmg.webp',
+  bmms: 'img/BOMBEIRO/bmms.webp',
+  bmmt: 'img/BOMBEIRO/bmmt.webp',
+  bmpa: 'img/BOMBEIRO/bmpa.webp',
+  bmpe: 'img/BOMBEIRO/bmpe.webp',
+  bmpi: 'img/BOMBEIRO/bmpi.webp',
+  bmpr: 'img/BOMBEIRO/bmpr.webp',
+  bmrj: 'img/BOMBEIRO/bmrj.webp',
+  bmrn: 'img/BOMBEIRO/bmrn.webp',
+  bmro: 'img/BOMBEIRO/bmro.webp',
+  bmrr: 'img/BOMBEIRO/bmrr.webp',
+  bmrs: 'img/BOMBEIRO/bmrs.webp',
+  bmsc: 'img/BOMBEIRO/bmsc.webp',
+  bmse: 'img/BOMBEIRO/bmse.webp',
+  bmsp: 'img/BOMBEIRO/bmsp.webp',
+  bmto: 'img/BOMBEIRO/bmto.webp',
+  pf: 'img/FEDERAL/pf.webp',
+  prf: 'img/FEDERAL/prf.webp'
 };
 
+/* Brasões/insígnias em versão leve.
+   O site agora usa somente WebP; arquivos PNG/JPEG/JPG originais foram removidos.
+   A busca automática também verifica as pastas organizadas por carreira para facilitar novas inclusões. */
+const EXTENSOES_BRASAO_SUPORTADAS = ['webp'];
 
-function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.webp') {
+const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
+  pmdf: [
+    'img/pmdf', 'img/PMDF', 'img/pm-df', 'img/PM-DF', 'img/pm_df', 'img/PM_DF',
+    'img/brasao-pmdf', 'img/brasao-PMDF', 'img/logo-pmdf', 'img/logo-PMDF',
+    'img/policia-militar-df', 'img/policia-militar-distrito-federal',
+    'img/policia-militar-do-distrito-federal'
+  ],
+  pcdf: [
+    'img/pcdf', 'img/PCDF', 'img/pc-df', 'img/PC-DF', 'img/pc_df', 'img/PC_DF',
+    'img/brasao-pcdf', 'img/brasao-PCDF', 'img/logo-pcdf', 'img/logo-PCDF',
+    'img/policia-civil-df', 'img/policia-civil-distrito-federal',
+    'img/policia-civil-do-distrito-federal'
+  ],
+  ppdf: [
+    'img/ppdf', 'img/PPDF', 'img/pp-df', 'img/PP-DF', 'img/pp_df', 'img/PP_DF',
+    'img/brasao-ppdf', 'img/brasao-PPDF', 'img/logo-ppdf', 'img/logo-PPDF',
+    'img/policia-penal-df', 'img/policia-penal-distrito-federal',
+    'img/policia-penal-do-distrito-federal', 'img/seape-df', 'img/SEAPE-DF'
+  ],
+  bmdf: [
+    'img/bmdf', 'img/BMDF', 'img/bm-df', 'img/BM-DF', 'img/bm_df', 'img/BM_DF',
+    'img/cbmdf', 'img/CBMDF', 'img/cbm-df', 'img/CBM-DF', 'img/cbm_df', 'img/CBM_DF',
+    'img/brasao-bmdf', 'img/brasao-BMDF', 'img/brasao-cbmdf', 'img/brasao-CBMDF',
+    'img/logo-bmdf', 'img/logo-BMDF', 'img/logo-cbmdf', 'img/logo-CBMDF',
+    'img/bombeiros-df', 'img/bombeiro-df', 'img/corpo-bombeiros-df',
+    'img/corpo-de-bombeiros-militar-df',
+    'img/corpo-de-bombeiros-militar-do-distrito-federal'
+  ],
+  pf: [
+    'img/pf', 'img/PF', 'img/dpf', 'img/DPF',
+    'img/brasao-pf', 'img/brasao-PF', 'img/brasao-dpf', 'img/brasao-DPF',
+    'img/logo-pf', 'img/logo-PF', 'img/logo-dpf', 'img/logo-DPF',
+    'img/policia-federal', 'img/Policia-Federal', 'img/POLICIA-FEDERAL',
+    'img/policiafederal', 'img/departamento-policia-federal',
+    'img/departamento-de-policia-federal'
+  ],
+  prf: [
+    'img/prf', 'img/PRF',
+    'img/brasao-prf', 'img/brasao-PRF', 'img/logo-prf', 'img/logo-PRF',
+    'img/policia-rodoviaria-federal', 'img/Policia-Rodoviaria-Federal',
+    'img/POLICIA-RODOVIARIA-FEDERAL', 'img/policiarodoviariafederal',
+    'img/policia-rodoviária-federal', 'img/Polícia-Rodoviária-Federal'
+  ]
+};
+
+function normalizarBaseImagemBrasao(base) {
+  return String(base || '')
+    .trim()
+    .replace(/^\/+/, '')
+    .replace(/^\.\//, '')
+    .replace(/\.(webp|png|jpe?g|svg)$/i, '');
+}
+
+function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
+  const candidatos = [];
+  const bases = [];
+  const instLimpa = String(inst || '').trim();
+  const instMinuscula = instLimpa.toLowerCase();
+  const instMaiuscula = instLimpa.toUpperCase();
+  const adicionarPastasOrganizadas = () => {
+    ['MILITAR', 'CIVIL', 'PENAL', 'BOMBEIRO', 'FEDERAL', 'LOGO'].forEach(pasta => {
+      adicionarBase(`img/${pasta}/${instMinuscula}`);
+      adicionarBase(`img/${pasta}/${instMaiuscula}`);
+    });
+    if (instMinuscula === 'pcerj') adicionarBase('img/CIVIL/pcrj');
+  };
+
+  const adicionar = valor => {
+    if (!valor) return;
+    const caminho = String(valor).trim().replace(/^\/+/, '').replace(/^\.\//, '');
+    if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
+  };
+
+  const adicionarBase = base => {
+    const baseLimpa = normalizarBaseImagemBrasao(base);
+    if (baseLimpa && !bases.includes(baseLimpa)) bases.push(baseLimpa);
+  };
+
+  adicionar(caminhoInicial);
+  adicionarBase(caminhoInicial || `img/${instMinuscula}`);
+  adicionarBase(`img/${instMinuscula}`);
+  adicionarBase(`img/${instMaiuscula}`);
+  adicionarPastasOrganizadas();
+
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[instMinuscula] || [];
+  aliases.forEach(adicionarBase);
+
+  bases.forEach(base => {
+    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${base}.${ext}`));
+  });
+
+  return candidatos;
+}
+
+
+
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/LOGO/logoleao.webp') {
   if (!elemento || !nomeVariavel) return;
-  const imagemOriginal = String(src || fallback || 'img/logoleao.webp');
+  const imagemOriginal = String(src || fallback || 'img/LOGO/logoleao.webp');
   const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
   elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
   return imagemOriginal;
@@ -3373,12 +3514,12 @@ function configurarLogoInicialHeader(img) {
   img.removeAttribute('srcset');
   img.removeAttribute('sizes');
   img.removeAttribute('data-fallback-aplicado');
-  img.dataset.imgBase = 'img/logoleao';
+  img.dataset.imgBase = 'img/LOGO/logoleao';
   img.dataset.retry = '';
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
+    const alternativas = ['img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -3388,7 +3529,7 @@ function configurarLogoInicialHeader(img) {
     this.onerror = null;
     this.style.display = 'none';
   };
-  img.src = 'img/logoleao.webp';
+  img.src = 'img/LOGO/logoleao.webp';
 }
 
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
@@ -3396,36 +3537,51 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   if (card) card.classList.remove('header-portal-home');
 
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
+  const candidatosImagem = montarCandidatosImagemInstituicao(inst, imagemInstituicao);
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
   // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
-  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.webp');
-  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.webp');
+  setHeaderHeroImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
 
   // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
+  img.removeAttribute('data-fallback-jpeg-aplicado');
   img.onerror = function () {
+    const indice = parseInt(this.dataset.fallbackIndex || '0', 10);
+    if (indice < candidatosImagem.length) {
+      this.dataset.fallbackIndex = String(indice + 1);
+      const proximaImagem = candidatosImagem[indice];
+      if (proximaImagem && proximaImagem !== this.getAttribute('src')) {
+        this.src = proximaImagem;
+        return;
+      }
+    }
+
     if (this.dataset.fallbackAplicado === 'bandeira') {
       this.onerror = null;
       return;
     }
+
     this.dataset.fallbackAplicado = 'bandeira';
     this.src = fallbackBandeira;
     this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
   };
 
-  if (imagemInstituicao) {
+  if (candidatosImagem.length) {
     img.dataset.fallbackAplicado = '';
-    img.src = imagemInstituicao;
+    img.dataset.fallbackIndex = '1';
+    img.src = candidatosImagem[0];
     img.alt = `Logo/brasão da ${altInstituicao}`;
   } else {
     img.dataset.fallbackAplicado = 'bandeira';
+    img.dataset.fallbackIndex = '0';
     img.onerror = null;
     img.src = fallbackBandeira;
     img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
@@ -5393,6 +5549,163 @@ function criarAssociacoesEstrutura(info, estadoNome) {
   ];
 }
 
+/* ============================================================ */
+/* === ESTRUTURA-BASE PARA INSTITUIÇÕES FEDERAIS =============== */
+/* ============================================================ */
+const INSTITUICOES_FEDERAIS_ESTRUTURA = [
+  { inst: 'pf', titulo: 'PF', desc: 'Polícia Federal', tipo: 'Polícia Federal', cor: '#1f4f7a' },
+  { inst: 'prf', titulo: 'PRF', desc: 'Polícia Rodoviária Federal', tipo: 'Polícia Rodoviária Federal', cor: '#1f5f8a' }
+];
+
+function criarResumoFederalEstrutura(item) {
+  return {
+    nome: item.desc,
+    sigla: item.titulo,
+    estado: 'Brasil',
+    estadoSigla: 'BR',
+    tipo: item.tipo,
+    criacao: 'A preencher',
+    ativa: 0,
+    ativaLabel: 'Efetivo ativo — preencher',
+    reserva: 0,
+    reservaLabel: 'Aposentados/inativos — preencher',
+    femininas: 0,
+    femininasLabel: 'Integrantes femininas — preencher',
+    populacao: 0,
+    populacaoTitulo: 'Abrangência nacional',
+    relacaoLabel: 'Relação por habitante/rodovia/atribuição — preencher',
+    relacaoTitulo: 'Relação institucional',
+    governador: 'Governo Federal / Ministério responsável — preencher',
+    comando: 'Direção-Geral atual — preencher',
+    fonte: 'Fontes oficiais federais — preencher',
+    atualizado: 'Estrutura criada para preenchimento'
+  };
+}
+
+function criarCargosPfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'delegado', `${sigla} — Delegado de Polícia Federal`, true),
+    criarCargoEstrutural(inst, 'perito', `${sigla} — Perito Criminal Federal`, true),
+    criarCargoEstrutural(inst, 'papiloscopista', `${sigla} — Papiloscopista Policial Federal`, false),
+    criarCargoEstrutural(inst, 'escrivao', `${sigla} — Escrivão de Polícia Federal`, false),
+    criarCargoEstrutural(inst, 'agente', `${sigla} — Agente de Polícia Federal`, false, true),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarCargosPrfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'classe_especial', `${sigla} — Policial Rodoviário Federal — Classe Especial`, false),
+    criarCargoEstrutural(inst, 'primeira_classe', `${sigla} — Policial Rodoviário Federal — 1ª Classe`, false),
+    criarCargoEstrutural(inst, 'segunda_classe', `${sigla} — Policial Rodoviário Federal — 2ª Classe`, false),
+    criarCargoEstrutural(inst, 'terceira_classe', `${sigla} — Policial Rodoviário Federal — 3ª Classe`, false, true),
+    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação Profissional`, false),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarConcursoFederalEstrutura(item) {
+  return {
+    edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
+    salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
+    vagas: 'Preencher com edital/autorização vigente.',
+    cotas: 'Preencher conforme legislação federal e edital.',
+    idade: 'Preencher requisitos de idade, CNH, aptidão física, investigação social e demais exigências conforme edital.',
+    escolaridade: 'Preencher escolaridade e requisitos do cargo conforme edital.',
+    banca: 'A definir/preencher conforme edital.',
+    inscritos: 'Preencher quando houver dado oficial.',
+    materias: 'Preencher disciplinas conforme edital do cargo.',
+    etapas: 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação profissional e demais etapas do edital.',
+    cfsd: 'Curso de formação profissional — preencher conforme edital e academia responsável.',
+    estagio: 'Estágio probatório e desenvolvimento na carreira — preencher conforme legislação federal.',
+    validade: 'Preencher conforme edital e atos de homologação/prorrogação.',
+    previsao: 'Acompanhar Diário Oficial da União, órgão oficial e banca. Não afirmar concurso aberto sem publicação oficial.',
+    site: '#'
+  };
+}
+
+function criarAcoesFederalEstrutura(item) {
+  return [
+    { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Aposentadoria policial e previdência`, status: 'Análise individual', ano: 'Regra federal a preencher', tipo: 'individual', desc: 'Espaço para regras previdenciárias, transições, paridade/integralidade quando aplicável, abono de permanência e regras próprias da carreira policial federal.', base: 'Data de ingresso, tempo de contribuição, cargo/carreira, sexo, idade, regime previdenciário e norma federal.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' }
+  ];
+}
+
+function criarAssociacoesFederalEstrutura(item) {
+  return [
+    { nome: `Associação/Sindicato — ${item.titulo}`, foco: `Brasil — ${item.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade nacional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
+    { nome: `Entidade representativa federal — ${item.titulo}`, foco: `Profissionais ativos, aposentados e pensionistas vinculados à ${item.desc}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe nacionais/regionais existentes.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
+  ];
+}
+
+function aplicarEstruturaFederaisDados() {
+  HEADER_ESTADOS.br = {
+    nome: 'Brasil',
+    sigla: 'BR',
+    pc: 'pf',
+    pp: 'prf',
+    pf: 'pf',
+    prf: 'prf',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
+    HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
+    HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
+    REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' };
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+      titulo: item.titulo,
+      desc: item.desc,
+      cor: item.cor,
+      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
+    };
+    CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
+    ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
+    ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
+    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) {
+      CARGOS_ESTRUTURA_GENERICAS[item.inst] = item.inst === 'pf'
+        ? criarCargosPfEstrutura(item.inst, item.titulo)
+        : criarCargosPrfEstrutura(item.inst, item.titulo);
+    }
+  });
+}
+
+function inserirOptionFederalNoSelect(select, item) {
+  if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
+  let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === 'Federais');
+  if (!grupo) {
+    grupo = document.createElement('optgroup');
+    grupo.label = 'Federais';
+    select.appendChild(grupo);
+  }
+  grupo.appendChild(criarOptionInstituicao(item.inst, `${item.titulo} - ${item.desc}`));
+}
+
+function aplicarEstruturaFederaisNoHtml() {
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    inserirOptionFederalNoSelect(document.getElementById('instituicao_header'), item);
+    inserirOptionFederalNoSelect(document.getElementById('instituicao'), item);
+  });
+
+  const flags = document.querySelector('.header-state-flags');
+  if (flags && !flags.querySelector('[data-estado="br"]')) {
+    const btn = document.createElement('button');
+    btn.className = 'state-flag';
+    btn.type = 'button';
+    btn.dataset.estado = 'br';
+    btn.title = 'Brasil / Instituições federais';
+    btn.setAttribute('aria-label', 'Selecionar instituições federais');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.onclick = () => selecionarEstado('br');
+    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="Bandeira do Brasil"><span>BR</span>`;
+    flags.appendChild(btn);
+  }
+}
+
 function aplicarEstruturaEstadosFaltantesDados() {
   ESTADOS_ESTRUTURA_FALTANTES.forEach(estado => {
     if (!HEADER_ESTADOS[estado.estado]) {
@@ -5556,16 +5869,24 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
-  setHeaderHeroImage('img/logoleao.webp');
-  setSiteHeaderBackgroundImage('img/logoleao.webp');
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  setHeaderHeroImage('img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage('img/LOGO/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.add('header-portal-home');
 
   const resumoPortal = calcularResumoPortalHeader();
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (!el) return;
+    const textoFinal = valor;
+    el.textContent = textoFinal;
+    const cardResumo = el.closest('.header-fact, .header-leadership-item');
+    if (cardResumo) {
+      const textoResumoNormalizado = String(textoFinal || '').trim().toLowerCase();
+      const vazio = !textoResumoNormalizado || textoResumoNormalizado === 'dados em breve' || textoResumoNormalizado === 'não informado' || textoResumoNormalizado === 'nao informado';
+      cardResumo.classList.toggle('is-empty-data', vazio);
+    }
   };
 
   const flagAtual = document.getElementById('header-active-flag');
@@ -5638,7 +5959,15 @@ function atualizarHeaderResumo(inst) {
 
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (!el) return;
+    const textoFinal = valor;
+    el.textContent = textoFinal;
+    const cardResumo = el.closest('.header-fact, .header-leadership-item');
+    if (cardResumo) {
+      const textoResumoNormalizado = String(textoFinal || '').trim().toLowerCase();
+      const vazio = !textoResumoNormalizado || textoResumoNormalizado === 'dados em breve' || textoResumoNormalizado === 'não informado' || textoResumoNormalizado === 'nao informado';
+      cardResumo.classList.toggle('is-empty-data', vazio);
+    }
   };
 
   const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
@@ -5714,6 +6043,16 @@ function atualizarHeaderInstitucional(inst) {
 
   const ppSigla = document.getElementById('header-pp-sigla');
   if (ppSigla) ppSigla.textContent = ppInfo ? ppInfo.titulo : 'PP';
+
+  const ramoFederalAtivo = estadoAtivo === 'br';
+  const setBranchSmall = (id, texto) => {
+    const small = document.querySelector(`#${id} small`);
+    if (small) small.textContent = texto;
+  };
+  setBranchSmall('header-branch-pm', ramoFederalAtivo ? '—' : 'Militar');
+  setBranchSmall('header-branch-bm', ramoFederalAtivo ? '—' : 'Bombeiros');
+  setBranchSmall('header-branch-pc', ramoFederalAtivo ? 'Federal' : 'Civil');
+  setBranchSmall('header-branch-pp', ramoFederalAtivo ? 'Rodoviária' : 'Penal');
 
   const btnPm = document.getElementById('header-branch-pm');
   const btnPc = document.getElementById('header-branch-pc');
@@ -6798,7 +7137,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>

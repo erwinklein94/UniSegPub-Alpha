@@ -1,5 +1,4 @@
-
-/* === js/data/parametros-cargos.js === */
+/* ===== js/data/parametros-cargos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -827,9 +826,7 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
-
-
-/* === js/data/policia-penal.js === */
+/* ===== js/data/policia-penal.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1616,8 +1613,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 
-
-/* === js/data/bases-conteudo.js === */
+/* ===== js/data/bases-conteudo.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2325,8 +2321,7 @@ let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 
-
-/* === js/ui/navegacao-ui.js === */
+/* ===== js/ui/navegacao-ui.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2402,6 +2397,7 @@ function abrirPaginaInicial() {
   // Volta ao mesmo estado visual da primeira entrada no portal:
   // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
   aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
   switchPage('principal');
   try {
     if (window.location.hash !== '#principal') window.history.replaceState(null, '', '#principal');
@@ -2424,10 +2420,17 @@ function switchPage(page) {
   // Fecha a sidebar automaticamente após escolher uma aba, liberando a área principal da página.
   closeMenu();
 
+  // As páginas institucionais agora exigem escolha dentro da própria aba.
+  if (typeof prepararPaginaComSelecaoInstituicao === 'function' && prepararPaginaComSelecaoInstituicao(page)) {
+    return;
+  }
+
   // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
+  else if (page === 'poderes') inicializarPoderesDeveres();
+  else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
@@ -2460,6 +2463,8 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
+    poderes: 'Poderes e Deveres',
+    brasoes: 'Brasões e história',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
@@ -2582,8 +2587,7 @@ function popularCargos(inst) {
 
 /* ============================================================ */
 
-
-/* === js/services/remuneracao.js === */
+/* ===== js/services/remuneracao.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2804,7 +2808,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
       : 'Referência de remuneração do último concurso/edital PMMS; confirmar tabela vigente antes de decisão financeira.';
     benefDesc = 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital/triagem';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital/triagem';
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;
@@ -2813,7 +2817,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
       : 'Remuneração inicial divulgada no Edital SAD/SEJUSP/PCMS/APJ/2025 para jornada de 40h.';
     benefDesc = 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital APJ/2025';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital APJ/2025';
   } else if (inst === 'pmerj') {
     let gret = '150%';
     let ghp = '110%';
@@ -2999,28 +3003,28 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     criterio = cargo.criterio || 'Tabela salarial militar de Mato Grosso do Sul por posto/graduação e nível; confirmar DOE/MS, edital ou contracheque para rubricas individuais.';
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 05/2025');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 05/2025');
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;
     criterio = cargo.criterio || 'Tabela legal/edital da Polícia Civil de Mato Grosso do Sul; conferir DOE/MS, edital vigente e contracheque para a situação individual.';
     benefDesc = cargo.benefDesc || 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Fonte oficial');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Fonte oficial');
   } else if (inst === 'pmmt') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = cargo.criterio || 'Referência de edital/portal oficial da PMMT; postos sem valor confirmado ficam como "a confirmar".';
+    criterio = cargo.criterio || 'Referência de edital/portal oficial da PMMT; postos sem valor confirmado ficam como "Dados em breve".';
     benefDesc = cargo.benefDesc || 'Adicionais, indenizações, etapas, auxílio, escala, fardamento e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmmt';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Edital/portal oficial');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Edital/portal oficial');
   } else if (inst === 'pcmt') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = cargo.criterio || 'Tabela salarial do Portal do Servidor/SEPLAG-MT usada para referências cadastradas da PCMT; cargos sem tabela específica confirmada ficam como "a confirmar".';
+    criterio = cargo.criterio || 'Tabela salarial do Portal do Servidor/SEPLAG-MT usada para referências cadastradas da PCMT; cargos sem tabela específica confirmada ficam como "Dados em breve".';
     benefDesc = cargo.benefDesc || 'Adicionais, plantões, indenizações, verbas de escala e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcmt';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 2025');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 2025');
   } else if (inst === 'pmerj') {
     const gret = padrao * Number(cargo.gretPct || 0);
     const ghp = padrao * Number(cargo.ghpPct || 0);
@@ -3148,9 +3152,13 @@ function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
 }
 
 function carregarRemuneracaoTabelada() {
-  const inst = normalizarInstituicao(currInst);
   const tbody = document.getElementById('lista-remuneracao');
   if (!tbody) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('remuneracao');
+    return;
+  }
+  const inst = normalizarInstituicao(currInst);
 
   const linhas = gerarRemuneracaoTabelada(inst);
 
@@ -3167,8 +3175,8 @@ function carregarRemuneracaoTabelada() {
   const elMenor = document.getElementById('remu-menor-total');
   const elMaior = document.getElementById('remu-maior-total');
   if (elTotal) elTotal.textContent = String(linhas.length);
-  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'A confirmar';
-  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'A confirmar';
+  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'Dados em breve';
+  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'Dados em breve';
 
   tbody.innerHTML = linhas.map(l => {
     const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
@@ -3178,7 +3186,7 @@ function carregarRemuneracaoTabelada() {
           <strong>${escapeHtml(l.cargo)}</strong>
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
-        <td class="valor">${l.valorPendente ? 'A confirmar' : fmt(l.remuneracao)}</td>
+        <td class="valor">${l.valorPendente ? 'Dados em breve' : fmt(l.remuneracao)}</td>
         <td class="adicionais">${formatarAdicionaisRemuneracaoHtml(inst, l)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
@@ -3193,8 +3201,7 @@ function carregarRemuneracaoTabelada() {
 
 /* ============================================================ */
 
-
-/* === js/ui/header-estados.js === */
+/* ===== js/ui/header-estados.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3329,50 +3336,200 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
-  bmsp: 'img/bmsp.png',
-  bmrj: 'img/bmrj.png',
-  bmmg: 'img/bmmg.png',
-  pmesp: 'img/pmesp.webp',
-  pcsp: 'img/pcsp.webp',
-  pmerj: 'img/pmerj.webp',
-  pcerj: 'img/pcrj.webp',
-  pmmg: 'img/pmmg.webp',
-  pcmg: 'img/pcmg.webp',
-  pmba: 'img/pmba.webp',
-  pcba: 'img/pcba.webp',
-  pmpr: 'img/pmpr.webp',
-  pcpr: 'img/pcpr.webp',
-  pmrs: 'img/pmrs.webp',
-  pcrs: 'img/pcrs.webp',
-  pmsc: 'img/pmsc.webp',
-  pcsc: 'img/pcsc.webp',
-  pmes: 'img/pmes.webp',
-  pces: 'img/pces.webp',
-  pmgo: 'img/pmgo.webp',
-  pmms: 'img/pmms.webp',
-  pcms: 'img/pcms.webp',
-  pmmt: 'img/pmmt.webp',
-  pcmt: 'img/pcmt.webp',
-  ppsp: 'img/ppsp.webp',
-  pprj: 'img/pprj.webp',
-  ppmg: 'img/ppmg.webp',
-  ppba: 'img/ppba.webp',
-  pppr: 'img/pppr.webp',
-  pprs: 'img/pprs.webp',
-  ppes: 'img/ppes.webp',
-  ppms: 'img/ppms.webp',
-  ppmt: 'img/ppmt.webp',
-  pmma: 'img/pmma.webp',
-  pcma: 'img/pcma.webp',
-  ppma: 'img/ppma.webp',
-  pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp'
+  pmac: 'img/MILITAR/pmac.webp',
+  pmal: 'img/MILITAR/pmal.webp',
+  pmam: 'img/MILITAR/pmam.webp',
+  pmba: 'img/MILITAR/pmba.webp',
+  pmdf: 'img/MILITAR/pmdf.webp',
+  pmerj: 'img/MILITAR/pmerj.webp',
+  pmes: 'img/MILITAR/pmes.webp',
+  pmesp: 'img/MILITAR/pmesp.webp',
+  pmgo: 'img/MILITAR/pmgo.webp',
+  pmma: 'img/MILITAR/pmma.webp',
+  pmmg: 'img/MILITAR/pmmg.webp',
+  pmms: 'img/MILITAR/pmms.webp',
+  pmmt: 'img/MILITAR/pmmt.webp',
+  pmpr: 'img/MILITAR/pmpr.webp',
+  pmrs: 'img/MILITAR/pmrs.webp',
+  pmsc: 'img/MILITAR/pmsc.webp',
+  pmto: 'img/MILITAR/pmto.webp',
+  pcac: 'img/CIVIL/pcac.webp',
+  pcal: 'img/CIVIL/pcal.webp',
+  pcam: 'img/CIVIL/pcam.webp',
+  pcba: 'img/CIVIL/pcba.webp',
+  pcdf: 'img/CIVIL/pcdf.webp',
+  pcerj: 'img/CIVIL/pcrj.webp',
+  pces: 'img/CIVIL/pces.webp',
+  pcma: 'img/CIVIL/pcma.webp',
+  pcmg: 'img/CIVIL/pcmg.webp',
+  pcms: 'img/CIVIL/pcms.webp',
+  pcmt: 'img/CIVIL/pcmt.webp',
+  pcpr: 'img/CIVIL/pcpr.webp',
+  pcrs: 'img/CIVIL/pcrs.webp',
+  pcsc: 'img/CIVIL/pcsc.webp',
+  pcsp: 'img/CIVIL/pcsp.webp',
+  pcto: 'img/CIVIL/pcto.webp',
+  ppac: 'img/PENAL/ppac.webp',
+  ppal: 'img/PENAL/ppal.webp',
+  ppam: 'img/PENAL/ppam.webp',
+  ppap: 'img/PENAL/ppap.webp',
+  ppba: 'img/PENAL/ppba.webp',
+  ppce: 'img/PENAL/ppce.webp',
+  ppdf: 'img/PENAL/ppdf.webp',
+  ppes: 'img/PENAL/ppes.webp',
+  ppgo: 'img/PENAL/ppgo.webp',
+  ppma: 'img/PENAL/ppma.webp',
+  ppmg: 'img/PENAL/ppmg.webp',
+  ppms: 'img/PENAL/ppms.webp',
+  ppmt: 'img/PENAL/ppmt.webp',
+  pppa: 'img/PENAL/pppa.webp',
+  pppb: 'img/PENAL/pppb.webp',
+  pppe: 'img/PENAL/pppe.webp',
+  pppi: 'img/PENAL/pppi.webp',
+  pppr: 'img/PENAL/pppr.webp',
+  pprj: 'img/PENAL/pprj.webp',
+  pprn: 'img/PENAL/pprn.webp',
+  ppro: 'img/PENAL/ppro.webp',
+  pprr: 'img/PENAL/pprr.webp',
+  pprs: 'img/PENAL/pprs.webp',
+  ppsc: 'img/PENAL/ppsc.webp',
+  ppse: 'img/PENAL/ppse.webp',
+  ppsp: 'img/PENAL/ppsp.webp',
+  ppto: 'img/PENAL/ppto.webp',
+  bmac: 'img/BOMBEIRO/bmac.webp',
+  bmal: 'img/BOMBEIRO/bmal.webp',
+  bmam: 'img/BOMBEIRO/bmam.webp',
+  bmap: 'img/BOMBEIRO/bmap.webp',
+  bmba: 'img/BOMBEIRO/bmba.webp',
+  bmce: 'img/BOMBEIRO/bmce.webp',
+  bmdf: 'img/BOMBEIRO/bmdf.webp',
+  bmes: 'img/BOMBEIRO/bmes.webp',
+  bmgo: 'img/BOMBEIRO/bmgo.webp',
+  bmma: 'img/BOMBEIRO/bmma.webp',
+  bmmg: 'img/BOMBEIRO/bmmg.webp',
+  bmms: 'img/BOMBEIRO/bmms.webp',
+  bmmt: 'img/BOMBEIRO/bmmt.webp',
+  bmpa: 'img/BOMBEIRO/bmpa.webp',
+  bmpe: 'img/BOMBEIRO/bmpe.webp',
+  bmpi: 'img/BOMBEIRO/bmpi.webp',
+  bmpr: 'img/BOMBEIRO/bmpr.webp',
+  bmrj: 'img/BOMBEIRO/bmrj.webp',
+  bmrn: 'img/BOMBEIRO/bmrn.webp',
+  bmro: 'img/BOMBEIRO/bmro.webp',
+  bmrr: 'img/BOMBEIRO/bmrr.webp',
+  bmrs: 'img/BOMBEIRO/bmrs.webp',
+  bmsc: 'img/BOMBEIRO/bmsc.webp',
+  bmse: 'img/BOMBEIRO/bmse.webp',
+  bmsp: 'img/BOMBEIRO/bmsp.webp',
+  bmto: 'img/BOMBEIRO/bmto.webp',
+  pf: 'img/FEDERAL/pf.webp',
+  prf: 'img/FEDERAL/prf.webp'
 };
 
+/* Brasões/insígnias em versão leve.
+   O site agora usa somente WebP; arquivos PNG/JPEG/JPG originais foram removidos.
+   A busca automática também verifica as pastas organizadas por carreira para facilitar novas inclusões. */
+const EXTENSOES_BRASAO_SUPORTADAS = ['webp'];
 
-function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.webp') {
+const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
+  pmdf: [
+    'img/pmdf', 'img/PMDF', 'img/pm-df', 'img/PM-DF', 'img/pm_df', 'img/PM_DF',
+    'img/brasao-pmdf', 'img/brasao-PMDF', 'img/logo-pmdf', 'img/logo-PMDF',
+    'img/policia-militar-df', 'img/policia-militar-distrito-federal',
+    'img/policia-militar-do-distrito-federal'
+  ],
+  pcdf: [
+    'img/pcdf', 'img/PCDF', 'img/pc-df', 'img/PC-DF', 'img/pc_df', 'img/PC_DF',
+    'img/brasao-pcdf', 'img/brasao-PCDF', 'img/logo-pcdf', 'img/logo-PCDF',
+    'img/policia-civil-df', 'img/policia-civil-distrito-federal',
+    'img/policia-civil-do-distrito-federal'
+  ],
+  ppdf: [
+    'img/ppdf', 'img/PPDF', 'img/pp-df', 'img/PP-DF', 'img/pp_df', 'img/PP_DF',
+    'img/brasao-ppdf', 'img/brasao-PPDF', 'img/logo-ppdf', 'img/logo-PPDF',
+    'img/policia-penal-df', 'img/policia-penal-distrito-federal',
+    'img/policia-penal-do-distrito-federal', 'img/seape-df', 'img/SEAPE-DF'
+  ],
+  bmdf: [
+    'img/bmdf', 'img/BMDF', 'img/bm-df', 'img/BM-DF', 'img/bm_df', 'img/BM_DF',
+    'img/cbmdf', 'img/CBMDF', 'img/cbm-df', 'img/CBM-DF', 'img/cbm_df', 'img/CBM_DF',
+    'img/brasao-bmdf', 'img/brasao-BMDF', 'img/brasao-cbmdf', 'img/brasao-CBMDF',
+    'img/logo-bmdf', 'img/logo-BMDF', 'img/logo-cbmdf', 'img/logo-CBMDF',
+    'img/bombeiros-df', 'img/bombeiro-df', 'img/corpo-bombeiros-df',
+    'img/corpo-de-bombeiros-militar-df',
+    'img/corpo-de-bombeiros-militar-do-distrito-federal'
+  ],
+  pf: [
+    'img/pf', 'img/PF', 'img/dpf', 'img/DPF',
+    'img/brasao-pf', 'img/brasao-PF', 'img/brasao-dpf', 'img/brasao-DPF',
+    'img/logo-pf', 'img/logo-PF', 'img/logo-dpf', 'img/logo-DPF',
+    'img/policia-federal', 'img/Policia-Federal', 'img/POLICIA-FEDERAL',
+    'img/policiafederal', 'img/departamento-policia-federal',
+    'img/departamento-de-policia-federal'
+  ],
+  prf: [
+    'img/prf', 'img/PRF',
+    'img/brasao-prf', 'img/brasao-PRF', 'img/logo-prf', 'img/logo-PRF',
+    'img/policia-rodoviaria-federal', 'img/Policia-Rodoviaria-Federal',
+    'img/POLICIA-RODOVIARIA-FEDERAL', 'img/policiarodoviariafederal',
+    'img/policia-rodoviária-federal', 'img/Polícia-Rodoviária-Federal'
+  ]
+};
+
+function normalizarBaseImagemBrasao(base) {
+  return String(base || '')
+    .trim()
+    .replace(/^\/+/, '')
+    .replace(/^\.\//, '')
+    .replace(/\.(webp|png|jpe?g|svg)$/i, '');
+}
+
+function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
+  const candidatos = [];
+  const bases = [];
+  const instLimpa = String(inst || '').trim();
+  const instMinuscula = instLimpa.toLowerCase();
+  const instMaiuscula = instLimpa.toUpperCase();
+  const adicionarPastasOrganizadas = () => {
+    ['MILITAR', 'CIVIL', 'PENAL', 'BOMBEIRO', 'FEDERAL', 'LOGO'].forEach(pasta => {
+      adicionarBase(`img/${pasta}/${instMinuscula}`);
+      adicionarBase(`img/${pasta}/${instMaiuscula}`);
+    });
+    if (instMinuscula === 'pcerj') adicionarBase('img/CIVIL/pcrj');
+  };
+
+  const adicionar = valor => {
+    if (!valor) return;
+    const caminho = String(valor).trim().replace(/^\/+/, '').replace(/^\.\//, '');
+    if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
+  };
+
+  const adicionarBase = base => {
+    const baseLimpa = normalizarBaseImagemBrasao(base);
+    if (baseLimpa && !bases.includes(baseLimpa)) bases.push(baseLimpa);
+  };
+
+  adicionar(caminhoInicial);
+  adicionarBase(caminhoInicial || `img/${instMinuscula}`);
+  adicionarBase(`img/${instMinuscula}`);
+  adicionarBase(`img/${instMaiuscula}`);
+  adicionarPastasOrganizadas();
+
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[instMinuscula] || [];
+  aliases.forEach(adicionarBase);
+
+  bases.forEach(base => {
+    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${base}.${ext}`));
+  });
+
+  return candidatos;
+}
+
+
+
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/LOGO/logoleao.webp') {
   if (!elemento || !nomeVariavel) return;
-  const imagemOriginal = String(src || fallback || 'img/logoleao.webp');
+  const imagemOriginal = String(src || fallback || 'img/LOGO/logoleao.webp');
   const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
   elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
   return imagemOriginal;
@@ -3402,12 +3559,12 @@ function configurarLogoInicialHeader(img) {
   img.removeAttribute('srcset');
   img.removeAttribute('sizes');
   img.removeAttribute('data-fallback-aplicado');
-  img.dataset.imgBase = 'img/logoleao';
+  img.dataset.imgBase = 'img/LOGO/logoleao';
   img.dataset.retry = '';
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
+    const alternativas = ['img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -3417,7 +3574,7 @@ function configurarLogoInicialHeader(img) {
     this.onerror = null;
     this.style.display = 'none';
   };
-  img.src = 'img/logoleao.webp';
+  img.src = 'img/LOGO/logoleao.webp';
 }
 
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
@@ -3425,26 +3582,29 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   if (card) card.classList.remove('header-portal-home');
 
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
+  const candidatosImagem = montarCandidatosImagemInstituicao(inst, imagemInstituicao);
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
   // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
-  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.webp');
-  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.webp');
+  setHeaderHeroImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
 
   // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
+  img.removeAttribute('data-fallback-jpeg-aplicado');
   img.onerror = function () {
-    if (imagemInstituicao && !this.dataset.fallbackJpegAplicado) {
-      const jpegFallback = imagemInstituicao.replace(/\.webp$/i, '.jpeg');
-      if (jpegFallback && jpegFallback !== this.getAttribute('src')) {
-        this.dataset.fallbackJpegAplicado = 'true';
-        this.src = jpegFallback;
+    const indice = parseInt(this.dataset.fallbackIndex || '0', 10);
+    if (indice < candidatosImagem.length) {
+      this.dataset.fallbackIndex = String(indice + 1);
+      const proximaImagem = candidatosImagem[indice];
+      if (proximaImagem && proximaImagem !== this.getAttribute('src')) {
+        this.src = proximaImagem;
         return;
       }
     }
@@ -3459,12 +3619,14 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
     this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
   };
 
-  if (imagemInstituicao) {
+  if (candidatosImagem.length) {
     img.dataset.fallbackAplicado = '';
-    img.src = imagemInstituicao;
+    img.dataset.fallbackIndex = '1';
+    img.src = candidatosImagem[0];
     img.alt = `Logo/brasão da ${altInstituicao}`;
   } else {
     img.dataset.fallbackAplicado = 'bandeira';
+    img.dataset.fallbackIndex = '0';
     img.onerror = null;
     img.src = fallbackBandeira;
     img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
@@ -5456,6 +5618,164 @@ function criarAssociacoesEstrutura(info, estadoNome) {
 }
 
 
+/* ============================================================ */
+/* === ESTRUTURA-BASE PARA INSTITUIÇÕES FEDERAIS =============== */
+/* ============================================================ */
+const INSTITUICOES_FEDERAIS_ESTRUTURA = [
+  { inst: 'pf', titulo: 'PF', desc: 'Polícia Federal', tipo: 'Polícia Federal', cor: '#1f4f7a' },
+  { inst: 'prf', titulo: 'PRF', desc: 'Polícia Rodoviária Federal', tipo: 'Polícia Rodoviária Federal', cor: '#1f5f8a' }
+];
+
+function criarResumoFederalEstrutura(item) {
+  return {
+    nome: item.desc,
+    sigla: item.titulo,
+    estado: 'Brasil',
+    estadoSigla: 'BR',
+    tipo: item.tipo,
+    criacao: 'A preencher',
+    ativa: 0,
+    ativaLabel: 'Efetivo ativo — preencher',
+    reserva: 0,
+    reservaLabel: 'Aposentados/inativos — preencher',
+    femininas: 0,
+    femininasLabel: 'Integrantes femininas — preencher',
+    populacao: 0,
+    populacaoTitulo: 'Abrangência nacional',
+    relacaoLabel: 'Relação por habitante/rodovia/atribuição — preencher',
+    relacaoTitulo: 'Relação institucional',
+    governador: 'Governo Federal / Ministério responsável — preencher',
+    comando: 'Direção-Geral atual — preencher',
+    fonte: 'Fontes oficiais federais — preencher',
+    atualizado: 'Estrutura criada para preenchimento'
+  };
+}
+
+function criarCargosPfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'delegado', `${sigla} — Delegado de Polícia Federal`, true),
+    criarCargoEstrutural(inst, 'perito', `${sigla} — Perito Criminal Federal`, true),
+    criarCargoEstrutural(inst, 'papiloscopista', `${sigla} — Papiloscopista Policial Federal`, false),
+    criarCargoEstrutural(inst, 'escrivao', `${sigla} — Escrivão de Polícia Federal`, false),
+    criarCargoEstrutural(inst, 'agente', `${sigla} — Agente de Polícia Federal`, false, true),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarCargosPrfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'classe_especial', `${sigla} — Policial Rodoviário Federal — Classe Especial`, false),
+    criarCargoEstrutural(inst, 'primeira_classe', `${sigla} — Policial Rodoviário Federal — 1ª Classe`, false),
+    criarCargoEstrutural(inst, 'segunda_classe', `${sigla} — Policial Rodoviário Federal — 2ª Classe`, false),
+    criarCargoEstrutural(inst, 'terceira_classe', `${sigla} — Policial Rodoviário Federal — 3ª Classe`, false, true),
+    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação Profissional`, false),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarConcursoFederalEstrutura(item) {
+  return {
+    edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
+    salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
+    vagas: 'Preencher com edital/autorização vigente.',
+    cotas: 'Preencher conforme legislação federal e edital.',
+    idade: 'Preencher requisitos de idade, CNH, aptidão física, investigação social e demais exigências conforme edital.',
+    escolaridade: 'Preencher escolaridade e requisitos do cargo conforme edital.',
+    banca: 'A definir/preencher conforme edital.',
+    inscritos: 'Preencher quando houver dado oficial.',
+    materias: 'Preencher disciplinas conforme edital do cargo.',
+    etapas: 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação profissional e demais etapas do edital.',
+    cfsd: 'Curso de formação profissional — preencher conforme edital e academia responsável.',
+    estagio: 'Estágio probatório e desenvolvimento na carreira — preencher conforme legislação federal.',
+    validade: 'Preencher conforme edital e atos de homologação/prorrogação.',
+    previsao: 'Acompanhar Diário Oficial da União, órgão oficial e banca. Não afirmar concurso aberto sem publicação oficial.',
+    site: '#'
+  };
+}
+
+function criarAcoesFederalEstrutura(item) {
+  return [
+    { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Aposentadoria policial e previdência`, status: 'Análise individual', ano: 'Regra federal a preencher', tipo: 'individual', desc: 'Espaço para regras previdenciárias, transições, paridade/integralidade quando aplicável, abono de permanência e regras próprias da carreira policial federal.', base: 'Data de ingresso, tempo de contribuição, cargo/carreira, sexo, idade, regime previdenciário e norma federal.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' }
+  ];
+}
+
+function criarAssociacoesFederalEstrutura(item) {
+  return [
+    { nome: `Associação/Sindicato — ${item.titulo}`, foco: `Brasil — ${item.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade nacional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
+    { nome: `Entidade representativa federal — ${item.titulo}`, foco: `Profissionais ativos, aposentados e pensionistas vinculados à ${item.desc}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe nacionais/regionais existentes.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
+  ];
+}
+
+function aplicarEstruturaFederaisDados() {
+  HEADER_ESTADOS.br = {
+    nome: 'Brasil',
+    sigla: 'BR',
+    pc: 'pf',
+    pp: 'prf',
+    pf: 'pf',
+    prf: 'prf',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
+    HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
+    HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
+    REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' };
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+      titulo: item.titulo,
+      desc: item.desc,
+      cor: item.cor,
+      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
+    };
+    CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
+    ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
+    ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
+    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) {
+      CARGOS_ESTRUTURA_GENERICAS[item.inst] = item.inst === 'pf'
+        ? criarCargosPfEstrutura(item.inst, item.titulo)
+        : criarCargosPrfEstrutura(item.inst, item.titulo);
+    }
+  });
+}
+
+function inserirOptionFederalNoSelect(select, item) {
+  if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
+  let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === 'Federais');
+  if (!grupo) {
+    grupo = document.createElement('optgroup');
+    grupo.label = 'Federais';
+    select.appendChild(grupo);
+  }
+  grupo.appendChild(criarOptionInstituicao(item.inst, `${item.titulo} - ${item.desc}`));
+}
+
+function aplicarEstruturaFederaisNoHtml() {
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    inserirOptionFederalNoSelect(document.getElementById('instituicao_header'), item);
+    inserirOptionFederalNoSelect(document.getElementById('instituicao'), item);
+  });
+
+  const flags = document.querySelector('.header-state-flags');
+  if (flags && !flags.querySelector('[data-estado="br"]')) {
+    const btn = document.createElement('button');
+    btn.className = 'state-flag';
+    btn.type = 'button';
+    btn.dataset.estado = 'br';
+    btn.title = 'Brasil / Instituições federais';
+    btn.setAttribute('aria-label', 'Selecionar instituições federais');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.onclick = () => selecionarEstado('br');
+    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="Bandeira do Brasil"><span>BR</span>`;
+    flags.appendChild(btn);
+  }
+}
+
+
 const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'BMAL', desc: 'Corpo de Bombeiros Militar de Alagoas' },
@@ -5667,10 +5987,300 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
   }
 
   aplicarEstruturaBombeirosMilitaresNoHtml();
+  aplicarEstruturaFederaisNoHtml();
+}
+
+
+
+/* ============================================================ */
+/* === REVISÃO DOS RESUMOS INSTITUCIONAIS ====================== */
+/* ============================================================ */
+const RESUMO_DADOS_EM_BREVE = 'Dados em breve';
+
+const RESUMO_GOVERNADORES_UF_2026 = {
+  ac: 'Mailza Assis',
+  al: 'Paulo Dantas',
+  ap: 'Clécio Luís',
+  am: 'Roberto Cidade (interino)',
+  ba: 'Jerônimo Rodrigues',
+  ce: 'Elmano de Freitas',
+  df: 'Celina Leão',
+  es: 'Ricardo Ferraço',
+  go: 'Daniel Vilela',
+  ma: 'Carlos Brandão Júnior',
+  mt: 'Otaviano Pivetta',
+  ms: 'Eduardo Riedel',
+  mg: 'Mateus Simões',
+  pa: 'Hana Ghassan',
+  pb: 'Lucas Ribeiro',
+  pr: 'Ratinho Júnior',
+  pe: 'Raquel Lyra',
+  pi: 'Rafael Fonteles',
+  rj: 'Ricardo Couto (interino)',
+  rn: 'Fátima Bezerra',
+  rs: 'Eduardo Leite',
+  ro: 'Marcos Rocha',
+  rr: 'Soldado Sampaio (interino)',
+  sc: 'Jorginho Mello',
+  sp: 'Tarcísio de Freitas',
+  se: 'Fábio Mitidieri',
+  to: 'Wanderlei Barbosa'
+};
+
+function resumoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  return /\b(a preencher|preencher|a confirmar|não informado|nao informado|estrutura .*criada|preenchimento|pendente|consultar diretamente|consultar site oficial|fonte oficial a preencher|fontes oficiais .* preencher|comando\/direção atual|chefe do executivo|efetivo ativo — preencher|reserva\/inativos — preencher|integrantes femininas — preencher|relação ativa|relação ativo\/população — preencher)\b/i.test(texto);
+}
+
+function resumoValorOuEmBreve(valor) {
+  return resumoEhDadoPendente(valor) ? RESUMO_DADOS_EM_BREVE : valor;
+}
+
+function resumoInferirTipo(inst, dados = {}) {
+  if (dados.tipo && !resumoEhDadoPendente(dados.tipo)) return dados.tipo;
+  if (/^bm/i.test(inst)) return 'Bombeiro Militar';
+  if (/^pm/i.test(inst) || inst === 'pmerj') return 'Polícia Militar';
+  if (/^pc/i.test(inst) || inst === 'pcerj') return 'Polícia Civil';
+  if (/^pp/i.test(inst)) return 'Polícia Penal';
+  if (inst === 'pf') return 'Polícia Federal';
+  if (inst === 'prf') return 'Polícia Rodoviária Federal';
+  return RESUMO_DADOS_EM_BREVE;
+}
+
+function resumoInstituicoesEstaduais() {
+  const pares = [];
+  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
+    if (uf === 'br') return;
+    ['pm', 'bm', 'pc', 'pp'].forEach(ramo => {
+      if (estado && estado[ramo]) pares.push({ uf, ramo, inst: estado[ramo], estado });
+    });
+  });
+  return pares;
+}
+
+function aplicarRevisaoResumosInstitucionais() {
+  const pares = resumoInstituicoesEstaduais();
+
+  pares.forEach(({ uf, ramo, inst, estado }) => {
+    const info = HEADER_INSTITUICOES_INFO[inst] || {};
+    const dados = HEADER_INSTITUICOES_RESUMO[inst] || {};
+    const governadorAtual = RESUMO_GOVERNADORES_UF_2026[uf];
+    const nome = !resumoEhDadoPendente(dados.nome) ? dados.nome : (info.desc || RESUMO_DADOS_EM_BREVE);
+    const sigla = !resumoEhDadoPendente(dados.sigla) ? dados.sigla : (info.titulo || String(inst || '').toUpperCase() || RESUMO_DADOS_EM_BREVE);
+
+    HEADER_INSTITUICOES_RESUMO[inst] = {
+      ...dados,
+      nome,
+      sigla,
+      estado: resumoValorOuEmBreve(dados.estado || estado?.nome),
+      estadoSigla: resumoValorOuEmBreve(dados.estadoSigla || estado?.sigla),
+      tipo: resumoInferirTipo(inst, dados),
+      criacao: resumoValorOuEmBreve(dados.criacao),
+      ativaLabel: !resumoEhDadoPendente(dados.ativaLabel) ? dados.ativaLabel : (resumoEhDadoPendente(dados.ativa) ? RESUMO_DADOS_EM_BREVE : ''),
+      reservaLabel: !resumoEhDadoPendente(dados.reservaLabel) ? dados.reservaLabel : (resumoEhDadoPendente(dados.reserva) ? RESUMO_DADOS_EM_BREVE : ''),
+      femininasLabel: !resumoEhDadoPendente(dados.femininasLabel) ? dados.femininasLabel : (resumoEhDadoPendente(dados.femininas) ? RESUMO_DADOS_EM_BREVE : ''),
+      populacaoTitulo: dados.populacaoTitulo || (ramo === 'pp' ? 'Presos atendidos' : 'População do Estado'),
+      populacaoLabel: !resumoEhDadoPendente(dados.populacaoLabel) ? dados.populacaoLabel : (resumoEhDadoPendente(dados.populacao) ? RESUMO_DADOS_EM_BREVE : ''),
+      relacaoTitulo: dados.relacaoTitulo || (ramo === 'pp' ? 'Relação ativa/presos' : 'Relação ativa/população'),
+      relacaoLabel: !resumoEhDadoPendente(dados.relacaoLabel) ? dados.relacaoLabel : (!resumoEhDadoPendente(dados.populacao) && !resumoEhDadoPendente(dados.ativa) ? '' : RESUMO_DADOS_EM_BREVE),
+      governador: governadorAtual || resumoValorOuEmBreve(dados.governador),
+      comando: resumoValorOuEmBreve(dados.comando),
+      fonte: resumoValorOuEmBreve(dados.fonte),
+      atualizado: dados.atualizado && !resumoEhDadoPendente(dados.atualizado)
+        ? `${dados.atualizado} · Revisado em 02/05/2026`
+        : 'Revisado em 02/05/2026'
+    };
+
+    ['ativaLabel', 'reservaLabel', 'femininasLabel', 'populacaoLabel', 'relacaoLabel'].forEach(chave => {
+      if (HEADER_INSTITUICOES_RESUMO[inst][chave] === '') delete HEADER_INSTITUICOES_RESUMO[inst][chave];
+    });
+  });
+
+  // Também normaliza estruturas federais que o site mantém fora das 108 estaduais.
+  ['pf', 'prf'].forEach(inst => {
+    if (!HEADER_INSTITUICOES_RESUMO[inst]) return;
+    const dados = HEADER_INSTITUICOES_RESUMO[inst];
+    Object.keys(dados).forEach(chave => {
+      if (chave.endsWith('Titulo')) return;
+      if (chave === 'populacao' || chave === 'ativa' || chave === 'reserva' || chave === 'femininas') return;
+      dados[chave] = resumoValorOuEmBreve(dados[chave]);
+    });
+    dados.populacaoLabel = resumoValorOuEmBreve(dados.populacaoLabel || dados.populacao);
+    dados.atualizado = 'Revisado em 02/05/2026';
+  });
 }
 
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
+aplicarEstruturaFederaisDados();
+aplicarRevisaoResumosInstitucionais();
+
+/* ============================================================ */
+/* === REVISÃO DA ABA CONCURSOS ================================ */
+/* ============================================================ */
+const CONCURSO_DADOS_EM_BREVE = 'Dados em breve';
+const CONCURSO_CAMPOS_TEXTO = [
+  'edital', 'salario', 'vagas', 'cotas', 'idade', 'escolaridade', 'banca',
+  'inscritos', 'materias', 'etapas', 'cfsd', 'estagio', 'validade', 'previsao'
+];
+
+function concursoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === CONCURSO_DADOS_EM_BREVE) return true;
+  return /^(a definir|a confirmar|a preencher|preencher|consultar|conferir|sem informação|sem informacao|sem inscrições|sem inscricoes|ainda não divulgado|ainda nao divulgado|não divulgado|nao divulgado|fonte oficial a preencher|dados pendentes|pendente|acompanhar|curso de formação.*preencher|curso de formacao.*preencher|prova objetiva\/discursiva quando prevista)\b/i.test(texto)
+    || /\b(estrutura de concurso a preencher|estrutura .*para preenchimento|fonte oficial a preencher|preencher|a definir\/preencher|base .*pendente)\b/i.test(texto);
+}
+
+function concursoValorOuEmBreve(valor) {
+  return concursoEhDadoPendente(valor) ? CONCURSO_DADOS_EM_BREVE : String(valor).trim();
+}
+
+function concursoUrlValida(valor) {
+  const url = String(valor || '').trim();
+  return /^https?:\/\//i.test(url) ? url : '#';
+}
+
+function concursoInfoInstituicao(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  return {
+    titulo: info.titulo || String(inst || '').toUpperCase(),
+    desc: info.desc || CONCURSO_DADOS_EM_BREVE
+  };
+}
+
+function concursoCriarBaseDadosEmBreve(inst) {
+  const info = concursoInfoInstituicao(inst);
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[inst] || {};
+  return {
+    edital: `${info.titulo} — ${info.desc}`,
+    salario: CONCURSO_DADOS_EM_BREVE,
+    vagas: CONCURSO_DADOS_EM_BREVE,
+    cotas: CONCURSO_DADOS_EM_BREVE,
+    idade: CONCURSO_DADOS_EM_BREVE,
+    escolaridade: CONCURSO_DADOS_EM_BREVE,
+    banca: CONCURSO_DADOS_EM_BREVE,
+    inscritos: CONCURSO_DADOS_EM_BREVE,
+    materias: CONCURSO_DADOS_EM_BREVE,
+    etapas: CONCURSO_DADOS_EM_BREVE,
+    cfsd: CONCURSO_DADOS_EM_BREVE,
+    estagio: CONCURSO_DADOS_EM_BREVE,
+    validade: CONCURSO_DADOS_EM_BREVE,
+    previsao: CONCURSO_DADOS_EM_BREVE,
+    site: concursoUrlValida(fonte.url)
+  };
+}
+
+function concursoNormalizarObjeto(inst, dados) {
+  const normalizado = concursoCriarBaseDadosEmBreve(inst);
+  const origem = dados && typeof dados === 'object' ? dados : {};
+
+  CONCURSO_CAMPOS_TEXTO.forEach(campo => {
+    normalizado[campo] = concursoValorOuEmBreve(origem[campo] ?? normalizado[campo]);
+  });
+
+  normalizado.site = concursoUrlValida(origem.site || normalizado.site);
+  return normalizado;
+}
+
+function aplicarRevisaoConcursosInstituicoes() {
+  const instituicoes = new Set(INSTITUICOES_VALIDAS || []);
+
+  Object.values(HEADER_ESTADOS || {}).forEach(estado => {
+    ['pm', 'bm', 'pc', 'pp', 'pf', 'prf'].forEach(ramo => {
+      if (estado && estado[ramo]) instituicoes.add(estado[ramo]);
+    });
+  });
+
+  ['pf', 'prf'].forEach(inst => instituicoes.add(inst));
+
+  instituicoes.forEach(inst => {
+    if (!inst) return;
+    if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+    if (!HEADER_INSTITUICOES_INFO[inst]) {
+      HEADER_INSTITUICOES_INFO[inst] = { titulo: String(inst).toUpperCase(), desc: CONCURSO_DADOS_EM_BREVE };
+    }
+
+    let dados = CONCURSOS[inst];
+    if (!dados && typeof isPoliciaPenal === 'function' && typeof getConcursoPoliciaPenal === 'function') {
+      try {
+        if (isPoliciaPenal(inst)) dados = getConcursoPoliciaPenal(inst);
+      } catch (erro) {
+        dados = null;
+      }
+    }
+
+    CONCURSOS[inst] = concursoNormalizarObjeto(inst, dados);
+  });
+}
+
+aplicarRevisaoConcursosInstituicoes();
+
+
+/* ============================================================ */
+/* === PADRONIZAÇÃO GLOBAL DE DADOS SEM FONTE SEGURA =========== */
+/* ============================================================ */
+const DADOS_EM_BREVE_PADRAO_GLOBAL = 'Dados em breve';
+
+function dadoSemFonteSegura(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return false;
+  if (typeof valor !== 'string') return false;
+  const texto = valor.trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === DADOS_EM_BREVE_PADRAO_GLOBAL) return false;
+  if (/^https?:\/\//i.test(texto)) return false;
+  return /(?:a preencher|preencher|a confirmar|nome a confirmar|a definir|sem informação|sem informacao|não informado|nao informado|não divulgado|nao divulgado|ainda não divulgado|ainda nao divulgado|pendente|dados pendentes|estrutura criada|estrutura aberta|para preenchimento|fonte oficial a preencher|fontes oficiais .* preencher|consultar diretamente|consultar site|consultar canais|consultar edital|consultar banca|consultar fonte|conferir edital|conferir autorização|acompanhar diário oficial|acompanhar diario oficial|não afirmar concurso aberto|nao afirmar concurso aberto|espaço reservado|espaco reservado|reservado para|cadastrar aqui|serviços a preencher|servicos a preencher|verificar caso a caso|análise individual|analise individual|base local pendente|base federal pendente|regra local a preencher|regra federal a preencher|tema permanente|tema recorrente|documentos funcionais e normas locais|documentos funcionais e normas federais|conferência previdenciária individual|conferencia previdenciaria individual)/i.test(texto);
+}
+
+function normalizarTextoSemFonteSegura(valor) {
+  return dadoSemFonteSegura(valor) ? DADOS_EM_BREVE_PADRAO_GLOBAL : valor;
+}
+
+function normalizarObjetoSemFonteSegura(obj, visitados = new WeakSet()) {
+  if (!obj || typeof obj !== 'object') return obj;
+  if (visitados.has(obj)) return obj;
+  visitados.add(obj);
+
+  if (Array.isArray(obj)) {
+    obj.forEach((item, indice) => {
+      if (item && typeof item === 'object') normalizarObjetoSemFonteSegura(item, visitados);
+      else obj[indice] = normalizarTextoSemFonteSegura(item);
+    });
+    return obj;
+  }
+
+  Object.keys(obj).forEach(chave => {
+    const valor = obj[chave];
+    if (valor && typeof valor === 'object') {
+      normalizarObjetoSemFonteSegura(valor, visitados);
+      return;
+    }
+    if (/^(url|fonteUrl|href|flag|brasao|imagem|img|logo)$/i.test(chave)) return;
+    obj[chave] = normalizarTextoSemFonteSegura(valor);
+  });
+  return obj;
+}
+
+function aplicarPadraoDadosEmBreveGlobal() {
+  [
+    HEADER_INSTITUICOES_RESUMO,
+    CONCURSOS,
+    ACOES_JUDICIAIS,
+    ASSOCIACOES,
+    POLICIAS_PENAIS_INFO,
+    CONFIGS_INSTITUICOES_GENERICAS,
+    CARGOS_ESTRUTURA_GENERICAS,
+    REMUNERACAO_FONTES_OFICIAIS
+  ].forEach(base => normalizarObjetoSemFonteSegura(base));
+}
+
+aplicarPadraoDadosEmBreveGlobal();
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -5678,7 +6288,13 @@ function formatarNumeroHeader(valor) {
 
 function formatarEfetivoHeader(valor) {
   const numero = Number(valor || 0);
-  if (!numero) return 'Não informado';
+  if (!numero) return RESUMO_DADOS_EM_BREVE;
+  if (numero >= 1000000) {
+    const milhao = numero / 1000000;
+    let texto = Number.isInteger(milhao) ? String(milhao) : milhao.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
+    return `≈ ${texto} ${milhao >= 2 ? 'milhões' : 'milhão'}`;
+  }
   if (numero >= 1000) {
     const mil = numero / 1000;
     let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
@@ -5691,22 +6307,33 @@ function formatarEfetivoHeader(valor) {
 function calcularRelacaoHeader(populacao, ativa) {
   const pop = Number(populacao || 0);
   const ativo = Number(ativa || 0);
-  if (!pop || !ativo) return 'Não informado';
+  if (!pop || !ativo) return RESUMO_DADOS_EM_BREVE;
   const habitantesPorAtivo = Math.round(pop / ativo);
   const percentual = ((ativo / pop) * 100).toFixed(3).replace('.', ',');
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
 }
 
+function calcularEfetivoTotalResumoHeader(dados = {}) {
+  if (dados.efetivoTotalLabel) return dados.efetivoTotalLabel;
+  const ativa = Number(dados.ativa || 0);
+  const reserva = Number(dados.reserva || 0);
+  if (ativa || reserva) return formatarEfetivoHeader(ativa + reserva);
+  if (dados.ativaLabel) return dados.ativaLabel;
+  return formatarEfetivoHeader(dados.ativa);
+}
+
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
+    'header-label-natureza': 'Natureza',
+    'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
-    'header-label-ativa': 'Efetivo ativo',
+    'header-label-ativa': 'Efetivo total',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Integrantes femininas',
+    'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
     'header-label-governador': 'Chefe do Executivo',
-    'header-label-comando': 'Comando atual'
+    'header-label-comando': 'Comando/Direção'
   };
 
   Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
@@ -5716,8 +6343,9 @@ function atualizarLabelsHeaderResumo(labels = {}) {
 }
 
 function calcularResumoPortalHeader() {
+  if (typeof garantirEstruturaGuardaMunicipalConsulta === 'function') garantirEstruturaGuardaMunicipalConsulta();
   const instituicoes = INSTITUICOES_VALIDAS.length;
-  const estados = Object.keys(HEADER_ESTADOS).length;
+  const estados = Object.keys(HEADER_ESTADOS).filter(chave => !['br', 'municipal'].includes(chave)).length;
   let ativa = 0;
   let reserva = 0;
   let femininas = 0;
@@ -5742,9 +6370,11 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
-  setHeaderHeroImage('img/logoleao.webp');
-  setSiteHeaderBackgroundImage('img/logoleao.webp');
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  document.body.style.removeProperty('--vermelho');
+  document.body.style.removeProperty('--vermelho-escuro');
+  setHeaderHeroImage('img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage('img/LOGO/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.add('header-portal-home');
 
@@ -5771,18 +6401,22 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-atualizado', 'Visão geral do portal');
 
   atualizarLabelsHeaderResumo({
+    'header-label-natureza': 'Escopo',
+    'header-label-uf': 'Abrangência',
     'header-label-criacao': 'Instituições',
-    'header-label-ativa': 'Ativos estimados',
+    'header-label-ativa': 'Efetivo total estimado',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Integrantes femininas',
+    'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
 
+  setTexto('header-resumo-natureza', 'Portal informativo');
+  setTexto('header-resumo-uf', 'Brasil');
   setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
-  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
+  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.total)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
@@ -5812,41 +6446,154 @@ function aplicarHeaderInicialPortal() {
   atualizarVisibilidadeResumoInstitucional('principal');
 }
 
+function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
+  const instTexto = String(inst || '').toLowerCase();
+  const tipoTexto = String(dados.tipo || '').toLowerCase();
+  const ehPenal = instTexto.startsWith('pp') || tipoTexto.includes('penal');
+  const ehBombeiro = instTexto.startsWith('bm') || tipoTexto.includes('bombeiro');
+  const ehMilitar = instTexto.startsWith('pm') || instTexto === 'pmerj' || tipoTexto.includes('militar');
+  const ehCivil = instTexto.startsWith('pc') || instTexto === 'pcerj' || tipoTexto.includes('civil');
+  const ehFederal = ['pf', 'prf'].includes(instTexto) || dados.estadoSigla === 'BR';
+  const ehMunicipal = instTexto === 'gm' || tipoTexto.includes('guarda municipal');
+
+  if (ehPenal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Base constitucional',
+      'header-label-ativa': 'Policiais penais',
+      'header-label-reserva': 'Inativos/RPPS',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Presos atendidos',
+      'header-label-relacao': dados.relacaoTitulo || 'Servidor/preso',
+      'header-label-governador': ehFederal ? 'Governo responsável' : 'Chefe do Executivo',
+      'header-label-comando': 'Direção/Secretaria'
+    };
+  }
+
+  if (ehBombeiro) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Criação',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Reserva/reforma',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
+  if (ehMilitar) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Criação',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Reserva/reforma',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
+  if (ehCivil) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Origem histórica',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Inativos estimados',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Delegado-Geral/Chefia'
+    };
+  }
+
+  if (ehFederal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'Jurisdição',
+      'header-label-criacao': 'Base legal/histórica',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Aposentados/inativos',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
+      'header-label-relacao': dados.relacaoTitulo || 'Indicador',
+      'header-label-governador': 'Governo responsável',
+      'header-label-comando': 'Direção-Geral'
+    };
+  }
+
+  if (ehMunicipal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'Jurisdição',
+      'header-label-criacao': 'Base local',
+      'header-label-ativa': 'Efetivo municipal',
+      'header-label-reserva': 'Regime previdenciário',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Poder Executivo local',
+      'header-label-comando': 'Comando/Direção'
+    };
+  }
+
+  return {
+    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
+  };
+}
+
+function resumoHeaderUfLabel(dados = {}) {
+  const sigla = dados.estadoSigla && !resumoEhDadoPendente(dados.estadoSigla) ? String(dados.estadoSigla).trim() : '';
+  const estado = dados.estado && !resumoEhDadoPendente(dados.estado) ? String(dados.estado).trim() : '';
+  if (sigla && estado && sigla !== estado) return `${sigla} · ${estado}`;
+  return sigla || estado || RESUMO_DADOS_EM_BREVE;
+}
+
 function atualizarHeaderResumo(inst) {
   const tituloResumo = document.getElementById('header-resumo-titulo');
   if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
 
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
-  atualizarLabelsHeaderResumo({
-    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
-    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
-  });
+  atualizarLabelsHeaderResumo(getResumoHeaderLabelsPorInstituicao(inst, dados));
 
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
-  const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
+  const ativaTexto = calcularEfetivoTotalResumoHeader(dados);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
-  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : 'Não informado');
+  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
+  const naturezaTexto = dados.tipo || resumoInferirTipo(inst, dados);
 
   setTexto('header-resumo-atualizado', dados.atualizado || 'Atualizado');
-  setTexto('header-resumo-criacao', dados.criacao || 'Não informado');
+  setTexto('header-resumo-natureza', naturezaTexto);
+  setTexto('header-resumo-uf', resumoHeaderUfLabel(dados));
+  setTexto('header-resumo-criacao', dados.criacao || RESUMO_DADOS_EM_BREVE);
   setTexto('header-resumo-ativa', ativaTexto);
   setTexto('header-resumo-reserva', reservaTexto);
   setTexto('header-resumo-total', femininasTexto);
-  setTexto('header-resumo-populacao', dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado');
+  setTexto('header-resumo-populacao', dados.populacaoLabel || (dados.populacao ? formatarNumeroHeader(dados.populacao) : RESUMO_DADOS_EM_BREVE));
   setTexto('header-resumo-relacao', relacaoTexto);
-  setTexto('header-resumo-governador', dados.governador || 'Não informado');
-  setTexto('header-resumo-comando', dados.comando || 'Não informado');
+  setTexto('header-resumo-governador', dados.governador || RESUMO_DADOS_EM_BREVE);
+  setTexto('header-resumo-comando', dados.comando || RESUMO_DADOS_EM_BREVE);
 }
 
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
-    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
+    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst || item.gm === inst;
   }) || 'sp';
 }
 
@@ -5904,6 +6651,16 @@ function atualizarHeaderInstitucional(inst) {
 
   const ppSigla = document.getElementById('header-pp-sigla');
   if (ppSigla) ppSigla.textContent = ppInfo ? ppInfo.titulo : 'PP';
+
+  const ramoFederalAtivo = estadoAtivo === 'br';
+  const setBranchSmall = (id, texto) => {
+    const small = document.querySelector(`#${id} small`);
+    if (small) small.textContent = texto;
+  };
+  setBranchSmall('header-branch-pm', ramoFederalAtivo ? '—' : 'Militar');
+  setBranchSmall('header-branch-bm', ramoFederalAtivo ? '—' : 'Bombeiros');
+  setBranchSmall('header-branch-pc', ramoFederalAtivo ? 'Federal' : 'Civil');
+  setBranchSmall('header-branch-pp', ramoFederalAtivo ? 'Rodoviária' : 'Penal');
 
   const btnPm = document.getElementById('header-branch-pm');
   const btnBm = document.getElementById('header-branch-bm');
@@ -6009,6 +6766,10 @@ function mudarInstituicao(novaInstituicao) {
   });
 
   const config = configs[inst];
+  if (config?.cor) {
+    document.body.style.setProperty('--vermelho', config.cor);
+    document.body.style.setProperty('--vermelho-escuro', config.cor);
+  }
   atualizarFlagsEstado(inst);
 
   // Atualiza textos visíveis
@@ -6035,14 +6796,704 @@ function mudarInstituicao(novaInstituicao) {
   carregarAcoes();
   carregarAssociacoes();
   carregarRemuneracaoTabelada();
+  if (typeof sincronizarSeletoresConsulta === 'function') sincronizarSeletoresConsulta();
   if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
 }
 
 
 /* ============================================================ */
+/* === SELEÇÃO INTERNA POR ABA: ESFERA → INSTITUIÇÃO ========== */
+/* ============================================================ */
+const PAGINAS_COM_SELECAO_INSTITUICAO = {
+  remuneracao: {
+    titulo: 'Consultar remuneração por instituição',
+    subtitulo: 'Escolha a esfera e depois a instituição para carregar a tabela correspondente.',
+    destino: 'lista-remuneracao'
+  },
+  direitos: {
+    titulo: 'Consultar direitos por instituição',
+    subtitulo: 'A análise usa a instituição escolhida nesta aba e os dados funcionais preenchidos abaixo.',
+    destino: 'resultados_dir'
+  },
+  poderes: {
+    titulo: 'Consultar poderes e deveres por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
+    destino: 'poderes_resultado'
+  },
+  brasoes: {
+    titulo: 'Consultar brasão e história por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver o brasão, origem, criação, marcos históricos e dados institucionais.',
+    destino: 'brasoes_historia_resultado'
+  },
+  concursos: {
+    titulo: 'Consultar concursos por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para carregar os dados de edital, requisitos, etapas e fontes.',
+    destino: 'lista-concursos'
+  },
+  acoes: {
+    titulo: 'Consultar ações judiciais por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver teses, alertas e referências cadastradas.',
+    destino: 'lista-acoes'
+  },
+  associacoes: {
+    titulo: 'Consultar associações e sindicatos por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para localizar entidades relacionadas à carreira.',
+    destino: 'lista-associacoes'
+  }
+};
+
+function instituicaoConsultaFoiSelecionada() {
+  return !headerModoInicialPortal && !!currInst && INSTITUICOES_VALIDAS.includes(currInst);
+}
+
+function garantirEstruturaGuardaMunicipalConsulta() {
+  if (!INSTITUICOES_VALIDAS.includes('gm')) INSTITUICOES_VALIDAS.push('gm');
+
+  HEADER_INSTITUICOES_INFO.gm = HEADER_INSTITUICOES_INFO.gm || {
+    titulo: 'GM',
+    desc: 'Guarda Municipal'
+  };
+
+  HEADER_INSTITUICOES_IMAGENS.gm = HEADER_INSTITUICOES_IMAGENS.gm || 'img/LOGO/logoleao.webp';
+
+  HEADER_ESTADOS.municipal = HEADER_ESTADOS.municipal || {
+    nome: 'Municípios',
+    sigla: 'MUN',
+    gm: 'gm',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  HEADER_INSTITUICOES_RESUMO.gm = HEADER_INSTITUICOES_RESUMO.gm || {
+    nome: 'Guarda Municipal',
+    sigla: 'GM',
+    estado: 'Municípios',
+    estadoSigla: 'MUN',
+    tipo: 'Guarda Municipal',
+    criacao: 'Varia por município',
+    ativaLabel: 'Efetivo municipal — varia por cidade',
+    reservaLabel: 'Regime local — verificar município',
+    femininasLabel: 'Dados locais — consultar prefeitura',
+    populacaoLabel: 'Município selecionado',
+    relacaoLabel: 'Depende da lei municipal e do efetivo local',
+    populacaoTitulo: 'Abrangência',
+    relacaoTitulo: 'Relação efetivo/população',
+    governador: 'Prefeitura municipal / Secretaria municipal competente',
+    comando: 'Comando/direção da Guarda Municipal, conforme lei local',
+    atualizado: 'Conteúdo geral municipal'
+  };
+
+  CONFIGS_INSTITUICOES_GENERICAS.gm = CONFIGS_INSTITUICOES_GENERICAS.gm || {
+    titulo: 'GM',
+    desc: 'Guarda Municipal',
+    cor: '#0f766e',
+    alertaPrev: 'Guarda Municipal: conteúdo geral. Direitos, remuneração, concurso e organização dependem da lei municipal, estatuto local, plano de cargos, regime previdenciário e edital de cada cidade.'
+  };
+
+  if (typeof CARGOS_ESTRUTURA_GENERICAS !== 'undefined' && !CARGOS_ESTRUTURA_GENERICAS.gm) {
+    CARGOS_ESTRUTURA_GENERICAS.gm = [
+      { val: 'gm_guarda', text: 'Guarda Municipal / Agente da Guarda' },
+      { val: 'gm_inspetor', text: 'Inspetor / Classe intermediária — quando existir' },
+      { val: 'gm_comando', text: 'Comando / direção — conforme lei municipal' }
+    ];
+  }
+
+  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
+    REMUNERACAO_FONTES_OFICIAIS.gm = REMUNERACAO_FONTES_OFICIAIS.gm || {
+      nome: 'Guarda Municipal — verificar portal da transparência, lei municipal e edital local',
+      url: '#'
+    };
+  }
+
+  if (typeof CONCURSOS !== 'undefined') {
+    CONCURSOS.gm = CONCURSOS.gm || {
+      edital: 'Guarda Municipal — concurso municipal conforme cidade escolhida',
+      salario: 'Varia conforme lei municipal e edital local',
+      vagas: 'Varia por município',
+      cotas: 'Conforme edital municipal',
+      idade: 'Conforme edital e legislação local',
+      escolaridade: 'Geralmente ensino médio, podendo variar conforme município',
+      materias: 'Língua Portuguesa, legislação municipal, Estatuto Geral das Guardas Municipais, noções de Direito, conhecimentos gerais, informática e outras disciplinas conforme edital.',
+      banca: 'Conforme contratação municipal',
+      inscritos: 'Varia por edital',
+      etapas: 'Prova objetiva, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação quando previstos.',
+      cfsd: 'Curso de formação ou capacitação conforme matriz curricular e regulamento local.',
+      estagio: 'Conforme estatuto municipal.',
+      validade: 'Conforme edital.',
+      previsao: 'Consultar prefeitura e diário oficial do município.',
+      site: '#'
+    };
+  }
+
+  if (typeof ACOES_JUDICIAIS !== 'undefined') {
+    ACOES_JUDICIAIS.gm = ACOES_JUDICIAIS.gm || [
+      {
+        titulo: 'Guarda Municipal — direitos e enquadramentos locais',
+        status: 'Verificar caso individual',
+        ano: 'Tema permanente',
+        tipo: 'individual',
+        desc: 'Demandas podem envolver plano de carreira, adicional de risco, adicional noturno, horas extras, previdência, aposentadoria especial quando discutida, porte institucional, enquadramento e condições de trabalho.',
+        base: 'Lei municipal, Estatuto Geral das Guardas Municipais, Constituição, decisões judiciais aplicáveis e documentos funcionais.',
+        fonte: 'Consultar legislação municipal e advogado/entidade local',
+        fonteUrl: '',
+        atualizado: 'Conteúdo geral municipal'
+      }
+    ];
+  }
+
+  if (typeof ASSOCIACOES !== 'undefined') {
+    ASSOCIACOES.gm = ASSOCIACOES.gm || [
+      {
+        nome: 'Entidade representativa de Guardas Municipais — consultar município',
+        foco: 'Guardas municipais ativos, aposentados, pensionistas e familiares, conforme base territorial da entidade.',
+        acao: 'Acompanhamento de pautas de carreira, remuneração, plano de cargos, condições de trabalho, porte, formação e valorização profissional.',
+        site: '',
+        telefone: 'Consultar entidade local',
+        mensalidade: 'Consultar diretamente',
+        servicos: 'Jurídico, comunicação, convênios e representação institucional conforme estatuto da entidade.'
+      }
+    ];
+  }
+}
+
+function getEsferaConsultaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf' || inst === 'prf') return 'federal';
+  if (inst === 'gm' || inst === 'guarda_municipal') return 'municipal';
+  return 'estadual';
+}
+
+function getRamoConsultaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf') return 'Polícia Federal';
+  if (inst === 'prf') return 'Polícia Rodoviária Federal';
+  if (inst === 'gm') return 'Guarda Municipal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
+  if (inst.startsWith('pp')) return 'Polícia Penal';
+  if (inst.startsWith('pc')) return 'Polícia Civil';
+  if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Brigada Militar / Polícia Militar' : 'Polícia Militar';
+  return 'Instituição';
+}
+
+function getOrdemConsultaInstituicao(inst) {
+  const estado = getEstadoDaInstituicao(inst);
+  const dadosEstado = HEADER_ESTADOS[estado] || {};
+  if (inst === 'pf') return 1;
+  if (inst === 'prf') return 2;
+  if (dadosEstado.pm === inst) return 1;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (inst === 'gm') return 1;
+  return 9;
+}
+
+function getInstituicoesParaConsulta(esfera) {
+  garantirEstruturaGuardaMunicipalConsulta();
+  const esferaNormalizada = String(esfera || '').toLowerCase();
+  let base = [];
+
+  if (esferaNormalizada === 'federal') {
+    base = ['pf', 'prf'];
+  } else if (esferaNormalizada === 'municipal') {
+    base = ['gm'];
+  } else if (esferaNormalizada === 'estadual') {
+    base = INSTITUICOES_VALIDAS.filter(inst => getEsferaConsultaInstituicao(inst) === 'estadual');
+  }
+
+  return base
+    .filter(inst => HEADER_INSTITUICOES_INFO[inst])
+    .map(inst => {
+      const estado = getEstadoDaInstituicao(inst);
+      const dadosEstado = HEADER_ESTADOS[estado] || HEADER_ESTADOS.sp;
+      const info = HEADER_INSTITUICOES_INFO[inst] || {};
+      return {
+        inst,
+        estado,
+        estadoNome: dadosEstado.nome || 'Brasil',
+        uf: dadosEstado.sigla || estado.toUpperCase(),
+        sigla: info.titulo || inst.toUpperCase(),
+        nome: info.desc || inst.toUpperCase(),
+        ramo: getRamoConsultaInstituicao(inst),
+        ordem: getOrdemConsultaInstituicao(inst)
+      };
+    })
+    .sort((a, b) => {
+      if (a.estado !== b.estado) {
+        const ordemEstados = Object.keys(HEADER_ESTADOS);
+        return ordemEstados.indexOf(a.estado) - ordemEstados.indexOf(b.estado);
+      }
+      return a.ordem - b.ordem || a.sigla.localeCompare(b.sigla, 'pt-BR');
+    });
+}
+
+function removerSeletorAntigoPoderes() {
+  const antigo = document.getElementById('poderes_instituicao');
+  const bloco = antigo?.closest('.poderes-form-grid');
+  if (bloco) bloco.remove();
+}
+
+function criarHtmlSeletorConsulta(page, config) {
+  const idEsfera = `consulta_esfera_${page}`;
+  const idInstituicao = `consulta_instituicao_${page}`;
+  return `
+    <section class="consulta-instituicao-card" data-consulta-selector="${page}" aria-label="Seleção de instituição para esta aba">
+      <div class="consulta-instituicao-texto">
+        <span>Escolha dentro desta aba</span>
+        <strong>${escapeHtml(config.titulo)}</strong>
+        <small>${escapeHtml(config.subtitulo)}</small>
+      </div>
+      <div class="consulta-instituicao-grid">
+        <div class="field">
+          <label for="${idEsfera}">Tipo de instituição</label>
+          <select id="${idEsfera}" data-consulta-esfera data-consulta-page="${page}" aria-label="Selecione se a instituição é federal, estadual ou municipal">
+            <option value="" selected>Escolha a esfera</option>
+            <option value="federal">Federal</option>
+            <option value="estadual">Estadual</option>
+            <option value="municipal">Municipal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="${idInstituicao}">Instituição</label>
+          <select id="${idInstituicao}" data-consulta-instituicao data-consulta-page="${page}" aria-label="Selecione a instituição" disabled>
+            <option value="">Escolha primeiro a esfera</option>
+          </select>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function inserirSeletorConsultaNaPagina(page) {
+  const config = PAGINAS_COM_SELECAO_INSTITUICAO[page];
+  if (!config) return;
+  const pageEl = document.getElementById(`page-${page}`);
+  const card = pageEl?.querySelector('.card');
+  if (!card || card.querySelector(`[data-consulta-selector="${page}"]`)) return;
+
+  if (page === 'poderes') removerSeletorAntigoPoderes();
+
+  const h2 = card.querySelector('h2');
+  const temp = document.createElement('div');
+  temp.innerHTML = criarHtmlSeletorConsulta(page, config).trim();
+  const seletor = temp.firstElementChild;
+  if (h2 && h2.nextSibling) card.insertBefore(seletor, h2.nextSibling);
+  else card.prepend(seletor);
+}
+
+function montarSeletoresConsultaInstituicao() {
+  garantirEstruturaGuardaMunicipalConsulta();
+  Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(inserirSeletorConsultaNaPagina);
+  sincronizarSeletoresConsulta();
+}
+
+function atualizarInstituicoesConsulta(page, esfera, valorPreferido = '') {
+  const pageEl = document.getElementById(`page-${page}`);
+  const seletorInst = pageEl?.querySelector('[data-consulta-instituicao]');
+  if (!seletorInst) return;
+
+  const itens = getInstituicoesParaConsulta(esfera);
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : (esfera === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esfera === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  if (valorPreferido && itens.some(item => item.inst === valorPreferido)) {
+    seletorInst.value = valorPreferido;
+  } else {
+    seletorInst.value = '';
+  }
+}
+
+function sincronizarSeletoresConsulta(pageUnica = '') {
+  const paginas = pageUnica ? [pageUnica] : Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO);
+  paginas.forEach(page => {
+    inserirSeletorConsultaNaPagina(page);
+    const pageEl = document.getElementById(`page-${page}`);
+    if (!pageEl) return;
+    const esferaSelect = pageEl.querySelector('[data-consulta-esfera]');
+    const instSelect = pageEl.querySelector('[data-consulta-instituicao]');
+    if (!esferaSelect || !instSelect) return;
+
+    if (!instituicaoConsultaFoiSelecionada()) {
+      if (!esferaSelect.value) {
+        instSelect.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+        instSelect.disabled = true;
+      }
+      return;
+    }
+
+    const esfera = getEsferaConsultaInstituicao(currInst);
+    esferaSelect.value = esfera;
+    atualizarInstituicoesConsulta(page, esfera, currInst);
+  });
+}
+
+function alterarEsferaConsultaInstituicao(page, esfera) {
+  inserirSeletorConsultaNaPagina(page);
+  if (instituicaoConsultaFoiSelecionada()) {
+    aplicarHeaderInicialPortal();
+  }
+  atualizarInstituicoesConsulta(page, esfera, '');
+  mostrarAvisoSelecaoInstituicao(page);
+}
+
+function selecionarInstituicaoConsulta(page, inst) {
+  if (!inst) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return;
+  }
+  mudarInstituicao(inst);
+  sincronizarSeletoresConsulta();
+  renderizarConteudoPaginaInstitucional(page);
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (info) mostrarToast(`${info.titulo} selecionada para esta consulta.`);
+}
+
+function avisoSelecaoInstituicaoHtml(page) {
+  const nomes = {
+    remuneracao: 'a tabela de remuneração',
+    direitos: 'a análise de direitos',
+    poderes: 'os poderes e deveres',
+    brasoes: 'o brasão e a história institucional',
+    concursos: 'os dados de concursos',
+    acoes: 'as ações judiciais',
+    associacoes: 'as associações e sindicatos'
+  };
+  return `
+    <div class="consulta-vazio" role="status">
+      <strong>Escolha uma instituição nesta aba.</strong>
+      <span>Primeiro selecione se a instituição é federal, estadual ou municipal. Depois escolha a instituição específica para carregar ${nomes[page] || 'as informações'}.</span>
+    </div>
+  `;
+}
+
+function atualizarTitulosConsultaSemInstituicao() {
+  [
+    'txt-inst-dir',
+    'txt-inst-concursos',
+    'txt-inst-poderes',
+    'txt-inst-brasoes',
+    'txt-inst-remuneracao',
+    'txt-inst-acoes',
+    'txt-inst-assoc'
+  ].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '—';
+  });
+}
+
+function mostrarAvisoSelecaoInstituicao(page = '') {
+  if (!page) return;
+  atualizarTitulosConsultaSemInstituicao();
+
+  if (page === 'remuneracao') {
+    const tbody = document.getElementById('lista-remuneracao');
+    if (tbody) tbody.innerHTML = `<tr><td colspan="4">Escolha uma instituição nesta aba para carregar a tabela.</td></tr>`;
+    const total = document.getElementById('remu-total-cargos');
+    const menor = document.getElementById('remu-menor-total');
+    const maior = document.getElementById('remu-maior-total');
+    if (total) total.textContent = '0';
+    if (menor) menor.textContent = '—';
+    if (maior) maior.textContent = '—';
+    return;
+  }
+
+  if (page === 'direitos') {
+    const cargo = document.getElementById('cargo_dir');
+    if (cargo && !instituicaoConsultaFoiSelecionada()) cargo.innerHTML = '<option value="">Selecione uma instituição primeiro</option>';
+    const cont = document.getElementById('resultados_dir');
+    if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
+    return;
+  }
+
+  const destino = PAGINAS_COM_SELECAO_INSTITUICAO[page]?.destino;
+  const cont = destino ? document.getElementById(destino) : null;
+  if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
+}
+
+function limparConsultaInstitucionalInicial() {
+  montarSeletoresConsultaInstituicao();
+  atualizarTitulosConsultaSemInstituicao();
+  Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(mostrarAvisoSelecaoInstituicao);
+}
+
+function renderizarConteudoPaginaInstitucional(page) {
+  if (!instituicaoConsultaFoiSelecionada()) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return;
+  }
+
+  sincronizarSeletoresConsulta(page);
+
+  if (page === 'direitos') {
+    popularCargos(currInst);
+    analisarDireitos();
+  } else if (page === 'concursos') {
+    carregarConcursos();
+  } else if (page === 'poderes') {
+    inicializarPoderesDeveres();
+  } else if (page === 'brasoes') {
+    renderizarBrasoesHistoria();
+  } else if (page === 'acoes') {
+    carregarAcoes();
+  } else if (page === 'associacoes') {
+    carregarAssociacoes();
+  } else if (page === 'remuneracao') {
+    carregarRemuneracaoTabelada();
+  }
+}
+
+function prepararPaginaComSelecaoInstituicao(page) {
+  if (!PAGINAS_COM_SELECAO_INSTITUICAO[page]) return false;
+  montarSeletoresConsultaInstituicao();
+  if (!instituicaoConsultaFoiSelecionada()) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return true;
+  }
+  renderizarConteudoPaginaInstitucional(page);
+  return true;
+}
 
 
-/* === js/services/direitos.js === */
+
+function obterResumoInstituicaoCompleto(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  const resumo = HEADER_INSTITUICOES_RESUMO[inst] || {};
+  const estadoChave = getEstadoDaInstituicao(inst);
+  const estado = HEADER_ESTADOS[estadoChave] || {};
+  const sigla = resumo.sigla || info.titulo || String(inst || '').toUpperCase();
+  const nome = resumo.nome || info.desc || sigla;
+  const tipo = resumo.tipo || resumoInferirTipo(inst, resumo);
+  const uf = resumo.estadoSigla || estado.sigla || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'BR' : '—');
+  const estadoNome = resumo.estado || estado.nome || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'Brasil' : 'Municípios');
+  return { info, resumo, estadoChave, estado, sigla, nome, tipo, uf, estadoNome };
+}
+
+function valorHistoriaOuNaoDeclarado(valor, alternativo = 'Informação específica a confirmar em fonte oficial') {
+  if (typeof resumoEhDadoPendente === 'function' && resumoEhDadoPendente(valor)) return alternativo;
+  const texto = String(valor || '').trim();
+  if (!texto || texto === RESUMO_DADOS_EM_BREVE || /dados em breve/i.test(texto)) return alternativo;
+  return texto;
+}
+
+function imagemPrincipalBrasaoInstituicao(inst) {
+  const caminho = HEADER_INSTITUICOES_IMAGENS?.[inst] || '';
+  const candidatos = montarCandidatosImagemInstituicao(inst, caminho);
+  return candidatos[0] || caminho || 'img/LOGO/logoleao.webp';
+}
+
+function getCriadorInstitucional(inst, tipo, estadoNome) {
+  if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  const esfera = getEsferaConsultaInstituicao(inst);
+  if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
+  if (inst === 'prf') return 'União — estrutura federal vinculada à segurança pública e ao policiamento ostensivo das rodovias federais.';
+  if (esfera === 'municipal') return 'Município — criada por lei municipal e organizada pela prefeitura/secretaria competente.';
+  if (/Polícia Penal/i.test(tipo)) return `${estadoNome} — carreira constitucionalizada pela EC 104/2019 e estruturada por normas estaduais/distritais.`;
+  if (/Bombeiro/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização militar e comando próprio conforme legislação local.`;
+  if (/Polícia Civil/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização da polícia judiciária conforme legislação local.`;
+  return `${estadoNome} — poder público estadual/distrital, por ato legal de organização da força pública local.`;
+}
+
+function getHistoricoPorTipo(inst, dados) {
+  const { sigla, nome, tipo, estadoNome, resumo } = dados;
+  const criacao = valorHistoriaOuNaoDeclarado(resumo.criacao, 'origem histórica organizada pela legislação própria da instituição');
+  const esfera = getEsferaConsultaInstituicao(inst);
+
+  if (inst === 'pmesp') {
+    return {
+      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Ao longo de sua trajetória, a instituição passou por reorganizações, profissionalização, expansão territorial e consolidação do policiamento ostensivo e da preservação da ordem pública no estado.`,
+      marcos: [
+        'Criação da força pública paulista em 15/12/1831, associada ao governo provincial de Rafael Tobias de Aguiar.',
+        'Consolidação como força militar estadual com atuação em policiamento ostensivo, preservação da ordem pública e apoio em crises.',
+        'Modernização de formação, policiamento especializado, radiopatrulhamento, policiamento comunitário, tecnologia, inteligência e atendimento emergencial.'
+      ]
+    };
+  }
+
+  if (inst === 'pf') {
+    return {
+      origem: `A ${nome} é órgão permanente da União e atua como polícia judiciária federal, responsável por investigar crimes de competência federal, proteger interesses da União e executar atribuições especializadas em fronteiras, migração, polícia marítima, aeroportuária e de combate a crimes interestaduais ou internacionais.`,
+      marcos: [
+        'Consolidação constitucional como órgão da segurança pública federal no art. 144 da Constituição.',
+        'Atuação em investigações federais, cooperação internacional, controle migratório e repressão a crimes contra bens, serviços e interesses da União.',
+        'Ampliação de capacidades técnicas em perícia, inteligência, operações especiais, crimes cibernéticos e enfrentamento de organizações criminosas.'
+      ]
+    };
+  }
+
+  if (inst === 'prf') {
+    return {
+      origem: `A ${nome} se consolidou como polícia ostensiva federal voltada às rodovias federais, combinando fiscalização de trânsito, prevenção de acidentes, atendimento em ocorrências e enfrentamento de crimes que utilizam a malha rodoviária nacional.`,
+      marcos: [
+        'Reconhecimento constitucional como órgão permanente da segurança pública federal no art. 144 da Constituição.',
+        'Fortalecimento da fiscalização de trânsito e do patrulhamento ostensivo nas rodovias federais.',
+        'Atuação integrada no combate ao tráfico de drogas, armas, contrabando, crimes ambientais, roubo de cargas e crimes interestaduais.'
+      ]
+    };
+  }
+
+  if (esfera === 'municipal') {
+    return {
+      origem: 'A Guarda Municipal é organizada por lei local e atua na proteção de bens, serviços e instalações municipais, com papel preventivo e comunitário. A história concreta varia conforme o município, sua lei de criação, estatuto, plano de carreira e estrutura administrativa.',
+      marcos: [
+        'Previsão constitucional das guardas municipais no art. 144 da Constituição.',
+        'Fortalecimento nacional com o Estatuto Geral das Guardas Municipais, que definiu princípios mínimos de atuação, proteção municipal e cooperação institucional.',
+        'Integração crescente com políticas de prevenção, ordenamento urbano, proteção escolar, videomonitoramento e defesa civil local.'
+      ]
+    };
+  }
+
+  if (/Bombeiro/i.test(tipo)) {
+    return {
+      origem: `O ${nome} integra a segurança pública e a defesa civil do ${estadoNome}. Sua trajetória é ligada ao combate a incêndios, salvamento, resgate, prevenção, vistoria técnica e resposta a emergências, com organização militar estadual/distrital. Registro de criação/origem usado nesta base: ${criacao}.`,
+      marcos: [
+        'Formação ou consolidação como estrutura bombeiro militar estadual/distrital.',
+        'Expansão das atividades de prevenção contra incêndio, salvamento, atendimento pré-hospitalar e defesa civil.',
+        'Adoção de normas técnicas, formação especializada e integração com sistemas estaduais de gestão de riscos e desastres.'
+      ]
+    };
+  }
+
+  if (/Polícia Civil/i.test(tipo)) {
+    return {
+      origem: `A ${nome} é a polícia judiciária do ${estadoNome}. Sua história está ligada à investigação criminal, apuração de infrações penais, formalização de procedimentos, apoio à Justiça criminal e especialização de delegacias. Registro de criação/origem usado nesta base: ${criacao}.`,
+      marcos: [
+        'Consolidação das delegacias e da carreira policial civil como estrutura de investigação estadual/distrital.',
+        'Especialização de unidades investigativas para homicídios, patrimônio, drogas, crimes cibernéticos, violência contra a mulher e outras áreas.',
+        'Integração progressiva com perícia, inteligência, bancos de dados e cooperação operacional com outras forças.'
+      ]
+    };
+  }
+
+  if (/Polícia Penal/i.test(tipo)) {
+    return {
+      origem: `A ${nome} representa a carreira voltada à segurança dos estabelecimentos penais no ${estadoNome}. A Polícia Penal foi inserida no texto constitucional pela Emenda Constitucional 104/2019, e cada ente federativo organiza sua estrutura, cargos, atribuições e identidade institucional por normas próprias.`,
+      marcos: [
+        'Constitucionalização da Polícia Penal pela EC 104/2019.',
+        'Transição de estruturas penitenciárias para carreira policial penal estadual/distrital.',
+        'Fortalecimento da segurança prisional, escoltas, inteligência penitenciária e controle interno dos estabelecimentos penais.'
+      ]
+    };
+  }
+
+  return {
+    origem: `A ${nome} é força policial militar do ${estadoNome}, com trajetória ligada à preservação da ordem pública, policiamento ostensivo, disciplina militar e proteção da sociedade. Registro de criação/origem usado nesta base: ${criacao}.`,
+    marcos: [
+      'Criação ou organização histórica como força pública estadual/provincial.',
+      'Consolidação do policiamento ostensivo e da preservação da ordem pública como atribuições centrais.',
+      'Modernização de formação, radiopatrulhamento, policiamento especializado, corregedoria, inteligência e atendimento comunitário.'
+    ]
+  };
+}
+
+function montarCamposResumoHistoria(inst, dados) {
+  const { resumo, tipo, uf, estadoNome } = dados;
+  const populacaoTitulo = resumo.populacaoTitulo || (/Polícia Penal/i.test(tipo) ? 'Presos atendidos' : 'População atendida');
+  return [
+    { rotulo: 'Natureza', valor: tipo },
+    { rotulo: 'Jurisdição', valor: `${uf} · ${estadoNome}` },
+    { rotulo: 'Criação/origem', valor: valorHistoriaOuNaoDeclarado(resumo.criacao, 'Registro histórico específico a confirmar') },
+    { rotulo: 'Criador/ato de origem', valor: getCriadorInstitucional(inst, tipo, estadoNome) },
+    { rotulo: 'Efetivo total', valor: valorHistoriaOuNaoDeclarado(resumo.efetivoTotalLabel || calcularEfetivoTotalResumoHeader(resumo), 'Efetivo específico a confirmar') },
+    { rotulo: /Bombeiro|Polícia Militar/i.test(tipo) ? 'Reserva/reforma' : 'Aposentados/inativos', valor: valorHistoriaOuNaoDeclarado(resumo.reservaLabel || resumo.reserva, 'Inativos específicos a confirmar') },
+    { rotulo: 'Mulheres no efetivo', valor: valorHistoriaOuNaoDeclarado(resumo.femininasLabel || resumo.femininas, 'Dado específico a confirmar') },
+    { rotulo: populacaoTitulo, valor: valorHistoriaOuNaoDeclarado(resumo.populacaoLabel || (resumo.populacao ? formatarNumeroHeader(resumo.populacao) : ''), 'Abrangência específica a confirmar') },
+    { rotulo: resumo.relacaoTitulo || 'Relação institucional', valor: valorHistoriaOuNaoDeclarado(resumo.relacaoLabel, 'Relação específica a confirmar') },
+    { rotulo: /Polícia Federal|Rodoviária Federal/i.test(tipo) ? 'Direção-Geral' : (/Polícia Civil/i.test(tipo) ? 'Chefia/Direção' : 'Comando/Direção'), valor: valorHistoriaOuNaoDeclarado(resumo.comando, 'Chefia atual a confirmar') }
+  ];
+}
+
+function renderizarBrasoesHistoria() {
+  const cont = document.getElementById('brasoes_historia_resultado');
+  if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('brasoes');
+    return;
+  }
+
+  const inst = currInst;
+  const dados = obterResumoInstituicaoCompleto(inst);
+  const { sigla, nome, tipo, estadoNome, resumo } = dados;
+  const imagem = imagemPrincipalBrasaoInstituicao(inst);
+  const historico = getHistoricoPorTipo(inst, dados);
+  const campos = montarCamposResumoHistoria(inst, dados);
+  const atualizado = valorHistoriaOuNaoDeclarado(resumo.atualizado, 'Resumo institucional revisado para navegação informativa');
+  const fonte = valorHistoriaOuNaoDeclarado(resumo.fonte, 'Fontes públicas e oficiais quando disponíveis; confirmar informações sensíveis nos canais oficiais da instituição.');
+
+  const tituloSpan = document.getElementById('txt-inst-brasoes');
+  if (tituloSpan) tituloSpan.textContent = sigla;
+
+  cont.innerHTML = `
+    <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
+      <div class="brasoes-imagem-wrap">
+        <img class="brasoes-imagem" src="${escapeHtml(imagem)}" alt="Brasão ou insígnia da ${escapeHtml(nome)}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
+      </div>
+      <div class="brasoes-hero-copy">
+        <span class="brasoes-kicker">${escapeHtml(tipo)}</span>
+        <h3>${escapeHtml(sigla)} — ${escapeHtml(nome)}</h3>
+        <p>${escapeHtml(estadoNome)} · ${escapeHtml(getEsferaConsultaInstituicao(inst))}</p>
+        <small>${escapeHtml(atualizado)}</small>
+      </div>
+    </section>
+
+    <section class="brasoes-resumo-grid" aria-label="Resumo institucional detalhado">
+      ${campos.map(campo => `
+        <article class="brasoes-resumo-item">
+          <span>${escapeHtml(campo.rotulo)}</span>
+          <strong>${escapeHtml(campo.valor)}</strong>
+        </article>
+      `).join('')}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="História da instituição">
+      <div class="brasoes-section-title">
+        <span>História breve</span>
+        <h3>Origem e evolução institucional</h3>
+      </div>
+      <p>${escapeHtml(historico.origem)}</p>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Marcos históricos">
+      <div class="brasoes-section-title">
+        <span>Marcos históricos</span>
+        <h3>Pontos importantes da trajetória</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${historico.marcos.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
+      <strong>Fonte-base do resumo:</strong>
+      <p>${escapeHtml(fonte)}</p>
+      <small>Conteúdo informativo, independente e não oficial. Dados de efetivo, chefia e datas podem mudar; confirme sempre em ato oficial, portal da transparência, diário oficial ou site institucional.</small>
+    </section>
+  `;
+}
+
+
+/* ============================================================ */
+
+/* ===== js/services/direitos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6052,6 +7503,10 @@ function mudarInstituicao(novaInstituicao) {
 function analisarDireitos() {
   const cont = document.getElementById('resultados_dir');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('direitos');
+    return;
+  }
 
   const inst = currInst;
   const tempo = valEl('tempo_dir');
@@ -6624,8 +8079,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 
 /* ============================================================ */
 
-
-/* === js/pages/concursos-comparador.js === */
+/* ===== js/pages/concursos-comparador.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6633,45 +8087,61 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* ============================================================ */
 /* BLOCO 15.12 — Renderização das páginas de concursos, ações e associações */
 
+const TEXTO_DADOS_EM_BREVE = 'Dados em breve';
+
+function valorOuDadosEmBreve(valor) {
+  if (typeof normalizarTextoSemFonteSegura === 'function') return normalizarTextoSemFonteSegura(valor);
+  const texto = String(valor ?? '').trim();
+  if (!texto || texto === '#' || /(?:a preencher|preencher|a confirmar|a definir|consultar|conferir|sem informação|sem informacao|pendente|estrutura criada|estrutura aberta|espaço reservado|reservado para|não afirmar|nao afirmar)/i.test(texto)) return TEXTO_DADOS_EM_BREVE;
+  return texto;
+}
+
+function ehDadosEmBreve(valor) {
+  return valorOuDadosEmBreve(valor) === TEXTO_DADOS_EM_BREVE;
+}
+
+function itemUnicoDadosEmBreve(classe = 'acao') {
+  return `<div class="direito-item ${classe}"><span class="direito-nome">${TEXTO_DADOS_EM_BREVE}</span></div>`;
+}
+
+function urlPublicaValida(valor) {
+  return /^https?:\/\//i.test(String(valor || '').trim());
+}
+
 function getConcursoPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return null;
   const info = getInfoPoliciaPenal(inst);
-  return {
-    edital: `${info.sigla} — ${info.nome} — concursos, formação e carreira penal`,
-    salario: info.concurso.salario || info.remuneracao,
-    vagas: info.concurso.vagas || 'Conferir autorização, edital e Diário Oficial da unidade federativa.',
-    cotas: 'Reserva de vagas conforme legislação estadual, federal e regras do edital vigente.',
-    idade: 'Em regra, idade mínima de 18 anos; limites máximos, CNH, altura, aptidão física e demais requisitos dependem do edital e da legislação local.',
-    escolaridade: info.concurso.escolaridade || info.escolaridade,
-    materias: 'Português, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Direitos Humanos, Lei de Execução Penal, legislação penitenciária, atualidades e conhecimentos específicos, conforme edital.',
-    banca: info.concurso.banca || 'A definir conforme edital.',
-    inscritos: 'Sem informação automática; acompanhar Diário Oficial, portal do governo e site da banca.',
-    etapas: 'Prova objetiva, investigação social, exames médicos, avaliação psicológica, TAF, curso de formação e demais fases previstas no edital.',
-    cfsd: info.formacao,
-    estagio: 'Estágio probatório e avaliação de desempenho conforme regime jurídico e lei da carreira penal.',
-    validade: 'Conferir edital do certame.',
-    previsao: `Acompanhar publicações oficiais: ${info.fonte}. Não afirmar edital aberto sem publicação oficial.`,
-    site: info.url || REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
+  const dados = {
+    edital: `${info.sigla} — ${info.nome}`,
+    salario: valorOuDadosEmBreve(info.concurso?.salario || info.remuneracao),
+    vagas: valorOuDadosEmBreve(info.concurso?.vagas),
+    cotas: TEXTO_DADOS_EM_BREVE,
+    idade: TEXTO_DADOS_EM_BREVE,
+    escolaridade: valorOuDadosEmBreve(info.concurso?.escolaridade || info.escolaridade),
+    materias: TEXTO_DADOS_EM_BREVE,
+    banca: valorOuDadosEmBreve(info.concurso?.banca),
+    inscritos: TEXTO_DADOS_EM_BREVE,
+    etapas: TEXTO_DADOS_EM_BREVE,
+    cfsd: valorOuDadosEmBreve(info.formacao),
+    estagio: TEXTO_DADOS_EM_BREVE,
+    validade: TEXTO_DADOS_EM_BREVE,
+    previsao: TEXTO_DADOS_EM_BREVE,
+    site: urlPublicaValida(info.url) ? info.url : (REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#')
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function getAcoesPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return [];
-  const info = getInfoPoliciaPenal(inst);
   return [
-    { titulo: `${info.sigla} — Enquadramento, transformação de cargos e implantação da carreira`, status: 'Verificar caso a caso', ano: info.criacao, tipo: 'individual', desc: `Discussões podem envolver transformação de antigos cargos penitenciários em Polícia Penal, enquadramento, classe, referência, atribuições, efeitos financeiros e data de implantação. ${info.marco}`, base: `${info.criacao}; ato de enquadramento; ficha funcional; tabela remuneratória; Diário Oficial.`, fonte: info.fonte, fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Adicional penitenciário, risco, periculosidade, insalubridade e rubricas`, status: 'Tema dependente de rubrica e laudo', ano: 'Tema recorrente', tipo: 'individual', desc: info.vantagens, base: 'Lei estadual da carreira, laudo/ato administrativo, contracheques, lotação, escala e local de exercício.', fonte: info.fonte, fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Aposentadoria policial, transições e previdência`, status: 'Análise individual', ano: 'EC 103/2019, EC 104/2019 e normas locais', tipo: 'individual', desc: info.previdencia, base: 'Data de ingresso, tempo de contribuição, tempo no cargo/carreira, sexo, idade, regra aplicada e ficha funcional.', fonte: 'Conferência previdenciária individual', fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Plantões, escoltas, operações, diárias e serviço extraordinário`, status: 'Depende de escala e autorização', ano: 'Tema operacional', tipo: 'individual', desc: `Atribuições operacionais: ${info.atribuicoes} Diferenças dependem de escala, ordem de serviço, autorização, deslocamento e rubrica.`, base: 'Escalas, ordens de serviço, publicações, lei local, contracheques e atos administrativos.', fonte: 'Documentos funcionais e normas internas', fonteUrl: info.url, atualizado: 'Abril/2026' }
+    { titulo: TEXTO_DADOS_EM_BREVE, status: TEXTO_DADOS_EM_BREVE, ano: TEXTO_DADOS_EM_BREVE, tipo: 'individual', desc: TEXTO_DADOS_EM_BREVE, base: TEXTO_DADOS_EM_BREVE, fonte: TEXTO_DADOS_EM_BREVE, fonteUrl: '', atualizado: TEXTO_DADOS_EM_BREVE }
   ];
 }
 
 function getAssociacoesPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return [];
-  const info = getInfoPoliciaPenal(inst);
   return [
-    { nome: `Entidade representativa da ${info.sigla} — ${info.nome}`, foco: `${info.uf} — policiais penais ativos, aposentados e pensionistas quando abrangidos`, acao: `Representação da categoria em carreira, remuneração, saúde, aposentadoria policial, porte funcional, condições de trabalho, segurança prisional e valorização institucional. Busca sugerida: ${info.associacaoBusca}.`, site: 'Consultar site/canal oficial da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação sindical/associativa, notícias, mobilização, acompanhamento legislativo e eventual apoio jurídico conforme regras internas.' },
-    { nome: `Associação/Sindicato dos Policiais Penais — ${info.uf}`, foco: `${info.orgao}`, acao: `Acompanhamento de pautas ligadas a ${info.criacao}, implantação da carreira, adicionais, concurso, formação, segurança das unidades e direitos funcionais.`, site: 'Consultar canais oficiais e redes da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento associativo, comunicação, assembleias, convênios, acompanhamento legislativo e eventual suporte jurídico conforme contrato.' }
+    { nome: TEXTO_DADOS_EM_BREVE, foco: TEXTO_DADOS_EM_BREVE, acao: TEXTO_DADOS_EM_BREVE, site: '', telefone: TEXTO_DADOS_EM_BREVE, mensalidade: TEXTO_DADOS_EM_BREVE, servicos: TEXTO_DADOS_EM_BREVE }
   ];
 }
 
@@ -6682,6 +8152,9 @@ function getAssociacoesPoliciaPenal(inst) {
 /* BLOCO 15.14.1 — Comparar remuneração, benefícios, concursos e fontes entre instituições */
 function getRamoComparador(inst) {
   inst = String(inst || '');
+  if (inst === 'pf') return 'Federal';
+  if (inst === 'prf') return 'Rodoviária Federal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
   if (inst.startsWith('pp')) return 'Penal';
   if (inst.startsWith('pc')) return 'Civil';
   if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Militar / Brigada' : 'Militar';
@@ -6692,8 +8165,11 @@ function getOrdemComparador(inst) {
   const estado = getEstadoDaInstituicao(inst);
   const dadosEstado = HEADER_ESTADOS[estado] || {};
   if (dadosEstado.pm === inst) return 1;
-  if (dadosEstado.pc === inst) return 2;
-  if (dadosEstado.pp === inst) return 3;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (dadosEstado.pf === inst) return 1;
+  if (dadosEstado.prf === inst) return 2;
   return 9;
 }
 
@@ -6749,7 +8225,10 @@ function inicializarComparadorCarreiras() {
     selecao.dataset.renderizado = 'true';
   }
 
-  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
+  const esferaComparador = document.getElementById('comparador-esfera');
+  if (esferaComparador && esferaComparador.value) {
+    popularInstituicoesComparadorPorEsfera(esferaComparador.value);
+  }
   carregarComparadorCarreiras();
 }
 
@@ -6760,6 +8239,68 @@ function getComparadorSelect() {
 function getComparadorCheckboxes() {
   const selecao = getComparadorSelect();
   return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
+}
+
+function popularInstituicoesComparadorPorEsfera(esfera, valorPreferido = '') {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  if (!seletorInst) return;
+  const esferaNormalizada = String(esfera || '').trim().toLowerCase();
+  const itens = typeof getInstituicoesParaConsulta === 'function'
+    ? getInstituicoesParaConsulta(esferaNormalizada)
+    : getInstituicoesComparador().filter(item => !esferaNormalizada || getEsferaConsultaInstituicao(item.inst) === esferaNormalizada);
+
+  if (!esferaNormalizada) {
+    seletorInst.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esferaNormalizada === 'estadual'
+      ? `${item.estadoNome} (${item.uf})`
+      : (esferaNormalizada === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esferaNormalizada === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  seletorInst.value = valorPreferido && itens.some(item => item.inst === valorPreferido) ? valorPreferido : '';
+}
+
+function comparadorAlterarEsfera(esfera) {
+  popularInstituicoesComparadorPorEsfera(esfera, '');
+}
+
+function comparadorAdicionarInstituicaoSelecionada() {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  const inst = seletorInst?.value;
+  if (!inst) return;
+  const check = getComparadorCheckboxes().find(item => item.value === inst);
+  if (!check) return;
+  const jaSelecionada = check.checked;
+  check.checked = true;
+  carregarComparadorCarreiras();
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (typeof mostrarToast === 'function') {
+    mostrarToast(jaSelecionada ? `${info?.titulo || inst.toUpperCase()} já estava na comparação.` : `${info?.titulo || inst.toUpperCase()} adicionada à comparação.`);
+  }
 }
 
 function toggleComparadorLista() {
@@ -6800,7 +8341,7 @@ function atualizarResumoSelecaoComparador() {
 function comparadorSelecionarEstadoAtual(exibirToast = true) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const valores = [dadosEstado.pm, dadosEstado.pc, dadosEstado.pp].filter(Boolean);
+  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf].filter(Boolean);
   setSelecionadasComparador(valores);
   carregarComparadorCarreiras();
   if (exibirToast) mostrarToast(`Comparando carreiras de ${dadosEstado.nome}.`);
@@ -6820,18 +8361,27 @@ function comparadorLimparSelecao() {
 }
 
 function getConcursoComparador(inst) {
-  return CONCURSOS[inst] || getConcursoPoliciaPenal(inst) || {
-    edital: 'Concurso de referência não cadastrado',
-    salario: 'Consultar edital vigente',
-    vagas: 'Consultar edital vigente',
-    inscritos: 'Consultar banca e órgão oficial',
-    banca: 'Consultar edital',
-    materias: 'Consultar edital do cargo',
-    previsao: 'Acompanhar Diário Oficial, órgão e banca.',
-    escolaridade: 'Consultar edital',
-    etapas: 'Consultar edital',
+  if (CONCURSOS[inst]) return CONCURSOS[inst];
+  const penal = getConcursoPoliciaPenal(inst);
+  if (penal) return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, penal) : penal;
+  const dados = {
+    edital: HEADER_INSTITUICOES_INFO[inst]?.titulo || inst.toUpperCase(),
+    salario: 'Dados em breve',
+    vagas: 'Dados em breve',
+    cotas: 'Dados em breve',
+    idade: 'Dados em breve',
+    inscritos: 'Dados em breve',
+    banca: 'Dados em breve',
+    materias: 'Dados em breve',
+    previsao: 'Dados em breve',
+    escolaridade: 'Dados em breve',
+    etapas: 'Dados em breve',
+    cfsd: 'Dados em breve',
+    estagio: 'Dados em breve',
+    validade: 'Dados em breve',
     site: REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function limitarTextoComparador(texto, limite = 220) {
@@ -6846,16 +8396,16 @@ function getResumoRemuneracaoComparador(inst) {
   const maior = validas.length ? Math.max(...validas.map(l => Number(l.remuneracao || 0))) : 0;
   const linhaMenor = validas.find(l => Number(l.remuneracao || 0) === menor) || linhas[0] || {};
   const linhaMaior = validas.find(l => Number(l.remuneracao || 0) === maior) || linhas[0] || {};
-  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Dados em breve', url: '#' };
   const adicionais = getAdicionaisRemuneracaoResumo(inst, linhaMenor);
   return {
     totalCargos: linhas.length,
     menor,
     maior,
-    cargoMenor: linhaMenor.cargo || 'Cargo inicial/de referência',
-    cargoMaior: linhaMaior.cargo || 'Topo de carreira/de referência',
+    cargoMenor: linhaMenor.cargo || 'Dados em breve',
+    cargoMaior: linhaMaior.cargo || 'Dados em breve',
     adicionais,
-    fonteNome: fonte.nome || 'Fonte oficial da carreira',
+    fonteNome: fonte.nome || 'Dados em breve',
     fonteUrl: fonte.url || '#'
   };
 }
@@ -6886,7 +8436,7 @@ function getSelecionadasComparador() {
 }
 
 function linkComparador(url, texto = 'Abrir fonte') {
-  if (!url || url === '#') return '<span>Consultar fonte oficial</span>';
+  if (!url || url === '#') return '<span>Dados em breve</span>';
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
 }
 
@@ -6926,11 +8476,11 @@ function carregarComparadorCarreiras() {
     </div>
     <div class="comparador-stat">
       <span>Menor remuneração encontrada</span>
-      <strong>${menores.length ? fmt(Math.min(...menores)) : 'A confirmar'}</strong>
+      <strong>${menores.length ? fmt(Math.min(...menores)) : 'Dados em breve'}</strong>
     </div>
     <div class="comparador-stat">
       <span>Maior remuneração encontrada</span>
-      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'A confirmar'}</strong>
+      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'Dados em breve'}</strong>
     </div>
     <div class="comparador-stat">
       <span>Destaques</span>
@@ -6950,25 +8500,25 @@ function carregarComparadorCarreiras() {
           <span class="comparador-pill">${escapeHtml(d.ramo)}</span>
         </td>
         <td>
-          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'}<br>
+          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'}<br>
           <small>${escapeHtml(r.cargoMenor)}</small><br>
-          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'A confirmar'}<br>
+          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'Dados em breve'}<br>
           <small>${escapeHtml(r.cargoMaior)}</small>
         </td>
         <td>
           ${escapeHtml(limitarTextoComparador(r.adicionais, 260))}
         </td>
         <td>
-          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Edital de referência')}<br>
-          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Consultar edital')}<br>
+          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Dados em breve')}<br>
+          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Dados em breve')}<br>
           <strong>Próximo concurso / andamento:</strong> ${escapeHtml(limitarTextoComparador(c.previsao, 180))}
         </td>
         <td>
-          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}<br>
-          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Consultar banca')}
+          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}<br>
+          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Dados em breve')}
         </td>
         <td>
-          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}<br>
+          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}<br>
           <strong>Matérias:</strong> ${escapeHtml(limitarTextoComparador(c.materias, 230))}
         </td>
         <td>
@@ -6987,11 +8537,11 @@ function carregarComparadorCarreiras() {
         <h3>${escapeHtml(d.sigla)} — ${escapeHtml(d.uf)}</h3>
         <p><strong>${escapeHtml(d.nome)}</strong> · ${escapeHtml(d.ramo)}</p>
         <ul>
-          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'} até ${r.maior ? fmt(r.maior) : 'A confirmar'}.</li>
+          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'} até ${r.maior ? fmt(r.maior) : 'Dados em breve'}.</li>
           <li><strong>Referência inferior:</strong> ${escapeHtml(r.cargoMenor)}.</li>
-          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Consultar edital vigente')}.</li>
-          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}.</li>
-          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}.</li>
+          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Dados em breve')}.</li>
+          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}.</li>
+          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}.</li>
           <li><strong>Escolaridade:</strong> ${escapeHtml(limitarTextoComparador(c.escolaridade, 180))}.</li>
           <li><strong>Etapas:</strong> ${escapeHtml(limitarTextoComparador(c.etapas, 200))}.</li>
         </ul>
@@ -7006,6 +8556,10 @@ function carregarComparadorCarreiras() {
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('concursos');
+    return;
+  }
   const c = CONCURSOS[currInst] || getConcursoPoliciaPenal(currInst);
   if (!c) { cont.innerHTML = ""; return; }
 
@@ -7024,12 +8578,12 @@ function carregarConcursos() {
       <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
       <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
-      ${c.site ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : ''}
+      ${urlPublicaValida(c.site) ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
     </div>
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
+        <img src="img/SHOPEE/barrafixa01.webp" data-img-base="img/SHOPEE/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7041,7 +8595,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>
@@ -7053,7 +8607,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+        <img src="img/SHOPEE/barrafixa02.webp" data-img-base="img/SHOPEE/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7071,22 +8625,38 @@ function carregarConcursos() {
 function carregarAcoes() {
   const cont = document.getElementById('lista-acoes');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('acoes');
+    return;
+  }
   const lista = ACOES_JUDICIAIS[currInst] || getAcoesPoliciaPenal(currInst) || [];
 
+  if (!lista.length) {
+    cont.innerHTML = itemUnicoDadosEmBreve('acao');
+    return;
+  }
+
   cont.innerHTML = lista.map(a => {
-    const fonteHtml = a.fonte ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${a.fonteUrl ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : a.fonte}</span>` : '';
-    const atualizadoHtml = a.atualizado ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
+    const titulo = valorOuDadosEmBreve(a.titulo);
+    const campos = [a.status, a.ano, a.desc, a.base, a.fonte, a.atualizado].map(valorOuDadosEmBreve);
+    const semFonteSegura = titulo === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+    if (semFonteSegura) return itemUnicoDadosEmBreve('acao');
+
+    const fonteHtml = a.fonte && a.fonte !== TEXTO_DADOS_EM_BREVE
+      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
+      : `<span class="direito-desc">${TEXTO_DADOS_EM_BREVE}</span>`;
+    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
 
     return `
       <div class="direito-item acao">
-        <span class="direito-nome">${a.titulo}</span>
-        <span class="direito-status" style="color: var(--vermelho);">${a.status}</span>
+        <span class="direito-nome">${titulo}</span>
+        <span class="direito-status" style="color: var(--vermelho);">${valorOuDadosEmBreve(a.status)}</span>
         <div>
-          <span class="badge-info ${a.tipo}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
-          <span class="badge-info ativa">${a.ano}</span>
+          <span class="badge-info ${a.tipo === 'coletiva' ? 'coletiva' : 'individual'}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
+          <span class="badge-info ativa">${valorOuDadosEmBreve(a.ano)}</span>
         </div>
-        <span class="direito-desc">${a.desc}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${a.base}</span>
+        <span class="direito-desc">${valorOuDadosEmBreve(a.desc)}</span>
+        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${valorOuDadosEmBreve(a.base)}</span>
         ${fonteHtml}
         ${atualizadoHtml}
       </div>
@@ -7100,25 +8670,861 @@ function carregarAcoes() {
 function carregarAssociacoes() {
   const cont = document.getElementById('lista-associacoes');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('associacoes');
+    return;
+  }
   const lista = ASSOCIACOES[currInst] || getAssociacoesPoliciaPenal(currInst) || [];
-  cont.innerHTML = lista.map(a => `
-    <div class="direito-item associacao">
-      <span class="direito-nome">${a.nome}</span>
-      <span class="direito-desc"><strong>Foco:</strong> ${a.foco}</span>
-      <span class="direito-desc"><strong>Atuação atual:</strong> ${a.acao}</span>
-      <span class="direito-desc"><strong>Serviços:</strong> ${a.servicos}</span>
-      <span class="direito-desc"><strong>Mensalidade:</strong> ${a.mensalidade}</span>
-      <span class="direito-desc"><strong>Contato:</strong> ${a.telefone} · <a href="https://${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a></span>
-    </div>
-  `).join('');
+  if (!lista.length) {
+    cont.innerHTML = itemUnicoDadosEmBreve('associacao');
+    return;
+  }
+
+  cont.innerHTML = lista.map(a => {
+    const nome = valorOuDadosEmBreve(a.nome);
+    const campos = [a.foco, a.acao, a.servicos, a.mensalidade, a.telefone, a.site].map(valorOuDadosEmBreve);
+    const semFonteSegura = nome === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+    if (semFonteSegura) return itemUnicoDadosEmBreve('associacao');
+    const contato = urlPublicaValida(a.site)
+      ? `${valorOuDadosEmBreve(a.telefone)} · <a href="${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a>`
+      : TEXTO_DADOS_EM_BREVE;
+    return `
+      <div class="direito-item associacao">
+        <span class="direito-nome">${nome}</span>
+        <span class="direito-desc"><strong>Foco:</strong> ${valorOuDadosEmBreve(a.foco)}</span>
+        <span class="direito-desc"><strong>Atuação atual:</strong> ${valorOuDadosEmBreve(a.acao)}</span>
+        <span class="direito-desc"><strong>Serviços:</strong> ${valorOuDadosEmBreve(a.servicos)}</span>
+        <span class="direito-desc"><strong>Mensalidade:</strong> ${valorOuDadosEmBreve(a.mensalidade)}</span>
+        <span class="direito-desc"><strong>Contato:</strong> ${contato}</span>
+      </div>
+    `;
+  }).join('');
 }
+
 
 
 
 /* ============================================================ */
 
+/* ===== js/pages/poderes-deveres.js ===== */
+/* ============================================================
+   PODERES E DEVERES — aba independente da instituição principal
+   ============================================================ */
+const PODERES_DEVERES_DADOS_EM_BREVE = "Dados em breve";
+const PODERES_DEVERES_BASE = {
+  "pf": {
+    "rotulo": "Polícia Federal",
+    "categoria": "Federal",
+    "essencia": "Polícia judiciária da União e órgão federal especializado: investiga crimes federais, exerce funções de fronteira, imigração, polícia marítima e aeroportuária, e executa fiscalizações administrativas federais atribuídas por lei.",
+    "abrangencia": "Atuação nacional, vinculada a bens, serviços, interesses e competências da União; crimes de repercussão interestadual ou internacional previstos em lei; fronteiras, portos, aeroportos, migração, passaportes, segurança privada, armas e outras atribuições federais específicas.",
+    "naoConfundir": "Não é polícia ostensiva geral da União nem substitui automaticamente a Polícia Civil em todo crime comum. A competência federal precisa decorrer da Constituição, de lei ou de conexão concreta com interesse federal.",
+    "pontoAtencao": "Na prática, a pergunta-chave é: há interesse, bem, serviço, autarquia, empresa pública federal, fronteira, repercussão interestadual/internacional legalmente prevista ou atribuição administrativa federal específica? Se não houver, a competência tende a ser estadual.",
+    "deveres": [
+      "Apurar infrações penais contra a ordem política e social ou em detrimento de bens, serviços e interesses da União, de suas autarquias e de empresas públicas federais.",
+      "Exercer, com exclusividade constitucional, as funções de polícia judiciária da União, instaurando e conduzindo procedimentos investigatórios federais.",
+      "Prevenir e reprimir tráfico ilícito de drogas, contrabando, descaminho e outros ilícitos federais, sem prejuízo da atuação fazendária e de órgãos especializados.",
+      "Atuar como polícia marítima, aeroportuária e de fronteiras, inclusive em controle migratório, passaportes e atividades correlatas previstas em normas federais.",
+      "Assumir investigações de repercussão interestadual ou internacional quando houver previsão legal e necessidade de repressão uniforme.",
+      "Fiscalizar atividades administrativas federais atribuídas à PF, como segurança privada, controle de armas, produtos controlados sob sua atribuição e documentação de viagem, conforme legislação específica."
+    ],
+    "poderes": [
+      "Instaurar inquérito policial federal, realizar diligências, ouvir pessoas, requisitar perícias e representar por medidas cautelares quando a lei exigir decisão judicial.",
+      "Cumprir mandados judiciais, efetuar prisão em flagrante e executar operações de polícia judiciária da União.",
+      "Representar por busca e apreensão, prisão cautelar, interceptação, quebra de sigilo e outras medidas invasivas, sempre com controle judicial quando exigido.",
+      "Exercer poder de polícia administrativa federal em áreas como segurança privada, passaportes, migração, armas e atividades definidas em lei.",
+      "Cooperar com órgãos estaduais, federais e internacionais mediante instrumentos formais, tratados, acordos e canais oficiais."
+    ],
+    "limites": [
+      "Não há competência federal por simples gravidade do fato; é preciso enquadramento constitucional ou legal.",
+      "Não exerce policiamento ostensivo geral como missão ordinária, embora possa realizar ações ostensivas especializadas vinculadas às suas atribuições.",
+      "Busca domiciliar, interceptação, quebra de sigilo e medidas equivalentes dependem de autorização judicial quando a Constituição ou a lei exigirem.",
+      "A atuação internacional depende de cooperação jurídica/policial formal, soberania do Estado estrangeiro e regras de tratados ou acordos aplicáveis."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 1º",
+        "resumo": "Define a Polícia Federal como órgão permanente, organizado e mantido pela União, com funções próprias de polícia judiciária da União e atribuições federais específicas.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 10.446/2002",
+        "resumo": "Permite atuação da PF em infrações penais de repercussão interestadual ou internacional que exijam repressão uniforme, nas hipóteses legais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10446.htm"
+      },
+      {
+        "nome": "Lei nº 9.266/1996",
+        "resumo": "Reorganiza classes da carreira policial federal e estrutura aspectos dos cargos policiais federais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/LEIS/l9266.htm"
+      },
+      {
+        "nome": "Código de Processo Penal",
+        "resumo": "Base processual para inquérito policial, prisão em flagrante, medidas cautelares e atos investigatórios.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+      },
+      {
+        "nome": "Lei nº 7.102/1983",
+        "resumo": "Base legal relevante para fiscalização federal de segurança privada, conforme atribuições da Polícia Federal.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l7102.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Competência federal exige vínculo constitucional ou legal com a União",
+        "data": "Base constitucional permanente",
+        "status": "Fonte oficial de conferência",
+        "resumo": "A leitura segura da atuação da PF começa pelo art. 144: polícia judiciária da União, infrações contra interesses federais e atribuições expressas.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "titulo": "Repercussão interestadual ou internacional não é cláusula aberta",
+        "data": "Lei nº 10.446/2002",
+        "status": "Critério de aplicação",
+        "resumo": "A federalização operacional pela PF depende das hipóteses legais e da necessidade de repressão uniforme; não basta o caso ser notório ou grave.",
+        "fonte": "Planalto — Lei nº 10.446/2002",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10446.htm"
+      }
+    ],
+    "local": "Competência federal; não depende de lei estadual ou municipal para sua função central.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "prf": {
+    "rotulo": "Polícia Rodoviária Federal",
+    "categoria": "Federal",
+    "essencia": "Órgão federal de patrulhamento ostensivo das rodovias e estradas federais, com foco em segurança viária, fiscalização de trânsito, prevenção de acidentes e repressão imediata a ilícitos no ambiente rodoviário federal.",
+    "abrangencia": "Atuação nacional nas rodovias e estradas federais, incluindo fiscalização de trânsito, atendimento a acidentes, escolta, operações de segurança viária, combate a crimes em trânsito e cooperação em operações integradas quando houver pertinência legal e operacional.",
+    "naoConfundir": "A PRF não é polícia judiciária federal. Ela pode prender em flagrante e lavrar TCO em hipóteses admitidas, mas investigação criminal ampla e inquérito federal continuam vinculados à Polícia Federal.",
+    "pontoAtencao": "O limite prático é territorial e funcional: rodovia/estrada federal, trânsito, segurança viária e ocorrência encontrada no patrulhamento. Fora desse eixo, a atuação precisa de base normativa ou operação integrada formal.",
+    "deveres": [
+      "Realizar patrulhamento ostensivo das rodovias e estradas federais, prevenindo acidentes, crimes e situações de risco.",
+      "Cumprir e fazer cumprir a legislação de trânsito no âmbito federal, com fiscalização, autuação e medidas administrativas cabíveis.",
+      "Atender acidentes, preservar locais de ocorrência, orientar usuários e apoiar a fluidez e segurança do tráfego.",
+      "Reprimir ilícitos encontrados no patrulhamento rodoviário, como tráfico de drogas, contrabando, descaminho, receptação, roubo de cargas e crimes ambientais em trânsito.",
+      "Apoiar operações integradas de segurança pública quando houver competência, ordem de serviço, convênio ou ato formal adequado."
+    ],
+    "poderes": [
+      "Fiscalizar veículos, condutores e cargas, lavrar autos de infração, aplicar medidas administrativas de trânsito e acionar remoção, retenção ou recolhimento quando previsto em lei.",
+      "Realizar abordagem policial, busca pessoal/veicular quando houver fundada suspeita ou situação objetiva de fiscalização, e prender em flagrante.",
+      "Lavrar termo circunstanciado em infrações de menor potencial ofensivo nas hipóteses admitidas pelo STF e pelas normas aplicáveis.",
+      "Executar operações ostensivas, escoltas, controle de tráfego, interdições e apoio emergencial no âmbito da malha federal.",
+      "Compartilhar informações e atuar com PF, polícias estaduais, Receita, órgãos ambientais e demais instituições em ações integradas."
+    ],
+    "limites": [
+      "A atribuição constitucional central é patrulhamento ostensivo de rodovias federais; investigação criminal ampla não é sua função ordinária.",
+      "A lavratura de TCO não transforma a PRF em polícia judiciária nem autoriza condução de inquérito policial.",
+      "Busca, retenção, apreensão e interdição precisam de motivação, previsão legal e proporcionalidade.",
+      "Atuação fora de rodovias federais deve ser excepcional, vinculada a base legal, cooperação formal, continuidade da ocorrência ou situação de flagrante."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 2º",
+        "resumo": "Define a PRF como órgão permanente, organizado e mantido pela União, destinado ao patrulhamento ostensivo das rodovias federais.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Decreto nº 1.655/1995",
+        "resumo": "Define competências da Polícia Rodoviária Federal, incluindo patrulhamento, fiscalização, segurança viária e colaboração operacional.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto/d1655.htm"
+      },
+      {
+        "nome": "Lei nº 9.503/1997 — Código de Trânsito Brasileiro",
+        "resumo": "Base da fiscalização de trânsito, autuações e medidas administrativas aplicáveis nas rodovias e estradas federais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+      },
+      {
+        "nome": "Lei nº 9.654/1998",
+        "resumo": "Cria e estrutura a carreira de Policial Rodoviário Federal.",
+        "url": "https://www.planalto.gov.br/ccivil_03/Leis/l9654.htm"
+      },
+      {
+        "nome": "Lei nº 9.099/1995",
+        "resumo": "Disciplina os juizados especiais criminais e o termo circunstanciado para infrações de menor potencial ofensivo.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "PRF pode lavrar termo circunstanciado de ocorrência",
+        "data": "STF, 2023",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF admitiu que a lavratura de TCO pela PRF não configura investigação criminal nem usurpação da polícia judiciária, desde que respeitadas as hipóteses legais.",
+        "fonte": "STF — notícia institucional sobre TCO pela PRF",
+        "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=503028&ori=1"
+      },
+      {
+        "titulo": "TCO tem natureza distinta de inquérito policial",
+        "data": "STF, Informativo 1083",
+        "status": "Ponto de atenção",
+        "resumo": "A distinção entre TCO e investigação formal é essencial para evitar leitura exagerada dos poderes da PRF.",
+        "fonte": "STF — Informativo 1083",
+        "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1083.htm"
+      }
+    ],
+    "local": "Competência federal vinculada às rodovias e estradas federais.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "pm": {
+    "rotulo": "Polícia Militar",
+    "categoria": "Estadual/Distrital",
+    "essencia": "Força estadual/distrital de polícia ostensiva e preservação da ordem pública. Sua missão principal é prevenir, conter e responder imediatamente a fatos que afetem a segurança coletiva.",
+    "abrangencia": "Atuação no território do Estado ou do Distrito Federal, por meio de policiamento ostensivo fardado, radiopatrulhamento, policiamento comunitário, policiamento de trânsito quando previsto, controle de distúrbios, operações de preservação da ordem pública e atendimento emergencial.",
+    "naoConfundir": "A PM não substitui a Polícia Civil na investigação criminal comum. Ela atua ostensivamente, prende em flagrante e preserva a ordem; a apuração formal de crimes comuns, como regra, segue para a polícia judiciária.",
+    "pontoAtencao": "O ponto mais sensível é a abordagem: deve haver contexto objetivo, fundada suspeita, legalidade, proporcionalidade e registro adequado. Poder ostensivo forte exige controle forte.",
+    "deveres": [
+      "Realizar policiamento ostensivo preventivo, com presença fardada, patrulhamento e ações de dissuasão de delitos.",
+      "Preservar a ordem pública, atuando em ocorrências, tumultos, crises, eventos, emergências e situações de risco coletivo.",
+      "Atender chamadas emergenciais, proteger vítimas, preservar locais de crime e encaminhar ocorrências à autoridade competente.",
+      "Prender em flagrante delito e adotar providências imediatas para cessar agressão, crime, ameaça ou perturbação da ordem.",
+      "Executar policiamento de trânsito, ambiental, rodoviário estadual, escolar ou especializado quando previsto na estrutura local.",
+      "Atuar com legalidade, hierarquia, disciplina, direitos humanos, uso diferenciado/progressivo da força e prestação de contas."
+    ],
+    "poderes": [
+      "Realizar abordagem, busca pessoal e veicular quando houver fundada suspeita ou contexto operacional legítimo.",
+      "Efetuar prisão em flagrante, conduzir envolvidos e apresentar ocorrência à autoridade de polícia judiciária ou órgão competente.",
+      "Empregar força, algemas e instrumentos de menor potencial ofensivo quando necessário, proporcional e justificado.",
+      "Lavrar TCO em unidades federativas e hipóteses admitidas por norma local e entendimento do STF, sem transformar a PM em polícia judiciária.",
+      "Realizar operações ostensivas, barreiras, bloqueios, patrulhamento tático e policiamento especializado dentro da competência estadual/distrital."
+    ],
+    "limites": [
+      "Não conduz inquérito policial comum nem exerce investigação criminal típica da Polícia Civil, salvo polícia judiciária militar e hipóteses legalmente autorizadas.",
+      "Busca pessoal não pode ser genérica, discriminatória ou baseada apenas em intuição; exige elementos objetivos do caso concreto.",
+      "Uso da força deve observar necessidade, proporcionalidade, legalidade, técnica e registro posterior.",
+      "Atribuições administrativas específicas dependem de lei estadual/distrital, regulamento, convênio ou ordem legal competente."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 5º",
+        "resumo": "Atribui às Polícias Militares a polícia ostensiva e a preservação da ordem pública.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 14.751/2023",
+        "resumo": "Institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
+      },
+      {
+        "nome": "Decreto-Lei nº 667/1969",
+        "resumo": "Norma histórica de organização das Polícias Militares e Corpos de Bombeiros Militares, aplicada no que permanecer compatível com a legislação posterior.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm"
+      },
+      {
+        "nome": "Lei nº 9.099/1995",
+        "resumo": "Base legal do termo circunstanciado para infrações de menor potencial ofensivo, conforme aplicação definida por normas e entendimentos locais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+      },
+      {
+        "nome": "Código de Processo Penal",
+        "resumo": "Base geral para prisão em flagrante, preservação da prova e encaminhamento à autoridade competente.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Possibilidade de lavratura de TCO por Polícia Militar",
+        "data": "STF, 2022",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF manteve a possibilidade de PM lavrar termo circunstanciado, distinguindo TCO de inquérito policial. A aplicação depende da norma local e do caso concreto.",
+        "fonte": "STF — PM-MG e termo circunstanciado",
+        "url": "https://noticias.stf.jus.br/postsnoticias/supremo-mantem-possibilidade-de-pm-mg-lavrar-termo-circunstanciado/"
+      },
+      {
+        "titulo": "Atribuição central permanece ostensiva",
+        "data": "Base constitucional permanente",
+        "status": "Fonte oficial de conferência",
+        "resumo": "O núcleo constitucional da Polícia Militar continua sendo polícia ostensiva e preservação da ordem pública.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      }
+    ],
+    "local": "Varia conforme lei estadual ou distrital, regulamentos da corporação e normas operacionais locais.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "bm": {
+    "rotulo": "Corpo de Bombeiros Militar",
+    "categoria": "Estadual/Distrital",
+    "essencia": "Instituição militar estadual/distrital voltada à proteção da vida, do patrimônio e do meio ambiente, com defesa civil, prevenção e combate a incêndios, busca, salvamento, resgate e fiscalização técnica quando prevista em lei local.",
+    "abrangencia": "Atuação no território da unidade federativa, em incêndios, salvamentos, emergências pré-hospitalares onde houver atribuição, desastres, defesa civil, perícias/relatórios técnicos de incêndio quando previstos, vistorias e segurança contra incêndio e pânico conforme legislação estadual ou distrital.",
+    "naoConfundir": "O Corpo de Bombeiros Militar não é órgão de policiamento ostensivo geral nem polícia judiciária. Seu poder restritivo costuma aparecer em emergência, defesa civil e fiscalização técnica de segurança contra incêndio, sempre conforme lei local.",
+    "pontoAtencao": "A parte mais variável é a fiscalização: AVCB/CLCB, vistoria, interdição, multa, exigências técnicas e licenças dependem da lei estadual/distrital e das instruções técnicas da corporação.",
+    "deveres": [
+      "Executar atividades de defesa civil, prevenção, preparação, resposta e apoio à recuperação em desastres e calamidades.",
+      "Prevenir e combater incêndios urbanos, florestais, industriais e especiais, conforme estrutura e normas locais.",
+      "Realizar busca, salvamento, resgate e atendimento a emergências com prioridade absoluta à proteção da vida.",
+      "Fiscalizar segurança contra incêndio e pânico, analisar projetos, vistoriar edificações e emitir certificados quando a legislação local atribuir essa competência.",
+      "Atuar em emergências ambientais, produtos perigosos, desabamentos, enchentes, afogamentos, acidentes e eventos críticos.",
+      "Orientar a população, promover educação preventiva e apoiar planos de contingência e evacuação."
+    ],
+    "poderes": [
+      "Ingressar e atuar em áreas de risco em situação emergencial para salvar vidas, controlar danos e remover pessoas expostas a perigo iminente.",
+      "Realizar vistorias, exigir adequações, emitir autos, relatórios, licenças, certificados ou pareceres técnicos conforme lei local.",
+      "Interditar, embargar, restringir uso ou recomendar evacuação quando houver risco grave e previsão normativa, observando motivação e devido processo quando cabível.",
+      "Coordenar ou integrar resposta a desastres com defesa civil, saúde, polícia, órgãos ambientais, concessionárias e autoridades municipais.",
+      "Aplicar medidas administrativas de segurança contra incêndio e pânico quando houver competência legal expressa."
+    ],
+    "limites": [
+      "Fiscalização, multa, interdição e emissão de certificados dependem de lei estadual/distrital e regulamentos técnicos locais.",
+      "Atos de restrição fora da emergência devem ser motivados, proporcionais e sujeitos a recurso ou revisão administrativa quando a norma prever.",
+      "Bombeiros civis, voluntários ou brigadas privadas podem complementar prevenção e resposta, mas não substituem competências públicas reservadas ao CBM.",
+      "O CBM não conduz investigação criminal comum; eventual apuração técnica de incêndio não se confunde com inquérito policial."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 5º",
+        "resumo": "Atribui aos Corpos de Bombeiros Militares, além das atribuições definidas em lei, a execução de atividades de defesa civil.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 14.751/2023",
+        "resumo": "Institui normas gerais para Polícias Militares e Corpos de Bombeiros Militares dos Estados, do Distrito Federal e dos Territórios.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
+      },
+      {
+        "nome": "Decreto-Lei nº 667/1969",
+        "resumo": "Norma histórica de organização das PMs e CBMs, aplicável no que permanecer compatível com a ordem constitucional e leis posteriores.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm"
+      },
+      {
+        "nome": "Lei nº 12.608/2012 — Política Nacional de Proteção e Defesa Civil",
+        "resumo": "Base nacional da proteção e defesa civil, relevante para atuação integrada em desastres.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12608.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Competência pública dos bombeiros militares e limites a estruturas voluntárias/privadas",
+        "data": "STF, Informativo 1171",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF analisou normas sobre bombeiros voluntários e reforçou que atividades de defesa civil e competências constitucionais dos CBMs devem ser respeitadas.",
+        "fonte": "STF — Informativo 1171",
+        "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1171.htm"
+      },
+      {
+        "titulo": "Defesa civil é núcleo constitucional dos CBMs",
+        "data": "Base constitucional permanente",
+        "status": "Fonte oficial de conferência",
+        "resumo": "A Constituição expressamente vincula os Corpos de Bombeiros Militares à execução de atividades de defesa civil, além das atribuições definidas em lei.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      }
+    ],
+    "local": "Varia conforme lei estadual ou distrital de segurança contra incêndio, defesa civil e organização do CBM.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "pc": {
+    "rotulo": "Polícia Civil",
+    "categoria": "Estadual/Distrital",
+    "essencia": "Polícia judiciária dos Estados e do Distrito Federal: apura infrações penais comuns, formaliza a investigação e encaminha elementos ao Ministério Público e ao Poder Judiciário.",
+    "abrangencia": "Atuação no território estadual ou distrital, em delegacias territoriais e especializadas, com registro de ocorrências, investigação, inquérito policial, cumprimento de mandados, identificação, inteligência policial, atendimento a vítimas e articulação com perícia oficial.",
+    "naoConfundir": "A Polícia Civil não faz, como missão principal, policiamento ostensivo preventivo fardado. Também não apura crimes militares, que seguem regras e órgãos próprios.",
+    "pontoAtencao": "A PC tem poder investigativo forte, mas atos invasivos dependem de controle judicial quando exigido. O inquérito não é processo: é procedimento administrativo preparatório da ação penal.",
+    "deveres": [
+      "Apurar infrações penais de competência estadual ou distrital, exceto as militares.",
+      "Exercer funções de polícia judiciária, instaurando e conduzindo inquéritos e outros procedimentos previstos em lei.",
+      "Registrar ocorrências, atender vítimas, requisitar exames periciais, colher depoimentos e preservar elementos de prova.",
+      "Cumprir mandados judiciais, localizar autores, recuperar bens e produzir relatórios investigativos.",
+      "Atuar por unidades especializadas em crimes contra a vida, patrimônio, vulneráveis, entorpecentes, cibernéticos, corrupção, meio ambiente e outras áreas conforme organização local.",
+      "Garantir legalidade, cadeia de custódia, proteção de vítimas/testemunhas e respeito aos direitos fundamentais durante a investigação."
+    ],
+    "poderes": [
+      "Instaurar inquérito policial e procedimentos investigativos, ouvir pessoas, realizar diligências e requisitar perícias.",
+      "Representar por prisão temporária/preventiva, busca e apreensão, interceptação, quebras de sigilo e outras medidas cautelares perante o Judiciário.",
+      "Cumprir mandados, efetuar prisão em flagrante, proceder a reconhecimento, apreensão de objetos e formalização de autos.",
+      "Coordenar a investigação criminal estadual, sem prejuízo do controle externo do Ministério Público e do controle judicial de medidas restritivas.",
+      "Gerir unidades de polícia judiciária, delegacias especializadas e sistemas de registro/informação conforme lei orgânica e normas estaduais."
+    ],
+    "limites": [
+      "Não apura crimes militares, salvo hipóteses de conexão ou atribuição específica definidas pela legislação e pela autoridade competente.",
+      "Não substitui o Ministério Público na titularidade da ação penal pública.",
+      "Medidas que invadem domicílio, sigilo, comunicações ou liberdade dependem de base legal e autorização judicial quando exigida.",
+      "A investigação deve respeitar contraditório diferido quando aplicável, cadeia de custódia, controle externo e direitos de investigados e vítimas."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 4º",
+        "resumo": "Atribui às Polícias Civis funções de polícia judiciária e apuração de infrações penais, exceto as militares.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 14.735/2023",
+        "resumo": "Institui a Lei Orgânica Nacional das Polícias Civis e normas gerais de funcionamento.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14735.htm"
+      },
+      {
+        "nome": "Lei nº 12.830/2013",
+        "resumo": "Dispõe sobre a investigação criminal conduzida pelo delegado de polícia.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12830.htm"
+      },
+      {
+        "nome": "Código de Processo Penal",
+        "resumo": "Base processual de inquérito, flagrante, provas, medidas cautelares e atos de polícia judiciária.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+      },
+      {
+        "nome": "Lei nº 13.964/2019 — Pacote Anticrime",
+        "resumo": "Alterou regras processuais e reforçou temas como cadeia de custódia, medidas cautelares e persecução penal.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13964.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Função constitucional de polícia judiciária e apuração de infrações penais",
+        "data": "STF, Informativo 1160, 2024",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF reafirmou que o texto constitucional atribui às Polícias Civis as funções de polícia judiciária e apuração de infrações penais, exceto as militares.",
+        "fonte": "STF — Informativo 1160",
+        "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1160.htm"
+      },
+      {
+        "titulo": "Subordinação institucional e desenho constitucional",
+        "data": "STF, jurisprudência constitucional",
+        "status": "Ponto de atenção",
+        "resumo": "A autonomia administrativa da Polícia Civil encontra limites no modelo constitucional estadual, inclusive na chefia do Executivo e no controle externo da atividade policial.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      }
+    ],
+    "local": "Varia conforme lei orgânica estadual/distrital, estrutura de delegacias e normas da unidade federativa.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "pp": {
+    "rotulo": "Polícia Penal",
+    "categoria": "Federal/Estadual/Distrital, conforme o ente",
+    "essencia": "Órgão de segurança pública voltado à segurança dos estabelecimentos penais e à custódia, vigilância, escolta e proteção da ordem prisional, conforme a Constituição, a Lei de Execução Penal e a lei do ente federativo.",
+    "abrangencia": "Atuação no sistema prisional federal, estadual ou distrital correspondente, abrangendo segurança interna e externa de unidades penais, movimentação de custodiados, escoltas, revistas, controle de acesso, prevenção de fugas, gerenciamento de crises e apoio à execução penal.",
+    "naoConfundir": "Polícia Penal não é Polícia Civil, Polícia Federal nem Polícia Militar. Ela não assume investigação criminal geral nem policiamento ostensivo urbano; seu eixo é a segurança prisional.",
+    "pontoAtencao": "Como a EC 104 criou a Polícia Penal, muitos detalhes ainda dependem de lei federal, estadual ou distrital: carreira, porte, corregedoria, escolta externa, grupos especializados e integração operacional.",
+    "deveres": [
+      "Garantir a segurança dos estabelecimentos penais e preservar a ordem interna e externa das unidades prisionais.",
+      "Realizar custódia, vigilância, escolta, movimentação e recambiamento de pessoas privadas de liberdade conforme normas do ente federativo.",
+      "Controlar acesso, realizar revistas, fiscalizar objetos, prevenir fugas, motins, rebeliões e entrada de materiais ilícitos.",
+      "Preservar a integridade física de presos, servidores, visitantes, prestadores de serviço e terceiros no ambiente prisional.",
+      "Apoiar a execução penal, a disciplina prisional e o cumprimento de decisões judiciais no limite das atribuições administrativas.",
+      "Atuar de forma integrada com demais órgãos de segurança quando a ocorrência tiver relação com o sistema prisional."
+    ],
+    "poderes": [
+      "Realizar revista pessoal, inspeção de celas, controle de acesso, rondas, vigilância armada e procedimentos de segurança penitenciária nos limites legais.",
+      "Empregar força necessária e proporcional para conter fuga, rebelião, motim, agressão, entrada ilícita ou risco concreto à vida.",
+      "Executar escoltas, transferências e recapturas quando previstas em normas locais e atos administrativos competentes.",
+      "Apreender objetos ilícitos, comunicar crime ou falta disciplinar e preservar elementos para autoridade competente.",
+      "Integrar inteligência penitenciária e operações de segurança prisional, respeitada a competência dos demais órgãos de investigação."
+    ],
+    "limites": [
+      "Não conduz investigação criminal geral nem substitui a polícia judiciária em crimes comuns fora do sistema prisional.",
+      "Atuação externa, grupos táticos, porte, escolta e recaptura dependem da lei e dos regulamentos do ente federativo.",
+      "Revistas e uso da força devem observar legalidade, dignidade humana, proporcionalidade, registros e protocolos institucionais.",
+      "A disciplina prisional não autoriza pena informal, tratamento degradante ou restrição sem base normativa e controle cabível."
+    ],
+    "leis": [
+      {
+        "nome": "Emenda Constitucional nº 104/2019",
+        "resumo": "Criou as polícias penais federal, estaduais e distrital e alterou o art. 144 da Constituição.",
+        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc104.htm"
+      },
+      {
+        "nome": "Constituição Federal, art. 144",
+        "resumo": "Inclui a Polícia Penal no sistema de segurança pública e vincula sua atuação à segurança dos estabelecimentos penais.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 7.210/1984 — Lei de Execução Penal",
+        "resumo": "Regula a execução penal, disciplina prisional, direitos e deveres de presos e funcionamento de estabelecimentos penais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l7210.htm"
+      },
+      {
+        "nome": "Lei nº 13.675/2018 — SUSP",
+        "resumo": "Organiza o Sistema Único de Segurança Pública e a Política Nacional de Segurança Pública e Defesa Social.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13675.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Implementação normativa e administrativa da Polícia Penal",
+        "data": "STF, Informativo 1208, 2026",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF tratou da implementação da Polícia Penal no âmbito estadual e registrou a análise da EC nº 104/2019 dentro da arquitetura constitucional da segurança pública.",
+        "fonte": "STF — Informativo 1208",
+        "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1208.htm"
+      },
+      {
+        "titulo": "Competência central é a segurança dos estabelecimentos penais",
+        "data": "Base constitucional permanente",
+        "status": "Ponto de atenção",
+        "resumo": "A leitura segura da Polícia Penal deve partir do vínculo com estabelecimentos penais, não de uma competência policial geral.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      }
+    ],
+    "local": "Varia conforme lei federal, estadual ou distrital de organização da Polícia Penal e normas do sistema prisional.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "gm": {
+    "rotulo": "Guarda Municipal",
+    "categoria": "Municipal",
+    "essencia": "Instituição municipal de segurança urbana, preventiva, comunitária e patrimonial, voltada à proteção de bens, serviços, instalações e logradouros municipais, com atuação integrada no sistema de segurança pública.",
+    "abrangencia": "Atuação no território do município que criou a guarda por lei local, incluindo proteção de escolas, praças, prédios e serviços municipais, patrulhamento preventivo, segurança urbana comunitária, apoio à defesa civil, fiscalização administrativa municipal e cooperação com outros órgãos.",
+    "naoConfundir": "A Guarda Municipal não tem poder de investigação criminal. O STF reconhece ações de segurança urbana, inclusive policiamento ostensivo e comunitário, mas isso não a transforma em Polícia Civil, Militar ou Federal.",
+    "pontoAtencao": "O alcance real muda muito de município para município: lei local, efetivo, formação, porte, corregedoria, ouvidoria, convênios e protocolos determinam o que a guarda pode fazer na prática.",
+    "deveres": [
+      "Proteger bens, serviços, instalações e logradouros públicos municipais, conforme Constituição e lei local.",
+      "Atuar preventivamente na segurança urbana, com presença comunitária, patrulhamento municipal e mediação de conflitos quando cabível.",
+      "Apoiar escolas, unidades de saúde, praças, eventos públicos, fiscalização municipal, defesa civil e proteção de servidores e usuários de serviços municipais.",
+      "Cooperar com órgãos de segurança pública da União, dos Estados e do Distrito Federal por meio de integração, convênios, protocolos ou acionamento formal.",
+      "Atender situações de flagrante delito, preservar local e encaminhar envolvidos à autoridade competente.",
+      "Observar uso proporcional da força, formação, controle interno, ouvidoria e demais exigências do Estatuto Geral das Guardas Municipais."
+    ],
+    "poderes": [
+      "Realizar patrulhamento preventivo, ostensivo e comunitário no âmbito municipal, conforme lei local e entendimento do STF.",
+      "Efetuar abordagem quando houver situação concreta, fundada suspeita ou contexto operacional legítimo, com respeito a direitos fundamentais.",
+      "Prender em flagrante e apresentar imediatamente à autoridade policial competente, como qualquer agente público diante de flagrante delito.",
+      "Exercer poder de polícia administrativa municipal quando a lei local atribuir fiscalização específica, como posturas, trânsito municipal, patrimônio, comércio ou ordenamento urbano.",
+      "Atuar em cooperação com polícias e órgãos públicos, preservando sua identidade municipal e seus limites legais."
+    ],
+    "limites": [
+      "Não conduz inquérito policial nem investigação criminal típica de Polícia Civil ou Polícia Federal.",
+      "Não substitui a Polícia Militar no policiamento estadual geral nem pode invadir competências estaduais/federais sem base legal ou cooperação formal.",
+      "Porte de arma, estrutura, corregedoria, ouvidoria, formação e atribuições exigem observância da Lei nº 13.022/2014 e da legislação municipal.",
+      "Abordagens e revistas devem ter justificativa objetiva; atuação meramente genérica, abusiva ou discriminatória compromete a legalidade do ato."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 8º",
+        "resumo": "Autoriza os municípios a constituírem guardas municipais destinadas à proteção de seus bens, serviços e instalações, conforme lei.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 13.022/2014 — Estatuto Geral das Guardas Municipais",
+        "resumo": "Define normas gerais, princípios, competências, controle interno/externo e estrutura mínima das guardas municipais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm"
+      },
+      {
+        "nome": "Lei nº 13.675/2018 — SUSP",
+        "resumo": "Disciplina o Sistema Único de Segurança Pública e a Política Nacional de Segurança Pública e Defesa Social.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13675.htm"
+      },
+      {
+        "nome": "Decreto nº 11.841/2023",
+        "resumo": "Regulamenta a cooperação das guardas municipais com órgãos de segurança pública.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11841.htm"
+      },
+      {
+        "nome": "Código de Processo Penal",
+        "resumo": "Base geral para prisão em flagrante e encaminhamento à autoridade competente.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Guardas municipais integram o sistema de segurança pública",
+        "data": "STF, ADPF 995, 2023",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF reconheceu que as guardas municipais integram o sistema de segurança pública, superando leitura meramente patrimonial e restritiva.",
+        "fonte": "STF — ADPF 995",
+        "url": "https://noticias.stf.jus.br/postsnoticias/guardas-municipais-integram-o-sistema-de-seguranca-publica-decide-stf/"
+      },
+      {
+        "titulo": "Policiamento urbano ostensivo e comunitário é constitucional",
+        "data": "STF, Tema 656, 2025",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF reconheceu a constitucionalidade de ações de segurança urbana pelas guardas municipais, inclusive policiamento ostensivo e comunitário, sem poder de investigação.",
+        "fonte": "STF — Tema 656",
+        "url": "https://noticias.stf.jus.br/postsnoticias/guardas-municipais-podem-fazer-policiamento-urbano-decide-stf/"
+      }
+    ],
+    "local": "Varia conforme lei municipal de criação, plano de cargos, regulamento, convênios e estrutura local.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  }
+};
 
-/* === js/pages/contato-init.js === */
+function poderesEscapar(texto = '') {
+  if (typeof escapeHtml === 'function') return escapeHtml(texto);
+  return String(texto).replace(/[&<>'"]/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;'}[ch]));
+}
+
+function poderesTipoDaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf') return 'pf';
+  if (inst === 'prf') return 'prf';
+  if (inst === 'guarda_municipal' || inst === 'gm') return 'gm';
+  if (inst.startsWith('bm')) return 'bm';
+  if (inst.startsWith('pp')) return 'pp';
+  if (inst.startsWith('pc')) return 'pc';
+  if (inst.startsWith('pm')) return 'pm';
+  return 'pm';
+}
+
+function poderesRamoNome(tipo) {
+  return PODERES_DEVERES_BASE[tipo]?.rotulo || PODERES_DEVERES_DADOS_EM_BREVE;
+}
+
+function poderesOrdemRamo(inst, estado) {
+  if (!estado) return 9;
+  if (estado.pm === inst) return 1;
+  if (estado.bm === inst) return 2;
+  if (estado.pc === inst) return 3;
+  if (estado.pp === inst) return 4;
+  if (inst === 'pf') return 1;
+  if (inst === 'prf') return 2;
+  return 9;
+}
+
+function poderesInstituicoesDisponiveis() {
+  return [
+    {
+      inst: 'pm',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados e Distrito Federal',
+      uf: 'UF/DF',
+      sigla: 'PM',
+      nome: 'Polícia Militar',
+      ramo: 'Polícia Militar',
+      ordem: 1
+    },
+    {
+      inst: 'bm',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados e Distrito Federal',
+      uf: 'UF/DF',
+      sigla: 'BM',
+      nome: 'Corpo de Bombeiros Militar',
+      ramo: 'Corpo de Bombeiros Militar',
+      ordem: 2
+    },
+    {
+      inst: 'pc',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados e Distrito Federal',
+      uf: 'UF/DF',
+      sigla: 'PC',
+      nome: 'Polícia Civil',
+      ramo: 'Polícia Civil',
+      ordem: 3
+    },
+    {
+      inst: 'pp',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados, Distrito Federal e União',
+      uf: 'UF/DF/BR',
+      sigla: 'PP',
+      nome: 'Polícia Penal',
+      ramo: 'Polícia Penal',
+      ordem: 4
+    },
+    {
+      inst: 'pf',
+      estadoKey: 'br',
+      estadoNome: 'União',
+      uf: 'BR',
+      sigla: 'PF',
+      nome: 'Polícia Federal',
+      ramo: 'Polícia Federal',
+      ordem: 5
+    },
+    {
+      inst: 'prf',
+      estadoKey: 'br',
+      estadoNome: 'União',
+      uf: 'BR',
+      sigla: 'PRF',
+      nome: 'Polícia Rodoviária Federal',
+      ramo: 'Polícia Rodoviária Federal',
+      ordem: 6
+    },
+    {
+      inst: 'gm',
+      estadoKey: 'municipal',
+      estadoNome: 'Municípios',
+      uf: 'MUN',
+      sigla: 'GM',
+      nome: 'Guarda Municipal',
+      ramo: 'Guarda Municipal',
+      ordem: 7
+    }
+  ];
+}
+
+function poderesPopularSeletor() {
+  const select = document.getElementById('poderes_instituicao');
+  if (!select || select.dataset.renderizado) return;
+
+  const itens = poderesInstituicoesDisponiveis();
+  select.innerHTML = '<option value="" disabled>Escolha o tipo de instituição</option>' + itens.map(item => `
+    <option value="${poderesEscapar(item.inst)}">${poderesEscapar(item.nome)}</option>
+  `).join('');
+
+  const tipoAtual = poderesTipoDaInstituicao(currInst);
+  const preferida = itens.some(item => item.inst === tipoAtual) ? tipoAtual : 'pf';
+  select.value = preferida;
+  select.dataset.renderizado = 'true';
+}
+
+function poderesValor(valor) {
+  if (valor === undefined || valor === null) return PODERES_DEVERES_DADOS_EM_BREVE;
+  const texto = String(valor).trim();
+  return texto ? texto : PODERES_DEVERES_DADOS_EM_BREVE;
+}
+
+function poderesEhDadoPendente(valor) {
+  const texto = poderesValor(valor);
+  if (texto === PODERES_DEVERES_DADOS_EM_BREVE) return true;
+  if (/^(lei estadual|lei distrital|lei municipal|lei orgânica nacional específica|lei organica nacional especifica|lei estadual\/distrital|lei local|norma local)/i.test(texto)) return true;
+  return /(?:dados em breve|a preencher|preencher|a confirmar|a definir|sem informação|sem informacao|pendente|fonte oficial a preencher|consultar|conferir|não localizado|nao localizado)/i.test(texto);
+}
+
+function poderesUrlValida(url) {
+  return /^https?:\/\//i.test(String(url || '').trim());
+}
+
+function poderesItemDadosEmBreve(classe = 'poderes-fonte-item') {
+  return `<div class="${classe}"><strong>${PODERES_DEVERES_DADOS_EM_BREVE}</strong></div>`;
+}
+
+function poderesListaHtml(lista) {
+  if (!Array.isArray(lista) || !lista.length) return `<li>${PODERES_DEVERES_DADOS_EM_BREVE}</li>`;
+  return lista.map(item => `<li>${poderesEscapar(poderesValor(item))}</li>`).join('');
+}
+
+function poderesLeisHtml(lista) {
+  if (!Array.isArray(lista) || !lista.length) return poderesItemDadosEmBreve('poderes-fonte-item');
+  return lista.map(lei => {
+    const semFonteSegura = !poderesUrlValida(lei?.url) || poderesEhDadoPendente(lei?.nome) || poderesEhDadoPendente(lei?.resumo);
+    if (semFonteSegura) return poderesItemDadosEmBreve('poderes-fonte-item');
+    const nome = poderesEscapar(poderesValor(lei.nome));
+    const resumo = poderesEscapar(poderesValor(lei.resumo));
+    const link = `<a href="${poderesEscapar(lei.url)}" target="_blank" rel="noopener noreferrer" class="concurso-link">Abrir fonte oficial</a>`;
+    return `<div class="poderes-fonte-item"><strong>${nome}</strong><span>${resumo}</span>${link}</div>`;
+  }).join('');
+}
+
+function poderesEntendimentosHtml(lista) {
+  if (!Array.isArray(lista) || !lista.length) return `<div class="direito-item acao"><span class="direito-nome">${PODERES_DEVERES_DADOS_EM_BREVE}</span></div>`;
+  return lista.map(item => {
+    const semFonteSegura = !poderesUrlValida(item?.url)
+      || poderesEhDadoPendente(item?.titulo)
+      || poderesEhDadoPendente(item?.resumo)
+      || poderesEhDadoPendente(item?.fonte);
+    if (semFonteSegura) return `<div class="direito-item acao"><span class="direito-nome">${PODERES_DEVERES_DADOS_EM_BREVE}</span></div>`;
+    const link = `<a href="${poderesEscapar(item.url)}" target="_blank" rel="noopener noreferrer" class="concurso-link">${poderesEscapar(item.fonte)}</a>`;
+    return `
+      <div class="direito-item acao poderes-entendimento-item">
+        <span class="direito-nome">${poderesEscapar(poderesValor(item.titulo))}</span>
+        <span class="direito-status" style="color: var(--vermelho);">${poderesEscapar(poderesValor(item.status))}</span>
+        <div><span class="badge-info ativa">${poderesEscapar(poderesValor(item.data))}</span></div>
+        <span class="direito-desc">${poderesEscapar(poderesValor(item.resumo))}</span>
+        <span class="direito-desc"><strong>Fonte:</strong> ${link}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+
+
+function poderesDestaquesHtml(dados = {}) {
+  const cards = [
+    { titulo: 'Essência da competência', valor: dados.essencia },
+    { titulo: 'Não confundir', valor: dados.naoConfundir },
+    { titulo: 'Ponto de atenção', valor: dados.pontoAtencao }
+  ].filter(card => !poderesEhDadoPendente(card.valor));
+
+  if (!cards.length) return '';
+
+  return `
+    <section class="poderes-destaques-grid" aria-label="Destaques práticos">
+      ${cards.map(card => `
+        <article class="poderes-destaque-card">
+          <span>${poderesEscapar(card.titulo)}</span>
+          <p>${poderesEscapar(poderesValor(card.valor))}</p>
+        </article>
+      `).join('')}
+    </section>
+  `;
+}
+
+function poderesRenderizar(inst) {
+  const painel = document.getElementById('poderes_resultado');
+  const tituloSpan = document.getElementById('txt-inst-poderes');
+  if (!painel) return;
+
+  const tipo = poderesTipoDaInstituicao(inst);
+  const dados = PODERES_DEVERES_BASE[tipo] || PODERES_DEVERES_BASE.pm;
+  const infoInstituicao = HEADER_INSTITUICOES_INFO?.[inst];
+  const estadoInstituicao = HEADER_ESTADOS?.[getEstadoDaInstituicao(inst)] || {};
+  const itemSelecionado = infoInstituicao ? {
+    nome: infoInstituicao.desc,
+    estadoNome: estadoInstituicao.nome || dados.categoria,
+    sigla: infoInstituicao.titulo
+  } : (poderesInstituicoesDisponiveis().find(item => item.inst === tipo) || {
+    nome: dados.rotulo,
+    estadoNome: dados.categoria,
+    sigla: String(tipo || '').toUpperCase()
+  });
+  const nomeCompleto = infoInstituicao
+    ? `${infoInstituicao.titulo} — ${infoInstituicao.desc}`
+    : (dados.rotulo || itemSelecionado.nome || PODERES_DEVERES_DADOS_EM_BREVE);
+  if (tituloSpan) tituloSpan.textContent = infoInstituicao?.titulo || dados.rotulo || itemSelecionado.sigla || '—';
+
+  painel.innerHTML = `
+    <section class="poderes-resumo-card" aria-label="Resumo de poderes e deveres">
+      <div>
+        <span class="poderes-kicker">${poderesEscapar(dados.categoria)}</span>
+        <h3>${poderesEscapar(nomeCompleto)}</h3>
+        <p>${poderesEscapar(dados.abrangencia)}</p>
+      </div>
+      <div class="poderes-meta-grid">
+        <div><span>Tipo de instituição</span><strong>${poderesEscapar(itemSelecionado.nome || dados.rotulo)}</strong></div>
+        <div><span>Abrangência geral</span><strong>${poderesEscapar(itemSelecionado.estadoNome || dados.categoria)}</strong></div>
+        <div><span>Base local/complementar</span><strong>${poderesEscapar(dados.local || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
+        <div><span>Última revisão</span><strong>${poderesEscapar(dados.atualizacao || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
+      </div>
+    </section>
+
+    ${poderesDestaquesHtml(dados)}
+
+    <div class="poderes-grid">
+      <section class="direito-item poderes-bloco">
+        <span class="direito-nome">Deveres principais</span>
+        <ul>${poderesListaHtml(dados.deveres)}</ul>
+      </section>
+      <section class="direito-item poderes-bloco">
+        <span class="direito-nome">Poderes e competências</span>
+        <ul>${poderesListaHtml(dados.poderes)}</ul>
+      </section>
+      <section class="direito-item poderes-bloco poderes-bloco-largo">
+        <span class="direito-nome">Limites, cautelas e controles</span>
+        <ul>${poderesListaHtml(dados.limites)}</ul>
+      </section>
+    </div>
+
+    <section class="poderes-fontes-card">
+      <h3>Leis, normas e bases de referência</h3>
+      <p>Fontes oficiais ou institucionais selecionadas para conferência e aprofundamento.</p>
+      <div class="poderes-fontes-lista">${poderesLeisHtml(dados.leis)}</div>
+    </section>
+
+    <section class="poderes-entendimentos-card">
+      <h3>Entendimentos e pontos práticos de interpretação</h3>
+      <div class="result-list">${poderesEntendimentosHtml(dados.entendimentos)}</div>
+    </section>
+
+    <div class="alerta legal">
+      <strong>Aviso:</strong> Esta aba é informativa e independente. Ela resume competências gerais, mas não substitui consulta a advogado, corregedoria, setor jurídico, legislação local, decisão judicial aplicável, edital, norma interna ou canal oficial da instituição.
+    </div>
+  `;
+}
+
+function inicializarPoderesDeveres() {
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('poderes');
+    return;
+  }
+  poderesRenderizar(currInst);
+}
+
+function mudarInstituicaoPoderes(valor) {
+  if (valor && typeof mudarInstituicao === 'function') mudarInstituicao(valor);
+  poderesRenderizar(valor || currInst || 'pf');
+}
+
+/* ===== js/pages/contato-init.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7221,11 +9627,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   aplicarEstruturaEstadosFaltantesNoHtml();
 
-  // Popula cargos usados na aba Direitos e Vantagens.
-  popularCargos('pmesp');
+  // Monta os seletores internos das abas institucionais, sem escolher PMESP automaticamente.
+  if (typeof montarSeletoresConsultaInstituicao === 'function') montarSeletoresConsultaInstituicao();
 
   // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
   aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
   ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
@@ -7242,8 +9649,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-/* === js/ui/event-bindings.js === */
+/* ===== js/ui/event-bindings.js ===== */
 /* =======================================================
    Eventos centralizados.
    Remove a dependência de onclick/onchange/oninput inline no HTML.
@@ -7251,6 +9657,8 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================================= */
 
 (function () {
+  if (window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__) return;
+  window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__ = true;
   function safeCall(fnName, args = []) {
     const fn = window[fnName];
     if (typeof fn === 'function') return fn.apply(window, args);
@@ -7282,6 +9690,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bindChange('#instituicao, #instituicao_header', event => {
       safeCall('mudarInstituicao', [event.currentTarget.value]);
+    });
+
+    bindChange('#poderes_instituicao', event => {
+      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
+    });
+
+    bindChange('[data-consulta-esfera]', event => {
+      const page = event.currentTarget.dataset.consultaPage;
+      safeCall('alterarEsferaConsultaInstituicao', [page, event.currentTarget.value]);
+    });
+
+    bindChange('[data-consulta-instituicao]', event => {
+      const page = event.currentTarget.dataset.consultaPage;
+      safeCall('selecionarInstituicaoConsulta', [page, event.currentTarget.value]);
     });
 
     bindClick('.branch-option[data-branch]', event => {
@@ -7343,7 +9765,16 @@ document.addEventListener('DOMContentLoaded', () => {
     bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
     bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
     bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindClick('[data-action="comparador-adicionar-instituicao"]', () => safeCall('comparadorAdicionarInstituicaoSelecionada'));
     bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
+
+    bindChange('#comparador-esfera', event => {
+      safeCall('comparadorAlterarEsfera', [event.currentTarget.value]);
+    });
+
+    bindChange('#comparador-instituicao', () => {
+      safeCall('comparadorAdicionarInstituicaoSelecionada');
+    });
 
     document.addEventListener('change', event => {
       const alvo = event.target;
@@ -7376,4 +9807,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, true);
 })();
-

@@ -226,7 +226,7 @@
    Banner visual sem borda, com imagem/bandeira ampla e fade para o resumo.
    ======================================================= */
 .header-institution-card {
-  --header-hero-image: url('../../img/logoleao.webp');
+  --header-hero-image: url('../../img/LOGO/logoleao.webp');
   min-height: 334px;
   padding: clamp(16px, 1.7vw, 22px);
   border-left: 0 !important;
@@ -400,7 +400,7 @@
 
 body {
   --page-institution-image: none;
-  --site-header-bg-image: url('../../img/logoleao.webp');
+  --site-header-bg-image: url('../../img/LOGO/logoleao.webp');
 }
 
 /* Instituição selecionada: a página usa o logo/brasão da instituição como marca d'água. */
@@ -451,13 +451,13 @@ body[data-inst="portal"] .header-institution-card::before {
    mesmo se o usuário voltar depois de ter selecionado uma instituição/estado. */
 body[data-inst="portal"] .header-institution-card,
 .header-institution-card.header-portal-home {
-  --header-hero-image: url('../../img/logoleao.webp') !important;
+  --header-hero-image: url('../../img/LOGO/logoleao.webp') !important;
 }
 
 body[data-inst="portal"] header.site-header::before {
   background:
     linear-gradient(90deg, rgba(5, 6, 10, 0.40), rgba(5, 6, 10, 0.10) 38%, rgba(5, 6, 10, 0.44)),
-    url('../../img/logoleao.webp'),
+    url('../../img/LOGO/logoleao.webp'),
     repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 56px);
   background-size: cover, min(520px, 48vw) auto, auto;
   background-position: center, left center, center;

@@ -7,6 +7,10 @@
 function analisarDireitos() {
   const cont = document.getElementById('resultados_dir');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('direitos');
+    return;
+  }
 
   const inst = currInst;
   const tempo = valEl('tempo_dir');

@@ -132,50 +132,200 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
-  bmsp: 'img/bmsp.png',
-  bmrj: 'img/bmrj.png',
-  bmmg: 'img/bmmg.png',
-  pmesp: 'img/pmesp.webp',
-  pcsp: 'img/pcsp.webp',
-  pmerj: 'img/pmerj.webp',
-  pcerj: 'img/pcrj.webp',
-  pmmg: 'img/pmmg.webp',
-  pcmg: 'img/pcmg.webp',
-  pmba: 'img/pmba.webp',
-  pcba: 'img/pcba.webp',
-  pmpr: 'img/pmpr.webp',
-  pcpr: 'img/pcpr.webp',
-  pmrs: 'img/pmrs.webp',
-  pcrs: 'img/pcrs.webp',
-  pmsc: 'img/pmsc.webp',
-  pcsc: 'img/pcsc.webp',
-  pmes: 'img/pmes.webp',
-  pces: 'img/pces.webp',
-  pmgo: 'img/pmgo.webp',
-  pmms: 'img/pmms.webp',
-  pcms: 'img/pcms.webp',
-  pmmt: 'img/pmmt.webp',
-  pcmt: 'img/pcmt.webp',
-  ppsp: 'img/ppsp.webp',
-  pprj: 'img/pprj.webp',
-  ppmg: 'img/ppmg.webp',
-  ppba: 'img/ppba.webp',
-  pppr: 'img/pppr.webp',
-  pprs: 'img/pprs.webp',
-  ppes: 'img/ppes.webp',
-  ppms: 'img/ppms.webp',
-  ppmt: 'img/ppmt.webp',
-  pmma: 'img/pmma.webp',
-  pcma: 'img/pcma.webp',
-  ppma: 'img/ppma.webp',
-  pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp'
+  pmac: 'img/MILITAR/pmac.webp',
+  pmal: 'img/MILITAR/pmal.webp',
+  pmam: 'img/MILITAR/pmam.webp',
+  pmba: 'img/MILITAR/pmba.webp',
+  pmdf: 'img/MILITAR/pmdf.webp',
+  pmerj: 'img/MILITAR/pmerj.webp',
+  pmes: 'img/MILITAR/pmes.webp',
+  pmesp: 'img/MILITAR/pmesp.webp',
+  pmgo: 'img/MILITAR/pmgo.webp',
+  pmma: 'img/MILITAR/pmma.webp',
+  pmmg: 'img/MILITAR/pmmg.webp',
+  pmms: 'img/MILITAR/pmms.webp',
+  pmmt: 'img/MILITAR/pmmt.webp',
+  pmpr: 'img/MILITAR/pmpr.webp',
+  pmrs: 'img/MILITAR/pmrs.webp',
+  pmsc: 'img/MILITAR/pmsc.webp',
+  pmto: 'img/MILITAR/pmto.webp',
+  pcac: 'img/CIVIL/pcac.webp',
+  pcal: 'img/CIVIL/pcal.webp',
+  pcam: 'img/CIVIL/pcam.webp',
+  pcba: 'img/CIVIL/pcba.webp',
+  pcdf: 'img/CIVIL/pcdf.webp',
+  pcerj: 'img/CIVIL/pcrj.webp',
+  pces: 'img/CIVIL/pces.webp',
+  pcma: 'img/CIVIL/pcma.webp',
+  pcmg: 'img/CIVIL/pcmg.webp',
+  pcms: 'img/CIVIL/pcms.webp',
+  pcmt: 'img/CIVIL/pcmt.webp',
+  pcpr: 'img/CIVIL/pcpr.webp',
+  pcrs: 'img/CIVIL/pcrs.webp',
+  pcsc: 'img/CIVIL/pcsc.webp',
+  pcsp: 'img/CIVIL/pcsp.webp',
+  pcto: 'img/CIVIL/pcto.webp',
+  ppac: 'img/PENAL/ppac.webp',
+  ppal: 'img/PENAL/ppal.webp',
+  ppam: 'img/PENAL/ppam.webp',
+  ppap: 'img/PENAL/ppap.webp',
+  ppba: 'img/PENAL/ppba.webp',
+  ppce: 'img/PENAL/ppce.webp',
+  ppdf: 'img/PENAL/ppdf.webp',
+  ppes: 'img/PENAL/ppes.webp',
+  ppgo: 'img/PENAL/ppgo.webp',
+  ppma: 'img/PENAL/ppma.webp',
+  ppmg: 'img/PENAL/ppmg.webp',
+  ppms: 'img/PENAL/ppms.webp',
+  ppmt: 'img/PENAL/ppmt.webp',
+  pppa: 'img/PENAL/pppa.webp',
+  pppb: 'img/PENAL/pppb.webp',
+  pppe: 'img/PENAL/pppe.webp',
+  pppi: 'img/PENAL/pppi.webp',
+  pppr: 'img/PENAL/pppr.webp',
+  pprj: 'img/PENAL/pprj.webp',
+  pprn: 'img/PENAL/pprn.webp',
+  ppro: 'img/PENAL/ppro.webp',
+  pprr: 'img/PENAL/pprr.webp',
+  pprs: 'img/PENAL/pprs.webp',
+  ppsc: 'img/PENAL/ppsc.webp',
+  ppse: 'img/PENAL/ppse.webp',
+  ppsp: 'img/PENAL/ppsp.webp',
+  ppto: 'img/PENAL/ppto.webp',
+  bmac: 'img/BOMBEIRO/bmac.webp',
+  bmal: 'img/BOMBEIRO/bmal.webp',
+  bmam: 'img/BOMBEIRO/bmam.webp',
+  bmap: 'img/BOMBEIRO/bmap.webp',
+  bmba: 'img/BOMBEIRO/bmba.webp',
+  bmce: 'img/BOMBEIRO/bmce.webp',
+  bmdf: 'img/BOMBEIRO/bmdf.webp',
+  bmes: 'img/BOMBEIRO/bmes.webp',
+  bmgo: 'img/BOMBEIRO/bmgo.webp',
+  bmma: 'img/BOMBEIRO/bmma.webp',
+  bmmg: 'img/BOMBEIRO/bmmg.webp',
+  bmms: 'img/BOMBEIRO/bmms.webp',
+  bmmt: 'img/BOMBEIRO/bmmt.webp',
+  bmpa: 'img/BOMBEIRO/bmpa.webp',
+  bmpe: 'img/BOMBEIRO/bmpe.webp',
+  bmpi: 'img/BOMBEIRO/bmpi.webp',
+  bmpr: 'img/BOMBEIRO/bmpr.webp',
+  bmrj: 'img/BOMBEIRO/bmrj.webp',
+  bmrn: 'img/BOMBEIRO/bmrn.webp',
+  bmro: 'img/BOMBEIRO/bmro.webp',
+  bmrr: 'img/BOMBEIRO/bmrr.webp',
+  bmrs: 'img/BOMBEIRO/bmrs.webp',
+  bmsc: 'img/BOMBEIRO/bmsc.webp',
+  bmse: 'img/BOMBEIRO/bmse.webp',
+  bmsp: 'img/BOMBEIRO/bmsp.webp',
+  bmto: 'img/BOMBEIRO/bmto.webp',
+  pf: 'img/FEDERAL/pf.webp',
+  prf: 'img/FEDERAL/prf.webp'
 };
 
+/* Brasões/insígnias em versão leve.
+   O site agora usa somente WebP; arquivos PNG/JPEG/JPG originais foram removidos.
+   A busca automática também verifica as pastas organizadas por carreira para facilitar novas inclusões. */
+const EXTENSOES_BRASAO_SUPORTADAS = ['webp'];
 
-function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.webp') {
+const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
+  pmdf: [
+    'img/pmdf', 'img/PMDF', 'img/pm-df', 'img/PM-DF', 'img/pm_df', 'img/PM_DF',
+    'img/brasao-pmdf', 'img/brasao-PMDF', 'img/logo-pmdf', 'img/logo-PMDF',
+    'img/policia-militar-df', 'img/policia-militar-distrito-federal',
+    'img/policia-militar-do-distrito-federal'
+  ],
+  pcdf: [
+    'img/pcdf', 'img/PCDF', 'img/pc-df', 'img/PC-DF', 'img/pc_df', 'img/PC_DF',
+    'img/brasao-pcdf', 'img/brasao-PCDF', 'img/logo-pcdf', 'img/logo-PCDF',
+    'img/policia-civil-df', 'img/policia-civil-distrito-federal',
+    'img/policia-civil-do-distrito-federal'
+  ],
+  ppdf: [
+    'img/ppdf', 'img/PPDF', 'img/pp-df', 'img/PP-DF', 'img/pp_df', 'img/PP_DF',
+    'img/brasao-ppdf', 'img/brasao-PPDF', 'img/logo-ppdf', 'img/logo-PPDF',
+    'img/policia-penal-df', 'img/policia-penal-distrito-federal',
+    'img/policia-penal-do-distrito-federal', 'img/seape-df', 'img/SEAPE-DF'
+  ],
+  bmdf: [
+    'img/bmdf', 'img/BMDF', 'img/bm-df', 'img/BM-DF', 'img/bm_df', 'img/BM_DF',
+    'img/cbmdf', 'img/CBMDF', 'img/cbm-df', 'img/CBM-DF', 'img/cbm_df', 'img/CBM_DF',
+    'img/brasao-bmdf', 'img/brasao-BMDF', 'img/brasao-cbmdf', 'img/brasao-CBMDF',
+    'img/logo-bmdf', 'img/logo-BMDF', 'img/logo-cbmdf', 'img/logo-CBMDF',
+    'img/bombeiros-df', 'img/bombeiro-df', 'img/corpo-bombeiros-df',
+    'img/corpo-de-bombeiros-militar-df',
+    'img/corpo-de-bombeiros-militar-do-distrito-federal'
+  ],
+  pf: [
+    'img/pf', 'img/PF', 'img/dpf', 'img/DPF',
+    'img/brasao-pf', 'img/brasao-PF', 'img/brasao-dpf', 'img/brasao-DPF',
+    'img/logo-pf', 'img/logo-PF', 'img/logo-dpf', 'img/logo-DPF',
+    'img/policia-federal', 'img/Policia-Federal', 'img/POLICIA-FEDERAL',
+    'img/policiafederal', 'img/departamento-policia-federal',
+    'img/departamento-de-policia-federal'
+  ],
+  prf: [
+    'img/prf', 'img/PRF',
+    'img/brasao-prf', 'img/brasao-PRF', 'img/logo-prf', 'img/logo-PRF',
+    'img/policia-rodoviaria-federal', 'img/Policia-Rodoviaria-Federal',
+    'img/POLICIA-RODOVIARIA-FEDERAL', 'img/policiarodoviariafederal',
+    'img/policia-rodoviária-federal', 'img/Polícia-Rodoviária-Federal'
+  ]
+};
+
+function normalizarBaseImagemBrasao(base) {
+  return String(base || '')
+    .trim()
+    .replace(/^\/+/, '')
+    .replace(/^\.\//, '')
+    .replace(/\.(webp|png|jpe?g|svg)$/i, '');
+}
+
+function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
+  const candidatos = [];
+  const bases = [];
+  const instLimpa = String(inst || '').trim();
+  const instMinuscula = instLimpa.toLowerCase();
+  const instMaiuscula = instLimpa.toUpperCase();
+  const adicionarPastasOrganizadas = () => {
+    ['MILITAR', 'CIVIL', 'PENAL', 'BOMBEIRO', 'FEDERAL', 'LOGO'].forEach(pasta => {
+      adicionarBase(`img/${pasta}/${instMinuscula}`);
+      adicionarBase(`img/${pasta}/${instMaiuscula}`);
+    });
+    if (instMinuscula === 'pcerj') adicionarBase('img/CIVIL/pcrj');
+  };
+
+  const adicionar = valor => {
+    if (!valor) return;
+    const caminho = String(valor).trim().replace(/^\/+/, '').replace(/^\.\//, '');
+    if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
+  };
+
+  const adicionarBase = base => {
+    const baseLimpa = normalizarBaseImagemBrasao(base);
+    if (baseLimpa && !bases.includes(baseLimpa)) bases.push(baseLimpa);
+  };
+
+  adicionar(caminhoInicial);
+  adicionarBase(caminhoInicial || `img/${instMinuscula}`);
+  adicionarBase(`img/${instMinuscula}`);
+  adicionarBase(`img/${instMaiuscula}`);
+  adicionarPastasOrganizadas();
+
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[instMinuscula] || [];
+  aliases.forEach(adicionarBase);
+
+  bases.forEach(base => {
+    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${base}.${ext}`));
+  });
+
+  return candidatos;
+}
+
+
+
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/LOGO/logoleao.webp') {
   if (!elemento || !nomeVariavel) return;
-  const imagemOriginal = String(src || fallback || 'img/logoleao.webp');
+  const imagemOriginal = String(src || fallback || 'img/LOGO/logoleao.webp');
   const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
   elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
   return imagemOriginal;
@@ -205,12 +355,12 @@ function configurarLogoInicialHeader(img) {
   img.removeAttribute('srcset');
   img.removeAttribute('sizes');
   img.removeAttribute('data-fallback-aplicado');
-  img.dataset.imgBase = 'img/logoleao';
+  img.dataset.imgBase = 'img/LOGO/logoleao';
   img.dataset.retry = '';
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
+    const alternativas = ['img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -220,7 +370,7 @@ function configurarLogoInicialHeader(img) {
     this.onerror = null;
     this.style.display = 'none';
   };
-  img.src = 'img/logoleao.webp';
+  img.src = 'img/LOGO/logoleao.webp';
 }
 
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
@@ -228,26 +378,29 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   if (card) card.classList.remove('header-portal-home');
 
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
+  const candidatosImagem = montarCandidatosImagemInstituicao(inst, imagemInstituicao);
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
   // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
-  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.webp');
-  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.webp');
+  setHeaderHeroImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
 
   // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
+  img.removeAttribute('data-fallback-jpeg-aplicado');
   img.onerror = function () {
-    if (imagemInstituicao && !this.dataset.fallbackJpegAplicado) {
-      const jpegFallback = imagemInstituicao.replace(/\.webp$/i, '.jpeg');
-      if (jpegFallback && jpegFallback !== this.getAttribute('src')) {
-        this.dataset.fallbackJpegAplicado = 'true';
-        this.src = jpegFallback;
+    const indice = parseInt(this.dataset.fallbackIndex || '0', 10);
+    if (indice < candidatosImagem.length) {
+      this.dataset.fallbackIndex = String(indice + 1);
+      const proximaImagem = candidatosImagem[indice];
+      if (proximaImagem && proximaImagem !== this.getAttribute('src')) {
+        this.src = proximaImagem;
         return;
       }
     }
@@ -262,12 +415,14 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
     this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
   };
 
-  if (imagemInstituicao) {
+  if (candidatosImagem.length) {
     img.dataset.fallbackAplicado = '';
-    img.src = imagemInstituicao;
+    img.dataset.fallbackIndex = '1';
+    img.src = candidatosImagem[0];
     img.alt = `Logo/brasão da ${altInstituicao}`;
   } else {
     img.dataset.fallbackAplicado = 'bandeira';
+    img.dataset.fallbackIndex = '0';
     img.onerror = null;
     img.src = fallbackBandeira;
     img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
@@ -2259,6 +2414,164 @@ function criarAssociacoesEstrutura(info, estadoNome) {
 }
 
 
+/* ============================================================ */
+/* === ESTRUTURA-BASE PARA INSTITUIÇÕES FEDERAIS =============== */
+/* ============================================================ */
+const INSTITUICOES_FEDERAIS_ESTRUTURA = [
+  { inst: 'pf', titulo: 'PF', desc: 'Polícia Federal', tipo: 'Polícia Federal', cor: '#1f4f7a' },
+  { inst: 'prf', titulo: 'PRF', desc: 'Polícia Rodoviária Federal', tipo: 'Polícia Rodoviária Federal', cor: '#1f5f8a' }
+];
+
+function criarResumoFederalEstrutura(item) {
+  return {
+    nome: item.desc,
+    sigla: item.titulo,
+    estado: 'Brasil',
+    estadoSigla: 'BR',
+    tipo: item.tipo,
+    criacao: 'A preencher',
+    ativa: 0,
+    ativaLabel: 'Efetivo ativo — preencher',
+    reserva: 0,
+    reservaLabel: 'Aposentados/inativos — preencher',
+    femininas: 0,
+    femininasLabel: 'Integrantes femininas — preencher',
+    populacao: 0,
+    populacaoTitulo: 'Abrangência nacional',
+    relacaoLabel: 'Relação por habitante/rodovia/atribuição — preencher',
+    relacaoTitulo: 'Relação institucional',
+    governador: 'Governo Federal / Ministério responsável — preencher',
+    comando: 'Direção-Geral atual — preencher',
+    fonte: 'Fontes oficiais federais — preencher',
+    atualizado: 'Estrutura criada para preenchimento'
+  };
+}
+
+function criarCargosPfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'delegado', `${sigla} — Delegado de Polícia Federal`, true),
+    criarCargoEstrutural(inst, 'perito', `${sigla} — Perito Criminal Federal`, true),
+    criarCargoEstrutural(inst, 'papiloscopista', `${sigla} — Papiloscopista Policial Federal`, false),
+    criarCargoEstrutural(inst, 'escrivao', `${sigla} — Escrivão de Polícia Federal`, false),
+    criarCargoEstrutural(inst, 'agente', `${sigla} — Agente de Polícia Federal`, false, true),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarCargosPrfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'classe_especial', `${sigla} — Policial Rodoviário Federal — Classe Especial`, false),
+    criarCargoEstrutural(inst, 'primeira_classe', `${sigla} — Policial Rodoviário Federal — 1ª Classe`, false),
+    criarCargoEstrutural(inst, 'segunda_classe', `${sigla} — Policial Rodoviário Federal — 2ª Classe`, false),
+    criarCargoEstrutural(inst, 'terceira_classe', `${sigla} — Policial Rodoviário Federal — 3ª Classe`, false, true),
+    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação Profissional`, false),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarConcursoFederalEstrutura(item) {
+  return {
+    edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
+    salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
+    vagas: 'Preencher com edital/autorização vigente.',
+    cotas: 'Preencher conforme legislação federal e edital.',
+    idade: 'Preencher requisitos de idade, CNH, aptidão física, investigação social e demais exigências conforme edital.',
+    escolaridade: 'Preencher escolaridade e requisitos do cargo conforme edital.',
+    banca: 'A definir/preencher conforme edital.',
+    inscritos: 'Preencher quando houver dado oficial.',
+    materias: 'Preencher disciplinas conforme edital do cargo.',
+    etapas: 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação profissional e demais etapas do edital.',
+    cfsd: 'Curso de formação profissional — preencher conforme edital e academia responsável.',
+    estagio: 'Estágio probatório e desenvolvimento na carreira — preencher conforme legislação federal.',
+    validade: 'Preencher conforme edital e atos de homologação/prorrogação.',
+    previsao: 'Acompanhar Diário Oficial da União, órgão oficial e banca. Não afirmar concurso aberto sem publicação oficial.',
+    site: '#'
+  };
+}
+
+function criarAcoesFederalEstrutura(item) {
+  return [
+    { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Aposentadoria policial e previdência`, status: 'Análise individual', ano: 'Regra federal a preencher', tipo: 'individual', desc: 'Espaço para regras previdenciárias, transições, paridade/integralidade quando aplicável, abono de permanência e regras próprias da carreira policial federal.', base: 'Data de ingresso, tempo de contribuição, cargo/carreira, sexo, idade, regime previdenciário e norma federal.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' }
+  ];
+}
+
+function criarAssociacoesFederalEstrutura(item) {
+  return [
+    { nome: `Associação/Sindicato — ${item.titulo}`, foco: `Brasil — ${item.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade nacional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
+    { nome: `Entidade representativa federal — ${item.titulo}`, foco: `Profissionais ativos, aposentados e pensionistas vinculados à ${item.desc}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe nacionais/regionais existentes.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
+  ];
+}
+
+function aplicarEstruturaFederaisDados() {
+  HEADER_ESTADOS.br = {
+    nome: 'Brasil',
+    sigla: 'BR',
+    pc: 'pf',
+    pp: 'prf',
+    pf: 'pf',
+    prf: 'prf',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
+    HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
+    HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
+    REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' };
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+      titulo: item.titulo,
+      desc: item.desc,
+      cor: item.cor,
+      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
+    };
+    CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
+    ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
+    ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
+    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) {
+      CARGOS_ESTRUTURA_GENERICAS[item.inst] = item.inst === 'pf'
+        ? criarCargosPfEstrutura(item.inst, item.titulo)
+        : criarCargosPrfEstrutura(item.inst, item.titulo);
+    }
+  });
+}
+
+function inserirOptionFederalNoSelect(select, item) {
+  if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
+  let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === 'Federais');
+  if (!grupo) {
+    grupo = document.createElement('optgroup');
+    grupo.label = 'Federais';
+    select.appendChild(grupo);
+  }
+  grupo.appendChild(criarOptionInstituicao(item.inst, `${item.titulo} - ${item.desc}`));
+}
+
+function aplicarEstruturaFederaisNoHtml() {
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    inserirOptionFederalNoSelect(document.getElementById('instituicao_header'), item);
+    inserirOptionFederalNoSelect(document.getElementById('instituicao'), item);
+  });
+
+  const flags = document.querySelector('.header-state-flags');
+  if (flags && !flags.querySelector('[data-estado="br"]')) {
+    const btn = document.createElement('button');
+    btn.className = 'state-flag';
+    btn.type = 'button';
+    btn.dataset.estado = 'br';
+    btn.title = 'Brasil / Instituições federais';
+    btn.setAttribute('aria-label', 'Selecionar instituições federais');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.onclick = () => selecionarEstado('br');
+    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="Bandeira do Brasil"><span>BR</span>`;
+    flags.appendChild(btn);
+  }
+}
+
+
 const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'BMAL', desc: 'Corpo de Bombeiros Militar de Alagoas' },
@@ -2470,10 +2783,300 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
   }
 
   aplicarEstruturaBombeirosMilitaresNoHtml();
+  aplicarEstruturaFederaisNoHtml();
+}
+
+
+
+/* ============================================================ */
+/* === REVISÃO DOS RESUMOS INSTITUCIONAIS ====================== */
+/* ============================================================ */
+const RESUMO_DADOS_EM_BREVE = 'Dados em breve';
+
+const RESUMO_GOVERNADORES_UF_2026 = {
+  ac: 'Mailza Assis',
+  al: 'Paulo Dantas',
+  ap: 'Clécio Luís',
+  am: 'Roberto Cidade (interino)',
+  ba: 'Jerônimo Rodrigues',
+  ce: 'Elmano de Freitas',
+  df: 'Celina Leão',
+  es: 'Ricardo Ferraço',
+  go: 'Daniel Vilela',
+  ma: 'Carlos Brandão Júnior',
+  mt: 'Otaviano Pivetta',
+  ms: 'Eduardo Riedel',
+  mg: 'Mateus Simões',
+  pa: 'Hana Ghassan',
+  pb: 'Lucas Ribeiro',
+  pr: 'Ratinho Júnior',
+  pe: 'Raquel Lyra',
+  pi: 'Rafael Fonteles',
+  rj: 'Ricardo Couto (interino)',
+  rn: 'Fátima Bezerra',
+  rs: 'Eduardo Leite',
+  ro: 'Marcos Rocha',
+  rr: 'Soldado Sampaio (interino)',
+  sc: 'Jorginho Mello',
+  sp: 'Tarcísio de Freitas',
+  se: 'Fábio Mitidieri',
+  to: 'Wanderlei Barbosa'
+};
+
+function resumoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  return /\b(a preencher|preencher|a confirmar|não informado|nao informado|estrutura .*criada|preenchimento|pendente|consultar diretamente|consultar site oficial|fonte oficial a preencher|fontes oficiais .* preencher|comando\/direção atual|chefe do executivo|efetivo ativo — preencher|reserva\/inativos — preencher|integrantes femininas — preencher|relação ativa|relação ativo\/população — preencher)\b/i.test(texto);
+}
+
+function resumoValorOuEmBreve(valor) {
+  return resumoEhDadoPendente(valor) ? RESUMO_DADOS_EM_BREVE : valor;
+}
+
+function resumoInferirTipo(inst, dados = {}) {
+  if (dados.tipo && !resumoEhDadoPendente(dados.tipo)) return dados.tipo;
+  if (/^bm/i.test(inst)) return 'Bombeiro Militar';
+  if (/^pm/i.test(inst) || inst === 'pmerj') return 'Polícia Militar';
+  if (/^pc/i.test(inst) || inst === 'pcerj') return 'Polícia Civil';
+  if (/^pp/i.test(inst)) return 'Polícia Penal';
+  if (inst === 'pf') return 'Polícia Federal';
+  if (inst === 'prf') return 'Polícia Rodoviária Federal';
+  return RESUMO_DADOS_EM_BREVE;
+}
+
+function resumoInstituicoesEstaduais() {
+  const pares = [];
+  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
+    if (uf === 'br') return;
+    ['pm', 'bm', 'pc', 'pp'].forEach(ramo => {
+      if (estado && estado[ramo]) pares.push({ uf, ramo, inst: estado[ramo], estado });
+    });
+  });
+  return pares;
+}
+
+function aplicarRevisaoResumosInstitucionais() {
+  const pares = resumoInstituicoesEstaduais();
+
+  pares.forEach(({ uf, ramo, inst, estado }) => {
+    const info = HEADER_INSTITUICOES_INFO[inst] || {};
+    const dados = HEADER_INSTITUICOES_RESUMO[inst] || {};
+    const governadorAtual = RESUMO_GOVERNADORES_UF_2026[uf];
+    const nome = !resumoEhDadoPendente(dados.nome) ? dados.nome : (info.desc || RESUMO_DADOS_EM_BREVE);
+    const sigla = !resumoEhDadoPendente(dados.sigla) ? dados.sigla : (info.titulo || String(inst || '').toUpperCase() || RESUMO_DADOS_EM_BREVE);
+
+    HEADER_INSTITUICOES_RESUMO[inst] = {
+      ...dados,
+      nome,
+      sigla,
+      estado: resumoValorOuEmBreve(dados.estado || estado?.nome),
+      estadoSigla: resumoValorOuEmBreve(dados.estadoSigla || estado?.sigla),
+      tipo: resumoInferirTipo(inst, dados),
+      criacao: resumoValorOuEmBreve(dados.criacao),
+      ativaLabel: !resumoEhDadoPendente(dados.ativaLabel) ? dados.ativaLabel : (resumoEhDadoPendente(dados.ativa) ? RESUMO_DADOS_EM_BREVE : ''),
+      reservaLabel: !resumoEhDadoPendente(dados.reservaLabel) ? dados.reservaLabel : (resumoEhDadoPendente(dados.reserva) ? RESUMO_DADOS_EM_BREVE : ''),
+      femininasLabel: !resumoEhDadoPendente(dados.femininasLabel) ? dados.femininasLabel : (resumoEhDadoPendente(dados.femininas) ? RESUMO_DADOS_EM_BREVE : ''),
+      populacaoTitulo: dados.populacaoTitulo || (ramo === 'pp' ? 'Presos atendidos' : 'População do Estado'),
+      populacaoLabel: !resumoEhDadoPendente(dados.populacaoLabel) ? dados.populacaoLabel : (resumoEhDadoPendente(dados.populacao) ? RESUMO_DADOS_EM_BREVE : ''),
+      relacaoTitulo: dados.relacaoTitulo || (ramo === 'pp' ? 'Relação ativa/presos' : 'Relação ativa/população'),
+      relacaoLabel: !resumoEhDadoPendente(dados.relacaoLabel) ? dados.relacaoLabel : (!resumoEhDadoPendente(dados.populacao) && !resumoEhDadoPendente(dados.ativa) ? '' : RESUMO_DADOS_EM_BREVE),
+      governador: governadorAtual || resumoValorOuEmBreve(dados.governador),
+      comando: resumoValorOuEmBreve(dados.comando),
+      fonte: resumoValorOuEmBreve(dados.fonte),
+      atualizado: dados.atualizado && !resumoEhDadoPendente(dados.atualizado)
+        ? `${dados.atualizado} · Revisado em 02/05/2026`
+        : 'Revisado em 02/05/2026'
+    };
+
+    ['ativaLabel', 'reservaLabel', 'femininasLabel', 'populacaoLabel', 'relacaoLabel'].forEach(chave => {
+      if (HEADER_INSTITUICOES_RESUMO[inst][chave] === '') delete HEADER_INSTITUICOES_RESUMO[inst][chave];
+    });
+  });
+
+  // Também normaliza estruturas federais que o site mantém fora das 108 estaduais.
+  ['pf', 'prf'].forEach(inst => {
+    if (!HEADER_INSTITUICOES_RESUMO[inst]) return;
+    const dados = HEADER_INSTITUICOES_RESUMO[inst];
+    Object.keys(dados).forEach(chave => {
+      if (chave.endsWith('Titulo')) return;
+      if (chave === 'populacao' || chave === 'ativa' || chave === 'reserva' || chave === 'femininas') return;
+      dados[chave] = resumoValorOuEmBreve(dados[chave]);
+    });
+    dados.populacaoLabel = resumoValorOuEmBreve(dados.populacaoLabel || dados.populacao);
+    dados.atualizado = 'Revisado em 02/05/2026';
+  });
 }
 
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
+aplicarEstruturaFederaisDados();
+aplicarRevisaoResumosInstitucionais();
+
+/* ============================================================ */
+/* === REVISÃO DA ABA CONCURSOS ================================ */
+/* ============================================================ */
+const CONCURSO_DADOS_EM_BREVE = 'Dados em breve';
+const CONCURSO_CAMPOS_TEXTO = [
+  'edital', 'salario', 'vagas', 'cotas', 'idade', 'escolaridade', 'banca',
+  'inscritos', 'materias', 'etapas', 'cfsd', 'estagio', 'validade', 'previsao'
+];
+
+function concursoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === CONCURSO_DADOS_EM_BREVE) return true;
+  return /^(a definir|a confirmar|a preencher|preencher|consultar|conferir|sem informação|sem informacao|sem inscrições|sem inscricoes|ainda não divulgado|ainda nao divulgado|não divulgado|nao divulgado|fonte oficial a preencher|dados pendentes|pendente|acompanhar|curso de formação.*preencher|curso de formacao.*preencher|prova objetiva\/discursiva quando prevista)\b/i.test(texto)
+    || /\b(estrutura de concurso a preencher|estrutura .*para preenchimento|fonte oficial a preencher|preencher|a definir\/preencher|base .*pendente)\b/i.test(texto);
+}
+
+function concursoValorOuEmBreve(valor) {
+  return concursoEhDadoPendente(valor) ? CONCURSO_DADOS_EM_BREVE : String(valor).trim();
+}
+
+function concursoUrlValida(valor) {
+  const url = String(valor || '').trim();
+  return /^https?:\/\//i.test(url) ? url : '#';
+}
+
+function concursoInfoInstituicao(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  return {
+    titulo: info.titulo || String(inst || '').toUpperCase(),
+    desc: info.desc || CONCURSO_DADOS_EM_BREVE
+  };
+}
+
+function concursoCriarBaseDadosEmBreve(inst) {
+  const info = concursoInfoInstituicao(inst);
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[inst] || {};
+  return {
+    edital: `${info.titulo} — ${info.desc}`,
+    salario: CONCURSO_DADOS_EM_BREVE,
+    vagas: CONCURSO_DADOS_EM_BREVE,
+    cotas: CONCURSO_DADOS_EM_BREVE,
+    idade: CONCURSO_DADOS_EM_BREVE,
+    escolaridade: CONCURSO_DADOS_EM_BREVE,
+    banca: CONCURSO_DADOS_EM_BREVE,
+    inscritos: CONCURSO_DADOS_EM_BREVE,
+    materias: CONCURSO_DADOS_EM_BREVE,
+    etapas: CONCURSO_DADOS_EM_BREVE,
+    cfsd: CONCURSO_DADOS_EM_BREVE,
+    estagio: CONCURSO_DADOS_EM_BREVE,
+    validade: CONCURSO_DADOS_EM_BREVE,
+    previsao: CONCURSO_DADOS_EM_BREVE,
+    site: concursoUrlValida(fonte.url)
+  };
+}
+
+function concursoNormalizarObjeto(inst, dados) {
+  const normalizado = concursoCriarBaseDadosEmBreve(inst);
+  const origem = dados && typeof dados === 'object' ? dados : {};
+
+  CONCURSO_CAMPOS_TEXTO.forEach(campo => {
+    normalizado[campo] = concursoValorOuEmBreve(origem[campo] ?? normalizado[campo]);
+  });
+
+  normalizado.site = concursoUrlValida(origem.site || normalizado.site);
+  return normalizado;
+}
+
+function aplicarRevisaoConcursosInstituicoes() {
+  const instituicoes = new Set(INSTITUICOES_VALIDAS || []);
+
+  Object.values(HEADER_ESTADOS || {}).forEach(estado => {
+    ['pm', 'bm', 'pc', 'pp', 'pf', 'prf'].forEach(ramo => {
+      if (estado && estado[ramo]) instituicoes.add(estado[ramo]);
+    });
+  });
+
+  ['pf', 'prf'].forEach(inst => instituicoes.add(inst));
+
+  instituicoes.forEach(inst => {
+    if (!inst) return;
+    if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+    if (!HEADER_INSTITUICOES_INFO[inst]) {
+      HEADER_INSTITUICOES_INFO[inst] = { titulo: String(inst).toUpperCase(), desc: CONCURSO_DADOS_EM_BREVE };
+    }
+
+    let dados = CONCURSOS[inst];
+    if (!dados && typeof isPoliciaPenal === 'function' && typeof getConcursoPoliciaPenal === 'function') {
+      try {
+        if (isPoliciaPenal(inst)) dados = getConcursoPoliciaPenal(inst);
+      } catch (erro) {
+        dados = null;
+      }
+    }
+
+    CONCURSOS[inst] = concursoNormalizarObjeto(inst, dados);
+  });
+}
+
+aplicarRevisaoConcursosInstituicoes();
+
+
+/* ============================================================ */
+/* === PADRONIZAÇÃO GLOBAL DE DADOS SEM FONTE SEGURA =========== */
+/* ============================================================ */
+const DADOS_EM_BREVE_PADRAO_GLOBAL = 'Dados em breve';
+
+function dadoSemFonteSegura(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return false;
+  if (typeof valor !== 'string') return false;
+  const texto = valor.trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === DADOS_EM_BREVE_PADRAO_GLOBAL) return false;
+  if (/^https?:\/\//i.test(texto)) return false;
+  return /(?:a preencher|preencher|a confirmar|nome a confirmar|a definir|sem informação|sem informacao|não informado|nao informado|não divulgado|nao divulgado|ainda não divulgado|ainda nao divulgado|pendente|dados pendentes|estrutura criada|estrutura aberta|para preenchimento|fonte oficial a preencher|fontes oficiais .* preencher|consultar diretamente|consultar site|consultar canais|consultar edital|consultar banca|consultar fonte|conferir edital|conferir autorização|acompanhar diário oficial|acompanhar diario oficial|não afirmar concurso aberto|nao afirmar concurso aberto|espaço reservado|espaco reservado|reservado para|cadastrar aqui|serviços a preencher|servicos a preencher|verificar caso a caso|análise individual|analise individual|base local pendente|base federal pendente|regra local a preencher|regra federal a preencher|tema permanente|tema recorrente|documentos funcionais e normas locais|documentos funcionais e normas federais|conferência previdenciária individual|conferencia previdenciaria individual)/i.test(texto);
+}
+
+function normalizarTextoSemFonteSegura(valor) {
+  return dadoSemFonteSegura(valor) ? DADOS_EM_BREVE_PADRAO_GLOBAL : valor;
+}
+
+function normalizarObjetoSemFonteSegura(obj, visitados = new WeakSet()) {
+  if (!obj || typeof obj !== 'object') return obj;
+  if (visitados.has(obj)) return obj;
+  visitados.add(obj);
+
+  if (Array.isArray(obj)) {
+    obj.forEach((item, indice) => {
+      if (item && typeof item === 'object') normalizarObjetoSemFonteSegura(item, visitados);
+      else obj[indice] = normalizarTextoSemFonteSegura(item);
+    });
+    return obj;
+  }
+
+  Object.keys(obj).forEach(chave => {
+    const valor = obj[chave];
+    if (valor && typeof valor === 'object') {
+      normalizarObjetoSemFonteSegura(valor, visitados);
+      return;
+    }
+    if (/^(url|fonteUrl|href|flag|brasao|imagem|img|logo)$/i.test(chave)) return;
+    obj[chave] = normalizarTextoSemFonteSegura(valor);
+  });
+  return obj;
+}
+
+function aplicarPadraoDadosEmBreveGlobal() {
+  [
+    HEADER_INSTITUICOES_RESUMO,
+    CONCURSOS,
+    ACOES_JUDICIAIS,
+    ASSOCIACOES,
+    POLICIAS_PENAIS_INFO,
+    CONFIGS_INSTITUICOES_GENERICAS,
+    CARGOS_ESTRUTURA_GENERICAS,
+    REMUNERACAO_FONTES_OFICIAIS
+  ].forEach(base => normalizarObjetoSemFonteSegura(base));
+}
+
+aplicarPadraoDadosEmBreveGlobal();
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -2481,7 +3084,13 @@ function formatarNumeroHeader(valor) {
 
 function formatarEfetivoHeader(valor) {
   const numero = Number(valor || 0);
-  if (!numero) return 'Não informado';
+  if (!numero) return RESUMO_DADOS_EM_BREVE;
+  if (numero >= 1000000) {
+    const milhao = numero / 1000000;
+    let texto = Number.isInteger(milhao) ? String(milhao) : milhao.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
+    return `≈ ${texto} ${milhao >= 2 ? 'milhões' : 'milhão'}`;
+  }
   if (numero >= 1000) {
     const mil = numero / 1000;
     let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
@@ -2494,22 +3103,33 @@ function formatarEfetivoHeader(valor) {
 function calcularRelacaoHeader(populacao, ativa) {
   const pop = Number(populacao || 0);
   const ativo = Number(ativa || 0);
-  if (!pop || !ativo) return 'Não informado';
+  if (!pop || !ativo) return RESUMO_DADOS_EM_BREVE;
   const habitantesPorAtivo = Math.round(pop / ativo);
   const percentual = ((ativo / pop) * 100).toFixed(3).replace('.', ',');
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
 }
 
+function calcularEfetivoTotalResumoHeader(dados = {}) {
+  if (dados.efetivoTotalLabel) return dados.efetivoTotalLabel;
+  const ativa = Number(dados.ativa || 0);
+  const reserva = Number(dados.reserva || 0);
+  if (ativa || reserva) return formatarEfetivoHeader(ativa + reserva);
+  if (dados.ativaLabel) return dados.ativaLabel;
+  return formatarEfetivoHeader(dados.ativa);
+}
+
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
+    'header-label-natureza': 'Natureza',
+    'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
-    'header-label-ativa': 'Efetivo ativo',
+    'header-label-ativa': 'Efetivo total',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Integrantes femininas',
+    'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
     'header-label-governador': 'Chefe do Executivo',
-    'header-label-comando': 'Comando atual'
+    'header-label-comando': 'Comando/Direção'
   };
 
   Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
@@ -2519,8 +3139,9 @@ function atualizarLabelsHeaderResumo(labels = {}) {
 }
 
 function calcularResumoPortalHeader() {
+  if (typeof garantirEstruturaGuardaMunicipalConsulta === 'function') garantirEstruturaGuardaMunicipalConsulta();
   const instituicoes = INSTITUICOES_VALIDAS.length;
-  const estados = Object.keys(HEADER_ESTADOS).length;
+  const estados = Object.keys(HEADER_ESTADOS).filter(chave => !['br', 'municipal'].includes(chave)).length;
   let ativa = 0;
   let reserva = 0;
   let femininas = 0;
@@ -2545,9 +3166,11 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
-  setHeaderHeroImage('img/logoleao.webp');
-  setSiteHeaderBackgroundImage('img/logoleao.webp');
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  document.body.style.removeProperty('--vermelho');
+  document.body.style.removeProperty('--vermelho-escuro');
+  setHeaderHeroImage('img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage('img/LOGO/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.add('header-portal-home');
 
@@ -2574,18 +3197,22 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-atualizado', 'Visão geral do portal');
 
   atualizarLabelsHeaderResumo({
+    'header-label-natureza': 'Escopo',
+    'header-label-uf': 'Abrangência',
     'header-label-criacao': 'Instituições',
-    'header-label-ativa': 'Ativos estimados',
+    'header-label-ativa': 'Efetivo total estimado',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Integrantes femininas',
+    'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
 
+  setTexto('header-resumo-natureza', 'Portal informativo');
+  setTexto('header-resumo-uf', 'Brasil');
   setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
-  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
+  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.total)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
@@ -2615,41 +3242,154 @@ function aplicarHeaderInicialPortal() {
   atualizarVisibilidadeResumoInstitucional('principal');
 }
 
+function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
+  const instTexto = String(inst || '').toLowerCase();
+  const tipoTexto = String(dados.tipo || '').toLowerCase();
+  const ehPenal = instTexto.startsWith('pp') || tipoTexto.includes('penal');
+  const ehBombeiro = instTexto.startsWith('bm') || tipoTexto.includes('bombeiro');
+  const ehMilitar = instTexto.startsWith('pm') || instTexto === 'pmerj' || tipoTexto.includes('militar');
+  const ehCivil = instTexto.startsWith('pc') || instTexto === 'pcerj' || tipoTexto.includes('civil');
+  const ehFederal = ['pf', 'prf'].includes(instTexto) || dados.estadoSigla === 'BR';
+  const ehMunicipal = instTexto === 'gm' || tipoTexto.includes('guarda municipal');
+
+  if (ehPenal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Base constitucional',
+      'header-label-ativa': 'Policiais penais',
+      'header-label-reserva': 'Inativos/RPPS',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Presos atendidos',
+      'header-label-relacao': dados.relacaoTitulo || 'Servidor/preso',
+      'header-label-governador': ehFederal ? 'Governo responsável' : 'Chefe do Executivo',
+      'header-label-comando': 'Direção/Secretaria'
+    };
+  }
+
+  if (ehBombeiro) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Criação',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Reserva/reforma',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
+  if (ehMilitar) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Criação',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Reserva/reforma',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
+  if (ehCivil) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Origem histórica',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Inativos estimados',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Delegado-Geral/Chefia'
+    };
+  }
+
+  if (ehFederal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'Jurisdição',
+      'header-label-criacao': 'Base legal/histórica',
+      'header-label-ativa': 'Efetivo total',
+      'header-label-reserva': 'Aposentados/inativos',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
+      'header-label-relacao': dados.relacaoTitulo || 'Indicador',
+      'header-label-governador': 'Governo responsável',
+      'header-label-comando': 'Direção-Geral'
+    };
+  }
+
+  if (ehMunicipal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'Jurisdição',
+      'header-label-criacao': 'Base local',
+      'header-label-ativa': 'Efetivo municipal',
+      'header-label-reserva': 'Regime previdenciário',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Poder Executivo local',
+      'header-label-comando': 'Comando/Direção'
+    };
+  }
+
+  return {
+    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
+  };
+}
+
+function resumoHeaderUfLabel(dados = {}) {
+  const sigla = dados.estadoSigla && !resumoEhDadoPendente(dados.estadoSigla) ? String(dados.estadoSigla).trim() : '';
+  const estado = dados.estado && !resumoEhDadoPendente(dados.estado) ? String(dados.estado).trim() : '';
+  if (sigla && estado && sigla !== estado) return `${sigla} · ${estado}`;
+  return sigla || estado || RESUMO_DADOS_EM_BREVE;
+}
+
 function atualizarHeaderResumo(inst) {
   const tituloResumo = document.getElementById('header-resumo-titulo');
   if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
 
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
-  atualizarLabelsHeaderResumo({
-    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
-    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
-  });
+  atualizarLabelsHeaderResumo(getResumoHeaderLabelsPorInstituicao(inst, dados));
 
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
-  const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
+  const ativaTexto = calcularEfetivoTotalResumoHeader(dados);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
-  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : 'Não informado');
+  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
+  const naturezaTexto = dados.tipo || resumoInferirTipo(inst, dados);
 
   setTexto('header-resumo-atualizado', dados.atualizado || 'Atualizado');
-  setTexto('header-resumo-criacao', dados.criacao || 'Não informado');
+  setTexto('header-resumo-natureza', naturezaTexto);
+  setTexto('header-resumo-uf', resumoHeaderUfLabel(dados));
+  setTexto('header-resumo-criacao', dados.criacao || RESUMO_DADOS_EM_BREVE);
   setTexto('header-resumo-ativa', ativaTexto);
   setTexto('header-resumo-reserva', reservaTexto);
   setTexto('header-resumo-total', femininasTexto);
-  setTexto('header-resumo-populacao', dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado');
+  setTexto('header-resumo-populacao', dados.populacaoLabel || (dados.populacao ? formatarNumeroHeader(dados.populacao) : RESUMO_DADOS_EM_BREVE));
   setTexto('header-resumo-relacao', relacaoTexto);
-  setTexto('header-resumo-governador', dados.governador || 'Não informado');
-  setTexto('header-resumo-comando', dados.comando || 'Não informado');
+  setTexto('header-resumo-governador', dados.governador || RESUMO_DADOS_EM_BREVE);
+  setTexto('header-resumo-comando', dados.comando || RESUMO_DADOS_EM_BREVE);
 }
 
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
-    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
+    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst || item.gm === inst;
   }) || 'sp';
 }
 
@@ -2707,6 +3447,16 @@ function atualizarHeaderInstitucional(inst) {
 
   const ppSigla = document.getElementById('header-pp-sigla');
   if (ppSigla) ppSigla.textContent = ppInfo ? ppInfo.titulo : 'PP';
+
+  const ramoFederalAtivo = estadoAtivo === 'br';
+  const setBranchSmall = (id, texto) => {
+    const small = document.querySelector(`#${id} small`);
+    if (small) small.textContent = texto;
+  };
+  setBranchSmall('header-branch-pm', ramoFederalAtivo ? '—' : 'Militar');
+  setBranchSmall('header-branch-bm', ramoFederalAtivo ? '—' : 'Bombeiros');
+  setBranchSmall('header-branch-pc', ramoFederalAtivo ? 'Federal' : 'Civil');
+  setBranchSmall('header-branch-pp', ramoFederalAtivo ? 'Rodoviária' : 'Penal');
 
   const btnPm = document.getElementById('header-branch-pm');
   const btnBm = document.getElementById('header-branch-bm');
@@ -2812,6 +3562,10 @@ function mudarInstituicao(novaInstituicao) {
   });
 
   const config = configs[inst];
+  if (config?.cor) {
+    document.body.style.setProperty('--vermelho', config.cor);
+    document.body.style.setProperty('--vermelho-escuro', config.cor);
+  }
   atualizarFlagsEstado(inst);
 
   // Atualiza textos visíveis
@@ -2838,7 +3592,698 @@ function mudarInstituicao(novaInstituicao) {
   carregarAcoes();
   carregarAssociacoes();
   carregarRemuneracaoTabelada();
+  if (typeof sincronizarSeletoresConsulta === 'function') sincronizarSeletoresConsulta();
   if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
+}
+
+
+/* ============================================================ */
+/* === SELEÇÃO INTERNA POR ABA: ESFERA → INSTITUIÇÃO ========== */
+/* ============================================================ */
+const PAGINAS_COM_SELECAO_INSTITUICAO = {
+  remuneracao: {
+    titulo: 'Consultar remuneração por instituição',
+    subtitulo: 'Escolha a esfera e depois a instituição para carregar a tabela correspondente.',
+    destino: 'lista-remuneracao'
+  },
+  direitos: {
+    titulo: 'Consultar direitos por instituição',
+    subtitulo: 'A análise usa a instituição escolhida nesta aba e os dados funcionais preenchidos abaixo.',
+    destino: 'resultados_dir'
+  },
+  poderes: {
+    titulo: 'Consultar poderes e deveres por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
+    destino: 'poderes_resultado'
+  },
+  brasoes: {
+    titulo: 'Consultar brasão e história por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver o brasão, origem, criação, marcos históricos e dados institucionais.',
+    destino: 'brasoes_historia_resultado'
+  },
+  concursos: {
+    titulo: 'Consultar concursos por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para carregar os dados de edital, requisitos, etapas e fontes.',
+    destino: 'lista-concursos'
+  },
+  acoes: {
+    titulo: 'Consultar ações judiciais por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver teses, alertas e referências cadastradas.',
+    destino: 'lista-acoes'
+  },
+  associacoes: {
+    titulo: 'Consultar associações e sindicatos por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para localizar entidades relacionadas à carreira.',
+    destino: 'lista-associacoes'
+  }
+};
+
+function instituicaoConsultaFoiSelecionada() {
+  return !headerModoInicialPortal && !!currInst && INSTITUICOES_VALIDAS.includes(currInst);
+}
+
+function garantirEstruturaGuardaMunicipalConsulta() {
+  if (!INSTITUICOES_VALIDAS.includes('gm')) INSTITUICOES_VALIDAS.push('gm');
+
+  HEADER_INSTITUICOES_INFO.gm = HEADER_INSTITUICOES_INFO.gm || {
+    titulo: 'GM',
+    desc: 'Guarda Municipal'
+  };
+
+  HEADER_INSTITUICOES_IMAGENS.gm = HEADER_INSTITUICOES_IMAGENS.gm || 'img/LOGO/logoleao.webp';
+
+  HEADER_ESTADOS.municipal = HEADER_ESTADOS.municipal || {
+    nome: 'Municípios',
+    sigla: 'MUN',
+    gm: 'gm',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  HEADER_INSTITUICOES_RESUMO.gm = HEADER_INSTITUICOES_RESUMO.gm || {
+    nome: 'Guarda Municipal',
+    sigla: 'GM',
+    estado: 'Municípios',
+    estadoSigla: 'MUN',
+    tipo: 'Guarda Municipal',
+    criacao: 'Varia por município',
+    ativaLabel: 'Efetivo municipal — varia por cidade',
+    reservaLabel: 'Regime local — verificar município',
+    femininasLabel: 'Dados locais — consultar prefeitura',
+    populacaoLabel: 'Município selecionado',
+    relacaoLabel: 'Depende da lei municipal e do efetivo local',
+    populacaoTitulo: 'Abrangência',
+    relacaoTitulo: 'Relação efetivo/população',
+    governador: 'Prefeitura municipal / Secretaria municipal competente',
+    comando: 'Comando/direção da Guarda Municipal, conforme lei local',
+    atualizado: 'Conteúdo geral municipal'
+  };
+
+  CONFIGS_INSTITUICOES_GENERICAS.gm = CONFIGS_INSTITUICOES_GENERICAS.gm || {
+    titulo: 'GM',
+    desc: 'Guarda Municipal',
+    cor: '#0f766e',
+    alertaPrev: 'Guarda Municipal: conteúdo geral. Direitos, remuneração, concurso e organização dependem da lei municipal, estatuto local, plano de cargos, regime previdenciário e edital de cada cidade.'
+  };
+
+  if (typeof CARGOS_ESTRUTURA_GENERICAS !== 'undefined' && !CARGOS_ESTRUTURA_GENERICAS.gm) {
+    CARGOS_ESTRUTURA_GENERICAS.gm = [
+      { val: 'gm_guarda', text: 'Guarda Municipal / Agente da Guarda' },
+      { val: 'gm_inspetor', text: 'Inspetor / Classe intermediária — quando existir' },
+      { val: 'gm_comando', text: 'Comando / direção — conforme lei municipal' }
+    ];
+  }
+
+  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
+    REMUNERACAO_FONTES_OFICIAIS.gm = REMUNERACAO_FONTES_OFICIAIS.gm || {
+      nome: 'Guarda Municipal — verificar portal da transparência, lei municipal e edital local',
+      url: '#'
+    };
+  }
+
+  if (typeof CONCURSOS !== 'undefined') {
+    CONCURSOS.gm = CONCURSOS.gm || {
+      edital: 'Guarda Municipal — concurso municipal conforme cidade escolhida',
+      salario: 'Varia conforme lei municipal e edital local',
+      vagas: 'Varia por município',
+      cotas: 'Conforme edital municipal',
+      idade: 'Conforme edital e legislação local',
+      escolaridade: 'Geralmente ensino médio, podendo variar conforme município',
+      materias: 'Língua Portuguesa, legislação municipal, Estatuto Geral das Guardas Municipais, noções de Direito, conhecimentos gerais, informática e outras disciplinas conforme edital.',
+      banca: 'Conforme contratação municipal',
+      inscritos: 'Varia por edital',
+      etapas: 'Prova objetiva, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação quando previstos.',
+      cfsd: 'Curso de formação ou capacitação conforme matriz curricular e regulamento local.',
+      estagio: 'Conforme estatuto municipal.',
+      validade: 'Conforme edital.',
+      previsao: 'Consultar prefeitura e diário oficial do município.',
+      site: '#'
+    };
+  }
+
+  if (typeof ACOES_JUDICIAIS !== 'undefined') {
+    ACOES_JUDICIAIS.gm = ACOES_JUDICIAIS.gm || [
+      {
+        titulo: 'Guarda Municipal — direitos e enquadramentos locais',
+        status: 'Verificar caso individual',
+        ano: 'Tema permanente',
+        tipo: 'individual',
+        desc: 'Demandas podem envolver plano de carreira, adicional de risco, adicional noturno, horas extras, previdência, aposentadoria especial quando discutida, porte institucional, enquadramento e condições de trabalho.',
+        base: 'Lei municipal, Estatuto Geral das Guardas Municipais, Constituição, decisões judiciais aplicáveis e documentos funcionais.',
+        fonte: 'Consultar legislação municipal e advogado/entidade local',
+        fonteUrl: '',
+        atualizado: 'Conteúdo geral municipal'
+      }
+    ];
+  }
+
+  if (typeof ASSOCIACOES !== 'undefined') {
+    ASSOCIACOES.gm = ASSOCIACOES.gm || [
+      {
+        nome: 'Entidade representativa de Guardas Municipais — consultar município',
+        foco: 'Guardas municipais ativos, aposentados, pensionistas e familiares, conforme base territorial da entidade.',
+        acao: 'Acompanhamento de pautas de carreira, remuneração, plano de cargos, condições de trabalho, porte, formação e valorização profissional.',
+        site: '',
+        telefone: 'Consultar entidade local',
+        mensalidade: 'Consultar diretamente',
+        servicos: 'Jurídico, comunicação, convênios e representação institucional conforme estatuto da entidade.'
+      }
+    ];
+  }
+}
+
+function getEsferaConsultaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf' || inst === 'prf') return 'federal';
+  if (inst === 'gm' || inst === 'guarda_municipal') return 'municipal';
+  return 'estadual';
+}
+
+function getRamoConsultaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf') return 'Polícia Federal';
+  if (inst === 'prf') return 'Polícia Rodoviária Federal';
+  if (inst === 'gm') return 'Guarda Municipal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
+  if (inst.startsWith('pp')) return 'Polícia Penal';
+  if (inst.startsWith('pc')) return 'Polícia Civil';
+  if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Brigada Militar / Polícia Militar' : 'Polícia Militar';
+  return 'Instituição';
+}
+
+function getOrdemConsultaInstituicao(inst) {
+  const estado = getEstadoDaInstituicao(inst);
+  const dadosEstado = HEADER_ESTADOS[estado] || {};
+  if (inst === 'pf') return 1;
+  if (inst === 'prf') return 2;
+  if (dadosEstado.pm === inst) return 1;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (inst === 'gm') return 1;
+  return 9;
+}
+
+function getInstituicoesParaConsulta(esfera) {
+  garantirEstruturaGuardaMunicipalConsulta();
+  const esferaNormalizada = String(esfera || '').toLowerCase();
+  let base = [];
+
+  if (esferaNormalizada === 'federal') {
+    base = ['pf', 'prf'];
+  } else if (esferaNormalizada === 'municipal') {
+    base = ['gm'];
+  } else if (esferaNormalizada === 'estadual') {
+    base = INSTITUICOES_VALIDAS.filter(inst => getEsferaConsultaInstituicao(inst) === 'estadual');
+  }
+
+  return base
+    .filter(inst => HEADER_INSTITUICOES_INFO[inst])
+    .map(inst => {
+      const estado = getEstadoDaInstituicao(inst);
+      const dadosEstado = HEADER_ESTADOS[estado] || HEADER_ESTADOS.sp;
+      const info = HEADER_INSTITUICOES_INFO[inst] || {};
+      return {
+        inst,
+        estado,
+        estadoNome: dadosEstado.nome || 'Brasil',
+        uf: dadosEstado.sigla || estado.toUpperCase(),
+        sigla: info.titulo || inst.toUpperCase(),
+        nome: info.desc || inst.toUpperCase(),
+        ramo: getRamoConsultaInstituicao(inst),
+        ordem: getOrdemConsultaInstituicao(inst)
+      };
+    })
+    .sort((a, b) => {
+      if (a.estado !== b.estado) {
+        const ordemEstados = Object.keys(HEADER_ESTADOS);
+        return ordemEstados.indexOf(a.estado) - ordemEstados.indexOf(b.estado);
+      }
+      return a.ordem - b.ordem || a.sigla.localeCompare(b.sigla, 'pt-BR');
+    });
+}
+
+function removerSeletorAntigoPoderes() {
+  const antigo = document.getElementById('poderes_instituicao');
+  const bloco = antigo?.closest('.poderes-form-grid');
+  if (bloco) bloco.remove();
+}
+
+function criarHtmlSeletorConsulta(page, config) {
+  const idEsfera = `consulta_esfera_${page}`;
+  const idInstituicao = `consulta_instituicao_${page}`;
+  return `
+    <section class="consulta-instituicao-card" data-consulta-selector="${page}" aria-label="Seleção de instituição para esta aba">
+      <div class="consulta-instituicao-texto">
+        <span>Escolha dentro desta aba</span>
+        <strong>${escapeHtml(config.titulo)}</strong>
+        <small>${escapeHtml(config.subtitulo)}</small>
+      </div>
+      <div class="consulta-instituicao-grid">
+        <div class="field">
+          <label for="${idEsfera}">Tipo de instituição</label>
+          <select id="${idEsfera}" data-consulta-esfera data-consulta-page="${page}" aria-label="Selecione se a instituição é federal, estadual ou municipal">
+            <option value="" selected>Escolha a esfera</option>
+            <option value="federal">Federal</option>
+            <option value="estadual">Estadual</option>
+            <option value="municipal">Municipal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="${idInstituicao}">Instituição</label>
+          <select id="${idInstituicao}" data-consulta-instituicao data-consulta-page="${page}" aria-label="Selecione a instituição" disabled>
+            <option value="">Escolha primeiro a esfera</option>
+          </select>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function inserirSeletorConsultaNaPagina(page) {
+  const config = PAGINAS_COM_SELECAO_INSTITUICAO[page];
+  if (!config) return;
+  const pageEl = document.getElementById(`page-${page}`);
+  const card = pageEl?.querySelector('.card');
+  if (!card || card.querySelector(`[data-consulta-selector="${page}"]`)) return;
+
+  if (page === 'poderes') removerSeletorAntigoPoderes();
+
+  const h2 = card.querySelector('h2');
+  const temp = document.createElement('div');
+  temp.innerHTML = criarHtmlSeletorConsulta(page, config).trim();
+  const seletor = temp.firstElementChild;
+  if (h2 && h2.nextSibling) card.insertBefore(seletor, h2.nextSibling);
+  else card.prepend(seletor);
+}
+
+function montarSeletoresConsultaInstituicao() {
+  garantirEstruturaGuardaMunicipalConsulta();
+  Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(inserirSeletorConsultaNaPagina);
+  sincronizarSeletoresConsulta();
+}
+
+function atualizarInstituicoesConsulta(page, esfera, valorPreferido = '') {
+  const pageEl = document.getElementById(`page-${page}`);
+  const seletorInst = pageEl?.querySelector('[data-consulta-instituicao]');
+  if (!seletorInst) return;
+
+  const itens = getInstituicoesParaConsulta(esfera);
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : (esfera === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esfera === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  if (valorPreferido && itens.some(item => item.inst === valorPreferido)) {
+    seletorInst.value = valorPreferido;
+  } else {
+    seletorInst.value = '';
+  }
+}
+
+function sincronizarSeletoresConsulta(pageUnica = '') {
+  const paginas = pageUnica ? [pageUnica] : Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO);
+  paginas.forEach(page => {
+    inserirSeletorConsultaNaPagina(page);
+    const pageEl = document.getElementById(`page-${page}`);
+    if (!pageEl) return;
+    const esferaSelect = pageEl.querySelector('[data-consulta-esfera]');
+    const instSelect = pageEl.querySelector('[data-consulta-instituicao]');
+    if (!esferaSelect || !instSelect) return;
+
+    if (!instituicaoConsultaFoiSelecionada()) {
+      if (!esferaSelect.value) {
+        instSelect.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+        instSelect.disabled = true;
+      }
+      return;
+    }
+
+    const esfera = getEsferaConsultaInstituicao(currInst);
+    esferaSelect.value = esfera;
+    atualizarInstituicoesConsulta(page, esfera, currInst);
+  });
+}
+
+function alterarEsferaConsultaInstituicao(page, esfera) {
+  inserirSeletorConsultaNaPagina(page);
+  if (instituicaoConsultaFoiSelecionada()) {
+    aplicarHeaderInicialPortal();
+  }
+  atualizarInstituicoesConsulta(page, esfera, '');
+  mostrarAvisoSelecaoInstituicao(page);
+}
+
+function selecionarInstituicaoConsulta(page, inst) {
+  if (!inst) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return;
+  }
+  mudarInstituicao(inst);
+  sincronizarSeletoresConsulta();
+  renderizarConteudoPaginaInstitucional(page);
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (info) mostrarToast(`${info.titulo} selecionada para esta consulta.`);
+}
+
+function avisoSelecaoInstituicaoHtml(page) {
+  const nomes = {
+    remuneracao: 'a tabela de remuneração',
+    direitos: 'a análise de direitos',
+    poderes: 'os poderes e deveres',
+    brasoes: 'o brasão e a história institucional',
+    concursos: 'os dados de concursos',
+    acoes: 'as ações judiciais',
+    associacoes: 'as associações e sindicatos'
+  };
+  return `
+    <div class="consulta-vazio" role="status">
+      <strong>Escolha uma instituição nesta aba.</strong>
+      <span>Primeiro selecione se a instituição é federal, estadual ou municipal. Depois escolha a instituição específica para carregar ${nomes[page] || 'as informações'}.</span>
+    </div>
+  `;
+}
+
+function atualizarTitulosConsultaSemInstituicao() {
+  [
+    'txt-inst-dir',
+    'txt-inst-concursos',
+    'txt-inst-poderes',
+    'txt-inst-brasoes',
+    'txt-inst-remuneracao',
+    'txt-inst-acoes',
+    'txt-inst-assoc'
+  ].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '—';
+  });
+}
+
+function mostrarAvisoSelecaoInstituicao(page = '') {
+  if (!page) return;
+  atualizarTitulosConsultaSemInstituicao();
+
+  if (page === 'remuneracao') {
+    const tbody = document.getElementById('lista-remuneracao');
+    if (tbody) tbody.innerHTML = `<tr><td colspan="4">Escolha uma instituição nesta aba para carregar a tabela.</td></tr>`;
+    const total = document.getElementById('remu-total-cargos');
+    const menor = document.getElementById('remu-menor-total');
+    const maior = document.getElementById('remu-maior-total');
+    if (total) total.textContent = '0';
+    if (menor) menor.textContent = '—';
+    if (maior) maior.textContent = '—';
+    return;
+  }
+
+  if (page === 'direitos') {
+    const cargo = document.getElementById('cargo_dir');
+    if (cargo && !instituicaoConsultaFoiSelecionada()) cargo.innerHTML = '<option value="">Selecione uma instituição primeiro</option>';
+    const cont = document.getElementById('resultados_dir');
+    if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
+    return;
+  }
+
+  const destino = PAGINAS_COM_SELECAO_INSTITUICAO[page]?.destino;
+  const cont = destino ? document.getElementById(destino) : null;
+  if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
+}
+
+function limparConsultaInstitucionalInicial() {
+  montarSeletoresConsultaInstituicao();
+  atualizarTitulosConsultaSemInstituicao();
+  Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(mostrarAvisoSelecaoInstituicao);
+}
+
+function renderizarConteudoPaginaInstitucional(page) {
+  if (!instituicaoConsultaFoiSelecionada()) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return;
+  }
+
+  sincronizarSeletoresConsulta(page);
+
+  if (page === 'direitos') {
+    popularCargos(currInst);
+    analisarDireitos();
+  } else if (page === 'concursos') {
+    carregarConcursos();
+  } else if (page === 'poderes') {
+    inicializarPoderesDeveres();
+  } else if (page === 'brasoes') {
+    renderizarBrasoesHistoria();
+  } else if (page === 'acoes') {
+    carregarAcoes();
+  } else if (page === 'associacoes') {
+    carregarAssociacoes();
+  } else if (page === 'remuneracao') {
+    carregarRemuneracaoTabelada();
+  }
+}
+
+function prepararPaginaComSelecaoInstituicao(page) {
+  if (!PAGINAS_COM_SELECAO_INSTITUICAO[page]) return false;
+  montarSeletoresConsultaInstituicao();
+  if (!instituicaoConsultaFoiSelecionada()) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return true;
+  }
+  renderizarConteudoPaginaInstitucional(page);
+  return true;
+}
+
+
+
+function obterResumoInstituicaoCompleto(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  const resumo = HEADER_INSTITUICOES_RESUMO[inst] || {};
+  const estadoChave = getEstadoDaInstituicao(inst);
+  const estado = HEADER_ESTADOS[estadoChave] || {};
+  const sigla = resumo.sigla || info.titulo || String(inst || '').toUpperCase();
+  const nome = resumo.nome || info.desc || sigla;
+  const tipo = resumo.tipo || resumoInferirTipo(inst, resumo);
+  const uf = resumo.estadoSigla || estado.sigla || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'BR' : '—');
+  const estadoNome = resumo.estado || estado.nome || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'Brasil' : 'Municípios');
+  return { info, resumo, estadoChave, estado, sigla, nome, tipo, uf, estadoNome };
+}
+
+function valorHistoriaOuNaoDeclarado(valor, alternativo = 'Informação específica a confirmar em fonte oficial') {
+  if (typeof resumoEhDadoPendente === 'function' && resumoEhDadoPendente(valor)) return alternativo;
+  const texto = String(valor || '').trim();
+  if (!texto || texto === RESUMO_DADOS_EM_BREVE || /dados em breve/i.test(texto)) return alternativo;
+  return texto;
+}
+
+function imagemPrincipalBrasaoInstituicao(inst) {
+  const caminho = HEADER_INSTITUICOES_IMAGENS?.[inst] || '';
+  const candidatos = montarCandidatosImagemInstituicao(inst, caminho);
+  return candidatos[0] || caminho || 'img/LOGO/logoleao.webp';
+}
+
+function getCriadorInstitucional(inst, tipo, estadoNome) {
+  if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  const esfera = getEsferaConsultaInstituicao(inst);
+  if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
+  if (inst === 'prf') return 'União — estrutura federal vinculada à segurança pública e ao policiamento ostensivo das rodovias federais.';
+  if (esfera === 'municipal') return 'Município — criada por lei municipal e organizada pela prefeitura/secretaria competente.';
+  if (/Polícia Penal/i.test(tipo)) return `${estadoNome} — carreira constitucionalizada pela EC 104/2019 e estruturada por normas estaduais/distritais.`;
+  if (/Bombeiro/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização militar e comando próprio conforme legislação local.`;
+  if (/Polícia Civil/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização da polícia judiciária conforme legislação local.`;
+  return `${estadoNome} — poder público estadual/distrital, por ato legal de organização da força pública local.`;
+}
+
+function getHistoricoPorTipo(inst, dados) {
+  const { sigla, nome, tipo, estadoNome, resumo } = dados;
+  const criacao = valorHistoriaOuNaoDeclarado(resumo.criacao, 'origem histórica organizada pela legislação própria da instituição');
+  const esfera = getEsferaConsultaInstituicao(inst);
+
+  if (inst === 'pmesp') {
+    return {
+      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Ao longo de sua trajetória, a instituição passou por reorganizações, profissionalização, expansão territorial e consolidação do policiamento ostensivo e da preservação da ordem pública no estado.`,
+      marcos: [
+        'Criação da força pública paulista em 15/12/1831, associada ao governo provincial de Rafael Tobias de Aguiar.',
+        'Consolidação como força militar estadual com atuação em policiamento ostensivo, preservação da ordem pública e apoio em crises.',
+        'Modernização de formação, policiamento especializado, radiopatrulhamento, policiamento comunitário, tecnologia, inteligência e atendimento emergencial.'
+      ]
+    };
+  }
+
+  if (inst === 'pf') {
+    return {
+      origem: `A ${nome} é órgão permanente da União e atua como polícia judiciária federal, responsável por investigar crimes de competência federal, proteger interesses da União e executar atribuições especializadas em fronteiras, migração, polícia marítima, aeroportuária e de combate a crimes interestaduais ou internacionais.`,
+      marcos: [
+        'Consolidação constitucional como órgão da segurança pública federal no art. 144 da Constituição.',
+        'Atuação em investigações federais, cooperação internacional, controle migratório e repressão a crimes contra bens, serviços e interesses da União.',
+        'Ampliação de capacidades técnicas em perícia, inteligência, operações especiais, crimes cibernéticos e enfrentamento de organizações criminosas.'
+      ]
+    };
+  }
+
+  if (inst === 'prf') {
+    return {
+      origem: `A ${nome} se consolidou como polícia ostensiva federal voltada às rodovias federais, combinando fiscalização de trânsito, prevenção de acidentes, atendimento em ocorrências e enfrentamento de crimes que utilizam a malha rodoviária nacional.`,
+      marcos: [
+        'Reconhecimento constitucional como órgão permanente da segurança pública federal no art. 144 da Constituição.',
+        'Fortalecimento da fiscalização de trânsito e do patrulhamento ostensivo nas rodovias federais.',
+        'Atuação integrada no combate ao tráfico de drogas, armas, contrabando, crimes ambientais, roubo de cargas e crimes interestaduais.'
+      ]
+    };
+  }
+
+  if (esfera === 'municipal') {
+    return {
+      origem: 'A Guarda Municipal é organizada por lei local e atua na proteção de bens, serviços e instalações municipais, com papel preventivo e comunitário. A história concreta varia conforme o município, sua lei de criação, estatuto, plano de carreira e estrutura administrativa.',
+      marcos: [
+        'Previsão constitucional das guardas municipais no art. 144 da Constituição.',
+        'Fortalecimento nacional com o Estatuto Geral das Guardas Municipais, que definiu princípios mínimos de atuação, proteção municipal e cooperação institucional.',
+        'Integração crescente com políticas de prevenção, ordenamento urbano, proteção escolar, videomonitoramento e defesa civil local.'
+      ]
+    };
+  }
+
+  if (/Bombeiro/i.test(tipo)) {
+    return {
+      origem: `O ${nome} integra a segurança pública e a defesa civil do ${estadoNome}. Sua trajetória é ligada ao combate a incêndios, salvamento, resgate, prevenção, vistoria técnica e resposta a emergências, com organização militar estadual/distrital. Registro de criação/origem usado nesta base: ${criacao}.`,
+      marcos: [
+        'Formação ou consolidação como estrutura bombeiro militar estadual/distrital.',
+        'Expansão das atividades de prevenção contra incêndio, salvamento, atendimento pré-hospitalar e defesa civil.',
+        'Adoção de normas técnicas, formação especializada e integração com sistemas estaduais de gestão de riscos e desastres.'
+      ]
+    };
+  }
+
+  if (/Polícia Civil/i.test(tipo)) {
+    return {
+      origem: `A ${nome} é a polícia judiciária do ${estadoNome}. Sua história está ligada à investigação criminal, apuração de infrações penais, formalização de procedimentos, apoio à Justiça criminal e especialização de delegacias. Registro de criação/origem usado nesta base: ${criacao}.`,
+      marcos: [
+        'Consolidação das delegacias e da carreira policial civil como estrutura de investigação estadual/distrital.',
+        'Especialização de unidades investigativas para homicídios, patrimônio, drogas, crimes cibernéticos, violência contra a mulher e outras áreas.',
+        'Integração progressiva com perícia, inteligência, bancos de dados e cooperação operacional com outras forças.'
+      ]
+    };
+  }
+
+  if (/Polícia Penal/i.test(tipo)) {
+    return {
+      origem: `A ${nome} representa a carreira voltada à segurança dos estabelecimentos penais no ${estadoNome}. A Polícia Penal foi inserida no texto constitucional pela Emenda Constitucional 104/2019, e cada ente federativo organiza sua estrutura, cargos, atribuições e identidade institucional por normas próprias.`,
+      marcos: [
+        'Constitucionalização da Polícia Penal pela EC 104/2019.',
+        'Transição de estruturas penitenciárias para carreira policial penal estadual/distrital.',
+        'Fortalecimento da segurança prisional, escoltas, inteligência penitenciária e controle interno dos estabelecimentos penais.'
+      ]
+    };
+  }
+
+  return {
+    origem: `A ${nome} é força policial militar do ${estadoNome}, com trajetória ligada à preservação da ordem pública, policiamento ostensivo, disciplina militar e proteção da sociedade. Registro de criação/origem usado nesta base: ${criacao}.`,
+    marcos: [
+      'Criação ou organização histórica como força pública estadual/provincial.',
+      'Consolidação do policiamento ostensivo e da preservação da ordem pública como atribuições centrais.',
+      'Modernização de formação, radiopatrulhamento, policiamento especializado, corregedoria, inteligência e atendimento comunitário.'
+    ]
+  };
+}
+
+function montarCamposResumoHistoria(inst, dados) {
+  const { resumo, tipo, uf, estadoNome } = dados;
+  const populacaoTitulo = resumo.populacaoTitulo || (/Polícia Penal/i.test(tipo) ? 'Presos atendidos' : 'População atendida');
+  return [
+    { rotulo: 'Natureza', valor: tipo },
+    { rotulo: 'Jurisdição', valor: `${uf} · ${estadoNome}` },
+    { rotulo: 'Criação/origem', valor: valorHistoriaOuNaoDeclarado(resumo.criacao, 'Registro histórico específico a confirmar') },
+    { rotulo: 'Criador/ato de origem', valor: getCriadorInstitucional(inst, tipo, estadoNome) },
+    { rotulo: 'Efetivo total', valor: valorHistoriaOuNaoDeclarado(resumo.efetivoTotalLabel || calcularEfetivoTotalResumoHeader(resumo), 'Efetivo específico a confirmar') },
+    { rotulo: /Bombeiro|Polícia Militar/i.test(tipo) ? 'Reserva/reforma' : 'Aposentados/inativos', valor: valorHistoriaOuNaoDeclarado(resumo.reservaLabel || resumo.reserva, 'Inativos específicos a confirmar') },
+    { rotulo: 'Mulheres no efetivo', valor: valorHistoriaOuNaoDeclarado(resumo.femininasLabel || resumo.femininas, 'Dado específico a confirmar') },
+    { rotulo: populacaoTitulo, valor: valorHistoriaOuNaoDeclarado(resumo.populacaoLabel || (resumo.populacao ? formatarNumeroHeader(resumo.populacao) : ''), 'Abrangência específica a confirmar') },
+    { rotulo: resumo.relacaoTitulo || 'Relação institucional', valor: valorHistoriaOuNaoDeclarado(resumo.relacaoLabel, 'Relação específica a confirmar') },
+    { rotulo: /Polícia Federal|Rodoviária Federal/i.test(tipo) ? 'Direção-Geral' : (/Polícia Civil/i.test(tipo) ? 'Chefia/Direção' : 'Comando/Direção'), valor: valorHistoriaOuNaoDeclarado(resumo.comando, 'Chefia atual a confirmar') }
+  ];
+}
+
+function renderizarBrasoesHistoria() {
+  const cont = document.getElementById('brasoes_historia_resultado');
+  if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('brasoes');
+    return;
+  }
+
+  const inst = currInst;
+  const dados = obterResumoInstituicaoCompleto(inst);
+  const { sigla, nome, tipo, estadoNome, resumo } = dados;
+  const imagem = imagemPrincipalBrasaoInstituicao(inst);
+  const historico = getHistoricoPorTipo(inst, dados);
+  const campos = montarCamposResumoHistoria(inst, dados);
+  const atualizado = valorHistoriaOuNaoDeclarado(resumo.atualizado, 'Resumo institucional revisado para navegação informativa');
+  const fonte = valorHistoriaOuNaoDeclarado(resumo.fonte, 'Fontes públicas e oficiais quando disponíveis; confirmar informações sensíveis nos canais oficiais da instituição.');
+
+  const tituloSpan = document.getElementById('txt-inst-brasoes');
+  if (tituloSpan) tituloSpan.textContent = sigla;
+
+  cont.innerHTML = `
+    <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
+      <div class="brasoes-imagem-wrap">
+        <img class="brasoes-imagem" src="${escapeHtml(imagem)}" alt="Brasão ou insígnia da ${escapeHtml(nome)}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
+      </div>
+      <div class="brasoes-hero-copy">
+        <span class="brasoes-kicker">${escapeHtml(tipo)}</span>
+        <h3>${escapeHtml(sigla)} — ${escapeHtml(nome)}</h3>
+        <p>${escapeHtml(estadoNome)} · ${escapeHtml(getEsferaConsultaInstituicao(inst))}</p>
+        <small>${escapeHtml(atualizado)}</small>
+      </div>
+    </section>
+
+    <section class="brasoes-resumo-grid" aria-label="Resumo institucional detalhado">
+      ${campos.map(campo => `
+        <article class="brasoes-resumo-item">
+          <span>${escapeHtml(campo.rotulo)}</span>
+          <strong>${escapeHtml(campo.valor)}</strong>
+        </article>
+      `).join('')}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="História da instituição">
+      <div class="brasoes-section-title">
+        <span>História breve</span>
+        <h3>Origem e evolução institucional</h3>
+      </div>
+      <p>${escapeHtml(historico.origem)}</p>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Marcos históricos">
+      <div class="brasoes-section-title">
+        <span>Marcos históricos</span>
+        <h3>Pontos importantes da trajetória</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${historico.marcos.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
+      <strong>Fonte-base do resumo:</strong>
+      <p>${escapeHtml(fonte)}</p>
+      <small>Conteúdo informativo, independente e não oficial. Dados de efetivo, chefia e datas podem mudar; confirme sempre em ato oficial, portal da transparência, diário oficial ou site institucional.</small>
+    </section>
+  `;
 }
 
 

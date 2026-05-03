@@ -218,7 +218,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
       : 'Referência de remuneração do último concurso/edital PMMS; confirmar tabela vigente antes de decisão financeira.';
     benefDesc = 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital/triagem';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital/triagem';
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;
@@ -227,7 +227,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
       : 'Remuneração inicial divulgada no Edital SAD/SEJUSP/PCMS/APJ/2025 para jornada de 40h.';
     benefDesc = 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital APJ/2025';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital APJ/2025';
   } else if (inst === 'pmerj') {
     let gret = '150%';
     let ghp = '110%';
@@ -413,28 +413,28 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     criterio = cargo.criterio || 'Tabela salarial militar de Mato Grosso do Sul por posto/graduação e nível; confirmar DOE/MS, edital ou contracheque para rubricas individuais.';
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 05/2025');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 05/2025');
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;
     criterio = cargo.criterio || 'Tabela legal/edital da Polícia Civil de Mato Grosso do Sul; conferir DOE/MS, edital vigente e contracheque para a situação individual.';
     benefDesc = cargo.benefDesc || 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Fonte oficial');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Fonte oficial');
   } else if (inst === 'pmmt') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = cargo.criterio || 'Referência de edital/portal oficial da PMMT; postos sem valor confirmado ficam como "a confirmar".';
+    criterio = cargo.criterio || 'Referência de edital/portal oficial da PMMT; postos sem valor confirmado ficam como "Dados em breve".';
     benefDesc = cargo.benefDesc || 'Adicionais, indenizações, etapas, auxílio, escala, fardamento e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmmt';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Edital/portal oficial');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Edital/portal oficial');
   } else if (inst === 'pcmt') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = cargo.criterio || 'Tabela salarial do Portal do Servidor/SEPLAG-MT usada para referências cadastradas da PCMT; cargos sem tabela específica confirmada ficam como "a confirmar".';
+    criterio = cargo.criterio || 'Tabela salarial do Portal do Servidor/SEPLAG-MT usada para referências cadastradas da PCMT; cargos sem tabela específica confirmada ficam como "Dados em breve".';
     benefDesc = cargo.benefDesc || 'Adicionais, plantões, indenizações, verbas de escala e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcmt';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 2025');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 2025');
   } else if (inst === 'pmerj') {
     const gret = padrao * Number(cargo.gretPct || 0);
     const ghp = padrao * Number(cargo.ghpPct || 0);
@@ -562,9 +562,13 @@ function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
 }
 
 function carregarRemuneracaoTabelada() {
-  const inst = normalizarInstituicao(currInst);
   const tbody = document.getElementById('lista-remuneracao');
   if (!tbody) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('remuneracao');
+    return;
+  }
+  const inst = normalizarInstituicao(currInst);
 
   const linhas = gerarRemuneracaoTabelada(inst);
 
@@ -581,8 +585,8 @@ function carregarRemuneracaoTabelada() {
   const elMenor = document.getElementById('remu-menor-total');
   const elMaior = document.getElementById('remu-maior-total');
   if (elTotal) elTotal.textContent = String(linhas.length);
-  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'A confirmar';
-  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'A confirmar';
+  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'Dados em breve';
+  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'Dados em breve';
 
   tbody.innerHTML = linhas.map(l => {
     const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
@@ -592,7 +596,7 @@ function carregarRemuneracaoTabelada() {
           <strong>${escapeHtml(l.cargo)}</strong>
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
-        <td class="valor">${l.valorPendente ? 'A confirmar' : fmt(l.remuneracao)}</td>
+        <td class="valor">${l.valorPendente ? 'Dados em breve' : fmt(l.remuneracao)}</td>
         <td class="adicionais">${formatarAdicionaisRemuneracaoHtml(inst, l)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>

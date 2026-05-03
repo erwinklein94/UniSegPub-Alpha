@@ -73,6 +73,7 @@ function abrirPaginaInicial() {
   // Volta ao mesmo estado visual da primeira entrada no portal:
   // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
   aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
   switchPage('principal');
   try {
     if (window.location.hash !== '#principal') window.history.replaceState(null, '', '#principal');
@@ -95,10 +96,17 @@ function switchPage(page) {
   // Fecha a sidebar automaticamente após escolher uma aba, liberando a área principal da página.
   closeMenu();
 
+  // As páginas institucionais agora exigem escolha dentro da própria aba.
+  if (typeof prepararPaginaComSelecaoInstituicao === 'function' && prepararPaginaComSelecaoInstituicao(page)) {
+    return;
+  }
+
   // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
+  else if (page === 'poderes') inicializarPoderesDeveres();
+  else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
@@ -131,6 +139,8 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
+    poderes: 'Poderes e Deveres',
+    brasoes: 'Brasões e história',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
