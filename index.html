@@ -27,9 +27,21 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260502comparadorv1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260502comparadorv1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260502appsoft1" rel="stylesheet"/>
 <link href="index.html" rel="canonical"/></head>
-<body data-inst="portal" data-page="principal">
+<body class="app-soft-theme" data-inst="portal" data-page="principal">
+<div aria-label="Controles rápidos do visual app" class="app-floating-actions">
+<a aria-label="Voltar para a página inicial" class="app-floating-action app-floating-action--back" href="index.html">←</a>
+<button aria-label="Alternar tema claro e escuro" class="app-floating-action app-floating-action--theme" data-theme-toggle="true" data-toggle-style="icon" type="button">☀️</button>
+</div>
+<nav aria-label="Navegação rápida inferior" class="app-bottom-nav">
+<a class="app-bottom-item" href="index.html"><span class="app-bottom-icon">⌂</span><span class="app-bottom-label">Início</span></a>
+<a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon">◈</span><span class="app-bottom-label">Remun.</span></a>
+<a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon">▤</span><span class="app-bottom-label">Concursos</span></a>
+<a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon">⇄</span><span class="app-bottom-label">Comparar</span></a>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon">☰</span><span class="app-bottom-label">Menu</span></button>
+</nav>
+
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
      Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
@@ -42,7 +54,7 @@
 <button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="menu-btn">
 <span></span><span></span><span></span>
 </button>
-<button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" id="theme-toggle-header" type="button">
+<button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" data-theme-toggle="true" data-toggle-style="text" id="theme-toggle-header" type="button">
           ☀️ Claro
         </button>
 </div>
@@ -900,6 +912,6 @@
 <script defer="" src="js/pages/contato-init.js"></script>
 <script defer="" src="js/ui/event-bindings.js"></script>
 <script defer="" src="js/core/page-context.js"></script>
-<script src="js/brasao-lightbox.js?v=20260501" defer></script>
+<script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 </body>
 </html>

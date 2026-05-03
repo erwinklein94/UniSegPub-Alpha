@@ -218,9 +218,21 @@ function toggleTheme() {
 }
 
 function initTheme() {
-  const tema = document.documentElement.getAttribute('data-theme');
-  const btnHeader = document.getElementById('theme-toggle-header');
-  if (btnHeader) btnHeader.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+  const tema = document.documentElement.getAttribute('data-theme') || 'dark';
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    const style = btn.dataset.toggleStyle || 'text';
+    const isDark = tema === 'dark';
+
+    if (style === 'icon') {
+      btn.innerHTML = isDark ? '☀️' : '🌙';
+      btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+      btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+    } else {
+      btn.innerHTML = isDark ? '☀️ Claro' : '🌙 Escuro';
+      btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+      btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+    }
+  });
 }
 
 /* ============================================================ */

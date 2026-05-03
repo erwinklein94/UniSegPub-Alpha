@@ -45,7 +45,7 @@
       safeCall('toggleMenu', [false]);
     });
 
-    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
+    bindClick('[data-theme-toggle]', event => { event.preventDefault(); safeCall('toggleTheme'); });
 
     bindChange('#instituicao, #instituicao_header', event => {
       safeCall('mudarInstituicao', [event.currentTarget.value]);
