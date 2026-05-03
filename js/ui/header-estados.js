@@ -2452,6 +2452,32 @@ const INSTITUICOES_FEDERAIS_ESTRUTURA = [
 ];
 
 function criarResumoFederalEstrutura(item) {
+  if (item.inst === 'pf') {
+    return {
+      nome: 'Polícia Federal',
+      sigla: 'PF',
+      estado: 'Brasil',
+      estadoSigla: 'BR',
+      tipo: 'Polícia Federal',
+      criacao: '16/11/1964 · Lei nº 4.483/1964 reorganizou o DFSP com atuação federal; órgão permanente no art. 144 da Constituição Federal',
+      ativa: 15000,
+      ativaLabel: '≈15.000 servidores ativos · estimativa PEP/Portal da Transparência 2026',
+      reserva: 5000,
+      reservaLabel: '≈5.000 aposentados e pensionistas · estimativa PEP/Portal da Transparência 2026',
+      femininas: 2500,
+      femininasLabel: '≈2.500 mulheres no quadro ativo · estimativa por sexo/cargo no PEP 2026',
+      populacao: 213000000,
+      populacaoTitulo: 'Abrangência nacional',
+      populacaoLabel: 'Brasil inteiro · competência federal, fronteiras, portos, aeroportos, migração, passaportes, armas, segurança privada e cooperação internacional',
+      relacaoLabel: 'Cobertura nacional por matéria federal; efetivo ativo estimado em cerca de 15 mil servidores',
+      relacaoTitulo: 'Cobertura institucional',
+      governador: 'Governo Federal / Ministério da Justiça e Segurança Pública',
+      comando: 'Andrei Augusto Passos Rodrigues — Diretor-Geral da Polícia Federal',
+      fonte: 'Polícia Federal/Gov.br; PEP/MGI; Portal da Transparência/CGU; Lei nº 14.875/2024; Decreto nº 11.348/2023; Portaria MJSP nº 1.112/2025; edital PF 2025/Cebraspe',
+      atualizado: 'Pesquisa em 03/05/2026 · estrutura PF atualizada em 28/02/2026 · efetivo ativo estimado com base PEP/Transparência'
+    };
+  }
+
   if (item.inst === 'prf') {
     return {
       nome: 'Polícia Rodoviária Federal',
@@ -2502,14 +2528,18 @@ function criarResumoFederalEstrutura(item) {
 }
 
 function criarCargosPfEstrutura(inst, sigla) {
+  const fonteKey = 'pf';
+  const criterio = 'Subsídio federal da carreira policial federal, valores com efeitos a partir de 01/05/2026 conforme Lei nº 14.875/2024, Anexo XXVI, e Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026.';
+  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação R$ 1.192,00; assistência pré-escolar R$ 526,64 quando devida; assistência à saúde suplementar por faixa etária/remuneração; indenização de fronteira R$ 91,00 por dia quando houver exercício em localidade prevista; diárias, ajuda de custo, transporte, adicional de férias e gratificação natalina conforme legislação.';
   return [
-    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
-    criarCargoEstrutural(inst, 'delegado', `${sigla} — Delegado de Polícia Federal`, true),
-    criarCargoEstrutural(inst, 'perito', `${sigla} — Perito Criminal Federal`, true),
-    criarCargoEstrutural(inst, 'papiloscopista', `${sigla} — Papiloscopista Policial Federal`, false),
-    criarCargoEstrutural(inst, 'escrivao', `${sigla} — Escrivão de Polícia Federal`, false),
-    criarCargoEstrutural(inst, 'agente', `${sigla} — Agente de Polícia Federal`, false, true),
-    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+    { val: 'delegado_perito_especial_pf', id: 'delegado_perito_especial_pf', text: `${sigla} — Delegado/Perito Criminal Federal — Classe Especial`, nome: `${sigla} — Delegado/Perito Criminal Federal — Classe Especial`, padrao: 41350.00, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'delegado_perito_primeira_pf', id: 'delegado_perito_primeira_pf', text: `${sigla} — Delegado/Perito Criminal Federal — 1ª Classe`, nome: `${sigla} — Delegado/Perito Criminal Federal — 1ª Classe`, padrao: 35377.35, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'delegado_perito_segunda_pf', id: 'delegado_perito_segunda_pf', text: `${sigla} — Delegado/Perito Criminal Federal — 2ª Classe`, nome: `${sigla} — Delegado/Perito Criminal Federal — 2ª Classe`, padrao: 30869.46, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'delegado_perito_terceira_pf', id: 'delegado_perito_terceira_pf', text: `${sigla} — Delegado/Perito Criminal Federal — 3ª Classe`, nome: `${sigla} — Delegado/Perito Criminal Federal — 3ª Classe`, padrao: 27831.70, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'agente_escrivao_papilo_especial_pf', id: 'agente_escrivao_papilo_especial_pf', text: `${sigla} — Agente/Escrivão/Papiloscopista — Classe Especial`, nome: `${sigla} — Agente/Escrivão/Papiloscopista — Classe Especial`, padrao: 25250.00, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'agente_escrivao_papilo_primeira_pf', id: 'agente_escrivao_papilo_primeira_pf', text: `${sigla} — Agente/Escrivão/Papiloscopista — 1ª Classe`, nome: `${sigla} — Agente/Escrivão/Papiloscopista — 1ª Classe`, padrao: 19617.37, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'agente_escrivao_papilo_segunda_pf', id: 'agente_escrivao_papilo_segunda_pf', text: `${sigla} — Agente/Escrivão/Papiloscopista — 2ª Classe`, nome: `${sigla} — Agente/Escrivão/Papiloscopista — 2ª Classe`, padrao: 16761.16, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { val: 'agente_escrivao_papilo_terceira_pf', id: 'agente_escrivao_papilo_terceira_pf', text: `${sigla} — Agente/Escrivão/Papiloscopista — 3ª Classe`, nome: `${sigla} — Agente/Escrivão/Papiloscopista — 3ª Classe`, padrao: 14710.10, oficial: true, selected: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' }
   ];
 }
 
@@ -2560,6 +2590,26 @@ function criarConcursoFederalEstrutura(item) {
     };
   }
 
+  if (item.inst === 'pf') {
+    return {
+      edital: 'PF — Concurso Público 2025 para a Carreira Policial Federal · Cebraspe · Edital nº 1/2025',
+      salario: 'Inicial 2026: Delegado/Perito Criminal Federal R$ 27.831,70; Agente, Escrivão e Papiloscopista R$ 14.710,10. Final da carreira 2026: Delegado/Perito R$ 41.350,00; Agente/Escrivão/Papiloscopista R$ 25.250,00.',
+      vagas: '1.000 vagas: Delegado 120, Perito Criminal Federal 69, Agente 630, Escrivão 160 e Papiloscopista 21. Em 22/04/2026, o Governo Federal autorizou a nomeação de 1.000 aprovados excedentes; mais de 600 candidatos de Agente estavam em formação na ANP em abril/2026.',
+      cotas: 'Reservas federais do edital: pessoas negras, pessoas com deficiência e demais hipóteses legais aplicáveis ao concurso público federal.',
+      idade: 'Requisitos gerais do edital: 18 anos completos na posse, aptidão física e mental, investigação social, CNH categoria B ou superior quando exigida e cumprimento das demais condições por cargo.',
+      escolaridade: 'Nível superior. Delegado: bacharelado em Direito e 3 anos de atividade jurídica ou policial. Perito: diploma na área específica. Agente, Escrivão e Papiloscopista: nível superior em qualquer área.',
+      banca: 'Cebraspe',
+      inscritos: '218.821 inscritos no total: Agente 137.645, Escrivão 26.666, Delegado 20.533, Papiloscopista 6.582 e Perito Criminal Federal por área, conforme demanda Cebraspe/PF 2025.',
+      materias: 'Provas objetiva e discursiva por cargo, com disciplinas de Língua Portuguesa, Direito Constitucional, Administrativo, Penal e Processo Penal, legislação especial, raciocínio lógico/estatística/contabilidade/informática e conhecimentos específicos quando previstos.',
+      etapas: 'Provas objetiva e discursiva, exame de aptidão física, avaliação médica, avaliação psicológica, investigação social, avaliação biopsicossocial e heteroidentificação quando aplicável, prova oral para Delegado, avaliação de títulos para Delegado e Perito e Curso de Formação Profissional.',
+      cfsd: 'Curso de Formação Profissional na Academia Nacional de Polícia. Em abril/2026 havia mais de 600 candidatos de Agente em formação.',
+      estagio: 'Estágio probatório, progressão e promoção conforme Lei nº 9.266/1996, Lei nº 11.358/2006, Lei nº 8.112/1990, Lei nº 4.878/1965 e normas internas da Polícia Federal.',
+      validade: 'Concurso PF 2025 em andamento em 03/05/2026, com provas aplicadas em 27/07/2025 e atos de formação/nomeação em 2026.',
+      previsao: 'Há certame policial 2025 em andamento e autorização de 1.000 excedentes em 2026; novo edital depende de ato oficial no DOU, PF ou Cebraspe.',
+      site: 'https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos'
+    };
+  }
+
   return {
     edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
     salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
@@ -2588,6 +2638,15 @@ function criarAcoesFederalEstrutura(item) {
     ];
   }
 
+  if (item.inst === 'pf') {
+    return [
+      { titulo: 'PF — subsídio 2026, classe, padrão e desenvolvimento na carreira', status: 'Vigente em 2026', ano: 'Lei 14.875/2024 · Lei 11.358/2006 · Lei 9.266/1996', tipo: 'individual/coletivo', desc: 'Conferência de classe, padrão, cargo e aplicação do subsídio federal vigente em 2026 para Delegado, Perito, Agente, Escrivão e Papiloscopista da Polícia Federal.', base: 'Lei nº 14.875/2024, Lei nº 11.358/2006, Lei nº 9.266/1996, Lei nº 8.112/1990 e tabela remuneratória MGI nº 87/2026.', fonte: 'MGI/Servidor, Planalto e Polícia Federal', fonteUrl: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios', atualizado: 'Maio/2026' },
+      { titulo: 'PF — indenização de fronteira, diárias e ajudas de custo', status: 'Depende da lotação e do exercício efetivo', ano: 'Lei 12.855/2013', tipo: 'individual', desc: 'Indenização de fronteira de R$ 91,00 por dia de efetivo trabalho em localidades estratégicas definidas em ato do Poder Executivo, além de diárias, ajuda de custo, transporte e indenizações por deslocamento quando cabíveis.', base: 'Lei nº 12.855/2013, normas de diárias/ajuda de custo, ato de lotação, escala, missão e registro funcional.', fonte: 'Planalto/MGI/PF', fonteUrl: 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12855.htm', atualizado: 'Maio/2026' },
+      { titulo: 'PF — benefícios federais: alimentação, pré-escolar e saúde suplementar', status: 'Valores federais 2026', ano: 'Portaria MGI nº 2.756/2026 e normas correlatas', tipo: 'individual', desc: 'Auxílio-alimentação federal de R$ 1.192,00; assistência pré-escolar de R$ 526,64 quando devida; assistência à saúde suplementar por faixa etária e remuneração, com valores definidos pelo MGI.', base: 'Portarias do MGI, regras do SIAPE/SouGov, dependentes cadastrados e comprovação de plano de saúde quando exigida.', fonte: 'Ministério da Gestão e da Inovação em Serviços Públicos', fonteUrl: 'https://www.gov.br/gestao/pt-br/assuntos/noticias/2026/abril/governo-reajusta-beneficios-de-auxilio-a-saude-e-assistencia-pre-escolar-dos-servidores-federais', atualizado: 'Abril/2026' },
+      { titulo: 'PF — aposentadoria policial, abono de permanência e regras de transição', status: 'Regra previdenciária federal', ano: 'EC 103/2019 · LC 51/1985 · LC 144/2014', tipo: 'individual', desc: 'Aplicação das regras de aposentadoria policial federal, transições, paridade/integralidade quando cabíveis, contribuição previdenciária e abono de permanência conforme data de ingresso e histórico funcional.', base: 'Constituição Federal, EC nº 103/2019, LC nº 51/1985, LC nº 144/2014, Lei nº 8.112/1990, cargo, sexo, idade, tempo de contribuição e ficha funcional.', fonte: 'Planalto/MGI/PF', fonteUrl: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm', atualizado: 'Maio/2026' }
+    ];
+  }
+
   return [
     { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
     { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
@@ -2601,6 +2660,15 @@ function criarAssociacoesFederalEstrutura(item) {
       { nome: 'FenaPRF — Federação Nacional dos Policiais Rodoviários Federais', foco: 'Policiais rodoviários federais ativos, aposentados e pensionistas', acao: 'Representação nacional da categoria, negociação coletiva, defesa institucional, previdência, saúde, segurança do trabalho e pautas remuneratórias.', site: 'https://fenaprf.org.br', telefone: 'Consultar canais oficiais da federação', mensalidade: 'Conforme sindicato estadual/filiado', servicos: 'Notícias da carreira, representação nacional, articulação legislativa, convênios e orientação institucional.' },
       { nome: 'SINPRFs — Sindicatos estaduais dos Policiais Rodoviários Federais', foco: 'Policiais rodoviários federais por unidade da federação', acao: 'Representação regional, atendimento jurídico/administrativo, acompanhamento de escalas, lotação, remoção, saúde, remuneração e aposentadoria.', site: 'Consultar sindicato estadual da base', telefone: 'Consultar diretamente no sindicato local', mensalidade: 'Conforme regra de filiação', servicos: 'Atendimento sindical, jurídico, convênios, assembleias, comunicação e apoio ao associado.' },
       { nome: 'Associações e entidades regionais da PRF', foco: 'Servidores PRF, familiares, aposentados e pensionistas', acao: 'Apoio associativo complementar, comunicação de classe, benefícios, atividades sociais e acompanhamento de pautas locais.', site: 'Consultar entidade regional', telefone: 'Consultar diretamente', mensalidade: 'Conforme entidade', servicos: 'Convênios, apoio social, comunicação institucional e suporte associativo.' }
+    ];
+  }
+
+  if (item.inst === 'pf') {
+    return [
+      { nome: 'FENAPEF — Federação Nacional dos Policiais Federais', foco: 'Agentes, Escrivães, Papiloscopistas e demais policiais federais representados por sindicatos filiados', acao: 'Representação nacional da categoria, negociação institucional, acompanhamento legislativo, defesa de direitos, previdência, saúde e valorização profissional.', site: 'https://fenapef.org.br', telefone: 'Canais oficiais da federação', mensalidade: 'Conforme sindicato filiado', servicos: 'Notícias da carreira, representação nacional, articulação legislativa, apoio sindical e comunicação institucional.' },
+      { nome: 'ADPF — Associação Nacional dos Delegados de Polícia Federal', foco: 'Delegados de Polícia Federal', acao: 'Representação associativa nacional, defesa institucional da carreira de Delegado, acompanhamento legislativo, prerrogativas, previdência e comunicação institucional.', site: 'https://www.adpf.org.br', telefone: 'Canais oficiais da associação', mensalidade: 'Regra de filiação da entidade', servicos: 'Representação institucional, notícias, eventos, articulação legislativa e apoio ao associado.' },
+      { nome: 'APCF — Associação Nacional dos Peritos Criminais Federais', foco: 'Peritos Criminais Federais', acao: 'Representação associativa da perícia criminal federal, defesa de prerrogativas, produção técnica, comunicação institucional e acompanhamento de pautas legislativas.', site: 'https://www.apcf.org.br', telefone: 'Canais oficiais da associação', mensalidade: 'Regra de filiação da entidade', servicos: 'Representação da perícia, notícias técnicas, eventos, comunicação e apoio institucional.' },
+      { nome: 'SINPEFs — Sindicatos dos Policiais Federais nos estados', foco: 'Policiais federais ativos, aposentados e pensionistas por unidade da federação', acao: 'Atendimento regional, apoio jurídico/administrativo, assembleias, convênios, comunicação sindical e acompanhamento de pautas locais.', site: 'https://fenapef.org.br', telefone: 'Canais oficiais do sindicato estadual', mensalidade: 'Conforme regra de filiação estadual', servicos: 'Atendimento sindical, jurídico, convênios, assembleias, comunicação e suporte ao filiado.' }
     ];
   }
 
@@ -2625,22 +2693,36 @@ function aplicarEstruturaFederaisDados() {
     if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
     HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
     HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
-    REMUNERACAO_FONTES_OFICIAIS[item.inst] = item.inst === 'prf'
-      ? { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' }
-      : (REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' });
-    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = item.inst === 'prf'
-      ? {
-          titulo: 'PRF',
-          desc: 'Polícia Rodoviária Federal',
-          cor: item.cor,
-          alertaPrev: 'PRF: carreira federal de Policial Rodoviário Federal, com atuação em patrulhamento ostensivo, fiscalização de trânsito, segurança viária, enfrentamento ao crime nas rodovias federais e operações integradas.'
-        }
-      : {
-          titulo: item.titulo,
-          desc: item.desc,
-          cor: item.cor,
-          alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
-        };
+    if (item.inst === 'pf') {
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; Lei nº 14.875/2024; Polícia Federal — servidores, estrutura e concursos', url: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios' };
+    } else if (item.inst === 'prf') {
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' };
+    } else {
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal`, url: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios' };
+    }
+
+    if (item.inst === 'pf') {
+      CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+        titulo: 'PF',
+        desc: 'Polícia Federal',
+        cor: item.cor,
+        alertaPrev: 'PF: órgão federal permanente da segurança pública, polícia judiciária da União e atuação nacional em investigações federais, fronteiras, portos, aeroportos, migração, passaportes, armas, segurança privada, perícia criminal e cooperação internacional.'
+      };
+    } else if (item.inst === 'prf') {
+      CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+        titulo: 'PRF',
+        desc: 'Polícia Rodoviária Federal',
+        cor: item.cor,
+        alertaPrev: 'PRF: carreira federal de Policial Rodoviário Federal, com atuação em patrulhamento ostensivo, fiscalização de trânsito, segurança viária, enfrentamento ao crime nas rodovias federais e operações integradas.'
+      };
+    } else {
+      CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+        titulo: item.titulo,
+        desc: item.desc,
+        cor: item.cor,
+        alertaPrev: `${item.titulo}: órgão federal de segurança pública com dados institucionais organizados conforme fontes oficiais disponíveis.`
+      };
+    }
     CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
     ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
     ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
@@ -3096,7 +3178,9 @@ function aplicarRevisaoResumosInstitucionais() {
       dados[chave] = resumoValorOuEmBreve(dados[chave]);
     });
     dados.populacaoLabel = resumoValorOuEmBreve(dados.populacaoLabel || dados.populacao);
-    dados.atualizado = 'Revisado em 02/05/2026';
+    dados.atualizado = dados.atualizado && !resumoEhDadoPendente(dados.atualizado)
+      ? dados.atualizado
+      : 'Revisado em 03/05/2026';
   });
 }
 
