@@ -1,0 +1,231 @@
+<!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
+<header class="site-header" role="banner">
+<div class="header-content header-shell">
+<div class="header-topbar">
+<div aria-label="Controles rápidos" class="header-menu-tools">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="menu-btn">
+<span></span><span></span><span></span>
+</button>
+<button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" data-theme-toggle="true" data-toggle-style="text" id="theme-toggle-header" type="button">
+          <span aria-hidden="true">☀️</span> Claro
+        </button>
+</div>
+<div aria-label="Identidade do site" class="header-brand-block">
+<div class="header-kicker"> </div>
+<h1>Universo <span>Segurança Pública</span></h1>
+<p aria-label="Aviso de independência institucional" class="header-independent-note">Portal informativo independente • Não governamental</p>
+</div>
+</div>
+<div class="header-text" id="header-text">
+<section aria-label="Instituição selecionada" class="header-institution-card">
+<div class="header-institution-main">
+<div class="header-current-identity">
+<div aria-label="Imagem do brasão selecionado" class="current-flag-frame brand-logo-frame">
+<img alt="Logo Universo Segurança Pública" data-img-base="img/LOGO/logoleao" decoding="async" fetchpriority="high" height="96" id="header-active-flag" src="img/LOGO/logoleao.webp" width="96"/>
+</div>
+<div class="header-current-copy">
+<span class="header-current-label"> </span>
+<strong id="header-active-sigla">Universo</strong>
+<p id="header-active-name">Segurança Pública</p>
+<small id="header-desc">Escolha uma instituição</small>
+</div>
+</div>
+<aside aria-label="Resumo institucional atualizado" class="header-facts-panel">
+<div class="header-facts-head">
+<span id="header-resumo-titulo">Resumo do portal</span>
+<strong id="header-resumo-atualizado">Visão geral do portal</strong>
+</div>
+<div class="header-facts-grid">
+<div class="header-fact">
+<span id="header-label-natureza">Escopo</span>
+<strong id="header-resumo-natureza">Portal informativo</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-uf">Abrangência</span>
+<strong id="header-resumo-uf">Brasil</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-criacao">Instituições</span>
+<strong id="header-resumo-criacao">111</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-ativa">Efetivo total estimado</span>
+<strong id="header-resumo-ativa">≈ 1,2 milhão+</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-reserva">Reserva/inativos</span>
+<strong id="header-resumo-reserva">≈ 563 mil+</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-total">Mulheres no efetivo</span>
+<strong id="header-resumo-total">≈ 91,9 mil+</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-populacao">População abrangida</span>
+<strong id="header-resumo-populacao">213.421.037</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-relacao">UFs</span>
+<strong id="header-resumo-relacao">27 UFs</strong>
+</div>
+</div>
+<div class="header-leadership">
+<div class="header-leadership-item">
+<span id="header-label-governador">Cobertura</span>
+<strong id="header-resumo-governador">Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal</strong>
+</div>
+<div class="header-leadership-item header-command-item is-hidden" hidden>
+<span id="header-label-comando">Comando/Direção</span>
+<strong id="header-resumo-comando">—</strong>
+</div>
+</div>
+<div class="header-fact header-fact--dados-atualizados header-update-note">
+<span id="header-label-dados-atualizados">Dados de atualização do site</span>
+<strong id="header-resumo-dados-atualizados">Calculando...</strong>
+</div>
+</aside>
+</div>
+<div class="header-controls-grid">
+<div aria-label="Escolha rápida de instituição" class="header-inst-selector">
+<label for="instituicao_header">Consultar instituição</label>
+<select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
+<option disabled="" selected="" value="">Escolha uma instituição</option>
+</select>
+</div>
+<div aria-label="Alternar entre instituição militar, bombeiros, civil e penal do estado selecionado" class="header-branch-switcher">
+<span>Carreira do estado</span>
+<div class="branch-buttons">
+<button aria-pressed="false" class="branch-option" data-branch="pm" disabled="" id="header-branch-pm" type="button">
+<strong id="header-pm-sigla">PM</strong>
+<small>Militar</small>
+</button>
+<button aria-pressed="false" class="branch-option" data-branch="bm" disabled="" id="header-branch-bm" type="button">
+<strong id="header-bm-sigla">CBM</strong>
+<small>Bombeiros</small>
+</button>
+<button aria-pressed="false" class="branch-option" data-branch="pc" disabled="" id="header-branch-pc" type="button">
+<strong id="header-pc-sigla">PC</strong>
+<small>Civil</small>
+</button>
+<button aria-pressed="false" class="branch-option" data-branch="pp" disabled="" id="header-branch-pp" type="button">
+<strong id="header-pp-sigla">PP</strong>
+<small>Penal</small>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div aria-label="Bandeiras dos estados disponíveis no site" class="header-state-flags">
+<div class="state-flags-title">Estados disponíveis</div>
+<button aria-label="Selecionar São Paulo" aria-pressed="false" class="state-flag" data-estado="sp" title="São Paulo" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg"/>
+<span>SP</span>
+</button>
+<button aria-label="Selecionar Rio de Janeiro" aria-pressed="false" class="state-flag" data-estado="rj" title="Rio de Janeiro" type="button">
+<img alt="Bandeira do Rio de Janeiro" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_do_Rio_de_Janeiro.svg"/>
+<span>RJ</span>
+</button>
+<button aria-label="Selecionar Minas Gerais" aria-pressed="false" class="state-flag" data-estado="mg" title="Minas Gerais" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg"/>
+<span>MG</span>
+</button>
+<button aria-label="Selecionar Bahia" aria-pressed="false" class="state-flag" data-estado="ba" title="Bahia" type="button">
+<img alt="Bandeira da Bahia" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg"/>
+<span>BA</span>
+</button>
+<button aria-label="Selecionar Paraná" aria-pressed="false" class="state-flag" data-estado="pr" title="Paraná" type="button">
+<img alt="Bandeira do Paraná" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg"/>
+<span>PR</span>
+</button>
+<button aria-label="Selecionar Rio Grande do Sul" aria-pressed="false" class="state-flag" data-estado="rs" title="Rio Grande do Sul" type="button">
+<img alt="Bandeira do Rio Grande do Sul" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg"/>
+<span>RS</span>
+</button>
+<button aria-label="Selecionar Santa Catarina" aria-pressed="false" class="state-flag" data-estado="sc" title="Santa Catarina" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg"/>
+<span>SC</span>
+</button>
+<button aria-label="Selecionar Espírito Santo" aria-pressed="false" class="state-flag" data-estado="es" title="Espírito Santo" type="button">
+<img alt="Bandeira do Espírito Santo" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg"/>
+<span>ES</span>
+</button>
+<button aria-label="Selecionar Mato Grosso do Sul" aria-pressed="false" class="state-flag" data-estado="ms" title="Mato Grosso do Sul" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg"/>
+<span>MS</span>
+</button>
+<button aria-label="Selecionar Mato Grosso" aria-pressed="false" class="state-flag" data-estado="mt" title="Mato Grosso" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg"/>
+<span>MT</span>
+</button>
+<button aria-label="Selecionar Acre" aria-pressed="false" class="state-flag" data-estado="ac" title="Acre" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg"/>
+<span>AC</span>
+</button>
+<button aria-label="Selecionar Alagoas" aria-pressed="false" class="state-flag" data-estado="al" title="Alagoas" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg"/>
+<span>AL</span>
+</button>
+<button aria-label="Selecionar Amazonas" aria-pressed="false" class="state-flag" data-estado="am" title="Amazonas" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg"/>
+<span>AM</span>
+</button>
+<button aria-label="Selecionar Amapá" aria-pressed="false" class="state-flag" data-estado="ap" title="Amapá" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg"/>
+<span>AP</span>
+</button>
+<button aria-label="Selecionar Ceará" aria-pressed="false" class="state-flag" data-estado="ce" title="Ceará" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Cear%C3%A1.svg"/>
+<span>CE</span>
+</button>
+<button aria-label="Selecionar Distrito Federal" aria-pressed="false" class="state-flag" data-estado="df" title="Distrito Federal" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Distrito_Federal_(Brasil).svg"/>
+<span>DF</span>
+</button>
+<button aria-label="Selecionar Goiás" aria-pressed="false" class="state-flag" data-estado="go" title="Goiás" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg"/>
+<span>GO</span>
+</button>
+<button aria-label="Selecionar Maranhão" aria-pressed="false" class="state-flag" data-estado="ma" title="Maranhão" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Maranh%C3%A3o.svg"/>
+<span>MA</span>
+</button>
+<button aria-label="Selecionar Pará" aria-pressed="false" class="state-flag" data-estado="pa" title="Pará" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Par%C3%A1.svg"/>
+<span>PA</span>
+</button>
+<button aria-label="Selecionar Paraíba" aria-pressed="false" class="state-flag" data-estado="pb" title="Paraíba" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Para%C3%ADba.svg"/>
+<span>PB</span>
+</button>
+<button aria-label="Selecionar Pernambuco" aria-pressed="false" class="state-flag" data-estado="pe" title="Pernambuco" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Pernambuco.svg"/>
+<span>PE</span>
+</button>
+<button aria-label="Selecionar Piauí" aria-pressed="false" class="state-flag" data-estado="pi" title="Piauí" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Piau%C3%AD.svg"/>
+<span>PI</span>
+</button>
+<button aria-label="Selecionar Rio Grande do Norte" aria-pressed="false" class="state-flag" data-estado="rn" title="Rio Grande do Norte" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Norte.svg"/>
+<span>RN</span>
+</button>
+<button aria-label="Selecionar Rondônia" aria-pressed="false" class="state-flag" data-estado="ro" title="Rondônia" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Rond%C3%B4nia.svg"/>
+<span>RO</span>
+</button>
+<button aria-label="Selecionar Roraima" aria-pressed="false" class="state-flag" data-estado="rr" title="Roraima" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Roraima.svg"/>
+<span>RR</span>
+</button>
+<button aria-label="Selecionar Sergipe" aria-pressed="false" class="state-flag" data-estado="se" title="Sergipe" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Sergipe.svg"/>
+<span>SE</span>
+</button>
+<button aria-label="Selecionar Tocantins" aria-pressed="false" class="state-flag" data-estado="to" title="Tocantins" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg"/>
+<span>TO</span>
+</button>
+</div>
+</div>
+</div>
+</header>

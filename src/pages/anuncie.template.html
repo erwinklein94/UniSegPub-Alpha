@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html class="page-parceiros" lang="pt-BR">
+<!-- @include partials/pilot/anuncie/head.html -->
+<body class="app-soft-theme" data-inst="portal" data-page="parceiros">
+<!-- @include partials/pilot/anuncie/app-quick-controls.html -->
+
+<!-- @include partials/pilot/anuncie/estrutura-site-comment.html -->
+<!-- @include partials/pilot/anuncie/site-header.html -->
+<!-- @include partials/pilot/anuncie/menu-chrome.html -->
+<!-- @include partials/pilot/anuncie/sidebar-parceiros.html -->
+<!-- @include partials/pilot/anuncie/page-section-markers.html -->
+<main class="page-section active" id="page-parceiros" role="main">
+<div class="card">
+<h2>Parceiros e Contato</h2>
+<div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Esta área é destinada a empresas interessadas em parcerias, anúncios e a usuários que desejam sugerir alterações, correções ou melhorias. O portal é independente e aceita correções para manter as informações alinhadas às fontes públicas e oficiais.
+    </div>
+<section aria-label="Áreas disponíveis para anúncios" class="ad-guide">
+<h3>Áreas disponíveis para anúncio</h3>
+<p>Ao clicar em qualquer caixa “Anuncie aqui”, este formulário é aberto com o assunto comercial já selecionado.</p>
+<ul>
+<li>Topo da página principal, para visibilidade imediata.</li>
+<li>Menu lateral, para exposição recorrente durante a navegação.</li>
+<li>Remuneração, direitos, concursos e comparador, para anúncios ligados ao momento de decisão do usuário.</li>
+<li>Produtos, ações judiciais e associações, para ofertas mais segmentadas.</li>
+</ul>
+</section>
+<form class="form-grid" data-form="contato" novalidate="" style="margin-bottom: 0;">
+<div class="field span-2">
+<label for="contato_nome">Nome da Empresa ou Usuário</label>
+<input id="contato_nome" minlength="2" placeholder="Digite o nome..." required="" type="text"/>
+</div>
+<div class="field span-2">
+<label for="contato_email">E-mail para Retorno</label>
+<input id="contato_email" placeholder="seuemail@exemplo.com" required="" type="email"/>
+</div>
+<div class="field span-2">
+<label for="contato_assunto">Assunto</label>
+<select id="contato_assunto" required="">
+<option disabled="" selected="" value="">Selecione o motivo...</option>
+<option value="Parceria Comercial / Anúncio">Parceria Comercial / Anúncio</option>
+<option value="Sugestão de Melhoria">Sugestão de Melhoria</option>
+<option value="Correção de Informação">Correção de Informação</option>
+<option value="Outro">Outro</option>
+</select>
+</div>
+<div class="field span-2">
+<label for="contato_mensagem">Descrição / Mensagem</label>
+<textarea id="contato_mensagem" maxlength="2000" placeholder="Escreva sua mensagem detalhada aqui..." required=""></textarea>
+<div class="char-counter" id="char-counter">0 / 2000 caracteres</div>
+</div>
+<div class="field span-2">
+<button class="btn-submit" type="submit">📩 Enviar Mensagem</button>
+</div>
+</form>
+<div class="alerta success" style="margin-top: 24px;">
+<strong>Outros canais:</strong> Você também pode entrar em contato pelo e-mail <strong style="color:var(--text-main) !important">universosegpub@gmail.com</strong> ou pelo Instagram da página. As respostas costumam acontecer em até 48h úteis.
+    </div>
+</div>
+</main>
+<!-- @include partials/pilot/anuncie/footer-ad.html -->
+<!-- @include partials/pilot/anuncie/footer.html -->
+<!-- @include partials/pilot/anuncie/visual-comments.html -->
+<!-- @include partials/pilot/anuncie/scripts.html -->
+</body>
+</html>

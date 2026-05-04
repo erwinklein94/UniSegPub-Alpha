@@ -1,0 +1,174 @@
+{
+  "livrosEbooks": [
+    {
+      "titulo": "Pacote - Viva Sem Procrastinar",
+      "href": "https://go.hotmart.com/C105562969M?dp=1",
+      "ariaLabel": "Abrir Pacote Viva Sem Procrastinar",
+      "classes": [
+        "curso-card",
+        "produto-card"
+      ],
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+        "wrapClasses": [
+          "produto-imagem"
+        ],
+        "src": "img/HOTMART/vivasemprocastinar.webp",
+        "alt": "Pacote - Viva Sem Procrastinar",
+        "decoding": "async",
+        "loading": "lazy",
+        "dataAttrs": {
+          "data-img-base": "img/HOTMART/vivasemprocastinar"
+        }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+        "Material digital",
+        "Procrastinação",
+        "Saúde mental",
+        "Desenvolvimento pessoal"
+      ],
+      "cta": "Comprar"
+    },
+    {
+      "titulo": "Otimizando o Cérebro para Concursos Públicos",
+      "href": "https://go.hotmart.com/U105563061C?dp=1",
+      "ariaLabel": "Abrir Otimizando o Cérebro para Concursos Públicos",
+      "classes": [
+        "curso-card",
+        "produto-card"
+      ],
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+        "wrapClasses": [
+          "produto-imagem"
+        ],
+        "src": "img/HOTMART/otimizando.webp",
+        "alt": "OTIMIZANDO O CÉREBRO PARA CONCURSOS PÚBLICOS",
+        "decoding": "async",
+        "loading": "lazy",
+        "dataAttrs": {
+          "data-img-base": "img/HOTMART/otimizando"
+        }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.",
+      "metaAriaLabel": "Destaques do livro",
+      "meta": [
+        "E-book",
+        "Concursos",
+        "Neurociências",
+        "Produtividade"
+      ],
+      "cta": "Comprar"
+    },
+    {
+      "titulo": "Além da Farda: O Código da Travessia",
+      "href": "https://go.hotmart.com/Y105563100L?dp=1",
+      "ariaLabel": "Abrir Além da Farda O Código da Travessia",
+      "classes": [
+        "curso-card",
+        "produto-card"
+      ],
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+        "wrapClasses": [
+          "produto-imagem"
+        ],
+        "src": "img/HOTMART/alemdafarda.webp",
+        "alt": "ALÉM DA FARDA: O Código da Travessia",
+        "decoding": "async",
+        "loading": "lazy",
+        "dataAttrs": {
+          "data-img-base": "img/HOTMART/alemdafarda"
+        }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.",
+      "metaAriaLabel": "Destaques do livro",
+      "meta": [
+        "Livro digital",
+        "Transição",
+        "Carreira",
+        "Vida pós-farda"
+      ],
+      "cta": "Comprar"
+    },
+    {
+      "titulo": "Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos",
+      "href": "https://go.hotmart.com/V105563143D",
+      "ariaLabel": "Abrir Método DMA",
+      "classes": [
+        "curso-card",
+        "produto-card"
+      ],
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+        "wrapClasses": [
+          "produto-imagem"
+        ],
+        "src": "img/HOTMART/disciplinamilitaraplicada.webp",
+        "alt": "Método DMA: vença a procrastinação e alcance o sucesso em seus objetivos",
+        "decoding": "async",
+        "loading": "lazy",
+        "dataAttrs": {
+          "data-img-base": "img/HOTMART/disciplinamilitaraplicada"
+        }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.",
+      "metaAriaLabel": "Destaques do livro",
+      "meta": [
+        "Material digital",
+        "Planejamento",
+        "Gestão de tempo",
+        "Disciplina"
+      ],
+      "cta": "Comprar"
+    },
+    {
+      "titulo": "Táticas de Liderança Militar Aplicadas ao Dia a Dia",
+      "href": "https://go.hotmart.com/M105563187S?dp=1",
+      "ariaLabel": "Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia",
+      "classes": [
+        "curso-card",
+        "produto-card"
+      ],
+      "rel": "noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+        "wrapClasses": [
+          "produto-imagem"
+        ],
+        "src": "img/HOTMART/taticadeliderancamilitar.webp",
+        "alt": "Táticas de Liderança Militar Aplicadas ao Dia a Dia",
+        "decoding": "async",
+        "loading": "lazy",
+        "dataAttrs": {
+          "data-img-base": "img/HOTMART/taticadeliderancamilitar"
+        }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.",
+      "metaAriaLabel": "Destaques do livro",
+      "meta": [
+        "E-book",
+        "Liderança",
+        "Disciplina",
+        "Tomada de decisão"
+      ],
+      "cta": "Comprar"
+    }
+  ]
+}

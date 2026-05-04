@@ -585,6 +585,11 @@ function gerarRemuneracaoTabelada(inst) {
   });
 }
 
+function remuneracaoUrlSegura(valor) {
+  const url = String(valor || '').trim();
+  return /^https?:\/\//i.test(url) ? url : '#';
+}
+
 function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
   const resumo = String(getAdicionaisRemuneracaoResumo(inst, linha) || '').replace(/\s+/g, ' ').trim();
 
@@ -648,7 +653,7 @@ function carregarRemuneracaoTabelada() {
         <td>
           ${escapeHtml(l.criterio || '')}<br>
           <span class="remuneracao-fonte">${escapeHtml(fonte.nome)}</span><br>
-          <a class="remuneracao-link" href="${escapeHtml(fonte.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+          <a class="remuneracao-link" href="${escapeHtml(remuneracaoUrlSegura(fonte.url))}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
         </td>
       </tr>
     `;

@@ -26,6 +26,15 @@ function urlPublicaValida(valor) {
   return /^https?:\/\//i.test(String(valor || '').trim());
 }
 
+function urlPublicaSegura(valor) {
+  const url = String(valor || '').trim();
+  return urlPublicaValida(url) ? escapeHtml(url) : '';
+}
+
+function textoConteudoSeguro(valor) {
+  return escapeHtml(valorOuDadosEmBreve(valor));
+}
+
 function getConcursoPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return null;
   const info = getInfoPoliciaPenal(inst);
@@ -354,8 +363,9 @@ function getSelecionadasComparador() {
 }
 
 function linkComparador(url, texto = 'Abrir fonte') {
-  if (!url || url === '#') return '<span>Dados em breve</span>';
-  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
+  const href = urlPublicaSegura(url);
+  if (!href) return '<span>Dados em breve</span>';
+  return `<a href="${href}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
 }
 
 function carregarComparadorCarreiras() {
@@ -483,20 +493,20 @@ function carregarConcursos() {
 
   cont.innerHTML = `
     <div class="direito-item acao">
-      <span class="direito-nome">${c.edital}</span>
-      <span class="direito-desc"><strong>Salário inicial:</strong> ${c.salario}</span>
-      <span class="direito-desc"><strong>Vagas:</strong> ${c.vagas}</span>
-      <span class="direito-desc"><strong>Cotas:</strong> ${c.cotas}</span>
-      <span class="direito-desc"><strong>Idade exigida:</strong> ${c.idade}</span>
-      <span class="direito-desc"><strong>Escolaridade:</strong> ${c.escolaridade}</span>
-      <span class="direito-desc"><strong>Banca:</strong> ${c.banca} · <strong>Inscritos no último:</strong> ${c.inscritos}</span>
-      <span class="direito-desc"><strong>Disciplinas:</strong> ${c.materias}</span>
-      <span class="direito-desc"><strong>Etapas do certame:</strong> ${c.etapas}</span>
-      <span class="direito-desc"><strong>Curso de Formação:</strong> ${c.cfsd}</span>
-      <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
-      <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
-      <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
-      ${urlPublicaValida(c.site) ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
+      <span class="direito-nome">${textoConteudoSeguro(c.edital)}</span>
+      <span class="direito-desc"><strong>Salário inicial:</strong> ${textoConteudoSeguro(c.salario)}</span>
+      <span class="direito-desc"><strong>Vagas:</strong> ${textoConteudoSeguro(c.vagas)}</span>
+      <span class="direito-desc"><strong>Cotas:</strong> ${textoConteudoSeguro(c.cotas)}</span>
+      <span class="direito-desc"><strong>Idade exigida:</strong> ${textoConteudoSeguro(c.idade)}</span>
+      <span class="direito-desc"><strong>Escolaridade:</strong> ${textoConteudoSeguro(c.escolaridade)}</span>
+      <span class="direito-desc"><strong>Banca:</strong> ${textoConteudoSeguro(c.banca)} · <strong>Inscritos no último:</strong> ${textoConteudoSeguro(c.inscritos)}</span>
+      <span class="direito-desc"><strong>Disciplinas:</strong> ${textoConteudoSeguro(c.materias)}</span>
+      <span class="direito-desc"><strong>Etapas do certame:</strong> ${textoConteudoSeguro(c.etapas)}</span>
+      <span class="direito-desc"><strong>Curso de Formação:</strong> ${textoConteudoSeguro(c.cfsd)}</span>
+      <span class="direito-desc"><strong>Estágio Probatório:</strong> ${textoConteudoSeguro(c.estagio)}</span>
+      <span class="direito-desc"><strong>Validade do edital:</strong> ${textoConteudoSeguro(c.validade)}</span>
+      <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${textoConteudoSeguro(c.previsao)}</span>
+      ${urlPublicaValida(c.site) ? `<a href="${urlPublicaSegura(c.site)}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
     </div>
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
@@ -561,20 +571,20 @@ function carregarAcoes() {
     if (semFonteSegura) return itemUnicoDadosEmBreve('acao');
 
     const fonteHtml = a.fonte && a.fonte !== TEXTO_DADOS_EM_BREVE
-      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
+      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${urlPublicaSegura(a.fonteUrl)}" target="_blank" rel="noopener noreferrer" class="concurso-link">${textoConteudoSeguro(a.fonte)}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
       : `<span class="direito-desc">${TEXTO_DADOS_EM_BREVE}</span>`;
-    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
+    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${textoConteudoSeguro(a.atualizado)}</span>` : '';
 
     return `
       <div class="direito-item acao">
-        <span class="direito-nome">${titulo}</span>
-        <span class="direito-status" style="color: var(--vermelho);">${valorOuDadosEmBreve(a.status)}</span>
+        <span class="direito-nome">${textoConteudoSeguro(titulo)}</span>
+        <span class="direito-status" style="color: var(--vermelho);">${textoConteudoSeguro(a.status)}</span>
         <div>
           <span class="badge-info ${a.tipo === 'coletiva' ? 'coletiva' : 'individual'}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
-          <span class="badge-info ativa">${valorOuDadosEmBreve(a.ano)}</span>
+          <span class="badge-info ativa">${textoConteudoSeguro(a.ano)}</span>
         </div>
-        <span class="direito-desc">${valorOuDadosEmBreve(a.desc)}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${valorOuDadosEmBreve(a.base)}</span>
+        <span class="direito-desc">${textoConteudoSeguro(a.desc)}</span>
+        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${textoConteudoSeguro(a.base)}</span>
         ${fonteHtml}
         ${atualizadoHtml}
       </div>
@@ -604,15 +614,15 @@ function carregarAssociacoes() {
     const semFonteSegura = nome === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
     if (semFonteSegura) return itemUnicoDadosEmBreve('associacao');
     const contato = urlPublicaValida(a.site)
-      ? `${valorOuDadosEmBreve(a.telefone)} · <a href="${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a>`
+      ? `${textoConteudoSeguro(a.telefone)} · <a href="${urlPublicaSegura(a.site)}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${textoConteudoSeguro(a.site)}</a>`
       : TEXTO_DADOS_EM_BREVE;
     return `
       <div class="direito-item associacao">
-        <span class="direito-nome">${nome}</span>
-        <span class="direito-desc"><strong>Foco:</strong> ${valorOuDadosEmBreve(a.foco)}</span>
-        <span class="direito-desc"><strong>Atuação atual:</strong> ${valorOuDadosEmBreve(a.acao)}</span>
-        <span class="direito-desc"><strong>Serviços:</strong> ${valorOuDadosEmBreve(a.servicos)}</span>
-        <span class="direito-desc"><strong>Mensalidade:</strong> ${valorOuDadosEmBreve(a.mensalidade)}</span>
+        <span class="direito-nome">${textoConteudoSeguro(nome)}</span>
+        <span class="direito-desc"><strong>Foco:</strong> ${textoConteudoSeguro(a.foco)}</span>
+        <span class="direito-desc"><strong>Atuação atual:</strong> ${textoConteudoSeguro(a.acao)}</span>
+        <span class="direito-desc"><strong>Serviços:</strong> ${textoConteudoSeguro(a.servicos)}</span>
+        <span class="direito-desc"><strong>Mensalidade:</strong> ${textoConteudoSeguro(a.mensalidade)}</span>
         <span class="direito-desc"><strong>Contato:</strong> ${contato}</span>
       </div>
     `;

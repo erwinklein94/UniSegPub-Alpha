@@ -233,6 +233,13 @@ function analisarDireitos() {
   cont.innerHTML = html;
 }
 
+function direitoHtmlSeguro(valor = '') {
+  const escapado = typeof escapeHtml === 'function'
+    ? escapeHtml(valor)
+    : String(valor ?? '').replace(/[&<>'"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[ch]));
+  return escapado.replace(/&lt;(\/?)strong&gt;/g, '<$1strong>');
+}
+
 function direitoResumo(cargo, instNome, tempo, idade, sit, sexo, ingresso, renda, dependente) {
   const sitTxt = sit === 'ativa' ? 'Serviço ativo' : sit === 'reserva' ? 'Inatividade / aposentadoria' : 'Reforma / invalidez';
   const sexoTxt = sexo === 'masculino' ? 'masculino' : sexo === 'feminino' ? 'feminino' : 'não informado';
@@ -240,15 +247,15 @@ function direitoResumo(cargo, instNome, tempo, idade, sit, sexo, ingresso, renda
   const rendaTxt = renda > 0 ? fmt(renda) : 'não informada';
   const depTxt = dependente === 'sim' ? 'sim' : dependente === 'nao' ? 'não' : 'não informado';
   return `<div class="direito-item acao" style="border-left-color: var(--vermelho);">
-    <span class="direito-nome">Resumo da análise — ${instNome}</span>
-    <span class="direito-desc"><strong>Cargo/nível:</strong> ${cargo}</span>
-    <span class="direito-desc"><strong>Situação:</strong> ${sitTxt} · <strong>Tempo informado:</strong> ${tempo} ano(s) · <strong>Idade:</strong> ${idade || 'não informada'} · <strong>Sexo:</strong> ${sexoTxt}</span>
-    <span class="direito-desc"><strong>Ingresso:</strong> ${ingressoTxt} · <strong>Remuneração bruta:</strong> ${rendaTxt} · <strong>Dependente para salário-família:</strong> ${depTxt}</span>
+    <span class="direito-nome">Resumo da análise — ${direitoHtmlSeguro(instNome)}</span>
+    <span class="direito-desc"><strong>Cargo/nível:</strong> ${direitoHtmlSeguro(cargo)}</span>
+    <span class="direito-desc"><strong>Situação:</strong> ${direitoHtmlSeguro(sitTxt)} · <strong>Tempo informado:</strong> ${direitoHtmlSeguro(tempo)} ano(s) · <strong>Idade:</strong> ${direitoHtmlSeguro(idade || 'não informada')} · <strong>Sexo:</strong> ${direitoHtmlSeguro(sexoTxt)}</span>
+    <span class="direito-desc"><strong>Ingresso:</strong> ${direitoHtmlSeguro(ingressoTxt)} · <strong>Remuneração bruta:</strong> ${direitoHtmlSeguro(rendaTxt)} · <strong>Dependente para salário-família:</strong> ${direitoHtmlSeguro(depTxt)}</span>
   </div>`;
 }
 
 function direitoSecao(titulo) {
-  return `<div class="direitos-section-title">${titulo}</div>`;
+  return `<div class="direitos-section-title">${direitoHtmlSeguro(titulo)}</div>`;
 }
 
 function direitoItem(nome, status, desc, base = '') {
@@ -260,12 +267,12 @@ function direitoItem(nome, status, desc, base = '') {
     atencao: { label: '⚠ Atenção / requisito não indicado', color: '#e60000', bg: 'rgba(230, 0, 0, 0.05)' }
   };
   const cfg = statusMap[status] || statusMap.verificar;
-  const baseHtml = base ? `<span class="direito-meta"><strong>Base/observação:</strong> ${base}</span>` : '';
+  const baseHtml = base ? `<span class="direito-meta"><strong>Base/observação:</strong> ${direitoHtmlSeguro(base)}</span>` : '';
   const classe = status === 'automatico' ? 'sim' : status === 'atencao' ? 'nao' : '';
   return `<div class="direito-item ${classe}" style="border-left-color:${cfg.color}; background:${cfg.bg};">
-    <span class="direito-nome">${nome}</span>
-    <span class="direito-status" style="color:${cfg.color};">${cfg.label}</span>
-    <span class="direito-desc">${desc}</span>
+    <span class="direito-nome">${direitoHtmlSeguro(nome)}</span>
+    <span class="direito-status" style="color:${cfg.color};">${direitoHtmlSeguro(cfg.label)}</span>
+    <span class="direito-desc">${direitoHtmlSeguro(desc)}</span>
     ${baseHtml}
   </div>`;
 }

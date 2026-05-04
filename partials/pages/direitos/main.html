@@ -1,0 +1,91 @@
+<main class="page-section active" id="page-direitos" role="main">
+<!-- CSS centralizado em css/dist/main.min.css e ajustes complementares -->
+<div class="card">
+<!-- BLOCO 06.1 — Formulário para análise de direitos -->
+<h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
+<div class="direitos-intro">
+      Escolha a esfera e a instituição nesta aba. Depois preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+    </div>
+<div class="form-grid" style="margin-bottom: 0;">
+<div class="field">
+<label for="cargo_dir">Nível da Carreira</label>
+<select id="cargo_dir"></select>
+</div>
+<div class="field">
+<label for="situacao_dir">Situação Atual</label>
+<select id="situacao_dir">
+<option selected="" value="ativa">Serviço Ativo</option>
+<option value="reserva">Inatividade (Reserva / Aposentado)</option>
+<option value="reforma">Reforma / Invalidez</option>
+</select>
+</div>
+<div class="field">
+<label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
+<input id="tempo_dir" max="45" min="0" type="number" value="10"/>
+</div>
+<div class="field">
+<label for="idade_dir">Idade</label>
+<input id="idade_dir" max="80" min="18" type="number" value="35"/>
+</div>
+<div class="field">
+<label for="sexo_dir">Sexo para regra previdenciária</label>
+<select id="sexo_dir">
+<option selected="" value="na">Não informar</option>
+<option value="masculino">Masculino</option>
+<option value="feminino">Feminino</option>
+</select>
+</div>
+<div class="field">
+<label for="ingresso_dir">Data de ingresso na carreira</label>
+<input id="ingresso_dir" type="date"/>
+</div>
+<div class="field">
+<label for="dependente_dir">Tem filho/dependente até 14 anos ou inválido?</label>
+<select id="dependente_dir">
+<option selected="" value="na">Não informar</option>
+<option value="sim">Sim</option>
+<option value="nao">Não</option>
+</select>
+</div>
+<div class="field">
+<label for="renda_dir">Remuneração bruta aproximada (R$)</label>
+<input id="renda_dir" min="0" placeholder="Use para salário-família" step="0.01" type="number" value="0"/>
+</div>
+<div class="field">
+<label for="local_especial_dir">Atua em localidade/unidade especial?</label>
+<select id="local_especial_dir">
+<option selected="" value="na">Não informar</option>
+<option value="sim">Sim</option>
+<option value="nao">Não</option>
+</select>
+</div>
+<div class="field">
+<label for="requisitos_apos_dir">Já cumpriu requisitos de aposentadoria?</label>
+<select id="requisitos_apos_dir">
+<option selected="" value="na">Não sei / verificar</option>
+<option value="sim">Sim</option>
+<option value="nao">Não</option>
+</select>
+</div>
+</div>
+</div>
+<div class="card">
+<!-- BLOCO 06.1A — Espaço comercial entre formulário e parecer -->
+<aside aria-label="Espaço de anúncio: Direitos entre formulário e parecer" class="ad-slot ad-slot--inline" data-ad-area="direitos_entre_formulario_parecer">
+<a class="ad-placeholder-link" href="anuncie.html?area=direitos_entre_formulario_parecer">
+<span class="ad-label">Publicidade</span>
+<strong>Anuncie aqui</strong>
+<small>Local forte para advocacia, entidades, consultorias previdenciárias, seguros e apoio funcional.</small>
+</a>
+</aside>
+<!-- BLOCO 06.2 — Resultado da análise de direitos -->
+<h2>Parecer de Direitos (<span id="txt-inst-dir">—</span>)</h2>
+<div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
+<strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
+    </div>
+<div class="result-list" id="resultados_dir"></div>
+<div class="alerta legal">
+<strong>Aviso:</strong> Esta análise é informativa e não substitui consulta ao setor de pessoal, associação, sindicato, advogado especializado ou fonte oficial. Direitos específicos podem depender de regulamento interno, cargo, data de ingresso, regra de transição previdenciária, perícia médica, limite de renda, disponibilidade orçamentária ou requerimento administrativo.
+    </div>
+</div>
+</main>

@@ -1,0 +1,386 @@
+
+<body class="app-soft-theme" data-inst="portal" data-page="direitos">
+<div aria-label="Controles rápidos do visual app" class="app-floating-actions">
+<a aria-label="Voltar para a página inicial" class="app-floating-action app-floating-action--back" href="index.html">←</a>
+<button aria-label="Alternar tema claro e escuro" class="app-floating-action app-floating-action--theme" data-theme-toggle="true" data-toggle-style="icon" type="button"><span aria-hidden="true">☀️</span></button>
+</div>
+<nav aria-label="Navegação rápida inferior" class="app-bottom-nav">
+<a class="app-bottom-item" href="index.html"><span class="app-bottom-icon" aria-hidden="true">⌂</span><span class="app-bottom-label">Início</span></a>
+<a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon" aria-hidden="true">◈</span><span class="app-bottom-label">Remun.</span></a>
+<a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon" aria-hidden="true">▤</span><span class="app-bottom-label">Concursos</span></a>
+<a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon" aria-hidden="true">⇄</span><span class="app-bottom-label">Comparar</span></a>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon" aria-hidden="true">☰</span><span class="app-bottom-label">Menu</span></button>
+</nav>
+
+<!-- =======================================================
+     BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
+     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
+     ======================================================= -->
+<!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
+<header class="site-header" role="banner">
+<div class="header-content header-shell">
+<div class="header-topbar">
+<div aria-label="Controles rápidos" class="header-menu-tools">
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="menu-btn">
+<span></span><span></span><span></span>
+</button>
+<button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" data-theme-toggle="true" data-toggle-style="text" id="theme-toggle-header" type="button">
+          <span aria-hidden="true">☀️</span> Claro
+        </button>
+</div>
+<div aria-label="Identidade do site" class="header-brand-block">
+<div class="header-kicker"> </div>
+<h1>Universo <span>Segurança Pública</span></h1>
+<p aria-label="Aviso de independência institucional" class="header-independent-note">Portal informativo independente • Não governamental</p>
+</div>
+</div>
+<div class="header-text" id="header-text">
+<section aria-label="Instituição selecionada" class="header-institution-card">
+<div class="header-institution-main">
+<div class="header-current-identity">
+<div aria-label="Imagem do brasão selecionado" class="current-flag-frame brand-logo-frame">
+<img alt="Logo Universo Segurança Pública" data-img-base="img/LOGO/logoleao" decoding="async" fetchpriority="high" height="96" id="header-active-flag" src="img/LOGO/logoleao.webp" width="96"/>
+</div>
+<div class="header-current-copy">
+<span class="header-current-label"> </span>
+<strong id="header-active-sigla">Universo</strong>
+<p id="header-active-name">Segurança Pública</p>
+<small id="header-desc">Escolha uma instituição</small>
+</div>
+</div>
+<aside aria-label="Resumo institucional atualizado" class="header-facts-panel">
+<div class="header-facts-head">
+<span id="header-resumo-titulo">Resumo do portal</span>
+<strong id="header-resumo-atualizado">Visão geral do portal</strong>
+</div>
+<div class="header-facts-grid">
+<div class="header-fact">
+<span id="header-label-natureza">Escopo</span>
+<strong id="header-resumo-natureza">Portal informativo</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-uf">Abrangência</span>
+<strong id="header-resumo-uf">Brasil</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-criacao">Instituições</span>
+<strong id="header-resumo-criacao">111</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-ativa">Efetivo total estimado</span>
+<strong id="header-resumo-ativa">≈ 1,2 milhão+</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-reserva">Reserva/inativos</span>
+<strong id="header-resumo-reserva">≈ 563 mil+</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-total">Mulheres no efetivo</span>
+<strong id="header-resumo-total">≈ 91,9 mil+</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-populacao">População abrangida</span>
+<strong id="header-resumo-populacao">213.421.037</strong>
+</div>
+<div class="header-fact">
+<span id="header-label-relacao">UFs</span>
+<strong id="header-resumo-relacao">27 UFs</strong>
+</div>
+</div>
+<div class="header-leadership">
+<div class="header-leadership-item">
+<span id="header-label-governador">Cobertura</span>
+<strong id="header-resumo-governador">Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal</strong>
+</div>
+<div class="header-leadership-item header-command-item is-hidden" hidden>
+<span id="header-label-comando">Comando/Direção</span>
+<strong id="header-resumo-comando">—</strong>
+</div>
+</div>
+<div class="header-fact header-fact--dados-atualizados header-update-note">
+<span id="header-label-dados-atualizados">Dados de atualização do site</span>
+<strong id="header-resumo-dados-atualizados">Calculando...</strong>
+</div>
+</aside>
+</div>
+<div class="header-controls-grid">
+<div aria-label="Escolha rápida de instituição" class="header-inst-selector">
+<label for="instituicao_header">Consultar instituição</label>
+<select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
+<option disabled="" selected="" value="">Escolha uma instituição</option>
+</select>
+</div>
+<div aria-label="Alternar entre instituição militar, bombeiros, civil e penal do estado selecionado" class="header-branch-switcher">
+<span>Carreira do estado</span>
+<div class="branch-buttons">
+<button aria-pressed="false" class="branch-option" data-branch="pm" disabled="" id="header-branch-pm" type="button">
+<strong id="header-pm-sigla">PM</strong>
+<small>Militar</small>
+</button>
+<button aria-pressed="false" class="branch-option" data-branch="bm" disabled="" id="header-branch-bm" type="button">
+<strong id="header-bm-sigla">CBM</strong>
+<small>Bombeiros</small>
+</button>
+<button aria-pressed="false" class="branch-option" data-branch="pc" disabled="" id="header-branch-pc" type="button">
+<strong id="header-pc-sigla">PC</strong>
+<small>Civil</small>
+</button>
+<button aria-pressed="false" class="branch-option" data-branch="pp" disabled="" id="header-branch-pp" type="button">
+<strong id="header-pp-sigla">PP</strong>
+<small>Penal</small>
+</button>
+</div>
+</div>
+</div>
+</section>
+<div aria-label="Bandeiras dos estados disponíveis no site" class="header-state-flags">
+<div class="state-flags-title">Estados disponíveis</div>
+<button aria-label="Selecionar São Paulo" aria-pressed="false" class="state-flag" data-estado="sp" title="São Paulo" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg"/>
+<span>SP</span>
+</button>
+<button aria-label="Selecionar Rio de Janeiro" aria-pressed="false" class="state-flag" data-estado="rj" title="Rio de Janeiro" type="button">
+<img alt="Bandeira do Rio de Janeiro" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_do_Rio_de_Janeiro.svg"/>
+<span>RJ</span>
+</button>
+<button aria-label="Selecionar Minas Gerais" aria-pressed="false" class="state-flag" data-estado="mg" title="Minas Gerais" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg"/>
+<span>MG</span>
+</button>
+<button aria-label="Selecionar Bahia" aria-pressed="false" class="state-flag" data-estado="ba" title="Bahia" type="button">
+<img alt="Bandeira da Bahia" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg"/>
+<span>BA</span>
+</button>
+<button aria-label="Selecionar Paraná" aria-pressed="false" class="state-flag" data-estado="pr" title="Paraná" type="button">
+<img alt="Bandeira do Paraná" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg"/>
+<span>PR</span>
+</button>
+<button aria-label="Selecionar Rio Grande do Sul" aria-pressed="false" class="state-flag" data-estado="rs" title="Rio Grande do Sul" type="button">
+<img alt="Bandeira do Rio Grande do Sul" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg"/>
+<span>RS</span>
+</button>
+<button aria-label="Selecionar Santa Catarina" aria-pressed="false" class="state-flag" data-estado="sc" title="Santa Catarina" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg"/>
+<span>SC</span>
+</button>
+<button aria-label="Selecionar Espírito Santo" aria-pressed="false" class="state-flag" data-estado="es" title="Espírito Santo" type="button">
+<img alt="Bandeira do Espírito Santo" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg"/>
+<span>ES</span>
+</button>
+<button aria-label="Selecionar Mato Grosso do Sul" aria-pressed="false" class="state-flag" data-estado="ms" title="Mato Grosso do Sul" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg"/>
+<span>MS</span>
+</button>
+<button aria-label="Selecionar Mato Grosso" aria-pressed="false" class="state-flag" data-estado="mt" title="Mato Grosso" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg"/>
+<span>MT</span>
+</button>
+<button aria-label="Selecionar Acre" aria-pressed="false" class="state-flag" data-estado="ac" title="Acre" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg"/>
+<span>AC</span>
+</button>
+<button aria-label="Selecionar Alagoas" aria-pressed="false" class="state-flag" data-estado="al" title="Alagoas" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg"/>
+<span>AL</span>
+</button>
+<button aria-label="Selecionar Amazonas" aria-pressed="false" class="state-flag" data-estado="am" title="Amazonas" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg"/>
+<span>AM</span>
+</button>
+<button aria-label="Selecionar Amapá" aria-pressed="false" class="state-flag" data-estado="ap" title="Amapá" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg"/>
+<span>AP</span>
+</button>
+<button aria-label="Selecionar Ceará" aria-pressed="false" class="state-flag" data-estado="ce" title="Ceará" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Cear%C3%A1.svg"/>
+<span>CE</span>
+</button>
+<button aria-label="Selecionar Distrito Federal" aria-pressed="false" class="state-flag" data-estado="df" title="Distrito Federal" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Distrito_Federal_(Brasil).svg"/>
+<span>DF</span>
+</button>
+<button aria-label="Selecionar Goiás" aria-pressed="false" class="state-flag" data-estado="go" title="Goiás" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg"/>
+<span>GO</span>
+</button>
+<button aria-label="Selecionar Maranhão" aria-pressed="false" class="state-flag" data-estado="ma" title="Maranhão" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Maranh%C3%A3o.svg"/>
+<span>MA</span>
+</button>
+<button aria-label="Selecionar Pará" aria-pressed="false" class="state-flag" data-estado="pa" title="Pará" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Par%C3%A1.svg"/>
+<span>PA</span>
+</button>
+<button aria-label="Selecionar Paraíba" aria-pressed="false" class="state-flag" data-estado="pb" title="Paraíba" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Para%C3%ADba.svg"/>
+<span>PB</span>
+</button>
+<button aria-label="Selecionar Pernambuco" aria-pressed="false" class="state-flag" data-estado="pe" title="Pernambuco" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Pernambuco.svg"/>
+<span>PE</span>
+</button>
+<button aria-label="Selecionar Piauí" aria-pressed="false" class="state-flag" data-estado="pi" title="Piauí" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Piau%C3%AD.svg"/>
+<span>PI</span>
+</button>
+<button aria-label="Selecionar Rio Grande do Norte" aria-pressed="false" class="state-flag" data-estado="rn" title="Rio Grande do Norte" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Norte.svg"/>
+<span>RN</span>
+</button>
+<button aria-label="Selecionar Rondônia" aria-pressed="false" class="state-flag" data-estado="ro" title="Rondônia" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Rond%C3%B4nia.svg"/>
+<span>RO</span>
+</button>
+<button aria-label="Selecionar Roraima" aria-pressed="false" class="state-flag" data-estado="rr" title="Roraima" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Roraima.svg"/>
+<span>RR</span>
+</button>
+<button aria-label="Selecionar Sergipe" aria-pressed="false" class="state-flag" data-estado="se" title="Sergipe" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Sergipe.svg"/>
+<span>SE</span>
+</button>
+<button aria-label="Selecionar Tocantins" aria-pressed="false" class="state-flag" data-estado="to" title="Tocantins" type="button">
+<img alt="" aria-hidden="true" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg"/>
+<span>TO</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- BLOCO 03.2 — Faixas decorativas abaixo do cabeçalho -->
+<div aria-hidden="true" class="stripe-container">
+<div class="stripe"></div>
+<div class="stripe-white"></div>
+<div class="stripe-black"></div>
+</div>
+<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
+<div aria-hidden="true" class="menu-overlay" id="menuOverlay"></div>
+<!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
+<aside aria-label="Menu principal" class="sidebar" id="sidebar" role="navigation">
+<div class="sidebar-header">
+<div aria-label="Identidade da navegação" class="sidebar-brand">
+<strong>Universo Segurança Pública</strong>
+<span>Escolha o que consultar</span>
+</div>
+<button aria-label="Fechar menu" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
+</div>
+<!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
+<div class="inst-selector sidebar-inst-panel">
+<label for="instituicao">Instituição selecionada</label>
+<select aria-label="Selecione a instituição" id="instituicao">
+<option disabled="" selected="" value="">Escolha uma instituição</option>
+</select>
+<p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
+<p class="sidebar-independent-note">Portal independente, sem vínculo governamental. Confirme atos oficiais nos canais da respectiva instituição.</p>
+</div>
+<!-- BLOCO 03.4.2 — Links internos organizados por finalidade -->
+<nav aria-label="Páginas do portal" class="sidebar-nav">
+<div aria-label="Consultas principais" class="sidebar-nav-group">
+<div class="sidebar-nav-title">Consultas principais</div>
+<a href="index.html" id="menu-principal" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🏠</span>
+<span class="sidebar-link-text">Principal</span>
+<small>Início do portal</small>
+</a>
+<a href="remuneracao.html" id="menu-remuneracao" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">💰</span>
+<span class="sidebar-link-text">Remuneração Tabelada</span>
+<small>Valores brutos por cargo</small>
+</a>
+<a aria-current="page" class="active" href="direitos.html" id="menu-direitos" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
+<span class="sidebar-link-text">Direitos e Vantagens</span>
+<small>Benefícios e alertas</small>
+</a>
+<a href="poderes-deveres.html" id="menu-poderes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📜</span>
+<span class="sidebar-link-text">Poderes e Deveres</span>
+<small>Leis, limites e competências</small>
+</a>
+<a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
+<span class="sidebar-link-text">Brasões e história</span>
+<small>Origem, brasão e dados</small>
+</a>
+<a href="concursos.html" id="menu-concursos" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📋</span>
+<span class="sidebar-link-text">Concursos</span>
+<small>Editais e requisitos</small>
+</a>
+<a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
+<span class="sidebar-link-text">Comparar Carreiras</span>
+<small>Salários, vagas e bancas</small>
+</a>
+</div>
+<div aria-label="Apoio jurídico e institucional" class="sidebar-nav-group">
+<div class="sidebar-nav-title">Apoio jurídico e institucional</div>
+<a href="acoes-judiciais.html" id="menu-acoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🧾</span>
+<span class="sidebar-link-text">Ações Judiciais</span>
+<small>Teses e orientações</small>
+</a>
+<a href="associacoes-sindicatos.html" id="menu-associacoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
+<span class="sidebar-link-text">Associações e Sindicatos</span>
+<small>Entidades de apoio</small>
+</a>
+</div>
+<div aria-label="Conteúdos e parceiros" class="sidebar-nav-group">
+<div class="sidebar-nav-title">Conteúdos e parceiros</div>
+<a href="produtos.html" id="menu-produtos" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🛒</span>
+<span class="sidebar-link-text">Produtos</span>
+<small>Cursos, livros e produtos</small>
+</a>
+<a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🤝</span>
+<span class="sidebar-link-text">Parceiros</span>
+<small>Anuncie aqui</small>
+</a>
+</div>
+</nav>
+<!-- BLOCO 03.4.3 — Rede social destacada -->
+<div aria-label="Redes sociais" class="sidebar-social">
+<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&amp;utm_source=qr" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
+<span aria-hidden="true">📷</span>
+<strong>Seguir no Instagram</strong>
+</a>
+</div>
+<!-- BLOCO 03.4.3A — Espaço comercial lateral -->
+<aside aria-label="Produto em destaque: Mochila Coban Tática Militar Reforçada 24 L" class="ad-slot ad-slot--sidebar" data-ad-area="menu_lateral">
+<a aria-label="Comprar Mochila Coban Tática Militar Reforçada 24 L" class="ad-placeholder-link ad-placeholder-link--product" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
+<span class="ad-label">Produto em destaque</span>
+<strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
+<small>Mochila tática de 24 L para rotina operacional, estudos, treinos e deslocamento diário.</small>
+<span class="ad-button">Comprar por afiliado</span>
+</a>
+</aside>
+<!-- BLOCO 03.4.4 — Produtos parceiros no menu lateral -->
+<div aria-label="Produtos parceiros" class="sidebar-ad">
+<div class="sidebar-ad-title">
+<strong>Produtos selecionados</strong>
+<span>Itens úteis para a rotina operacional</span>
+</div>
+<a aria-label="Comprar Mochila Coban Tática Militar Reforçada 24 L" class="sidebar-product sidebar-product--featured" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
+<img alt="Mochila Coban Tática Militar Reforçada 24 L" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
+<strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
+<p>Mochila tática de 24 L para organizar equipamentos, itens pessoais e acessórios da rotina operacional, de estudos ou de deslocamento diário.</p>
+<span>Comprar por afiliado</span>
+</a>
+<a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" rel="noopener noreferrer" target="_blank">
+<img alt="Produto parceiro selecionado" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/IMG_0868.webp"/>
+<span>Comprar por afiliado</span>
+</a>
+<a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" rel="noopener noreferrer" target="_blank">
+<img alt="Produto parceiro selecionado" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/IMG_0865.webp"/>
+<span>Comprar por afiliado</span>
+</a>
+<small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
+</div>
+</aside>
+<!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
+<!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
+<!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->

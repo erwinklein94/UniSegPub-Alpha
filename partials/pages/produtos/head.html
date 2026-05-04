@@ -1,0 +1,202 @@
+<head>
+<!-- =======================================================
+     BLOCO 01 — HEAD / CONFIGURAÇÕES INICIAIS DO SITE
+     Tags de rastreamento, metadados, fontes, tema inicial e CSS.
+     ======================================================= -->
+<!-- BLOCO 01.1 — Google Analytics -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHR4TCCF9D"></script>
+<!-- BLOCO 01.2 — Google Ads -->
+<!-- Google Ads tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18121830612"></script>
+<script src="js/ui/head.js"></script>
+<!-- BLOCO 01.3 — Conversão do Google Ads -->
+<!-- Event snippet for Visualização de página conversion page -->
+<!-- BLOCO 01.4 — Metadados, título e fontes externas -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos." name="description"/>
+<title>Produtos para Segurança Pública - Universo Segurança Pública</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Roboto+Condensed:wght@400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
+<link as="style" href="css/dist/main.min.css" rel="preload"/>
+<link href="css/dist/main.min.css" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerportal1" rel="stylesheet"/>
+<!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
+<style>
+  .page-produtos #page-produtos {
+    max-width: min(1480px, calc(100% - 40px)) !important;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+    margin-bottom: 24px;
+  }
+
+  .page-produtos #page-produtos .curso-pmesp-only.produtos-vitrine,
+  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine,
+  .page-produtos #page-produtos .curso-pmto-only.produtos-vitrine {
+    display: none !important;
+  }
+
+  body[data-inst="pmesp"] #page-produtos .curso-pmesp-only.produtos-vitrine,
+  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine,
+  body[data-inst="pmto"] #page-produtos .curso-pmto-only.produtos-vitrine {
+    display: grid !important;
+  }
+
+  body[data-inst="pmto"] #page-produtos .curso-outra-inst-only {
+    display: none !important;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    padding: 18px !important;
+  }
+
+  .page-produtos #page-produtos .produto-imagem {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border-card);
+    background: var(--bg-card);
+  }
+
+  .page-produtos #page-produtos .produto-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card h3 {
+    min-height: 2.6em;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card p {
+    margin-bottom: 14px;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .curso-meta {
+    margin-bottom: 16px;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .curso-cta {
+    width: 100%;
+    min-height: 48px;
+    margin-top: auto !important;
+    border-radius: 999px !important;
+    text-align: center;
+  }
+
+  .page-produtos #page-produtos .produto-card--destaque .ad-label {
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+
+  .page-produtos #page-produtos .cursos-preparatorios-geral {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
+    gap: 18px !important;
+    margin: 0 0 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .page-produtos #page-produtos .cursos-preparatorios-geral .produto-card--pmto {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .page-produtos #page-produtos .produto-imagem--pmto {
+    aspect-ratio: 1 / 1;
+  }
+
+  .page-produtos #page-produtos .descricao-afiliado {
+    font-size: .92em;
+    opacity: .82;
+  }
+
+  .page-produtos #page-produtos .curso-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 7px 11px;
+    border: 1px solid var(--border-input);
+    border-radius: 999px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .9px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .page-produtos #page-produtos .curso-section-title--destaque {
+    margin-top: 0;
+  }
+
+  @media (max-width: 1280px) {
+    .page-produtos #page-produtos .produtos-vitrine,
+    .page-produtos #page-produtos .cursos-preparatorios-geral {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .page-produtos #page-produtos .produtos-vitrine,
+    .page-produtos #page-produtos .cursos-preparatorios-geral {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .page-produtos #page-produtos {
+      max-width: calc(100% - 24px) !important;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine,
+    .page-produtos #page-produtos .cursos-preparatorios-geral {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+<!-- BLOCO SEO GERADO --
+     Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
+     Gerado na revisão de manutenção.
+     -->
+<link href="https://universosegpub.com.br/produtos.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="Universo Segurança Pública" property="og:site_name"/>
+<meta content="Produtos para Segurança Pública - Universo Segurança Pública" property="og:title"/>
+<meta content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos." property="og:description"/>
+<meta content="https://universosegpub.com.br/produtos.html" property="og:url"/>
+<meta content="https://universosegpub.com.br/img/LOGO/logoleao.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Produtos para Segurança Pública - Universo Segurança Pública" name="twitter:title"/>
+<meta content="Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos." name="twitter:description"/>
+<meta content="https://universosegpub.com.br/img/LOGO/logoleao.webp" name="twitter:image"/>
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"WebPage","name":"Produtos para Segurança Pública - Universo Segurança Pública","description":"Produtos, cursos, livros, equipamentos e recomendações selecionadas para segurança pública e concursos.","url":"https://universosegpub.com.br/produtos.html","isPartOf":{"@type":"WebSite","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/"},"publisher":{"@type":"Organization","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/","logo":{"@type":"ImageObject","url":"https://universosegpub.com.br/img/LOGO/logoleao.webp"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://universosegpub.com.br/"},{"@type":"ListItem","position":2,"name":"Produtos para Segurança Pública","item":"https://universosegpub.com.br/produtos.html"}]}]
+</script>
+<!-- /BLOCO SEO GERADO --></head>

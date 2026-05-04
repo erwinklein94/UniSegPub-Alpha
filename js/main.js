@@ -6,6 +6,7 @@ const UNISEGPUB_JS_ORDER = [
   'js/data/parametros-cargos.js',
   'js/data/policia-penal.js',
   'js/data/bases-conteudo.js',
+  'js/data/produtos-data.js',
   'js/ui/navegacao-ui.js',
   'js/services/remuneracao.js',
   'js/ui/header-estados.js',
@@ -13,6 +14,7 @@ const UNISEGPUB_JS_ORDER = [
   'js/pages/concursos-comparador.js',
   'js/pages/poderes-deveres.js',
   'js/pages/contato-init.js',
+  'js/pages/produtos-render.js',
   'js/ui/event-bindings.js',
   'js/core/page-context.js',
   'js/brasao-lightbox.js'

@@ -1,0 +1,87 @@
+<main class="page-section active" id="page-comparar" role="main">
+<div class="card">
+<h2>Comparar Carreiras</h2>
+<div class="alerta" style="margin-top: 0; margin-bottom: 20px;">
+      Selecione duas ou mais instituições para comparar lado a lado remuneração, benefícios, vantagens, edital de referência, vagas, banca, inscritos, previsão de próximo concurso, matérias cobradas e fontes oficiais cadastradas no portal. Comparação informativa, independente e sem vínculo com as instituições citadas.
+    </div>
+<div class="comparador-topo">
+<div class="comparador-topo-texto">
+<strong>Escolha as carreiras que deseja comparar</strong>
+<span>Use as caixas abaixo para adicionar instituições por esfera. Depois compare remuneração, benefícios, concursos e fontes oficiais lado a lado.</span>
+</div>
+<div class="comparador-acoes">
+<button class="btn-secondary" data-action="comparador-estado-atual" type="button">Adicionar estado atual</button>
+<button class="btn-secondary" data-action="comparador-todas" type="button">Selecionar todas</button>
+<button class="btn-secondary" data-action="comparador-limpar" type="button">Limpar</button>
+</div>
+</div>
+<section aria-label="Adicionar instituição à comparação" class="comparador-selector-rapido consulta-instituicao-card">
+<div class="consulta-instituicao-texto">
+<span>Adicionar à comparação</span>
+<strong>Escolha por esfera e instituição</strong>
+<small>Selecione Federal, Estadual ou Municipal; depois escolha a instituição que entrará no comparativo.</small>
+</div>
+<div class="consulta-instituicao-grid comparador-select-duplo">
+<div class="field">
+<label for="comparador-esfera">Tipo de instituição</label>
+<select aria-label="Selecione se a instituição é federal, estadual ou municipal" id="comparador-esfera">
+<option selected="" value="">Escolha a esfera</option>
+<option value="federal">Federal</option>
+<option value="estadual">Estadual</option>
+<option value="municipal">Municipal</option>
+</select>
+</div>
+<div class="field">
+<label for="comparador-instituicao">Instituição</label>
+<select aria-label="Selecione a instituição para adicionar à comparação" disabled="" id="comparador-instituicao">
+<option value="">Escolha primeiro a esfera</option>
+</select>
+</div>
+<button class="btn-primary comparador-add-btn" data-action="comparador-adicionar-instituicao" type="button">Adicionar</button>
+</div>
+</section>
+<div aria-label="Seleção de instituições para comparação" class="comparador-selecao">
+<div class="comparador-select-panel">
+<label class="comparador-select-label" for="comparador-selecao">Instituições para comparar</label>
+<div aria-label="Selecione duas ou mais instituições para comparar" class="comparador-multiselect">
+<button aria-controls="comparador-selecao" aria-expanded="false" class="comparador-toggle-lista" id="comparador-toggle-lista" type="button">
+<span>Escolher instituições</span>
+<small id="comparador-contador-selecao">0 selecionadas</small>
+</button>
+<div aria-label="Instituições disponíveis para comparação" class="comparador-check-list" id="comparador-selecao" role="group"></div>
+</div>
+<small class="comparador-select-help">Marque ou desmarque as carreiras pelos botões de seleção abaixo. Não precisa usar Ctrl.</small>
+<div aria-live="polite" class="comparador-selecionadas" id="comparador-selecionadas"></div>
+</div>
+</div>
+<!-- BLOCO 07.1A — Espaço comercial no comparador de carreiras -->
+<aside aria-label="Espaço de anúncio: Comparador antes do resultado" class="ad-slot ad-slot--inline" data-ad-area="comparador_antes_resultado">
+<a class="ad-placeholder-link" href="anuncie.html?area=comparador_antes_resultado">
+<span class="ad-label">Publicidade</span>
+<strong>Anuncie aqui</strong>
+<small>Boa vitrine para marcas que querem aparecer no momento de decisão entre carreiras e estados.</small>
+</a>
+</aside>
+<div aria-live="polite" class="comparador-resumo-grid" id="comparador-resumo"></div>
+<div class="comparador-table-wrap" id="comparador-tabela-wrap">
+<table aria-label="Tabela comparativa de carreiras" class="comparador-table">
+<thead>
+<tr>
+<th>Instituição</th>
+<th>Remuneração</th>
+<th>Benefícios / vantagens</th>
+<th>Último edital / próximo concurso</th>
+<th>Vagas / inscritos</th>
+<th>Banca / matérias</th>
+<th>Fonte</th>
+</tr>
+</thead>
+<tbody id="comparador-tabela"></tbody>
+</table>
+</div>
+<div class="comparador-cards" id="comparador-cards"></div>
+<div class="alerta legal" style="margin-top: 18px;">
+<strong>Aviso:</strong> use o comparativo como triagem inicial. Remuneração final, vantagens, etapas e cronogramas podem mudar por edital, lei estadual, retificação, lotação, escala, decisão orçamentária ou publicação oficial posterior.
+    </div>
+</div>
+</main>
