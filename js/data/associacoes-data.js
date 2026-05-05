@@ -3,6 +3,11 @@
 
 /* BLOCO 15.5 — Base de dados das associações e sindicatos */
 const ASSOCIACOES = {
+  prf: [
+    { nome: 'FenaPRF — Federação Nacional dos Policiais Rodoviários Federais', foco: 'Policiais Rodoviários Federais ativos, aposentados e pensionistas', acao: 'Representação nacional da categoria, articulação institucional, comunicação sindical, pautas remuneratórias, previdenciárias e de condições de trabalho.', site: 'https://fenaprf.org.br', telefone: 'Consultar diretamente', mensalidade: 'Consultar sindicato filiado/entidade', servicos: 'Notícias de classe, representação institucional, apoio sindical e orientação aos filiados.' },
+    { nome: 'SINPRFs — Sindicatos estaduais dos Policiais Rodoviários Federais', foco: 'PRFs por unidade federativa', acao: 'Representação regional, atendimento ao filiado, convênios, orientação administrativa e judicial, mobilização sindical e acompanhamento de pautas locais.', site: 'Consultar sindicato da UF', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico conforme contrato, convênios, comunicação institucional, assembleias, apoio sindical e orientação funcional.' },
+    { nome: 'Associações regionais e clubes de PRFs', foco: 'Integração, apoio social e serviços regionais', acao: 'Apoio social, convênios, eventos, comunicação e suporte a servidores, aposentados e familiares conforme estatuto local.', site: 'Consultar entidade regional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Convênios, atividades sociais, comunicação, apoio institucional e eventual orientação administrativa.' }
+  ],
   pmac: [
     { nome: 'Entidades representativas dos militares estaduais do Acre', foco: 'Policiais militares, bombeiros militares, veteranos, pensionistas e familiares no Acre', acao: 'Representação de pautas remuneratórias, previdenciárias, assistenciais e institucionais. Cadastro informativo: confirmar entidade específica, filiação e legitimidade antes de encaminhar demanda.', site: 'estado.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, acompanhamento de pautas da carreira, comunicação institucional e eventual apoio jurídico conforme entidade.' }
   ],

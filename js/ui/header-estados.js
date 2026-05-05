@@ -2454,21 +2454,32 @@ function criarResumoFederalEstrutura(item) {
       estado: 'Brasil',
       estadoSigla: 'BR',
       tipo: 'Polícia Rodoviária Federal',
-      criacao: '24/07/1928 · Decreto nº 18.323/1928',
+      criacao: '24/07/1928 · Polícia das Estradas · origem histórica da PRF',
       ativa: 13000,
-      ativaLabel: '13.000+ · PRF/2025',
-      reserva: 7000,
-      reservaLabel: '7.000+ aposentados e pensionistas · estimado/Transparência',
-      femininas: 1700,
-      femininasLabel: '1.700+ mulheres · estimado',
-      populacao: 77000,
+      ativaLabel: '13.000+ servidores ativos · PRF/Rotas de Integração 2025',
+      reserva: 0,
+      reservaLabel: 'Dados em breve · aposentados/pensionistas não consolidados nesta revisão',
+      femininas: 0,
+      femininasLabel: 'Dados em breve · recorte feminino não consolidado em fonte oficial nesta revisão',
+      efetivoTotalLabel: '27 Superintendências · 152 Delegacias · cerca de 500 Unidades Operacionais',
+      populacao: 75000,
       populacaoTitulo: 'Rodovias federais fiscalizadas',
-      relacaoLabel: '1 PRF / 5,9 km de rodovia federal · estimado',
-      relacaoTitulo: 'Cobertura operacional',
-      governador: 'Governo Federal / Ministério da Justiça e Segurança Pública',
+      populacaoLabel: '75 mil km de rodovias federais em todos os estados e no DF',
+      relacaoLabel: '≈1 servidor ativo / 5,8 km de rodovia federal',
+      relacaoTitulo: 'Cobertura operacional estimada',
+      governador: 'Presidência da República / Ministério da Justiça e Segurança Pública',
       comando: 'Antônio Fernando Souza Oliveira — Diretor-Geral da PRF',
-      fonte: 'PRF, Portal da Transparência, MGI/Servidor, Decreto nº 11.759/2023 e legislação federal',
-      atualizado: 'Pesquisa em 03/05/2026 · efetivo ativo aprox. PRF/2025 · remuneração federal 2026'
+      estrutura: 'Órgão permanente de segurança pública federal, presente nos 26 estados e no Distrito Federal, com 27 Superintendências, 152 Delegacias e cerca de 500 Unidades Operacionais.',
+      sede: 'SPO, Qd 03, Lt. 05, Complexo Sede da PRF — Brasília/DF — CEP 70610-909',
+      emergencia: '191',
+      linksOficiais: [
+        'https://www.gov.br/prf/pt-br',
+        'https://www.gov.br/prf/pt-br/acesso-a-informacao/institucional',
+        'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf',
+        'https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021'
+      ],
+      fonte: 'PRF/Gov.br; documento PRF Rotas de Integração 2025; Câmara dos Deputados — Lei nº 14.875/2024, Anexo XXVII; PRF Direção-Geral; Cebraspe/PRF 2021',
+      atualizado: 'PRF revisada em 04/05/2026 — números exatos não inferidos quando a fonte oficial não consolida o recorte'
     };
   }
 
@@ -2680,7 +2691,7 @@ function aplicarEstruturaFederaisDados() {
     if (item.inst === 'pf') {
       REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; Lei nº 14.875/2024; Polícia Federal — servidores, estrutura e concursos', url: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios' };
     } else if (item.inst === 'prf') {
-      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' };
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'Lei nº 14.875/2024, Anexo XXVII — subsídio PRF com efeitos em 01/05/2026; PRF/Gov.br — carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' };
     } else {
       REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal`, url: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios' };
     }
@@ -2697,7 +2708,7 @@ function aplicarEstruturaFederaisDados() {
         titulo: 'PRF',
         desc: 'Polícia Rodoviária Federal',
         cor: item.cor,
-        alertaPrev: 'PRF: carreira federal de Policial Rodoviário Federal, com atuação em patrulhamento ostensivo, fiscalização de trânsito, segurança viária, enfrentamento ao crime nas rodovias federais e operações integradas.'
+        alertaPrev: 'PRF/Federal: conferir contribuição ao RPPS, abono de permanência, assistência à saúde suplementar e rubricas no SouGov/contracheque. Não fixar desconto ou vantagem sem validar classe, padrão, lotação, missão e situação funcional.'
       };
     } else {
       CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
@@ -2984,7 +2995,7 @@ function prepararSelectInstituicaoHome() {
   if (primeiraOpcao) {
     primeiraOpcao.disabled = false;
     primeiraOpcao.selected = true;
-    primeiraOpcao.textContent = 'Resumo do portal';
+    primeiraOpcao.textContent = 'Escolha uma Instituição';
     primeiraOpcao.value = '';
   }
   seletor.value = '';
@@ -4575,7 +4586,7 @@ function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
   const esfera = getEsferaConsultaInstituicao(inst);
   if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
-  if (inst === 'prf') return 'União — estrutura federal vinculada à segurança pública e ao policiamento ostensivo das rodovias federais.';
+  if (inst === 'prf') return 'Presidente Washington Luís — Decreto nº 18.323/1928 criou a Polícia das Estradas, origem histórica da PRF.';
   if (esfera === 'municipal') return 'Município — criada por lei municipal e organizada pela prefeitura/secretaria competente.';
   if (/Polícia Penal/i.test(tipo)) return `${estadoNome} — carreira constitucionalizada pela EC 104/2019 e estruturada por normas estaduais/distritais.`;
   if (/Bombeiro/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização militar e comando próprio conforme legislação local.`;
@@ -4615,11 +4626,15 @@ function getHistoricoPorTipo(inst, dados) {
 
   if (inst === 'prf') {
     return {
-      origem: `A ${nome} se consolidou como polícia ostensiva federal voltada às rodovias federais, combinando fiscalização de trânsito, prevenção de acidentes, atendimento em ocorrências e enfrentamento de crimes que utilizam a malha rodoviária nacional.`,
+      origem: `A Polícia Rodoviária Federal tem origem histórica em 24 de julho de 1928, quando foi criada a Polícia das Estradas no governo do Presidente Washington Luís. A instituição foi denominada Polícia Rodoviária Federal em 1945 e, com a Constituição de 1988, consolidou-se como órgão permanente de segurança pública federal, responsável pelo patrulhamento ostensivo das rodovias federais e por ações de segurança viária, mobilidade, fiscalização e enfrentamento qualificado ao crime em mais de 75 mil quilômetros de rodovias federais.`,
       marcos: [
-        'Reconhecimento constitucional como órgão permanente da segurança pública federal no art. 144 da Constituição.',
-        'Fortalecimento da fiscalização de trânsito e do patrulhamento ostensivo nas rodovias federais.',
-        'Atuação integrada no combate ao tráfico de drogas, armas, contrabando, crimes ambientais, roubo de cargas e crimes interestaduais.'
+        '1928: criação da Polícia das Estradas, origem histórica da PRF, por ato do Presidente Washington Luís.',
+        '1945: adoção da denominação Polícia Rodoviária Federal.',
+        '1988: constitucionalização da PRF como órgão permanente de segurança pública no art. 144 da Constituição Federal.',
+        '1995/1997/1998: Decreto nº 1.655/1995, Código de Trânsito Brasileiro e Lei nº 9.654/1998 consolidam competências, carreira e regime jurídico.',
+        '2023: Decreto nº 11.759/2023 atualiza a estrutura regimental no Ministério da Justiça e Segurança Pública.',
+        '2025: documento institucional PRF Rotas de Integração registra presença nos 26 estados e DF, 13 mil+ servidores ativos, 27 Superintendências, 152 Delegacias e cerca de 500 UOPs.',
+        '2026: Lei nº 14.875/2024, Anexo XXVII, fixa a tabela de subsídio da carreira PRF com efeitos a partir de 01/05/2026.'
       ]
     };
   }

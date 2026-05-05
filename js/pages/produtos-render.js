@@ -39,7 +39,7 @@
       : 'curso-card produto-card';
 
     setAttr(card, 'href', produto.href);
-    setAttr(card, 'aria-label', produto.ariaLabel || `Comprar ${produto.titulo || 'produto'}`);
+    setAttr(card, 'aria-label', produto.ariaLabel || `Ver na loja: ${produto.titulo || 'produto'}`);
     setAttr(card, 'rel', produto.rel || 'noopener noreferrer');
     setAttr(card, 'target', produto.target || '_blank');
     applyAttributes(card, produto.dataAttrs);
@@ -87,7 +87,7 @@
       card.appendChild(meta);
     }
 
-    card.appendChild(createElement('span', 'curso-cta', produto.cta || 'Comprar'));
+    card.appendChild(createElement('span', 'curso-cta', produto.cta || 'Ver na loja'));
     return card;
   }
 

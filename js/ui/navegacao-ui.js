@@ -199,7 +199,8 @@ function atualizarHeaderDesc(descInstituicao) {
     ppms: 'Polícia Penal de Mato Grosso do Sul',
     pmmt: 'Polícia Militar de Mato Grosso',
     pcmt: 'Polícia Judiciária Civil de Mato Grosso',
-    ppmt: 'Polícia Penal de Mato Grosso'
+    ppmt: 'Polícia Penal de Mato Grosso',
+    prf: 'Polícia Rodoviária Federal'
   };
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || HEADER_INSTITUICOES_INFO?.[currInst]?.desc || descs.pmesp;

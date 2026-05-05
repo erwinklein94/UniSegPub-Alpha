@@ -300,7 +300,8 @@ function getSaudeTexto(inst) {
     pmsc: 'PMSC: assistência pode envolver SC Saúde, IPREV/SC e regras próprias do sistema dos militares estaduais de Santa Catarina.',
     pcsc: 'PCSC: assistência pode envolver SC Saúde/IPREV-SC e regras administrativas do Estado de Santa Catarina.',
     pmes: 'PMES: assistência pode envolver IPAJM/ES, assistência médica/odontológica prevista em edital e normas próprias dos militares estaduais do Espírito Santo.',
-    pces: 'PCES: assistência pode envolver IPAJM/ES, regras administrativas do Estado do Espírito Santo e normas da carreira policial civil.'
+    pces: 'PCES: assistência pode envolver IPAJM/ES, regras administrativas do Estado do Espírito Santo e normas da carreira policial civil.',
+    prf: 'PRF: assistência à saúde do servidor federal deve ser conferida no SouGov/SIAPE/MGI, especialmente auxílio-saúde suplementar por faixa, dependentes e regras vigentes. Não tratar assistência como adicional remuneratório automático.'
   };
   return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
 }
@@ -310,6 +311,7 @@ function getSaudeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.orgao}; ${info.previdencia}`;
   }
+  if (inst === 'prf') return 'Base: Lei nº 8.112/1990, normas SIAPE/SouGov/MGI e regras federais de assistência à saúde suplementar; conferir cadastro, faixa, dependentes e comprovantes.';
   if (inst === 'pmac' || inst === 'pcac') return 'Base: PMAC/PCAC, SEAD/AC, Acreprevidência, estatutos e normas estaduais. Conferir adesão, contribuição, dependentes, perícia e cobertura vigente.';
   if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
@@ -326,6 +328,7 @@ function getTempoServicoTexto(inst, tempo) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: ${info.quadro} O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício, progressão, promoção, aposentadoria e vantagens condicionadas.`;
   }
+  if (inst === 'prf') return `Na PRF, o tempo informado indica <strong>${tempo}</strong> ano(s) para análise de progressão/promoção, classe/padrão, aposentadoria policial, abono de permanência e indenizações condicionadas. Não aplicar quinquênio ou sexta-parte estadual à carreira federal por subsídio.`;
   if (inst === 'pmac') return `Na PMAC, o tempo de serviço deve ser conferido para adicional temporal, sexta-parte quando aplicável, promoções, reserva/reforma e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pcac') return `Na PCAC, o tempo de serviço deve ser conferido para adicional temporal, progressão por classe, titulação, aposentadoria policial e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
@@ -349,6 +352,7 @@ function getTempoServicoBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; ${info.fonte}; ficha funcional e tabela remuneratória vigente.`;
   }
+  if (inst === 'prf') return 'Base: Lei nº 9.654/1998, Lei nº 12.775/2012, Decreto nº 8.282/2014, Lei nº 14.875/2024 e ficha funcional/SouGov.';
   if (inst === 'pmac') return 'Base: Lei Complementar AC 39/1993, Lei Complementar AC 164/2006, tabelas salariais PMAC/CBMAC, ficha funcional e contracheque.';
   if (inst === 'pcac') return 'Base: Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015, Lei AC 3.107/2015, tabelas salariais PCAC, ficha funcional e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
@@ -371,6 +375,7 @@ function getInsalubridadeTexto(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: ${info.vantagens} Insalubridade, periculosidade, risco de vida ou adicional de atividade penitenciária só devem ser tratados como verba quando houver lei local, laudo, lotação, rubrica e contracheque.`;
   }
+  if (inst === 'prf') return 'PRF: adicional de insalubridade somente deve ser considerado quando houver previsão, laudo, lotação/atividade enquadrada e rubrica implantada. O subsídio de carreira não autoriza soma automática de adicional sem base individual.';
   if (inst === 'pmac') return 'Na PMAC, insalubridade, risco, serviço operacional ou verba equivalente devem ser tratados com cautela: dependem de lei local, laudo, lotação, rubrica, escala e contracheque. Não lançar como direito automático universal.';
   if (inst === 'pcac') return 'Na PCAC, eventual insalubridade ou adicional ligado à atividade deve ser conferido por cargo, lotação, laudo, legislação estadual, rubrica e contracheque; não é verba universal automática.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
@@ -391,6 +396,7 @@ function getInsalubridadeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; laudo/ato administrativo, rubrica, lotação, escala e contracheque.`;
   }
+  if (inst === 'prf') return 'Base: Lei nº 8.112/1990, normas federais de saúde ocupacional/SIASS, laudo técnico, portaria de concessão, lotação e contracheque.';
   if (inst === 'pmac' || inst === 'pcac') return 'Base: legislação estadual do Acre, tabela salarial oficial, laudo/ato administrativo, lotação, escala, rubrica e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Para PMESP, a tabela SGGD/SP informa faixas de adicional, mas valor final depende da classificação oficial. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
@@ -406,6 +412,7 @@ function getPericulosidadeTexto(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `${info.sigla}: a atividade penal envolve custódia, vigilância, escolta, inteligência e segurança prisional. Eventual adicional de risco/periculosidade/atividade penitenciária depende da legislação da UF, rubrica e contracheque.`;
   }
+  if (inst === 'prf') return 'PRF: risco policial e dedicação exclusiva integram o regime federal por subsídio. Tratar como verba separada somente indenizações ou rubricas com previsão própria, como indenização de fronteira, diárias ou missão, quando houver localidade, ato e escala aplicáveis.';
   if (inst === 'pmac') return 'PMAC: risco operacional, serviço complementar, localização especial ou gratificações semelhantes devem ser conferidos pela legislação acreana, escala, ato de designação e rubrica no contracheque. Não aplicar regra de outro Estado.';
   if (inst === 'pcac') return 'PCAC: adicional de atividade, risco, serviço complementar ou verba semelhante depende da lei local, cargo/classe, ato administrativo e contracheque. Não aplicar automaticamente percentuais de outros Estados.';
   if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
@@ -422,6 +429,7 @@ function getPericulosidadeBase(inst) {
     const info = getInfoPoliciaPenal(inst);
     return `Base: ${info.criacao}; ${info.fonte}; legislação remuneratória e contracheque.`;
   }
+  if (inst === 'prf') return 'Base: Lei nº 14.875/2024, Lei nº 12.855/2013, Lei nº 8.112/1990, atos de lotação/missão, SouGov e contracheque.';
   if (inst === 'pmac') return 'Base: LC AC 164/2006, LC AC 39/1993, tabelas PMAC/CBMAC, escalas, boletins, atos de designação e contracheque.';
   if (inst === 'pcac') return 'Base: leis remuneratórias da PCAC, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escalas e contracheque.';
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
@@ -474,6 +482,19 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('PCAC — aposentadoria policial e abono de permanência', 'verificar',
       'Aposentadoria policial, paridade/integralidade quando cabível, transições e abono de permanência dependem da data de ingresso, tempo no cargo, tempo policial, idade e regra aplicada.',
       'Base: Lei Orgânica Nacional das Polícias Civis, EC 103/2019, Acreprevidência e ficha funcional.');
+  } else if (inst === 'prf') {
+    html += direitoItem('PRF — subsídio federal 2026 por classe e padrão', 'verificar',
+      'A carreira de Policial Rodoviário Federal é remunerada por subsídio. A tabela de 01/05/2026 vai de R$ 12.253,84 na 3ª Classe/Padrão I a R$ 23.000,00 na Classe Especial/Padrão III; benefícios e indenizações não foram somados automaticamente.',
+      'Base: Lei nº 14.875/2024, Anexo XXVII; conferir classe, padrão, ato funcional e contracheque/SouGov.');
+    html += direitoItem('PRF — progressão, promoção e enquadramento', 'condicionado',
+      'Progressão e promoção dependem de interstício, avaliação, classe/padrão, requisitos da carreira e atos publicados. Diferença retroativa exige erro concreto de enquadramento ou implantação tardia.',
+      'Base: Lei nº 9.654/1998, Lei nº 12.775/2012, Decreto nº 8.282/2014 e ficha funcional.');
+    html += direitoItem('PRF — indenização de fronteira, diárias e missão', 'condicionado',
+      'Indenização de fronteira, diárias, ajuda de custo, transporte e missão operacional dependem de lotação/localidade, designação, dias efetivos, disponibilidade orçamentária e rubrica específica. Não somar como salário fixo.',
+      'Base: Lei nº 12.855/2013, Lei nº 8.112/1990, atos de missão/lotação, SouGov e demonstrativo de pagamento.');
+    html += direitoItem('PRF — aposentadoria policial, abono e previdência federal', 'verificar',
+      'Aposentadoria policial, regra de transição, abono de permanência e contribuição ao RPPS exigem análise individual de data de ingresso, idade, tempo policial, tempo total e regra aplicada.',
+      'Base: Constituição Federal, EC 103/2019, LC nº 51/1985, LC nº 144/2014, Lei nº 8.112/1990 e ficha funcional.');
   } else if (inst === 'pmesp') {
     html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
       'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',

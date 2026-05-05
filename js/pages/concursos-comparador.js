@@ -517,11 +517,11 @@ function carregarConcursos() {
         <span class="taf-produto-selo">Produto útil para o TAF</span>
         <strong>Barra fixa para porta</strong>
         <p>Ajuda o candidato a treinar em casa um dos exercícios que mais reprovam no TAF. Com constância, a barra fortalece costas, braços, pegada e resistência, facilitando a evolução para cumprir as repetições exigidas nos testes físicos das polícias.</p>
-        <span class="taf-produto-cta">Comprar</span>
+        <span class="taf-produto-cta">Ver na loja</span>
       </div>
     </a>
 
-    <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
+    <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Ver na loja Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
         <img src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
@@ -529,7 +529,7 @@ function carregarConcursos() {
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>
         <strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
         <p>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</p>
-        <span class="taf-produto-cta">Comprar</span>
+        <span class="taf-produto-cta">Ver na loja</span>
       </div>
     </a>
 
@@ -541,7 +541,7 @@ function carregarConcursos() {
         <span class="taf-produto-selo">Produto útil para o TAF</span>
         <strong>Power Rack Funcional com barra fixa e paralelas</strong>
         <p>Por ser maior, mais estável e permitir treino completo, o power rack ajuda o candidato a evoluir com mais segurança na barra fixa, paralelas, agachamento e fortalecimento geral. É uma opção superior para quem quer passar no TAF das polícias, porque permite treinar força, pegada, costas, braços, core e resistência em um equipamento mais robusto e versátil.</p>
-        <span class="taf-produto-cta">Comprar</span>
+        <span class="taf-produto-cta">Ver na loja</span>
       </div>
     </a>
   `;

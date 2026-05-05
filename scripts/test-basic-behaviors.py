@@ -445,6 +445,18 @@ def test_script_order_contracts() -> None:
     )
 
 
+
+
+def test_sidebar_products_vitrine_contract() -> None:
+    for page in APP_PAGES:
+        html = read_text(page)
+        assert_true('class="sidebar-products-vitrine"' in html, f"{page}: vitrine de produtos da sidebar ausente")
+        assert_true('<strong>Produtos</strong>' in html, f"{page}: título Produtos da sidebar ausente")
+        assert_true(html.count('class="sidebar-product-card"') == 10, f"{page}: sidebar deve exibir 10 produtos")
+        assert_true('sidebar-product--featured' not in html, f"{page}: sidebar ainda possui produto em destaque")
+        assert_true(html.count('<em>Ver na loja</em>') == 10, f"{page}: cada produto da sidebar deve ter Ver na loja")
+        assert_true('class="sidebar-products-more" href="produtos.html"' in html, f"{page}: chamada para aba Produtos ausente")
+
 def test_static_data_contracts() -> None:
     for rel, snippets in STATIC_DATA_CONTRACTS.items():
         path = ROOT / rel
@@ -536,6 +548,25 @@ def test_produtos_livros_ebooks_json_contract() -> None:
         assert_true((ROOT / src).is_file(), f"Produto {index} do JSON aponta imagem ausente: {src}")
 
 
+def test_produtos_mobile_vitrine_contract() -> None:
+    html = read_text("produtos.html")
+    head_partial = read_text("partials/pages/produtos/head.html")
+    render_text = read_text("js/pages/produtos-render.js")
+    produtos_data = read_text("js/data/produtos-data.js")
+    livros_json = read_text("js/data/produtos-livros-ebooks.json")
+
+    for source_name, source in (("produtos.html", html), ("partials/pages/produtos/head.html", head_partial)):
+        assert_true("@media (max-width: 760px)" in source, f"{source_name}: regra mobile da vitrine ausente")
+        assert_true("grid-template-columns: repeat(2, minmax(0, 1fr))" in source, f"{source_name}: vitrine mobile deve usar 2 colunas")
+        assert_true("-webkit-line-clamp: 2" in source, f"{source_name}: textos mobile devem estar limitados")
+        assert_true(".descricao-afiliado" in source and "display: none" in source, f"{source_name}: aviso afiliado deve ficar oculto nos cards mobile")
+
+    assert_true("produto.cta || 'Ver na loja'" in render_text, "produtos-render.js: CTA padrão deve ser Ver na loja")
+    assert_true('"cta": "Comprar"' not in produtos_data, "produtos-data.js ainda contém CTA Comprar")
+    assert_true('"cta": "Comprar"' not in livros_json, "produtos-livros-ebooks.json ainda contém CTA Comprar")
+    assert_true(">Comprar<" not in html, "produtos.html ainda contém botão visível Comprar")
+
+
 def test_templates_generate_current_html() -> None:
     script = ROOT / "scripts" / "build-static-pages.py"
     if not script.is_file():
@@ -594,11 +625,13 @@ TESTS = [
     ("referências locais existem", test_local_references_exist),
     ("target=_blank protegido", test_target_blank_rel_noopener),
     ("ordem crítica de scripts", test_script_order_contracts),
+    ("vitrine de produtos na sidebar", test_sidebar_products_vitrine_contract),
     ("contratos de dados estáticos", test_static_data_contracts),
     ("sintaxe JS", test_js_syntax),
     ("JSON e imagens de brasões", test_brasoes_json_and_images),
     ("categorias de produtos", test_produtos_data_matches_html_categories),
     ("JSON de livros/e-books com fallback", test_produtos_livros_ebooks_json_contract),
+    ("vitrine mobile de produtos", test_produtos_mobile_vitrine_contract),
     ("templates geram HTML atual", test_templates_generate_current_html),
     ("sitemap e robots", test_sitemap_and_robots),
     ("nomes web sem caracteres arriscados", test_no_risky_web_filenames),

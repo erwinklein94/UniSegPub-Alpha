@@ -1854,7 +1854,7 @@ body[data-inst="portal"] .header-current-copy strong {
 
 /* Seletor institucional exclusivo da página inicial */
 .home-institution-selector-wrap {
-  width: min(1200px, calc(100% - 40px));
+  width: min(1120px, calc(100% - 28px));
   margin: 18px auto 0;
 }
 

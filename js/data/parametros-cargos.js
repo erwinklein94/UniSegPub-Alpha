@@ -807,6 +807,30 @@ const CARGOS_PMAC = [
   { val: 'al_soldado_ac', text: 'AL SD PMAC — Aluno Soldado', padrao: 4344.22, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' }
 ];
 
+
+const CRITERIO_PRF_2026 = 'Subsídio federal da carreira de Policial Rodoviário Federal, efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVII, que alterou o Anexo III da Lei nº 11.358/2006.';
+const BENEF_PRF_2026 = 'Benefícios e indenizações não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, indenização de fronteira quando houver exercício em localidade prevista, diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina e demais rubricas funcionais conforme legislação e situação individual.';
+const CARGOS_PRF = [
+  { val: 'prf_especial_iii', text: 'PRF — Policial Rodoviário Federal — Classe Especial — Padrão III', padrao: 23000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_especial_ii', text: 'PRF — Policial Rodoviário Federal — Classe Especial — Padrão II', padrao: 22249.43, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_especial_i', text: 'PRF — Policial Rodoviário Federal — Classe Especial — Padrão I', padrao: 21524.32, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_primeira_vi', text: 'PRF — Policial Rodoviário Federal — 1ª Classe — Padrão VI', padrao: 20306.21, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_primeira_v', text: 'PRF — Policial Rodoviário Federal — 1ª Classe — Padrão V', padrao: 19649.56, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_primeira_iv', text: 'PRF — Policial Rodoviário Federal — 1ª Classe — Padrão IV', padrao: 19015.88, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_primeira_iii', text: 'PRF — Policial Rodoviário Federal — 1ª Classe — Padrão III', padrao: 18404.39, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_primeira_ii', text: 'PRF — Policial Rodoviário Federal — 1ª Classe — Padrão II', padrao: 17814.28, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_primeira_i', text: 'PRF — Policial Rodoviário Federal — 1ª Classe — Padrão I', padrao: 17244.77, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_segunda_vi', text: 'PRF — Policial Rodoviário Federal — 2ª Classe — Padrão VI', padrao: 15949.32, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_segunda_v', text: 'PRF — Policial Rodoviário Federal — 2ª Classe — Padrão V', padrao: 15704.54, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_segunda_iv', text: 'PRF — Policial Rodoviário Federal — 2ª Classe — Padrão IV', padrao: 15463.72, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_segunda_iii', text: 'PRF — Policial Rodoviário Federal — 2ª Classe — Padrão III', padrao: 15226.76, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_segunda_ii', text: 'PRF — Policial Rodoviário Federal — 2ª Classe — Padrão II', padrao: 14993.63, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_segunda_i', text: 'PRF — Policial Rodoviário Federal — 2ª Classe — Padrão I', padrao: 14764.25, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_terceira_iii', text: 'PRF — Policial Rodoviário Federal — 3ª Classe — Padrão III', padrao: 12630.98, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_terceira_ii', text: 'PRF — Policial Rodoviário Federal — 3ª Classe — Padrão II', padrao: 12440.90, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' },
+  { val: 'prf_terceira_i', text: 'PRF — Policial Rodoviário Federal — 3ª Classe — Padrão I', padrao: 12253.84, gratif: 0, oficial: true, selected: true, retpFator: 0, fonteKey: 'prf', criterio: CRITERIO_PRF_2026, benefDesc: BENEF_PRF_2026, badge: 'Federal 2026' }
+];
+
 const CRITERIO_PCAC_DELEGADO = 'Vencimento oficial do Delegado de Polícia Civil/AC, Lei Complementar AC 303/2015, tabela de janeiro/2016. Conferir atualizações posteriores, absorções e contracheque.';
 const CRITERIO_PCAC_PERITO = 'Vencimento oficial de Perito Criminal e Médico-Legista/AC, Lei AC 3.107/2015, tabela de janeiro/2018. Conferir atualizações posteriores, classe, rubricas e contracheque.';
 const CRITERIO_PCAC_OPERACIONAL = 'Vencimento oficial das carreiras de Agente, Escrivão, Perito Papiloscopista e Auxiliar de Necropsia da PCAC, Lei AC 3.228/2017. Conferir atualizações posteriores, classe, rubricas e contracheque.';

@@ -126,7 +126,7 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/penitenciaria'
   },
   prf: {
-    nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência',
+    nome: 'Lei nº 14.875/2024, Anexo XXVII — subsídio PRF com efeitos em 01/05/2026; PRF/Gov.br — carreira e Portal da Transparência',
     url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf'
   },
   pprj: {
@@ -369,6 +369,16 @@ const REMUNERACAO_SP_OFICIAL = {
 };
 
 
+REMUNERACAO_SP_OFICIAL.prf = CARGOS_PRF.map(cargo => linhaRemuneracaoOficial(
+  cargo.text.replace(/^PRF — /, ''),
+  cargo.padrao,
+  0,
+  cargo.criterio,
+  cargo.benefDesc,
+  'prf',
+  cargo.badge || 'Federal 2026'
+));
+
 REMUNERACAO_SP_OFICIAL.bmsp = REMUNERACAO_SP_OFICIAL.pmesp.map(linha => Object.assign({}, linha, {
   cargo: String(linha.cargo || '')
     .replace('CMT G — Comandante Geral PM', 'CCB — Comandante do Corpo de Bombeiros da PMESP')
@@ -413,7 +423,7 @@ const REMUNERACAO_MG_OFICIAL = {
 
 function getTabelaCargosRemuneracao(inst) {
   const map = {
-    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
+    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, prf: CARGOS_PRF,
     pmac: CARGOS_PMAC,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,

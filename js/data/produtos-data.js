@@ -39,7 +39,7 @@
         "Saúde mental",
         "Desenvolvimento pessoal"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Otimizando o Cérebro para Concursos Públicos",
@@ -73,7 +73,7 @@
         "Neurociências",
         "Produtividade"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Além da Farda: O Código da Travessia",
@@ -107,7 +107,7 @@
         "Carreira",
         "Vida pós-farda"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos",
@@ -141,7 +141,7 @@
         "Gestão de tempo",
         "Disciplina"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Táticas de Liderança Militar Aplicadas ao Dia a Dia",
@@ -175,7 +175,7 @@
         "Disciplina",
         "Tomada de decisão"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     }
   ];
 
@@ -184,7 +184,7 @@
     {
       "titulo": "Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA",
       "href": "https://s.shopee.com.br/901i8h9IK5",
-      "ariaLabel": "Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA",
+      "ariaLabel": "Ver na loja Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA",
       "classes": [
         "curso-card",
         "produto-card",
@@ -211,7 +211,7 @@
       "avisoAfiliado": "Exposição do produto em formato de afiliado.",
       "descricao": "Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.",
       "meta": [],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Mochila Coban Tática Militar Reforçada 24 L",
@@ -244,7 +244,7 @@
         "Uso operacional",
         "24 L"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Barra fixa para porta",
@@ -277,7 +277,7 @@
         "TAF",
         "Treino em casa"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP",
@@ -310,7 +310,7 @@
         "Uso operacional",
         "Conforto e proteção"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Power Rack Funcional com paralelas",
@@ -343,12 +343,12 @@
         "TAF",
         "Treino completo"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)",
       "href": "https://s.shopee.com.br/8V5UTFtI4n",
-      "ariaLabel": "Comprar Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)",
+      "ariaLabel": "Ver na loja Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)",
       "classes": [
         "curso-card",
         "produto-card"
@@ -376,12 +376,12 @@
         "Corrida e caminhada",
         "À prova d'água"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking",
       "href": "https://s.shopee.com.br/9fHRseGBA0",
-      "ariaLabel": "Comprar Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking",
+      "ariaLabel": "Ver na loja Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking",
       "classes": [
         "curso-card",
         "produto-card"
@@ -409,12 +409,12 @@
         "Uso tático",
         "Outdoor"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão",
       "href": "https://s.shopee.com.br/8Km4Irus3i",
-      "ariaLabel": "Comprar Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão",
+      "ariaLabel": "Ver na loja Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão",
       "classes": [
         "curso-card",
         "produto-card"
@@ -442,12 +442,12 @@
         "Boné tático",
         "Uso outdoor"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping",
       "href": "https://s.shopee.com.br/9Uy1hagpxm",
-      "ariaLabel": "Comprar Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping",
+      "ariaLabel": "Ver na loja Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping",
       "classes": [
         "curso-card",
         "produto-card"
@@ -475,12 +475,12 @@
         "Lanterna tática",
         "Recarregável"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente",
       "href": "https://s.shopee.com.br/2qR7lnxjWo",
-      "ariaLabel": "Comprar Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente",
+      "ariaLabel": "Ver na loja Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente",
       "classes": [
         "curso-card",
         "produto-card"
@@ -508,12 +508,12 @@
         "Cinto tático",
         "Engate rápido"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança",
       "href": "https://s.shopee.com.br/gMdCBBSkJ",
-      "ariaLabel": "Comprar Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança",
+      "ariaLabel": "Ver na loja Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança",
       "classes": [
         "curso-card",
         "produto-card"
@@ -541,12 +541,12 @@
         "Acessório tático",
         "Nylon"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Cinto Modular Tático Modular Militar Coyote Original Unistar",
       "href": "https://s.shopee.com.br/7ppnjfBlrP",
-      "ariaLabel": "Comprar Cinto Modular Tático Modular Militar Coyote Original Unistar",
+      "ariaLabel": "Ver na loja Cinto Modular Tático Modular Militar Coyote Original Unistar",
       "classes": [
         "curso-card",
         "produto-card"
@@ -574,12 +574,12 @@
         "Cinto modular",
         "Uso tático"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro",
       "href": "https://s.shopee.com.br/70GgkOPSbh",
-      "ariaLabel": "Comprar Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro",
+      "ariaLabel": "Ver na loja Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro",
       "classes": [
         "curso-card",
         "produto-card"
@@ -607,12 +607,12 @@
         "Coturno",
         "Couro e zíper"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40",
       "href": "https://s.shopee.com.br/4LFvZrdWL3",
-      "ariaLabel": "Comprar Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40",
+      "ariaLabel": "Ver na loja Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40",
       "classes": [
         "curso-card",
         "produto-card"
@@ -640,12 +640,12 @@
         "Calçado tático",
         "Unissex"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Organizador de Armário Porta Objetos Organizador Militar",
       "href": "https://s.shopee.com.br/9ALBL0RrAD",
-      "ariaLabel": "Comprar Organizador de Armário Porta Objetos Organizador Militar",
+      "ariaLabel": "Ver na loja Organizador de Armário Porta Objetos Organizador Militar",
       "classes": [
         "curso-card",
         "produto-card"
@@ -673,12 +673,12 @@
         "Organização",
         "Porta objetos"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Cantil + Porta Cantil Original – Resistência 950 ML",
       "href": "https://s.shopee.com.br/8piKxfAxmV",
-      "ariaLabel": "Comprar Cantil + Porta Cantil Original – Resistência 950 ML",
+      "ariaLabel": "Ver na loja Cantil + Porta Cantil Original – Resistência 950 ML",
       "classes": [
         "curso-card",
         "produto-card"
@@ -706,12 +706,12 @@
         "Hidratação",
         "950 ml"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!",
       "href": "https://s.shopee.com.br/3LNOPp1rnC",
-      "ariaLabel": "Comprar Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!",
+      "ariaLabel": "Ver na loja Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!",
       "classes": [
         "curso-card",
         "produto-card"
@@ -739,12 +739,12 @@
         "Relógio esportivo",
         "Cronômetro"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "PRF 1.001 Questões Comentadas - AlfaCon - Concursos Carreiras Policiais",
       "href": "https://s.shopee.com.br/1BItze7fTw",
-      "ariaLabel": "Comprar PRF 1.001 Questões Comentadas - AlfaCon - Concursos Carreiras Policiais",
+      "ariaLabel": "Ver na loja PRF 1.001 Questões Comentadas - AlfaCon - Concursos Carreiras Policiais",
       "classes": [
         "curso-card",
         "produto-card"
@@ -772,12 +772,12 @@
         "PRF",
         "Questões comentadas"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila Polícia Federal (PF) - Delegado de Polícia Federal",
       "href": "https://s.shopee.com.br/10zTo819rd",
-      "ariaLabel": "Comprar Apostila Polícia Federal (PF) - Delegado de Polícia Federal",
+      "ariaLabel": "Ver na loja Apostila Polícia Federal (PF) - Delegado de Polícia Federal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -805,12 +805,12 @@
         "PF",
         "Delegado"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila Polícia Federal (PF) 2026 - Escrivão de Polícia Federal",
       "href": "https://s.shopee.com.br/9KebjbAPje",
-      "ariaLabel": "Comprar Apostila Polícia Federal (PF) 2026 - Escrivão de Polícia Federal",
+      "ariaLabel": "Ver na loja Apostila Polícia Federal (PF) 2026 - Escrivão de Polícia Federal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -838,12 +838,12 @@
         "PF 2026",
         "Escrivão"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila Polícia Federal (PF) 2026 - Papiloscopista Policial Federal",
       "href": "https://s.shopee.com.br/9Uy1w73uSI",
-      "ariaLabel": "Comprar Apostila Polícia Federal (PF) 2026 - Papiloscopista Policial Federal",
+      "ariaLabel": "Ver na loja Apostila Polícia Federal (PF) 2026 - Papiloscopista Policial Federal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -871,12 +871,12 @@
         "PF 2026",
         "Papiloscopista"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila Completa PRF - Agente Administrativo da Polícia Rodoviária Federal",
       "href": "https://s.shopee.com.br/9pasKuSzle",
-      "ariaLabel": "Comprar Apostila Completa PRF - Agente Administrativo da Polícia Rodoviária Federal",
+      "ariaLabel": "Ver na loja Apostila Completa PRF - Agente Administrativo da Polícia Rodoviária Federal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -904,12 +904,12 @@
         "PRF",
         "Agente administrativo"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila Polícia Federal (PF) 2026 - Perito Criminal Federal - Medicina Legal",
       "href": "https://s.shopee.com.br/qg3cYrOLn",
-      "ariaLabel": "Comprar Apostila Polícia Federal (PF) 2026 - Perito Criminal Federal - Medicina Legal",
+      "ariaLabel": "Ver na loja Apostila Polícia Federal (PF) 2026 - Perito Criminal Federal - Medicina Legal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -937,12 +937,12 @@
         "PF 2026",
         "Perito criminal"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila impressa concurso da Polícia Federal PF 2025 - Agente Administrativo da Polícia Federal",
       "href": "https://s.shopee.com.br/9KebkNcBTH",
-      "ariaLabel": "Comprar Apostila impressa concurso da Polícia Federal PF 2025 - Agente Administrativo da Polícia Federal",
+      "ariaLabel": "Ver na loja Apostila impressa concurso da Polícia Federal PF 2025 - Agente Administrativo da Polícia Federal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -970,12 +970,12 @@
         "PF 2025",
         "Agente administrativo"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Apostila PRF - Polícia Rodoviária Federal - Policial Rodoviário Federal",
       "href": "https://s.shopee.com.br/9pasLS6Sfs",
-      "ariaLabel": "Comprar Apostila PRF - Polícia Rodoviária Federal - Policial Rodoviário Federal",
+      "ariaLabel": "Ver na loja Apostila PRF - Polícia Rodoviária Federal - Policial Rodoviário Federal",
       "classes": [
         "curso-card",
         "produto-card"
@@ -1003,7 +1003,7 @@
         "PRF",
         "Policial rodoviário"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     }
   ],
   "cursosGerais": [
@@ -1045,12 +1045,12 @@
         "Polícia Militar do Tocantins",
         "Preparação acelerada"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Na Rota PRF",
       "href": "https://go.hotmart.com/A105672755T?dp=1",
-      "ariaLabel": "Comprar Na Rota PRF",
+      "ariaLabel": "Ver na loja Na Rota PRF",
       "classes": [
         "curso-card",
         "produto-card"
@@ -1082,7 +1082,7 @@
         "Preparatório",
         "Carreiras policiais"
       ],
-      "cta": "Comprar por afiliado"
+      "cta": "Ver na loja"
     }
   ],
   "cursosPmesp": [
@@ -1117,7 +1117,7 @@
         "PMESP",
         "Concursos internos"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Curso Preparatório PMESP Completo",
@@ -1151,7 +1151,7 @@
         "Soldado 2ª Classe",
         "VUNESP"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "Preparatório para o psicotécnico das carreiras policiais",
@@ -1185,7 +1185,7 @@
         "Carreiras policiais",
         "Concurseiros"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     }
   ],
   "cursosPcsp": [
@@ -1221,7 +1221,7 @@
         "Raciocínio lógico",
         "VUNESP"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     },
     {
       "titulo": "PCSP - Curso de Informática - Edital Completo",
@@ -1255,7 +1255,7 @@
         "Informática",
         "VUNESP"
       ],
-      "cta": "Comprar"
+      "cta": "Ver na loja"
     }
   ]
 };

@@ -2,6 +2,23 @@
    Mantém o identificador CONCURSOS para compatibilidade com o código atual. */
 
 const CONCURSOS = {
+  prf: {
+    edital: 'PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026; sem novo concurso aberto na revisão de 04/05/2026',
+    salario: 'Inicial 2026: R$ 12.253,84 · 3ª Classe, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial, Padrão III. Valores de subsídio conforme Lei nº 14.875/2024, Anexo XXVII, com efeitos em 01/05/2026.',
+    vagas: '1.500 vagas no concurso PRF 2021; o portal mantém o certame como vigente/histórico enquanto houver validade e convocações oficiais.',
+    cotas: 'Reserva de vagas conforme legislação federal e edital Cebraspe/PRF 2021.',
+    idade: 'CNH categoria B ou superior; requisitos físicos, médicos, psicológicos, investigação social e demais condições do edital. Conferir eventual limite/requisito no edital vigente.',
+    escolaridade: 'Nível superior completo em qualquer área e Carteira Nacional de Habilitação categoria B ou superior, conforme edital PRF 2021.',
+    materias: 'Língua Portuguesa, Raciocínio Lógico-Matemático, Informática, Física, Ética, Geopolítica, Língua Estrangeira, Legislação de Trânsito, Direito Administrativo, Constitucional, Penal, Processual Penal, Legislação Especial e Direitos Humanos, conforme edital.',
+    banca: 'Cebraspe no concurso PRF 2021.',
+    inscritos: 'PRF informou ausência de concurso com inscrições abertas em 30/04/2025; acompanhar apenas canais oficiais PRF/Gov.br e Cebraspe.',
+    etapas: 'Provas objetiva e discursiva, exame de aptidão física, avaliação psicológica, avaliação biopsicossocial quando aplicável, procedimento de heteroidentificação, avaliação de saúde, investigação social, avaliação de títulos e Curso de Formação Policial.',
+    cfsd: 'Curso de Formação Policial da PRF, com matrícula e regras próprias de frequência, avaliação, disciplina e classificação.',
+    estagio: 'Estágio probatório de 3 anos para servidor federal, observadas Lei nº 8.112/1990, normas internas e avaliação de desempenho.',
+    validade: 'Concurso PRF 2021 prorrogado até junho/2026; conferir atos oficiais da PRF e Cebraspe.',
+    previsao: 'Não publicar como novo concurso aberto sem fonte oficial. Em 30/04/2025 a PRF alertou sobre fake news e informou não haver inscrições abertas naquele momento.',
+    site: 'https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021'
+  },
   pmac: {
     edital: 'PMAC — Edital nº 001/2023 SEAD/PMAC — Aluno Oficial e 2º Tenente Estagiário de Saúde',
     salario: 'Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73, conforme edital.',

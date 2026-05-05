@@ -24,7 +24,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerportal1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260505homeupdatecard1" rel="stylesheet"/>
 <!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
 <style>
   .page-produtos #page-produtos {
@@ -171,12 +171,72 @@
 
   @media (max-width: 760px) {
     .page-produtos #page-produtos {
-      max-width: calc(100% - 24px) !important;
+      max-width: calc(100% - 18px) !important;
     }
 
     .page-produtos #page-produtos .produtos-vitrine,
     .page-produtos #page-produtos .cursos-preparatorios-geral {
-      grid-template-columns: 1fr !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 10px !important;
+      margin-bottom: 18px !important;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine .produto-card {
+      min-height: 0 !important;
+      padding: 10px !important;
+      border-radius: 18px !important;
+    }
+
+    .page-produtos #page-produtos .produto-imagem {
+      aspect-ratio: 1 / 1;
+      margin-bottom: 8px;
+      border-radius: 14px;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine .produto-card h3 {
+      display: -webkit-box;
+      min-height: 0;
+      margin-bottom: 6px;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-size: 12.5px;
+      line-height: 1.18;
+      letter-spacing: .25px;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine .produto-card p {
+      display: -webkit-box;
+      margin-bottom: 8px;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .page-produtos #page-produtos .descricao-afiliado {
+      display: none;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine .curso-meta {
+      display: none;
+    }
+
+    .page-produtos #page-produtos .curso-badge,
+    .page-produtos #page-produtos .produto-card--destaque .ad-label {
+      margin-bottom: 6px;
+      padding: 5px 7px;
+      font-size: 8.5px;
+      letter-spacing: .45px;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine .curso-cta {
+      min-height: 34px;
+      padding: 8px 10px !important;
+      font-size: 10.5px !important;
+      letter-spacing: .65px;
+      line-height: 1.1;
     }
   }
 </style>
