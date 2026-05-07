@@ -9,6 +9,7 @@
     remuneracao: 'remuneracao.html',
     direitos: 'direitos.html',
     poderes: 'poderes-deveres.html',
+    baselegal: 'base-legal.html',
     brasoes: 'brasoes.html',
     concursos: 'concursos.html',
     comparar: 'comparar-carreiras.html',
@@ -23,6 +24,7 @@
     remuneracao: 'Remuneração Tabelada',
     direitos: 'Direitos e Vantagens',
     poderes: 'Poderes e Deveres',
+    baselegal: 'Base Legal',
     brasoes: 'Brasões e história',
     concursos: 'Concursos',
     comparar: 'Comparar Carreiras',
@@ -43,6 +45,7 @@
     direitos_entre_formulario_parecer: 'Página de direitos, entre formulário e parecer',
     concursos_antes_lista: 'Página de concursos, antes da lista',
     comparador_antes_resultado: 'Página de comparação, antes dos resultados',
+    base_legal_antes_resultado: 'Página de base legal, antes dos resultados',
     produtos_topo: 'Topo da página de produtos',
     acoes_antes_lista: 'Página de ações judiciais, antes da lista',
     associacoes_antes_lista: 'Página de associações, antes da lista',
@@ -104,6 +107,10 @@
 
     if (page === 'comparar' && typeof window.inicializarComparadorCarreiras === 'function') {
       window.inicializarComparadorCarreiras();
+    }
+
+    if (page === 'baselegal' && typeof window.inicializarBaseLegal === 'function') {
+      window.inicializarBaseLegal();
     }
 
     fillAdContactFormFromUrl();

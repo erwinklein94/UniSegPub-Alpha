@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260505homeupdatecard1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260506mobilelight1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -146,17 +146,19 @@
 <strong id="header-resumo-comando">—</strong>
 </div>
 </div>
-<div class="header-fact header-fact--dados-atualizados header-update-note">
-<span id="header-label-dados-atualizados">Dados de atualização do site</span>
-<strong id="header-resumo-dados-atualizados">Calculando...</strong>
-</div>
-</aside>
-</div>
-<div class="header-controls-grid header-controls-grid--home">
+
+
 <div aria-label="Escolha de instituição para o cabeçalho da página inicial" class="header-inst-selector header-inst-selector--home">
 <select aria-label="Escolha uma Instituição" id="instituicao_home">
 <option selected="" value="">Escolha uma Instituição</option>
 </select>
+</div>
+</aside>
+</div>
+<div class="header-controls-grid header-controls-grid--home">
+<div class="header-fact header-fact--dados-atualizados header-update-note header-update-note--home">
+<span id="header-label-dados-atualizados">Dados de atualização do site</span>
+<strong id="header-resumo-dados-atualizados">Calculando...</strong>
 </div>
 </div>
 </section>
@@ -324,6 +326,11 @@
 <span class="sidebar-link-text">Poderes e Deveres</span>
 <small>Leis, limites e competências</small>
 </a>
+<a href="base-legal.html" id="menu-baselegal" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
+<span class="sidebar-link-text">Base Legal</span>
+<small>Leis e enquadramentos</small>
+</a>
 <a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
 <span class="sidebar-link-text">Brasões e história</span>
@@ -369,7 +376,7 @@
 </nav>
 <!-- BLOCO 03.4.3 — Rede social destacada -->
 <div aria-label="Redes sociais" class="sidebar-social">
-<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&amp;utm_source=qr" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
+<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegpub" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
 <span aria-hidden="true">📷</span>
 <strong>Seguir no Instagram</strong>
 </a>
@@ -472,9 +479,6 @@
 <h1 class="principal-title" id="principal-titulo">Consulte remuneração, direitos, concursos e informações da sua instituição em poucos <span>cliques</span></h1>
 </div>
 </div>
-<p class="principal-subtitle">
-      Primeiro escolha a aba que quer consultar. Dentro das abas institucionais, selecione a esfera — federal, estadual ou municipal — e depois a instituição específica para carregar as informações corretas.
-    </p>
 <p aria-label="Aviso institucional do portal" class="portal-disclaimer portal-disclaimer--hero">
 <strong>Importante:</strong> este é um portal informativo independente. Não é site oficial do governo, não representa órgãos públicos e não pertence às instituições mencionadas.
     </p>
@@ -508,9 +512,9 @@
 <strong>2026</strong>
 <span>Dados em atualização</span>
 </div>
-<div class="principal-stat">
-<strong>PF,PRF,PM</strong>
-<span>PC,PP,BM,GM</span>
+<div class="principal-stat principal-stat--instituicoes">
+<strong>PF, PRF, PM, PC, PP, BM, GM</strong>
+<span>Instituições cobertas</span>
 </div>
 </section>
 <!-- BLOCO 04.3 — Como usar a página inicial -->
@@ -564,6 +568,14 @@
 </div>
 <p>Entenda deveres, abrangência de poder, limites legais, leis oficiais e entendimentos recentes de cada instituição.</p>
 <span class="principal-tag">Ver legislação</span>
+</a>
+<a aria-label="Abrir base legal operacional" class="principal-card destaque" href="base-legal.html">
+<div class="principal-card-header">
+<span aria-hidden="true" class="principal-card-icon">📚</span>
+<h3>Base Legal</h3>
+</div>
+<p>Pesquise rapidamente qual lei trata de homicídio, flagrante, drogas, armas, trânsito, violência doméstica, incêndio, abuso de autoridade e outros temas da rotina operacional.</p>
+<span class="principal-tag">Consultar leis</span>
 </a>
 <a aria-label="Abrir brasões e história" class="principal-card destaque" href="brasoes.html">
 <div class="principal-card-header">
@@ -667,8 +679,7 @@
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
 <div aria-label="Aviso institucional do portal" class="footer-disclaimer">
-<p><strong>Universo Segurança Pública</strong> é um portal informativo independente. Não é órgão governamental, não representa governos estaduais e não pertence às instituições mencionadas.</p>
-<p class="small-note">As informações são organizadas a partir de fontes públicas, legislações, editais e canais oficiais quando disponíveis. Valores, direitos, requisitos e prazos podem mudar: confira sempre o holerite, o regulamento, o edital e os canais oficiais da instituição.</p>
+<p><strong>Universo Segurança Pública</strong> é um portal informativo independente e não governamental, criado para organizar consultas sobre instituições de segurança pública a partir de fontes públicas, legislações, editais e canais oficiais quando disponíveis. As informações servem como referência inicial e podem mudar conforme cargo, legislação, regulamento, edital, holerite e atualização dos órgãos competentes.</p>
 <p class="small-note footer-credit">Desenvolvido por <strong>LOCKSTAGE</strong>.</p>
 </div>
 </footer>
@@ -684,20 +695,20 @@
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
 <!-- Scripts divididos por página para evitar carregar funcionalidades desnecessárias. -->
-<script defer="" src="js/data/parametros-cargos.js"></script>
+<script defer="" src="js/data/parametros-cargos.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/policia-penal.js"></script>
 <script defer="" src="js/data/acoes-judiciais-data.js"></script>
 <script defer="" src="js/data/associacoes-data.js"></script>
 <script defer="" src="js/data/concursos-data.js"></script>
-<script defer="" src="js/data/portal-config.js"></script>
+<script defer="" src="js/data/portal-config.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
 <script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
-<script defer="" src="js/services/remuneracao.js?v=20260503prf1"></script>
+<script defer="" src="js/services/remuneracao.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
-<script defer="" src="js/ui/header-estados.js?v=20260503headercompact1"></script>
+<script defer="" src="js/ui/header-estados.js?v=20260506bmba1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
-<script defer="" src="js/ui/event-bindings.js?v=20260503homeinst1"></script>
-<script defer="" src="js/core/page-context.js"></script>
+<script defer="" src="js/ui/event-bindings.js?v=20260506comparador4"></script>
+<script defer="" src="js/core/page-context.js?v=20260506baselegal1"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 </body>
 </html>

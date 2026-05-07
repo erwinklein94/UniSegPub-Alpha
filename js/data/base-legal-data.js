@@ -1,0 +1,348 @@
+/* ============================================================
+   Universo Segurança Pública — Base Legal
+   Consulta rápida de legislação federal útil à rotina policial,
+   bombeiro-militar, guarda municipal e demais áreas de segurança.
+   ============================================================ */
+
+const BASE_LEGAL_ITENS = [
+  {
+    id: "constituicao-1988",
+    categoria: "Fundamentos",
+    titulo: "Constituição da República Federativa do Brasil de 1988",
+    lei: "Constituição Federal de 1988",
+    apelido: "Constituição Federal",
+    enquadramento: "Art. 5º — direitos e garantias fundamentais; art. 144 — segurança pública e órgãos de segurança.",
+    assuntos: ["segurança pública", "polícia", "bombeiro", "guarda municipal", "direitos fundamentais", "abordagem", "prisão", "casa", "domicílio", "inviolabilidade", "artigo 144", "competência", "uso da força"],
+    atualizacao: "Texto constitucional compilado — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Constituição Federal",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+  },
+  {
+    id: "codigo-penal",
+    categoria: "Crimes em geral",
+    titulo: "Código Penal",
+    lei: "Decreto-Lei nº 2.848, de 7 de dezembro de 1940",
+    apelido: "Código Penal",
+    enquadramento: "Crimes contra a pessoa, patrimônio, administração pública e fé pública. Ex.: homicídio art. 121; lesão corporal art. 129; furto art. 155; roubo art. 157; resistência art. 329; desacato art. 331.",
+    assuntos: ["homicídio", "homocidio", "matar", "feminicídio", "lesão corporal", "ameaça", "furto", "roubo", "receptação", "dano", "estelionato", "resistência", "desobediência", "desacato", "corrupção", "peculato", "prevaricação", "crime", "patrimônio", "vida"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Código Penal",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/Decreto-Lei/Del2848compilado.htm"
+  },
+  {
+    id: "codigo-processo-penal",
+    categoria: "Procedimento policial",
+    titulo: "Código de Processo Penal",
+    lei: "Decreto-Lei nº 3.689, de 3 de outubro de 1941",
+    apelido: "CPP",
+    enquadramento: "Regras de investigação, prisão em flagrante, busca e apreensão, inquérito, ação penal e prova. Ex.: prisão em flagrante arts. 301 a 310; busca e apreensão arts. 240 e seguintes.",
+    assuntos: ["flagrante", "prisão em flagrante", "busca e apreensão", "mandado", "inquérito", "perícia", "prova", "cadeia de custódia", "prisão preventiva", "audiência de custódia", "investigação", "indiciado", "testemunha"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Código de Processo Penal",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm"
+  },
+  {
+    id: "contravencoes-penais",
+    categoria: "Crimes em geral",
+    titulo: "Lei das Contravenções Penais",
+    lei: "Decreto-Lei nº 3.688, de 3 de outubro de 1941",
+    apelido: "LCP",
+    enquadramento: "Contravenções como vias de fato, perturbação do sossego, jogos de azar e outras infrações de menor gravidade.",
+    assuntos: ["contravenção", "perturbação do sossego", "som alto", "vias de fato", "jogo de azar", "vadiagem", "importunação", "menor potencial ofensivo"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei das Contravenções Penais",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3688.htm"
+  },
+  {
+    id: "juizados-especiais",
+    categoria: "Procedimento policial",
+    titulo: "Lei dos Juizados Especiais Cíveis e Criminais",
+    lei: "Lei nº 9.099, de 26 de setembro de 1995",
+    apelido: "Lei dos Juizados Especiais",
+    enquadramento: "Infrações de menor potencial ofensivo, termo circunstanciado, composição civil, transação penal e rito dos Juizados Especiais Criminais.",
+    assuntos: ["tco", "termo circunstanciado", "menor potencial ofensivo", "juizado especial criminal", "jecrim", "contravenção", "audiência preliminar", "transação penal"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 9.099/1995",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+  },
+  {
+    id: "lei-drogas",
+    categoria: "Crimes especiais",
+    titulo: "Lei de Drogas",
+    lei: "Lei nº 11.343, de 23 de agosto de 2006",
+    apelido: "Lei de Drogas / Sisnad",
+    enquadramento: "Porte para consumo pessoal, tráfico de drogas, associação para o tráfico, maquinário, financiamento e procedimentos ligados a substâncias entorpecentes.",
+    assuntos: ["droga", "drogas", "entorpecente", "maconha", "cocaína", "crack", "tráfico", "trafico", "porte de droga", "usuário", "consumo pessoal", "associação para o tráfico", "sisnad"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 11.343/2006",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm"
+  },
+  {
+    id: "estatuto-desarmamento",
+    categoria: "Armas e munições",
+    titulo: "Estatuto do Desarmamento",
+    lei: "Lei nº 10.826, de 22 de dezembro de 2003",
+    apelido: "Estatuto do Desarmamento",
+    enquadramento: "Registro, posse, porte, disparo, comércio ilegal, tráfico internacional de arma de fogo, acessórios e munições.",
+    assuntos: ["arma", "arma de fogo", "munição", "municao", "porte de arma", "posse de arma", "disparo", "sinarm", "cac", "registro", "comércio ilegal", "tráfico de arma"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 10.826/2003",
+    fonteUrl: "https://www.planalto.gov.br/CCivil_03/leis/2003/L10.826.htm"
+  },
+  {
+    id: "maria-da-penha",
+    categoria: "Proteção de pessoas vulneráveis",
+    titulo: "Lei Maria da Penha",
+    lei: "Lei nº 11.340, de 7 de agosto de 2006",
+    apelido: "Lei Maria da Penha",
+    enquadramento: "Violência doméstica e familiar contra a mulher, medidas protetivas de urgência, atendimento policial e proteção da vítima.",
+    assuntos: ["maria da penha", "violência doméstica", "violencia domestica", "mulher", "medida protetiva", "descumprimento de medida protetiva", "feminicídio", "ameaça", "lesão corporal doméstica"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 11.340/2006",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11340.htm"
+  },
+  {
+    id: "eca",
+    categoria: "Proteção de pessoas vulneráveis",
+    titulo: "Estatuto da Criança e do Adolescente",
+    lei: "Lei nº 8.069, de 13 de julho de 1990",
+    apelido: "ECA",
+    enquadramento: "Proteção integral de crianças e adolescentes, ato infracional, apreensão, conselho tutelar, crimes contra criança e adolescente.",
+    assuntos: ["eca", "criança", "crianca", "adolescente", "menor", "ato infracional", "apreensão de adolescente", "conselho tutelar", "abandono", "exploração infantil", "maus-tratos"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 8.069/1990",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/L8069compilado.htm"
+  },
+  {
+    id: "estatuto-idoso",
+    categoria: "Proteção de pessoas vulneráveis",
+    titulo: "Estatuto da Pessoa Idosa",
+    lei: "Lei nº 10.741, de 1º de outubro de 2003",
+    apelido: "Estatuto da Pessoa Idosa",
+    enquadramento: "Direitos da pessoa idosa, crimes, abandono, violência, prioridade de atendimento e proteção contra negligência.",
+    assuntos: ["idoso", "pessoa idosa", "maus-tratos", "abandono de idoso", "violência contra idoso", "prioridade", "vulnerável"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 10.741/2003",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+  },
+  {
+    id: "estatuto-deficiencia",
+    categoria: "Proteção de pessoas vulneráveis",
+    titulo: "Estatuto da Pessoa com Deficiência",
+    lei: "Lei nº 13.146, de 6 de julho de 2015",
+    apelido: "Lei Brasileira de Inclusão",
+    enquadramento: "Direitos da pessoa com deficiência, atendimento prioritário, acessibilidade, discriminação e proteção contra violência.",
+    assuntos: ["deficiência", "deficiencia", "pcd", "pessoa com deficiência", "acessibilidade", "discriminação", "prioridade", "vulnerável"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 13.146/2015",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm"
+  },
+  {
+    id: "racismo",
+    categoria: "Crimes especiais",
+    titulo: "Lei do Racismo",
+    lei: "Lei nº 7.716, de 5 de janeiro de 1989",
+    apelido: "Lei do Racismo",
+    enquadramento: "Crimes resultantes de preconceito de raça, cor, etnia, religião ou procedência nacional.",
+    assuntos: ["racismo", "injúria racial", "injuria racial", "preconceito", "raça", "cor", "etnia", "religião", "discriminação", "xenofobia"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 7.716/1989",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l7716.htm"
+  },
+  {
+    id: "ctb",
+    categoria: "Trânsito",
+    titulo: "Código de Trânsito Brasileiro",
+    lei: "Lei nº 9.503, de 23 de setembro de 1997",
+    apelido: "CTB",
+    enquadramento: "Infrações e crimes de trânsito, abordagem de trânsito, embriaguez ao volante, homicídio culposo, lesão culposa, direção sem habilitação.",
+    assuntos: ["trânsito", "transito", "ctb", "blitz", "abordagem de trânsito", "embriaguez", "alcool", "lei seca", "direção perigosa", "racha", "acidente", "homicídio culposo", "lesão culposa", "cnh"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Código de Trânsito Brasileiro",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
+  },
+  {
+    id: "crimes-ambientais",
+    categoria: "Meio ambiente",
+    titulo: "Lei de Crimes Ambientais",
+    lei: "Lei nº 9.605, de 12 de fevereiro de 1998",
+    apelido: "Lei de Crimes Ambientais",
+    enquadramento: "Crimes contra fauna, flora, poluição, ordenamento urbano, patrimônio cultural e administração ambiental.",
+    assuntos: ["ambiental", "meio ambiente", "fauna", "flora", "animal silvestre", "poluição", "queimada", "desmatamento", "pesca ilegal", "maus-tratos a animais", "licença ambiental"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 9.605/1998",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/LEIS/L9605.htm"
+  },
+  {
+    id: "abuso-autoridade",
+    categoria: "Atuação policial",
+    titulo: "Lei de Abuso de Autoridade",
+    lei: "Lei nº 13.869, de 5 de setembro de 2019",
+    apelido: "Abuso de Autoridade",
+    enquadramento: "Crimes de abuso de autoridade praticados por agente público, servidor ou não, no exercício da função ou a pretexto de exercê-la.",
+    assuntos: ["abuso de autoridade", "abordagem abusiva", "constrangimento", "prisão ilegal", "busca ilegal", "agente público", "excesso", "finalidade específica", "autoridade"],
+    atualizacao: "Texto compilado oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 13.869/2019",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13869compilado.htm"
+  },
+  {
+    id: "tortura",
+    categoria: "Atuação policial",
+    titulo: "Lei de Tortura",
+    lei: "Lei nº 9.455, de 7 de abril de 1997",
+    apelido: "Lei de Tortura",
+    enquadramento: "Define crimes de tortura, incluindo constrangimento com violência ou grave ameaça para obter informação, declaração ou confissão, e situações envolvendo pessoa presa ou sob guarda.",
+    assuntos: ["tortura", "confissão", "confissao", "violência", "grave ameaça", "preso", "custódia", "sofrimento físico", "sofrimento mental", "agente público"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 9.455/1997",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l9455.htm"
+  },
+  {
+    id: "hediondos",
+    categoria: "Crimes especiais",
+    titulo: "Lei dos Crimes Hediondos",
+    lei: "Lei nº 8.072, de 25 de julho de 1990",
+    apelido: "Crimes Hediondos",
+    enquadramento: "Lista crimes hediondos e disciplina tratamento penal mais gravoso para crimes como latrocínio, extorsão mediante sequestro, estupro, genocídio e outros previstos em lei.",
+    assuntos: ["hediondo", "crimes hediondos", "latrocínio", "latrocinio", "estupro", "extorsão mediante sequestro", "genocídio", "tráfico equiparado", "progressão de regime"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 8.072/1990",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l8072.htm"
+  },
+  {
+    id: "organizacao-criminosa",
+    categoria: "Investigação",
+    titulo: "Lei de Organização Criminosa",
+    lei: "Lei nº 12.850, de 2 de agosto de 2013",
+    apelido: "Organizações Criminosas",
+    enquadramento: "Define organização criminosa e meios de obtenção de prova como colaboração premiada, ação controlada e infiltração.",
+    assuntos: ["organização criminosa", "organizacao criminosa", "orcrim", "facção", "faccao", "milícia", "milicia", "ação controlada", "colaboração premiada", "infiltração", "investigação"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 12.850/2013",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12850.htm"
+  },
+  {
+    id: "interceptacao",
+    categoria: "Investigação",
+    titulo: "Lei de Interceptação Telefônica",
+    lei: "Lei nº 9.296, de 24 de julho de 1996",
+    apelido: "Interceptação Telefônica",
+    enquadramento: "Interceptação de comunicações telefônicas, de qualquer natureza, para prova em investigação criminal e instrução processual penal, mediante ordem judicial.",
+    assuntos: ["interceptação", "interceptacao", "escuta", "telefone", "quebra de sigilo", "investigação", "ordem judicial", "comunicação", "telemática"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 9.296/1996",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l9296.htm"
+  },
+  {
+    id: "prisao-temporaria",
+    categoria: "Procedimento policial",
+    titulo: "Lei da Prisão Temporária",
+    lei: "Lei nº 7.960, de 21 de dezembro de 1989",
+    apelido: "Prisão Temporária",
+    enquadramento: "Hipóteses de prisão temporária durante investigação criminal e prazos legais.",
+    assuntos: ["prisão temporária", "prisao temporaria", "investigação", "inquérito", "prazo", "representação", "delegado", "mandado"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 7.960/1989",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l7960.htm"
+  },
+  {
+    id: "execucao-penal",
+    categoria: "Sistema prisional",
+    titulo: "Lei de Execução Penal",
+    lei: "Lei nº 7.210, de 11 de julho de 1984",
+    apelido: "LEP",
+    enquadramento: "Execução da pena, direitos e deveres do preso, disciplina, faltas, estabelecimentos penais e assistência.",
+    assuntos: ["execução penal", "execucao penal", "preso", "custódia", "penitenciária", "polícia penal", "falta grave", "regime", "direitos do preso", "deveres do preso"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 7.210/1984",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/leis/l7210.htm"
+  },
+  {
+    id: "codigo-penal-militar",
+    categoria: "Militar estadual/federal",
+    titulo: "Código Penal Militar",
+    lei: "Decreto-Lei nº 1.001, de 21 de outubro de 1969",
+    apelido: "CPM",
+    enquadramento: "Crimes militares em tempo de paz e guerra; disciplina penal aplicável a militares federais e, nas hipóteses legais, militares estaduais.",
+    assuntos: ["crime militar", "código penal militar", "codigo penal militar", "cpm", "polícia militar", "bombeiro militar", "deserção", "insubordinação", "violência contra superior", "justiça militar"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Código Penal Militar",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001.htm"
+  },
+  {
+    id: "processo-penal-militar",
+    categoria: "Militar estadual/federal",
+    titulo: "Código de Processo Penal Militar",
+    lei: "Decreto-Lei nº 1.002, de 21 de outubro de 1969",
+    apelido: "CPPM",
+    enquadramento: "Inquérito policial militar, processo penal militar, competência e procedimentos da Justiça Militar.",
+    assuntos: ["processo penal militar", "cppm", "ipm", "inquérito policial militar", "justiça militar", "polícia militar", "bombeiro militar", "crime militar"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Código de Processo Penal Militar",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1002.htm"
+  },
+  {
+    id: "susp",
+    categoria: "Gestão e sistema de segurança",
+    titulo: "Lei do Sistema Único de Segurança Pública",
+    lei: "Lei nº 13.675, de 11 de junho de 2018",
+    apelido: "SUSP",
+    enquadramento: "Organização do Sistema Único de Segurança Pública e Política Nacional de Segurança Pública e Defesa Social.",
+    assuntos: ["susp", "segurança pública", "politica nacional de segurança", "integração", "sistema único", "órgãos de segurança", "defesa social"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 13.675/2018",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13675.htm"
+  },
+  {
+    id: "lgpd",
+    categoria: "Dados e informação",
+    titulo: "Lei Geral de Proteção de Dados Pessoais",
+    lei: "Lei nº 13.709, de 14 de agosto de 2018",
+    apelido: "LGPD",
+    enquadramento: "Tratamento de dados pessoais, dados sensíveis, bases legais e proteção de informações pessoais.",
+    assuntos: ["lgpd", "dados pessoais", "dados sensíveis", "imagem", "filmagem", "privacidade", "sigilo", "cadastro", "informação pessoal", "tratamento de dados"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 13.709/2018",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+  },
+  {
+    id: "lai",
+    categoria: "Dados e informação",
+    titulo: "Lei de Acesso à Informação",
+    lei: "Lei nº 12.527, de 18 de novembro de 2011",
+    apelido: "LAI",
+    enquadramento: "Acesso a informações públicas, transparência, classificação de sigilo e proteção de informações pessoais.",
+    assuntos: ["lai", "acesso à informação", "acesso a informação", "transparência", "sigilo", "informação pública", "documento público", "pedido de informação"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 12.527/2011",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm"
+  },
+  {
+    id: "defesa-civil",
+    categoria: "Bombeiro e Defesa Civil",
+    titulo: "Política Nacional de Proteção e Defesa Civil",
+    lei: "Lei nº 12.608, de 10 de abril de 2012",
+    apelido: "PNPDEC",
+    enquadramento: "Sistema Nacional de Proteção e Defesa Civil, ações de prevenção, mitigação, preparação, resposta e recuperação em desastres.",
+    assuntos: ["defesa civil", "desastre", "enchente", "alagamento", "deslizamento", "proteção e defesa civil", "bombeiro", "emergência", "risco", "resposta a desastre"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 12.608/2012",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12608.htm"
+  },
+  {
+    id: "prevencao-incendio",
+    categoria: "Bombeiro e Defesa Civil",
+    titulo: "Lei de Prevenção e Combate a Incêndio e a Desastres",
+    lei: "Lei nº 13.425, de 30 de março de 2017",
+    apelido: "Lei Kiss",
+    enquadramento: "Diretrizes gerais sobre medidas de prevenção e combate a incêndio e a desastres em estabelecimentos, edificações e áreas de reunião de público.",
+    assuntos: ["incêndio", "incendio", "bombeiro", "vistoria", "alvará", "prevencao", "combate a incêndio", "desastre", "boate kiss", "reunião de público", "segurança contra incêndio"],
+    atualizacao: "Texto oficial — conferido em 06/05/2026.",
+    fonteNome: "Planalto — Lei nº 13.425/2017",
+    fonteUrl: "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13425.htm"
+  }
+];
+
+if (typeof window !== "undefined") {
+  window.BASE_LEGAL_ITENS = BASE_LEGAL_ITENS;
+}

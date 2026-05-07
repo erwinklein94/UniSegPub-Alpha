@@ -633,3 +633,217 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
+
+
+/* ============================================================
+   Revisão 2026-05-06D — Comparador simplificado
+   Mantém os mesmos IDs e funções principais, mas melhora a leitura:
+   filtro simples, busca textual, lista sempre aberta e cartões como saída principal.
+   ============================================================ */
+
+function comparadorNormalizarTextoBusca(texto) {
+  return String(texto || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+
+function comparadorFiltrarLista() {
+  const lista = getComparadorSelect();
+  const busca = comparadorNormalizarTextoBusca(document.getElementById('comparador-busca')?.value || '');
+  const esfera = String(document.getElementById('comparador-esfera')?.value || '').trim().toLowerCase();
+  const avisoVazio = document.getElementById('comparador-lista-vazia');
+  if (!lista) return;
+
+  let opcoesVisiveis = 0;
+
+  lista.querySelectorAll('.comparador-check-option').forEach(label => {
+    const check = label.querySelector('input[type="checkbox"]');
+    const valor = check?.value || '';
+    const texto = comparadorNormalizarTextoBusca(label.textContent || '');
+    const esferaItem = typeof getEsferaConsultaInstituicao === 'function'
+      ? getEsferaConsultaInstituicao(valor)
+      : '';
+    const bateEsfera = !esfera || esferaItem === esfera;
+    const bateBusca = !busca || texto.includes(busca);
+    const visivel = bateEsfera && bateBusca;
+
+    label.hidden = !visivel;
+    label.classList.toggle('is-hidden', !visivel);
+    if (visivel) opcoesVisiveis += 1;
+  });
+
+  lista.querySelectorAll('.comparador-check-grupo').forEach(grupo => {
+    const temVisivel = Array.from(grupo.querySelectorAll('.comparador-check-option')).some(label => !label.hidden);
+    grupo.hidden = !temVisivel;
+    grupo.classList.toggle('is-hidden', !temVisivel);
+  });
+
+  if (avisoVazio) avisoVazio.hidden = opcoesVisiveis > 0;
+}
+
+function comparadorAlterarEsfera(esfera) {
+  popularInstituicoesComparadorPorEsfera(esfera, '');
+  comparadorFiltrarLista();
+}
+
+function comparadorResumoValor(valor, fallback = 'Dados em breve') {
+  const texto = String(valor || '').replace(/\s+/g, ' ').trim();
+  return texto || fallback;
+}
+
+function comparadorLinkDuplo(c, r) {
+  return `
+    <div class="comparador-card-links">
+      ${linkComparador(c.site || r.fonteUrl, 'Fonte do concurso')}
+      ${linkComparador(r.fonteUrl, 'Fonte remuneratória')}
+    </div>
+  `;
+}
+
+function carregarComparadorCarreiras() {
+  const tbody = document.getElementById('comparador-tabela');
+  const cards = document.getElementById('comparador-cards');
+  const resumo = document.getElementById('comparador-resumo');
+  const wrap = document.getElementById('comparador-tabela-wrap');
+  const detalhesTabela = document.getElementById('comparador-tabela-detalhes');
+  if (!tbody || !cards || !resumo || !wrap) return;
+
+  atualizarResumoSelecaoComparador();
+  comparadorFiltrarLista();
+
+  const selecionadas = getSelecionadasComparador();
+  if (selecionadas.length < 2) {
+    resumo.innerHTML = '';
+    tbody.innerHTML = '';
+    cards.innerHTML = `
+      <div class="comparador-vazio comparador-vazio--simples">
+        <strong>Selecione pelo menos duas instituições.</strong>
+        <span>Use a pesquisa, marque as carreiras desejadas e o comparativo aparecerá automaticamente aqui.</span>
+      </div>
+    `;
+    wrap.style.display = 'none';
+    if (detalhesTabela) detalhesTabela.style.display = 'none';
+    return;
+  }
+
+  wrap.style.display = '';
+  if (detalhesTabela) detalhesTabela.style.display = '';
+  const dados = selecionadas.map(getDadosComparador);
+
+  const menores = dados.map(d => d.remuneracao.menor).filter(v => v > 0);
+  const maiores = dados.map(d => d.remuneracao.maior).filter(v => v > 0);
+  const melhorInicial = dados
+    .filter(d => d.remuneracao.menor > 0)
+    .sort((a, b) => b.remuneracao.menor - a.remuneracao.menor)[0];
+  const melhorTopo = dados
+    .filter(d => d.remuneracao.maior > 0)
+    .sort((a, b) => b.remuneracao.maior - a.remuneracao.maior)[0];
+
+  resumo.innerHTML = `
+    <div class="comparador-stat">
+      <span>Comparadas</span>
+      <strong>${dados.length}</strong>
+    </div>
+    <div class="comparador-stat">
+      <span>Menor base cadastrada</span>
+      <strong>${menores.length ? fmt(Math.min(...menores)) : 'Dados em breve'}</strong>
+    </div>
+    <div class="comparador-stat">
+      <span>Maior teto cadastrado</span>
+      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'Dados em breve'}</strong>
+    </div>
+    <div class="comparador-stat">
+      <span>Destaques</span>
+      <strong>${melhorInicial ? escapeHtml(melhorInicial.sigla) + ' base' : 'Sem base'} · ${melhorTopo ? escapeHtml(melhorTopo.sigla) + ' teto' : 'Sem teto'}</strong>
+    </div>
+  `;
+
+  tbody.innerHTML = dados.map(d => {
+    const c = d.concurso;
+    const r = d.remuneracao;
+    return `
+      <tr>
+        <td>
+          <strong>${escapeHtml(d.sigla)}</strong><br>
+          ${escapeHtml(d.nome)}<br>
+          <span class="comparador-pill">${escapeHtml(d.uf)}</span>
+          <span class="comparador-pill">${escapeHtml(d.ramo)}</span>
+        </td>
+        <td>
+          <strong>Base:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'}<br>
+          <small>${escapeHtml(r.cargoMenor)}</small><br>
+          <strong>Teto:</strong> ${r.maior ? fmt(r.maior) : 'Dados em breve'}<br>
+          <small>${escapeHtml(r.cargoMaior)}</small>
+        </td>
+        <td>${escapeHtml(limitarTextoComparador(r.adicionais, 240))}</td>
+        <td>
+          <strong>Edital:</strong> ${escapeHtml(c.edital || 'Dados em breve')}<br>
+          <strong>Andamento:</strong> ${escapeHtml(limitarTextoComparador(c.previsao, 160))}
+        </td>
+        <td>
+          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}<br>
+          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Dados em breve')}
+        </td>
+        <td>
+          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}<br>
+          <strong>Matérias:</strong> ${escapeHtml(limitarTextoComparador(c.materias, 190))}
+        </td>
+        <td>
+          ${linkComparador(c.site || r.fonteUrl, 'Concurso')}<br>
+          ${linkComparador(r.fonteUrl, 'Remuneração')}
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  cards.innerHTML = dados.map(d => {
+    const c = d.concurso;
+    const r = d.remuneracao;
+    return `
+      <article class="comparador-card comparador-card--simples">
+        <header class="comparador-card-cabecalho">
+          <div>
+            <h3>${escapeHtml(d.sigla)}</h3>
+            <p>${escapeHtml(d.nome)}</p>
+          </div>
+          <div class="comparador-card-tags">
+            <span class="comparador-pill">${escapeHtml(d.uf)}</span>
+            <span class="comparador-pill">${escapeHtml(d.ramo)}</span>
+          </div>
+        </header>
+
+        <div class="comparador-card-metricas">
+          <div>
+            <span>Base cadastrada</span>
+            <strong>${r.menor ? fmt(r.menor) : 'Dados em breve'}</strong>
+            <small>${escapeHtml(comparadorResumoValor(r.cargoMenor))}</small>
+          </div>
+          <div>
+            <span>Teto cadastrado</span>
+            <strong>${r.maior ? fmt(r.maior) : 'Dados em breve'}</strong>
+            <small>${escapeHtml(comparadorResumoValor(r.cargoMaior))}</small>
+          </div>
+          <div>
+            <span>Concurso</span>
+            <strong>${escapeHtml(comparadorResumoValor(c.vagas, 'Dados em breve'))}</strong>
+            <small>${escapeHtml(comparadorResumoValor(c.edital, 'Edital em breve'))}</small>
+          </div>
+          <div>
+            <span>Banca</span>
+            <strong>${escapeHtml(limitarTextoComparador(c.banca || 'Dados em breve', 70))}</strong>
+            <small>${escapeHtml(limitarTextoComparador(c.previsao || 'Dados em breve', 90))}</small>
+          </div>
+        </div>
+
+        <div class="comparador-card-notas">
+          <p><strong>Benefícios / vantagens:</strong> ${escapeHtml(limitarTextoComparador(r.adicionais, 220))}</p>
+          <p><strong>Matérias / etapas:</strong> ${escapeHtml(limitarTextoComparador(c.materias || c.etapas || 'Dados em breve', 180))}</p>
+        </div>
+
+        ${comparadorLinkDuplo(c, r)}
+      </article>
+    `;
+  }).join('');
+}

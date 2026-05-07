@@ -1,0 +1,60 @@
+<main class="page-section active" id="page-baselegal" role="main">
+<div class="card base-legal-page">
+<section aria-labelledby="base-legal-titulo" class="base-legal-hero">
+<div class="base-legal-hero-copy">
+<span class="base-legal-eyebrow">Consulta rápida</span>
+<h2 id="base-legal-titulo">Base Legal Operacional</h2>
+<p>Pesquise por assunto, ocorrência ou palavra-chave para encontrar a lei principal, o enquadramento inicial e a fonte oficial. Funciona com ou sem instituição selecionada.</p>
+</div>
+<div class="base-legal-hero-box" aria-label="Exemplos de busca">
+<strong>Exemplos úteis</strong>
+<div class="base-legal-exemplos" id="base-legal-exemplos">
+<button data-base-legal-exemplo="homicídio" type="button">homicídio</button>
+<button data-base-legal-exemplo="flagrante" type="button">flagrante</button>
+<button data-base-legal-exemplo="arma de fogo" type="button">arma de fogo</button>
+<button data-base-legal-exemplo="Maria da Penha" type="button">Maria da Penha</button>
+<button data-base-legal-exemplo="incêndio" type="button">incêndio</button>
+</div>
+</div>
+</section>
+
+<section aria-label="Pesquisa da base legal" class="base-legal-busca-card">
+<div class="field base-legal-busca-field">
+<label for="base-legal-busca">Pesquisar por palavra-chave</label>
+<div class="base-legal-input-row">
+<input autocomplete="off" id="base-legal-busca" placeholder="Digite: homicídio, drogas, flagrante, trânsito, abuso de autoridade..." type="search"/>
+<button class="btn-secondary" id="base-legal-limpar" type="button">Limpar</button>
+</div>
+<small id="base-legal-sugestao">Experimente: homicídio, flagrante, arma, drogas, Maria da Penha, trânsito, incêndio, abuso de autoridade.</small>
+</div>
+<div aria-label="Categorias de leis" class="base-legal-categorias" id="base-legal-categorias"></div>
+</section>
+
+<!-- BLOCO — Espaço comercial na Base Legal -->
+<aside aria-label="Espaço de anúncio: Base Legal antes dos resultados" class="ad-slot ad-slot--inline" data-ad-area="base_legal_antes_resultado">
+<a class="ad-placeholder-link" href="anuncie.html?area=base_legal_antes_resultado">
+<span class="ad-label">Publicidade</span>
+<strong>Anuncie aqui</strong>
+<small>Espaço para cursos jurídicos, livros, preparação operacional e soluções voltadas à segurança pública.</small>
+</a>
+</aside>
+
+<section aria-label="Resultados da pesquisa legislativa" class="base-legal-resultados-card">
+<div class="base-legal-resultados-head">
+<div>
+<span class="base-legal-eyebrow">Resultado</span>
+<h3>Leis encontradas</h3>
+</div>
+<strong id="base-legal-contador">0 resultados</strong>
+</div>
+<div class="base-legal-alerta">
+<strong>Atenção:</strong> esta base é uma consulta informativa inicial. A aplicação concreta da lei depende do fato, da competência, do procedimento da corporação, de orientação jurídica e da fonte oficial atualizada.
+</div>
+<div class="base-legal-vazio" hidden="" id="base-legal-vazio">
+<strong>Nenhuma lei encontrada.</strong>
+<span>Tente uma palavra mais ampla, como “crime”, “prisão”, “arma”, “trânsito”, “criança”, “idoso”, “bombeiro” ou “abuso”.</span>
+</div>
+<div class="base-legal-resultados" id="base-legal-resultados"></div>
+</section>
+</div>
+</main>

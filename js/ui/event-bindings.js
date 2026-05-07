@@ -157,6 +157,7 @@
     bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
     bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
     bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindInput('#comparador-busca', () => safeCall('comparadorFiltrarLista'));
     bindClick('[data-action="comparador-adicionar-instituicao"]', () => safeCall('comparadorAdicionarInstituicaoSelecionada'));
     bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
 

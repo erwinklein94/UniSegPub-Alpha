@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260505homeupdatecard1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260506mobilelight1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -150,9 +150,8 @@
 <span id="header-label-dados-atualizados">Dados de atualização do site</span>
 <strong id="header-resumo-dados-atualizados">Calculando...</strong>
 </div>
-</aside>
-</div>
-<div class="header-controls-grid">
+
+<div class="header-controls-grid header-controls-grid--summary">
 <div aria-label="Escolha rápida de instituição" class="header-inst-selector">
 <label for="instituicao_header">Consultar instituição</label>
 <select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
@@ -180,6 +179,8 @@
 </button>
 </div>
 </div>
+</div>
+</aside>
 </div>
 </section>
 <div aria-label="Bandeiras dos estados disponíveis no site" class="header-state-flags">
@@ -346,6 +347,11 @@
 <span class="sidebar-link-text">Poderes e Deveres</span>
 <small>Leis, limites e competências</small>
 </a>
+<a href="base-legal.html" id="menu-baselegal" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
+<span class="sidebar-link-text">Base Legal</span>
+<small>Leis e enquadramentos</small>
+</a>
 <a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
 <span class="sidebar-link-text">Brasões e história</span>
@@ -391,7 +397,7 @@
 </nav>
 <!-- BLOCO 03.4.3 — Rede social destacada -->
 <div aria-label="Redes sociais" class="sidebar-social">
-<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&amp;utm_source=qr" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
+<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegpub" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
 <span aria-hidden="true">📷</span>
 <strong>Seguir no Instagram</strong>
 </a>
@@ -555,8 +561,7 @@
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
 <div aria-label="Aviso institucional do portal" class="footer-disclaimer">
-<p><strong>Universo Segurança Pública</strong> é um portal informativo independente. Não é órgão governamental, não representa governos estaduais e não pertence às instituições mencionadas.</p>
-<p class="small-note">As informações são organizadas a partir de fontes públicas, legislações, editais e canais oficiais quando disponíveis. Valores, direitos, requisitos e prazos podem mudar: confira sempre o holerite, o regulamento, o edital e os canais oficiais da instituição.</p>
+<p><strong>Universo Segurança Pública</strong> é um portal informativo independente e não governamental, criado para organizar consultas sobre instituições de segurança pública a partir de fontes públicas, legislações, editais e canais oficiais quando disponíveis. As informações servem como referência inicial e podem mudar conforme cargo, legislação, regulamento, edital, holerite e atualização dos órgãos competentes.</p>
 <p class="small-note footer-credit">Desenvolvido por <strong>LOCKSTAGE</strong>.</p>
 </div>
 </footer>
@@ -572,20 +577,20 @@
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
 <!-- Scripts divididos por página para evitar carregar funcionalidades desnecessárias. -->
-<script defer="" src="js/data/parametros-cargos.js"></script>
+<script defer="" src="js/data/parametros-cargos.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/policia-penal.js"></script>
 <script defer="" src="js/data/acoes-judiciais-data.js"></script>
 <script defer="" src="js/data/associacoes-data.js"></script>
 <script defer="" src="js/data/concursos-data.js"></script>
-<script defer="" src="js/data/portal-config.js"></script>
+<script defer="" src="js/data/portal-config.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
 <script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
-<script defer="" src="js/services/remuneracao.js?v=20260503prf1"></script>
+<script defer="" src="js/services/remuneracao.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
-<script defer="" src="js/ui/header-estados.js?v=20260503headercompact1"></script>
+<script defer="" src="js/ui/header-estados.js?v=20260506bmba1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
-<script defer="" src="js/ui/event-bindings.js?v=20260503homeinst1"></script>
-<script defer="" src="js/core/page-context.js"></script>
+<script defer="" src="js/ui/event-bindings.js?v=20260506comparador4"></script>
+<script defer="" src="js/core/page-context.js?v=20260506baselegal1"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 </body>
 </html>

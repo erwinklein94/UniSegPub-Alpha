@@ -9,6 +9,7 @@ const HEADER_ESTADOS = {
     nome: 'Acre',
     sigla: 'AC',
     pm: 'pmac',
+    bm: 'bmac',
     pc: 'pcac',
     pp: 'ppac',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg'
@@ -97,6 +98,7 @@ const HEADER_ESTADOS = {
 
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
+  bmac: { titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
   ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
   pmesp: { titulo: 'PMESP', desc: 'Polícia Militar do Estado de São Paulo' },
@@ -2425,25 +2427,39 @@ function criarResumoFederalEstrutura(item) {
     return {
       nome: 'Polícia Federal',
       sigla: 'PF',
+      siglaInterna: 'PF',
       estado: 'Brasil',
       estadoSigla: 'BR',
-      tipo: 'Polícia Federal',
-      criacao: '16/11/1964 · Lei nº 4.483/1964 reorganizou o DFSP com atuação federal; órgão permanente no art. 144 da Constituição Federal',
-      ativa: 15000,
-      ativaLabel: '≈15.000 servidores ativos · estimativa PEP/Portal da Transparência 2026',
-      reserva: 5000,
-      reservaLabel: '≈5.000 aposentados e pensionistas · estimativa PEP/Portal da Transparência 2026',
-      femininas: 2500,
-      femininasLabel: '≈2.500 mulheres no quadro ativo · estimativa por sexo/cargo no PEP 2026',
-      populacao: 213000000,
-      populacaoTitulo: 'Abrangência nacional',
-      populacaoLabel: 'Brasil inteiro · competência federal, fronteiras, portos, aeroportos, migração, passaportes, armas, segurança privada e cooperação internacional',
-      relacaoLabel: 'Cobertura nacional por matéria federal; efetivo ativo estimado em cerca de 15 mil servidores',
-      relacaoTitulo: 'Cobertura institucional',
-      governador: 'Governo Federal / Ministério da Justiça e Segurança Pública',
+      tipo: 'Polícia Federal / Polícia Judiciária da União',
+      criacao: 'Órgão permanente de segurança pública federal — art. 144, §1º, da Constituição Federal; carreira reorganizada pela Lei nº 9.266/1996',
+      ativa: 15700,
+      ativaLabel: '≈ 15,7 mil servidores ativos — estimativa pública de ordem de grandeza com base no eGP/PF 2025 T4 e no PEP/MGI; não expõe lotação nem distribuição sensível',
+      reserva: 9000,
+      reservaLabel: '≈ 9 mil vínculos de aposentados e pensionistas — estimativa orientativa para a aba institucional; conferir PEP/Portal da Transparência antes de uso administrativo',
+      femininas: 3000,
+      femininasLabel: '≈ 3 mil mulheres no quadro ativo/institucional — estimativa conservadora para dar noção ao usuário; recorte exato por sexo deve ser conferido no PEP/MGI',
+      efetivoTotalLabel: '≈ 15,7 mil ativos em base pública 2025 T4; recomposição autorizada em 2026 pode elevar a ordem de grandeza para a faixa de 16,7–17,7 mil após formação, nomeação e posse',
+      populacao: 213400000,
+      populacaoTitulo: 'População estimada do Brasil em 2025 — IBGE',
+      populacaoLabel: '213,4 milhões de habitantes — abrangência nacional',
+      relacaoLabel: '≈ 1 servidor ativo da PF para cada 13,6 mil habitantes',
+      relacaoTitulo: 'Razão estimada: população nacional de 213,4 milhões ÷ cerca de 15,7 mil servidores ativos; usar como noção de escala, não como indicador operacional de policiamento ostensivo',
+      governador: 'Presidência da República / Ministério da Justiça e Segurança Pública',
       comando: 'Andrei Augusto Passos Rodrigues — Diretor-Geral da Polícia Federal',
-      fonte: 'Polícia Federal/Gov.br; PEP/MGI; Portal da Transparência/CGU; Lei nº 14.875/2024; Decreto nº 11.348/2023; Portaria MJSP nº 1.112/2025; edital PF 2025/Cebraspe',
-      atualizado: 'Pesquisa em 03/05/2026 · estrutura PF atualizada em 28/02/2026 · efetivo ativo estimado com base PEP/Transparência'
+      estrutura: 'Diretoria-Geral, Gabinete, DIREX, DPA, DICOR, DAMAZ, DCIBER, DCI, DIP, DITEC, DGP, DIREN-ANP, DLOG, DTI, DPP, COGER e Superintendências Regionais, conforme estrutura institucional publicada pela PF.',
+      sede: 'Brasília/DF — Diretoria-Geral da Polícia Federal',
+      emergencia: 'Atendimento institucional; contato da Direção-Geral: (61) 2024-8000',
+      linksOficiais: [
+        'https://www.gov.br/pf/pt-br',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/competencias',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/estruturas',
+        'https://www.gov.br/pf/pt-br/composicao/direcao-geral/dg',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/servidores-ativos',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos',
+        'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/painel-estatistico-de-pessoal'
+      ],
+      fonte: 'Polícia Federal/Gov.br; Constituição Federal art. 144; Lei nº 9.266/1996; Lei nº 11.358/2006; Lei nº 14.875/2024, Anexo XXVI; Decreto nº 11.348/2023; Portaria MJSP nº 1.112/2025; PEP/MGI; eGP/PF Dados Abertos 2025 T4; Portal da Transparência; IBGE; Cebraspe/PF 2025',
+      atualizado: 'PF revisada em 06/05/2026 — remuneração 2026 detalhada; efetivo e recortes populacionais exibidos como estimativas identificadas, com cautela de conferência PEP/MGI'
     };
   }
 
@@ -2508,6 +2524,7 @@ function criarResumoFederalEstrutura(item) {
 }
 
 function criarCargosPfEstrutura(inst, sigla) {
+  if (typeof CARGOS_PF !== 'undefined' && Array.isArray(CARGOS_PF) && CARGOS_PF.length) return CARGOS_PF;
   const fonteKey = 'pf';
   const criterio = 'Subsídio federal da carreira policial federal, valores com efeitos a partir de 01/05/2026 conforme Lei nº 14.875/2024, Anexo XXVI, e Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026.';
   const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação R$ 1.192,00; assistência pré-escolar R$ 526,64 quando devida; assistência à saúde suplementar por faixa etária/remuneração; indenização de fronteira R$ 91,00 por dia quando houver exercício em localidade prevista; diárias, ajuda de custo, transporte, adicional de férias e gratificação natalina conforme legislação.';
@@ -2689,7 +2706,7 @@ function aplicarEstruturaFederaisDados() {
     HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
     HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
     if (item.inst === 'pf') {
-      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; Lei nº 14.875/2024; Polícia Federal — servidores, estrutura e concursos', url: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios' };
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'Lei nº 14.875/2024, Anexo XXVI — subsídio PF com efeitos em 01/05/2026; MGI/Gov.br — benefícios federais 2026; PF/Gov.br — servidores, estrutura e concursos', url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14875.htm' };
     } else if (item.inst === 'prf') {
       REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'Lei nº 14.875/2024, Anexo XXVII — subsídio PRF com efeitos em 01/05/2026; PRF/Gov.br — carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' };
     } else {
@@ -2857,6 +2874,386 @@ function aplicarEstruturaBombeirosMilitaresDados() {
     ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesBombeiroEstrutura(item, estado.nome || item.nome);
     if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) CARGOS_ESTRUTURA_GENERICAS[item.inst] = criarCargosBombeiroEstrutura(item.inst, tituloBombeiro);
   });
+}
+
+
+function aplicarDadosEspecificosBmac() {
+  const inst = 'bmac';
+  if (HEADER_ESTADOS.ac) HEADER_ESTADOS.ac.bm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMAC',
+    desc: 'Corpo de Bombeiros Militar do Acre'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Acre',
+    sigla: 'BMAC',
+    siglaInterna: 'CBMAC',
+    estado: 'Acre',
+    estadoSigla: 'AC',
+    tipo: 'Bombeiro Militar',
+    criacao: '1974 · separação administrativa da PM em 1991',
+    ativa: 689,
+    ativaLabel: '≈ 690 militares ativos — estimativa de ordem de grandeza: efetivo oficial de 633 militares divulgado no balanço de 2024, acrescido da formatura de 56 novos soldados em 2025; conferir folha/portal de pessoal para número exato',
+    reserva: 500,
+    reservaLabel: '≈ 500 inativos/reserva — estimativa técnica para dar noção de grandeza; conferir Acreprevidência e demonstrativos oficiais antes de uso jurídico ou remuneratório',
+    femininas: 120,
+    femininasLabel: '≈ 120 mulheres — estimativa técnica com base em vagas femininas do concurso de aluno-soldado e composição histórica; não usar como quantitativo oficial fechado',
+    populacao: 884372,
+    populacaoLabel: '884.372 habitantes',
+    populacaoTitulo: 'População estimada do Acre em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: '≈ 1 militar ativo para cada 1,3 mil habitantes',
+    relacaoTitulo: 'Relação estimada ativa/população: 884.372 habitantes ÷ ≈ 689 ativos',
+    governador: 'Mailza Assis',
+    comando: 'Cel QOBM Charles da Silva Santos — Comandante-Geral do CBMAC',
+    estrutura: 'Comando-Geral em Rio Branco, nove unidades operacionais e três administrativas; atuação direta em Rio Branco, Epitaciolândia, Cruzeiro do Sul, Sena Madureira, Tarauacá, Feijó e Xapuri, com resposta operacional também em Bujari, Porto Acre, Senador Guiomard, Brasileia, Rodrigues Alves e Mâncio Lima, além de prontidão nos aeroportos de Rio Branco e Cruzeiro do Sul.',
+    sede: 'Comando-Geral do CBMAC — Rio Branco/AC',
+    emergencia: '193',
+    fonte: 'Agência de Notícias do Acre; Portal do Estado do Acre; ALEAC; IBGE; SEAD/AC; IBFC',
+    atualizado: 'BMAC revisado em 06/05/2026 — números de efetivo, reserva e mulheres exibidos como estimativas identificadas; remuneração detalhada por tabela PMAC/CBMAC'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'Portal do Estado do Acre e ALEAC — tabela PMAC/CBMAC e leis dos militares estaduais; referência remuneratória de julho/2018 já cadastrada no portal',
+    url: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/'
+  };
+
+  if (typeof CARGOS_BMAC !== 'undefined' && Array.isArray(CARGOS_BMAC) && CARGOS_BMAC.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAC;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAC',
+    desc: 'Corpo de Bombeiros Militar do Acre',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAC/CBMAC: conferir LC AC 164/2006, LC AC 349/2018, Lei AC 2.009/2008, Lei AC 2.010/2008, banco de horas, auxílio-aptidão militar, serviço complementar, localização especial, reserva/reforma e contracheque. Não somar rubricas sem ato funcional e escala.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAC/CBMAC — Concurso público 2022 para Aluno Soldado Combatente · IBFC · 153 vagas; atos de convocação e formação em 2025',
+    salario: 'Remuneração inicial divulgada no edital/notícia oficial: R$ 4.344,22 para Aluno Soldado. Na tabela remuneratória do site, a referência de Soldado BM Nível I é R$ 5.007,40 e Soldado BM Nível II é R$ 5.207,53, com base na tabela PMAC/CBMAC cadastrada; confirmar atualização no DOE, SEAD/AC e contracheque.',
+    vagas: '153 vagas no edital de 2022: 122 para aluno soldado combatente masculino e 31 para aluno soldado combatente feminino; 56 novos soldados formados em 2025 reforçaram unidades do interior.',
+    cotas: 'Conferir reserva de vagas, sexo, classificação e regras do edital IBFC/CBMAC e atos complementares.',
+    idade: 'No edital divulgado em 2022: idade mínima de 18 anos e máxima de 30 anos, além de CNH, requisitos físicos, médicos, psicológicos, toxicológicos, investigação social e demais exigências.',
+    escolaridade: 'Nível superior completo para aluno soldado combatente, conforme notícia oficial do edital 2022; conferir diploma e requisitos do edital.',
+    banca: 'IBFC — Instituto Brasileiro de Formação e Capacitação.',
+    inscritos: 'Consultar IBFC/SEAD/DOE para total de inscritos e atos finais.',
+    materias: 'Prova objetiva, conforme edital IBFC/CBMAC; conferir disciplinas oficiais do edital antes de publicar material preparatório.',
+    etapas: 'Prova objetiva, prova de aptidão física, exame psicotécnico, exame médico e toxicológico, investigação criminal e social e Curso de Formação.',
+    cfsd: 'Curso de Formação de Soldados Bombeiro Militar, com carga mínima divulgada de 1.600 horas-aula na convocação e turma de 2025 com 1.985 horas-aula, incluindo estágio prático.',
+    estagio: 'Estágio prático e exercício inicial em unidades operacionais, conforme normas de ensino, disciplina militar e atos do CBMAC.',
+    validade: 'Conferir validade, homologação, prorrogações e convocações no DOE/SEAD/IBFC; o concurso de 2022 teve atos de matrícula e formação em 2025.',
+    previsao: 'Não afirmar novo concurso aberto sem edital no DOE/SEAD. O portal deve tratar o concurso 2022/2025 como histórico recente e monitorar novas autorizações.',
+    site: 'https://sead.ac.gov.br/editais-cbmac-corpo-de-bombeiros-militar-do-estado-do-acre/'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAC — tabela PMAC/CBMAC, enquadramento e progressão', status: 'Conferência individual', ano: 'LC AC 164/2006 · LC AC 349/2018', tipo: 'individual', desc: 'Verificar se posto/graduação, nível, promoções, enquadramento e reflexos foram implantados conforme tabela dos militares estaduais do Acre. Diferenças dependem de ficha funcional e contracheque.', base: 'LC AC 164/2006, LC AC 349/2018, tabela PMAC/CBMAC, boletins, atos de promoção e fichas financeiras.', fonte: 'Portal do Estado do Acre / ALEAC', fonteUrl: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/', atualizado: 'Maio/2026' },
+    { titulo: 'BMAC — serviço complementar, banco de horas, escala e localização especial', status: 'Depende de escala e ato', ano: 'Lei AC 2.148/2009 e normas correlatas', tipo: 'individual', desc: 'Pode haver conferência quando o militar cumpriu serviço extra, banco de horas, missão, plantão, lotação especial ou função de chefia sem pagamento correto. Não tratar como direito automático para toda a tropa.', base: 'Lei AC 2.148/2009, Decreto regulamentar, escalas, boletins, ordem de serviço, lotação, contracheques e ato de designação.', fonte: 'Portal do Estado do Acre / DOE/AC', fonteUrl: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/', atualizado: 'Maio/2026' },
+    { titulo: 'BMAC — reserva, reforma, pensão militar e proteção social', status: 'Análise individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir data de ingresso, tempo militar, idade, posto/graduação, reforma por incapacidade, paridade/integralidade quando cabível e cálculo de proventos/pensão.', base: 'Estatuto dos Militares do Acre, normas de proteção social militar, Acreprevidência, ficha funcional e processo de reserva/reforma.', fonte: 'Acreprevidência / Portal do Estado do Acre', fonteUrl: 'https://estado.ac.gov.br/', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'AME-AC — Associação dos Militares Estaduais do Acre', foco: 'Policiais militares, bombeiros militares, veteranos, pensionistas e familiares no Acre', acao: 'Representação associativa, acompanhamento de pautas da carreira militar estadual, valorização profissional, previdência, assistência e comunicação institucional.', site: 'https://ameac.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, eventual apoio jurídico conforme contrato, eventos e acompanhamento institucional.' },
+    { nome: 'CBSAÚDE — Cooperativa de Saúde dos Servidores Públicos do Corpo de Bombeiros do Acre', foco: 'Comunidade vinculada ao Corpo de Bombeiros Militar do Acre e projetos apoiados pela corporação', acao: 'Apoio em iniciativas de saúde e atendimento vinculadas ao ambiente institucional do CBMAC, conforme parcerias divulgadas publicamente.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento/apoio de saúde conforme parceria, regra interna e disponibilidade institucional.' },
+    { nome: 'Entidades representativas dos militares estaduais do Acre', foco: 'Oficiais e praças da PMAC e do BMAC/CBMAC, ativos, reserva, reformados e pensionistas', acao: 'Espaço para cadastrar entidades locais adicionais que atuem com remuneração, carreira, promoções, saúde, reserva/reforma e condições de serviço.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, comunicação institucional, convênios, orientação ao associado e acompanhamento de demandas administrativas e judiciais.' }
+  ];
+}
+
+function aplicarDadosEspecificosBmal() {
+  const inst = 'bmal';
+  const estado = 'al';
+  const efetivoLegal = 3246;
+  const populacaoAl = 3220848;
+  const relacao = Math.round(populacaoAl / efetivoLegal);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Alagoas',
+    sigla: 'AL',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
+  };
+  HEADER_ESTADOS[estado].bombeiro = inst;
+  HEADER_ESTADOS[estado].bm = inst;
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar de Alagoas',
+    sigla: 'BMAL',
+    siglaInterna: 'CBMAL',
+    estado: 'Alagoas',
+    estadoSigla: 'AL',
+    tipo: 'Bombeiro Militar',
+    criacao: 'Estrutura militar estadual consolidada; organização básica moderna pela Lei AL nº 7.444/2012 e efetivo fixado pela Lei AL nº 8.668/2022',
+    ativa: efetivoLegal,
+    ativaLabel: '≈ 3,2 mil bombeiros militares — referência legal de efetivo fixado pela Lei AL nº 8.668/2022; usar como estimativa/teto operacional até conferência em folha ou transparência',
+    reserva: 1800,
+    reservaLabel: '≈ 1,8 mil vínculos de reserva, reforma e pensionistas — estimativa técnica para noção do usuário; conferir AL Previdência, DOE/AL e folha antes de uso jurídico/remuneratório',
+    femininas: 450,
+    femininasLabel: '≈ 450 mulheres — estimativa técnica por composição provável da tropa e entradas recentes; não usar como quantitativo oficial fechado',
+    populacao: populacaoAl,
+    populacaoLabel: '3.220.848 habitantes',
+    populacaoTitulo: 'População estimada de Alagoas em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada população/efetivo: ${populacaoAl.toLocaleString('pt-BR')} habitantes ÷ ${efetivoLegal.toLocaleString('pt-BR')} bombeiros militares fixados em lei`,
+    governador: 'Paulo Dantas',
+    comando: 'Coronel BM Sérgio André Silva Verçosa — Comandante-Geral do CBMAL',
+    estrutura: 'Comando-Geral, Comando Operacional de Bombeiros, Diretorias de Ensino, Pessoal, Apoio Logístico, Finanças e Tecnologia da Informação, unidades operacionais, atividades técnicas, prevenção, combate a incêndio, busca e salvamento, atendimento pré-hospitalar, defesa civil e análise/vistoria de segurança contra incêndio e pânico.',
+    sede: 'Comando-Geral do CBMAL — Maceió/AL',
+    emergencia: '193',
+    fonte: 'CBMAL; SAPL/ALEAL; Transparência/AL; DOE/AL; IBGE; SEPLAG/AL',
+    atualizado: 'BMAL revisado em 06/05/2026 — dados populacionais oficiais, efetivo por lei estadual e demais números exibidos como estimativas identificadas; remuneração estimada por tabela legal e RGAs até maio/2026'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'CBMAL, Transparência/AL e SAPL/ALEAL — Lei AL 7.580/2014, Lei AL 7.581/2014, Lei AL 8.668/2022 e revisões gerais até a Lei AL 9.852/2026; tabela exibida como estimativa técnica de maio/2026',
+    url: 'https://www.cbm.al.gov.br/paginas/legislacao'
+  };
+
+  if (typeof CARGOS_BMAL !== 'undefined' && Array.isArray(CARGOS_BMAL) && CARGOS_BMAL.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAL;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAL',
+    desc: 'Corpo de Bombeiros Militar de Alagoas',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAL/CBMAL: a tabela remuneratória é estimativa técnica de maio/2026 a partir da Lei AL 7.580/2014 e revisões gerais identificadas até a Lei AL 9.852/2026. Conferir DOE/AL, SEPLAG/AL, Portal da Transparência, ficha financeira e contracheque. Não somar serviço voluntário remunerado, adicional de compensação orgânica, diárias, uniforme, função, indenizações ou parcelas pessoais sem ato, escala e previsão legal.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAL/CBMAL — monitorar portal oficial do CBMAL, SEPLAG/AL, DOE/AL e banca designada; histórico recente de seleções para Soldado Combatente e Oficial Bombeiro Militar deve ser tratado como histórico, não como concurso aberto.',
+    salario: 'Referência remuneratória estimada do site: Aluno Soldado BM ≈ R$ 2.371,28; Soldado BM ≈ R$ 6.125,51; Cadete 1º ano ≈ R$ 3.901,74; Aspirante a Oficial BM ≈ R$ 11.674,25; confirmar valor inicial no edital vigente, pois edital pode usar bolsa/subsídio de formação específico.',
+    vagas: 'Consultar edital vigente para número de vagas por cargo, sexo, ampla concorrência, cotas, cadastro de reserva, especialidades e distribuição territorial.',
+    cotas: 'Conferir regras de reserva de vagas, heteroidentificação, PCD quando aplicável, sexo, idade, altura e demais exigências diretamente no edital vigente.',
+    idade: 'Critérios de idade, altura, CNH e aptidão física dependem do edital e da legislação estadual vigente; não aplicar regra genérica sem conferir o certame.',
+    escolaridade: 'Soldado/Aluno Soldado e Oficial/Cadete devem ser tratados conforme edital vigente; conferir nível exigido, diploma, CNH e requisitos militares.',
+    banca: 'A definir no edital vigente; monitorar SEPLAG/AL, DOE/AL, CBMAL e página da banca contratada.',
+    inscritos: 'Consultar banca/SEPLAG/DOE para total de inscritos, homologação, resultado final e convocações.',
+    materias: 'Disciplinas e pesos dependem do edital vigente; não publicar grade fechada sem conferir edital e retificações.',
+    etapas: 'Normalmente inclui prova objetiva, exames médicos, TAF, avaliação psicológica, investigação social, curso de formação e fases próprias da carreira militar; conferir edital vigente.',
+    cfsd: 'Curso de Formação de Praças Bombeiros Militares conforme Lei de Ensino, atos do CBMAL e edital; carga horária, bolsa/subsídio e regime disciplinar devem ser conferidos no edital.',
+    estagio: 'Estágio operacional e exercício inicial dependem de ato do CBMAL, boletim, curso de formação, lotação e necessidade operacional.',
+    validade: 'Conferir homologação, validade, prorrogação e convocações no DOE/AL, SEPLAG/AL, CBMAL e banca.',
+    previsao: 'Não afirmar novo concurso aberto sem edital publicado. Exibir como monitoramento permanente de carreira estadual militar.',
+    site: 'https://www.cbm.al.gov.br/paginas/view/4/concursos'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAL — subsídio, revisão geral anual e diferenças remuneratórias', status: 'Conferência individual', ano: 'Leis AL 7.580/2014 a 9.852/2026', tipo: 'individual', desc: 'Verificar se posto/graduação, Nível I/Nível II, revisões gerais, promoções e reflexos foram implantados corretamente em ficha financeira e contracheque. Não tratar a estimativa do portal como liquidação de valores.', base: 'Lei AL 7.580/2014, revisões gerais anuais, DOE/AL, ficha financeira, atos de promoção e contracheques.', fonte: 'CBMAL / SAPL-ALEAL / Transparência AL', fonteUrl: 'https://www.cbm.al.gov.br/paginas/legislacao', atualizado: 'Maio/2026' },
+    { titulo: 'BMAL — serviço voluntário remunerado, diárias, uniforme e adicionais', status: 'Depende de escala e ato', ano: 'Lei AL 7.581/2014 e normas correlatas', tipo: 'individual', desc: 'Conferir escala, autorização, jornada, limite mensal, diárias, verba de uniforme, adicional de compensação orgânica e eventuais indenizações. Serviço voluntário remunerado é eventual e não incorporável.', base: 'Lei AL 7.581/2014, decretos de diárias/uniforme, escala, boletim, ordem de serviço, lotação, ato administrativo e contracheque.', fonte: 'CBMAL / DOE-AL / Transparência AL', fonteUrl: 'https://www.cbm.al.gov.br/paginas/legislacao', atualizado: 'Maio/2026' },
+    { titulo: 'BMAL — fluxo de acesso, promoções, reserva/reforma e proteção social', status: 'Análise funcional', ano: 'Lei AL 8.668/2022 e normas militares estaduais', tipo: 'individual', desc: 'A Lei AL nº 8.668/2022 fixa efetivo, quadros e fluxo de acesso. Promoções, reserva, reforma, incapacidade, pensão e proteção social exigem análise de data de ingresso, tempo de serviço, quadro, posto/graduação, ficha funcional e atos publicados.', base: 'Lei AL 8.668/2022, Estatuto da PMAL aplicado aos militares estaduais, normas de promoção, proteção social militar e processo administrativo.', fonte: 'SAPL-ALEAL / CBMAL / DOE-AL', fonteUrl: 'https://sapl.al.al.leg.br/norma/2273', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'AMEAL — Associação dos Militares do Estado de Alagoas', foco: 'Militares estaduais de Alagoas, incluindo policiais e bombeiros militares, ativos, veteranos e pensionistas', acao: 'Acompanhamento de pautas remuneratórias, carreira, proteção social, representação associativa, comunicação institucional e eventual apoio ao associado conforme regras internas.', site: 'https://ameal.org.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, acompanhamento legislativo, comunicação de pautas, convênios e apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Entidades de oficiais e praças militares estaduais de Alagoas', foco: 'Oficiais, praças, reserva, reformados e pensionistas da PMAL e do CBMAL', acao: 'Espaço para cadastrar entidades locais adicionais ligadas a remuneração, promoções, carreira, saúde, reserva/reforma e condições de serviço.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, convênios, orientação ao associado e acompanhamento administrativo/judicial.' },
+    { nome: 'Canais institucionais do CBMAL', foco: 'Informação oficial para bombeiros militares e sociedade', acao: 'Publicações, legislação, diretoria, concursos, atividades técnicas, prevenção e comunicação institucional.', site: 'https://www.cbm.al.gov.br', telefone: 'Consultar portal oficial', mensalidade: 'Não se aplica', servicos: 'Legislação, notícias, concursos, normas técnicas, comunicação e serviços oficiais.' }
+  ];
+}
+
+
+function aplicarDadosEspecificosBmam() {
+  const inst = 'bmam';
+  const estado = 'am';
+  const efetivoEstimado = 1500;
+  const populacaoAm = 4321616;
+  const relacao = Math.round(populacaoAm / efetivoEstimado);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Amazonas',
+    sigla: 'AM',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg'
+  };
+  HEADER_ESTADOS[estado].bombeiro = inst;
+  HEADER_ESTADOS[estado].bm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMAM',
+    desc: 'Corpo de Bombeiros Militar do Amazonas'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Amazonas',
+    sigla: 'BMAM',
+    siglaInterna: 'CBMAM',
+    estado: 'Amazonas',
+    estadoSigla: 'AM',
+    tipo: 'Bombeiro Militar',
+    criacao: '1876 · 149 anos de história em 2025; emancipado/desvinculado da PMAM pela Emenda Constitucional AM nº 31/1998 e pela Lei AM nº 2.523/1998',
+    ativa: efetivoEstimado,
+    ativaLabel: '≈ 1,5 mil militares ativos — referência oficial de março/2026 informa que, após a formatura de 210 novos soldados, o efetivo ultrapassou 1,5 mil militares em atividade; valor exibido como estimativa operacional para orientar o usuário',
+    reserva: 900,
+    reservaLabel: '≈ 900 vínculos de reserva, reforma e pensionistas — estimativa técnica para dar ordem de grandeza; conferir Amazonprev, Portal da Transparência, SEAD/AM e folha antes de uso jurídico/remuneratório',
+    femininas: 230,
+    femininasLabel: '≈ 230 mulheres — estimativa técnica por composição provável da tropa e entradas recentes; não usar como quantitativo oficial fechado',
+    populacao: populacaoAm,
+    populacaoLabel: '4.321.616 habitantes',
+    populacaoTitulo: 'População estimada do Amazonas em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar ativo para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada população/efetivo: ${populacaoAm.toLocaleString('pt-BR')} habitantes ÷ ≈ ${efetivoEstimado.toLocaleString('pt-BR')} militares ativos`,
+    governador: 'Wilson Miranda Lima',
+    comando: 'Coronel QOBM Orleilso Ximenes Muniz — Comandante-Geral do CBMAM',
+    estrutura: 'Comando-Geral em Manaus, órgãos de direção, apoio e execução, Diretoria de Atividades Técnicas, unidades operacionais, prevenção e combate a incêndio, busca e salvamento, atendimento pré-hospitalar, defesa civil, produtos perigosos, mergulho, salvamento aquático, atividades técnicas de segurança contra incêndio e expansão de bases no interior. A corporação informou presença permanente em 23 municípios em 2026 e meta de chegar a mais 12 cidades até o fim do ano.',
+    sede: 'Comando-Geral do CBMAM — Avenida Codajás, nº 1565, Petrópolis, Manaus/AM, CEP 69063-390',
+    emergencia: '193',
+    ocorrenciasLabel: '20.490 ocorrências atendidas em 2025 — 14.342 em Manaus e 6.148 no interior, conforme SSP/AM',
+    fonte: 'CBMAM; Agência Amazonas; SSP/AM; Legisla.AM; ALEAM/SAPL; IBGE; SEAD/AM; DOE/AM',
+    atualizado: 'BMAM revisado em 06/05/2026 — efetivo ativo e população com base oficial; reserva e mulheres como estimativas identificadas; remuneração por Lei AM nº 7.445/2025 com efeitos em 01/12/2025'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'CBMAM, Legisla.AM e ALEAM/SAPL — Lei AM 3.725/2012 atualizada pela Lei AM 7.445/2025; tabela PM/BM vigente a partir de 01/12/2025',
+    url: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf'
+  };
+
+  if (typeof CARGOS_BMAM !== 'undefined' && Array.isArray(CARGOS_BMAM) && CARGOS_BMAM.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAM;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAM',
+    desc: 'Corpo de Bombeiros Militar do Amazonas',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAM/CBMAM: remuneração exibida pelo total bruto legal da Lei AM 7.445/2025, vigente a partir de 01/12/2025, sem somar automaticamente indenização de compensação orgânica e atividade técnica, função, diárias, fardamento, alimentação, saúde, retroativos ou parcelas pessoais. Conferir DOE/AM, Legisla.AM, Portal da Transparência, SEAD/AM, escala, ato funcional e contracheque.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAM/CBMAM — histórico recente do concurso público de 2021 para a corporação; em 2026 o governo informou a conclusão da nomeação das 453 vagas previstas no edital, com formatura de 210 novos soldados. Para novo certame, publicar somente quando houver autorização e edital no DOE/AM, SEAD/AM, CBMAM e banca.',
+    salario: 'Referência remuneratória legal do site: Aluno Soldado BM R$ 3.149,12; Soldado BM R$ 5.725,66; Aluno Oficial 1º Ano R$ 8.509,34; Aspirante a Oficial BM R$ 11.345,79; valores brutos da tabela PM/BM da Lei AM nº 7.445/2025, Anexo III, efeitos em 01/12/2025. Editais podem informar bolsa, remuneração de formação ou regras específicas.',
+    vagas: '453 vagas previstas no concurso público da corporação citado pelo Governo do Amazonas; formatura de 210 novos soldados em março/2026 concluiu as nomeações desse edital.',
+    cotas: 'Regras de vagas por cargo, sexo, ampla concorrência, cotas e cadastro de reserva dependem do edital de cada certame e das retificações publicadas.',
+    idade: 'Critérios de idade, altura, CNH, aptidão física e investigação social devem ser extraídos do edital vigente; não aplicar regra genérica sem o documento oficial.',
+    escolaridade: 'Aluno Soldado e Aluno Oficial/Cadete devem seguir o edital vigente; conferir nível exigido, diploma, CNH, documentos militares e requisitos legais no DOE/AM e na banca.',
+    banca: 'Banca do concurso vigente/histórico deve ser conferida no edital; manter monitoramento em CBMAM, SEAD/AM, DOE/AM e portal da organizadora.',
+    inscritos: 'Total de inscritos, homologação e convocações devem ser conferidos no portal da banca e no Diário Oficial do Amazonas.',
+    materias: 'Disciplinas, pesos e conteúdo programático variam conforme cargo e edital; publicar grade fechada somente após leitura do edital e retificações.',
+    etapas: 'Em regra, certames militares envolvem prova objetiva, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação e fases próprias da carreira bombeiro militar, conforme edital.',
+    cfsd: 'Curso de Formação de Soldados concluído em março/2026 por 210 novos soldados, com dez meses de treinamento, incluindo combate a incêndios urbanos e florestais, salvamento em altura/aquático, resgate veicular, produtos perigosos e procedimentos operacionais.',
+    estagio: 'Exercício inicial e lotação operacional dependem de ato do CBMAM. A turma formada em 2026 reforça capital e interior em meio à expansão de bases permanentes.',
+    validade: 'Validade, prorrogações, atos de convocação, matrículas e formaturas devem ser conferidos no DOE/AM, CBMAM, SEAD/AM e banca.',
+    previsao: 'Sem novo concurso aberto confirmado nesta revisão. O site deve exibir o concurso 2021/2026 como histórico recente e monitorar autorizações futuras.',
+    site: 'https://www.cbm.am.gov.br/cbmam/concursos'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAM — tabela PM/BM, soldo, gratificação de tropa e GAMS', status: 'Conferência individual', ano: 'Lei AM 3.725/2012 · Lei AM 7.445/2025', tipo: 'individual', desc: 'Verificar se posto/graduação, soldo, gratificação de tropa, GAMS quando cabível, revisões de 2025 e reflexos foram implantados corretamente no contracheque. A tabela do site é referência de orientação e não liquidação individual.', base: 'Lei AM nº 3.725/2012, Lei AM nº 7.445/2025, DOE/AM, ficha financeira, atos de promoção e contracheques.', fonte: 'Legisla.AM / ALEAM-SAPL / SEAD-AM', fonteUrl: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'BMAM — indenização de compensação orgânica e atividade técnica', status: 'Depende de habilitação, atividade e ato', ano: 'Lei AM 7.445/2025 · Anexo IV', tipo: 'individual', desc: 'Conferir se o militar exerce atividade técnica indenizável, como motorista, operador, mergulhador, aeronave, explosivista ou outras funções listadas, com habilitação, escala e ato de designação. Não é parcela automática para toda a tropa.', base: 'Anexo IV da Lei AM nº 7.445/2025, escalas, habilitações, boletins, ordem de serviço, lotação e contracheque.', fonte: 'Legisla.AM / DOE-AM / CBMAM', fonteUrl: 'https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/4/15715?o=1', atualizado: 'Maio/2026' },
+    { titulo: 'BMAM — promoções, quadro de acesso, reserva/reforma e proteção social', status: 'Análise funcional', ano: 'Tema permanente', tipo: 'individual', desc: 'Promoções, interstícios, curso de formação/aperfeiçoamento, reserva remunerada, reforma, pensão militar, incapacidade e proteção social dependem de data de ingresso, posto/graduação, quadro, tempo de serviço, ficha funcional e atos publicados.', base: 'Lei de Organização Básica, Estatuto dos Militares Estaduais, normas de promoção, proteção social militar, boletins e processo administrativo individual.', fonte: 'CBMAM / Legisla.AM / DOE-AM / Amazonprev', fonteUrl: 'https://www.cbm.am.gov.br/cbmam/legislacaos/listar', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'ACS/AM — Associação dos Cabos e Soldados da Polícia Militar e Bombeiro Militar do Amazonas', foco: 'Praças da PMAM e do CBMAM, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas remuneratórias, carreira, proteção social, condições de serviço e comunicação com a categoria.', site: 'https://acs-am.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, convênios e eventual apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Entidades de oficiais e praças militares estaduais do Amazonas', foco: 'Oficiais, praças, reserva, reformados e pensionistas da PMAM e do CBMAM', acao: 'Espaço para cadastrar entidades locais adicionais ligadas a remuneração, promoções, carreira, saúde, reserva/reforma e condições de serviço.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação, convênios, orientação ao associado e acompanhamento administrativo/judicial.' },
+    { nome: 'Canais institucionais do CBMAM', foco: 'Informação oficial para bombeiros militares e sociedade amazonense', acao: 'Publicações, legislação, concursos, serviços técnicos, prevenção, notícias, comunicação institucional e atendimento ao público.', site: 'https://www.cbm.am.gov.br', telefone: '(92) 9 9123-3129 — canal institucional informado no portal oficial', mensalidade: 'Não se aplica', servicos: 'Legislação, notícias, concursos, atividades técnicas, serviços oficiais e comunicação institucional.' }
+  ];
+}
+
+
+function aplicarDadosEspecificosBmap() {
+  const inst = 'bmap';
+  const estado = 'ap';
+  const efetivoAtivo = 1073;
+  const populacaoAp = 806517;
+  const reservaEstimada = 600;
+  const mulheresEstimadas = 180;
+  const relacao = Math.round(populacaoAp / efetivoAtivo);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Amapá',
+    sigla: 'AP',
+    pm: 'pmap',
+    bm: inst,
+    pc: 'pcap',
+    pp: 'ppap',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Bandeira_do_Amap%C3%A1.svg'
+  };
+  HEADER_ESTADOS[estado].bm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMAP',
+    desc: 'Corpo de Bombeiros Militar do Amapá'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Amapá',
+    sigla: 'BMAP',
+    siglaInterna: 'CBMAP',
+    estado: 'Amapá',
+    estadoSigla: 'AP',
+    tipo: 'Bombeiro Militar',
+    criacao: '1967 · organização do Corpo de Bombeiros no então Território Federal do Amapá; 1992 · autonomia funcional e administrativa como CBMAP',
+    ativa: efetivoAtivo,
+    ativaLabel: '1.073 bombeiros militares — referência institucional do portal CBMAP, exibida como ordem de grandeza operacional sujeita a atualização por DRH/folha',
+    reserva: reservaEstimada,
+    reservaLabel: '≈ 600 vínculos de reserva, reforma e pensionistas — estimativa técnica para dar noção de grandeza; conferir AMPRev, SEAD/AP, DOE/AP, ficha financeira e DRH/CBMAP antes de uso jurídico ou previdenciário',
+    total: efetivoAtivo + reservaEstimada,
+    totalLabel: '≈ 1,7 mil vínculos somando efetivo ativo informado pelo CBMAP e estimativa de inativos/pensionistas',
+    femininas: mulheresEstimadas,
+    femininasLabel: '≈ 180 mulheres — estimativa técnica por composição provável da tropa; não usar como quantitativo oficial fechado',
+    populacao: populacaoAp,
+    populacaoLabel: '806.517 habitantes',
+    populacaoTitulo: 'População estimada do Amapá em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar ativo para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada ativa/população: ${populacaoAp.toLocaleString('pt-BR')} habitantes ÷ ${efetivoAtivo.toLocaleString('pt-BR')} bombeiros militares informados pelo portal institucional`,
+    governador: 'Clécio Luís',
+    comando: 'Coronel QOCBM Pelsondré Martins da Silva — Comandante-Geral do CBMAP',
+    estrutura: 'Comando-Geral; Diretorias de Administração Geral, Ensino/Pesquisa/Extensão, Inteligência e Operações, Pessoal e Segurança Contra Incêndio e Pânico; Corregedoria, Controladoria, Academia Bombeiro Militar, Centro de Comunicação Social, Centro de Tecnologia da Informação, Centro de Logística e Centro de Saúde; Grupamentos 1º, 2º, 5º, 6º, 7º, GPCIF e GMAF, além de atuação em Macapá, Santana, Porto Grande, Oiapoque, Laranjal do Jari e Vitória do Jari.',
+    sede: 'Rua Hamilton Silva, nº 1647, bairro Santa Rita, Macapá/AP, CEP 68.900-068',
+    emergencia: '193',
+    coberturaLabel: '≈ 85% da população estadual atendida diretamente, conforme histórico institucional do CBMAP',
+    ocorrenciasLabel: 'Operações, prevenção, fiscalização e resposta operacional monitoradas pela Revista CBMAP360°, DIOP/CBMAP, DISCIP/CBMAP e publicações oficiais; usar número operacional anual somente quando houver relatório fechado',
+    fonte: 'CBMAP; SEAD/AP; Diário Oficial do Amapá; Portal da Transparência/AP; IBGE; Agência Amapá; Fundação Carlos Chagas',
+    atualizado: 'BMAP revisado em 06/05/2026 — efetivo e comando com base no portal oficial; população 2025 do IBGE; reserva e mulheres como estimativas identificadas; remuneração por LC AP nº 173/2025, Anexo III, efeitos em 01/04/2026'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'CBMAP, SEAD/AP e Diário Oficial do Amapá — LC AP nº 113/2018 alterada pela LC AP nº 173/2025; Tabela de Progressão Horizontal 2026 I, vigente a partir de 01/04/2026',
+    url: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf'
+  };
+
+  if (typeof CARGOS_BMAP !== 'undefined' && Array.isArray(CARGOS_BMAP) && CARGOS_BMAP.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAP;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAP',
+    desc: 'Corpo de Bombeiros Militar do Amapá',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAP/CBMAP: remuneração exibida como subsídio bruto mensal legal por posto/graduação e progressão horizontal, conforme LC AP 113/2018 alterada pela LC AP 173/2025. Não somar automaticamente indenizações, diárias, alimentação, fardamento, serviço extraordinário, funções, parcelas pessoais, retroativos ou rubricas de quadros federais do ex-Território. Conferir DOE/AP, SEAD/AP, Portal da Transparência, escala, ato funcional e contracheque.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAP/CBMAP — Concurso QOCBM/CBMAP 2025 para Oficial Combatente, cadastro de reserva, Edital nº 01/2025, Fundação Carlos Chagas; e histórico do CFSD/BM/CBMAP 2022 com convocações em 2026. Publicar novo certame somente com edital no DOE/AP, SEAD/AP, CBMAP e banca.',
+    salario: 'Referência remuneratória legal do site pela LC AP nº 173/2025, Anexo III, efeitos em 01/04/2026: Aluno Soldado BM Base R$ 3.213,26; Soldado BM Base R$ 6.039,13; Aluno Oficial 1º ano vinculado ao 2º Sargento Base R$ 8.592,24; Aluno Oficial 2º ano vinculado ao 1º Sargento Base R$ 9.574,23; Aluno Oficial 3º ano vinculado ao Subtenente Base R$ 10.556,19; Aspirante Oficial Base R$ 10.678,93; 2º Tenente Base R$ 11.660,90. Editais podem informar bolsa/remuneração de formação e regras próprias.',
+    vagas: 'QOCBM/CBMAP 2025: 180 vagas em cadastro de reserva para Oficial Combatente. CFSD/BM/CBMAP 2022/2026: concurso de Soldado em andamento histórico, com convocações; o Governo do Amapá informou expectativa de convocar até 1.500 aprovados e que esse número já foi superado em convocações.',
+    cotas: 'Conferir reserva de vagas, critérios de sexo, ampla concorrência, cotas, lista final, cadastro de reserva e retificações no edital da FCC, SEAD/AP e DOE/AP.',
+    idade: 'No edital QOCBM/CBMAP 2025, conferir requisitos de idade, diploma superior, altura, CNH, saúde, aptidão física, avaliação psicológica e investigação social. Não replicar regra de outro estado.',
+    escolaridade: 'QOCBM/CBMAP 2025 exige diploma de curso superior, conforme edital. CFSD/Soldado deve ser conferido no edital próprio e suas retificações.',
+    banca: 'Fundação Carlos Chagas no edital QOCBM/CBMAP 2025; verificar banca e atos complementares para CFSD/Soldado e futuros certames.',
+    inscritos: 'Total de inscritos, homologação e convocações devem ser conferidos na FCC, SEAD/AP, DOE/AP e portal do CBMAP.',
+    materias: 'Conteúdo programático consta no edital da banca. Publicar disciplinas, pesos e notas de corte somente após leitura da versão vigente e retificações.',
+    etapas: 'QOCBM/CBMAP 2025: prova objetiva, exame documental, avaliação das capacidades físicas, teste de avaliação psicológica, exame de saúde e investigação social. CFSD/Soldado possui fases próprias conforme edital.',
+    cfsd: 'Curso de Formação de Soldados Bombeiro Militar e Curso de Formação de Oficial Combatente dependem de matrícula, aprovação nas fases, cronograma de ensino, regime militar e atos do CBMAP/SEAD.',
+    estagio: 'Exercício inicial, estágio supervisionado e lotação operacional dependem de ato do CBMAP e necessidade da corporação na capital/interior.',
+    validade: 'Conferir validade, prorrogações, convocações, matrículas e homologações no DOE/AP, SEAD/AP, CBMAP e banca. Não afirmar concurso aberto sem fonte atual.',
+    previsao: 'Manter monitoramento do QOCBM/CBMAP 2025, CFSD/BM 2022/2026 e novas autorizações; tratar dados como situação de acompanhamento até novo edital/ato oficial.',
+    site: 'https://bombeiros.portal.ap.gov.br/'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAP — subsídio, progressão horizontal e enquadramento', status: 'Conferência individual', ano: 'LC AP 113/2018 · LC AP 173/2025', tipo: 'individual', desc: 'Verificar se posto/graduação, nível de progressão horizontal, tempo de efetivo serviço, promoções e reflexos foram implantados corretamente. A tabela do site orienta a conferência, mas não liquida diferenças individuais.', base: 'LC AP nº 113/2018 alterada pela LC AP nº 173/2025, DOE/AP, ficha funcional, atos de promoção/progressão e contracheques.', fonte: 'SEAD/AP / Diário Oficial do Amapá', fonteUrl: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'BMAP — indenizações, diárias, serviço extraordinário e rubricas não automáticas', status: 'Depende de ato, escala e lotação', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir diárias, ajuda de custo, alimentação, fardamento, serviço extraordinário, função, lotação especial, indenizações operacionais e eventuais retroativos. Não tratar como parcela universal da tropa.', base: 'Legislação estadual, decretos, boletins, escala, ordem de serviço, ato de designação, ficha financeira e contracheque.', fonte: 'CBMAP / SEAD-AP / DOE-AP', fonteUrl: 'https://bombeiros.portal.ap.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'BMAP — reserva, reforma, pensão militar e quadros do ex-Território', status: 'Análise individual', ano: 'Tema previdenciário e funcional', tipo: 'individual', desc: 'Amapá tem situações que podem envolver militares estaduais e quadros federais oriundos do ex-Território. Não misturar tabela estadual do CBMAP com remuneração federal de transposição/ex-Território sem verificar vínculo, ato e regime jurídico.', base: 'Ficha funcional, ato de ingresso/transposição, processo de reserva/reforma, AMPRev, legislação estadual e federal aplicável, contracheques e decisões individuais.', fonte: 'SEAD/AP / AMPRev / Governo Federal quando houver quadro federal', fonteUrl: 'https://www.transparencia.ap.gov.br/', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'ASMEAP — Associação dos Militares Estaduais do Amapá', foco: 'Militares estaduais do Amapá, incluindo policiais e bombeiros militares, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas de carreira, remuneração, proteção social, promoções e condições de serviço.', site: 'https://www.asmeap.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, convênios, comunicação de pautas e eventual apoio jurídico conforme estatuto/contrato.' },
+    { nome: 'ASPOMETERFA — associação vinculada a militares do Amapá e ex-Território', foco: 'Militares estaduais/federais, veteranos, pensionistas e pautas ligadas a transposição e proteção social, conforme atuação da entidade', acao: 'Acompanhamento associativo de demandas funcionais, previdenciárias e remuneratórias. Conferir escopo atualizado diretamente com a entidade.', site: 'https://www.facebook.com/ASPOMETERFA', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, orientação ao associado e acompanhamento de pautas administrativas/judiciais.' },
+    { nome: 'Canais institucionais do CBMAP', foco: 'Informação oficial para bombeiros militares e sociedade amapaense', acao: 'Publicações, legislação, editais, serviços técnicos, prevenção, Revista CBMAP360°, notícias e comunicação institucional.', site: 'https://bombeiros.portal.ap.gov.br/', telefone: 'Emergência 193; atendimento institucional em horário comercial no portal oficial', mensalidade: 'Não se aplica', servicos: 'Notícias, editais, alvarás, segurança contra incêndio e pânico, transparência, serviços técnicos e comunicação institucional.' }
+  ];
 }
 
 function inserirOptionBombeiroNoSelect(select, item) {
@@ -3181,6 +3578,119 @@ function aplicarRevisaoResumosInstitucionais() {
 
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
+aplicarDadosEspecificosBmac();
+aplicarDadosEspecificosBmal();
+aplicarDadosEspecificosBmam();
+
+
+function aplicarDadosEspecificosBmba() {
+  const inst = 'bmba';
+  const estado = 'ba';
+  const efetivoAtivo = 3800;
+  const populacaoBa = 14870907;
+  const reservaEstimada = 2700;
+  const mulheresEstimadas = 600;
+  const relacao = Math.round(populacaoBa / efetivoAtivo);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Bahia',
+    sigla: 'BA',
+    pm: 'pmba',
+    bm: inst,
+    pc: 'pcba',
+    pp: 'ppba',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg'
+  };
+  HEADER_ESTADOS[estado].bm = inst;
+  HEADER_ESTADOS[estado].bombeiro = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMBA',
+    desc: 'Corpo de Bombeiros Militar da Bahia'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar da Bahia',
+    sigla: 'BMBA',
+    siglaInterna: 'CBMBA',
+    estado: 'Bahia',
+    estadoSigla: 'BA',
+    tipo: 'Bombeiro Militar',
+    criacao: '2014 · autonomia administrativa e financeira pela PEC estadual nº 138/2014 e organização básica pela Lei BA nº 13.202/2014; origem histórica do serviço de bombeiros anterior à autonomia institucional',
+    ativa: efetivoAtivo,
+    ativaLabel: '≈ 3,8 mil bombeiros militares ativos — estimativa operacional baseada no efetivo de 3.483 bombeiros empregados no Carnaval 2026 e na incorporação/formatura de 291 novos soldados em 2026; conferir DRH/CBMBA, SAEB/BA e folha antes de uso jurídico',
+    reserva: reservaEstimada,
+    reservaLabel: '≈ 2,7 mil vínculos de reserva, reforma e pensionistas — estimativa técnica para ordem de grandeza; conferir Suprev/Funprev-BA, SAEB/BA, DOE/BA e contracheque antes de cálculo individual',
+    total: efetivoAtivo + reservaEstimada,
+    totalLabel: '≈ 6,5 mil vínculos somando efetivo ativo estimado e reserva/reforma/pensionistas estimados',
+    femininas: mulheresEstimadas,
+    femininasLabel: '≈ 600 mulheres — estimativa técnica por composição provável da tropa e ingresso recente; não usar como número oficial fechado',
+    populacao: populacaoBa,
+    populacaoLabel: '14.870.907 habitantes',
+    populacaoTitulo: 'População estimada da Bahia em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar ativo para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada ativa/população: ${populacaoBa.toLocaleString('pt-BR')} habitantes ÷ ${efetivoAtivo.toLocaleString('pt-BR')} bombeiros militares ativos estimados`,
+    governador: 'Jerônimo Rodrigues',
+    comando: 'Coronel BM Aloísio Mascarenhas Fernandes — Comandante-Geral do CBMBA',
+    estrutura: 'Comando-Geral, Subcomando-Geral, Comando de Operações de Bombeiros Militar, Comandos Regionais, batalhões, grupamentos e companhias operacionais; unidades de prevenção, segurança contra incêndio e pânico, atividades técnicas, busca e salvamento, combate a incêndio, atendimento pré-hospitalar, operações aquáticas, resposta a desastres e apoio à Defesa Civil.',
+    sede: 'Comando-Geral do CBMBA — Ladeira Revolta dos Malês, nº 38, Centro Histórico, Salvador/BA, CEP 40.026-240',
+    emergencia: '193',
+    coberturaLabel: 'Atuação estadual, com reforços sazonais em Salvador, RMS, litoral, interior e grandes eventos; no Carnaval 2026 foram empregados 3.483 bombeiros militares.',
+    ocorrenciasLabel: 'Ocorrências operacionais, vistorias, incêndios, salvamentos, resgates, apoio a eventos e ações preventivas devem ser atualizadas por relatórios do CBMBA, COBM, boletins oficiais e publicações do Governo da Bahia.',
+    fonte: 'CBMBA; Governo da Bahia; SAEB/BA; DOE/BA; Lei BA nº 13.202/2014; Lei BA nº 14.890/2025; IBGE 2025; concursos CBMBA/FCC',
+    atualizado: 'BMBA revisado em 06/05/2026 — comando, sede, concursos e efetivo operacional com fontes institucionais; população 2025 do IBGE; efetivo, reserva e mulheres exibidos como estimativas identificadas; remuneração pela Lei BA nº 14.890/2025'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'DOE/BA e Casa Civil/BA — Lei BA nº 14.890/2025: soldo PM/BM, Gratificação de Atividade Policial Militar - GAP e auxílio-fardamento; soldo com efeitos em 01/05/2026 e GAP em 01/06/2026',
+    url: 'https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146'
+  };
+
+  if (typeof CARGOS_BMBA !== 'undefined' && Array.isArray(CARGOS_BMBA) && CARGOS_BMBA.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMBA;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMBA',
+    desc: 'Corpo de Bombeiros Militar da Bahia',
+    cor: '#b91c1c',
+    alertaPrev: 'BMBA/CBMBA: remuneração exibida como soldo oficial + GAP por referência, conforme Lei BA nº 14.890/2025, com auxílio-fardamento separado. Não somar automaticamente CET, adicional noturno, serviço extraordinário, diárias, alimentação, função, indenizações, parcelas pessoais, retroativos, abonos ou diferenças sem verificar escala, lotação, ato específico, ficha financeira e contracheque. A previdência dos militares baianos deve ser conferida pela regra vigente do Funprev/Suprev-BA e pela base de contribuição aplicada no holerite.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMBA/CBMBA — CFSD 2022 para Soldado Bombeiro Militar consta como em andamento no portal de concursos do CBMBA; CFOBM/2022 consta como finalizado. Manter monitoramento de DOE/BA, SAEB/BA, CBMBA e Fundação Carlos Chagas para homologações, prorrogações, convocações e eventual novo edital.',
+    salario: 'Referência legal do site pela Lei BA nº 14.890/2025: Soldado BM com soldo R$ 1.633,88 + GAP Ref. I a V entre R$ 1.500,56 e R$ 3.085,14, resultando em bruto de R$ 3.134,44 a R$ 4.719,02, além de auxílio-fardamento de R$ 256,18 separado. Aluno Soldado foi mantido como referência estimada de formação e deve ser conferido no edital vigente.',
+    vagas: 'Último CFSD BM 2022: 500 vagas para Soldado do CBMBA conforme edital divulgado pelo CBMBA/FCC. Há sinalizações públicas de novo concurso com 600 vagas para Soldado, mas o site deve publicar como previsão/monitoramento até edital oficial.',
+    cotas: 'Conferir ampla concorrência, reserva para negros, sexo, região, cadastro de reserva e demais regras no edital vigente e retificações. Não aplicar regra de outro certame por analogia.',
+    idade: 'Critérios de idade, altura, CNH, aptidão física, saúde, avaliação psicológica e investigação social devem ser extraídos do edital vigente. Manter cautela em convocações sub judice.',
+    escolaridade: 'Soldado BM: nível médio no edital de 2022. Oficial/CFOBM: conferir edital próprio, requisitos, curso, bolsa e regime de formação.',
+    banca: 'Fundação Carlos Chagas no CFSD 2022; confirmar organizadora em cada novo edital ou seleção.',
+    inscritos: 'Total de inscritos, resultado final, homologação, prorrogação, convocações e matrículas devem ser conferidos no CBMBA, SAEB/BA, DOE/BA e banca.',
+    materias: 'Conteúdo programático, pesos e critérios de aprovação variam por cargo e edital; publicar grade fechada somente após leitura da versão vigente e retificações.',
+    etapas: 'Certames do CBMBA podem envolver prova objetiva, prova discursiva/redação, exame documental, TAF, exames médicos/odontológicos/toxicológicos, avaliação psicológica, investigação social e curso de formação, conforme edital.',
+    cfsd: 'CBMBA informou em 2026 a conclusão/formatura de 291 novos soldados, reforçando capital e interior. Matrícula, bolsa/remuneração de formação, regime disciplinar e classificação final dependem dos atos do curso e do edital.',
+    estagio: 'Exercício inicial, estágio operacional e lotação dependem de ato do CBMBA, necessidade operacional, batalhão/companhia de destino e boletins internos.',
+    validade: 'CFSD 2022 aparece como em andamento no portal CBMBA; CFOBM/2022 como finalizado. Validar prazos, prorrogações e convocações no DOE/BA e no portal da banca antes de publicar status fechado.',
+    previsao: 'Há previsão pública de novo concurso para Soldado BMBA, mas o portal deve tratar como previsão até edital oficial assinado e publicado. Evitar mensagem de concurso aberto sem fonte oficial atual.',
+    site: 'https://www.cbm.ba.gov.br/portal/concursos'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMBA — soldo, GAP por referência e auxílio-fardamento', status: 'Conferência individual', ano: 'Lei BA nº 14.890/2025', tipo: 'individual', desc: 'Verificar se posto/graduação, soldo vigente, referência da GAP, implantação dos efeitos de maio/junho de 2026 e auxílio-fardamento foram pagos corretamente. A tabela do site é referência de conferência, não liquidação individual.', base: 'Lei BA nº 14.890/2025, DOE/BA, ficha financeira, contracheque, atos de promoção e referência da GAP.', fonte: 'DOE/BA / SAEB-BA / CBMBA', fonteUrl: 'https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146', atualizado: 'Maio/2026' },
+    { titulo: 'BMBA — CET, serviço extraordinário, diárias e parcelas indenizatórias', status: 'Depende de ato, escala e lotação', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir CET, adicional noturno, diárias, serviço extraordinário, gratificações de função, alimentação, fardamento, indenizações, retroativos e outras rubricas. Não tratar como parcela universal de toda a tropa.', base: 'Estatuto dos Policiais Militares da Bahia, normas do CBMBA/SSP/SAEB, escalas, boletins, ordem de serviço, ato de designação, contracheque e ficha financeira.', fonte: 'CBMBA / SAEB-BA / DOE-BA', fonteUrl: 'https://www.cbm.ba.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'BMBA — promoções, quadro de acesso, reserva/reforma e proteção social militar', status: 'Análise funcional', ano: 'Lei BA nº 13.202/2014 e normas correlatas', tipo: 'individual', desc: 'Promoções, interstícios, quadro de acesso, agregação, reserva remunerada, reforma, incapacidade e pensão militar dependem de data de ingresso, quadro, posto/graduação, cursos, conceito, tempo de serviço, ficha funcional e atos publicados.', base: 'Lei BA nº 13.202/2014, Estatuto dos Policiais Militares da Bahia, normas de promoção, proteção social militar, processo individual, boletins e DOE/BA.', fonte: 'CBMBA / Governo da Bahia / SAEB-BA', fonteUrl: 'https://www.ba.gov.br/comunicacao/2014/12/noticias/leis-de-organizacao-basica-da-policia-militar-e-dos-bombeiros-sao-sancionadas', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'APPMBA — Associação de Praças da Polícia e Bombeiro Militar da Bahia', foco: 'Praças da PMBA e do CBMBA, ativos, reserva, reformados e pensionistas', acao: 'Acompanhamento de pautas remuneratórias, carreira, proteção social, promoções, condições de trabalho e representação associativa.', site: 'https://appmba.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, convênios e eventual apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Força Invicta — associação de oficiais militares estaduais da Bahia', foco: 'Oficiais da Polícia Militar e do Corpo de Bombeiros Militar da Bahia', acao: 'Representação de oficiais em pautas de carreira, remuneração, proteção social, gestão institucional e condições de serviço.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação, comunicação institucional, orientação ao associado e acompanhamento de pautas administrativas/judiciais.' },
+    { nome: 'Canais institucionais do CBMBA', foco: 'Informação oficial para bombeiros militares, candidatos e sociedade baiana', acao: 'Publicações, concursos, legislação, prevenção, atividades técnicas, unidades, notícias e atendimento institucional.', site: 'https://www.cbm.ba.gov.br', telefone: '193 · contatos administrativos conforme unidade', mensalidade: 'Não se aplica', servicos: 'Concursos, notícias, prevenção, vistorias, legislação, serviços técnicos e comunicação institucional.' }
+  ];
+}
+
+aplicarDadosEspecificosBmap();
+aplicarDadosEspecificosBmba();
 aplicarEstruturaFederaisDados();
 aplicarRevisaoResumosInstitucionais();
 
@@ -3350,6 +3860,7 @@ function aplicarPadraoDadosEmBreveGlobal() {
     typeof CARGOS_PMMG !== 'undefined' ? CARGOS_PMMG : null,
     typeof CARGOS_PCMG !== 'undefined' ? CARGOS_PCMG : null,
     typeof CARGOS_PMBA !== 'undefined' ? CARGOS_PMBA : null,
+    typeof CARGOS_BMBA !== 'undefined' ? CARGOS_BMBA : null,
     typeof CARGOS_PCBA !== 'undefined' ? CARGOS_PCBA : null,
     typeof CARGOS_PMPR !== 'undefined' ? CARGOS_PMPR : null,
     typeof CARGOS_PCPR !== 'undefined' ? CARGOS_PCPR : null,
@@ -4794,3 +5305,6 @@ function renderizarBrasoesHistoria() {
 
 
 /* ============================================================ */
+
+// Reaplica BMBA após as rotinas globais de normalização para preservar os campos estimados e a remuneração detalhada recém-cadastrados.
+if (typeof aplicarDadosEspecificosBmba === 'function') aplicarDadosEspecificosBmba();

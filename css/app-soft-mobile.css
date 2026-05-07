@@ -2072,3 +2072,1779 @@ body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact-
     font-size: 14px !important;
   }
 }
+
+
+/* ============================================================
+   Ajuste 2026-05-06: troca do card de atualização com o seletor
+   e seletor enquadrado abaixo do resumo institucional.
+   ============================================================ */
+
+/* HOME — seletor passa a ficar dentro do card de resumo do portal. */
+body[data-page="principal"] .header-facts-panel > .header-inst-selector--home {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+body[data-page="principal"] .header-facts-panel > .header-inst-selector--home select {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 18px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  background: rgba(12,16,26,.84) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 26px rgba(0,0,0,.16) !important;
+}
+
+body[data-page="principal"] .header-facts-panel > .header-inst-selector--home select:focus {
+  border-color: color-mix(in srgb, var(--vermelho) 70%, #fff) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vermelho) 24%, transparent), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  outline: 0 !important;
+}
+
+/* HOME — o card de atualização ocupa o antigo espaço do seletor. */
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home {
+  display: grid !important;
+  grid-template-columns: minmax(64px, 76px) !important;
+  justify-content: start !important;
+  align-items: start !important;
+  gap: 0 !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center !important;
+  gap: 4px !important;
+  width: clamp(64px, 5.6vw, 76px) !important;
+  min-width: clamp(64px, 5.6vw, 76px) !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  padding: 8px 7px !important;
+  border: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 16px !important;
+  background: var(--usp-summary-sheet-bg) !important;
+  box-shadow: none !important;
+  opacity: .94 !important;
+  text-align: center !important;
+}
+
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--usp-summary-muted) !important;
+  font-size: 6.4px !important;
+  font-weight: 800 !important;
+  line-height: 1.04 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+  display: block !important;
+  justify-self: center !important;
+  color: #00c853 !important;
+  font-size: clamp(15px, 1.35vw, 18px) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* PÁGINAS INTERNAS — controles ficam dentro/embaixo do card de resumo institucional. */
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 8px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 14px 16px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03)), rgba(12,16,26,.82) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 32px rgba(0,0,0,.18) !important;
+  clip-path: none !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector label,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector label {
+  margin: 0 !important;
+  color: rgba(255,255,255,.86) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: .08em !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 16px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  background: rgba(7,10,18,.88) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select:focus,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select:focus {
+  border-color: color-mix(in srgb, var(--vermelho) 70%, #fff) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vermelho) 24%, transparent) !important;
+  outline: 0 !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-branch-switcher,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-branch-switcher {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 14px 16px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.025)), rgba(12,16,26,.68) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 12px 28px rgba(0,0,0,.14) !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .branch-buttons,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .branch-buttons {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1040px) {
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home {
+    width: 100% !important;
+  }
+
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-page="principal"] .header-facts-panel > .header-inst-selector--home,
+  body[data-page="principal"] .header-facts-panel > .header-inst-selector--home select,
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary,
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector,
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    width: 62px !important;
+    min-width: 62px !important;
+    padding: 6px 5px !important;
+    border-radius: 14px !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    font-size: 5.5px !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+    font-size: 14px !important;
+  }
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06B — refinamento desktop do cabeçalho
+   - home: logo maior, título acima da imagem e remoção do texto solto
+   - instituições: brasão maior, nome acima da imagem e remoção das referências
+   - ajuste da altura do card do cabeçalho sem mexer no plano de fundo
+   ============================================================ */
+@media (min-width: 1041px) {
+  /* Ajuste geral da altura do cabeçalho para aproximar a borda inferior do seletor. */
+  .header-institution-card {
+    min-height: auto !important;
+    padding-bottom: 14px !important;
+  }
+
+  .header-institution-main {
+    align-items: start !important;
+    min-height: 0 !important;
+    gap: clamp(16px, 1.8vw, 24px) !important;
+  }
+
+  .header-facts-panel {
+    align-self: start !important;
+  }
+
+  /* HOME */
+  body[data-page="principal"][data-inst="portal"] .header-institution-main {
+    grid-template-columns: minmax(360px, 0.88fr) minmax(520px, 1.12fr) !important;
+    min-height: 0 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-identity {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+    gap: 16px !important;
+    padding: 18px 8px 8px 6px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-identity::before {
+    bottom: 4px !important;
+    height: 52% !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame {
+    order: 2 !important;
+    width: clamp(154px, 14vw, 184px) !important;
+    height: clamp(154px, 14vw, 184px) !important;
+    min-width: clamp(154px, 14vw, 184px) !important;
+    min-height: clamp(154px, 14vw, 184px) !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame img {
+    border-radius: 22px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy strong {
+    font-size: clamp(46px, 4.8vw, 60px) !important;
+    line-height: .96 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy p {
+    max-width: 420px !important;
+    margin-top: 0 !important;
+    font-size: clamp(20px, 1.95vw, 26px) !important;
+    line-height: 1.04 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,.96) !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] #header-desc,
+  body[data-page="principal"][data-inst="portal"] .header-current-copy small {
+    display: none !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home {
+    margin-top: 10px !important;
+  }
+
+  /* INSTITUIÇÕES */
+  body:not([data-inst="portal"]) .header-institution-main {
+    grid-template-columns: minmax(370px, 0.88fr) minmax(520px, 1.12fr) !important;
+    min-height: 0 !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-identity {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+    gap: 16px !important;
+    padding: 18px 8px 8px 6px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-identity::before {
+    bottom: 4px !important;
+    height: 52% !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-copy {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    order: 2 !important;
+    width: clamp(164px, 15vw, 194px) !important;
+    height: clamp(164px, 15vw, 194px) !important;
+    min-width: clamp(164px, 15vw, 194px) !important;
+    min-height: clamp(164px, 15vw, 194px) !important;
+    border-radius: 28px !important;
+  }
+
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame img {
+    border-radius: 22px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-copy strong {
+    font-size: clamp(44px, 4.55vw, 58px) !important;
+    line-height: .96 !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-copy p {
+    max-width: 430px !important;
+    margin-top: 0 !important;
+    font-size: clamp(19px, 1.7vw, 25px) !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    color: rgba(255,255,255,.96) !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-head {
+    margin-bottom: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-head strong,
+  body:not([data-inst="portal"]) #header-resumo-atualizado,
+  body:not([data-inst="portal"]) .header-update-note.header-fact--dados-atualizados {
+    display: none !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary {
+    margin-top: 10px !important;
+  }
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06C — home: textos, cards e rodapé
+   ============================================================ */
+
+/* Igualdade visual das siglas PF, PRF, PM, PC, PP, BM e GM. */
+.principal-stat--instituicoes strong {
+  display: block !important;
+  width: 100% !important;
+  font-size: inherit !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+}
+
+/* Formatação normal: sem sublinhado nas áreas da página inicial. */
+.consultas-principais a,
+.consultas-principais a *,
+.conteudos-parceiros a,
+.conteudos-parceiros a *,
+.principal-grid.consultas-principais a,
+.principal-grid.consultas-principais a *,
+.principal-grid.conteudos-parceiros a,
+.principal-grid.conteudos-parceiros a * {
+  text-decoration: none !important;
+}
+
+.consultas-principais a:hover,
+.consultas-principais a:hover *,
+.conteudos-parceiros a:hover,
+.conteudos-parceiros a:hover *,
+.principal-grid.consultas-principais a:hover,
+.principal-grid.consultas-principais a:hover *,
+.principal-grid.conteudos-parceiros a:hover,
+.principal-grid.conteudos-parceiros a:hover * {
+  text-decoration: none !important;
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06D — Comparador de carreiras simplificado
+   ============================================================ */
+
+#page-comparar .comparador-simples-page {
+  display: grid !important;
+  gap: 16px !important;
+  padding: clamp(16px, 2.2vw, 24px) !important;
+}
+
+.comparador-hero-simples,
+.comparador-controle-simples,
+.comparador-resultado-simples,
+.comparador-detalhes-tecnicos {
+  border: 1px solid var(--app-soft-border, rgba(255,255,255,.14)) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.035)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 30px rgba(0,0,0,.12) !important;
+}
+
+.comparador-hero-simples {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 18px !important;
+  align-items: center !important;
+  padding: clamp(18px, 2vw, 24px) !important;
+  overflow: hidden !important;
+}
+
+.comparador-hero-copy h2 {
+  margin: 6px 0 8px !important;
+  font-size: clamp(30px, 4vw, 48px) !important;
+  line-height: .98 !important;
+  letter-spacing: -.02em !important;
+}
+
+.comparador-hero-copy p,
+.comparador-resultado-head p,
+.comparador-selecao-cabecalho small {
+  color: var(--text-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-eyebrow {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 5px 9px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 40%, rgba(255,255,255,.18)) !important;
+  border-radius: 999px !important;
+  color: color-mix(in srgb, var(--vermelho) 78%, #ffffff) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-hero-passos {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(92px, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.comparador-passo {
+  display: grid !important;
+  gap: 7px !important;
+  justify-items: center !important;
+  min-width: 92px !important;
+  padding: 12px 10px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.055) !important;
+  text-align: center !important;
+}
+
+.comparador-passo strong {
+  display: grid !important;
+  place-items: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 999px !important;
+  background: var(--vermelho) !important;
+  color: #fff !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+.comparador-passo span {
+  color: var(--text-main) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-controle-simples {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 14px !important;
+  align-items: end !important;
+  padding: 16px !important;
+}
+
+.comparador-filtros-simples {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1.2fr) minmax(180px, .55fr) !important;
+  gap: 12px !important;
+  align-items: end !important;
+}
+
+.comparador-controle-simples .field {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.comparador-controle-simples label {
+  display: block !important;
+  margin-bottom: 7px !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-controle-simples input,
+.comparador-controle-simples select {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 14px !important;
+  border-radius: 16px !important;
+}
+
+.comparador-acoes-simples {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: flex-end !important;
+  align-items: end !important;
+}
+
+.comparador-acoes-simples .btn-secondary {
+  min-height: 48px !important;
+  padding: 0 14px !important;
+  white-space: nowrap !important;
+}
+
+.comparador-selecao--simples {
+  margin: 0 !important;
+}
+
+.comparador-selecao--simples .comparador-select-panel {
+  padding: 16px !important;
+  border-radius: 22px !important;
+}
+
+.comparador-selecao-cabecalho {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  align-items: flex-start !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-selecao-cabecalho .comparador-select-label {
+  margin: 0 0 4px !important;
+  font-size: 14px !important;
+}
+
+.comparador-contador {
+  flex: 0 0 auto !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: var(--vermelho) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+#page-comparar .comparador-check-list--simples {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  max-height: min(440px, 58vh) !important;
+  overflow: auto !important;
+  margin-top: 0 !important;
+  padding: 10px !important;
+  border-radius: 18px !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-grupo {
+  align-content: start !important;
+  padding: 10px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.035) !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-grupo + .comparador-check-grupo {
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-titulo {
+  margin-bottom: 4px !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-option {
+  border-radius: 14px !important;
+}
+
+#page-comparar .comparador-check-option.is-hidden,
+#page-comparar .comparador-check-grupo.is-hidden {
+  display: none !important;
+}
+
+.comparador-lista-vazia {
+  margin-top: 10px !important;
+  padding: 14px !important;
+  border: 1px dashed var(--border-input) !important;
+  border-radius: 16px !important;
+  color: var(--text-muted) !important;
+  text-align: center !important;
+}
+
+.comparador-selecionadas {
+  margin-top: 12px !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+}
+
+.comparador-resultado-simples {
+  padding: 16px !important;
+}
+
+.comparador-resultado-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  align-items: flex-end !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-resultado-head h3 {
+  margin: 5px 0 0 !important;
+  font-size: clamp(22px, 2.4vw, 30px) !important;
+}
+
+#page-comparar .comparador-resumo-grid {
+  margin: 0 0 14px !important;
+}
+
+#page-comparar .comparador-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: 0 !important;
+}
+
+#page-comparar .comparador-card--simples {
+  padding: 16px !important;
+  border-radius: 20px !important;
+}
+
+.comparador-card-cabecalho {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  align-items: flex-start !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-card-cabecalho h3 {
+  margin: 0 !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+}
+
+.comparador-card-cabecalho p {
+  margin: 4px 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+}
+
+.comparador-card-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  justify-content: flex-end !important;
+}
+
+.comparador-card-metricas {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.comparador-card-metricas > div {
+  padding: 11px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 15px !important;
+  background: rgba(255,255,255,.045) !important;
+}
+
+.comparador-card-metricas span {
+  display: block !important;
+  margin-bottom: 4px !important;
+  color: var(--text-muted) !important;
+  font-size: 9.5px !important;
+  font-weight: 900 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-card-metricas strong {
+  display: block !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.12 !important;
+}
+
+.comparador-card-metricas small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: var(--text-muted) !important;
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+}
+
+.comparador-card-notas {
+  margin-top: 12px !important;
+}
+
+.comparador-card-notas p {
+  margin: 8px 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-card-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+}
+
+.comparador-card-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 34px !important;
+  padding: 0 11px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 44%, rgba(255,255,255,.16)) !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--vermelho) 11%, transparent) !important;
+  text-decoration: none !important;
+}
+
+.comparador-detalhes-tecnicos {
+  margin-top: 14px !important;
+  overflow: hidden !important;
+}
+
+.comparador-detalhes-tecnicos summary {
+  cursor: pointer !important;
+  padding: 14px 16px !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-detalhes-tecnicos .comparador-table-wrap {
+  border-radius: 0 0 18px 18px !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.comparador-vazio--simples {
+  display: grid !important;
+  gap: 5px !important;
+  padding: 18px !important;
+}
+
+.comparador-vazio--simples strong {
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 18px !important;
+}
+
+.comparador-vazio--simples span {
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-aviso-final {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1020px) {
+  .comparador-hero-simples,
+  .comparador-controle-simples,
+  .comparador-resultado-head {
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-controle-simples {
+    align-items: stretch !important;
+  }
+
+  .comparador-acoes-simples {
+    justify-content: flex-start !important;
+  }
+
+  #page-comparar .comparador-check-list--simples {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #page-comparar .comparador-simples-page {
+    gap: 12px !important;
+    padding: 13px !important;
+  }
+
+  .comparador-hero-simples,
+  .comparador-controle-simples,
+  .comparador-resultado-simples,
+  .comparador-selecao--simples .comparador-select-panel {
+    padding: 13px !important;
+    border-radius: 18px !important;
+  }
+
+  .comparador-hero-passos,
+  .comparador-filtros-simples,
+  #page-comparar .comparador-cards,
+  .comparador-card-metricas {
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-acoes-simples {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-acoes-simples .btn-secondary {
+    width: 100% !important;
+  }
+
+  .comparador-selecao-cabecalho,
+  .comparador-card-cabecalho,
+  .comparador-resultado-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .comparador-contador {
+    width: fit-content !important;
+  }
+
+  #page-comparar .comparador-check-list--simples {
+    max-height: 340px !important;
+    padding: 8px !important;
+  }
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06E — Nova aba Base Legal
+   ============================================================ */
+
+#page-baselegal {
+  max-width: min(1180px, 100%) !important;
+  margin: clamp(18px, 3vw, 34px) auto !important;
+  padding: 0 20px !important;
+}
+
+.base-legal-page {
+  display: grid !important;
+  gap: 16px !important;
+  padding: clamp(16px, 2.2vw, 24px) !important;
+}
+
+.base-legal-hero,
+.base-legal-busca-card,
+.base-legal-resultados-card {
+  border: 1px solid var(--app-soft-border, rgba(255,255,255,.14)) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.035)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 30px rgba(0,0,0,.12) !important;
+  overflow: hidden !important;
+}
+
+.base-legal-hero {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .42fr) !important;
+  gap: clamp(16px, 2vw, 24px) !important;
+  align-items: stretch !important;
+  padding: clamp(18px, 2.3vw, 28px) !important;
+}
+
+.base-legal-eyebrow {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 5px 9px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 40%, rgba(255,255,255,.18)) !important;
+  border-radius: 999px !important;
+  color: color-mix(in srgb, var(--vermelho) 80%, #ffffff) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.base-legal-hero h2 {
+  margin: 8px 0 10px !important;
+  color: var(--text-main) !important;
+  font-size: clamp(32px, 4.4vw, 56px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.035em !important;
+}
+
+.base-legal-hero p {
+  max-width: 760px !important;
+  color: var(--text-muted) !important;
+  font-size: clamp(14px, 1.35vw, 17px) !important;
+  line-height: 1.48 !important;
+}
+
+.base-legal-hero-box {
+  display: grid !important;
+  align-content: center !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 20px !important;
+  background: rgba(255,255,255,.055) !important;
+}
+
+.base-legal-hero-box > strong {
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 14px !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.base-legal-exemplos {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.base-legal-exemplos button,
+.base-legal-chip {
+  min-height: 34px !important;
+  padding: 0 11px !important;
+  border: 1px solid rgba(255,255,255,.15) !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.07) !important;
+  color: var(--text-main) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+}
+
+.base-legal-exemplos button:hover,
+.base-legal-chip:hover,
+.base-legal-chip.is-active {
+  border-color: color-mix(in srgb, var(--vermelho) 70%, #fff) !important;
+  background: color-mix(in srgb, var(--vermelho) 18%, rgba(255,255,255,.07)) !important;
+}
+
+.base-legal-busca-card {
+  display: grid !important;
+  gap: 14px !important;
+  padding: 16px !important;
+}
+
+.base-legal-busca-card .field {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.base-legal-busca-card label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.base-legal-input-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 10px !important;
+}
+
+.base-legal-input-row input {
+  width: 100% !important;
+  min-height: 50px !important;
+  padding: 0 16px !important;
+  border-radius: 18px !important;
+}
+
+.base-legal-input-row button {
+  min-height: 50px !important;
+  padding: 0 16px !important;
+  white-space: nowrap !important;
+}
+
+#base-legal-sugestao {
+  display: block !important;
+  margin-top: 8px !important;
+  color: var(--text-muted) !important;
+  font-size: 12.5px !important;
+  line-height: 1.4 !important;
+}
+
+.base-legal-categorias {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.base-legal-resultados-card {
+  padding: 16px !important;
+}
+
+.base-legal-resultados-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  align-items: flex-end !important;
+  margin-bottom: 12px !important;
+}
+
+.base-legal-resultados-head h3 {
+  margin: 6px 0 0 !important;
+  color: var(--text-main) !important;
+  font-size: clamp(23px, 2.6vw, 32px) !important;
+  line-height: 1 !important;
+}
+
+#base-legal-contador {
+  flex: 0 0 auto !important;
+  padding: 7px 11px !important;
+  border-radius: 999px !important;
+  background: var(--vermelho) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+.base-legal-alerta {
+  margin-bottom: 14px !important;
+  padding: 12px 14px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 26%, rgba(255,255,255,.12)) !important;
+  border-radius: 16px !important;
+  background: color-mix(in srgb, var(--vermelho) 7%, transparent) !important;
+  color: var(--text-muted) !important;
+  font-size: 12.5px !important;
+  line-height: 1.45 !important;
+}
+
+.base-legal-alerta strong {
+  color: var(--text-main) !important;
+}
+
+.base-legal-resultados {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.base-legal-card {
+  display: grid !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.035)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07) !important;
+}
+
+.base-legal-card-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  align-items: flex-start !important;
+}
+
+.base-legal-categoria {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 4px 8px !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--vermelho) 15%, transparent) !important;
+  color: color-mix(in srgb, var(--vermelho) 78%, #ffffff) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.base-legal-card h3 {
+  margin: 8px 0 5px !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: clamp(19px, 1.8vw, 24px) !important;
+  line-height: 1.05 !important;
+}
+
+.base-legal-card-head strong {
+  display: block !important;
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+}
+
+.base-legal-fonte-btn {
+  flex: 0 0 auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 34px !important;
+  padding: 0 11px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 44%, rgba(255,255,255,.16)) !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--vermelho) 10%, transparent) !important;
+  color: var(--text-main) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.base-legal-detalhes {
+  display: grid !important;
+  gap: 9px !important;
+  margin: 0 !important;
+}
+
+.base-legal-detalhes div {
+  padding: 10px !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.04) !important;
+}
+
+.base-legal-detalhes dt {
+  margin-bottom: 4px !important;
+  color: var(--text-main) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.base-legal-detalhes dd {
+  margin: 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.base-legal-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.base-legal-tags span {
+  padding: 4px 7px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.055) !important;
+  color: var(--text-muted) !important;
+  font-size: 10.5px !important;
+  line-height: 1 !important;
+}
+
+.base-legal-vazio {
+  display: grid !important;
+  gap: 5px !important;
+  margin-bottom: 12px !important;
+  padding: 16px !important;
+  border: 1px dashed var(--border-input) !important;
+  border-radius: 16px !important;
+  color: var(--text-muted) !important;
+}
+
+.base-legal-vazio[hidden] {
+  display: none !important;
+}
+
+.base-legal-vazio strong {
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 18px !important;
+}
+
+@media (max-width: 920px) {
+  .base-legal-hero,
+  .base-legal-resultados {
+    grid-template-columns: 1fr !important;
+  }
+
+  .base-legal-resultados-head,
+  .base-legal-card-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .base-legal-fonte-btn {
+    width: fit-content !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #page-baselegal {
+    padding: 0 10px !important;
+    margin-top: 14px !important;
+  }
+
+  .base-legal-page {
+    gap: 12px !important;
+    padding: 13px !important;
+  }
+
+  .base-legal-hero,
+  .base-legal-busca-card,
+  .base-legal-resultados-card {
+    border-radius: 18px !important;
+    padding: 13px !important;
+  }
+
+  .base-legal-input-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .base-legal-input-row button {
+    width: 100% !important;
+  }
+
+  .base-legal-card {
+    padding: 13px !important;
+    border-radius: 16px !important;
+  }
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06F — Mobile: logo maior, atualização no topo
+   e botão Menu igual aos demais na barra inferior.
+   ============================================================ */
+@media (max-width: 760px) {
+  /* Cabeçalho mobile: cria espaço seguro para o card de atualização no canto superior direito. */
+  .header-institution-card {
+    position: relative !important;
+    padding-top: 78px !important;
+    padding-bottom: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .header-institution-main {
+    align-items: start !important;
+    gap: 14px !important;
+  }
+
+  /* A imagem principal do cabeçalho fica maior no mobile, sem alterar o plano de fundo. */
+  body[data-page="principal"][data-inst="portal"] .header-current-identity,
+  body:not([data-inst="portal"]) .header-current-identity {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: clamp(258px, 72vw, 330px) !important;
+    gap: 14px !important;
+    padding: 4px 4px 18px !important;
+    text-align: left !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy,
+  body:not([data-inst="portal"]) .header-current-copy {
+    order: 1 !important;
+    width: min(100%, calc(100% - 92px)) !important;
+    max-width: calc(100% - 92px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 3px !important;
+    position: relative !important;
+    z-index: 4 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy strong,
+  body:not([data-inst="portal"]) .header-current-copy strong {
+    font-size: clamp(32px, 12vw, 46px) !important;
+    line-height: .96 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy p,
+  body:not([data-inst="portal"]) .header-current-copy p {
+    font-size: clamp(14px, 5vw, 20px) !important;
+    line-height: 1.08 !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame,
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    order: 2 !important;
+    width: clamp(168px, 52vw, 204px) !important;
+    height: clamp(168px, 52vw, 204px) !important;
+    min-width: clamp(168px, 52vw, 204px) !important;
+    min-height: clamp(168px, 52vw, 204px) !important;
+    border-radius: 30px !important;
+    padding: 8px !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame img,
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 23px !important;
+  }
+
+  /* O resumo deixa de ser referência de posicionamento para o card de atualização. */
+  .header-institution-card .header-facts-panel {
+    position: static !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home {
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Card "Dados de atualização do site" no canto superior direito do cabeçalho. */
+  .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    z-index: 12 !important;
+    display: grid !important;
+    place-items: center !important;
+    gap: 3px !important;
+    width: 74px !important;
+    min-width: 74px !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 !important;
+    padding: 7px 6px !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 18px !important;
+    background: linear-gradient(145deg, rgba(22,25,32,.92), rgba(8,10,15,.88)) !important;
+    box-shadow: 0 14px 32px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.09) !important;
+    text-align: center !important;
+    opacity: .98 !important;
+  }
+
+  .header-institution-card .header-update-note.header-fact--dados-atualizados span,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    display: block !important;
+    margin: 0 !important;
+    color: rgba(255,255,255,.74) !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: 6px !important;
+    font-weight: 900 !important;
+    line-height: 1.04 !important;
+    letter-spacing: .055em !important;
+    text-transform: uppercase !important;
+  }
+
+  .header-institution-card .header-update-note.header-fact--dados-atualizados strong,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+    display: block !important;
+    color: #00d66f !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  html[data-theme="light"] .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  html[data-theme="light"] body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(226,230,238,.92)) !important;
+    border-color: rgba(255,255,255,.72) !important;
+  }
+
+  html[data-theme="light"] .header-institution-card .header-update-note.header-fact--dados-atualizados span,
+  html[data-theme="light"] body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    color: rgba(20,24,32,.64) !important;
+  }
+
+  /* Barra inferior mobile: o botão Menu passa a ter exatamente a mesma caixa dos demais botões. */
+  .app-bottom-nav {
+    align-items: stretch !important;
+  }
+
+  .app-bottom-nav .app-bottom-item,
+  .app-bottom-nav button.app-bottom-item.menu-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+    margin: 0 !important;
+    padding: 7px 4px !important;
+    border-radius: 17px !important;
+    display: grid !important;
+    place-items: center !important;
+    align-content: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    font: 700 10px/1.05 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    letter-spacing: .01em !important;
+    text-transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-icon,
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-label {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    line-height: 1 !important;
+    text-align: center !important;
+  }
+
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-icon {
+    font-size: 22px !important;
+  }
+
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-label {
+    max-width: 100% !important;
+    font-size: 10px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame,
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    width: clamp(156px, 51vw, 184px) !important;
+    height: clamp(156px, 51vw, 184px) !important;
+    min-width: clamp(156px, 51vw, 184px) !important;
+    min-height: clamp(156px, 51vw, 184px) !important;
+  }
+
+  .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    width: 68px !important;
+    min-width: 68px !important;
+    height: 68px !important;
+    min-height: 68px !important;
+    top: 12px !important;
+    right: 12px !important;
+  }
+
+  .app-bottom-nav .app-bottom-item,
+  .app-bottom-nav button.app-bottom-item.menu-btn {
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+  }
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06G — Mobile modo claro sem fade branco
+   Remove vidros/transparências brancas e gradientes esbranquiçados
+   apenas no mobile quando o tema claro está ativo.
+   ============================================================ */
+@media (max-width: 760px) {
+  html[data-theme="light"] {
+    --app-soft-bg: #e7ebf2;
+    --app-soft-panel: #eef1f6;
+    --app-soft-card: #f3f5f8;
+    --app-soft-card-2: #e6eaf1;
+    --app-soft-text: #111827;
+    --app-soft-muted: #4b5563;
+    --app-soft-border: #c9d0dc;
+    --app-soft-shadow: 0 12px 26px rgba(15, 23, 42, .16);
+    --app-soft-shadow-small: 0 8px 18px rgba(15, 23, 42, .13);
+    --app-soft-shadow-inset: inset 0 2px 5px rgba(15, 23, 42, .12);
+  }
+
+  html[data-theme="light"] body {
+    background-color: #e7ebf2 !important;
+    background-image: none !important;
+    color: #111827 !important;
+  }
+
+  html[data-theme="light"] body::before {
+    display: none !important;
+    content: none !important;
+    border: 0 !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  html[data-theme="light"] .site-header,
+  html[data-theme="light"] .header-institution-card,
+  html[data-theme="light"] .principal-hero,
+  html[data-theme="light"] .principal-card,
+  html[data-theme="light"] .card,
+  html[data-theme="light"] .consulta-instituicao-card,
+  html[data-theme="light"] .poderes-resultado,
+  html[data-theme="light"] .brasoes-historia-resultado,
+  html[data-theme="light"] .comparador-topo,
+  html[data-theme="light"] .comparador-select-panel,
+  html[data-theme="light"] .comparador-selecionadas,
+  html[data-theme="light"] .comparador-stat,
+  html[data-theme="light"] .comparador-card,
+  html[data-theme="light"] .comparador-hero-simples,
+  html[data-theme="light"] .comparador-controle-simples,
+  html[data-theme="light"] .comparador-resultado-simples,
+  html[data-theme="light"] .comparador-detalhes-tecnicos,
+  html[data-theme="light"] .base-legal-hero,
+  html[data-theme="light"] .base-legal-busca-card,
+  html[data-theme="light"] .base-legal-resultados-card,
+  html[data-theme="light"] .base-legal-card,
+  html[data-theme="light"] .remuneracao-stat,
+  html[data-theme="light"] .remuneracao-table-wrap,
+  html[data-theme="light"] .comparador-table-wrap,
+  html[data-theme="light"] .ad-slot--card,
+  html[data-theme="light"] .ad-slot--inline,
+  html[data-theme="light"] .ad-slot--hero,
+  html[data-theme="light"] .ad-slot--footer,
+  html[data-theme="light"] .produto-card,
+  html[data-theme="light"] .curso-card,
+  html[data-theme="light"] .principal-como-usar,
+  html[data-theme="light"] .principal-nota,
+  html[data-theme="light"] .portal-disclaimer,
+  html[data-theme="light"] .result-list,
+  html[data-theme="light"] .alerta,
+  html[data-theme="light"] .success,
+  html[data-theme="light"] footer {
+    background: #f3f5f8 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    color: #111827 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .12) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .header-facts-panel,
+  html[data-theme="light"] .header-fact,
+  html[data-theme="light"] .header-leadership-item,
+  html[data-theme="light"] .header-independent-note,
+  html[data-theme="light"] .header-current-label,
+  html[data-theme="light"] .header-current-copy small,
+  html[data-theme="light"] .header-desc,
+  html[data-theme="light"] .principal-eyebrow,
+  html[data-theme="light"] .principal-tag,
+  html[data-theme="light"] .ad-label,
+  html[data-theme="light"] .sidebar-nav a,
+  html[data-theme="light"] .sidebar-social-btn,
+  html[data-theme="light"] .sidebar-product,
+  html[data-theme="light"] .sidebar-ad a,
+  html[data-theme="light"] .base-legal-hero-box,
+  html[data-theme="light"] .base-legal-detalhes div,
+  html[data-theme="light"] .comparador-card-metricas > div,
+  html[data-theme="light"] .comparador-check-list--simples .comparador-check-grupo,
+  html[data-theme="light"] .comparador-card,
+  html[data-theme="light"] .base-legal-card {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .current-flag-frame,
+  html[data-theme="light"] .current-flag-frame.brand-logo-frame,
+  html[data-theme="light"] .current-flag-frame.institution-logo-frame,
+  html[data-theme="light"] .principal-card-icon {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .13) !important;
+  }
+
+  html[data-theme="light"] .current-flag-frame img,
+  html[data-theme="light"] .current-flag-frame.brand-logo-frame img,
+  html[data-theme="light"] .current-flag-frame.institution-logo-frame img {
+    background: transparent !important;
+  }
+
+  html[data-theme="light"] .menu-btn,
+  html[data-theme="light"] .theme-toggle-header,
+  html[data-theme="light"] .close-btn,
+  html[data-theme="light"] .app-floating-action,
+  html[data-theme="light"] .app-bottom-item,
+  html[data-theme="light"] .principal-btn,
+  html[data-theme="light"] .btn-primary,
+  html[data-theme="light"] .btn-secondary,
+  html[data-theme="light"] .btn-submit,
+  html[data-theme="light"] .ad-button,
+  html[data-theme="light"] .comparador-add-btn,
+  html[data-theme="light"] .comparador-toggle-lista,
+  html[data-theme="light"] .base-legal-exemplos button,
+  html[data-theme="light"] .base-legal-chip,
+  html[data-theme="light"] .base-legal-fonte-btn,
+  html[data-theme="light"] .comparador-card-links a {
+    background: #e6eaf1 !important;
+    background-image: none !important;
+    border-color: #c0c8d5 !important;
+    color: #111827 !important;
+    box-shadow: 0 5px 12px rgba(15, 23, 42, .10) !important;
+  }
+
+  html[data-theme="light"] .app-bottom-nav {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .20) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] body[data-page="principal"] .app-bottom-item[href="index.html"],
+  html[data-theme="light"] body[data-page="remuneracao"] .app-bottom-item[href="remuneracao.html"],
+  html[data-theme="light"] body[data-page="concursos"] .app-bottom-item[href="concursos.html"],
+  html[data-theme="light"] body[data-page="comparar"] .app-bottom-item[href="comparar-carreiras.html"] {
+    background: #d8dee9 !important;
+    background-image: none !important;
+    box-shadow: inset 0 2px 5px rgba(15, 23, 42, .16) !important;
+  }
+
+  html[data-theme="light"] select,
+  html[data-theme="light"] input,
+  html[data-theme="light"] textarea,
+  html[data-theme="light"] .base-legal-input-row input,
+  html[data-theme="light"] .comparador-controle-simples input,
+  html[data-theme="light"] .comparador-controle-simples select {
+    background: #f8fafc !important;
+    background-image: none !important;
+    border-color: #bdc6d4 !important;
+    color: #111827 !important;
+    box-shadow: inset 0 2px 5px rgba(15, 23, 42, .10) !important;
+  }
+
+  html[data-theme="light"] .sidebar {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, .22) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .menu-overlay.active {
+    background: rgba(17, 24, 39, .34) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  html[data-theme="light"] body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    background: #e6eaf1 !important;
+    background-image: none !important;
+    border-color: #c0c8d5 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .18) !important;
+  }
+
+  html[data-theme="light"] .header-current-copy strong,
+  html[data-theme="light"] .header-current-copy p,
+  html[data-theme="light"] .header-facts-head span,
+  html[data-theme="light"] .header-facts-head strong,
+  html[data-theme="light"] .header-fact span,
+  html[data-theme="light"] .header-fact strong,
+  html[data-theme="light"] .header-leadership-item span,
+  html[data-theme="light"] .header-leadership-item strong,
+  html[data-theme="light"] .principal-title,
+  html[data-theme="light"] .principal-section-title h2,
+  html[data-theme="light"] .card h2,
+  html[data-theme="light"] .card h3,
+  html[data-theme="light"] .principal-card h3,
+  html[data-theme="light"] .sidebar-brand strong {
+    color: #111827 !important;
+    text-shadow: none !important;
+  }
+
+  html[data-theme="light"] .header-current-copy p,
+  html[data-theme="light"] .header-fact span,
+  html[data-theme="light"] .header-leadership-item span,
+  html[data-theme="light"] .principal-card p,
+  html[data-theme="light"] .principal-section-title p,
+  html[data-theme="light"] .small-note,
+  html[data-theme="light"] .ad-placeholder-link small,
+  html[data-theme="light"] footer,
+  html[data-theme="light"] .footer-disclaimer,
+  html[data-theme="light"] .base-legal-detalhes dd,
+  html[data-theme="light"] .base-legal-tags span,
+  html[data-theme="light"] .comparador-card-notas p {
+    color: #4b5563 !important;
+  }
+}
