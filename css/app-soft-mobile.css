@@ -3848,3 +3848,53 @@ body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-p
     color: #4b5563 !important;
   }
 }
+
+/* =======================================================
+   Ajuste mobile pontual do fundo grande do cabeçalho
+   - aplica apenas em celular
+   - faz a imagem grande (bandeira / logoleão) ocupar todo o cabeçalho
+   - evita corte da arte, mantendo-a inteira atrás do conteúdo
+   ======================================================= */
+@media (max-width: 820px) {
+  .header-institution-card::before {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    background-size: cover, cover, contain !important;
+    background-position: center center, center center, center center !important;
+    background-repeat: no-repeat, no-repeat, no-repeat !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    opacity: 0.82 !important;
+  }
+}
+
+
+/* =======================================================
+   Ajuste mobile pontual do fundo grande do cabeçalho — zoom forte
+   - aplica apenas em celular
+   - bandeira/logoleão preenche 100% do cabeçalho com cover
+   - permite corte da arte para completar todo o fundo
+   ======================================================= */
+@media (max-width: 820px) {
+  body[data-page="principal"] .header-institution-card::before,
+  body[data-inst="portal"] .header-institution-card::before,
+  body:not([data-inst="portal"]) .header-institution-card::before,
+  .header-institution-card::before {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    background-size: cover, cover, cover !important;
+    background-position: center center, center center, center center !important;
+    background-repeat: no-repeat, no-repeat, no-repeat !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    opacity: 0.86 !important;
+  }
+}
