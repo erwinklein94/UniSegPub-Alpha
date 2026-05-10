@@ -1,4 +1,3 @@
-<!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
 <header class="site-header" role="banner">
 <div class="header-content header-shell">
 <div class="header-topbar">
@@ -79,38 +78,12 @@
 <strong id="header-resumo-comando">—</strong>
 </div>
 </div>
-<div class="header-fact header-fact--dados-atualizados header-update-note">
-<span id="header-label-dados-atualizados">Dados de atualização do site</span>
-<strong id="header-resumo-dados-atualizados">Calculando...</strong>
-</div>
-
 <div class="header-controls-grid header-controls-grid--summary">
 <div aria-label="Escolha rápida de instituição" class="header-inst-selector">
 <label for="instituicao_header">Consultar instituição</label>
 <select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
 <option disabled="" selected="" value="">Escolha uma instituição</option>
 </select>
-</div>
-<div aria-label="Alternar entre instituição militar, bombeiros, civil e penal do estado selecionado" class="header-branch-switcher">
-<span>Carreira do estado</span>
-<div class="branch-buttons">
-<button aria-pressed="false" class="branch-option" data-branch="pm" disabled="" id="header-branch-pm" type="button">
-<strong id="header-pm-sigla">PM</strong>
-<small>Militar</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="bm" disabled="" id="header-branch-bm" type="button">
-<strong id="header-bm-sigla">CBM</strong>
-<small>Bombeiros</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="pc" disabled="" id="header-branch-pc" type="button">
-<strong id="header-pc-sigla">PC</strong>
-<small>Civil</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="pp" disabled="" id="header-branch-pp" type="button">
-<strong id="header-pp-sigla">PP</strong>
-<small>Penal</small>
-</button>
-</div>
 </div>
 </div>
 </aside>
@@ -228,5 +201,12 @@
 </button>
 </div>
 </div>
+</div>
+
+<div aria-hidden="true" class="header-js-contract" hidden>
+<button id="header-branch-pm" tabindex="-1" type="button"></button>
+<button id="header-branch-bm" tabindex="-1" type="button"></button>
+<button id="header-branch-pc" tabindex="-1" type="button"></button>
+<button id="header-branch-pp" tabindex="-1" type="button"></button>
 </div>
 </header>

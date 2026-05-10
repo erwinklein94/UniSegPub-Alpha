@@ -118,7 +118,10 @@ function getInstituicoesComparador() {
       };
     })
     .sort((a, b) => {
-      const estadoComp = Object.keys(HEADER_ESTADOS).indexOf(a.estado) - Object.keys(HEADER_ESTADOS).indexOf(b.estado);
+      const comparar = typeof compararTextoPtBr === 'function'
+        ? compararTextoPtBr
+        : ((valorA, valorB) => String(valorA || '').localeCompare(String(valorB || ''), 'pt-BR', { sensitivity: 'base' }));
+      const estadoComp = comparar(a.estadoNome, b.estadoNome);
       return estadoComp || getOrdemComparador(a.inst) - getOrdemComparador(b.inst);
     });
 }
@@ -129,8 +132,12 @@ function inicializarComparadorCarreiras() {
 
   if (!selecao.dataset.renderizado) {
     const instituicoes = getInstituicoesComparador();
-    const ordemEstados = Object.keys(HEADER_ESTADOS);
-    selecao.innerHTML = ordemEstados.map(estado => {
+    const comparar = typeof compararTextoPtBr === 'function'
+      ? compararTextoPtBr
+      : ((valorA, valorB) => String(valorA || '').localeCompare(String(valorB || ''), 'pt-BR', { sensitivity: 'base' }));
+    const ordemEstados = Array.from(new Map(instituicoes.map(item => [item.estado, item.estadoNome])).entries())
+      .sort((a, b) => comparar(a[1], b[1]));
+    selecao.innerHTML = ordemEstados.map(([estado, estadoNome]) => {
       const dadosEstado = HEADER_ESTADOS[estado] || {};
       const itens = instituicoes.filter(item => item.estado === estado);
       if (!itens.length) return '';

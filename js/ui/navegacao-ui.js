@@ -172,6 +172,8 @@ function atualizarHeaderDesc(descInstituicao) {
   const descs = {
     pmesp: 'Polícia Militar do Estado de São Paulo',
     pmal: 'Polícia Militar do Estado de Alagoas',
+    pmam: 'Polícia Militar do Estado do Amazonas',
+    pmap: 'Polícia Militar do Estado do Amapá',
     pcal: 'Polícia Civil do Estado de Alagoas',
     ppal: 'Polícia Penal do Estado de Alagoas',
     pcsp: 'Polícia Civil do Estado de São Paulo',
@@ -263,7 +265,7 @@ function initTheme() {
 function popularCargos(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
-    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pcal: CARGOS_PCAL,   ppal: CARGOS_PPAL,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   ppal: CARGOS_PPAL,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -273,7 +275,7 @@ function popularCargos(inst) {
     pmes: CARGOS_PMES,   bmes: CARGOS_BMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
-    bmap: CARGOS_BMAP,};
+    bmap: CARGOS_BMAP, pmap: CARGOS_PMAP,};
   currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');

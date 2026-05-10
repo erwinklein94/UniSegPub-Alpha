@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260506mobilelight1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260510updatecard1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -150,40 +150,6 @@
 <strong id="header-resumo-comando">—</strong>
 </div>
 </div>
-<div class="header-fact header-fact--dados-atualizados header-update-note">
-<span id="header-label-dados-atualizados">Dados de atualização do site</span>
-<strong id="header-resumo-dados-atualizados">Calculando...</strong>
-</div>
-
-<div class="header-controls-grid header-controls-grid--summary">
-<div aria-label="Escolha rápida de instituição" class="header-inst-selector">
-<label for="instituicao_header">Consultar instituição</label>
-<select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
-<option disabled="" selected="" value="">Escolha uma instituição</option>
-</select>
-</div>
-<div aria-label="Alternar entre instituição militar, bombeiros, civil e penal do estado selecionado" class="header-branch-switcher">
-<span>Carreira do estado</span>
-<div class="branch-buttons">
-<button aria-pressed="false" class="branch-option" data-branch="pm" disabled="" id="header-branch-pm" type="button">
-<strong id="header-pm-sigla">PM</strong>
-<small>Militar</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="bm" disabled="" id="header-branch-bm" type="button">
-<strong id="header-bm-sigla">CBM</strong>
-<small>Bombeiros</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="pc" disabled="" id="header-branch-pc" type="button">
-<strong id="header-pc-sigla">PC</strong>
-<small>Civil</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="pp" disabled="" id="header-branch-pp" type="button">
-<strong id="header-pp-sigla">PP</strong>
-<small>Penal</small>
-</button>
-</div>
-</div>
-</div>
 </aside>
 </div>
 </section>
@@ -300,6 +266,19 @@
 </div>
 </div>
 </div>
+
+<div aria-hidden="true" class="header-js-contract header-js-contract--instituicao" hidden>
+<select id="instituicao_header" tabindex="-1">
+<option value=""></option>
+</select>
+</div>
+
+<div aria-hidden="true" class="header-js-contract" hidden>
+<button id="header-branch-pm" tabindex="-1" type="button"></button>
+<button id="header-branch-bm" tabindex="-1" type="button"></button>
+<button id="header-branch-pc" tabindex="-1" type="button"></button>
+<button id="header-branch-pp" tabindex="-1" type="button"></button>
+</div>
 </header>
 <!-- BLOCO 03.2 — Faixas decorativas abaixo do cabeçalho -->
 <div aria-hidden="true" class="stripe-container">
@@ -329,13 +308,22 @@
 </div>
 <!-- BLOCO 03.4.2 — Links internos organizados por finalidade -->
 <nav aria-label="Páginas do portal" class="sidebar-nav">
-<div aria-label="Consultas principais" class="sidebar-nav-group">
-<div class="sidebar-nav-title">Consultas principais</div>
+<div aria-label="Navegação inicial" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Visão geral</span>
+<small>Acesso inicial e contexto do portal</small>
+</div>
 <a href="index.html" id="menu-principal" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🏠</span>
 <span class="sidebar-link-text">Principal</span>
 <small>Início do portal</small>
 </a>
+</div>
+<div aria-label="Informações de carreira e legislação" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Carreira e legislação</span>
+<small>Dados funcionais, normas e benefícios</small>
+</div>
 <a aria-current="page" class="active" href="remuneracao.html" id="menu-remuneracao" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">💰</span>
 <span class="sidebar-link-text">Remuneração Tabelada</span>
@@ -344,58 +332,70 @@
 <a href="direitos.html" id="menu-direitos" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
 <span class="sidebar-link-text">Direitos e Vantagens</span>
-<small>Benefícios e alertas</small>
+<small>Benefícios, adicionais e alertas</small>
 </a>
 <a href="poderes-deveres.html" id="menu-poderes" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">📜</span>
 <span class="sidebar-link-text">Poderes e Deveres</span>
-<small>Leis, limites e competências</small>
+<small>Competências, limites e deveres</small>
 </a>
 <a href="base-legal.html" id="menu-baselegal" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
+<span aria-hidden="true" class="sidebar-link-icon">🏛️</span>
 <span class="sidebar-link-text">Base Legal</span>
-<small>Leis e enquadramentos</small>
+<small>Leis, decretos e enquadramentos</small>
 </a>
-<a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
-<span class="sidebar-link-text">Brasões e história</span>
-<small>Origem, brasão e dados</small>
-</a>
+</div>
+<div aria-label="Pesquisa, concursos e comparação" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Pesquisa e comparação</span>
+<small>Escolha, compare e aprofunde</small>
+</div>
 <a href="concursos.html" id="menu-concursos" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">📋</span>
 <span class="sidebar-link-text">Concursos</span>
-<small>Editais e requisitos</small>
+<small>Editais, requisitos e etapas</small>
 </a>
 <a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
 <span class="sidebar-link-text">Comparar Carreiras</span>
 <small>Salários, vagas e bancas</small>
 </a>
+<a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
+<span class="sidebar-link-text">Brasões e história</span>
+<small>Origem, identidade e histórico</small>
+</a>
 </div>
 <div aria-label="Apoio jurídico e institucional" class="sidebar-nav-group">
-<div class="sidebar-nav-title">Apoio jurídico e institucional</div>
+<div class="sidebar-nav-title">
+<span>Apoio institucional</span>
+<small>Entidades, teses e suporte</small>
+</div>
 <a href="acoes-judiciais.html" id="menu-acoes" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🧾</span>
 <span class="sidebar-link-text">Ações Judiciais</span>
-<small>Teses e orientações</small>
+<small>Teses, ações e orientações</small>
 </a>
 <a href="associacoes-sindicatos.html" id="menu-associacoes" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
+<span aria-hidden="true" class="sidebar-link-icon">🤝</span>
 <span class="sidebar-link-text">Associações e Sindicatos</span>
-<small>Entidades de apoio</small>
+<small>Entidades representativas</small>
 </a>
 </div>
-<div aria-label="Conteúdos e parceiros" class="sidebar-nav-group">
-<div class="sidebar-nav-title">Conteúdos e parceiros</div>
+<div aria-label="Produtos, conteúdos e parceiros" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Loja e parcerias</span>
+<small>Produtos, cursos e contato comercial</small>
+</div>
 <a href="produtos.html" id="menu-produtos" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🛒</span>
 <span class="sidebar-link-text">Produtos</span>
-<small>Cursos, livros e produtos</small>
+<small>Cursos, livros e equipamentos</small>
 </a>
 <a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🤝</span>
+<span aria-hidden="true" class="sidebar-link-icon">📣</span>
 <span class="sidebar-link-text">Parceiros</span>
-<small>Anuncie aqui</small>
+<small>Anuncie ou fale conosco</small>
 </a>
 </div>
 </nav>

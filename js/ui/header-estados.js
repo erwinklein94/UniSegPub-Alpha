@@ -23,6 +23,24 @@ const HEADER_ESTADOS = {
     pp: 'ppal',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
   },
+  am: {
+    nome: 'Amazonas',
+    sigla: 'AM',
+    pm: 'pmam',
+    bm: 'bmam',
+    pc: 'pcam',
+    pp: 'ppam',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg'
+  },
+  ap: {
+    nome: 'Amapá',
+    sigla: 'AP',
+    pm: 'pmap',
+    bm: 'bmap',
+    pc: 'pcap',
+    pp: 'ppap',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg'
+  },
   sp: {
     nome: 'São Paulo',
     sigla: 'SP',
@@ -115,6 +133,8 @@ const HEADER_ESTADOS = {
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
   pmal: { titulo: 'PMAL', desc: 'Polícia Militar do Estado de Alagoas' },
+  pmam: { titulo: 'PMAM', desc: 'Polícia Militar do Estado do Amazonas' },
+  pmap: { titulo: 'PMAP', desc: 'Polícia Militar do Estado do Amapá' },
   pcal: { titulo: 'PCAL', desc: 'Polícia Civil do Estado de Alagoas' },
   ppal: { titulo: 'PPAL', desc: 'Polícia Penal do Estado de Alagoas' },
   bmac: { titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
@@ -163,6 +183,7 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pmac: 'img/MILITAR/pmac.webp',
   pmal: 'img/MILITAR/pmal.webp',
   pmam: 'img/MILITAR/pmam.webp',
+  pmap: 'img/MILITAR/pmap.webp',
   pmba: 'img/MILITAR/pmba.webp',
   pmdf: 'img/MILITAR/pmdf.webp',
   pmerj: 'img/MILITAR/pmerj.webp',
@@ -1373,26 +1394,36 @@ const HEADER_INSTITUICOES_RESUMO = {
     ]
   },
   "pmam": {
-    "nome": "Polícia Militar do Amazonas",
+    "nome": "Polícia Militar do Estado do Amazonas",
     "sigla": "PMAM",
     "estado": "Amazonas",
     "estadoSigla": "AM",
     "tipo": "Polícia Militar",
-    "criacao": "04/04/1837",
+    "criacao": "04/04/1837 · Guarda Policial da Província do Amazonas",
     "ativa": 8250,
-    "ativaLabel": "8.250",
+    "ativaLabel": "8.250 (estimado)",
     "reserva": 8662,
-    "reservaLabel": "8.662 · estimativa técnica",
+    "reservaLabel": "8.662 inativos/reserva (estimado)",
     "femininas": 1072,
-    "femininasLabel": "1.072 · estimado",
+    "femininasLabel": "1.072 mulheres (estimado)",
     "populacao": 4321616,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 524 hab. · 0,191%",
+    "relacaoLabel": "1 ativo / 524 hab. · 0,191% (estimado)",
     "relacaoTitulo": "Relação ativa/população",
-    "governador": "Roberto Cidade — Governador em exercício",
-    "comando": "Comandante-Geral da PMAM — nome a confirmar em fonte oficial",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "governador": "Roberto Cidade",
+    "comando": "Cel PM Klinger Paiva — Comandante-Geral",
+    "fonte": "PMAM; Governo do Amazonas; FGV/PMAM 2021; Lei AM nº 3.725/2012; Lei AM nº 7.445/2025; IBGE 2025; FBSP/SENASP quando aplicável",
+    "atualizado": "PMAM revisada em 09/05/2026 — efetivo ativo, reserva/inativos e efetivo feminino mantidos como estimativa quando não localizados em fonte oficial consolidada",
+    "estrutura": "Polícia Militar estadual subordinada ao Governador do Amazonas, com Comando-Geral, Estado-Maior, diretorias, comandos de policiamento, unidades operacionais, unidades especializadas, ensino e apoio administrativo.",
+    "sede": "Rua Benjamin Constant, 2150, Petrópolis, Manaus/AM, CEP 69063-010",
+    "emergencia": "190",
+    "linksOficiais": [
+      "https://www.pm.am.gov.br/",
+      "https://www.pm.am.gov.br/historia/",
+      "https://www.pm.am.gov.br/editais/",
+      "https://conhecimento.fgv.br/concursos/pmam21",
+      "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf"
+    ]
   },
   "pcam": {
     "nome": "Polícia Civil do Amazonas",
@@ -1439,26 +1470,39 @@ const HEADER_INSTITUICOES_RESUMO = {
     "atualizado": "Base numérica inserida em 01/05/2026"
   },
   "pmap": {
-    "nome": "Polícia Militar do Amapá",
+    "nome": "Polícia Militar do Estado do Amapá",
     "sigla": "PMAP",
     "estado": "Amapá",
     "estadoSigla": "AP",
     "tipo": "Polícia Militar",
-    "criacao": "17/02/1944",
+    "criacao": "26/11/1975 · Lei Federal nº 6.270/1975 · origem territorial; antecedente: Guarda Territorial do Amapá",
     "ativa": 3109,
-    "ativaLabel": "3.109",
+    "ativaLabel": "3.109 ativos (estimado)",
     "reserva": 3264,
-    "reservaLabel": "3.264 · estimativa técnica",
+    "reservaLabel": "3.264 reserva/reforma/pensionistas (estimado)",
+    "total": 6373,
+    "totalLabel": "≈ 6.373 vínculos ativos/inativos (estimado)",
     "femininas": 871,
-    "femininasLabel": "871 · estimado",
+    "femininasLabel": "871 mulheres (estimado)",
     "populacao": 806517,
+    "populacaoLabel": "806.517 habitantes · IBGE 2025",
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 259 hab. · 0,385%",
+    "relacaoLabel": "1 ativo / 259 hab. · 0,385% (estimado)",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Clécio Luís",
-    "comando": "Comandante-Geral da PMAP — nome a confirmar em fonte oficial",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Cel PM Márcio Allan — Comandante-Geral",
+    "estrutura": "Comando-Geral, Subcomando-Geral, Estado-Maior, diretorias, batalhões territoriais, unidades especializadas, policiamento ostensivo, ambiental, trânsito, BOPE, radiopatrulhamento, saúde, ensino, logística e corregedoria; atuação em Macapá, Santana e interior do Amapá conforme organização operacional da corporação.",
+    "sede": "Quartel do Comando-Geral — Rua Jovino Dinoá, 3671, bairro Beirol, Macapá/AP — CEP 68.902-030",
+    "emergencia": "190",
+    "linksOficiais": [
+      "https://pm.ap.gov.br/",
+      "https://pm.portal.ap.gov.br/conteudo/institucional/historia-da-pm",
+      "https://pm.portal.ap.gov.br/conteudo/institucional/comandante-geral",
+      "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
+      "https://sead.portal.ap.gov.br/legislacoes"
+    ],
+    "fonte": "PMAP; Governo do Amapá; SEAD/AP; Diário Oficial do Amapá; LC AP 113/2018 e LC AP 173/2025; IBGE 2025; Portal da Transparência/AP; FCC/SEAD/AP concurso Soldado PM 2022/2026",
+    "atualizado": "PMAP revisada em 10/05/2026 — comando atualizado por pauta oficial de passagem de comando; efetivo, reserva e mulheres marcados como estimados; remuneração por subsídio da LC AP nº 173/2025, Anexo III, com efeitos em 01/04/2026"
   },
   "pcap": {
     "nome": "Polícia Civil do Amapá",
@@ -3475,6 +3519,102 @@ function aplicarEstruturaEstadosFaltantesDados() {
   });
 }
 
+
+function aplicarDadosEspecificosPmap() {
+  const inst = 'pmap';
+  const estado = 'ap';
+  const efetivoAtivo = 3109;
+  const populacaoAp = 806517;
+  const reservaEstimada = 3264;
+  const mulheresEstimadas = 871;
+  const relacao = Math.round(populacaoAp / efetivoAtivo);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Amapá',
+    sigla: 'AP',
+    pm: inst,
+    bm: 'bmap',
+    pc: 'pcap',
+    pp: 'ppap',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg'
+  };
+  HEADER_ESTADOS[estado].pm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = { titulo: 'PMAP', desc: 'Polícia Militar do Estado do Amapá' };
+  HEADER_INSTITUICOES_IMAGENS[inst] = 'img/MILITAR/pmap.webp';
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Polícia Militar do Estado do Amapá',
+    sigla: 'PMAP',
+    estado: 'Amapá',
+    estadoSigla: 'AP',
+    tipo: 'Polícia Militar',
+    criacao: '26/11/1975 · Lei Federal nº 6.270/1975 · origem territorial; antecedente: Guarda Territorial do Amapá',
+    ativa: efetivoAtivo,
+    ativaLabel: '3.109 ativos (estimado)',
+    reserva: reservaEstimada,
+    reservaLabel: '3.264 reserva/reforma/pensionistas (estimado)',
+    total: efetivoAtivo + reservaEstimada,
+    totalLabel: '≈ 6.373 vínculos ativos/inativos (estimado)',
+    femininas: mulheresEstimadas,
+    femininasLabel: '871 mulheres (estimado)',
+    populacao: populacaoAp,
+    populacaoLabel: '806.517 habitantes · IBGE 2025',
+    populacaoTitulo: 'População do Estado',
+    relacaoLabel: `1 ativo / ${relacao.toLocaleString('pt-BR')} hab. · 0,385% (estimado)`,
+    relacaoTitulo: 'Relação ativa/população',
+    governador: 'Clécio Luís',
+    comando: 'Cel PM Márcio Allan — Comandante-Geral',
+    estrutura: 'Comando-Geral, Subcomando-Geral, Estado-Maior, diretorias, batalhões territoriais, unidades especializadas, policiamento ostensivo, ambiental, trânsito, BOPE, radiopatrulhamento, saúde, ensino, logística e corregedoria; atuação em Macapá, Santana e interior do Amapá conforme organização operacional da corporação.',
+    sede: 'Quartel do Comando-Geral — Rua Jovino Dinoá, 3671, bairro Beirol, Macapá/AP — CEP 68.902-030',
+    emergencia: '190',
+    linksOficiais: ['https://pm.ap.gov.br/', 'https://pm.portal.ap.gov.br/conteudo/institucional/historia-da-pm', 'https://sead.portal.ap.gov.br/concursos/vigentes/24027', 'https://sead.portal.ap.gov.br/legislacoes'],
+    fonte: 'PMAP; Governo do Amapá; SEAD/AP; Diário Oficial do Amapá; LC AP 113/2018 e LC AP 173/2025; IBGE 2025; Portal da Transparência/AP; FCC/SEAD/AP concurso Soldado PM 2022/2026',
+    atualizado: 'PMAP revisada em 10/05/2026 — comando atualizado por pauta oficial de passagem de comando; efetivo, reserva e mulheres marcados como estimados; remuneração por subsídio da LC AP nº 173/2025, Anexo III, com efeitos em 01/04/2026'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = { nome: 'PMAP, SEAD/AP e Diário Oficial do Amapá — LC AP nº 113/2018 alterada pela LC AP nº 173/2025; Tabela de Progressão Horizontal 2026 I, vigente a partir de 01/04/2026', url: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf' };
+  if (typeof CARGOS_PMAP !== 'undefined' && Array.isArray(CARGOS_PMAP) && CARGOS_PMAP.length) CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_PMAP;
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'PMAP',
+    desc: 'Polícia Militar do Estado do Amapá',
+    cor: '#1f5f3b',
+    alertaPrev: 'PMAP/AP: conferir LC AP nº 113/2018, LC AP nº 173/2025, subsídio por posto/graduação e tempo de efetivo serviço, AMPRev, reserva/reforma, pensão, diárias, serviço extraordinário, alimentação, fardamento, rubricas pessoais e eventual vínculo federal de ex-território diretamente no contracheque e na norma vigente.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'PMAP — Concurso Público CFSD/QPPMC/PMAP 2022, organizado pela Fundação Carlos Chagas, para cadastro de reserva de Soldado do Quadro de Praças Policiais Militares Combatentes; em 2026 há convocações e resultados de fases pela SEAD/AP.',
+    salario: 'Edital 2022: Soldado PM 2ª Classe em curso de formação R$ 2.827,00 e Soldado PM 1ª Classe R$ 5.313,18. Tabela legal vigente do portal: LC AP nº 173/2025, Anexo III, com Soldado Base R$ 6.039,13 e Aluno Soldado Base R$ 3.213,26 em 01/04/2026; conferir nível, descontos e rubricas pessoais.',
+    vagas: '2.500 vagas em cadastro de reserva para Soldado PMAP, conforme edital 2022; nomeações, convocações e matrículas dependem de atos da SEAD/AP, PMAP e DOE/AP.',
+    cotas: 'Conferir ampla concorrência, reserva por sexo quando aplicável, cotas legais, classificação, cadastro de reserva e retificações do edital.',
+    idade: 'Edital Soldado 2022: requisitos de idade, altura, CNH, saúde, aptidão física e investigação social devem ser conferidos na versão vigente e retificações; não aplicar regra de outro estado.',
+    escolaridade: 'Ensino médio completo para Soldado PM, além de requisitos de nacionalidade, CNH, altura, idoneidade, aptidão física, psicológica e saúde conforme edital.',
+    materias: 'Conhecimentos Gerais, Língua Portuguesa, Matemática, História e Geografia do Amapá, Noções de Direito e legislação específica conforme edital FCC/SEAD/AP.',
+    banca: 'Fundação Carlos Chagas — FCC.',
+    inscritos: 'Certame em acompanhamento pela SEAD/AP, com editais de convocação, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social e matrícula publicados em 2025/2026.',
+    etapas: 'Prova objetiva, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social, entrega documental, matrícula e Curso de Formação de Soldados conforme edital e convocações.',
+    cfsd: 'Curso de Formação de Soldados QPPMC/PMAP, com regime e regras próprias da carreira militar estadual; promoção/graduação depende de conclusão, classificação e ato administrativo.',
+    estagio: 'Exercício inicial, estágio probatório/adaptação, lotação e promoções dependem de legislação militar estadual, boletins, necessidade operacional e atos da PMAP.',
+    validade: 'Conferir validade, prorrogação, homologação e convocações no DOE/AP, SEAD/AP e PMAP. Não tratar como novo edital aberto sem ato posterior.',
+    previsao: 'Sem novo edital aberto identificado nesta revisão; manter o concurso Soldado 2022/2026 como certame vigente/histórico com convocações e monitorar futuras autorizações oficiais.',
+    site: 'https://sead.portal.ap.gov.br/concursos/vigentes/24027'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'PMAP — subsídio, progressão horizontal e enquadramento', status: 'Conferência individual', ano: 'LC AP 113/2018 · LC AP 173/2025', tipo: 'individual', desc: 'Verificar posto/graduação, nível de progressão horizontal, tempo de efetivo serviço, promoções e implantação da tabela. A tabela do site orienta a conferência, mas não liquida diferenças individuais.', base: 'LC AP nº 113/2018 alterada pela LC AP nº 173/2025, DOE/AP, ficha funcional, atos de promoção/progressão e contracheques.', fonte: 'SEAD/AP / Diário Oficial do Amapá', fonteUrl: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'PMAP — diárias, alimentação, fardamento e serviço extraordinário', status: 'Depende de ato, escala e lotação', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir diárias, ajuda de custo, alimentação/etapa, fardamento, serviço extraordinário, função, lotação especial, indenizações operacionais e eventuais retroativos. Não tratar como parcela universal da tropa.', base: 'Legislação estadual, decretos, boletins, escala, ordem de serviço, ato de designação, ficha financeira e contracheque.', fonte: 'PMAP / SEAD-AP / DOE-AP', fonteUrl: 'https://pm.ap.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'PMAP — reserva, reforma, pensão militar e ex-Território', status: 'Análise individual', ano: 'Tema previdenciário e funcional', tipo: 'individual', desc: 'Amapá pode envolver militares estaduais e quadros federais oriundos do ex-Território. Não misturar tabela estadual da PMAP com remuneração federal de transposição/ex-Território sem verificar vínculo, ato e regime jurídico.', base: 'Ficha funcional, ato de ingresso/transposição, processo de reserva/reforma, AMPRev, legislação estadual e federal aplicável, contracheques e decisões individuais.', fonte: 'SEAD/AP / AMPRev / Governo Federal quando houver quadro federal', fonteUrl: 'https://www.transparencia.ap.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'Concurso PMAP 2022/2026 — convocação, fase e matrícula', status: 'Condicionado ao edital', ano: '2022/2026', tipo: 'individual', desc: 'Pode envolver avaliação documental, TAF, psicotécnico, saúde, investigação social, classificação, cotas e matrícula em curso de formação. Depende de edital, retificação, convocação e situação individual.', base: 'Edital FCC/SEAD/AP CFSD/QPPMC/PMAP 2022, retificações, editais SEAD/AP 2025/2026 e DOE/AP.', fonte: 'SEAD/AP — Concurso Soldado PM 2022', fonteUrl: 'https://sead.portal.ap.gov.br/concursos/vigentes/24027', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'ASMEAP — Associação dos Servidores Militares do Estado do Amapá', foco: 'Policiais militares e bombeiros militares do Amapá, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas de carreira, remuneração, proteção social, promoções e condições de serviço.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, plano de saúde, atendimento jurídico, convênios e comunicação de pautas conforme informações públicas da entidade.' },
+    { nome: 'ASPOMETERFA — associação vinculada a militares do Amapá e ex-Território', foco: 'Militares estaduais/federais, veteranos, pensionistas e pautas ligadas a transposição e proteção social, conforme atuação da entidade', acao: 'Acompanhamento associativo de demandas funcionais, previdenciárias e remuneratórias. Conferir escopo atualizado diretamente com a entidade.', site: 'https://www.facebook.com/ASPOMETERFA', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, orientação ao associado e acompanhamento de pautas administrativas/judiciais.' },
+    { nome: 'Canais institucionais da PMAP', foco: 'Informação oficial para policiais militares, candidatos e sociedade amapaense', acao: 'Publicações, editais, serviços à tropa, notícias, batalhões, diretorias, história, comando e comunicação institucional.', site: 'https://pm.ap.gov.br/', telefone: 'Emergência 190; administrativo (96) 3212-1528 / 2101-2252', mensalidade: 'Não se aplica', servicos: 'Emergência, informações institucionais, concursos, boletins, saúde, pessoal, batalhões, notícias e comunicação oficial.' }
+  ];
+}
+
 function aplicarDadosEspecificosPmal() {
   const inst = 'pmal';
   const estado = 'al';
@@ -3800,6 +3940,33 @@ function criarOptionInstituicao(inst, texto) {
   return opt;
 }
 
+function compararTextoPtBr(a, b) {
+  return String(a || '').localeCompare(String(b || ''), 'pt-BR', { sensitivity: 'base' });
+}
+
+function getEstadosOrdenadosPorNome() {
+  return Object.entries(HEADER_ESTADOS || {})
+    .filter(([uf, estado]) => estado && !['br', 'municipal'].includes(uf))
+    .sort(([, estadoA], [, estadoB]) => compararTextoPtBr(estadoA?.nome, estadoB?.nome));
+}
+
+function ordenarOptgroupsInstituicoes(select) {
+  if (!select) return;
+  const placeholder = Array.from(select.childNodes).find(node => node.nodeType === Node.ELEMENT_NODE && node.tagName === 'OPTION' && node.value === '');
+  const grupos = Array.from(select.querySelectorAll('optgroup')).sort((a, b) => {
+    const especiais = { 'Federais': -2, 'União': -2, 'Municípios': 99 };
+    const prioridadeA = Object.prototype.hasOwnProperty.call(especiais, a.label) ? especiais[a.label] : 0;
+    const prioridadeB = Object.prototype.hasOwnProperty.call(especiais, b.label) ? especiais[b.label] : 0;
+    if (prioridadeA !== prioridadeB) return prioridadeA - prioridadeB;
+    return compararTextoPtBr(a.label, b.label);
+  });
+
+  const fragmento = document.createDocumentFragment();
+  if (placeholder) fragmento.appendChild(placeholder);
+  grupos.forEach(grupo => fragmento.appendChild(grupo));
+  select.appendChild(fragmento);
+}
+
 
 function getRotuloRamoSelect(ramo, inst, info = {}) {
   if (ramo === 'bm') return 'Bombeiros Militares';
@@ -3819,9 +3986,7 @@ function montarSelectInstituicoes(select) {
   placeholder.selected = true;
   fragmento.appendChild(placeholder);
 
-  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
-    if (!estado || ['br', 'municipal'].includes(uf)) return;
-
+  getEstadosOrdenadosPorNome().forEach(([uf, estado]) => {
     const grupo = document.createElement('optgroup');
     grupo.label = estado.nome || String(uf).toUpperCase();
 
@@ -3895,7 +4060,11 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
     });
   };
 
-  ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => montarOptgroups(document.getElementById(id)));
+  ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => {
+    const seletor = document.getElementById(id);
+    montarOptgroups(seletor);
+    ordenarOptgroupsInstituicoes(seletor);
+  });
 
   const flags = document.querySelector('.header-state-flags');
   if (flags) {
@@ -3929,7 +4098,7 @@ const RESUMO_GOVERNADORES_UF_2026 = {
   ac: 'Mailza Assis',
   al: 'Paulo Dantas',
   ap: 'Clécio Luís',
-  am: 'Roberto Cidade (interino)',
+  am: 'Roberto Cidade',
   ba: 'Jerônimo Rodrigues',
   ce: 'Elmano de Freitas',
   df: 'Celina Leão',
@@ -4045,6 +4214,7 @@ function aplicarRevisaoResumosInstitucionais() {
 
 aplicarEstruturaEstadosFaltantesDados();
 aplicarDadosEspecificosPmal();
+aplicarDadosEspecificosPmap();
 aplicarDadosEspecificosPcal();
 aplicarEstruturaBombeirosMilitaresDados();
 aplicarDadosEspecificosBmac();
@@ -4574,6 +4744,7 @@ function aplicarDadosEspecificosBmba() {
 }
 
 aplicarDadosEspecificosBmap();
+aplicarDadosEspecificosPmap();
 aplicarDadosEspecificosBmmg();
 aplicarDadosEspecificosBmms();
 aplicarDadosEspecificosBmpr();
@@ -5277,7 +5448,7 @@ function selecionarEstado(estado) {
 
   mudarInstituicao(dadosEstado.pm || dadosEstado.pc || dadosEstado.pp);
   switchPage('principal');
-  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar, Bombeiros, Civil ou Penal no botão ao lado do seletor.`);
+  mostrarToast(`${dadosEstado.nome} selecionado.`);
 }
 
 function selecionarRamo(ramo) {
@@ -5382,6 +5553,7 @@ function mudarInstituicao(novaInstituicao) {
 
   const configs = {
     pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre', cor: '#006b3f', alertaPrev: 'PMAC: conferir Acreprevidência, LC AC 164/2006, tabela remuneratória, adicionais por tempo, serviço complementar, localização especial e contracheque.' },
+    pmam: { titulo: "PMAM", desc: "Polícia Militar do Estado do Amazonas", cor: "#0b5d3b", alertaPrev: "PMAM/Amazonprev/Sistema de Proteção Social Militar AM: conferir contribuição, base de cálculo, posto/graduação, reserva/reforma, pensão, GAMS, gratificação de tropa, indenizações técnicas, escalas e rubricas pessoais diretamente na lei vigente e no contracheque." },
     pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
     ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
     ppal: { titulo: 'PPAL', desc: POLICIAS_PENAIS_INFO.ppal.nome, cor: '#6b5b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppal.sigla}: ${POLICIAS_PENAIS_INFO.ppal.previdencia} ${POLICIAS_PENAIS_INFO.ppal.vantagens}` },
@@ -5702,10 +5874,9 @@ function getInstituicoesParaConsulta(esfera) {
     })
     .sort((a, b) => {
       if (a.estado !== b.estado) {
-        const ordemEstados = Object.keys(HEADER_ESTADOS);
-        return ordemEstados.indexOf(a.estado) - ordemEstados.indexOf(b.estado);
+        return compararTextoPtBr(a.estadoNome, b.estadoNome);
       }
-      return a.ordem - b.ordem || a.sigla.localeCompare(b.sigla, 'pt-BR');
+      return a.ordem - b.ordem || compararTextoPtBr(a.sigla, b.sigla);
     });
 }
 
@@ -5986,6 +6157,8 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 
 function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  if (inst === 'pmam') return 'Província do Amazonas — criação da Guarda Policial em 04/04/1837; a denominação Polícia Militar do Amazonas foi consolidada em 14/11/1938.';
+  if (inst === 'pmap') return 'Presidência da República — Lei Federal nº 6.270, de 26/11/1975, sancionada por Ernesto Geisel, criou a Polícia Militar do Território Federal do Amapá; antecedente histórico: Guarda Territorial do Amapá.';
   if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando o Corpo de Guardas Municipais da província.';
   if (inst === 'pcal') return 'Estado de Alagoas — Lei AL nº 3.437, de 25/06/1975, estrutura cargos da Polícia Civil; Lei AL nº 6.441/2003 concede autonomia administrativa e financeira.';
   if (inst === 'ppal') return 'Estado de Alagoas — Lei AL nº 7.993/2018 reestruturou a carreira; Lei AL nº 8.650/2022 redenominou Agentes Penitenciários para Policiais Penais; Lei AL nº 9.849/2026 atualizou jornada e subsídios.';
@@ -6022,6 +6195,36 @@ function getHistoricoPorTipo(inst, dados) {
         'Lei SP 18.442/2026: efetivo legal de 93.802 cargos, com quadros QOEM, QOE, QOS, QOM, QORR e QP e regras gerais de promoção.',
         'Lei SP 18.441/2026: vencimentos-base reclassificados a partir de 01/04/2026; remuneração total deve ser conferida em tabela oficial posterior quando disponível.',
         '2026: Cel PM Glauce Anselmo Cavalli assume o Comando-Geral, primeira mulher a comandar a PMESP.'
+      ]
+    };
+  }
+
+  if (inst === 'pmam') {
+    return {
+      origem: `A ${nome} tem origem histórica em 4 de abril de 1837, com a criação da Guarda Policial da então Província do Amazonas, e passou por reorganizações como Corpo Policial, Regimento Militar do Estado e Força Pública até adotar a denominação Polícia Militar do Amazonas em 14 de novembro de 1938. Em 2026, a PMAM segue como força militar estadual de policiamento ostensivo e preservação da ordem pública, com convocações do concurso FGV/2021 e tabela remuneratória atualizada pela Lei AM nº 7.445/2025.`,
+      marcos: [
+        '1837: criação da Guarda Policial da Província do Amazonas, marco histórico de origem da PMAM.',
+        '1887: Lei nº 761 reorganiza a força como Corpo Policial; em 1890, o Decreto nº 2 reorganiza a força pública estadual.',
+        '1935: Lei nº 55 muda a denominação para Força Policial do Estado; em 14/11/1938, a instituição passa a ser denominada Polícia Militar do Amazonas.',
+        '1983: marco de comando com primeiro oficial da ativa da própria PMAM no Comando-Geral, conforme histórico institucional.',
+        '2021/2022: edital FGV PMAM com 1.350 vagas para Aluno Soldado, Aluno Oficial e Oficial de Saúde.',
+        '2025: Lei AM nº 7.445 atualiza a remuneração dos policiais e bombeiros militares do Amazonas, com efeitos principais em 01/12/2025.',
+        '2026: Governo do Amazonas informa formação de 500 novos policiais e ampliação das convocações do concurso de 2021.'
+      ]
+    };
+  }
+
+  if (inst === 'pmap') {
+    return {
+      origem: `A ${nome} tem origem formal na Lei Federal nº 6.270, de 26 de novembro de 1975, que criou a Polícia Militar do Território Federal do Amapá, a partir da transformação histórica da Guarda Territorial. Em 2026, a PMAP segue como força militar estadual de policiamento ostensivo e preservação da ordem pública, com comando atualizado para o Cel PM Márcio Allan e tabela remuneratória estadual organizada por subsídio e progressão horizontal pela LC AP nº 173/2025.`,
+      marcos: [
+        'Antecedente histórico: Guarda Territorial do Amapá, sediada na Fortaleza de São José de Macapá, com mais de três décadas de atuação no antigo Território Federal.',
+        '1969: o Decreto-Lei nº 411 previu a transformação das Guardas Territoriais em Polícias Militares nos territórios federais.',
+        '26/11/1975: Lei Federal nº 6.270 cria a Polícia Militar do Território Federal do Amapá, com missão de manutenção da ordem pública e policiamento ostensivo fardado.',
+        'Após a estadualização do Amapá, a PMAP consolidou-se como polícia militar estadual, força auxiliar e reserva do Exército, com atuação ostensiva, preventiva e especializada.',
+        '2022/2026: concurso de Soldado PMAP/FCC com cadastro de reserva e convocações sucessivas publicadas pela SEAD/AP.',
+        '2025: LC AP nº 173 altera a remuneração dos militares estaduais e fixa subsídio por posto/graduação e tempo de efetivo serviço, com tabelas de 2025 a 2028.',
+        '2026: Governo do Amapá oficializa passagem de comando da PMAP para o Cel PM Márcio Allan.'
       ]
     };
   }

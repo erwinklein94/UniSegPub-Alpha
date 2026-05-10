@@ -17,6 +17,14 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PMAL — Edital nº 1/2026/Cebraspe para Soldado-Aluno, Soldado, Cadete e Aspirante; Lei AL nº 7.580/2014, Anexo IV, para estimativas por posto/graduação; Lei AL nº 9.852/2026 e SPSM/AL — Lei AL nº 8.671/2022',
     url: 'https://www.cebraspe.org.br/concursos/pm_al_26'
   },
+  pmam: {
+    nome: 'PMAM, Legisla.AM e ALEAM/SAPL — Lei AM nº 3.725/2012 atualizada pela Lei AM nº 7.445/2025; tabela de remuneração PM/BM com efeitos financeiros em 01/12/2025',
+    url: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf'
+  },
+  pmap: {
+    nome: 'PMAP, SEAD/AP e Diário Oficial do Amapá — LC AP nº 113/2018 alterada pela LC AP nº 173/2025; Tabela de Progressão Horizontal 2026 I, vigente a partir de 01/04/2026',
+    url: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf'
+  },
   pcal: {
     nome: 'PCAL — Leis AL nº 6.276/2001, nº 6.277/2001 e nº 7.602/2014 para Agente/Escrivão; Lei AL nº 8.641/2022 para Delegado; Lei AL nº 9.551/2025 revisão geral; valores sem tabela consolidada 2026 marcados como estimados',
     url: 'https://gestaointegrada.seplag.al.gov.br/'
@@ -246,6 +254,14 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `${detalhesLinha}${info.sigla}: ${info.atribuicoes} ${info.vantagens} Fonte principal: ${info.fonte}.`;
   }
 
+  if (inst === 'pmam') {
+    return linha.benefDesc || 'PMAM: tabela legal de remuneração dos policiais e bombeiros militares do Amazonas pela Lei AM nº 3.725/2012, atualizada pela Lei AM nº 7.445/2025, com referência em 01/12/2025. Soldo, gratificação de tropa e GAMS integram a tabela quando previstos; indenizações técnicas, diárias, função, retroativos, fardamento, saúde, parcelas pessoais, reserva/reforma e decisões judiciais não foram somados automaticamente.';
+  }
+
+  if (inst === 'pmap') {
+    return linha.benefDesc || 'PMAP: subsídio legal dos militares estaduais do Amapá pela LC AP nº 113/2018, alterada pela LC AP nº 173/2025, com progressão horizontal por tempo de efetivo serviço. Diárias, serviço extraordinário, alimentação/etapa, fardamento, função, vantagens pessoais, retroativos, reserva/reforma e quadros federais de ex-território não foram somados automaticamente.';
+  }
+
   if (inst === 'pmal') {
     return linha.benefDesc || 'PMAL: regime de subsídio por posto/graduação e nível. Soldado-Aluno, Soldado, Cadete e Aspirante vêm do edital PMAL 2026; demais linhas marcadas como “estimado” usam projeção técnica a partir da Lei AL 7.580/2014 e devem ser confirmadas no DOE/AL, SEPLAG/AL, transparência e contracheque. SPSM/AL, serviço voluntário, Força Tarefa, diárias, indenizações e parcelas pessoais não foram somados automaticamente.';
   }
@@ -459,6 +475,28 @@ REMUNERACAO_SP_OFICIAL.prf = CARGOS_PRF.map(cargo => linhaRemuneracaoOficial(
   cargo.badge || 'Federal 2026'
 ));
 
+
+REMUNERACAO_SP_OFICIAL.pmam = CARGOS_PMAM.map(cargo => linhaRemuneracaoOficial(
+  cargo.text,
+  cargo.padrao,
+  0,
+  cargo.criterio || 'Tabela legal de remuneração PMAM/CBMAM com efeitos financeiros em 01/12/2025, conforme Lei AM nº 7.445/2025.',
+  cargo.benefDesc || 'Benefícios, indenizações e rubricas pessoais não somados automaticamente.',
+  'pmam',
+  cargo.badge || 'Lei AM 7.445/2025 · 12/2025'
+));
+
+
+REMUNERACAO_SP_OFICIAL.pmap = CARGOS_PMAP.map(cargo => linhaRemuneracaoOficial(
+  cargo.text,
+  cargo.padrao,
+  0,
+  cargo.criterio || 'Subsídio bruto mensal por posto/graduação e nível da PMAP, com efeitos em 01/04/2026, conforme LC AP nº 173/2025.',
+  cargo.benefDesc || 'Benefícios, indenizações, auxílios e rubricas pessoais não somados automaticamente.',
+  'pmap',
+  cargo.badge || 'LC AP 173/2025 · 04/2026'
+));
+
 REMUNERACAO_SP_OFICIAL.bmsp = REMUNERACAO_SP_OFICIAL.pmesp.map(linha => Object.assign({}, linha, {
   cargo: String(linha.cargo || '')
     .replace('CMT G — Comandante Geral PM', 'CCB — Comandante do Corpo de Bombeiros da PMESP')
@@ -624,7 +662,7 @@ REMUNERACAO_MG_OFICIAL.bmmg = [
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -670,7 +708,7 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Plantões, adicional noturno, diárias, acúmulo extraordinário, representação, indenizações, função, retroativos e parcelas pessoais dependem de lei, ato, escala, lotação e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcal';
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'PCAL estimado');
-  } else if (inst === 'pmac' || inst === 'pmal' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam' || inst === 'bmap') {
+  } else if (inst === 'pmac' || inst === 'pmal' || inst === 'pmam' || inst === 'pmap' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam' || inst === 'bmap') {
     remuneracao = padrao;
     beneficios = Number(cargo.beneficios || 0);
     criterio = cargo.criterio || 'Total bruto mensal de referência para militares estaduais, conforme tabela remuneratória cadastrada para a instituição.';
