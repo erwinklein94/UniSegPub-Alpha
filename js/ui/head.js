@@ -13,7 +13,13 @@ window.gtag('config', 'G-XHR4TCCF9D');
 window.gtag('config', 'AW-18121830612');
 window.gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThlMFD'});
 
-const savedTheme = localStorage.getItem('theme') || 'dark';
+let savedTheme = 'dark';
+try {
+  const storedTheme = localStorage.getItem('theme');
+  savedTheme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'dark';
+} catch (e) {
+  savedTheme = 'dark';
+}
 document.documentElement.setAttribute('data-theme', savedTheme);
 
 function carregarImagemProduto(img) {
