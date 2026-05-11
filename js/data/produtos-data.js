@@ -1004,7 +1004,535 @@
         "Policial rodoviário"
       ],
       "cta": "Ver na loja"
-    }
+    },
+{
+      "titulo": "Fiel Retrátil Bélica - Estrela - Preto",
+      "href": "https://s.shopee.com.br/8fP6903lIb",
+      "ariaLabel": "Ver na loja Fiel Retrátil Bélica - Estrela - Preto",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/fielretratil.webp",
+            "alt": "Fiel Retrátil Bélica - Estrela - Preto",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/fielretratil"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Fiel retrátil preto para prender chaves, cartões, apitos ou pequenos acessórios, ajudando na praticidade e na organização da rotina operacional ou diária.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Acessório tático",
+            "Organização"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Kit com 5 pares de meia militar Cano longo",
+      "href": "https://s.shopee.com.br/1VvvcEu90Z",
+      "ariaLabel": "Ver na loja Kit com 5 pares de meia militar Cano longo",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/meiamilitar.webp",
+            "alt": "Kit com 5 pares de meia militar Cano longo",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/meiamilitar"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Kit com 5 pares de meias militares de cano longo, indicado para uso com coturno, treinos, plantões e atividades que exigem conforto nos pés por mais tempo.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Meia militar",
+            "Cano longo"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Boonie Chapéu Balaclava Terno Dobrável Macio Proteção Solar",
+      "href": "https://s.shopee.com.br/6L1BNNI9PF",
+      "ariaLabel": "Ver na loja Boonie Chapéu Balaclava Terno Dobrável Macio Proteção Solar",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/chapeubalaclava.webp",
+            "alt": "Boonie Chapéu Balaclava Terno Dobrável Macio Proteção Solar",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/chapeubalaclava"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Chapéu boonie dobrável com proposta de proteção solar e uso outdoor, útil para atividades externas, trilhas, instruções, pesca e rotina em dias de sol.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Proteção solar",
+            "Uso outdoor"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Bermuda Elásticas Multi-Táticas Rip Stop Impermeável",
+      "href": "https://s.shopee.com.br/3qJqP60kht",
+      "ariaLabel": "Ver na loja Bermuda Elásticas Multi-Táticas Rip Stop Impermeável",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/bermudatatica1.webp",
+            "alt": "Bermuda Elásticas Multi-Táticas Rip Stop Impermeável",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/bermudatatica1"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Bermuda tática elástica em rip stop, com foco em mobilidade, bolsos e uso prático para treinos, atividades externas e deslocamentos do dia a dia.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Bermuda tática",
+            "Rip stop"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Calção De Bolso Masculinos Elásticas Multi-Táticas",
+      "href": "https://s.shopee.com.br/7fWYyH6ACj",
+      "ariaLabel": "Ver na loja Calção De Bolso Masculinos Elásticas Multi-Táticas",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/bermudatatica2.webp",
+            "alt": "Calção De Bolso Masculinos Elásticas Multi-Táticas",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/bermudatatica2"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Calção masculino elástico com bolsos e visual multi-tático, indicado para treino, caminhada, lazer e rotinas que pedem conforto com funcionalidade.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Calção tático",
+            "Bolsos"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Calça Tática 6 Bolsos Feminina Militar Leve Fina C Elástico",
+      "href": "https://s.shopee.com.br/8KmFlmRYZx",
+      "ariaLabel": "Ver na loja Calça Tática 6 Bolsos Feminina Militar Leve Fina C Elástico",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/calcataticafeminina.webp",
+            "alt": "Calça Tática 6 Bolsos Feminina Militar Leve Fina C Elástico",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/calcataticafeminina"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Calça tática feminina leve com 6 bolsos e elástico, pensada para mobilidade, organização de pequenos itens e uso em rotina, treino ou atividades externas.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Calça feminina",
+            "6 bolsos"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Kit Torniquete Tático Militar Primeiros Socorros + Tesoura Aph Ponta Romba Socorrista",
+      "href": "https://s.shopee.com.br/W3ORZciDO",
+      "ariaLabel": "Ver na loja Kit Torniquete Tático Militar Primeiros Socorros + Tesoura Aph Ponta Romba Socorrista",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/kittorniquete.webp",
+            "alt": "Kit Torniquete Tático Militar Primeiros Socorros + Tesoura Aph Ponta Romba Socorrista",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/kittorniquete"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Kit de primeiros socorros com torniquete tático e tesoura APH de ponta romba, indicado para compor bolsa de emergência e materiais de apoio em situações de atendimento.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Primeiros socorros",
+            "APH"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Sapato Scarpin Social Feminino Estilo Sapato Militar Feminino Ideal p/ Escritório ou Escola Militar",
+      "href": "https://s.shopee.com.br/8V5fyPVQKt",
+      "ariaLabel": "Ver na loja Sapato Scarpin Social Feminino Estilo Sapato Militar Feminino Ideal p/ Escritório ou Escola Militar",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/sapatosocialfeminino.webp",
+            "alt": "Sapato Scarpin Social Feminino Estilo Sapato Militar Feminino Ideal p/ Escritório ou Escola Militar",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/sapatosocialfeminino"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Sapato social feminino estilo militar, voltado para uso em escritório, escola militar, eventos formais ou rotinas que exigem apresentação mais alinhada.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Sapato social",
+            "Uso feminino"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Patch Bandeira Emborrachada 3d Patch C/ Velcro Militar Tático Brasil Caveira Estados Unidos USA Para Mochila Tática",
+      "href": "https://s.shopee.com.br/2BBcR400pI",
+      "ariaLabel": "Ver na loja Patch Bandeira Emborrachada 3d Patch C/ Velcro Militar Tático Brasil Caveira Estados Unidos USA Para Mochila Tática",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/patchbandeira.webp",
+            "alt": "Patch Bandeira Emborrachada 3d Patch C/ Velcro Militar Tático Brasil Caveira Estados Unidos USA Para Mochila Tática",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/patchbandeira"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Patch emborrachado 3D com velcro para mochila, colete ou acessórios táticos, ideal para personalização visual e identificação de equipamentos.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Patch tático",
+            "Velcro"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Palmilha Gel Conforto Laranja Macia Altura Anatômica Acero",
+      "href": "https://s.shopee.com.br/901wZlJADp",
+      "ariaLabel": "Ver na loja Palmilha Gel Conforto Laranja Macia Altura Anatômica Acero",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/palmilhagelacero.webp",
+            "alt": "Palmilha Gel Conforto Laranja Macia Altura Anatômica Acero",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/palmilhagelacero"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Palmilha em gel anatômica e macia, indicada para aumentar o conforto em coturnos, botas, tênis e calçados usados por longos períodos.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Palmilha em gel",
+            "Conforto"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Bota Motociclista Acero Cano Alto Couro Proteção Marcha Bico",
+      "href": "https://s.shopee.com.br/2VoSq5R4c8",
+      "ariaLabel": "Ver na loja Bota Motociclista Acero Cano Alto Couro Proteção Marcha Bico",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/botamotociclistaacero.webp",
+            "alt": "Bota Motociclista Acero Cano Alto Couro Proteção Marcha Bico",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/botamotociclistaacero"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Bota motociclista Acero de cano alto em couro, com proposta de proteção para marcha e bico, indicada para moto, trabalho e rotina com mais segurança nos pés.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Bota motociclista",
+            "Couro"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Bota Militar Acero Apache 100% Impermeável Couro Leve",
+      "href": "https://s.shopee.com.br/3B49dgO2nF",
+      "ariaLabel": "Ver na loja Bota Militar Acero Apache 100% Impermeável Couro Leve",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/botaapacheacero.webp",
+            "alt": "Bota Militar Acero Apache 100% Impermeável Couro Leve",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/botaapacheacero"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Bota militar Acero Apache em couro, com proposta impermeável e leve, indicada para uso operacional, atividades externas, trabalho e deslocamentos prolongados.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Bota militar",
+            "Impermeável"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "BOTA COTURNO MILITAR ACERO RIPSTOP MID CORES LEVE CONFORTÁVEL",
+      "href": "https://s.shopee.com.br/6AhlDNzax2",
+      "ariaLabel": "Ver na loja BOTA COTURNO MILITAR ACERO RIPSTOP MID CORES LEVE CONFORTÁVEL",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/botamidacero.webp",
+            "alt": "BOTA COTURNO MILITAR ACERO RIPSTOP MID CORES LEVE CONFORTÁVEL",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/botamidacero"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Coturno militar Acero Mid em ripstop, com proposta leve e confortável para rotina, treinos, trabalho e atividades externas com visual tático.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Coturno mid",
+            "Ripstop"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Bota Coturno Militar Acero One Mid Resistente Extra Leve Confortável Cano Baixo",
+      "href": "https://s.shopee.com.br/4fsxQnWgNv",
+      "ariaLabel": "Ver na loja Bota Coturno Militar Acero One Mid Resistente Extra Leve Confortável Cano Baixo",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/botatenisacero.webp",
+            "alt": "Bota Coturno Militar Acero One Mid Resistente Extra Leve Confortável Cano Baixo",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/botatenisacero"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Bota/coturno Acero One Mid de cano baixo, com proposta resistente, extra leve e confortável para quem precisa de mobilidade no dia a dia.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Cano baixo",
+            "Extra leve"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "Bota Tática Impermeável Acero Pro MAX Couro Legítimo DRYSHIELD Waterproof Solado 320°C",
+      "href": "https://s.shopee.com.br/5ApE1wkVIY",
+      "ariaLabel": "Ver na loja Bota Tática Impermeável Acero Pro MAX Couro Legítimo DRYSHIELD Waterproof Solado 320°C",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/botaaceromax.webp",
+            "alt": "Bota Tática Impermeável Acero Pro MAX Couro Legítimo DRYSHIELD Waterproof Solado 320°C",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/botaaceromax"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Bota tática Acero Pro MAX em couro legítimo, com proposta impermeável e solado resistente ao calor, indicada para uso operacional e atividades exigentes.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Bota tática",
+            "Waterproof"
+      ],
+      "cta": "Ver na loja"
+},
+{
+      "titulo": "HUAWEI WATCH FIT 5 | Smartwatch Relogio | AMOLED de 182\" Design Leve | Mini Treino | 64 GB | GPS",
+      "href": "https://s.shopee.com.br/LjyHJSC0i",
+      "ariaLabel": "Ver na loja HUAWEI WATCH FIT 5 | Smartwatch Relogio | AMOLED de 182\" Design Leve | Mini Treino | 64 GB | GPS",
+      "classes": [
+            "curso-card",
+            "produto-card"
+      ],
+      "rel": "sponsored noopener noreferrer",
+      "target": "_blank",
+      "dataAttrs": {},
+      "imagem": {
+            "wrapClasses": [
+                  "produto-imagem"
+            ],
+            "src": "img/SHOPEE/relogiohuaweifit5.webp",
+            "alt": "HUAWEI WATCH FIT 5 | Smartwatch Relogio | AMOLED de 182\" Design Leve | Mini Treino | 64 GB | GPS",
+            "decoding": "async",
+            "loading": "lazy",
+            "dataAttrs": {
+                  "data-img-base": "img/SHOPEE/relogiohuaweifit5"
+            }
+      },
+      "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+      "descricao": "Smartwatch Huawei Watch Fit 5 com visual leve, recursos de treino e GPS, útil para acompanhar atividades físicas, rotina e métricas de saúde no dia a dia.",
+      "metaAriaLabel": "Destaques do produto",
+      "meta": [
+            "Produto físico",
+            "Smartwatch",
+            "GPS"
+      ],
+      "cta": "Ver na loja"
+}
   ],
   "cursosGerais": [
     {
