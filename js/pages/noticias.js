@@ -112,6 +112,45 @@
     list.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  function scrollToCard(card) {
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function getHashTargetCard() {
+    var hash = window.location.hash ? window.location.hash.slice(1) : '';
+    if (!hash) return null;
+    var target = document.getElementById(hash);
+    if (!target || !target.hasAttribute('data-noticia-card')) return null;
+    return target;
+  }
+
+  function applyHashTarget() {
+    var target = getHashTargetCard();
+    if (!target) return false;
+    var tipoSelect = qs('#noticias_tipo');
+    var instSelect = qs('#noticias_instituicao');
+    currentTipo = target.getAttribute('data-noticia-esfera') || '';
+    currentInst = target.getAttribute('data-noticia-inst') || '';
+    if (tipoSelect) tipoSelect.value = currentTipo;
+    syncInstitutionOptions();
+    if (instSelect) instSelect.value = currentInst;
+    var filtered = getFilteredCards();
+    var index = filtered.indexOf(target);
+    currentPage = index >= 0 ? Math.floor(index / PAGE_SIZE) + 1 : 1;
+    return true;
+  }
+
+  function renderHashTarget() {
+    var target = getHashTargetCard();
+    if (!target) return;
+    applyHashTarget();
+    render();
+    setTimeout(function () {
+      scrollToCard(target);
+    }, 0);
+  }
+
   function clearFilters() {
     var tipoSelect = qs('#noticias_tipo');
     var instSelect = qs('#noticias_instituicao');
@@ -146,6 +185,14 @@
     }
     if (clearBtn) clearBtn.addEventListener('click', clearFilters);
     syncInstitutionOptions();
-    render();
+    if (applyHashTarget()) {
+      render();
+      setTimeout(function () {
+        scrollToCard(getHashTargetCard());
+      }, 0);
+    } else {
+      render();
+    }
+    window.addEventListener('hashchange', renderHashTarget);
   });
 })();

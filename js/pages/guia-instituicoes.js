@@ -22,6 +22,12 @@
     if (typeof getInstituicoesParaConsulta === 'function') {
       return getInstituicoesParaConsulta(esfera);
     }
+    if (esfera === 'federal') {
+      return [
+        { inst: 'pf', estadoNome: 'Brasil', uf: 'BR', sigla: 'PF', nome: 'Polícia Federal', ramo: 'Polícia Federal' },
+        { inst: 'prf', estadoNome: 'Brasil', uf: 'BR', sigla: 'PRF', nome: 'Polícia Rodoviária Federal', ramo: 'Polícia Rodoviária Federal' }
+      ];
+    }
     if (esfera === 'estadual') {
       return [
         { inst: 'pmesp', estadoNome: 'São Paulo', uf: 'SP', sigla: 'PMESP', nome: 'Polícia Militar do Estado de São Paulo', ramo: 'Polícia Militar' },
@@ -31,7 +37,9 @@
         { inst: 'pmerj', estadoNome: 'Rio de Janeiro', uf: 'RJ', sigla: 'PMERJ', nome: 'Polícia Militar do Estado do Rio de Janeiro', ramo: 'Polícia Militar' },
         { inst: 'bmrj', estadoNome: 'Rio de Janeiro', uf: 'RJ', sigla: 'CBMERJ', nome: 'Corpo de Bombeiros Militar do Estado do Rio de Janeiro', ramo: 'Bombeiro Militar' },
         { inst: 'pcerj', estadoNome: 'Rio de Janeiro', uf: 'RJ', sigla: 'PCERJ', nome: 'Polícia Civil do Estado do Rio de Janeiro', ramo: 'Polícia Civil' },
-        { inst: 'pprj', estadoNome: 'Rio de Janeiro', uf: 'RJ', sigla: 'PPRJ', nome: 'Polícia Penal do Estado do Rio de Janeiro', ramo: 'Polícia Penal' }
+        { inst: 'pprj', estadoNome: 'Rio de Janeiro', uf: 'RJ', sigla: 'PPRJ', nome: 'Polícia Penal do Estado do Rio de Janeiro', ramo: 'Polícia Penal' },
+        { inst: 'pmmg', estadoNome: 'Minas Gerais', uf: 'MG', sigla: 'PMMG', nome: 'Polícia Militar de Minas Gerais', ramo: 'Polícia Militar' },
+        { inst: 'pcmg', estadoNome: 'Minas Gerais', uf: 'MG', sigla: 'PCMG', nome: 'Polícia Civil de Minas Gerais', ramo: 'Polícia Civil' }
       ];
     }
     return [];
