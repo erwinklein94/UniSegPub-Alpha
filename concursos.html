@@ -28,6 +28,7 @@
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
 <link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260510lightfix1" rel="stylesheet"/>
+<link href="css/pages/concursos-conteudo-estatico.css?v=20260511adsense1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -355,6 +356,11 @@
 <span class="sidebar-link-text">Concursos</span>
 <small>Editais, requisitos e etapas</small>
 </a>
+<a href="noticias.html" id="menu-noticias" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📰</span>
+<span class="sidebar-link-text">Notícias</span>
+<small>Editais, reajustes e atualizações</small>
+</a>
 <a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
 <span class="sidebar-link-text">Comparar Carreiras</span>
@@ -364,6 +370,11 @@
 <span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
 <span class="sidebar-link-text">Brasões e história</span>
 <small>Origem, identidade e histórico</small>
+</a>
+<a href="guia-instituicoes.html" id="menu-guia" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📖</span>
+<span class="sidebar-link-text">Guia das instituições</span>
+<small>Artigos permanentes por instituição</small>
 </a>
 </div>
 <div aria-label="Apoio jurídico e institucional" class="sidebar-nav-group">
@@ -500,21 +511,1542 @@
 <!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main class="page-section active" id="page-concursos" role="main">
-<div class="card">
-<h2>Informações de Concursos (<span id="txt-inst-concursos">—</span>)</h2>
-<div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Escolha a esfera e a instituição nesta aba para carregar dados informativos consolidados a partir de editais, leis e fontes públicas. Este portal não é banca organizadora, órgão oficial ou canal de inscrição; confirme sempre prazos e regras no edital e nos canais governamentais competentes.
+  <div class="concursos-page-shell">
+    <section class="card concursos-hero-card" aria-labelledby="concursos-titulo">
+      <span class="concursos-hero-kicker">Consulta por instituição</span>
+      <h1 id="concursos-titulo">Concursos</h1>
+      <p>
+        Encontre referências de concursos de instituições de segurança pública, com resumo de editais, vagas, requisitos, escolaridade, etapas, curso de formação, validade e canais oficiais de acompanhamento. As informações desta página servem como ponto de partida para o candidato organizar os estudos e comparar oportunidades entre carreiras.
+      </p>
+      <p>
+        Cada card apresenta um panorama da instituição e indica o que precisa ser confirmado no edital vigente. Como concursos podem mudar por retificação, decisão judicial, convocação, prorrogação ou novo ato administrativo, consulte sempre a banca organizadora e o órgão oficial antes de pagar inscrição, comprar material ou tomar uma decisão de carreira.
+      </p>
+
+      <div class="concursos-filtro-card consulta-instituicao-card" aria-label="Filtrar concursos por instituição">
+        <div class="consulta-instituicao-card__header">
+          <span class="concursos-card-kicker">Filtrar conteúdo</span>
+          <h2>Escolha uma instituição para ver os resumos relacionados</h2>
+          <p>Você pode navegar por todos os resumos ou selecionar uma corporação específica para abrir os dados completos do concurso.</p>
+        </div>
+        <div class="consulta-instituicao-grid">
+          <label>
+            <span>Tipo de instituição</span>
+            <select id="concursos_esfera" aria-label="Filtrar concursos por tipo de instituição">
+              <option value="">Todas</option>
+              <option value="federal">Federal</option>
+              <option value="estadual">Estadual</option>
+              <option value="municipal">Municipal</option>
+            </select>
+          </label>
+          <label>
+            <span>Instituição</span>
+            <select id="concursos_instituicao" aria-label="Filtrar concursos por instituição">
+<option value="">Todas as instituições</option>
+<optgroup label="União">
+<option value="prf" data-esfera="federal">PRF — Polícia Rodoviária Federal</option>
+</optgroup>
+<optgroup label="São Paulo (SP)">
+<option value="pmesp" data-esfera="estadual">PMESP — Polícia Militar do Estado de São Paulo</option>
+<option value="bmsp" data-esfera="estadual">CBPMESP — Corpo de Bombeiros da Polícia Militar do Estado de São Paulo</option>
+<option value="pcsp" data-esfera="estadual">PCSP — Polícia Civil do Estado de São Paulo</option>
+<option value="ppsp" data-esfera="estadual">PPSP — Polícia Penal do Estado de São Paulo</option>
+</optgroup>
+<optgroup label="Alagoas (AL)">
+<option value="pmal" data-esfera="estadual">PMAL — Polícia Militar do Estado de Alagoas</option>
+<option value="pcal" data-esfera="estadual">PCAL — Polícia Civil do Estado de Alagoas</option>
+<option value="ppal" data-esfera="estadual">PPAL — Polícia Penal do Estado de Alagoas</option>
+</optgroup>
+<optgroup label="Minas Gerais (MG)">
+<option value="bmmg" data-esfera="estadual">CBMMG — Corpo de Bombeiros Militar de Minas Gerais</option>
+<option value="ppmg" data-esfera="estadual">PPMG — Polícia Penal de Minas Gerais</option>
+<option value="pmmg" data-esfera="estadual">PMMG — Polícia Militar de Minas Gerais</option>
+<option value="pcmg" data-esfera="estadual">PCMG — Polícia Civil de Minas Gerais</option>
+</optgroup>
+<optgroup label="Paraná (PR)">
+<option value="bmpr" data-esfera="estadual">CBMPR — Corpo de Bombeiros Militar do Paraná</option>
+<option value="pmpr" data-esfera="estadual">PMPR — Polícia Militar do Paraná</option>
+<option value="pcpr" data-esfera="estadual">PCPR — Polícia Civil do Paraná</option>
+</optgroup>
+<optgroup label="Amazonas (AM)">
+<option value="pmam" data-esfera="estadual">PMAM — Polícia Militar do Estado do Amazonas</option>
+<option value="pcam" data-esfera="estadual">PCAM — Polícia Civil do Estado do Amazonas</option>
+</optgroup>
+<optgroup label="Rio de Janeiro (RJ)">
+<option value="pmerj" data-esfera="estadual">PMERJ — Polícia Militar do Rio de Janeiro</option>
+<option value="bmrj" data-esfera="estadual">CBMERJ — Corpo de Bombeiros Militar do Estado do Rio de Janeiro</option>
+<option value="pcerj" data-esfera="estadual">PCERJ — Polícia Civil do Rio de Janeiro</option>
+</optgroup>
+<optgroup label="Bahia (BA)">
+<option value="pmba" data-esfera="estadual">PMBA — Polícia Militar da Bahia</option>
+<option value="pcba" data-esfera="estadual">PCBA — Polícia Civil da Bahia</option>
+</optgroup>
+<optgroup label="Rio Grande do Sul (RS)">
+<option value="pmrs" data-esfera="estadual">PMRS — Brigada Militar do Rio Grande do Sul</option>
+<option value="pcrs" data-esfera="estadual">PCRS — Polícia Civil do Rio Grande do Sul</option>
+</optgroup>
+<optgroup label="Santa Catarina (SC)">
+<option value="pmsc" data-esfera="estadual">PMSC — Polícia Militar de Santa Catarina</option>
+<option value="bmsc" data-esfera="estadual">CBMSC — Corpo de Bombeiros Militar de Santa Catarina</option>
+<option value="pcsc" data-esfera="estadual">PCSC — Polícia Civil de Santa Catarina</option>
+</optgroup>
+<optgroup label="Espírito Santo (ES)">
+<option value="pmes" data-esfera="estadual">PMES — Polícia Militar do Espírito Santo</option>
+<option value="bmes" data-esfera="estadual">CBMES — Corpo de Bombeiros Militar do Estado do Espírito Santo</option>
+<option value="pces" data-esfera="estadual">PCES — Polícia Civil do Espírito Santo</option>
+</optgroup>
+<optgroup label="Mato Grosso do Sul (MS)">
+<option value="pmms" data-esfera="estadual">PMMS — Polícia Militar de Mato Grosso do Sul</option>
+<option value="bmms" data-esfera="estadual">CBMMS — Corpo de Bombeiros Militar de Mato Grosso do Sul</option>
+<option value="pcms" data-esfera="estadual">PCMS — Polícia Civil de Mato Grosso do Sul</option>
+<option value="ppms" data-esfera="estadual">PPMS — Polícia Penal de Mato Grosso do Sul</option>
+</optgroup>
+<optgroup label="Mato Grosso (MT)">
+<option value="pmmt" data-esfera="estadual">PMMT — Polícia Militar de Mato Grosso</option>
+<option value="bmmt" data-esfera="estadual">CBMMT — Corpo de Bombeiros Militar do Estado de Mato Grosso</option>
+<option value="pcmt" data-esfera="estadual">PCMT — Polícia Judiciária Civil de Mato Grosso</option>
+<option value="ppmt" data-esfera="estadual">PPMT — Polícia Penal de Mato Grosso</option>
+</optgroup>
+<optgroup label="Acre (AC)">
+<option value="pmac" data-esfera="estadual">PMAC — Polícia Militar do Acre</option>
+<option value="pcac" data-esfera="estadual">PCAC — Polícia Civil do Acre</option>
+<option value="ppac" data-esfera="estadual">PPAC — Polícia Penal do Acre</option>
+</optgroup>
+<optgroup label="Amapá (AP)">
+<option value="pmap" data-esfera="estadual">PMAP — Polícia Militar do Estado do Amapá</option>
+<option value="pcap" data-esfera="estadual">PCAP — Polícia Civil do Estado do Amapá</option>
+<option value="bmap" data-esfera="estadual">CBMAP — Corpo de Bombeiros Militar do Amapá</option>
+</optgroup>
+<optgroup label="Ceará (CE)">
+<option value="pcce" data-esfera="estadual">PCCE — Polícia Civil do Estado do Ceará</option>
+</optgroup>
+            </select>
+          </label>
+        </div>
+        <div class="concursos-filtro-acoes">
+          <button type="button" data-concursos-limpar>Ver todas</button>
+          <span id="concursos-contador-cards">45 instituições encontradas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO 07.0A — Espaço comercial contextual de concursos -->
+    <aside aria-label="Espaço de anúncio: Concursos antes da lista" class="ad-slot ad-slot--inline" data-ad-area="concursos_antes_lista">
+      <a class="ad-placeholder-link" href="anuncie.html?area=concursos_antes_lista">
+        <span class="ad-label">Publicidade</span>
+        <strong>Anuncie aqui</strong>
+        <small>Destaque para cursos preparatórios, materiais de estudo, TAF, psicotécnico, mentorias e equipamentos.</small>
+      </a>
+    </aside>
+
+    <section class="concursos-conteudo-lista" id="concursos-conteudo-lista" aria-label="Resumos de concursos por instituição">
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="prf" data-esfera="federal">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Federal • PRF · Polícia Rodoviária Federal</span>
+      <h2>PRF: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PRF organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
     </div>
-<!-- BLOCO 07.0A — Espaço comercial contextual de concursos -->
-<aside aria-label="Espaço de anúncio: Concursos antes da lista" class="ad-slot ad-slot--inline" data-ad-area="concursos_antes_lista">
-<a class="ad-placeholder-link" href="anuncie.html?area=concursos_antes_lista">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Destaque para cursos preparatórios, materiais de estudo, TAF, psicotécnico, mentorias e equipamentos.</small>
-</a>
-</aside>
-<div class="result-list" id="lista-concursos"></div>
-</div>
+    <span class="concursos-card-sigla" aria-hidden="true">PRF</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PRF">
+    <div><span>Edital de referência</span><strong>PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026; sem novo concurso aberto na revisão de 04/05/2026</strong></div>
+    <div><span>Vagas</span><strong>1.500 vagas no concurso PRF 2021; o portal mantém o certame como vigente/histórico enquanto houver validade e convocações oficiais.</strong></div>
+    <div><span>Banca</span><strong>Cebraspe no concurso PRF 2021.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo em qualquer área e Carteira Nacional de Habilitação categoria B ou superior, conforme edital PRF 2021.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Inicial 2026: R$ 12.253,84 · 3ª Classe, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial, Padrão III. Valores de subsídio conforme Lei nº 14.875/2024, Anexo XXVII, com efeitos em 01/05/2026.</p>
+    <p><strong>Etapas comuns do certame:</strong> Provas objetiva e discursiva, exame de aptidão física, avaliação psicológica, avaliação biopsicossocial quando aplicável, procedimento de heteroidentificação, avaliação de saúde, investigação social, avaliação de títulos e Curso de Formação Policial.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar como novo concurso aberto sem fonte oficial. Em 30/04/2025 a PRF alertou sobre fake news e informou não haver inscrições abertas naquele momento.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="prf">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmesp" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">São Paulo • PMESP · Polícia Militar</span>
+      <h2>PMESP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMESP reúne informações sobre o ingresso na Polícia Militar do Estado de São Paulo, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMESP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMESP">
+    <div><span>Edital de referência</span><strong>Soldado PM 2ª Classe — PMES2502 em andamento; 2º Tenente Médico PM Estagiário 2026; Aluno-Oficial PM 2025 encerrado; CFS 2026 interno</strong></div>
+    <div><span>Vagas</span><strong>Soldado PMES2502: 2.200 vagas; Médico PM 2026: 36 vagas; Aluno-Oficial PM 2025: 165 vagas; CFS 2026 interno: 500 vagas.</strong></div>
+    <div><span>Banca</span><strong>Vunesp nos certames PMESP localizados; sempre confirmar no edital específico.</strong></div>
+    <div><span>Escolaridade</span><strong>Soldado: Ensino Médio completo e CNH categoria B ou superior. Aluno-Oficial, Médico PM e concursos internos possuem requisitos próprios de…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Soldado PMES2502: R$ 5.055,53. 2º Tenente Médico PM Estagiário: R$ 9.832,41. Remuneração total PMESP segue tabela SGGD/SP julho/2025 até nova tabela total; Lei 18.441/2026 atualizou vencimentos-base desde 01/04/2026.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, redação quando prevista, exames de saúde, exame de aptidão física, avaliação psicológica, avaliação social/investigação social, análise documental, títulos quando aplicável e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar como novo edital aberto sem fonte oficial. O destaque atual deve ser PMES2502 em andamento e Médico PM 2026 dentro do cronograma oficial; os demais ficam como concursos recentes/histórico ou internos.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://concursos.policiamilitar.sp.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmesp">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmal" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Alagoas • PMAL · Polícia Militar</span>
+      <h2>PMAL: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMAL organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMAL</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMAL">
+    <div><span>Edital de referência</span><strong>PMAL 2026 — Edital nº 1/PMAL, de 19/03/2026, para admissão ao Curso de Formação de Oficiais (CFO) e ao Curso de Formação de Praças (CFP), executado pelo Cebraspe, SEPLAG/AL e…</strong></div>
+    <div><span>Vagas</span><strong>530 vagas imediatas + cadastro de reserva: Oficial de Estado-Maior 30 imediatas + 30 CR; Soldado do Quadro de Praças 500 imediatas + 500 CR.</strong></div>
+    <div><span>Banca</span><strong>Cebraspe.</strong></div>
+    <div><span>Escolaridade</span><strong>Ensino médio completo, CNH categoria B, altura mínima, nacionalidade, aptidão física/intelectual, sanidade física e mental, idoneidade e demais…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFO: Cadete 1º ano R$ 3.874,43; Cadete 2º ano R$ 4.163,78; Cadete 3º ano R$ 4.716,51; Aspirante após CFO R$ 11.563,77. CFP: Soldado-Aluno R$ 2.354,67 e Soldado após CFP R$ 6.067,51.</p>
+    <p><strong>Etapas comuns do certame:</strong> Provas objetivas, prova discursiva, teste de aptidão física, avaliação médica, avaliação psicológica, comprovação documental, investigação social, exame toxicológico e procedimento de verificação/heteroidentificação quando aplicável.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Edital PMAL 2026 em andamento; não publicar novo concurso aberto sem fonte oficial posterior.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.cebraspe.org.br/concursos/pm_al_26" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmal">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmmg" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Minas Gerais • CBMMG · Bombeiro Militar</span>
+      <h2>CBMMG: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMMG organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMMG</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMMG">
+    <div><span>Edital de referência</span><strong>CBMMG — Editais nº 09/2026 (CFO BM 2027) e nº 10/2026 (CFSd BM 2027), publicados em 16/03/2026.</strong></div>
+    <div><span>Vagas</span><strong>342 vagas: 321 CFSd e 21 CFO.</strong></div>
+    <div><span>Banca</span><strong>IDECAN.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior: bacharelado, licenciatura, tecnólogo ou curso sequencial, conforme cargo/edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFO: Cadete R$ 7.506,80; 2º Tenente R$ 11.547,07. CFSd: Soldado 2ª Classe R$ 4.562,30 durante o curso; Soldado 1ª Classe R$ 5.332,60 após formação. Benefícios conforme edital: abono fardamento, assistência médico-hospitalar, psicológica, odontológica e auxílio-alimentação quando devido.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva/discursiva conforme cargo, TCF/TAF, habilidades natatórias, exames de saúde, avaliação psicológica, investigação social/documental e matrícula no curso.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Há editais oficiais 2026 para ingresso 2027. Não publicar novo edital aberto sem fonte oficial posterior.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.bombeiros.mg.gov.br/concursos" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmmg">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmpr" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Paraná • CBMPR · Bombeiro Militar</span>
+      <h2>CBMPR: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMPR organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMPR</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMPR">
+    <div><span>Edital de referência</span><strong>CBMPR — Concursos 2025: Soldado Bombeiro Militar, Edital nº 01/2025, IBFC, 600 vagas; Cadete Bombeiro Militar, Concurso Público nº 01/2025, Instituto AOCP, 20 vagas.</strong></div>
+    <div><span>Vagas</span><strong>Soldado BM 2025: 600 vagas. Cadete BM 2025: 20 vagas. Posse de 851 novos soldados divulgada pelo CBMPR para maio/2026.</strong></div>
+    <div><span>Banca</span><strong>IBFC para Soldado Bombeiro Militar 2025; Instituto AOCP para Cadete Bombeiro Militar 2025.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior para Soldado BM; Cadete conforme edital do concurso e página oficial de ingresso.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Soldado: página oficial de ingresso informa Soldado 2ª Classe R$ 2.530,12 e Soldado 1ª Classe R$ 5.839,11; tabela Administração/PR julho/2025 mostra Soldado 1ª Classe Classe I em R$ 6.101,87. Cadete 1º ano: R$ 3.994,86; 2º Tenente: R$ 11.163,91 na página oficial de ingresso, com tabela de carreira própria no portal.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, exame de capacidade física, avaliação psicológica, investigação social, avaliação de saúde, documentação, matrícula e curso de formação, conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso aberto sem fonte oficial posterior. Destaque atual: concursos 2025 de Soldado e Cadete Bombeiro Militar.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.bombeiros.pr.gov.br/Pagina/Concursos" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmpr">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="ppmg" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Minas Gerais • PPMG · Polícia Penal</span>
+      <h2>PPMG: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PPMG organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PPMG</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PPMG">
+    <div><span>Edital de referência</span><strong>PPMG — Edital SEJUSP/MG 01/2025 para Policial Penal; provas aplicadas em 25/01/2026 e resultados/etapas acompanhados pelo Instituto AOCP e SEJUSP/MG</strong></div>
+    <div><span>Vagas</span><strong>1.178 vagas para Policial Penal: 907 masculinas, incluindo 91 PcD, e 271 femininas, incluindo 27 PcD, conforme notícia institucional sobre as provas.</strong></div>
+    <div><span>Banca</span><strong>Instituto AOCP.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível médio para o edital PPMG 2025, sem prejuízo de requisitos adicionais do edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Remuneração inicial de edital: R$ 5.332,64 para Policial Penal, jornada de 40h, com ajuda de custo para alimentação por dia efetivamente trabalhado quando prevista. Não somar benefícios como remuneração permanente.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, redação, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação e demais fases previstas no edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso 2025/2026 em andamento por etapas; não publicar novo edital aberto sem fonte oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.seguranca.mg.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="ppmg">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmam" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Amazonas • PMAM · Polícia Militar</span>
+      <h2>PMAM: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMAM organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMAM</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMAM">
+    <div><span>Edital de referência</span><strong>PMAM — Concurso Público 2021/2022 FGV; em 2026 segue em convocações e apresentação documental por portarias DPA-1. Edital original com 1.350 vagas.</strong></div>
+    <div><span>Vagas</span><strong>1.350 vagas: 1.000 Aluno Soldado, 320 Aluno Oficial e 30 Aluno Oficial de Saúde. Governo informou 2.348 convocados até março/2026.</strong></div>
+    <div><span>Banca</span><strong>FGV.</strong></div>
+    <div><span>Escolaridade</span><strong>Aluno Soldado: ensino médio completo. Aluno Oficial e Oficial de Saúde: nível superior conforme cargo/especialidade.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Edital 2021: Aluno Soldado R$ 2.657,28; Aluno Oficial/Oficial de Saúde R$ 7.180,34. Tabela legal vigente da Lei AM nº 7.445/2025: Aluno Soldado R$ 3.149,12; Soldado R$ 5.725,66; Aluno Oficial 1º ano R$ 8.509,34; Aspirante R$ 11.345,79; sem somar indenizações ou rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, títulos quando aplicável, avaliação médica, exame físico, investigação social, exame psicotécnico, entrega de documentos e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso aberto sem edital posterior. A revisão mantém o concurso 2021/2026 como vigente/histórico com convocações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://conhecimento.fgv.br/concursos/pmam21" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmam">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcam" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Amazonas • PCAM · Polícia Civil</span>
+      <h2>PCAM: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCAM organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCAM</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCAM">
+    <div><span>Edital de referência</span><strong>PCAM — Concurso Público FGV 2021/2022, com resultado final/homologação e posses/convocações acompanhadas em 2025/2026; manter como certame vigente/histórico, sem tratar como…</strong></div>
+    <div><span>Vagas</span><strong>362 vagas no edital original: Delegado, Escrivão, Investigador, Perito Criminal, Perito Legista e Perito Odontolegista; em 2026 houve posse de novos…</strong></div>
+    <div><span>Banca</span><strong>FGV — Fundação Getulio Vargas.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior conforme cargo: Delegado exige bacharelado em Direito; Escrivão e Investigador exigem nível superior; Peritos exigem formação…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Tabela legal vigente da Lei AM nº 7.446/2025, com efeitos em 01/12/2025: Delegado IV R$ 24.417,49 a Especial R$ 37.221,83; Comissário Classe Única R$ 28.397,17; Perito IV R$ 19.481,73 a Especial R$ 29.697,78; Investigador/Escrivão IV R$ 16.765,69 a Especial R$ 25.557,47. Valores brutos de tabela, sem somar rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova discursiva, prova prática quando prevista, avaliação médica, teste de aptidão física quando previsto para o cargo, avaliação psicológica, investigação social, avaliação de títulos, curso de formação e posse conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso PCAM aberto sem edital posterior. A revisão mantém o concurso FGV 2021/2022 como histórico/convocações 2026.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://conhecimento.fgv.br/concursos/pcam21" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcam">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmsp" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">São Paulo • CBPMESP · Bombeiro Militar</span>
+      <h2>CBPMESP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBPMESP reúne informações sobre o ingresso na Corpo de Bombeiros da Polícia Militar do Estado de São Paulo, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBPMESP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBPMESP">
+    <div><span>Edital de referência</span><strong>Ingresso regular pela PMESP; destaque para Soldado PM 2ª Classe PMES2502 e processos temporários de guarda-vidas GVTD/GBMar quando publicados</strong></div>
+    <div><span>Vagas</span><strong>Soldado PMES2502: 2.200 vagas na PMESP; GVTD/GBMar 2025/2026: 600 vagas temporárias. Atuação no Corpo de Bombeiros depende de classificação…</strong></div>
+    <div><span>Banca</span><strong>Vunesp nos certames PMESP localizados; GBMar/Corpo de Bombeiros para processo temporário de guarda-vidas…</strong></div>
+    <div><span>Escolaridade</span><strong>Soldado: Ensino Médio completo e CNH categoria B ou superior. Guarda-vidas temporário: requisitos próprios do edital GBMar. Quadros de oficiais e…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Soldado PMES2502: R$ 5.055,53. Guarda-vidas por tempo determinado GBMar 2025/2026: R$ 1.850,00 + vale-transporte e vale-refeição. Remuneração dos bombeiros militares efetivos segue tabela PMESP/SGGD julho/2025 por posto/graduação; Lei 18.441/2026 atualizou vencimentos-base desde 01/04/2026.</p>
+    <p><strong>Etapas comuns do certame:</strong> Soldado: prova objetiva, redação quando prevista, exames de saúde, TAF, avaliação psicológica, avaliação social/investigação social, análise documental e curso de formação. Guarda-vidas temporário: seleção e capacitação conforme edital GBMar.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar como concurso exclusivo do CBPMESP sem fonte oficial. O portal deve tratar ingresso efetivo como PMESP e separar processos temporários de guarda-vidas.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://concursos.policiamilitar.sp.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmsp">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcsp" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">São Paulo • PCSP · Polícia Civil</span>
+      <h2>PCSP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCSP organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCSP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCSP">
+    <div><span>Edital de referência</span><strong>PCSP 2023 — Delegado, Investigador, Escrivão, Médico Legista e Perito Criminal — concursos recentes/em acompanhamento</strong></div>
+    <div><span>Vagas</span><strong>Delegado: 552; Investigador: 1.250; Escrivão: 1.333; Médico Legista: 116; Perito Criminal: 249</strong></div>
+    <div><span>Banca</span><strong>Vunesp nos concursos PCSP 2023 localizados; sempre confirmar no edital específico.</strong></div>
+    <div><span>Escolaridade</span><strong>Delegado: Bacharelado em Direito e demais requisitos do edital. Investigador/Escrivão: diploma de graduação em nível superior; CNH B para…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Delegado: R$ 15.037,99 no edital 2023; Investigador/Escrivão: R$ 5.879,68; Médico Legista/Perito: R$ 12.954,40. Tabela total SGGD/SP julho/2025 já mostra valores superiores por classe; Lei 18.441/2026 alterou vencimentos-base desde 01/04/2026.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova escrita/discursiva quando prevista, prova oral para Delegado quando prevista, prova de aptidão física, comprovação de idoneidade, exames médicos, avaliação psicológica, títulos quando aplicável, investigação social e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso como aberto sem fonte oficial. Manter os certames 2023 como concursos recentes/em acompanhamento e registrar a carreira atualizada pela Lei 18.443/2026.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.policiacivil.sp.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcsp">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="ppsp" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">São Paulo • PPSP · Polícia Penal</span>
+      <h2>PPSP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PPSP reúne informações sobre o ingresso na Polícia Penal do Estado de São Paulo, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PPSP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PPSP">
+    <div><span>Edital de referência</span><strong>SAP/SP — Polícia Penal — concurso público para Policial Penal — edital CCP nº 004/2025, com reabertura/retificação em 2026</strong></div>
+    <div><span>Vagas</span><strong>1.100 vagas para Policial Penal, com participação de mulheres e homens após reabertura/retificação em 2026.</strong></div>
+    <div><span>Banca</span><strong>Instituto AOCP.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo, CNH categoria B e demais requisitos legais do cargo.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Subsídio inicial: R$ 4.695,60 para Policial Penal Nível I / Categoria Ingresso. Tabela SGGD/SP julho/2025: carreira de R$ 4.695,60 a R$ 10.502,23, conforme nível e categoria.</p>
+    <p><strong>Etapas comuns do certame:</strong> Provas ou provas e títulos, aptidão física, aferição de estatura, aptidão psicológica, comprovação de idoneidade e investigação social, análise documental, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Prova objetiva prevista para 31/05/2026 segundo notícia oficial da SAP e cronograma AOCP vigente na reabertura.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.institutoaocp.org.br/concursos/664" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="ppsp">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmerj" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Rio de Janeiro • PMERJ · Polícia Militar</span>
+      <h2>PMERJ: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMERJ organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMERJ</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMERJ">
+    <div><span>Edital de referência</span><strong>PMERJ — últimos certames oficiais FGV: Edital nº 001/2023 para Curso de Formação de Soldados e Edital nº 001/2024 para Curso de Formação de Oficiais; novo concurso de Soldado…</strong></div>
+    <div><span>Vagas</span><strong>Último edital de Soldado: 2.500 vagas. A PMERJ informou em 06/04/2026 que o processo para novo concurso está em tramitação entre Governo do Estado e…</strong></div>
+    <div><span>Banca</span><strong>FGV nos certames PMERJ 001/2023 — Soldado e 001/2024 — Oficial. No novo certame, a banca será a que constar…</strong></div>
+    <div><span>Escolaridade</span><strong>Soldado: ensino médio completo no edital 001/2023; Oficial: requisitos próprios do edital CFO 001/2024. O próximo edital definirá requisitos finais…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Referência GESPERJ jan/2026: Soldado-Aluno R$ 2.956,40; Soldado A/B/C R$ 5.233,88; Aluno EsFO R$ 4.127,16. A remuneração bruta combina soldo, GRET, GHP quando aplicável e GRAM; auxílio-transporte de R$ 100,00/mês e alimentação são tratados como parcelas próprias.</p>
+    <p><strong>Etapas comuns do certame:</strong> Últimos editais PMERJ/FGV tiveram prova, fases de avaliação física, psicológica, médica, investigação social/documental e curso de formação, conforme o cargo.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Novo concurso em tramitação entre Governo do Estado e SEPM; a PMERJ informou que o edital oficial será publicado no Diário Oficial quando houver definição.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://concursos.sepm.rj.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmerj">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmrj" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Rio de Janeiro • CBMERJ · Bombeiro Militar</span>
+      <h2>CBMERJ: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMERJ reúne informações sobre o ingresso na Corpo de Bombeiros Militar do Estado do Rio de Janeiro, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMERJ</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMERJ">
+    <div><span>Edital de referência</span><strong>ABMDPII/CFO 2026 em andamento/finalização; Soldado BM QBMP 1 — Busca e Salvamento, edital BMRJ-QBMP 01/2025, em andamento no IDECAN/CBMERJ.</strong></div>
+    <div><span>Vagas</span><strong>CFO 2026: 50 vagas. Soldado BM QBMP 1: 144 vagas, sendo 101 ampla concorrência, 29 negros/indígenas e 14 hipossuficientes.</strong></div>
+    <div><span>Banca</span><strong>UERJ no CFO 2026; IDECAN no Soldado BM QBMP 1.</strong></div>
+    <div><span>Escolaridade</span><strong>Ensino médio completo nos editais localizados.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFO 2026: aluno R$ 4.227,16; aspirante após formação R$ 9.313,32 (estimado). Soldado QBMP 1: R$ 2.956,40 durante formação e R$ 5.233,38 após curso; tabela SEDEC jan/2026 indica Soldado A/B/C em R$ 5.233,88.</p>
+    <p><strong>Etapas comuns do certame:</strong> Provas, TAF, THE, exame de saúde, documental, pesquisa social e títulos conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso aberto sem fonte oficial; manter CFO/2026 e Soldado QBMP 1 como destaques atuais.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.cbmerj.rj.gov.br/cursos-e-concursos/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmrj">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmmg" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Minas Gerais • PMMG · Polícia Militar</span>
+      <h2>PMMG: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMMG reúne informações sobre o ingresso na Polícia Militar de Minas Gerais, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMMG</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMMG">
+    <div><span>Edital de referência</span><strong>Soldado PMMG (2024/2025) — CFSd 2025</strong></div>
+    <div><span>Vagas</span><strong>3.102 vagas</strong></div>
+    <div><span>Banca</span><strong>CRS / PMMG (Centro de Recrutamento e Seleção)</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo, CNH categoria B e altura mínima de 1,60 m, conforme edital</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> R$ 4.360,83 (Soldado 2ª Classe, conforme edital do CFSd 2025)</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova de conhecimentos, avaliações psicológicas, exames de saúde e avaliação física militar.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Último edital oficial localizado: CFSd 2025 com 3.102 vagas. Eventual novo edital 2026 deve ser tratado como previsão até publicação oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.policiamilitar.mg.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmmg">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcmg" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Minas Gerais • PCMG · Polícia Civil</span>
+      <h2>PCMG: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCMG reúne informações sobre o ingresso na Polícia Civil de Minas Gerais, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCMG</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCMG">
+    <div><span>Edital de referência</span><strong>Investigador de Polícia (Edital PCMG nº 04/2024)</strong></div>
+    <div><span>Vagas</span><strong>165 vagas para Investigador de Polícia</strong></div>
+    <div><span>Banca</span><strong>FGV</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo, conforme edital</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> R$ 5.332,62 (vencimento inicial informado no edital)</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova dissertativa quando prevista, avaliação psicológica, exames biomédicos e biofísicos, investigação social e curso de formação técnico-profissional.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso PCMG 2024 em acompanhamento. Sem novo edital confirmado para Investigador em 2026 até a última verificação.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.policiacivil.mg.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcmg">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmba" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Bahia • PMBA · Polícia Militar</span>
+      <h2>PMBA: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMBA reúne informações sobre o ingresso na Polícia Militar da Bahia, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMBA</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMBA">
+    <div><span>Edital de referência</span><strong>Soldado PMBA e CBMBA (2022) — último edital oficial localizado</strong></div>
+    <div><span>Vagas</span><strong>2.500 vagas</strong></div>
+    <div><span>Banca</span><strong>FCC (Fundação Carlos Chagas)</strong></div>
+    <div><span>Escolaridade</span><strong>Ensino Médio completo</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> R$ 4.012,11 (Soldo + GAP, conforme referência do último edital)</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova discursiva/redação quando prevista, TAF, exames médicos, avaliação psicológica, investigação social e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não há novo edital oficial aberto localizado. Manter como último concurso oficial: 2022, com 2.500 vagas. Tratar qualquer previsão de 2026 como expectativa até publicação oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pm.ba.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmba">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcba" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Bahia • PCBA · Polícia Civil</span>
+      <h2>PCBA: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCBA reúne informações sobre o ingresso na Polícia Civil da Bahia, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCBA</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCBA">
+    <div><span>Edital de referência</span><strong>Novo concurso PCBA 2026 anunciado — Delegado, Escrivão e Investigador</strong></div>
+    <div><span>Vagas</span><strong>Mais de 750 vagas anunciadas para Delegado, Escrivão e Investigador</strong></div>
+    <div><span>Banca</span><strong>A definir oficialmente no edital</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior, conforme cargo e edital</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> A definir no edital; último concurso de 2022 informava remuneração inicial de R$ 4.873,18</p>
+    <p><strong>Etapas comuns do certame:</strong> A definir no edital; último certame teve prova objetiva, discursiva, TAF, avaliação psicológica, exames médicos, investigação social e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Governo da Bahia anunciou novo concurso da Polícia Civil em 2026 com mais de 750 vagas para Delegado, Escrivão e Investigador. Aguardar edital oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.policiacivil.ba.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcba">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmpr" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Paraná • PMPR · Polícia Militar</span>
+      <h2>PMPR: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMPR reúne informações sobre o ingresso na Polícia Militar do Paraná, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMPR</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMPR">
+    <div><span>Edital de referência</span><strong>Soldado PMPR 2025 e Cadete PMPR 2025 — concursos oficiais em acompanhamento</strong></div>
+    <div><span>Vagas</span><strong>Soldado PMPR 2025: 2.000 vagas. Cadete PMPR 2025: acompanhar página oficial do certame.</strong></div>
+    <div><span>Banca</span><strong>IBFC para o certame de Soldado PMPR 2025 informado na página oficial.</strong></div>
+    <div><span>Escolaridade</span><strong>Soldado: curso superior completo. Cadete CFO: regras do edital próprio. Saúde/Capelão: formação específica exigida.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Soldado 1ª Classe: R$ 6.101,87 + R$ 834,74 de auxílio-alimentação; Aluno-Soldado 3ª Classe: R$ 2.530,12 + auxílio; Cadete 1º ano: R$ 3.994,86 + auxílio; 2º Tenente: R$ 13.731,61 + auxílio.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, avaliações específicas previstas no edital, investigação social, exames médicos, avaliação psicológica, TAF e curso de formação, conforme cargo.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> PMPR possui concursos recentes para Soldado e Cadete. Usar a página oficial de Concursos em Andamento para cronograma, resultados e convocações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmpr">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcpr" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Paraná • PCPR · Polícia Civil</span>
+      <h2>PCPR: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCPR reúne informações sobre o ingresso na Polícia Civil do Paraná, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCPR</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCPR">
+    <div><span>Edital de referência</span><strong>Novo concurso PCPR 2026 autorizado/comissão formada — Delegado, Agente de Polícia Judiciária e Papiloscopista</strong></div>
+    <div><span>Vagas</span><strong>A definir no novo edital. Último concurso PCPR ofertou 400 vagas: 300 para Investigador/Agente, 50 para Papiloscopista e 50 para Delegado.</strong></div>
+    <div><span>Banca</span><strong>A definir oficialmente no edital.</strong></div>
+    <div><span>Escolaridade</span><strong>Agente de Polícia Judiciária e Papiloscopista: nível superior; Delegado: Bacharelado em Direito. CNH categoria B ou superior conforme cargo/edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Agente/Papiloscopista: inicial de R$ 7.818,45. Delegado: inicial de R$ 24.247,12. Valores por subsídio conforme estrutura da LC 259/2023 e tabelas de 2026.</p>
+    <p><strong>Etapas comuns do certame:</strong> A definir no edital; tradicionalmente envolve prova objetiva, prova discursiva/peças quando previstas, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Novo certame previsto para 2026; tratar informações de banca, vagas e cronograma como previsão até publicação do edital oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pcpr.pr.gov.br/Pagina/Concursos" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcpr">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmrs" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Rio Grande do Sul • PMRS · Polícia Militar / Brigada</span>
+      <h2>PMRS: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMRS reúne informações sobre o ingresso na Brigada Militar do Rio Grande do Sul, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMRS</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMRS">
+    <div><span>Edital de referência</span><strong>Brigada Militar RS — Soldado 1ª Classe e Oficialato 2025</strong></div>
+    <div><span>Vagas</span><strong>Soldado: 1.200 vagas. Oficialato: 120 vagas.</strong></div>
+    <div><span>Banca</span><strong>Soldado: FUNDATEC. Oficialato: IBADE.</strong></div>
+    <div><span>Escolaridade</span><strong>Soldado: ensino médio completo e CNH B. Oficialato: curso superior em Direito, além dos demais requisitos do edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Soldado: R$ 5.944,85 + auxílio-alimentação de R$ 400,00. Oficialato: durante o CSPM, bolsa de 50% da remuneração de Capitão; após o curso, Capitão com remuneração de R$ 21.513,44 + auxílio-alimentação de R$ 400,00.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova escrita/intelectual, exames de saúde, teste de aptidão física e avaliação psicológica. Oficialato também prevê etapas específicas como prova discursiva, prova oral e avaliação de títulos, conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concursos 2025 publicados; acompanhar página oficial de concursos da Brigada Militar para novos atos, convocações e retificações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.brigadamilitar.rs.gov.br/concursos-2025" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmrs">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcrs" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Rio Grande do Sul • PCRS · Polícia Civil</span>
+      <h2>PCRS: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCRS reúne informações sobre o ingresso na Polícia Civil do Rio Grande do Sul, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCRS</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCRS">
+    <div><span>Edital de referência</span><strong>Polícia Civil RS — Editais 2025: Escrivão, Inspetor e Delegado</strong></div>
+    <div><span>Vagas</span><strong>Escrivão: 360 vagas. Inspetor: 360 vagas. Delegado: 30 vagas.</strong></div>
+    <div><span>Banca</span><strong>FUNDATEC</strong></div>
+    <div><span>Escolaridade</span><strong>Escrivão/Inspetor: nível superior completo e CNH B. Delegado: bacharelado em Direito e requisitos próprios do edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Escrivão/Inspetor: R$ 7.299,54. Delegado: R$ 23.334,43.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova de capacitação intelectual, teste de aptidão física, avaliação psicológica/psiquiátrica, exame de saúde, sindicância de vida pregressa e Curso de Formação. Delegado possui etapas próprias como prova discursiva, prova oral e títulos, conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Editais 2025 publicados e acompanhados por atos no site oficial da Polícia Civil/RS.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcrs">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmsc" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Santa Catarina • PMSC · Polícia Militar</span>
+      <h2>PMSC: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMSC organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMSC</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMSC">
+    <div><span>Edital de referência</span><strong>PMSC — concursos e processos seletivos oficiais da Polícia Militar de Santa Catarina</strong></div>
+    <div><span>Vagas</span><strong>Conferir edital vigente na página oficial da PMSC. A instituição mantém páginas específicas para concursos de Oficiais, Soldados e processos…</strong></div>
+    <div><span>Banca</span><strong>Conferir edital vigente</strong></div>
+    <div><span>Escolaridade</span><strong>Conferir edital vigente. Em regra, cargos de carreira exigem escolaridade compatível com Soldado, Oficial ou quadro específico.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Carreira PMSC em regime de subsídio. Referência atual da tabela: Soldado PMSC R$ 8.505,00, Cabo R$ 9.720,00 e demais postos/graduações conforme LC 765/2020, LC 776/2021, LC 872/2025 e LC 880/2025.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, exames/avaliações, teste físico, investigação social, curso de formação e demais etapas conforme edital específico.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Acompanhar a página oficial de concursos da PMSC para novos editais, retificações e convocações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pm.sc.gov.br/concursos" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmsc">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmsc" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Santa Catarina • CBMSC · Bombeiro Militar</span>
+      <h2>CBMSC: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMSC organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMSC</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMSC">
+    <div><span>Edital de referência</span><strong>CBMSC — Editais 001/2026/DP/CBMSC (CFP/Aluno-Soldado) e 002/2026/DP/CBMSC (CFO/Cadete)</strong></div>
+    <div><span>Vagas</span><strong>110 vagas imediatas: 100 para Aluno-Soldado/CFP e 10 para Cadete/Oficial/CFO; cadastros de reserva conforme edital.</strong></div>
+    <div><span>Banca</span><strong>IDIB</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo. CFP: curso superior de graduação em qualquer área. CFO: bacharelado ou licenciatura plena, conforme edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFP 2026: Aluno-Soldado/Soldado R$ 8.015,00 + R$ 550,00 de auxílio-alimentação. CFO 2026: Cadete R$ 18.670,37 + R$ 550,00 de auxílio-alimentação; após formação, 2º Tenente R$ 21.284,40. Valores estimados para abr/2026 aparecem na aba de remuneração com &#x27;(estimado)&#x27;.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, redação quando prevista, avaliação de saúde médico/odontológica, teste de aptidão física, avaliação psicológica, investigação social, exame toxicológico, entrega documental e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso aberto sem ato oficial. Destaque atual: CFP 2026 e CFO 2026 do CBMSC, organizados pelo IDIB.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://concurso.idib.org.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmsc">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcsc" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Santa Catarina • PCSC · Polícia Civil</span>
+      <h2>PCSC: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCSC organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCSC</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCSC">
+    <div><span>Edital de referência</span><strong>PCSC — Agente e Escrivão — editais 01/2025 e 02/2025</strong></div>
+    <div><span>Vagas</span><strong>300 vagas: 200 para Agente de Polícia Civil e 100 para Escrivão de Polícia Civil, ambas de nível superior.</strong></div>
+    <div><span>Banca</span><strong>IDECAN</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo para Agente e Escrivão, conforme editais 2025.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Agente: R$ 7.290,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 7.840,00. Escrivão: R$ 9.720,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 10.270,00, valores previstos para abril/2026.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova de capacidade física, avaliação psicológica, investigação social, exame toxicológico de larga janela de detecção e avaliação de títulos.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Editais 2025 publicados; acompanhar PCSC, DOE/SC e IDECAN para atos posteriores.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://pc.sc.gov.br/?p=35166" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcsc">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmes" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Espírito Santo • PMES · Polícia Militar</span>
+      <h2>PMES: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMES organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMES</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMES">
+    <div><span>Edital de referência</span><strong>PMES — Curso de Formação de Oficiais 2024/2025 e concursos de Soldado conforme página oficial</strong></div>
+    <div><span>Vagas</span><strong>CFO 2024 retificado: 37 ampla concorrência, 10 negros e 3 indígenas. Para Soldado e demais quadros, conferir edital vigente na página oficial da PMES.</strong></div>
+    <div><span>Banca</span><strong>IDECAN no CFO 2024; demais certames conforme edital.</strong></div>
+    <div><span>Escolaridade</span><strong>CFO 2024: nível médio completo conforme edital; demais cargos conforme certame específico.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFO retificado: Aluno-Oficial 1º ano R$ 4.536,14, 2º ano R$ 5.410,85, 3º ano R$ 5.848,19; Aspirante a Oficial R$ 10.381,57. Tabela PM/CBM 12/2025: Soldado Ref. 1 R$ 5.741,46 e Ref. 15 R$ 7.575,15.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova discursiva/redação quando prevista, TAF, avaliação psicológica, investigação social, exame de saúde, entrega de documentação e curso de formação, conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Acompanhar a página oficial de concursos da PMES para novos editais, retificações e convocações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://pm.es.gov.br/concursos" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmes">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmes" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Espírito Santo • CBMES · Bombeiro Militar</span>
+      <h2>CBMES: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMES organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMES</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMES">
+    <div><span>Edital de referência</span><strong>CBMES — CFO 2026 — Edital de Abertura nº 001/2026 (Oficial Combatente/QOCBM); CFSd 2022 com convocações/retificações posteriores como histórico de Soldado</strong></div>
+    <div><span>Vagas</span><strong>CFO 2026: 6 vagas imediatas + 400 cadastro de reserva. Distribuição: 5 ampla concorrência, 0 indígenas e 1 negros; cadastro de reserva com 300 ampla…</strong></div>
+    <div><span>Banca</span><strong>IDECAN</strong></div>
+    <div><span>Escolaridade</span><strong>CFO 2026: ensino médio completo ou equivalente; CNH/Permissão para dirigir automóvel no mínimo categoria B; demais cargos conforme edital específico.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFO 2026: Aluno-Oficial 1º ano R$ 4.113,27; 2º ano R$ 5.027,34; 3º ano R$ 5.484,36; Aspirante a Oficial R$ 10.221,74. Valores brutos do edital, sem somar auxílio-alimentação e GSE. Tabela PM/CBM 12/2025: Soldado Ref. 1 R$ 5.741,46 e Ref. 15 R$ 7.575,15.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva e redação; TAF; inspeção de saúde; avaliação psicológica; exame toxicológico; investigação social; apresentação de documentos/matrícula; Curso de Formação de Oficiais Bombeiro Militar.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso como aberto sem ato oficial. Destaque atual: CFO 2026 em andamento, com retificações, resultados, provas e convocações no site oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://cb.es.gov.br/cfo2023" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmes">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pces" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Espírito Santo • PCES · Polícia Civil</span>
+      <h2>PCES: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCES organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCES</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCES">
+    <div><span>Edital de referência</span><strong>PCES — Oficial Investigador de Polícia — Edital 2025</strong></div>
+    <div><span>Vagas</span><strong>1.052 vagas para Oficial Investigador de Polícia, conforme divulgação oficial da PCES.</strong></div>
+    <div><span>Banca</span><strong>IBADE para o concurso OIP 2025.</strong></div>
+    <div><span>Escolaridade</span><strong>OIP: curso superior de bacharelado e CNH categoria B. Delegado: bacharelado em Direito quando houver edital específico. Perícia oficial: requisitos…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> OIP: subsídio inicial de R$ 8.539,00 + R$ 800,00 de auxílio-alimentação, podendo chegar a aproximadamente R$ 17 mil no topo da carreira. Delegado, OIP e carreiras periciais possuem tabelas próprias por categoria/referência.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, exame de aptidão física, exame de saúde, exame psicotécnico, investigação criminal e social e curso de formação profissional pela Acadepol.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso OIP 2025 em andamento; acompanhar publicações da PCES e IBADE para cronograma, convocações e resultados.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://pc.es.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pces">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmms" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso do Sul • PMMS · Polícia Militar</span>
+      <h2>PMMS: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMMS organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMMS</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMMS">
+    <div><span>Edital de referência</span><strong>PMMS — Soldado e Oficial — último ciclo SAD/SEJUSP/PMMS 2022 e acompanhamento de atos posteriores</strong></div>
+    <div><span>Vagas</span><strong>Último ciclo PMMS/2022: vagas para Soldado e Oficial; acompanhar novos editais, convocações e prorrogações no portal Concursos MS e PMMS.</strong></div>
+    <div><span>Banca</span><strong>IDECAN no último ciclo PMMS/2022.</strong></div>
+    <div><span>Escolaridade</span><strong>Conferir edital vigente; requisitos variam para Soldado, Oficial e demais quadros.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Tabela militar MS 05/2025 cadastrada na remuneração: Soldado PMMS Nível I R$ 5.727,10; Cabo Nível I R$ 6.872,52; 3º Sargento Nível I R$ 8.247,02; Coronel Nível VII R$ 39.426,84. Linhas de curso/formação dependem do edital vigente.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, TAF, avaliação psicológica, exame de saúde, investigação social, entrega de documentos, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Acompanhar PMMS, Concursos MS, SEJUSP/MS e Diário Oficial/MS para novos editais e convocações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pm.ms.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmms">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmms" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso do Sul • CBMMS · Bombeiro Militar</span>
+      <h2>CBMMS: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMMS organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMMS</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMMS">
+    <div><span>Edital de referência</span><strong>CBMMS — Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 para Quadro de Praças Temporárias; concursos efetivos anteriores/homologados devem ser conferidos no portal…</strong></div>
+    <div><span>Vagas</span><strong>QPTBM/2025: conferir editais complementares. Efetivo legal do CBMMS: 3.978 cargos pela LC MS nº 354/2025.</strong></div>
+    <div><span>Banca</span><strong>Portal oficial de concursos do Governo de Mato Grosso do Sul; banca/organizadora conforme edital.</strong></div>
+    <div><span>Escolaridade</span><strong>Conforme edital específico.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Remuneração no portal pela tabela de subsídio do CBMMS com RGA 2026 aplicada. Valores de edital de formação devem ser conferidos no edital específico.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova quando prevista, TAF, avaliação psicológica, exame médico, investigação social, títulos/documental e curso de formação conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar novo concurso efetivo aberto sem fonte oficial. Manter destaque para editais vigentes no portal oficial de concursos de MS.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.concursos.ms.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmms">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcms" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso do Sul • PCMS · Polícia Civil</span>
+      <h2>PCMS: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCMS organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCMS</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCMS">
+    <div><span>Edital de referência</span><strong>PCMS — Agente de Polícia Judiciária — Edital SAD/SEJUSP/PCMS/APJ/2025</strong></div>
+    <div><span>Vagas</span><strong>400 vagas imediatas: 300 para Investigador de Polícia Judiciária e 100 para Escrivão de Polícia Judiciária.</strong></div>
+    <div><span>Banca</span><strong>Instituto Avalia.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo em qualquer área para APJ, com CNH B ou superior; demais carreiras exigem requisitos próprios.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> R$ 6.569,53 para Investigador de Polícia Judiciária e Escrivão de Polícia Judiciária, jornada de 40h, conforme divulgação oficial do concurso APJ/2025.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, avaliação de títulos, investigação social, exames de saúde, avaliação psicológica, TAF e curso de formação, conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso APJ/2025 em andamento/convocações; acompanhar PCMS, Instituto Avalia, Acadepol e Diário Oficial/MS.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pc.ms.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcms">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="ppms" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso do Sul • PPMS · Polícia Penal</span>
+      <h2>PPMS: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PPMS organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PPMS</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PPMS">
+    <div><span>Edital de referência</span><strong>PPMS/AGEPEN-MS — sem novo edital aberto cadastrado nesta revisão; usar histórico da carreira penal e monitorar SEJUSP/MS, AGEPEN/MS e Diário Oficial/MS</strong></div>
+    <div><span>Vagas</span><strong>Conferir autorização, edital e atos oficiais; quando houver edital, separar vagas imediatas, cadastro de reserva, cotas, sexo e lotação.</strong></div>
+    <div><span>Banca</span><strong>A definir conforme edital vigente.</strong></div>
+    <div><span>Escolaridade</span><strong>Conferir edital vigente da AGEPEN/MS/SEJUSP/MS e legislação da carreira policial penal.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Tabela Subsídio AGEPEN/MS 2026: Classe Inicial/Nível I R$ 5.517,66; Classe Especial/Nível VIII R$ 13.132,02. Valores de subsídio legal, sem somar adicionais, auxílios, indenizações ou rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Quando publicado, conferir prova objetiva, TAF, avaliação psicológica, exame médico, investigação social, curso de formação e análise documental.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não tratar como concurso aberto sem edital publicado; manter monitoramento de SEJUSP/MS, AGEPEN/MS e DOE/MS.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.agepen.ms.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="ppms">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmmt" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso • PMMT · Polícia Militar</span>
+      <h2>PMMT: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMMT organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMMT</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMMT">
+    <div><span>Edital de referência</span><strong>PMMT — Soldado e Oficial — editais nº 003/2022 e nº 004/2022-SEPLAG/SESP/MT; acompanhar novos atos e convocações</strong></div>
+    <div><span>Vagas</span><strong>Último ciclo PMMT/2022: cadastro de reserva/vagas conforme edital; em 2026 houve convocação pública de novos profissionais de segurança, incluindo…</strong></div>
+    <div><span>Banca</span><strong>UFMT no último ciclo PMMT/2022.</strong></div>
+    <div><span>Escolaridade</span><strong>Soldado e Oficial possuem requisitos próprios; conferir edital vigente da SEPLAG/SESP/MT.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Planilha PMMT cadastrada: Aluno-Soldado R$ 3.750,58; Soldado de R$ 5.474,19 a R$ 7.501,13; Aluno-Oficial R$ 9.521,85; 2º Tenente de R$ 15.729,62 a R$ 15.869,72; Coronel de R$ 35.845,70 a R$ 35.985,85. Conferir reajustes posteriores.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva/discursiva quando prevista, TAF, avaliação psicológica, exame de saúde, investigação social, entrega de documentos, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Acompanhar PMMT, SEPLAG/MT, SESP/MT, UFMT e Diário Oficial/MT para novos editais, convocações e nomeações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pm.mt.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmmt">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmmt" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso • CBMMT · Bombeiro Militar</span>
+      <h2>CBMMT: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMMT organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMMT</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMMT">
+    <div><span>Edital de referência</span><strong>CBMMT — Editais SEPLAG/SESP/CBMMT 2022/UFMT para Aluno-Soldado e Aluno-a-Oficial; convocações 2025/2026 do CFSD e processo seletivo temporário como atualizações operacionais</strong></div>
+    <div><span>Vagas</span><strong>CFO 2022: cadastro de reserva; CFSD 2022 com convocações posteriores, incluindo 22 aprovados chamados em 2026. Processos temporários: consultar…</strong></div>
+    <div><span>Banca</span><strong>UFMT/SEPLAG-MT nos editais 2022 localizados; confirmar banca em cada edital novo.</strong></div>
+    <div><span>Escolaridade</span><strong>CFO 2022: Bacharelado em Direito. Soldado/temporário: conferir escolaridade exigida no edital próprio.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> CFO 2022: Aluno-a-Oficial R$ 9.000,71 e Aspirante R$ 12.936,44, conforme edital. Soldado/temporário: conferir edital específico, RGA posterior e contracheque; não somar automaticamente etapa alimentação, fardamento, diárias ou indenizações.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, discursiva quando prevista, TAF, avaliação psicológica, exames médicos/odontológicos, investigação social, análise documental, heteroidentificação quando aplicável, matrícula e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Sem edital novo confirmado no cadastro. Destaque atual: convocações remanescentes e temporários; qualquer nova seleção deve aguardar fonte oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.bombeiros.mt.gov.br/concursos-e-seletivos" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmmt">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcmt" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso • PCMT · Polícia Civil</span>
+      <h2>PCMT: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCMT organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCMT</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCMT">
+    <div><span>Edital de referência</span><strong>PCMT — Polícia Judiciária Civil de Mato Grosso — último concurso 2022 para Escrivão e Investigador; acompanhar comissão/novo edital 2026</strong></div>
+    <div><span>Vagas</span><strong>Último edital: cadastro de reserva para Escrivão e Investigador; em 2026 houve convocação pública de novos profissionais de segurança, incluindo…</strong></div>
+    <div><span>Banca</span><strong>UFMT no último concurso PCMT.</strong></div>
+    <div><span>Escolaridade</span><strong>Escrivão e Investigador: conferir edital vigente; Delegado exige Bacharelado em Direito e demais requisitos específicos.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Tabela PCMT 2025 cadastrada: Escrivão de Polícia de R$ 7.023,44 no Nível 001/A a R$ 21.134,03 no Nível 010/E; Delegado de R$ 30.961,87 a R$ 42.471,66; Delegado Substituto R$ 27.865,69. Investigador depende de tabela própria/edital vigente.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova discursiva quando prevista, TAF, avaliação psicológica, exame médico, investigação social, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Acompanhar PJC-MT, SEPLAG/MT, SESP/MT, UFMT e Diário Oficial/MT para novo edital e convocações.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.pjc.mt.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcmt">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="ppmt" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Mato Grosso • PPMT · Polícia Penal</span>
+      <h2>PPMT: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PPMT organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PPMT</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PPMT">
+    <div><span>Edital de referência</span><strong>PPMT/SEJUS-MT — monitorar SEJUS/MT, SEPLAG/MT e Diário Oficial/MT; último grande ciclo histórico veio da antiga carreira de Agente Penitenciário/SEJUDH-MT</strong></div>
+    <div><span>Vagas</span><strong>Conferir autorização e edital vigente; histórico anterior mencionou cadastro de reserva para a antiga carreira penitenciária estadual.</strong></div>
+    <div><span>Banca</span><strong>A definir conforme edital vigente; históricos anteriores devem ser tratados apenas como referência.</strong></div>
+    <div><span>Escolaridade</span><strong>Conferir edital vigente e legislação local da carreira de Policial Penal/MT.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Tabela salarial 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período 01/01/2026-atual: de R$ 5.155,94 no Nível 001/A a R$ 16.761,66 no Nível 012/D. Sem somar adicionais ou rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva/discursiva quando prevista, TAF, exame médico, avaliação psicológica, investigação social, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não afirmar concurso aberto sem edital; manter monitoramento permanente da carreira penal estadual.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.sejus.mt.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="ppmt">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmac" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Acre • PMAC · Polícia Militar</span>
+      <h2>PMAC: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMAC organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMAC</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMAC">
+    <div><span>Edital de referência</span><strong>PMAC — Edital nº 001/2023 SEAD/PMAC — Aluno Oficial e 2º Tenente Estagiário de Saúde</strong></div>
+    <div><span>Vagas</span><strong>36 vagas: Aluno Oficial Combatente e cargos de 2º Tenente Estagiário de Saúde</strong></div>
+    <div><span>Banca</span><strong>FGV</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior conforme cargo; requisitos específicos no edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73, conforme edital.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova discursiva/redação, TAF, avaliação psicológica, avaliação médica/toxicológica, investigação social e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso PMAC 2023 já publicado; acompanhar convocações e atos oficiais da SEAD/PMAC/FGV.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://conhecimento.fgv.br/concursos/pmac23" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmac">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pmap" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Amapá • PMAP · Polícia Militar</span>
+      <h2>PMAP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PMAP organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PMAP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PMAP">
+    <div><span>Edital de referência</span><strong>PMAP — Concurso Público CFSD/QPPMC/PMAP 2022, organizado pela Fundação Carlos Chagas, para cadastro de reserva de Soldado do Quadro de Praças Policiais Militares Combatentes…</strong></div>
+    <div><span>Vagas</span><strong>2.500 vagas em cadastro de reserva para Soldado PMAP, conforme edital 2022; nomeações, convocações e matrículas dependem de atos da SEAD/AP, PMAP e…</strong></div>
+    <div><span>Banca</span><strong>Fundação Carlos Chagas — FCC.</strong></div>
+    <div><span>Escolaridade</span><strong>Ensino médio completo para Soldado PM, além de requisitos de nacionalidade, CNH, altura, idoneidade, aptidão física, psicológica e saúde conforme…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Edital 2022: Soldado PM 2ª Classe em curso de formação R$ 2.827,00 e Soldado PM 1ª Classe R$ 5.313,18. Tabela legal vigente: LC AP nº 173/2025, Anexo III, com Soldado Base R$ 6.039,13 e Aluno Soldado Base R$ 3.213,26 em 01/04/2026; conferir nível, descontos e rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social, entrega documental, matrícula e Curso de Formação de Soldados conforme edital e convocações.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Sem novo edital aberto identificado nesta revisão; manter o concurso Soldado 2022/2026 como certame vigente/histórico com convocações e monitorar futuras autorizações oficiais.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://sead.portal.ap.gov.br/concursos/vigentes/24027" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pmap">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcap" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Amapá • PCAP · Polícia Civil</span>
+      <h2>PCAP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCAP organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCAP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCAP">
+    <div><span>Edital de referência</span><strong>PCAP — Concurso Polícia Civil 2017/SEAD-AP em fase de convocações e curso de formação, com atos recentes em 2026; novo concurso 2026 em planejamento para Delegado e Oficial…</strong></div>
+    <div><span>Vagas</span><strong>Concurso 2017: acompanhar convocações, matrícula e formação pela página oficial SEAD/AP. Novo concurso 2026: notícias públicas indicam 295 vagas em…</strong></div>
+    <div><span>Banca</span><strong>Concurso PCAP 2017 organizado pela FCC; novo concurso 2026 com banca em definição até publicação oficial.</strong></div>
+    <div><span>Escolaridade</span><strong>Delegado: bacharelado em Direito e requisitos do edital. Oficial Investigador/Agente/Oficial: nível superior conforme edital e legislação vigente da…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Tabela SEAD/AP Grupo Polícia Civil vigente em 01/04/2024: Oficial Investigador/Agente/Oficial de Polícia Civil de R$ 6.067,95 a R$ 21.941,28; Delegado de Polícia de R$ 16.650,89 a R$ 37.733,13. Valores de subsídio, sem somar plantões, funções, adicionais, diárias, retroativos ou rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Provas objetiva/discursiva conforme cargo, exame de aptidão física quando previsto, exames documental e médico, avaliação psicológica, investigação social, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Novo concurso PCAP 2026 deve permanecer como previsão/planejamento até publicação oficial. Não anunciar inscrições abertas sem edital da SEAD/AP.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://sead.portal.ap.gov.br/concursos/vigentes/3736" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcap">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcce" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Ceará • PCCE · Polícia Civil</span>
+      <h2>PCCE: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCCE organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCCE</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCCE">
+    <div><span>Edital de referência</span><strong>PCCE 2025/2026 — Delegado de Polícia/Cebraspe, Edital nº 1/2025, e Oficial Investigador de Polícia/CEV-UECE/FUNECE, Edital nº 1-PC/CE, de 14/04/2025; ambos em acompanhamento…</strong></div>
+    <div><span>Vagas</span><strong>Delegado: 100 vagas imediatas + cadastro de reserva, com distribuição de 75 ampla concorrência, 5 PCD e 20 negros/pardos no edital. Oficial…</strong></div>
+    <div><span>Banca</span><strong>Delegado: Cebraspe. Oficial Investigador: FUNECE/CEV-UECE, com SSPDS, SEPLAG e AESP/CE.</strong></div>
+    <div><span>Escolaridade</span><strong>Delegado: bacharelado em Direito e requisitos jurídicos/funcionais do edital. Oficial Investigador: diploma de curso superior reconhecido pelo MEC e…</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Delegado: R$ 22.165,53 para 30h semanais, conforme edital 2025. Oficial Investigador: R$ 6.732,71 para 40h semanais, conforme Edital nº 1-PC/CE/2025. Tabela interna do portal exibe progressões e estimativas sinalizadas; não somar plantões, diárias, adicional noturno, função ou rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Delegado: provas objetiva e discursiva, exame oral, avaliação de títulos, avaliação médica, TAF, avaliação psicológica, investigação social e curso de formação conforme edital. Oficial Investigador: prova escrita objetiva e discursiva, TAF, avaliação psicológica, investigação social, avaliação biopsicossocial, heteroidentificação e curso…</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Manter como concursos em andamento/convocações 2025/2026. Não publicar novo concurso aberto sem edital posterior; a Lei CE nº 19.706/2026 cria cargos, mas aproveitamento depende de ato oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.cev.uece.br/oippcce/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcce">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcal" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Alagoas • PCAL · Polícia Civil</span>
+      <h2>PCAL: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCAL organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCAL</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCAL">
+    <div><span>Edital de referência</span><strong>PCAL 2026 — comissão formada para novo concurso de Agente e Escrivão; 300 vagas previstas, sendo 150 imediatas e 150 cadastro de reserva; edital e banca em definição.</strong></div>
+    <div><span>Vagas</span><strong>300 vagas previstas para Agente e Escrivão: 150 imediatas + 150 cadastro de reserva.</strong></div>
+    <div><span>Banca</span><strong>A definir; último concurso Agente/Escrivão 2021 foi Cebraspe.</strong></div>
+    <div><span>Escolaridade</span><strong>Agente/Escrivão: nível superior; Agente costuma exigir CNH B conforme legislação/edital; Delegado exige bacharelado em Direito nos certames próprios.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Agente/Escrivão: referência inicial R$ 5.318,61 e final até R$ 15.065,12 (estimado por tabela de carreira/revisões). Delegado: tabela específica pela Lei AL nº 8.641/2022; novo edital de Delegado não publicado nesta revisão.</p>
+    <p><strong>Etapas comuns do certame:</strong> Objetivas, discursiva, TAF, prova prática de digitação quando aplicável, exames médicos/laboratoriais, psicológica, investigação social, curso de formação; Delegado pode ter prova oral/títulos conforme edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso autorizado/comissão formada; não publicar como edital aberto até sair ato oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://pc.al.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcal">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="ppal" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Alagoas • PPAL · Polícia Penal</span>
+      <h2>PPAL: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PPAL organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PPAL</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PPAL">
+    <div><span>Edital de referência</span><strong>PPAL/SERIS-AL — último edital 2021 para Agente/Policial Penal; novo concurso sem edital aberto localizado nesta revisão.</strong></div>
+    <div><span>Vagas</span><strong>Último edital: 300 vagas. Novo pedido citado por portais especializados: 350 vagas solicitadas; confirmar autorização, banca e edital em…</strong></div>
+    <div><span>Banca</span><strong>Cebraspe no último concurso SERIS/AL 2021; banca futura a definir oficialmente.</strong></div>
+    <div><span>Escolaridade</span><strong>Nível superior completo no edital 2021; confirmar CNH, idade, aptidão física, conduta social e demais requisitos no próximo edital.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Edital SERIS/AL 2021: R$ 3.800,00. Remuneração vigente cadastrada pela Lei AL nº 9.849/2026: subsídio de R$ 7.200,00 a R$ 17.734,04 por nível/classe, sem somar rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Último edital: provas objetiva e discursiva, TAF, avaliação médica, avaliação psicológica, investigação social, avaliação de títulos/documentos e curso de formação, conforme regras do certame.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Não publicar como novo edital aberto sem ato oficial. Manter como pedido/expectativa até publicação formal.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.seris.al.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="ppal">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcac" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Acre • PCAC · Polícia Civil</span>
+      <h2>PCAC: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCAC organiza referências de edital, requisitos, remuneração inicial, etapas de seleção e canais de acompanhamento para quem pretende ingressar na carreira.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCAC</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCAC">
+    <div><span>Edital de referência</span><strong>PCAC — concurso anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito</strong></div>
+    <div><span>Vagas</span><strong>139 vagas anunciadas</strong></div>
+    <div><span>Banca</span><strong>A definir</strong></div>
+    <div><span>Escolaridade</span><strong>A definir no edital; cargos policiais civis normalmente exigem formação específica conforme carreira.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Edital pendente; o simulador usa as tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais.</p>
+    <p><strong>Etapas comuns do certame:</strong> A definir no edital; acompanhar SEAD/AC, PCAC e Diário Oficial do Acre.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Governo anunciou novo concurso PCAC em abril de 2026; edital e banca ainda devem ser acompanhados nos canais oficiais.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcac">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="ppac" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Acre • PPAC · Polícia Penal</span>
+      <h2>PPAC: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PPAC reúne informações sobre o ingresso na Polícia Penal do Acre, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PPAC</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PPAC">
+    <div><span>Edital de referência</span><strong>IAPEN/PPAC — Edital nº 001/2023 SEAD/IAPEN — Agente de Polícia Penal</strong></div>
+    <div><span>Vagas</span><strong>329 vagas totais no edital, sendo 261 para Agente de Polícia Penal e as demais para cargos administrativos/superiores do IAPEN/AC</strong></div>
+    <div><span>Banca</span><strong>IBFC</strong></div>
+    <div><span>Escolaridade</span><strong>Superior completo e CNH categoria B até o curso de formação para Agente de Polícia Penal.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> Agente de Polícia Penal: R$ 4.366,60, 40h semanais, dedicação exclusiva e escala.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, prova discursiva, títulos, TAF, avaliação psicológica, avaliação médica, investigação social e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Concurso 2023 teve resultado/homologação em 2025 e nomeações posteriores; acompanhar novas convocações e eventual novo certame.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="ppac">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="bmap" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Amapá • CBMAP · Bombeiro Militar</span>
+      <h2>CBMAP: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da CBMAP reúne informações sobre o ingresso na Corpo de Bombeiros Militar do Amapá, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">CBMAP</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da CBMAP">
+    <div><span>Edital de referência</span><strong>BMAP/CBMAP — QOCBM/CBMAP 2025 para Oficial Combatente, cadastro de reserva, Fundação Carlos Chagas; CFSD/BM/CBMAP 2022 com convocações posteriores</strong></div>
+    <div><span>Vagas</span><strong>QOCBM/CBMAP 2025: 180 vagas em cadastro de reserva para Oficial Combatente. CFSD/BM/CBMAP 2022/2026: histórico de convocações; governo informou…</strong></div>
+    <div><span>Banca</span><strong>Fundação Carlos Chagas no edital QOCBM/CBMAP 2025; confirmar banca em cada certame.</strong></div>
+    <div><span>Escolaridade</span><strong>QOCBM/CBMAP 2025 exige diploma de curso superior. CFSD/Soldado deve seguir edital próprio e retificações.</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> LC AP nº 173/2025, Anexo III, referência 01/04/2026: Aluno Soldado BM Base R$ 3.213,26; Soldado BM Base R$ 6.039,13; Aluno Oficial 1º ano Base R$ 8.592,24; 2º Tenente Base R$ 11.660,90. Valores como subsídio/vencimento legal, sem somar indenizações ou rubricas pessoais.</p>
+    <p><strong>Etapas comuns do certame:</strong> Prova objetiva, exame documental, avaliação de capacidades físicas, avaliação psicológica, exame de saúde, investigação social, curso de formação e demais fases do edital.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Manter acompanhamento do QOCBM/CBMAP 2025, CFSD/BM 2022/2026 e novas autorizações; não afirmar concurso aberto sem publicação oficial.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://bombeiros.portal.ap.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="bmap">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" data-concurso-card data-inst="pcerj" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Rio de Janeiro • PCERJ · Polícia Civil</span>
+      <h2>PCERJ: concursos, requisitos e etapas</h2>
+      <p>O guia de concursos da PCERJ reúne informações sobre o ingresso na Polícia Civil do Rio de Janeiro, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCERJ</span>
+  </div>
+
+  <div class="concursos-card-indicadores" aria-label="Resumo do concurso da PCERJ">
+    <div><span>Edital de referência</span><strong>Novo concurso PCERJ 2026 anunciado/autorizado — 414 vagas previstas</strong></div>
+    <div><span>Vagas</span><strong>414 vagas previstas para Delegado, Perito Criminal, Perito Legista e Piloto Policial</strong></div>
+    <div><span>Banca</span><strong>A definir</strong></div>
+    <div><span>Escolaridade</span><strong>A definir por cargo; tendência de nível superior para os cargos previstos</strong></div>
+  </div>
+
+  <div class="concursos-card-corpo">
+    <p><strong>Remuneração de referência:</strong> A definir no edital; último concurso de Inspetor/Investigador teve remuneração inicial na faixa de R$ 5.800 a R$ 6.300</p>
+    <p><strong>Etapas comuns do certame:</strong> A definir no edital; últimos certames tiveram prova objetiva, discursiva, TAF, exames médicos, avaliação psicológica, investigação social e curso de formação.</p>
+    <p><strong>Próximo edital e acompanhamento:</strong> Novo concurso anunciado para 2026, com 414 vagas previstas, mas ainda dependente de edital oficial com cargos, requisitos, banca, cronograma e remuneração.</p>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da instituição ou da banca.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.policiacivil.rj.gov.br" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcerj">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+    </section>
+
+    <nav class="concursos-paginacao" id="concursos-paginacao" aria-label="Paginação dos cards de concursos"></nav>
+
+    <section class="card concursos-detalhe-card" id="consulta-concurso-detalhado" hidden aria-live="polite">
+      <span class="concursos-hero-kicker">Consulta detalhada</span>
+      <h2>Dados completos do concurso (<span id="txt-inst-concursos">—</span>)</h2>
+      <div class="alerta concursos-alerta-detalhe">
+        Confira abaixo o cadastro detalhado da instituição selecionada. As informações são referência inicial e podem mudar por edital, retificação, ato de convocação, prorrogação ou nova publicação oficial.
+      </div>
+      <div class="result-list" id="lista-concursos"></div>
+    </section>
+  </div>
 </main>
 <!-- BLOCO 07.1 — PÁGINA COMPARAR CARREIRAS -->
 <!-- BLOCO 08 — PÁGINA PRODUTOS -->
@@ -566,6 +2098,7 @@
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
 <script defer="" src="js/ui/header-estados.js?v=20260510brasoes1"></script>
 <script defer="" src="js/pages/concursos-comparador.js?v=20260506comparador4"></script>
+<script defer="" src="js/pages/concursos-conteudo-estatico.js?v=20260511adsense1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
 <script defer="" src="js/ui/event-bindings.js?v=20260506comparador4"></script>
 <script defer="" src="js/core/page-context.js?v=20260506baselegal1"></script>

@@ -1,70 +1,106 @@
 <!DOCTYPE html>
 
-<html class="page-comparar" lang="pt-BR">
+<html class="page-noticias" lang="pt-BR">
 <head>
 <!-- =======================================================
      BLOCO 01 — HEAD / CONFIGURAÇÕES INICIAIS DO SITE
      Tags de rastreamento, metadados, fontes, tema inicial e CSS.
      ======================================================= -->
-<!-- BLOCO 01.1 — Google Analytics -->
-<!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XHR4TCCF9D"></script>
-<!-- BLOCO 01.2 — Google Ads -->
-<!-- Google Ads tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18121830612"></script>
 <script src="js/ui/head.js"></script>
-<!-- BLOCO 01.3 — Conversão do Google Ads -->
-<!-- Event snippet for Visualização de página conversion page -->
-<!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Compare carreiras de segurança pública por remuneração, benefícios, concursos, requisitos e fontes." name="description"/>
-<title>Comparar Carreiras - Universo Segurança Pública</title>
+<meta content="Notícias, editais, reajustes, decisões e atualizações relevantes sobre instituições de segurança pública, com conteúdo organizado por instituição e publicado diretamente na página." name="description"/>
+<meta content="notícias segurança pública, edital PMESP 2026, concursos policiais, notícias polícia militar, universo segurança pública" name="keywords"/>
+<meta content="Universo Segurança Pública" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
+<title>Notícias - Universo Segurança Pública</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://www.googletagmanager.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=Roboto+Condensed:wght@400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
 <link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260510lightfix1" rel="stylesheet"/>
-<!-- BLOCO SEO GERADO --
-     Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
-     Gerado na revisão de manutenção.
-     -->
-<link href="https://universosegpub.com.br/comparar-carreiras.html" rel="canonical"/>
-<meta property="og:type" content="website"/>
-<meta property="og:locale" content="pt_BR"/>
-<meta property="og:site_name" content="Universo Segurança Pública"/>
-<meta property="og:title" content="Comparar Carreiras - Universo Segurança Pública"/>
-<meta property="og:description" content="Compare carreiras de segurança pública por remuneração, benefícios, concursos, requisitos e fontes."/>
-<meta property="og:url" content="https://universosegpub.com.br/comparar-carreiras.html"/>
-<meta property="og:image" content="https://universosegpub.com.br/img/LOGO/logoleao.webp"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Comparar Carreiras - Universo Segurança Pública"/>
-<meta name="twitter:description" content="Compare carreiras de segurança pública por remuneração, benefícios, concursos, requisitos e fontes."/>
-<meta name="twitter:image" content="https://universosegpub.com.br/img/LOGO/logoleao.webp"/>
+<link href="css/pages/noticias.css?v=20260511noticias1" rel="stylesheet"/>
+<link href="https://universosegpub.com.br/noticias.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="Universo Segurança Pública" property="og:site_name"/>
+<meta content="Notícias - Universo Segurança Pública" property="og:title"/>
+<meta content="Notícias, editais, reajustes, decisões e atualizações relevantes sobre instituições de segurança pública." property="og:description"/>
+<meta content="https://universosegpub.com.br/noticias.html" property="og:url"/>
+<meta content="https://universosegpub.com.br/img/LOGO/logoleao.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Notícias - Universo Segurança Pública" name="twitter:title"/>
+<meta content="Atualizações sobre concursos, carreiras e instituições de segurança pública." name="twitter:description"/>
+<meta content="https://universosegpub.com.br/img/LOGO/logoleao.webp" name="twitter:image"/>
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"WebPage","name":"Comparar Carreiras - Universo Segurança Pública","description":"Compare carreiras de segurança pública por remuneração, benefícios, concursos, requisitos e fontes.","url":"https://universosegpub.com.br/comparar-carreiras.html","isPartOf":{"@type":"WebSite","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/"},"publisher":{"@type":"Organization","name":"Universo Segurança Pública","url":"https://universosegpub.com.br/","logo":{"@type":"ImageObject","url":"https://universosegpub.com.br/img/LOGO/logoleao.webp"}}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://universosegpub.com.br/"},{"@type":"ListItem","position":2,"name":"Comparar Carreiras","item":"https://universosegpub.com.br/comparar-carreiras.html"}]}]
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Notícias - Universo Segurança Pública",
+    "description": "Notícias, editais, reajustes, decisões e atualizações relevantes sobre instituições de segurança pública.",
+    "url": "https://universosegpub.com.br/noticias.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Universo Segurança Pública",
+      "url": "https://universosegpub.com.br/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universo Segurança Pública",
+      "url": "https://universosegpub.com.br/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://universosegpub.com.br/img/LOGO/logoleao.webp"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://universosegpub.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Notícias", "item": "https://universosegpub.com.br/noticias.html" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Edital PMESP 2026: 2.700 vagas para Soldado, salário de R$ 6.200 e inscrições abertas",
+    "description": "PMESP publica edital com 2.700 vagas para Soldado 2ª Classe. Inscrições de 18/05 a 16/06/2026 pela Vunesp.",
+    "image": ["https://universosegpub.com.br/img/MILITAR/pmesp.webp"],
+    "datePublished": "2026-05-11T08:00:00-03:00",
+    "dateModified": "2026-05-11T08:00:00-03:00",
+    "author": { "@type": "Organization", "name": "Universo Segurança Pública" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universo Segurança Pública",
+      "logo": { "@type": "ImageObject", "url": "https://universosegpub.com.br/img/LOGO/logoleao.webp" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://universosegpub.com.br/noticias.html#noticia-edital-pmesp-2026" },
+    "articleSection": "Concursos",
+    "keywords": "PMESP, edital 2026, concurso, polícia militar SP, Soldado, Vunesp"
+  }
+]
 </script>
-<!-- /BLOCO SEO GERADO --><!-- BLOCO ADSENSE — Verificação e carregamento de anúncios Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663"
-     crossorigin="anonymous"></script>
-<!-- /BLOCO ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663" crossorigin="anonymous"></script>
 </head>
-<body class="app-soft-theme" data-inst="portal" data-page="comparar">
+<body class="app-soft-theme" data-inst="portal" data-page="noticias">
 <div aria-label="Controles rápidos do visual app" class="app-floating-actions">
 <a aria-label="Voltar para a página inicial" class="app-floating-action app-floating-action--back" href="index.html">←</a>
 <button aria-label="Alternar tema claro e escuro" class="app-floating-action app-floating-action--theme" data-theme-toggle="true" data-toggle-style="icon" type="button"><span aria-hidden="true">☀️</span></button>
 </div>
 <nav aria-label="Navegação rápida inferior" class="app-bottom-nav">
-<a class="app-bottom-item" href="index.html"><span class="app-bottom-icon" aria-hidden="true">⌂</span><span class="app-bottom-label">Início</span></a>
-<a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon" aria-hidden="true">◈</span><span class="app-bottom-label">Remun.</span></a>
-<a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon" aria-hidden="true">▤</span><span class="app-bottom-label">Concursos</span></a>
-<a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon" aria-hidden="true">⇄</span><span class="app-bottom-label">Comparar</span></a>
-<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon" aria-hidden="true">☰</span><span class="app-bottom-label">Menu</span></button>
+<a class="app-bottom-item" href="index.html"><span aria-hidden="true" class="app-bottom-icon">⌂</span><span class="app-bottom-label">Início</span></a>
+<a class="app-bottom-item" href="remuneracao.html"><span aria-hidden="true" class="app-bottom-icon">◈</span><span class="app-bottom-label">Remun.</span></a>
+<a class="app-bottom-item" href="concursos.html"><span aria-hidden="true" class="app-bottom-icon">▤</span><span class="app-bottom-label">Concursos</span></a>
+<a class="app-bottom-item" href="comparar-carreiras.html"><span aria-hidden="true" class="app-bottom-icon">⇄</span><span class="app-bottom-label">Comparar</span></a>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span aria-hidden="true" class="app-bottom-icon">☰</span><span class="app-bottom-label">Menu</span></button>
 </nav>
-
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
      Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
@@ -78,7 +114,7 @@
 <span></span><span></span><span></span>
 </button>
 <button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" data-theme-toggle="true" data-toggle-style="text" id="theme-toggle-header" type="button">
-          <span aria-hidden="true">☀️</span> Claro
+<span aria-hidden="true">☀️</span> Claro
         </button>
 </div>
 <div aria-label="Identidade do site" class="header-brand-block">
@@ -145,7 +181,7 @@
 <span id="header-label-governador">Cobertura</span>
 <strong id="header-resumo-governador">Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal</strong>
 </div>
-<div class="header-leadership-item header-command-item is-hidden" hidden>
+<div class="header-leadership-item header-command-item is-hidden" hidden="">
 <span id="header-label-comando">Comando/Direção</span>
 <strong id="header-resumo-comando">—</strong>
 </div>
@@ -266,14 +302,12 @@
 </div>
 </div>
 </div>
-
-<div aria-hidden="true" class="header-js-contract header-js-contract--instituicao" hidden>
+<div aria-hidden="true" class="header-js-contract header-js-contract--instituicao" hidden="">
 <select id="instituicao_header" tabindex="-1">
 <option value=""></option>
 </select>
 </div>
-
-<div aria-hidden="true" class="header-js-contract" hidden>
+<div aria-hidden="true" class="header-js-contract" hidden="">
 <button id="header-branch-pm" tabindex="-1" type="button"></button>
 <button id="header-branch-bm" tabindex="-1" type="button"></button>
 <button id="header-branch-pc" tabindex="-1" type="button"></button>
@@ -355,12 +389,12 @@
 <span class="sidebar-link-text">Concursos</span>
 <small>Editais, requisitos e etapas</small>
 </a>
-<a href="noticias.html" id="menu-noticias" role="link" tabindex="0">
+<a aria-current="page" class="active" href="noticias.html" id="menu-noticias" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">📰</span>
 <span class="sidebar-link-text">Notícias</span>
 <small>Editais, reajustes e atualizações</small>
 </a>
-<a aria-current="page" class="active" href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
+<a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
 <span class="sidebar-link-text">Comparar Carreiras</span>
 <small>Salários, vagas e bancas</small>
@@ -458,17 +492,17 @@
 <em>Ver na loja</em>
 </span>
 </a>
-<a aria-label="Ver na loja Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" class="sidebar-product-card" href="https://s.shopee.com.br/8V5UTFtI4n" rel="noopener noreferrer" target="_blank">
-<img alt="Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/coletepeito.webp"/>
+<a aria-label="Ver na loja Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" class="sidebar-product-card" href="https://s.shopee.com.br/8V5UTFtI4n" rel="noopener noreferrer" target="_blank">
+<img alt="Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/coletepeito.webp"/>
 <span class="sidebar-product-card-info">
-<strong>Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)</strong>
+<strong>Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)</strong>
 <em>Ver na loja</em>
 </span>
 </a>
-<a aria-label="Ver na loja Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking" class="sidebar-product-card" href="https://s.shopee.com.br/9fHRseGBA0" rel="noopener noreferrer" target="_blank">
-<img alt="Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/calcadecarga1.webp"/>
+<a aria-label="Ver na loja Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking" class="sidebar-product-card" href="https://s.shopee.com.br/9fHRseGBA0" rel="noopener noreferrer" target="_blank">
+<img alt="Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/calcadecarga1.webp"/>
 <span class="sidebar-product-card-info">
-<strong>Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking</strong>
+<strong>Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking</strong>
 <em>Ver na loja</em>
 </span>
 </a>
@@ -505,126 +539,137 @@
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
-<!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
-<!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
-<!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
-<!-- BLOCO 07 — PÁGINA CONCURSOS -->
-<!-- BLOCO 07.1 — PÁGINA COMPARAR CARREIRAS -->
-<main class="page-section active" id="page-comparar" role="main">
-<div class="card comparador-simples-page">
-<section aria-labelledby="comparador-titulo" class="comparador-hero-simples">
-<div class="comparador-hero-copy">
-<span class="comparador-eyebrow">Comparação rápida</span>
-<h2 id="comparador-titulo">Comparar carreiras</h2>
-<p>Marque duas ou mais instituições e veja, em cartões objetivos, remuneração cadastrada, concurso, vagas, banca e fontes. Use a pesquisa para achar rápido a carreira desejada.</p>
-</div>
-<div class="comparador-hero-passos" aria-label="Como comparar carreiras">
-<div class="comparador-passo">
-<strong>1</strong>
-<span>Pesquise ou filtre</span>
-</div>
-<div class="comparador-passo">
-<strong>2</strong>
-<span>Marque as instituições</span>
-</div>
-<div class="comparador-passo">
-<strong>3</strong>
-<span>Confira os cartões</span>
+<main class="page-section active" id="page-noticias" role="main">
+<div class="noticias-page-shell">
+<section class="card noticias-hero-card" aria-labelledby="noticias-titulo-principal">
+<span class="noticias-hero-kicker">Atualizações da segurança pública</span>
+<h1 id="noticias-titulo-principal">Notícias</h1>
+<p>
+  Acompanhe editais publicados, inscrições abertas, convocações, reajustes, decisões relevantes, mudanças em leis e outras atualizações que podem impactar candidatos, servidores e famílias ligadas às instituições de segurança pública.
+</p>
+<p>
+  As notícias são organizadas por instituição para facilitar a leitura. Você pode navegar por todas as publicações ou filtrar apenas a instituição que deseja acompanhar no momento.
+</p>
+<div aria-label="Filtro de notícias por instituição" class="noticias-filter-card">
+<section class="consulta-instituicao-card" aria-labelledby="noticias-filtro-titulo">
+<div class="consulta-instituicao-card__header">
+<span aria-hidden="true" class="consulta-instituicao-card__icon">📰</span>
+<div>
+<h2 id="noticias-filtro-titulo">Filtrar notícias</h2>
+<p>Escolha uma esfera e uma instituição para ver apenas as atualizações relacionadas.</p>
 </div>
 </div>
-</section>
-
-<section aria-label="Filtros e atalhos do comparador" class="comparador-controle-simples">
-<div class="comparador-filtros-simples">
-<div class="field comparador-busca-field">
-<label for="comparador-busca">Pesquisar instituição</label>
-<input aria-label="Pesquisar instituição por sigla, nome ou estado" id="comparador-busca" placeholder="Ex.: PMERJ, Polícia Civil, São Paulo..." type="search"/>
-</div>
-<div class="field comparador-esfera-field">
-<label for="comparador-esfera">Filtrar por esfera</label>
-<select aria-label="Filtrar instituições por esfera" id="comparador-esfera">
-<option selected="" value="">Todas</option>
+<div class="inst-selector consulta-instituicao-card__selectors">
+<div class="field">
+<label for="noticias_tipo">Tipo de instituição</label>
+<select aria-label="Selecione o tipo de instituição" id="noticias_tipo">
+<option selected="" value="">Todas as esferas</option>
 <option value="federal">Federal</option>
 <option value="estadual">Estadual</option>
 <option value="municipal">Municipal</option>
 </select>
 </div>
-</div>
-
-<div aria-hidden="true" class="comparador-js-contract" hidden>
-<select id="comparador-instituicao" tabindex="-1">
-<option value=""></option>
+<div class="field">
+<label for="noticias_instituicao">Instituição</label>
+<select aria-label="Selecione a instituição para filtrar as notícias" id="noticias_instituicao">
+<option selected="" value="">Todas as instituições</option>
+<option value="pmesp" data-esfera="estadual">PMESP — Polícia Militar do Estado de São Paulo</option>
 </select>
-<button aria-controls="comparador-selecao" aria-expanded="true" id="comparador-toggle-lista" tabindex="-1" type="button"></button>
 </div>
-<div class="comparador-acoes comparador-acoes-simples">
-<button class="btn-secondary" data-action="comparador-estado-atual" type="button">Comparar estado atual</button>
-<button class="btn-secondary" data-action="comparador-limpar" type="button">Limpar comparação</button>
+</div>
+<div class="noticias-filter-actions">
+<button data-noticias-limpar="" type="button">Mostrar todas as notícias</button>
+</div>
+</section>
 </div>
 </section>
 
-<section aria-label="Instituições para comparação" class="comparador-selecao comparador-selecao--simples">
-<div class="comparador-select-panel">
-<div class="comparador-selecao-cabecalho">
+<section aria-live="polite" class="card noticias-empty-state" hidden="" id="noticias-empty-state">
+<h2>Nenhuma notícia encontrada</h2>
+<p>Não há notícia publicada para o filtro escolhido. Ao selecionar outra instituição ou mostrar todas as notícias, as publicações disponíveis voltam a aparecer.</p>
+</section>
+
+<section aria-label="Lista de notícias" class="noticias-lista" id="noticias-lista">
+<article class="card noticias-card" data-noticia-card="" data-noticia-esfera="estadual" data-noticia-inst="pmesp" data-noticia-categoria="concursos" id="noticia-edital-pmesp-2026">
+<header class="noticias-card-header">
 <div>
-<label class="comparador-select-label" for="comparador-selecao">Instituições disponíveis</label>
-<small>Marque pelo menos duas. As instituições selecionadas aparecem no resumo abaixo.</small>
+<span class="noticias-card-kicker">Concursos • PMESP • São Paulo</span>
+<h2>Edital PMESP 2026: 2.700 vagas para Soldado, salário de R$ 6.200 e inscrições abertas</h2>
+<div class="noticias-meta">
+<span>📅 Publicado em <strong>11/05/2026</strong></span>
+<span>🔄 Atualizado em <strong>11/05/2026</strong></span>
+<span>⏱️ Leitura: <strong>4 min</strong></span>
+<span>🏷️ PMESP</span>
 </div>
-<small class="comparador-contador" id="comparador-contador-selecao">0 selecionadas</small>
 </div>
-<div aria-label="Selecione duas ou mais instituições para comparar" class="comparador-multiselect">
-<div aria-label="Instituições disponíveis para comparação" class="comparador-check-list aberta comparador-check-list--simples" id="comparador-selecao" role="group"></div>
-<div class="comparador-lista-vazia" hidden="" id="comparador-lista-vazia">Nenhuma instituição encontrada com esse filtro.</div>
+<img alt="Brasão da PMESP" class="noticias-brasao" decoding="async" height="92" loading="lazy" src="img/MILITAR/pmesp.webp" width="92"/>
+</header>
+<p class="noticias-lead">
+  Inscrições começam em 18 de maio pela Vunesp. A prova objetiva está marcada para 23 de agosto e o curso de formação tem duração aproximada de 9 meses.
+</p>
+<div class="noticias-body">
+<p>
+  A <strong>Polícia Militar do Estado de São Paulo (PMESP)</strong> publicou o edital do concurso 2026 para o cargo de <strong>Soldado PM de 2ª Classe</strong>, com <strong>2.700 vagas imediatas</strong> e formação de cadastro reserva. O salário inicial informado é de <strong>R$ 6.200,00 brutos</strong>, sem contar adicionais condicionados a escala, função, local de atuação ou situação individual.
+</p>
+<div class="noticias-resumo-box" aria-label="Resumo do edital PMESP 2026">
+<h3>Resumo do edital</h3>
+<ul>
+<li><strong>Vagas:</strong> 2.700 imediatas + cadastro reserva.</li>
+<li><strong>Cargo:</strong> Soldado PM 2ª Classe.</li>
+<li><strong>Salário inicial:</strong> R$ 6.200,00 brutos.</li>
+<li><strong>Banca:</strong> Fundação Vunesp.</li>
+<li><strong>Inscrições:</strong> 18/05 a 16/06/2026.</li>
+<li><strong>Taxa:</strong> R$ 95,40.</li>
+<li><strong>Prova objetiva:</strong> 23/08/2026.</li>
+<li><strong>Curso de formação:</strong> cerca de 9 meses na Escola Superior de Soldados, com bolsa-auxílio.</li>
+</ul>
 </div>
-<div aria-live="polite" class="comparador-selecionadas" id="comparador-selecionadas"></div>
+<h3>Requisitos básicos</h3>
+<p>
+  Para concorrer, o candidato precisa ter ensino médio completo, idade entre <strong>18 e 30 anos</strong> até a matrícula no curso de formação, Carteira Nacional de Habilitação na categoria B e altura mínima de <strong>1,60 m para homens</strong> e <strong>1,55 m para mulheres</strong>. Também são exigidos aptidão física, médica e psicológica, investigação social aprovada e ausência de antecedentes incompatíveis com a atividade policial militar.
+</p>
+<h3>Como se inscrever</h3>
+<p>
+  As inscrições devem ser feitas pelo site oficial da banca organizadora, a Fundação Vunesp, dentro do prazo previsto no edital. O pagamento da taxa pode seguir as regras definidas pela banca e candidatos que se enquadrem nas hipóteses de isenção devem observar o prazo específico para solicitar o benefício. A documentação completa costuma ser exigida nas fases posteriores do certame.
+</p>
+<div class="noticias-link-box">
+<a href="https://www.vunesp.com.br/" target="_blank" rel="noopener nofollow">Acessar site oficial da Vunesp</a>
+<small>Link externo. O Universo Segurança Pública não administra inscrições nem representa a banca organizadora.</small>
 </div>
+<h3>Etapas e preparação</h3>
+<p>
+  O concurso para Soldado PM normalmente envolve prova objetiva, exames físicos, avaliação médica, avaliação psicológica, investigação social e curso de formação. Por isso, quem pretende disputar uma vaga deve organizar a preparação em três frentes: estudo do conteúdo programático, condicionamento físico e conferência antecipada de documentos pessoais.
+</p>
+<p>
+  O candidato também deve ler o edital completo antes de realizar a inscrição. Regras de idade, altura, cronograma, conteúdo, critérios de eliminação, recursos, convocações e matrícula no curso de formação podem alterar a estratégia de preparação e evitar erros que custam a eliminação.
+</p>
+<h3>Contexto da notícia</h3>
+<p>
+  A abertura do edital reforça a reposição de efetivo na Polícia Militar paulista e mantém a carreira de Soldado PM como uma das portas de entrada mais procuradas na segurança pública estadual. O volume de vagas tende a atrair candidatos de todo o Estado de São Paulo, especialmente quem busca estabilidade, carreira estruturada e possibilidade de progressão interna.
+</p>
+<div class="noticias-relacionados">
+<h3>Leia também</h3>
+<ul>
+<li><a href="guia-instituicoes.html#guia-pmesp">Guia PMESP 2026: carreira, ingresso, salário e regras básicas</a></li>
+<li><a href="concursos.html">Concursos: requisitos e etapas por instituição</a></li>
+<li><a href="remuneracao.html">Remuneração Tabelada: valores por cargo e instituição</a></li>
+<li><a href="direitos.html">Direitos e Vantagens: benefícios e alertas funcionais</a></li>
+</ul>
+</div>
+<p class="noticias-aviso">
+<strong>Fontes e conferência:</strong> conteúdo elaborado a partir do modelo de notícia anexado ao projeto e de informações indicadas no próprio material, como edital publicado no Diário Oficial do Estado de São Paulo e site da Fundação Vunesp. Confirme datas, taxas, requisitos e regras nos canais oficiais antes de tomar qualquer decisão.
+</p>
+</div>
+</article>
 </section>
-
-<!-- BLOCO 07.1A — Espaço comercial no comparador de carreiras -->
-<aside aria-label="Espaço de anúncio: Comparador antes do resultado" class="ad-slot ad-slot--inline" data-ad-area="comparador_antes_resultado">
-<a class="ad-placeholder-link" href="anuncie.html?area=comparador_antes_resultado">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Boa vitrine para marcas que querem aparecer no momento de decisão entre carreiras e estados.</small>
-</a>
-</aside>
-
-<section aria-label="Resultado da comparação" class="comparador-resultado-simples">
-<div class="comparador-resultado-head">
-<div>
-<span class="comparador-eyebrow">Resultado</span>
-<h3>Resumo comparativo</h3>
-</div>
-<p>Os cartões abaixo priorizam leitura rápida. A tabela completa continua disponível no final para consulta técnica.</p>
-</div>
-<div aria-live="polite" class="comparador-resumo-grid" id="comparador-resumo"></div>
-<div class="comparador-cards" id="comparador-cards"></div>
-<details class="comparador-detalhes-tecnicos" id="comparador-tabela-detalhes">
-<summary>Ver tabela técnica completa</summary>
-<div class="comparador-table-wrap" id="comparador-tabela-wrap">
-<table aria-label="Tabela comparativa de carreiras" class="comparador-table">
-<thead>
-<tr>
-<th>Instituição</th>
-<th>Remuneração</th>
-<th>Benefícios / vantagens</th>
-<th>Último edital / próximo concurso</th>
-<th>Vagas / inscritos</th>
-<th>Banca / matérias</th>
-<th>Fonte</th>
-</tr>
-</thead>
-<tbody id="comparador-tabela"></tbody>
-</table>
-</div>
-</details>
-</section>
-
-<div class="alerta legal comparador-aviso-final">
-<strong>Aviso:</strong> use o comparativo como triagem inicial. Remuneração final, vantagens, etapas e cronogramas podem mudar por edital, lei estadual, retificação, lotação, escala, decisão orçamentária ou publicação oficial posterior.
-</div>
+<nav aria-label="Paginação das notícias" class="noticias-pagination" id="noticias-pagination"></nav>
 </div>
 </main>
+<!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
+<!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
+<!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
+<!-- BLOCO 07 — PÁGINA CONCURSOS -->
+<!-- BLOCO 07.1 — PÁGINA COMPARAR CARREIRAS -->
 <!-- BLOCO 08 — PÁGINA PRODUTOS -->
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
@@ -641,7 +686,7 @@
 <footer role="contentinfo">
 <div aria-label="Aviso institucional do portal" class="footer-disclaimer">
 <p><strong>Universo Segurança Pública</strong> é um portal informativo independente e não governamental, criado para organizar consultas sobre instituições de segurança pública a partir de fontes públicas, legislações, editais e canais oficiais quando disponíveis. As informações servem como referência inicial e podem mudar conforme cargo, legislação, regulamento, edital, holerite e atualização dos órgãos competentes.</p>
-<nav class="footer-links" aria-label="Links legais e institucionais">
+<nav aria-label="Links legais e institucionais" class="footer-links">
 <a href="privacidade.html">Política de Privacidade</a>
 <a href="termos.html">Termos de Uso</a>
 <a href="cookies.html">Política de Cookies</a>
@@ -673,8 +718,8 @@
 <script defer="" src="js/services/remuneracao.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
 <script defer="" src="js/ui/header-estados.js?v=20260510brasoes1"></script>
-<script defer="" src="js/pages/concursos-comparador.js?v=20260506comparador4"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
+<script defer="" src="js/pages/noticias.js?v=20260511noticias1"></script>
 <script defer="" src="js/ui/event-bindings.js?v=20260506comparador4"></script>
 <script defer="" src="js/core/page-context.js?v=20260506baselegal1"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>

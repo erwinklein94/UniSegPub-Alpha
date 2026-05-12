@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260510lightfix1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260510lightfix1" rel="stylesheet"/><link href="css/pages/direitos-conteudo-estatico.css?v=20260511adsense1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -355,6 +355,11 @@
 <span class="sidebar-link-text">Concursos</span>
 <small>Editais, requisitos e etapas</small>
 </a>
+<a href="noticias.html" id="menu-noticias" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📰</span>
+<span class="sidebar-link-text">Notícias</span>
+<small>Editais, reajustes e atualizações</small>
+</a>
 <a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
 <span class="sidebar-link-text">Comparar Carreiras</span>
@@ -364,6 +369,11 @@
 <span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
 <span class="sidebar-link-text">Brasões e história</span>
 <small>Origem, identidade e histórico</small>
+</a>
+<a href="guia-instituicoes.html" id="menu-guia" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📖</span>
+<span class="sidebar-link-text">Guia das instituições</span>
+<small>Artigos permanentes por instituição</small>
 </a>
 </div>
 <div aria-label="Apoio jurídico e institucional" class="sidebar-nav-group">
@@ -497,95 +507,1993 @@
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
 <main class="page-section active" id="page-direitos" role="main">
-<!-- CSS centralizado em css/dist/main.min.css e ajustes complementares -->
-<div class="card">
-<!-- BLOCO 06.1 — Formulário para análise de direitos -->
-<h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
-<div class="direitos-intro">
-      Escolha a esfera e a instituição nesta aba. Depois preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+  <div class="direitos-page-shell">
+    <section class="card direitos-hero-card" aria-labelledby="direitos-titulo-principal">
+      <span class="direitos-hero-kicker">Consulta por instituição</span>
+      <h1 id="direitos-titulo-principal">Direitos e Vantagens</h1>
+      <p>
+        Consulte uma visão inicial sobre direitos funcionais, vantagens, benefícios, licenças, proteção social, previdência e pontos de atenção para instituições de segurança pública. A página organiza resumos por instituição para ajudar o usuário a entender o que deve ser conferido antes de tomar uma decisão administrativa, previdenciária ou judicial.
+      </p>
+      <p>
+        As informações são independentes e informativas. Direitos podem variar conforme cargo, posto, classe, carreira, data de ingresso, situação funcional, laudo médico, lotação, escala, requerimento, norma estadual ou federal e documentos individuais do servidor.
+      </p>
+
+      <div class="consulta-instituicao-card direitos-filtro-card" data-consulta-selector="direitos" aria-label="Filtrar conteúdos de direitos e vantagens por instituição">
+        <div class="consulta-instituicao-texto">
+          <span>Filtrar conteúdo</span>
+          <strong>Escolha uma instituição para visualizar os cards relacionados</strong>
+          <small>Você pode navegar por todas as instituições ou focar em uma corporação específica.</small>
+        </div>
+        <div class="consulta-instituicao-grid">
+          <div class="field">
+            <label for="direitos-filtro-esfera">Tipo de instituição</label>
+            <select id="direitos-filtro-esfera" aria-label="Filtrar por tipo de instituição">
+              <option value="" selected>Todas</option>
+              <option value="federal">Federal</option>
+              <option value="estadual">Estadual</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="direitos-filtro-instituicao">Instituição</label>
+            <select id="direitos-filtro-instituicao" aria-label="Filtrar por instituição">
+<option value="" selected>Todas as instituições</option>
+<optgroup label="União">
+<option value="pf" data-esfera="federal">PF — Polícia Federal</option>
+<option value="prf" data-esfera="federal">PRF — Polícia Rodoviária Federal</option>
+</optgroup>
+<optgroup label="Acre (AC)">
+<option value="pmac" data-esfera="estadual">PMAC — Polícia Militar</option>
+<option value="bmac" data-esfera="estadual">BMAC — Bombeiro Militar</option>
+<option value="pcac" data-esfera="estadual">PCAC — Polícia Civil</option>
+<option value="ppac" data-esfera="estadual">PPAC — Polícia Penal</option>
+</optgroup>
+<optgroup label="Alagoas (AL)">
+<option value="pmal" data-esfera="estadual">PMAL — Polícia Militar</option>
+<option value="bmal" data-esfera="estadual">BMAL — Bombeiro Militar</option>
+<option value="pcal" data-esfera="estadual">PCAL — Polícia Civil</option>
+</optgroup>
+<optgroup label="Amapá (AP)">
+<option value="pmap" data-esfera="estadual">PMAP — Polícia Militar</option>
+<option value="bmap" data-esfera="estadual">BMAP — Bombeiro Militar</option>
+<option value="pcap" data-esfera="estadual">PCAP — Polícia Civil</option>
+</optgroup>
+<optgroup label="Amazonas (AM)">
+<option value="pmam" data-esfera="estadual">PMAM — Polícia Militar</option>
+<option value="bmam" data-esfera="estadual">BMAM — Bombeiro Militar</option>
+<option value="pcam" data-esfera="estadual">PCAM — Polícia Civil</option>
+</optgroup>
+<optgroup label="Bahia (BA)">
+<option value="pmba" data-esfera="estadual">PMBA — Polícia Militar</option>
+<option value="bmba" data-esfera="estadual">BMBA — Bombeiro Militar</option>
+<option value="pcba" data-esfera="estadual">PCBA — Polícia Civil</option>
+<option value="ppba" data-esfera="estadual">PPBA — Polícia Penal</option>
+</optgroup>
+<optgroup label="Ceará (CE)">
+<option value="pcce" data-esfera="estadual">PCCE — Polícia Civil</option>
+</optgroup>
+<optgroup label="Espírito Santo (ES)">
+<option value="pmes" data-esfera="estadual">PMES — Polícia Militar</option>
+<option value="bmes" data-esfera="estadual">CBMES — Bombeiro Militar</option>
+<option value="pces" data-esfera="estadual">PCES — Polícia Civil</option>
+<option value="ppes" data-esfera="estadual">PPES — Polícia Penal</option>
+</optgroup>
+<optgroup label="Mato Grosso (MT)">
+<option value="pmmt" data-esfera="estadual">PMMT — Polícia Militar</option>
+<option value="bmmt" data-esfera="estadual">CBMMT — Bombeiro Militar</option>
+<option value="pcmt" data-esfera="estadual">PCMT — Polícia Civil</option>
+<option value="ppmt" data-esfera="estadual">PPMT — Polícia Penal</option>
+</optgroup>
+<optgroup label="Mato Grosso do Sul (MS)">
+<option value="pmms" data-esfera="estadual">PMMS — Polícia Militar</option>
+<option value="bmms" data-esfera="estadual">CBMMS — Bombeiro Militar</option>
+<option value="pcms" data-esfera="estadual">PCMS — Polícia Civil</option>
+<option value="ppms" data-esfera="estadual">PPMS — Polícia Penal</option>
+</optgroup>
+<optgroup label="Minas Gerais (MG)">
+<option value="pmmg" data-esfera="estadual">PMMG — Polícia Militar</option>
+<option value="bmmg" data-esfera="estadual">CBMMG — Bombeiro Militar</option>
+<option value="pcmg" data-esfera="estadual">PCMG — Polícia Civil</option>
+<option value="ppmg" data-esfera="estadual">PPMG — Polícia Penal</option>
+</optgroup>
+<optgroup label="Paraná (PR)">
+<option value="pmpr" data-esfera="estadual">PMPR — Polícia Militar</option>
+<option value="bmpr" data-esfera="estadual">CBMPR — Bombeiro Militar</option>
+<option value="pcpr" data-esfera="estadual">PCPR — Polícia Civil</option>
+<option value="pppr" data-esfera="estadual">PPPR — Polícia Penal</option>
+</optgroup>
+<optgroup label="Rio Grande do Sul (RS)">
+<option value="pmrs" data-esfera="estadual">PMRS — Brigada Militar / Polícia Militar</option>
+<option value="pcrs" data-esfera="estadual">PCRS — Polícia Civil</option>
+<option value="pprs" data-esfera="estadual">PPRS — Polícia Penal</option>
+</optgroup>
+<optgroup label="Rio de Janeiro (RJ)">
+<option value="pmerj" data-esfera="estadual">PMERJ — Polícia Militar</option>
+<option value="bmrj" data-esfera="estadual">CBMERJ — Bombeiro Militar</option>
+<option value="pcerj" data-esfera="estadual">PCERJ — Polícia Civil</option>
+<option value="pprj" data-esfera="estadual">PPRJ — Polícia Penal</option>
+</optgroup>
+<optgroup label="Santa Catarina (SC)">
+<option value="pmsc" data-esfera="estadual">PMSC — Polícia Militar</option>
+<option value="bmsc" data-esfera="estadual">BMSC — Bombeiro Militar</option>
+<option value="pcsc" data-esfera="estadual">PCSC — Polícia Civil</option>
+<option value="ppsc" data-esfera="estadual">PPSC — Polícia Penal</option>
+</optgroup>
+<optgroup label="São Paulo (SP)">
+<option value="pmesp" data-esfera="estadual">PMESP — Polícia Militar</option>
+<option value="bmsp" data-esfera="estadual">CBPMESP — Bombeiro Militar</option>
+<option value="pcsp" data-esfera="estadual">PCSP — Polícia Civil</option>
+<option value="ppsp" data-esfera="estadual">PPSP — Polícia Penal</option>
+</optgroup>
+            </select>
+          </div>
+        </div>
+        <div class="direitos-filtro-acoes">
+          <button type="button" data-direitos-limpar>Ver todas</button>
+          <span id="direitos-contador-cards">55 instituições encontradas</span>
+        </div>
+      </div>
+    </section>
+
+    <aside aria-label="Espaço de anúncio: Direitos antes da lista" class="ad-slot ad-slot--inline" data-ad-area="direitos_antes_lista">
+      <a class="ad-placeholder-link" href="anuncie.html?area=direitos_antes_lista">
+        <span class="ad-label">Publicidade</span>
+        <strong>Anuncie aqui</strong>
+        <small>Espaço para advocacia, entidades, consultorias previdenciárias, seguros e serviços de apoio funcional.</small>
+      </a>
+    </aside>
+
+    <section class="direitos-conteudo-lista" id="direitos-conteudo-lista" aria-label="Resumos de direitos e vantagens por instituição">
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmesp" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="SP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMESP · Polícia Militar · São Paulo (SP)</span>
+      <h2>PMESP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMESP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
     </div>
-<div class="form-grid" style="margin-bottom: 0;">
-<div class="field">
-<label for="cargo_dir">Nível da Carreira</label>
-<select id="cargo_dir"></select>
-</div>
-<div class="field">
-<label for="situacao_dir">Situação Atual</label>
-<select id="situacao_dir">
-<option selected="" value="ativa">Serviço Ativo</option>
-<option value="reserva">Inatividade (Reserva / Aposentado)</option>
-<option value="reforma">Reforma / Invalidez</option>
-</select>
-</div>
-<div class="field">
-<label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
-<input id="tempo_dir" max="45" min="0" type="number" value="10"/>
-</div>
-<div class="field">
-<label for="idade_dir">Idade</label>
-<input id="idade_dir" max="80" min="18" type="number" value="35"/>
-</div>
-<div class="field">
-<label for="sexo_dir">Sexo para regra previdenciária</label>
-<select id="sexo_dir">
-<option selected="" value="na">Não informar</option>
-<option value="masculino">Masculino</option>
-<option value="feminino">Feminino</option>
-</select>
-</div>
-<div class="field">
-<label for="ingresso_dir">Data de ingresso na carreira</label>
-<input id="ingresso_dir" type="date"/>
-</div>
-<div class="field">
-<label for="dependente_dir">Tem filho/dependente até 14 anos ou inválido?</label>
-<select id="dependente_dir">
-<option selected="" value="na">Não informar</option>
-<option value="sim">Sim</option>
-<option value="nao">Não</option>
-</select>
-</div>
-<div class="field">
-<label for="renda_dir">Remuneração bruta aproximada (R$)</label>
-<input id="renda_dir" min="0" placeholder="Use para salário-família" step="0.01" type="number" value="0"/>
-</div>
-<div class="field">
-<label for="local_especial_dir">Atua em localidade/unidade especial?</label>
-<select id="local_especial_dir">
-<option selected="" value="na">Não informar</option>
-<option value="sim">Sim</option>
-<option value="nao">Não</option>
-</select>
-</div>
-<div class="field">
-<label for="requisitos_apos_dir">Já cumpriu requisitos de aposentadoria?</label>
-<select id="requisitos_apos_dir">
-<option selected="" value="na">Não sei / verificar</option>
-<option value="sim">Sim</option>
-<option value="nao">Não</option>
-</select>
-</div>
-</div>
-</div>
-<div class="card">
-<!-- BLOCO 06.1A — Espaço comercial entre formulário e parecer -->
-<aside aria-label="Espaço de anúncio: Direitos entre formulário e parecer" class="ad-slot ad-slot--inline" data-ad-area="direitos_entre_formulario_parecer">
-<a class="ad-placeholder-link" href="anuncie.html?area=direitos_entre_formulario_parecer">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Local forte para advocacia, entidades, consultorias previdenciárias, seguros e apoio funcional.</small>
-</a>
-</aside>
-<!-- BLOCO 06.2 — Resultado da análise de direitos -->
-<h2>Parecer de Direitos (<span id="txt-inst-dir">—</span>)</h2>
-<div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
-<strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
+    <span class="direitos-card-sigla" aria-hidden="true">PMESP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMESP">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmesp">Consultar análise detalhada</button>
     </div>
-<div class="result-list" id="resultados_dir"></div>
-<div class="alerta legal">
-<strong>Aviso:</strong> Esta análise é informativa e não substitui consulta ao setor de pessoal, associação, sindicato, advogado especializado ou fonte oficial. Direitos específicos podem depender de regulamento interno, cargo, data de ingresso, regra de transição previdenciária, perícia médica, limite de renda, disponibilidade orçamentária ou requerimento administrativo.
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcsp" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="SP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCSP · Polícia Civil · São Paulo (SP)</span>
+      <h2>PCSP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCSP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
     </div>
-</div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCSP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCSP">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcsp">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppsp" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="SP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPSP · Polícia Penal · São Paulo (SP)</span>
+      <h2>PPSP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPSP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPSP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPSP">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppsp">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmac" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="AC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMAC · Polícia Militar · Acre (AC)</span>
+      <h2>PMAC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMAC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMAC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMAC">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmac">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmal" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="AL">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMAL · Polícia Militar · Alagoas (AL)</span>
+      <h2>PMAL: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMAL, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMAL</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMAL">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmal">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmam" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="AM">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMAM · Polícia Militar · Amazonas (AM)</span>
+      <h2>PMAM: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMAM, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMAM</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMAM">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmam">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcam" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="AM">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCAM · Polícia Civil · Amazonas (AM)</span>
+      <h2>PCAM: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCAM, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCAM</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCAM">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcam">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmap" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="AP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMAP · Polícia Militar · Amapá (AP)</span>
+      <h2>PMAP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMAP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMAP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMAP">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmap">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcap" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="AP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCAP · Polícia Civil · Amapá (AP)</span>
+      <h2>PCAP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCAP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCAP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCAP">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcap">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcce" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="CE">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCCE · Polícia Civil · Ceará (CE)</span>
+      <h2>PCCE: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCCE, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCCE</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCCE">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcce">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcal" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="AL">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCAL · Polícia Civil · Alagoas (AL)</span>
+      <h2>PCAL: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCAL, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCAL</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCAL">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcal">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmac" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="AC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • BMAC · Bombeiro Militar · Acre (AC)</span>
+      <h2>BMAC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na BMAC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">BMAC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da BMAC">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmac">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmal" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="AL">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • BMAL · Bombeiro Militar · Alagoas (AL)</span>
+      <h2>BMAL: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na BMAL, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">BMAL</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da BMAL">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmal">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmam" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="AM">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • BMAM · Bombeiro Militar · Amazonas (AM)</span>
+      <h2>BMAM: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na BMAM, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">BMAM</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da BMAM">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmam">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmap" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="AP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • BMAP · Bombeiro Militar · Amapá (AP)</span>
+      <h2>BMAP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na BMAP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">BMAP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da BMAP">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmap">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmba" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="BA">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • BMBA · Bombeiro Militar · Bahia (BA)</span>
+      <h2>BMBA: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na BMBA, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">BMBA</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da BMBA">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmba">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcac" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="AC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCAC · Polícia Civil · Acre (AC)</span>
+      <h2>PCAC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCAC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCAC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCAC">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcac">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppac" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="AC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPAC · Polícia Penal · Acre (AC)</span>
+      <h2>PPAC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPAC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPAC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPAC">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppac">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmerj" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="RJ">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMERJ · Polícia Militar · Rio de Janeiro (RJ)</span>
+      <h2>PMERJ: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMERJ, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMERJ</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMERJ">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmerj">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmrj" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="RJ">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBMERJ · Bombeiro Militar · Rio de Janeiro (RJ)</span>
+      <h2>CBMERJ: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBMERJ, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBMERJ</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBMERJ">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmrj">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcerj" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="RJ">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCERJ · Polícia Civil · Rio de Janeiro (RJ)</span>
+      <h2>PCERJ: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCERJ, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCERJ</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCERJ">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcerj">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pprj" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="RJ">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPRJ · Polícia Penal · Rio de Janeiro (RJ)</span>
+      <h2>PPRJ: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPRJ, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPRJ</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPRJ">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pprj">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmmg" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="MG">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMMG · Polícia Militar · Minas Gerais (MG)</span>
+      <h2>PMMG: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMMG, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMMG</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMMG">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmmg">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmmg" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="MG">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBMMG · Bombeiro Militar · Minas Gerais (MG)</span>
+      <h2>CBMMG: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBMMG, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBMMG</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBMMG">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmmg">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcmg" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="MG">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCMG · Polícia Civil · Minas Gerais (MG)</span>
+      <h2>PCMG: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCMG, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCMG</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCMG">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcmg">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppmg" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="MG">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPMG · Polícia Penal · Minas Gerais (MG)</span>
+      <h2>PPMG: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPMG, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPMG</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPMG">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppmg">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmba" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="BA">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMBA · Polícia Militar · Bahia (BA)</span>
+      <h2>PMBA: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMBA, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMBA</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMBA">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmba">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcba" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="BA">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCBA · Polícia Civil · Bahia (BA)</span>
+      <h2>PCBA: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCBA, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCBA</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCBA">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcba">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppba" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="BA">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPBA · Polícia Penal · Bahia (BA)</span>
+      <h2>PPBA: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPBA, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPBA</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPBA">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppba">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmpr" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="PR">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMPR · Polícia Militar · Paraná (PR)</span>
+      <h2>PMPR: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMPR, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMPR</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMPR">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmpr">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmpr" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="PR">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBMPR · Bombeiro Militar · Paraná (PR)</span>
+      <h2>CBMPR: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBMPR, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBMPR</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBMPR">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmpr">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcpr" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="PR">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCPR · Polícia Civil · Paraná (PR)</span>
+      <h2>PCPR: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCPR, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCPR</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCPR">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcpr">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pppr" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="PR">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPPR · Polícia Penal · Paraná (PR)</span>
+      <h2>PPPR: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPPR, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPPR</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPPR">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pppr">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmrs" data-esfera="estadual" data-ramo="Brigada Militar / Polícia Militar" data-uf="RS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMRS · Brigada Militar / Polícia Militar · Rio Grande do Sul (RS)</span>
+      <h2>PMRS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMRS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMRS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMRS">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmrs">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcrs" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="RS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCRS · Polícia Civil · Rio Grande do Sul (RS)</span>
+      <h2>PCRS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCRS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCRS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCRS">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcrs">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pprs" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="RS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPRS · Polícia Penal · Rio Grande do Sul (RS)</span>
+      <h2>PPRS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPRS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPRS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPRS">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pprs">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmsc" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="SC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMSC · Polícia Militar · Santa Catarina (SC)</span>
+      <h2>PMSC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMSC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMSC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMSC">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmsc">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmsc" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="SC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • BMSC · Bombeiro Militar · Santa Catarina (SC)</span>
+      <h2>BMSC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na BMSC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">BMSC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da BMSC">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmsc">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcsc" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="SC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCSC · Polícia Civil · Santa Catarina (SC)</span>
+      <h2>PCSC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCSC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCSC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCSC">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcsc">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppsc" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="SC">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPSC · Polícia Penal · Santa Catarina (SC)</span>
+      <h2>PPSC: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPSC, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPSC</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPSC">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppsc">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmes" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="ES">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMES · Polícia Militar · Espírito Santo (ES)</span>
+      <h2>PMES: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMES, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMES</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMES">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmes">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmes" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="ES">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBMES · Bombeiro Militar · Espírito Santo (ES)</span>
+      <h2>CBMES: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBMES, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBMES</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBMES">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmes">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pces" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="ES">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCES · Polícia Civil · Espírito Santo (ES)</span>
+      <h2>PCES: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCES, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCES</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCES">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pces">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppes" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="ES">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPES · Polícia Penal · Espírito Santo (ES)</span>
+      <h2>PPES: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPES, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPES</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPES">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppes">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmms" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="MS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMMS · Polícia Militar · Mato Grosso do Sul (MS)</span>
+      <h2>PMMS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMMS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMMS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMMS">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmms">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmms" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="MS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBMMS · Bombeiro Militar · Mato Grosso do Sul (MS)</span>
+      <h2>CBMMS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBMMS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBMMS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBMMS">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmms">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcms" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="MS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCMS · Polícia Civil · Mato Grosso do Sul (MS)</span>
+      <h2>PCMS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCMS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCMS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCMS">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcms">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppms" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="MS">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPMS · Polícia Penal · Mato Grosso do Sul (MS)</span>
+      <h2>PPMS: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPMS, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPMS</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPMS">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppms">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pmmt" data-esfera="estadual" data-ramo="Polícia Militar" data-uf="MT">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PMMT · Polícia Militar · Mato Grosso (MT)</span>
+      <h2>PMMT: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PMMT, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PMMT</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PMMT">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pmmt">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmmt" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="MT">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBMMT · Bombeiro Militar · Mato Grosso (MT)</span>
+      <h2>CBMMT: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBMMT, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBMMT</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBMMT">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmmt">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pcmt" data-esfera="estadual" data-ramo="Polícia Civil" data-uf="MT">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PCMT · Polícia Civil · Mato Grosso (MT)</span>
+      <h2>PCMT: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PCMT, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PCMT</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PCMT">
+    <div><span>Regime funcional</span><strong>Carreira policial civil estadual, normalmente organizada por cargo, classe, nível ou padrão, com estatuto e lei orgânica próprios.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, adicional noturno, plantões, funções de chefia, auxílio-alimentação, assistência e indenizações podem depender de lei local, escala, ato e contracheque.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial civil exige análise de tempo em atividade policial, data de ingresso, RPPS estadual e regras de transição.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Delegados, peritos, investigadores, escrivães e demais cargos podem ter regras e vantagens diferentes dentro da mesma instituição.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei orgânica/estatuto da Polícia Civil, RPPS estadual, atos de lotação, escala, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pcmt">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="ppmt" data-esfera="estadual" data-ramo="Polícia Penal" data-uf="MT">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • PPMT · Polícia Penal · Mato Grosso (MT)</span>
+      <h2>PPMT: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PPMT, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PPMT</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PPMT">
+    <div><span>Regime funcional</span><strong>Carreira de polícia penal estadual, com regras próprias de custódia, segurança penitenciária, lotação, carreira e regime previdenciário local.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Adicionais de risco, insalubridade, plantões, indenizações, assistência e licenças devem ser verificados por lei estadual, unidade, laudo, escala e rubrica.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria e eventual enquadramento especial dependem do regime estadual, tempo de serviço, cargo, ingresso e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não trate adicional de atividade penitenciária, risco ou insalubridade como verba universal sem confirmar previsão legal e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei da Polícia Penal, estatuto estadual, regulamento penitenciário, RPPS, escala, laudo, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="ppmt">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="pf" data-esfera="federal" data-ramo="Polícia Federal" data-uf="BR">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Federal • PF · Polícia Federal · Brasil</span>
+      <h2>PF: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PF, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PF</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PF">
+    <div><span>Regime funcional</span><strong>Carreira policial federal com cargos próprios, subsídio e regras funcionais vinculadas à legislação federal.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência, adicionais condicionados, indenizações de serviço e vantagens funcionais conforme cargo, lotação e ato administrativo.</strong></div>
+    <div><span>Previdência</span><strong>A aposentadoria policial federal depende de tempo, idade, ingresso, regra de transição e documentação funcional.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Direitos variam conforme cargo, classe, padrão, lotação, decisão administrativa e situação individual.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei federal da carreira, normas do órgão, portal oficial, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="pf">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="prf" data-esfera="federal" data-ramo="Polícia Rodoviária Federal" data-uf="BR">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Federal • PRF · Polícia Rodoviária Federal · Brasil</span>
+      <h2>PRF: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na PRF, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">PRF</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da PRF">
+    <div><span>Regime funcional</span><strong>Carreira policial federal, com regras próprias de jornada, lotação, subsídio e movimentação funcional.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Licenças, férias, adicionais condicionados, assistência, indenizações e direitos previdenciários devem ser conferidos nas normas federais e no assentamento funcional.</strong></div>
+    <div><span>Previdência</span><strong>Aposentadoria policial federal exige atenção a ingresso, transições, tempo de atividade policial e legislação federal aplicável.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Não confunda subsídio com parcelas indenizatórias; nem toda rubrica eventual integra cálculo previdenciário.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: lei federal da carreira, normas do órgão, portal oficial, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="prf">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+<article class="card direitos-conteudo-card" data-direitos-card data-inst="bmsp" data-esfera="estadual" data-ramo="Bombeiro Militar" data-uf="SP">
+  <div class="direitos-card-topo">
+    <div>
+      <span class="direitos-card-kicker">Estadual • CBPMESP · Bombeiro Militar · São Paulo (SP)</span>
+      <h2>CBPMESP: direitos, vantagens e cuidados funcionais</h2>
+      <p>Este resumo ajuda o servidor, candidato ou familiar a entender quais direitos e vantagens costumam exigir conferência individual na CBPMESP, sem tratar como automático aquilo que depende de cargo, classe, lotação, escala, laudo, requerimento, tempo de serviço ou regra de transição.</p>
+    </div>
+    <span class="direitos-card-sigla" aria-hidden="true">CBPMESP</span>
+  </div>
+
+  <div class="direitos-card-indicadores" aria-label="Resumo de direitos da CBPMESP">
+    <div><span>Regime funcional</span><strong>Regime militar estadual, com estatuto próprio, hierarquia, disciplina, posto ou graduação e sistema de proteção social militar.</strong></div>
+    <div><span>Benefícios e licenças</span><strong>Podem existir licenças, assistência à saúde, auxílio-funeral, pensão, diárias, fardamento, alimentação ou indenizações, sempre conforme lei local e rubrica implantada.</strong></div>
+    <div><span>Previdência</span><strong>Reserva remunerada, reforma e pensão dependem de tempo de serviço, ingresso, averbações, perícia quando houver incapacidade e regras estaduais.</strong></div>
+    <div><span>Ponto de atenção</span><strong>Vantagens ligadas a escala, operação, unidade especial, adicional noturno ou localidade não devem ser tratadas como automáticas.</strong></div>
+  </div>
+
+  <div class="direitos-card-corpo">
+    <p><strong>O que observar:</strong> antes de considerar um direito como devido, compare a lei da carreira, o regulamento interno, o histórico funcional e o demonstrativo de pagamento. A mesma instituição pode ter regras diferentes para ativo, reserva, aposentado, reformado, pensionista, cargo efetivo, cargo em comissão ou servidor em situação especial.</p>
+    <p><strong>Vantagens condicionadas:</strong> adicionais por risco, atividade operacional, plantão, adicional noturno, insalubridade, diárias, indenizações, auxílio-alimentação, saúde e fardamento podem variar conforme previsão legal, ato de designação, escala, local de exercício, laudo e rubrica específica.</p>
+    <p><strong>Conferência recomendada:</strong> use o resumo como orientação inicial e valide a situação concreta com setor de pessoal, entidade representativa, advogado especializado ou canal oficial da instituição.</p>
+  </div>
+
+  <div class="direitos-card-rodape">
+    <p><strong>Referência de consulta:</strong> Base de conferência: estatuto militar estadual, lei remuneratória, sistema de proteção social, boletins, ficha funcional e contracheque.</p>
+    <div class="direitos-card-links">
+      <a href="remuneracao.html">Ver remuneração tabelada</a>
+      <a href="concursos.html">Ver concursos</a>
+      <button type="button" data-direitos-load="bmsp">Consultar análise detalhada</button>
+    </div>
+  </div>
+</article>
+    </section>
+
+    <nav class="direitos-paginacao" id="direitos-paginacao" aria-label="Paginação dos cards de direitos e vantagens"></nav>
+
+    <section class="card direitos-detalhe-card" id="consulta-direitos-detalhado" hidden aria-live="polite">
+      <span class="direitos-hero-kicker">Análise funcional</span>
+      <h2>Análise de Direitos, Benefícios e Vantagens Funcionais (<span id="txt-inst-dir">—</span>)</h2>
+      <div class="direitos-intro">
+        Preencha os campos abaixo para gerar uma leitura informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. O conteúdo evita tratar como garantido aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+      </div>
+      <div class="form-grid" style="margin-bottom: 0;">
+        <div class="field">
+          <label for="cargo_dir">Nível da Carreira</label>
+          <select id="cargo_dir"></select>
+        </div>
+        <div class="field">
+          <label for="situacao_dir">Situação Atual</label>
+          <select id="situacao_dir">
+            <option selected="" value="ativa">Serviço Ativo</option>
+            <option value="reserva">Inatividade (Reserva / Aposentado)</option>
+            <option value="reforma">Reforma / Invalidez</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
+          <input id="tempo_dir" max="45" min="0" type="number" value="10"/>
+        </div>
+        <div class="field">
+          <label for="idade_dir">Idade</label>
+          <input id="idade_dir" max="80" min="18" type="number" value="35"/>
+        </div>
+        <div class="field">
+          <label for="sexo_dir">Sexo para regra previdenciária</label>
+          <select id="sexo_dir">
+            <option selected="" value="na">Não informar</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ingresso_dir">Data de ingresso na carreira</label>
+          <input id="ingresso_dir" type="date"/>
+        </div>
+        <div class="field">
+          <label for="dependente_dir">Tem filho/dependente até 14 anos ou inválido?</label>
+          <select id="dependente_dir">
+            <option selected="" value="na">Não informar</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="renda_dir">Remuneração bruta aproximada (R$)</label>
+          <input id="renda_dir" min="0" placeholder="Use para salário-família" step="0.01" type="number" value="0"/>
+        </div>
+        <div class="field">
+          <label for="local_especial_dir">Atua em localidade/unidade especial?</label>
+          <select id="local_especial_dir">
+            <option selected="" value="na">Não informar</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="requisitos_apos_dir">Já cumpriu requisitos de aposentadoria?</label>
+          <select id="requisitos_apos_dir">
+            <option selected="" value="na">Não sei / verificar</option>
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+      </div>
+
+      <aside aria-label="Espaço de anúncio: Direitos entre formulário e parecer" class="ad-slot ad-slot--inline" data-ad-area="direitos_entre_formulario_parecer">
+        <a class="ad-placeholder-link" href="anuncie.html?area=direitos_entre_formulario_parecer">
+          <span class="ad-label">Publicidade</span>
+          <strong>Anuncie aqui</strong>
+          <small>Local forte para advocacia, entidades, consultorias previdenciárias, seguros e apoio funcional.</small>
+        </a>
+      </aside>
+
+      <h2>Parecer de Direitos (<span id="txt-inst-dir-detalhe">instituição selecionada</span>)</h2>
+      <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
+        <strong>Última revisão desta aba:</strong> 11/05/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
+      </div>
+      <div class="result-list" id="resultados_dir"></div>
+      <div class="alerta legal">
+        <strong>Aviso:</strong> Esta análise é informativa e não substitui consulta ao setor de pessoal, associação, sindicato, advogado especializado ou fonte oficial. Direitos específicos podem depender de regulamento interno, cargo, data de ingresso, regra de transição previdenciária, perícia médica, limite de renda, disponibilidade orçamentária ou requerimento administrativo.
+      </div>
+    </section>
+  </div>
 </main>
 <!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
 <!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
@@ -642,6 +2550,7 @@
 <script defer="" src="js/services/direitos.js"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
 <script defer="" src="js/ui/event-bindings.js?v=20260506comparador4"></script>
+<script defer="" src="js/pages/direitos-conteudo-estatico.js?v=20260511adsense1"></script>
 <script defer="" src="js/core/page-context.js?v=20260506baselegal1"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 <script defer="" src="js/ui/cookie-consent.js?v=20260509adsense1"></script>

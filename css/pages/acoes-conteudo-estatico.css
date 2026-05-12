@@ -1,0 +1,290 @@
+/* Ações judiciais — conteúdo editorial estático + filtro visual */
+#page-acoes.active {
+  display: block !important;
+}
+
+.acoes-page-shell {
+  display: grid;
+  gap: 22px;
+}
+
+.acoes-hero-card.card,
+.acoes-conteudo-card.card,
+.acoes-detalhe-card.card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.acoes-hero-kicker,
+.acoes-card-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--vermelho);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.acoes-hero-card h1,
+.acoes-hero-card h2,
+.acoes-conteudo-card h2,
+.acoes-detalhe-card h2 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.acoes-hero-card h1 {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 5vw, 48px);
+}
+
+.acoes-hero-card h2,
+.acoes-detalhe-card h2 {
+  margin: 0 0 14px;
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.acoes-hero-card p,
+.acoes-conteudo-card p,
+.acoes-conteudo-card li,
+.acoes-detalhe-card .acoes-intro {
+  color: var(--text-main);
+  font-size: clamp(15.5px, 2vw, 17px);
+  line-height: 1.65;
+}
+
+.acoes-alerta-legal {
+  margin: 18px 0 22px;
+}
+
+.acoes-filtro-card .consulta-instituicao-texto small {
+  color: var(--text-muted);
+}
+
+.acoes-filtro-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.acoes-filtro-acoes button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-input);
+  border-radius: 14px;
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.acoes-filtro-acoes button:hover {
+  border-color: var(--vermelho);
+  color: var(--vermelho);
+}
+
+#acoes-contador-cards {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.acoes-conteudo-lista {
+  display: grid;
+  gap: 22px;
+}
+
+.acoes-conteudo-card[hidden],
+.acoes-detalhe-card[hidden] {
+  display: none !important;
+}
+
+.acoes-card-cabecalho h2 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.acoes-card-cabecalho p {
+  margin: 0 0 18px;
+}
+
+.acoes-card-indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.acoes-card-indicadores div {
+  padding: 14px;
+  border: 1px solid var(--border-input);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-input) 86%, transparent);
+}
+
+.acoes-card-indicadores span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.acoes-card-indicadores strong {
+  color: var(--text-main);
+  font-size: 15.5px;
+  line-height: 1.35;
+}
+
+.acoes-card-corpo {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.acoes-card-tema {
+  padding: 16px;
+  border: 1px solid var(--border-input);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-card) 82%, var(--bg-input));
+}
+
+.acoes-card-tema h3 {
+  margin: 0 0 10px;
+  color: var(--text-main);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: clamp(18px, 2.4vw, 22px);
+  line-height: 1.25;
+}
+
+.acoes-card-tema p {
+  margin: 0 0 10px;
+}
+
+.acoes-card-tema p:last-child {
+  margin-bottom: 0;
+}
+
+.acoes-card-tema a {
+  color: var(--vermelho);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.acoes-card-rodape {
+  display: grid;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-input);
+}
+
+.acoes-card-rodape p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.acoes-card-rodape strong,
+.acoes-card-corpo strong {
+  color: var(--text-main);
+}
+
+.acoes-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.acoes-card-links button,
+.acoes-card-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--vermelho);
+  background: var(--vermelho);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.acoes-card-links a {
+  border-color: var(--border-input);
+  background: var(--bg-input);
+  color: var(--text-main);
+}
+
+.acoes-card-links button:hover,
+.acoes-card-links a:hover {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.acoes-paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0 10px;
+}
+
+.acoes-paginacao[hidden] {
+  display: none !important;
+}
+
+.acoes-paginacao button {
+  min-width: 42px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 12px;
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.acoes-paginacao button[aria-current="page"] {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+  color: #fff;
+}
+
+.acoes-paginacao button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.acoes-detalhe-card .result-list {
+  margin-top: 16px;
+}
+
+@media (max-width: 760px) {
+  .acoes-card-indicadores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .acoes-card-indicadores {
+    grid-template-columns: 1fr;
+  }
+
+  .acoes-card-links button,
+  .acoes-card-links a {
+    width: 100%;
+  }
+}

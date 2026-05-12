@@ -1,0 +1,300 @@
+/* Brasões e Histórias — conteúdo editorial estático + filtro visual */
+#page-brasoes.active {
+  display: block !important;
+}
+
+.brasoes-page-shell {
+  display: grid;
+  gap: 22px;
+}
+
+.brasoes-hero-card.card,
+.brasoes-conteudo-card.card,
+.brasoes-detalhe-card.card {
+  width: 100%;
+  max-width: 100%;
+}
+
+.brasoes-hero-kicker,
+.brasoes-card-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--vermelho);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.brasoes-hero-card h1,
+.brasoes-hero-card h2,
+.brasoes-conteudo-card h2,
+.brasoes-detalhe-card h2 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.brasoes-hero-card h1 {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 5vw, 48px);
+}
+
+.brasoes-hero-card h2,
+.brasoes-detalhe-card h2 {
+  margin: 0 0 14px;
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.brasoes-hero-card p,
+.brasoes-conteudo-card p,
+.brasoes-conteudo-card li,
+.brasoes-detalhe-card .brasoes-intro {
+  color: var(--text-main);
+  font-size: clamp(15.5px, 2vw, 17px);
+  line-height: 1.65;
+}
+
+.brasoes-filtro-card {
+  margin-top: 22px;
+}
+
+.brasoes-filtro-card .consulta-instituicao-texto small {
+  color: var(--text-muted);
+}
+
+.brasoes-filtro-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.brasoes-filtro-acoes button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-input);
+  border-radius: 14px;
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.brasoes-filtro-acoes button:hover {
+  border-color: var(--vermelho);
+  color: var(--vermelho);
+}
+
+#brasoes-contador-cards {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.brasoes-conteudo-lista {
+  display: grid;
+  gap: 22px;
+}
+
+.brasoes-conteudo-card[hidden],
+.brasoes-detalhe-card[hidden] {
+  display: none !important;
+}
+
+.brasoes-card-topo {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.brasoes-card-imgbox {
+  width: 116px;
+  height: 116px;
+  padding: 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--bg-input) 88%, transparent);
+  box-shadow: var(--app-soft-shadow-small, 0 8px 20px rgba(0,0,0,.12));
+}
+
+.brasoes-card-imgbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brasoes-conteudo-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 4vw, 34px);
+}
+
+.brasoes-card-indicadores {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.brasoes-card-indicadores div {
+  padding: 14px;
+  border: 1px solid var(--border-input);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-input) 86%, transparent);
+}
+
+.brasoes-card-indicadores span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.brasoes-card-indicadores strong {
+  color: var(--text-main);
+  font-size: 15.5px;
+  line-height: 1.35;
+}
+
+.brasoes-card-corpo {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.brasoes-card-corpo p {
+  margin: 0;
+}
+
+.brasoes-card-rodape {
+  display: grid;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-input);
+}
+
+.brasoes-card-rodape p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.brasoes-card-rodape strong,
+.brasoes-card-corpo strong {
+  color: var(--text-main);
+}
+
+.brasoes-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brasoes-card-links a,
+.brasoes-card-links button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 999px;
+  background: var(--bg-input);
+  color: var(--text-main);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brasoes-card-links button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.brasoes-card-links a:hover,
+.brasoes-card-links button:hover {
+  border-color: var(--vermelho);
+  color: var(--vermelho);
+}
+
+.brasoes-paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.brasoes-paginacao[hidden] {
+  display: none !important;
+}
+
+.brasoes-paginacao button {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 14px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.brasoes-paginacao button[aria-current="page"] {
+  border-color: var(--vermelho);
+  color: var(--vermelho);
+}
+
+.brasoes-paginacao button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.brasoes-detalhe-card {
+  scroll-margin-top: 24px;
+}
+
+.brasoes-detalhe-card .brasoes-intro {
+  margin-bottom: 18px;
+  color: var(--text-muted);
+}
+
+.brasoes-detalhe-card .ad-slot {
+  margin: 22px 0;
+}
+
+/* Evita o seletor institucional legado quando a página já possui o filtro editorial próprio. */
+.page-brasoes .brasoes-hero-card > .consulta-instituicao-card:not(.brasoes-filtro-card) {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .brasoes-card-indicadores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .brasoes-card-topo {
+    grid-template-columns: 1fr;
+  }
+
+  .brasoes-card-imgbox {
+    width: 96px;
+    height: 96px;
+  }
+
+  .brasoes-card-indicadores {
+    grid-template-columns: 1fr;
+  }
+}

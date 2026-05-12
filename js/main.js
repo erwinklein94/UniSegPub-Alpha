@@ -13,9 +13,13 @@ const UNISEGPUB_JS_ORDER = [
   'js/services/direitos.js',
   'js/pages/concursos-comparador.js',
   'js/pages/poderes-deveres.js',
+  'js/pages/poderes-conteudo-estatico.js',
   'js/pages/contato-init.js',
   'js/pages/produtos-render.js',
   'js/ui/event-bindings.js',
+  'js/pages/brasoes-conteudo-estatico.js',
+  'js/pages/acoes-conteudo-estatico.js',
+  'js/pages/associacoes-conteudo-estatico.js',
   'js/core/page-context.js',
   'js/brasao-lightbox.js'
 ];

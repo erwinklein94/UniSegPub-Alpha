@@ -154,6 +154,7 @@ function getNomeAbaAtual() {
     concursos: 'Concursos',
     poderes: 'Poderes e Deveres',
     brasoes: 'Brasões e história',
+    guia: 'Guia das instituições',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
