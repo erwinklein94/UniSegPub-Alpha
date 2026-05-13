@@ -1535,6 +1535,652 @@
 }
   ],
   "cursosGerais": [
+        {
+            "titulo": "Polícia Federal - Agente Administrativo - Direto ao Ponto",
+            "href": "https://go.hotmart.com/F105805837A?dp=1",
+            "ariaLabel": "Ver na loja Polícia Federal - Agente Administrativo - Direto ao Ponto",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/pfagenteadmdiretoaoponto.webp",
+                "alt": "Polícia Federal - Agente Administrativo - Direto ao Ponto",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/pfagenteadmdiretoaoponto"
+                }
+            },
+            "badges": [
+                "PF",
+                "Agente Administrativo"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório direto ao ponto para o cargo de Agente Administrativo da Polícia Federal, com foco em revisão objetiva, organização dos estudos e conteúdo essencial para a prova.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "Polícia Federal",
+                "Agente Administrativo",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Combo Escrivão PF - Polícia Federal (Reta Final)",
+            "href": "https://go.hotmart.com/D105805984A?dp=1",
+            "ariaLabel": "Ver na loja Combo Escrivão PF - Polícia Federal (Reta Final)",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/combo-escrivao-pf.webp",
+                "alt": "Combo Escrivão PF - Polícia Federal (Reta Final)",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/combo-escrivao-pf"
+                }
+            },
+            "badges": [
+                "PF",
+                "Escrivão"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Combo de reta final para Escrivão da Polícia Federal, pensado para acelerar a revisão, reforçar pontos importantes do edital e organizar a preparação nos últimos ciclos de estudo.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "Polícia Federal",
+                "Escrivão",
+                "Reta final"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Cartões Inteligentes p/ Concurso da PF (Escrivão) - Pós-Edital",
+            "href": "https://go.hotmart.com/K105806028D?dp=1",
+            "ariaLabel": "Ver na loja Cartões Inteligentes p/ Concurso da PF (Escrivão) - Pós-Edital",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/cartoesinteligentespfescrivao.webp",
+                "alt": "Cartões Inteligentes p/ Concurso da PF (Escrivão) - Pós-Edital",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/cartoesinteligentespfescrivao"
+                }
+            },
+            "badges": [
+                "PF",
+                "Cartões inteligentes"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Material de revisão em cartões inteligentes para o concurso de Escrivão da Polícia Federal, com proposta de memorização ativa e estudo rápido no período pós-edital.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Material digital",
+                "Polícia Federal",
+                "Escrivão",
+                "Pós-edital"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Combo Agente PF - Polícia Federal (Reta Final)",
+            "href": "https://go.hotmart.com/E105806080J?dp=1",
+            "ariaLabel": "Ver na loja Combo Agente PF - Polícia Federal (Reta Final)",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/agentepf.webp",
+                "alt": "Combo Agente PF - Polícia Federal (Reta Final)",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/agentepf"
+                }
+            },
+            "badges": [
+                "PF",
+                "Agente"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Combo de reta final para Agente da Polícia Federal, com foco em revisão estratégica, organização dos conteúdos e preparação intensiva para a prova.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "Polícia Federal",
+                "Agente",
+                "Reta final"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Cartões Inteligentes p/ Concurso da PF (Agente) - Pós-Edital",
+            "href": "https://go.hotmart.com/U105806117I?dp=1",
+            "ariaLabel": "Ver na loja Cartões Inteligentes p/ Concurso da PF (Agente) - Pós-Edital",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/cartoesinteligentespfagente.webp",
+                "alt": "Cartões Inteligentes p/ Concurso da PF (Agente) - Pós-Edital",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/cartoesinteligentespfagente"
+                }
+            },
+            "badges": [
+                "PF",
+                "Cartões inteligentes"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Cartões inteligentes para revisão do concurso de Agente da Polícia Federal, voltados à memorização ativa, fixação de pontos-chave e estudo pós-edital.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Material digital",
+                "Polícia Federal",
+                "Agente",
+                "Pós-edital"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Grupo de Estudos para a Prova Oral Delegado de Polícia Federal",
+            "href": "https://go.hotmart.com/E105806281W?dp=1",
+            "ariaLabel": "Ver na loja Grupo de Estudos para a Prova Oral Delegado de Polícia Federal",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/provaoraldelegadopf.webp",
+                "alt": "Grupo de Estudos para a Prova Oral Delegado de Polícia Federal",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/provaoraldelegadopf"
+                }
+            },
+            "badges": [
+                "PF",
+                "Delegado"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Grupo de estudos voltado à prova oral para Delegado de Polícia Federal, com foco em preparação dirigida, treino de exposição e revisão para a etapa oral.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Grupo de estudos",
+                "Polícia Federal",
+                "Delegado",
+                "Prova oral"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "PF (Polícia Federal) - Papiloscopista",
+            "href": "https://go.hotmart.com/S105806340X?dp=1",
+            "ariaLabel": "Ver na loja PF (Polícia Federal) - Papiloscopista",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/papiloscopistapf.webp",
+                "alt": "PF (Polícia Federal) - Papiloscopista",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/papiloscopistapf"
+                }
+            },
+            "badges": [
+                "PF",
+                "Papiloscopista"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Papiloscopista da Polícia Federal, direcionado a candidatos que buscam estudar com foco no cargo, nos conteúdos cobrados e na rotina de revisão.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "Polícia Federal",
+                "Papiloscopista",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Combo PRF - Polícia Rodoviária Federal",
+            "href": "https://go.hotmart.com/K105806438N?dp=1",
+            "ariaLabel": "Ver na loja Combo PRF - Polícia Rodoviária Federal",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/comboprf.webp",
+                "alt": "Combo PRF - Polícia Rodoviária Federal",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/comboprf"
+                }
+            },
+            "badges": [
+                "PRF",
+                "Combo"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Combo preparatório para a Polícia Rodoviária Federal, com foco em organização da preparação, revisão de conteúdos e estudo direcionado para carreira policial federal.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PRF",
+                "Preparatório",
+                "Carreira policial"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Cartões Inteligentes p/ Concurso da PRF (Policial Rodoviário Federal) - Pós-Edital",
+            "href": "https://go.hotmart.com/S105806487W?dp=1",
+            "ariaLabel": "Ver na loja Cartões Inteligentes p/ Concurso da PRF (Policial Rodoviário Federal) - Pós-Edital",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/cartoesinteligentesprf.webp",
+                "alt": "Cartões Inteligentes p/ Concurso da PRF (Policial Rodoviário Federal) - Pós-Edital",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/cartoesinteligentesprf"
+                }
+            },
+            "badges": [
+                "PRF",
+                "Cartões inteligentes"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Material de revisão em cartões inteligentes para o concurso da PRF, indicado para fixação rápida, memorização ativa e estudo objetivo no pós-edital.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Material digital",
+                "PRF",
+                "Policial Rodoviário Federal",
+                "Pós-edital"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "PM RJ (Polícia Militar do Rio de Janeiro) - Soldado",
+            "href": "https://go.hotmart.com/A105806523R?dp=1",
+            "ariaLabel": "Ver na loja PM RJ (Polícia Militar do Rio de Janeiro) - Soldado",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/soldadopmerj.webp",
+                "alt": "PM RJ (Polícia Militar do Rio de Janeiro) - Soldado",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/soldadopmerj"
+                }
+            },
+            "badges": [
+                "PMERJ",
+                "Soldado"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Soldado da Polícia Militar do Rio de Janeiro, com foco em estudos para carreira policial militar e revisão dos conteúdos cobrados em concurso.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PMERJ",
+                "Soldado",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "CBM RJ (Corpo de Bombeiros Militar do Rio de Janeiro) - Soldado",
+            "href": "https://go.hotmart.com/R105806577I?dp=1",
+            "ariaLabel": "Ver na loja CBM RJ (Corpo de Bombeiros Militar do Rio de Janeiro) - Soldado",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/bombeirorj.webp",
+                "alt": "CBM RJ (Corpo de Bombeiros Militar do Rio de Janeiro) - Soldado",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/bombeirorj"
+                }
+            },
+            "badges": [
+                "CBMERJ",
+                "Soldado"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Soldado do Corpo de Bombeiros Militar do Rio de Janeiro, direcionado a candidatos que desejam organizar os estudos para o concurso.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "CBMERJ",
+                "Soldado",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "PC AL (Polícia Civil de Alagoas) - Agente/Escrivão",
+            "href": "https://go.hotmart.com/A105806621R?dp=1",
+            "ariaLabel": "Ver na loja PC AL (Polícia Civil de Alagoas) - Agente/Escrivão",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/agenteescrivaopcal.webp",
+                "alt": "PC AL (Polícia Civil de Alagoas) - Agente/Escrivão",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/agenteescrivaopcal"
+                }
+            },
+            "badges": [
+                "PCAL",
+                "Agente/Escrivão"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Agente e Escrivão da Polícia Civil de Alagoas, com proposta de estudo direcionado para carreiras da Polícia Civil.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PCAL",
+                "Agente/Escrivão",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "PC MG (Polícia Civil de Minas Gerais) - Investigador",
+            "href": "https://go.hotmart.com/K105806643Y?dp=1",
+            "ariaLabel": "Ver na loja PC MG (Polícia Civil de Minas Gerais) - Investigador",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/investigadorpcmg.webp",
+                "alt": "PC MG (Polícia Civil de Minas Gerais) - Investigador",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/investigadorpcmg"
+                }
+            },
+            "badges": [
+                "PCMG",
+                "Investigador"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Investigador da Polícia Civil de Minas Gerais, com foco em organização dos estudos e conteúdos voltados à carreira policial civil.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PCMG",
+                "Investigador",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Preparatório Completo POLÍCIA PENAL do Distrito Federal PPDF - Instituto Óliver",
+            "href": "https://go.hotmart.com/P105806761U?dp=1",
+            "ariaLabel": "Ver na loja Preparatório Completo POLÍCIA PENAL do Distrito Federal PPDF - Instituto Óliver",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/ppdfinstitutooliver.webp",
+                "alt": "Preparatório Completo POLÍCIA PENAL do Distrito Federal PPDF - Instituto Óliver",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/ppdfinstitutooliver"
+                }
+            },
+            "badges": [
+                "PPDF",
+                "Instituto Óliver"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório completo para a Polícia Penal do Distrito Federal, voltado a candidatos que buscam uma trilha de estudos direcionada para o concurso da PPDF.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PPDF",
+                "Polícia Penal",
+                "Preparatório completo"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "PC DF (Polícia Civil do Distrito Federal) - Analista de Apoio às Atividades Policiais - Agente Administrativo",
+            "href": "https://go.hotmart.com/P105806831O?dp=1",
+            "ariaLabel": "Ver na loja PC DF (Polícia Civil do Distrito Federal) - Analista de Apoio às Atividades Policiais - Agente Administrativo",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/agenteadmpcdf.webp",
+                "alt": "PC DF (Polícia Civil do Distrito Federal) - Analista de Apoio às Atividades Policiais - Agente Administrativo",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/agenteadmpcdf"
+                }
+            },
+            "badges": [
+                "PCDF",
+                "Agente Administrativo"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Analista de Apoio às Atividades Policiais da PCDF, na área de Agente Administrativo, com foco em estudo organizado e conteúdo direcionado.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PCDF",
+                "Agente Administrativo",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "PC DF (Polícia Civil do Distrito Federal) - Agente Policial de Custódia",
+            "href": "https://go.hotmart.com/A105806871Q?dp=1",
+            "ariaLabel": "Ver na loja PC DF (Polícia Civil do Distrito Federal) - Agente Policial de Custódia",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/agentepolicialdecustodiapcdf.webp",
+                "alt": "PC DF (Polícia Civil do Distrito Federal) - Agente Policial de Custódia",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/agentepolicialdecustodiapcdf"
+                }
+            },
+            "badges": [
+                "PCDF",
+                "Custódia"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Agente Policial de Custódia da Polícia Civil do Distrito Federal, voltado à preparação objetiva para a carreira policial.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PCDF",
+                "Agente de Custódia",
+                "Preparatório"
+            ],
+            "cta": "Ver na loja"
+        },
+        {
+            "titulo": "Delegado - Polícia Civil do Distrito Federal",
+            "href": "https://go.hotmart.com/W105806928K?dp=1",
+            "ariaLabel": "Ver na loja Delegado - Polícia Civil do Distrito Federal",
+            "classes": [
+                "curso-card",
+                "produto-card"
+            ],
+            "rel": "sponsored noopener noreferrer",
+            "target": "_blank",
+            "dataAttrs": {},
+            "imagem": {
+                "wrapClasses": [
+                    "produto-imagem"
+                ],
+                "src": "img/HOTMART/delegadopcdf.webp",
+                "alt": "Delegado - Polícia Civil do Distrito Federal",
+                "decoding": "async",
+                "loading": "lazy",
+                "dataAttrs": {
+                    "data-img-base": "img/HOTMART/delegadopcdf"
+                }
+            },
+            "badges": [
+                "PCDF",
+                "Delegado"
+            ],
+            "avisoAfiliado": "Exposição do produto em formato de afiliado.",
+            "descricao": "Preparatório para Delegado da Polícia Civil do Distrito Federal, direcionado a candidatos que buscam estudo estruturado para uma das carreiras jurídicas policiais.",
+            "metaAriaLabel": "Destaques do curso",
+            "meta": [
+                "Curso online",
+                "PCDF",
+                "Delegado",
+                "Carreira policial"
+            ],
+            "cta": "Ver na loja"
+        },
     {
       "titulo": "MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins",
       "href": "https://go.hotmart.com/P105668763H?dp=1",
