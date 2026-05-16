@@ -99,7 +99,7 @@
           <span class="badge-info ativa">${textoSeguro(a.ano || 'Caso a caso')}</span>
         </div>
         <span class="direito-desc">${textoSeguro(a.desc || 'Tema dependente de documentos individuais e conferência jurídica.')}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${textoSeguro(a.base || 'Conferir legislação, atos oficiais e documentos funcionais.')}</span>
+        <span class="direito-desc"><strong>Fundamento jurídico/jurisprudência:</strong> ${textoSeguro(a.base || 'Conferir legislação, atos oficiais e documentos funcionais.')}</span>
         <span class="direito-desc"><strong>Fonte de conferência:</strong> ${textoSeguro(a.fonte || 'Fonte em conferência')}</span>
         ${a.atualizado ? `<span class="direito-desc"><strong>Última atualização:</strong> ${textoSeguro(a.atualizado)}</span>` : ''}
       </div>

@@ -54,12 +54,12 @@ function escapeHtml(str = '') {
 /* ============================================================ */
 /* === UI: MENU, TEMA, TROCA DE PÁGINA ======================== */
 /* ============================================================ */
-/* BLOCO 15.8 — Menu lateral, navegação por abas e tema */
+/* BLOCO 15.8 — Menu superior, navegação por abas e tema */
 function toggleMenu(forceOpen) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');
-  const btn = document.querySelector('.menu-btn');
-  if (!sidebar || !overlay || !btn) return;
+  const buttons = document.querySelectorAll('.menu-btn');
+  if (!sidebar || !overlay || !buttons.length) return;
 
   const shouldOpen = typeof forceOpen === 'boolean'
     ? forceOpen
@@ -67,7 +67,8 @@ function toggleMenu(forceOpen) {
 
   sidebar.classList.toggle('active', shouldOpen);
   overlay.classList.toggle('active', shouldOpen);
-  btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+  document.body.classList.toggle('menu-open', shouldOpen);
+  buttons.forEach(btn => btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false'));
 }
 
 function closeMenu() {
@@ -106,7 +107,7 @@ function switchPage(page) {
   atualizarHeaderDesc();
   atualizarVisibilidadeResumoInstitucional(page);
 
-  // Fecha a sidebar automaticamente após escolher uma aba, liberando a área principal da página.
+  // Fecha o menu automaticamente após escolher uma aba, liberando a área principal da página.
   closeMenu();
 
   // As páginas institucionais agora exigem escolha dentro da própria aba.
@@ -118,7 +119,6 @@ function switchPage(page) {
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
-  else if (page === 'poderes') inicializarPoderesDeveres();
   else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
@@ -152,7 +152,6 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
-    poderes: 'Poderes e Deveres',
     brasoes: 'Brasões e história',
     guia: 'Guia das instituições',
     comparar: 'Comparar Carreiras',
@@ -269,7 +268,7 @@ function initTheme() {
 function popularCargos(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
-    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   ppal: CARGOS_PPAL,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pcdf: CARGOS_PCDF,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   ppal: CARGOS_PPAL,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -280,7 +279,8 @@ function popularCargos(inst) {
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
     bmap: CARGOS_BMAP, pmap: CARGOS_PMAP,};
-  currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;
+  const genericas = (typeof CARGOS_ESTRUTURA_GENERICAS !== 'undefined' && CARGOS_ESTRUTURA_GENERICAS) ? CARGOS_ESTRUTURA_GENERICAS : {};
+  currTabela = genericas[inst] || map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');
   const sCargoDir = document.getElementById('cargo_dir');

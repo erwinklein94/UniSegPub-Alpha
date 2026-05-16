@@ -85,36 +85,6 @@
     if (span) span.textContent = titulo;
   }
 
-  function renderizarGuardaMunicipal() {
-    const cont = resultado();
-    if (!cont) return;
-    cont.innerHTML = `
-      <section class="brasoes-hero" aria-label="Identidade da Guarda Municipal">
-        <div class="brasoes-imagem-wrap">
-          <img class="brasoes-imagem" src="img/LOGO/logoleao.webp" alt="Referência visual geral para Guardas Municipais" loading="eager" decoding="async">
-        </div>
-        <div class="brasoes-hero-copy">
-          <span class="brasoes-kicker">Guarda Municipal</span>
-          <h3>GM — Guardas Municipais</h3>
-          <p>Municípios · Segurança urbana municipal</p>
-          <small>Resumo geral para consulta informativa.</small>
-        </div>
-      </section>
-      <section class="brasoes-historia-card" aria-label="História geral das Guardas Municipais">
-        <div class="brasoes-section-title">
-          <span>História breve</span>
-          <h3>Proteção municipal e segurança urbana</h3>
-        </div>
-        <p>As guardas municipais são instituições de segurança urbana criadas por lei municipal para proteger bens, serviços, instalações e espaços públicos do município. Como cada cidade possui legislação, estrutura e identidade próprias, o brasão, a denominação e a história devem ser conferidos no portal oficial da prefeitura ou da guarda local.</p>
-      </section>
-      <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
-        <strong>Fonte-base do resumo:</strong>
-        <p>Constituição Federal, Estatuto Geral das Guardas Municipais, leis municipais e canais oficiais da prefeitura ou da guarda local.</p>
-        <small>Conteúdo informativo, independente e não oficial. Para uma guarda específica, confirme brasão, lei de criação, comando, efetivo e competências no município correspondente.</small>
-      </section>
-    `;
-  }
-
   function selecionarInstituicao(inst, rolar) {
     const cont = resultado();
     if (!inst) {
@@ -125,21 +95,16 @@
 
     mostrarDetalhe();
     atualizarTituloDetalhe(inst);
-
-    if (inst === 'gm') {
-      renderizarGuardaMunicipal();
-    } else {
       try {
-        if (typeof mudarInstituicao === 'function') mudarInstituicao(inst);
-      } catch (erro) {
-        console.warn('Falha ao atualizar cabeçalho institucional em Brasões:', erro);
-      }
+      if (typeof mudarInstituicao === 'function') mudarInstituicao(inst);
+    } catch (erro) {
+      console.warn('Falha ao atualizar cabeçalho institucional em Brasões:', erro);
+    }
 
-      try {
-        if (typeof renderizarBrasoesHistoria === 'function') renderizarBrasoesHistoria();
-      } catch (erro) {
-        console.warn('Falha ao carregar brasão e história:', erro);
-      }
+    try {
+      if (typeof renderizarBrasoesHistoria === 'function') renderizarBrasoesHistoria();
+    } catch (erro) {
+      console.warn('Falha ao carregar brasão e história:', erro);
     }
 
     atualizarTituloDetalhe(inst);

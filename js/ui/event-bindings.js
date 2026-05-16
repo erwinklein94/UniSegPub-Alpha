@@ -55,10 +55,6 @@
       safeCall('selecionarInstituicaoPaginaInicial', [event.currentTarget.value]);
     });
 
-    bindChange('#poderes_instituicao', event => {
-      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
-    });
-
     // Os seletores internos de cada página são inseridos dinamicamente por page-context.js.
     // Por isso, eles precisam de delegação de evento; bindChange() só pegaria elementos
     // que já existiam no DOM no momento do carregamento.

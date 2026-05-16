@@ -511,9 +511,9 @@
       "cta": "Ver na loja"
     },
     {
-      "titulo": "Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança",
+      "titulo": "Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar Segurança",
       "href": "https://s.shopee.com.br/gMdCBBSkJ",
-      "ariaLabel": "Ver na loja Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança",
+      "ariaLabel": "Ver na loja Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar Segurança",
       "classes": [
         "curso-card",
         "produto-card"
@@ -526,7 +526,7 @@
           "produto-imagem"
         ],
         "src": "img/SHOPEE/presilha.webp",
-        "alt": "Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar GM Segurança",
+        "alt": "Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar Segurança",
         "decoding": "async",
         "loading": "lazy",
         "dataAttrs": {

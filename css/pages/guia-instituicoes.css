@@ -365,3 +365,191 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Revisão mobile — Guia das instituições (2026-05-16)
+   Reduz títulos/cards e impede elementos de fugir da largura do celular.
+   ============================================================ */
+@media (max-width: 760px) {
+  .guia-page-shell {
+    gap: 14px;
+  }
+
+  .guia-hero-card h1 {
+    font-size: clamp(23px, 7.6vw, 32px);
+    line-height: 1.07;
+    letter-spacing: .01em;
+  }
+
+  .guia-hero-card p,
+  .guia-artigo-lead {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .guia-filter-card {
+    margin-top: 14px;
+  }
+
+  .guia-filter-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .guia-filter-actions button,
+  .guia-filter-actions a {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    white-space: normal;
+  }
+
+  .guia-artigo-header {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .guia-artigo-brasao {
+    width: 70px;
+    height: 70px;
+    padding: 9px;
+    border-radius: 18px;
+  }
+
+  .guia-artigo-card h2 {
+    font-size: clamp(21px, 6.8vw, 29px);
+    line-height: 1.12;
+    letter-spacing: .01em;
+    overflow-wrap: anywhere;
+  }
+
+  .guia-artigo-meta {
+    gap: 6px;
+  }
+
+  .guia-artigo-meta span,
+  .guia-artigo-tag {
+    max-width: 100%;
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .guia-artigo-body {
+    font-size: 15px;
+    line-height: 1.62;
+  }
+
+  .guia-artigo-body h3 {
+    margin: 22px 0 10px;
+    font-size: 20px;
+    line-height: 1.18;
+  }
+
+  .guia-artigo-body h4 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .guia-artigo-body ul,
+  .guia-artigo-body ol {
+    padding-left: 18px;
+  }
+
+  .guia-info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .guia-info-item {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .guia-info-item strong {
+    font-size: 16px;
+    line-height: 1.22;
+    overflow-wrap: anywhere;
+  }
+
+  .guia-table-wrap {
+    max-width: 100%;
+    margin: 14px 0 20px;
+    border-radius: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .guia-artigo-card table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .guia-artigo-card th,
+  .guia-artigo-card td {
+    padding: 9px 8px;
+    font-size: 12.5px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .guia-highlight-box,
+  .guia-aviso-box,
+  .guia-faq details {
+    border-radius: 14px;
+  }
+
+  .guia-highlight-box,
+  .guia-aviso-box {
+    padding: 12px;
+    margin: 16px 0;
+  }
+
+  .guia-faq details {
+    padding: 12px;
+  }
+
+  .guia-related-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .guia-related-links a {
+    width: 100%;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .guia-paginacao button {
+    min-width: 38px;
+    min-height: 38px;
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .guia-hero-card h1 {
+    font-size: clamp(22px, 7.2vw, 28px);
+  }
+
+  .guia-artigo-card h2 {
+    font-size: clamp(20px, 6.5vw, 26px);
+  }
+
+  .guia-artigo-card th,
+  .guia-artigo-card td {
+    padding: 8px 6px;
+    font-size: 11.8px;
+  }
+}

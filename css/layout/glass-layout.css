@@ -189,7 +189,7 @@
     -webkit-backdrop-filter: blur(10px);
   }
 
-  /* BLOCO 14.5 — Sidebar e menu lateral glass */
+  /* BLOCO 14.5 — Sidebar e menu superior glass */
   .sidebar {
     background: var(--glass-panel-strong);
     border-right: 1px solid var(--glass-border-strong);

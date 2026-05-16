@@ -18,7 +18,7 @@ Nesta versão, a correção é conservadora:
 - `index.html`
 - `remuneracao.html`
 - `direitos.html`
-- `poderes-deveres.html`
+- `direitos.html`
 - `brasoes.html`
 - `concursos.html`
 - `comparar-carreiras.html`

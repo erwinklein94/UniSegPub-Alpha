@@ -9,7 +9,7 @@ Substituir o texto:
 
 por:
 
-- `PF,PRF,PM,PC,PP,BM,GM`
+- `PF,PRF,PM,PC,PP,BM,`
 
 na página inicial, tanto no desktop quanto no mobile.
 
@@ -24,15 +24,14 @@ Para preservar a estrutura visual do card, o texto foi dividido nas duas linhas 
 
 ```html
 <strong>PF,PRF,PM</strong>
-<span>PC,PP,BM,GM</span>
+<span>PC,PP,BM,</span>
 ```
 
 Visualmente, isso forma:
 
 ```text
 PF,PRF,PM
-PC,PP,BM,GM
-```
+PC,PP,BM,```
 
 ## Escopo
 

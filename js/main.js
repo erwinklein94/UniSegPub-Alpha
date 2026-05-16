@@ -12,8 +12,6 @@ const UNISEGPUB_JS_ORDER = [
   'js/ui/header-estados.js',
   'js/services/direitos.js',
   'js/pages/concursos-comparador.js',
-  'js/pages/poderes-deveres.js',
-  'js/pages/poderes-conteudo-estatico.js',
   'js/pages/contato-init.js',
   'js/pages/produtos-render.js',
   'js/ui/event-bindings.js',

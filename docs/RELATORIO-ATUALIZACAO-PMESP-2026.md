@@ -49,4 +49,4 @@ Executado `node --check` nos arquivos JavaScript alterados. Nenhum erro de sinta
 
 - O número exato de policiais ativos não foi inventado. Foi usado **82.000+** porque a fonte oficial localizada informa faixa.
 - O número de mulheres na PMESP não foi mantido porque a estimativa anterior não estava suficientemente confirmada por fonte oficial recente.
-- A remuneração total de 2026 não foi calculada manualmente a partir dos vencimentos-base. O portal mantém a tabela total oficial disponível e destaca que a Lei 18.441/2026 alterou apenas a base legal, exigindo tabela operacional posterior ou holerite para total atualizado.
+- A remuneração total de 2026 não foi calculada manualmente a partir dos vencimentos-base. O portal mantém a tabela total oficial disponível e destaca que a Lei 18.441/2026 alterou apenas a legislação, exigindo tabela operacional posterior ou holerite para total atualizado.

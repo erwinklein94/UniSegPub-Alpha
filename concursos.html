@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260515produtos-sem-rolagem" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260516-menu-mobile-fix1" rel="stylesheet"/>
 <link href="css/pages/concursos-conteudo-estatico.css?v=20260511adsense1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
@@ -63,20 +63,220 @@
 <a class="app-bottom-item" href="remuneracao.html"><span class="app-bottom-icon" aria-hidden="true">◈</span><span class="app-bottom-label">Remun.</span></a>
 <a class="app-bottom-item" href="concursos.html"><span class="app-bottom-icon" aria-hidden="true">▤</span><span class="app-bottom-label">Concursos</span></a>
 <a class="app-bottom-item" href="comparar-carreiras.html"><span class="app-bottom-icon" aria-hidden="true">⇄</span><span class="app-bottom-label">Comparar</span></a>
-<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon" aria-hidden="true">☰</span><span class="app-bottom-label">Menu</span></button>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Navegação do portal" class="app-bottom-item menu-btn" type="button"><span class="app-bottom-icon" aria-hidden="true">☰</span><span class="app-bottom-label">Menu</span></button>
 </nav>
 
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
-     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
+     Cabeçalho, menu superior, páginas/abas, formulários e rodapé.
      ======================================================= -->
 <!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
+<!-- BLOCO 03.2 — Botão de menu superior: abre abas do portal e vitrine de produtos -->
+<!-- BLOCO 03.3 — Overlay da navegação superior -->
+<div aria-hidden="true" class="menu-overlay" id="menuOverlay"></div>
+<!-- BLOCO 03.4 — Menu superior: navegação institucional, grupos de consulta, Instagram e parceiros -->
+<aside aria-label="Menu superior do portal" class="sidebar" id="sidebar" role="navigation">
+<div class="sidebar-header">
+<div aria-label="Identidade da navegação" class="sidebar-brand">
+<strong>Universo Segurança Pública</strong>
+<span>Escolha o que consultar</span>
+</div>
+<button aria-label="Fechar navegação" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
+</div>
+<!-- BLOCO 03.4.2 — Links internos organizados por finalidade -->
+<nav aria-label="Páginas do portal" class="sidebar-nav">
+<div aria-label="Navegação inicial" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Visão geral</span>
+<small>Acesso inicial e contexto do portal</small>
+</div>
+<a href="index.html" id="menu-principal" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🏠</span>
+<span class="sidebar-link-text">Principal</span>
+<small>Início do portal</small>
+</a>
+<a href="noticias.html" id="menu-noticias" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📰</span>
+<span class="sidebar-link-text">Notícias</span>
+<small>Editais, reajustes e atualizações</small>
+</a>
+<a href="guia-instituicoes.html" id="menu-guia" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📖</span>
+<span class="sidebar-link-text">Guia das instituições</span>
+<small>Artigos permanentes por instituição</small>
+</a>
+</div>
+<div aria-label="Produtos, conteúdos e parceiros" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Loja e parcerias</span>
+<small>Produtos, cursos e contato comercial</small>
+</div>
+<a href="produtos.html" id="menu-produtos" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🛒</span>
+<span class="sidebar-link-text">Produtos</span>
+<small>Cursos, livros e equipamentos</small>
+</a>
+<a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📣</span>
+<span class="sidebar-link-text">Parceiros</span>
+<small>Anuncie ou fale conosco</small>
+</a>
+</div>
+<div aria-label="Informações de carreira e legislação" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Carreira e legislação</span>
+<small>Dados funcionais, normas e benefícios</small>
+</div>
+<a href="remuneracao.html" id="menu-remuneracao" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">💰</span>
+<span class="sidebar-link-text">Remuneração Tabelada</span>
+<small>Valores brutos por cargo</small>
+</a>
+<a href="direitos.html" id="menu-direitos" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
+<span class="sidebar-link-text">Direitos e Vantagens</span>
+<small>Benefícios, adicionais e alertas</small>
+</a>
+</div>
+<div aria-label="Pesquisa, concursos e comparação" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Pesquisa e comparação</span>
+<small>Escolha, compare e aprofunde</small>
+</div>
+<a aria-current="page" class="active" href="concursos.html" id="menu-concursos" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📋</span>
+<span class="sidebar-link-text">Concursos</span>
+<small>Editais, requisitos e etapas</small>
+</a>
+<a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
+<span class="sidebar-link-text">Comparar Carreiras</span>
+<small>Salários, vagas e bancas</small>
+</a>
+<a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
+<span class="sidebar-link-text">Brasões e história</span>
+<small>Origem, identidade e histórico</small>
+</a>
+</div>
+<div aria-label="Apoio jurídico e institucional" class="sidebar-nav-group">
+<div class="sidebar-nav-title">
+<span>Apoio institucional</span>
+<small>Entidades, teses e suporte</small>
+</div>
+<a href="acoes-judiciais.html" id="menu-acoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🧾</span>
+<span class="sidebar-link-text">Ações Judiciais</span>
+<small>Teses, ações e orientações</small>
+</a>
+<a href="associacoes-sindicatos.html" id="menu-associacoes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🤝</span>
+<span class="sidebar-link-text">Associações e Sindicatos</span>
+<small>Entidades representativas</small>
+</a>
+</div>
+
+</nav>
+<!-- BLOCO 03.4.3 — Rede social destacada -->
+<div aria-label="Redes sociais" class="sidebar-social">
+<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegpub" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
+<span aria-hidden="true">📷</span>
+<strong>Seguir no Instagram</strong>
+</a>
+</div>
+<!-- BLOCO 03.4.3A — Produtos da vitrine no menu superior -->
+<section aria-label="Produtos" class="sidebar-products-vitrine">
+<div class="sidebar-products-title">
+<strong>Produtos</strong>
+<span>10 itens da vitrine</span>
+</div>
+<div class="sidebar-products-list">
+<a aria-label="Ver na loja Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="sidebar-product-card" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
+<img alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilaimpermeavel50l.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Mochila Coban Tática Militar Reforçada 24 L" class="sidebar-product-card" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
+<img alt="Mochila Coban Tática Militar Reforçada 24 L" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Barra fixa para porta" class="sidebar-product-card" href="https://s.shopee.com.br/9fHIyi0uae" rel="noopener noreferrer" target="_blank">
+<img alt="Barra fixa para porta" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa01.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Barra fixa para porta</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" class="sidebar-product-card" href="https://s.shopee.com.br/1qYSZj5bki" rel="noopener noreferrer" target="_blank">
+<img alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/botaacero.webp"/>
+<span class="sidebar-product-card-info">
+<strong>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Power Rack Funcional com paralelas" class="sidebar-product-card" href="https://s.shopee.com.br/9fHJ0X4HVl" rel="noopener noreferrer" target="_blank">
+<img alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa02.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Power Rack Funcional com paralelas</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" class="sidebar-product-card" href="https://s.shopee.com.br/8V5UTFtI4n" rel="noopener noreferrer" target="_blank">
+<img alt="Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/coletepeito.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking" class="sidebar-product-card" href="https://s.shopee.com.br/9fHRseGBA0" rel="noopener noreferrer" target="_blank">
+<img alt="Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/calcadecarga1.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão" class="sidebar-product-card" href="https://s.shopee.com.br/8Km4Irus3i" rel="noopener noreferrer" target="_blank">
+<img alt="Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/bonecaveira.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping" class="sidebar-product-card" href="https://s.shopee.com.br/9Uy1hagpxm" rel="noopener noreferrer" target="_blank">
+<img alt="Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/lanterna.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+<a aria-label="Ver na loja Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente" class="sidebar-product-card" href="https://s.shopee.com.br/2qR7lnxjWo" rel="noopener noreferrer" target="_blank">
+<img alt="Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/cintotatico.webp"/>
+<span class="sidebar-product-card-info">
+<strong>Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente</strong>
+<em>Ver na loja</em>
+</span>
+</a>
+</div>
+<a class="sidebar-products-more" href="produtos.html">
+<strong>Ver vitrine completa</strong>
+<span>Acessar todos os produtos →</span>
+</a>
+<small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
+</section>
+</aside>
+
 <header class="site-header" role="banner">
 <div class="header-content header-shell">
 <div class="header-topbar">
 <div aria-label="Controles rápidos" class="header-menu-tools">
-<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="menu-btn">
-<span></span><span></span><span></span>
+<button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu do portal" class="menu-btn" type="button">
+<span class="menu-btn-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+<span class="menu-btn-label">Menu</span>
 </button>
 <button aria-label="Alternar tema claro/escuro" class="theme-toggle-header" data-theme-toggle="true" data-toggle-style="text" id="theme-toggle-header" type="button">
           <span aria-hidden="true">☀️</span> Claro
@@ -144,7 +344,7 @@
 <div class="header-leadership">
 <div class="header-leadership-item">
 <span id="header-label-governador">Cobertura</span>
-<strong id="header-resumo-governador">Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal</strong>
+<strong id="header-resumo-governador">Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal e Bombeiro Militar</strong>
 </div>
 <div class="header-leadership-item header-command-item is-hidden" hidden>
 <span id="header-label-comando">Comando/Direção</span>
@@ -287,228 +487,11 @@
 <div class="stripe-white"></div>
 <div class="stripe-black"></div>
 </div>
-<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
-<div aria-hidden="true" class="menu-overlay" id="menuOverlay"></div>
-<!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
-<aside aria-label="Menu principal" class="sidebar" id="sidebar" role="navigation">
-<div class="sidebar-header">
-<div aria-label="Identidade da navegação" class="sidebar-brand">
-<strong>Universo Segurança Pública</strong>
-<span>Escolha o que consultar</span>
-</div>
-<button aria-label="Fechar menu" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
-</div>
-<!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
-<div class="inst-selector sidebar-inst-panel">
-<label for="instituicao">Instituição selecionada</label>
-<select aria-label="Selecione a instituição" id="instituicao">
-<option disabled="" selected="" value="">Escolha uma instituição</option>
-</select>
-<p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
-<p class="sidebar-independent-note">Portal independente, sem vínculo governamental. Confirme atos oficiais nos canais da respectiva instituição.</p>
-</div>
-<!-- BLOCO 03.4.2 — Links internos organizados por finalidade -->
-<nav aria-label="Páginas do portal" class="sidebar-nav">
-<div aria-label="Navegação inicial" class="sidebar-nav-group">
-<div class="sidebar-nav-title">
-<span>Visão geral</span>
-<small>Acesso inicial e contexto do portal</small>
-</div>
-<a href="index.html" id="menu-principal" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🏠</span>
-<span class="sidebar-link-text">Principal</span>
-<small>Início do portal</small>
-</a>
-<a href="noticias.html" id="menu-noticias" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">📰</span>
-<span class="sidebar-link-text">Notícias</span>
-<small>Editais, reajustes e atualizações</small>
-</a>
-<a href="guia-instituicoes.html" id="menu-guia" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">📖</span>
-<span class="sidebar-link-text">Guia das instituições</span>
-<small>Artigos permanentes por instituição</small>
-</a>
-</div>
-<div aria-label="Produtos, conteúdos e parceiros" class="sidebar-nav-group">
-<div class="sidebar-nav-title">
-<span>Loja e parcerias</span>
-<small>Produtos, cursos e contato comercial</small>
-</div>
-<a href="produtos.html" id="menu-produtos" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🛒</span>
-<span class="sidebar-link-text">Produtos</span>
-<small>Cursos, livros e equipamentos</small>
-</a>
-<a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">📣</span>
-<span class="sidebar-link-text">Parceiros</span>
-<small>Anuncie ou fale conosco</small>
-</a>
-</div>
-<div aria-label="Informações de carreira e legislação" class="sidebar-nav-group">
-<div class="sidebar-nav-title">
-<span>Carreira e legislação</span>
-<small>Dados funcionais, normas e benefícios</small>
-</div>
-<a href="remuneracao.html" id="menu-remuneracao" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">💰</span>
-<span class="sidebar-link-text">Remuneração Tabelada</span>
-<small>Valores brutos por cargo</small>
-</a>
-<a href="direitos.html" id="menu-direitos" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
-<span class="sidebar-link-text">Direitos e Vantagens</span>
-<small>Benefícios, adicionais e alertas</small>
-</a>
-<a href="poderes-deveres.html" id="menu-poderes" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">📜</span>
-<span class="sidebar-link-text">Poderes e Deveres</span>
-<small>Competências, limites e deveres</small>
-</a>
-<a href="base-legal.html" id="menu-baselegal" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🏛️</span>
-<span class="sidebar-link-text">Base Legal</span>
-<small>Leis, decretos e enquadramentos</small>
-</a>
-</div>
-<div aria-label="Pesquisa, concursos e comparação" class="sidebar-nav-group">
-<div class="sidebar-nav-title">
-<span>Pesquisa e comparação</span>
-<small>Escolha, compare e aprofunde</small>
-</div>
-<a aria-current="page" class="active" href="concursos.html" id="menu-concursos" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">📋</span>
-<span class="sidebar-link-text">Concursos</span>
-<small>Editais, requisitos e etapas</small>
-</a>
-<a href="comparar-carreiras.html" id="menu-comparar" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">⚔️</span>
-<span class="sidebar-link-text">Comparar Carreiras</span>
-<small>Salários, vagas e bancas</small>
-</a>
-<a href="brasoes.html" id="menu-brasoes" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🛡️</span>
-<span class="sidebar-link-text">Brasões e história</span>
-<small>Origem, identidade e histórico</small>
-</a>
-</div>
-<div aria-label="Apoio jurídico e institucional" class="sidebar-nav-group">
-<div class="sidebar-nav-title">
-<span>Apoio institucional</span>
-<small>Entidades, teses e suporte</small>
-</div>
-<a href="acoes-judiciais.html" id="menu-acoes" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🧾</span>
-<span class="sidebar-link-text">Ações Judiciais</span>
-<small>Teses, ações e orientações</small>
-</a>
-<a href="associacoes-sindicatos.html" id="menu-associacoes" role="link" tabindex="0">
-<span aria-hidden="true" class="sidebar-link-icon">🤝</span>
-<span class="sidebar-link-text">Associações e Sindicatos</span>
-<small>Entidades representativas</small>
-</a>
-</div>
-
-</nav>
-<!-- BLOCO 03.4.3 — Rede social destacada -->
-<div aria-label="Redes sociais" class="sidebar-social">
-<a aria-label="Abrir Instagram do Universo Segurança Pública" class="sidebar-social-btn" href="https://www.instagram.com/universosegpub" id="menu-instagram" rel="noopener noreferrer" role="link" tabindex="0" target="_blank">
-<span aria-hidden="true">📷</span>
-<strong>Seguir no Instagram</strong>
-</a>
-</div>
-<!-- BLOCO 03.4.3A — Produtos da vitrine no menu lateral -->
-<section aria-label="Produtos" class="sidebar-products-vitrine">
-<div class="sidebar-products-title">
-<strong>Produtos</strong>
-<span>10 itens da vitrine</span>
-</div>
-<div class="sidebar-products-list">
-<a aria-label="Ver na loja Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="sidebar-product-card" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
-<img alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilaimpermeavel50l.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Mochila Coban Tática Militar Reforçada 24 L" class="sidebar-product-card" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
-<img alt="Mochila Coban Tática Militar Reforçada 24 L" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Mochila Coban Tática Militar Reforçada 24 L</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Barra fixa para porta" class="sidebar-product-card" href="https://s.shopee.com.br/9fHIyi0uae" rel="noopener noreferrer" target="_blank">
-<img alt="Barra fixa para porta" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa01.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Barra fixa para porta</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" class="sidebar-product-card" href="https://s.shopee.com.br/1qYSZj5bki" rel="noopener noreferrer" target="_blank">
-<img alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/botaacero.webp"/>
-<span class="sidebar-product-card-info">
-<strong>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Power Rack Funcional com paralelas" class="sidebar-product-card" href="https://s.shopee.com.br/9fHJ0X4HVl" rel="noopener noreferrer" target="_blank">
-<img alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/barrafixa02.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Power Rack Funcional com paralelas</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" class="sidebar-product-card" href="https://s.shopee.com.br/8V5UTFtI4n" rel="noopener noreferrer" target="_blank">
-<img alt="Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/coletepeito.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Colete à Prova d&#x27;Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking" class="sidebar-product-card" href="https://s.shopee.com.br/9fHRseGBA0" rel="noopener noreferrer" target="_blank">
-<img alt="Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/calcadecarga1.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D&#x27;água Do Exército Usuários Fora De Esportes Long Hiking</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão" class="sidebar-product-card" href="https://s.shopee.com.br/8Km4Irus3i" rel="noopener noreferrer" target="_blank">
-<img alt="Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/bonecaveira.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping" class="sidebar-product-card" href="https://s.shopee.com.br/9Uy1hagpxm" rel="noopener noreferrer" target="_blank">
-<img alt="Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/lanterna.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-<a aria-label="Ver na loja Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente" class="sidebar-product-card" href="https://s.shopee.com.br/2qR7lnxjWo" rel="noopener noreferrer" target="_blank">
-<img alt="Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente" data-hide-on-error="true" decoding="async" loading="lazy" src="img/SHOPEE/cintotatico.webp"/>
-<span class="sidebar-product-card-info">
-<strong>Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente</strong>
-<em>Ver na loja</em>
-</span>
-</a>
-</div>
-<a class="sidebar-products-more" href="produtos.html">
-<strong>Ver vitrine completa</strong>
-<span>Acessar todos os produtos →</span>
-</a>
-<small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
-</section>
-</aside>
 <!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
-<!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
 <!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main class="page-section active" id="page-concursos" role="main">
@@ -536,7 +519,6 @@
               <option value="">Todas</option>
               <option value="federal">Federal</option>
               <option value="estadual">Estadual</option>
-              <option value="municipal">Municipal</option>
             </select>
           </label>
           <label>
@@ -545,6 +527,9 @@
 <option value="">Todas as instituições</option>
 <optgroup label="União">
 <option value="prf" data-esfera="federal">PRF — Polícia Rodoviária Federal</option>
+</optgroup>
+<optgroup label="Distrito Federal (DF)">
+<option value="pcdf" data-esfera="estadual">PCDF — Polícia Civil do Distrito Federal</option>
 </optgroup>
 <optgroup label="São Paulo (SP)">
 <option value="pmesp" data-esfera="estadual">PMESP — Polícia Militar do Estado de São Paulo</option>
@@ -625,7 +610,7 @@
         </div>
         <div class="concursos-filtro-acoes">
           <button type="button" data-concursos-limpar>Ver todas</button>
-          <span id="concursos-contador-cards">45 instituições encontradas</span>
+          <span id="concursos-contador-cards">46 instituições encontradas</span>
         </div>
       </div>
     </section>
@@ -668,6 +653,98 @@
     <div class="concursos-card-links">
       <a href="https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
       <button type="button" data-concurso-load="prf">Consultar dados completos</button>
+    </div>
+  </div>
+</article>
+<article class="card concursos-conteudo-card" id="concurso-pcdf" data-concurso-card data-inst="pcdf" data-esfera="estadual">
+  <div class="concursos-card-topo">
+    <div>
+      <span class="concursos-card-kicker">Distrito Federal • PCDF · Polícia Civil</span>
+      <h2>PCDF: concursos por cargo</h2>
+      <p>A PCDF mantém três frentes ativas em maio de 2026: o concurso para Delegado de Polícia com inscrições abertas pela Cebraspe (Edital nº 1 PCDF Delegado, de 3 de fevereiro de 2026, com nova janela definida pelo Edital nº 4), o cadastro de reserva do concurso Administrativo 2024 homologado em junho de 2025 e quatro pedidos de abertura ratificados pelo governador para cargos policiais (Agente de Custódia, Perito Criminal, Perito Médico-Legista e Papiloscopista Policial).</p>
+    </div>
+    <span class="concursos-card-sigla" aria-hidden="true">PCDF</span>
+  </div>
+
+  <!-- ÚLTIMO CONCURSO em destaque -->
+  <div class="concursos-subcard concursos-subcard--destaque" data-concurso-status="ultimo">
+    <span class="concursos-subcard-tag">Último concurso · em destaque · inscrições abertas</span>
+    <h3>Delegado de Polícia — Edital nº 1 PCDF Delegado, de 3 de fevereiro de 2026</h3>
+    <div class="concursos-card-indicadores">
+      <div><span>Edital</span><strong>Nº 1 PCDF Delegado, de 03/02/2026, publicado no DODF nº 23, de 04/02/2026, págs. 60 a 87. Retificado pelo Edital nº 4 (nova janela de inscrição e novo calendário de provas). Banca: Cebraspe.</strong></div>
+      <div><span>Vagas</span><strong>150 no total — 50 imediatas e 100 em cadastro de reserva. Distribuição: 81 ampla concorrência, 38 negros (pretos e pardos), 8 PCD, 5 indígenas, 3 quilombolas e 15 hipossuficientes.</strong></div>
+      <div><span>Inscritos</span><strong>Dados em breve — janela de inscrição retificada para 7 a 25 de maio de 2026; encerramento ainda em curso na data desta pesquisa.</strong></div>
+      <div><span>Banca</span><strong>Cebraspe, com participação da OAB/DF na banca examinadora.</strong></div>
+      <div><span>Remuneração</span><strong>R$ 26.690,15 (subsídio inicial — 3ª Classe, após reajuste de 12,82% aprovado em 1º de dezembro de 2025). Topo da carreira (Classe Especial): R$ 38.872,66.</strong></div>
+      <div><span>Escolaridade/requisitos</span><strong>Diploma de bacharel em Direito reconhecido pelo MEC; três anos de atividade jurídica ou policial; CNH categoria "B" ou superior; idade mínima de 18 anos; nacionalidade brasileira ou portuguesa equiparada; quitação com obrigações eleitorais e militares.</strong></div>
+    </div>
+    <div class="concursos-card-corpo">
+      <p><strong>Matérias cobradas:</strong> a prova objetiva (P1) traz 120 itens em formato "certo ou errado", duração de 3 horas e 30 minutos, com penalidade de 1,00 ponto negativo por erro. Disciplinas previstas no edital: Direito Constitucional; Direito Administrativo (com Lei nº 14.133/2021 — Nova Lei de Licitações); Direito Penal; Direito Processual Penal (com Lei nº 13.964/2019 — Pacote Anticrime); Direito Civil; Direito Processual Civil; Direito Tributário; Direito Ambiental; Direitos Humanos; Criminologia; Medicina Legal; Legislação Penal Especial; Lei nº 14.735/2023 (Lei Orgânica Nacional das Polícias Civis); Lei nº 13.675/2018 (SUSP); Lei Complementar DF nº 840/2011 (Regime Jurídico dos servidores do DF); Regime Disciplinar da PCDF; Noções de Primeiros Socorros; e Conhecimentos do Distrito Federal/Geopolítica do DF. A prova discursiva (P2) e a peça profissional (P3) — relativa à atividade de polícia judiciária — são aplicadas no mesmo dia da objetiva, no período da tarde. A prova oral (P4), gravada em áudio e vídeo, é etapa eliminatória e classificatória.</p>
+      <p><strong>Etapas do certame:</strong> Primeira etapa — prova objetiva; prova discursiva; peça profissional; prova oral; exames biométricos e avaliação médica; prova de capacidade física (TAF); avaliação psicológica; sindicância de vida pregressa e investigação social. Segunda etapa — curso de formação profissional e avaliação de títulos. O TAF, eliminatório, exige aproveitamento mínimo de 50% em cada teste e 60% no somatório; testes incluem corrida de 12 minutos, barra (dinâmica para homens, estática para mulheres) e demais provas definidas em edital de convocação. Heteroidentificação complementar à autodeclaração de candidatos negros, indígenas e quilombolas, conforme Lei nº 15.142, de 3 de junho de 2025, e Decreto nº 12.536, de 27 de junho de 2025.</p>
+      <p><strong>Curso de formação:</strong> Curso de Formação Profissional (CFP), de caráter eliminatório e classificatório, realizado pela Escola Superior de Polícia Civil (ESPC) no Distrito Federal, sob responsabilidade do Cebraspe. Durante o CFP o candidato é matriculado como aluno e recebe ajuda de custo proporcional ao subsídio inicial, conforme regulamento da PCDF.</p>
+      <p><strong>Validade e convocações:</strong> dois anos a partir da homologação, prorrogável uma única vez por igual período. Calendário retificado: provas objetiva e discursiva em 5 de julho de 2026; prova oral entre 8 e 11 de outubro de 2026; todas as fases presenciais no Distrito Federal. Taxa de inscrição R$ 310,00, com pagamento até 27 de maio de 2026.</p>
+    </div>
+  </div>
+
+  <!-- CONCURSO ABERTO — segundo certame vigente (CR Administrativo) -->
+  <div class="concursos-subcard" data-concurso-status="aberto">
+    <span class="concursos-subcard-tag concursos-subcard-tag--aberto">Concurso vigente · cadastro de reserva ativo</span>
+    <h3>Carreira de Apoio às Atividades Policiais Civis — Edital nº 1 PCDF, de 5 de setembro de 2024 (PCDF Administrativo)</h3>
+    <div class="concursos-card-indicadores">
+      <div><span>Edital</span><strong>Nº 1 PCDF, de 05/09/2024, com retificações até o Edital nº 5 PCDF de 21/11/2024. Banca: Cebraspe.</strong></div>
+      <div><span>Vagas</span><strong>744 no total — 260 imediatas e 484 em cadastro de reserva, divididas entre Analista de Apoio às Atividades Policiais Civis (nível médio) e Gestor de Apoio às Atividades Policiais Civis (nível superior, várias especialidades).</strong></div>
+      <div><span>Inscritos</span><strong>69.340 candidatos confirmados pelo Cebraspe; taxa de R$ 65,38 (nível médio) e R$ 98,31 (nível superior); inscrições entre 24/10/2024 e 12/11/2024.</strong></div>
+      <div><span>Banca</span><strong>Cebraspe.</strong></div>
+      <div><span>Remuneração</span><strong>Analista: R$ 4.162,94 inicial (jornada de 30 horas semanais). Gestor: R$ 6.539,35 a R$ 8.719,13 inicial, conforme especialidade.</strong></div>
+      <div><span>Escolaridade/requisitos</span><strong>Analista — nível médio completo. Gestor — nível superior na área da especialidade (Administração, Análise de Sistemas, Banco de Dados, Direito, Educação Física, Engenharia, Medicina do Trabalho, Psicologia etc.).</strong></div>
+    </div>
+    <div class="concursos-card-corpo">
+      <p><strong>Status:</strong> resultado final homologado em 25 de junho de 2025. O Projeto de Lei de Diretrizes Orçamentárias do DF para 2026 prevê a nomeação de 150 aprovados na carreira de Gestor de Apoio; o restante segue em cadastro de reserva.</p>
+      <p><strong>Validade:</strong> dois anos a partir da homologação, prorrogável uma única vez — vigência atual até 25 de junho de 2027.</p>
+      <p><strong>Provas:</strong> aplicadas em 12 e 19 de janeiro de 2025 em Brasília. Objetiva com 120 itens "certo/errado" (50 de conhecimentos básicos e 70 de conhecimentos específicos por especialidade) e prova discursiva (redação dissertativa de até 30 linhas, valendo 30 pontos).</p>
+    </div>
+  </div>
+
+  <!-- PEDIDO DE ABERTURA 1 — Agente de Custódia -->
+  <div class="concursos-subcard" data-concurso-status="pedido">
+    <span class="concursos-subcard-tag concursos-subcard-tag--pedido">Pedido de abertura · banca em definição</span>
+    <h3>Agente Policial de Custódia — autorização ratificada pelo governador</h3>
+    <p><strong>Documento:</strong> autorização governamental de 18 de dezembro de 2024 e ratificação pública pelo governador Ibaneis Rocha em dezembro de 2025; reserva orçamentária no Plano Anual de Compras e Contratações (PACC) 2026 da PCDF, publicado em 14 de janeiro de 2026 e retificado em abril de 2026 com R$ 500 mil destinados à contratação da banca; previsão de provimento no Projeto de Lei Orçamentária Anual (PLOA) 2026 do Distrito Federal.</p>
+    <p><strong>Status:</strong> autorizado, com termo de referência elaborado e processo de definição de banca em curso. O Cebraspe recebeu autorização para contratação por dispensa de licitação após parecer favorável da Procuradoria-Geral do DF; o IADES também apresentou proposta. Não há edital publicado.</p>
+    <p><strong>Vagas previstas:</strong> 50 imediatas e 100 em cadastro de reserva (total 150). Em fevereiro de 2026 o Portal da Transparência do DF registrava 482 cargos vagos de Agente Policial de Custódia.</p>
+    <p><strong>Remuneração projetada:</strong> R$ 13.794,41 (3ª Classe, com reajuste de 12,82% sancionado em 1º de dezembro de 2025).</p>
+    <p><strong>Próximo passo esperado:</strong> formalização do contrato com banca e publicação do edital de abertura.</p>
+  </div>
+
+  <!-- PEDIDO DE ABERTURA 2 — Polícia Técnica -->
+  <div class="concursos-subcard" data-concurso-status="pedido">
+    <span class="concursos-subcard-tag concursos-subcard-tag--pedido">Pedido de abertura · 315 vagas autorizadas</span>
+    <h3>Perito Criminal, Perito Médico-Legista e Papiloscopista Policial — lote conjunto da Polícia Técnica</h3>
+    <p><strong>Documento:</strong> autorização governamental publicada em dezembro de 2024 e ratificada pelo governador Ibaneis Rocha em dezembro de 2025; PACC 2026 com R$ 500 mil reservados para a banca; PLOA 2026 com previsão de provimento ao longo de 2026.</p>
+    <p><strong>Status:</strong> autorizado, com processo de seleção da banca em curso. Em 13 de fevereiro de 2026, quatro instituições apresentaram propostas: Fundação Getulio Vargas (FGV), Instituto ACCESS, Instituto Verbena e Instituto IDCAP. O IADES também é mencionado em movimentações recentes. Não há edital publicado.</p>
+    <p><strong>Vagas previstas:</strong> 315 no total — Perito Criminal (50 + 100 CR), Perito Médico-Legista (25 + 50 CR) e Papiloscopista Policial (30 + 60 CR). Cargos vagos em fevereiro de 2026: 189 (Perito Criminal), 84 (Perito Médico-Legista) e 128 (Papiloscopista Policial).</p>
+    <p><strong>Remuneração projetada:</strong> Perito Criminal e Perito Médico-Legista — R$ 26.690,15 inicial (mesma tabela de Delegado); Papiloscopista Policial — R$ 13.794,41 inicial.</p>
+    <p><strong>Próximo passo esperado:</strong> definição da banca, assinatura do contrato e publicação do edital de abertura. Edital esperado para o segundo semestre de 2026 conforme cronograma orçamentário.</p>
+  </div>
+
+  <!-- HISTÓRICO RECENTE -->
+  <div class="concursos-subcard concursos-subcard--historico">
+    <span class="concursos-subcard-tag">Histórico recente</span>
+    <ul>
+      <li><strong>Agente de Polícia</strong> — Edital nº 1 PCDF Agente, de 17/08/2020 (pc_df_20_agente), banca Cebraspe, 1.800 vagas (600 imediatas + 1.200 CR), 88.894 inscritos confirmados, prova aplicada em 22 de agosto de 2021. Homologado e com validade prorrogada por dois anos a partir de 25 de setembro de 2025; vigência até setembro de 2027.</li>
+      <li><strong>Escrivão de Polícia</strong> — Edital pc_df_19_escrivao, banca Cebraspe, 300 vagas imediatas, 52.636 inscritos confirmados, prova aplicada em 21 de agosto de 2021. Certame encerrado após nomeação dos aprovados.</li>
+      <li><strong>Perito Criminal</strong> — Edital 2016, banca IADES, 20 vagas imediatas e 80 em cadastro de reserva, prova aplicada em 22 de maio de 2016. Encerrado.</li>
+      <li><strong>Perito Médico-Legista</strong> — Edital nº 01/2014, banca Fundação Universa, 20 vagas (1 PCD) e 40 em cadastro de reserva, prova aplicada em 19 de abril de 2015. Encerrado.</li>
+      <li><strong>Papiloscopista Policial</strong> — Edital de 2014, banca Fundação Universa, 50 vagas imediatas e 107 em cadastro de reserva, prova aplicada em 19 de abril de 2015. Encerrado.</li>
+      <li><strong>Delegado de Polícia</strong> — Edital de 2014, banca Fundação Universa, prova aplicada em 10 de maio de 2015 (200 itens, modelo "certo/errado" com penalidade de 0,5). Encerrado.</li>
+    </ul>
+  </div>
+
+  <div class="concursos-card-rodape">
+    <p><strong>Orientação:</strong> use este resumo como ponto de partida e confirme sempre requisitos, datas, vagas, cotas, conteúdo programático e convocações no edital e no canal oficial da Cebraspe e da PCDF.</p>
+    <div class="concursos-card-links">
+      <a href="https://www.cebraspe.org.br/concursos/pc_df_26_delegado" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+      <button type="button" data-concurso-load="pcdf">Consultar dados completos</button>
     </div>
   </div>
 </article>

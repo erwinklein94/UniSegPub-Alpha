@@ -348,7 +348,7 @@ const POLICIAS_PENAIS_INFO = {
     orgao: 'Instituto de Administração Penitenciária do Acre (IAPEN/AC) / Secretaria de Estado de Justiça e Segurança Pública (SEJUSP/AC)',
     direcao: 'Marcos Frank Costa e Silva — Presidente do IAPEN/AC',
     subordinacao: 'Sistema penitenciário estadual do Acre, com atuação em segurança prisional, custódia, escoltas, controle, disciplina, monitoramento e execução penal.',
-    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 329 vagas totais, incluindo 261 para Agente de Polícia Penal; efetivo real deve ser conferido no IAPEN/AC e atos de nomeação' ,
+    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 329 vagas totais, incluindo 261 para Agente de Polícia Penal; efetivo real deve ser conferido no IAPEN/AC e atos de nomeação',
     reservaLabel: 'Inativos: conferir Acreprevidência e atos do IAPEN/AC',
     totalLabel: 'Sistema em reforço após curso de formação e nomeações de 2025',
     relacaoLabel: 'Relação depende do efetivo ativo consolidado pelo IAPEN/AC',
@@ -368,7 +368,7 @@ const POLICIAS_PENAIS_INFO = {
       escolaridade: 'Superior completo e CNH B para Agente de Polícia Penal; requisitos específicos para os demais cargos.'
     },
     associacaoBusca: 'associação ou sindicato dos policiais penais do Acre',
-    fonte: 'SEAD/IAPEN/AC — Edital 001/2023 e publicações posteriores; Portal do Estado do Acre — Lei 2.180/IAPEN e tabelas salariais' ,
+    fonte: 'SEAD/IAPEN/AC — Edital 001/2023 e publicações posteriores; Portal do Estado do Acre — Lei 2.180/IAPEN e tabelas salariais',
     url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/',
     atualizado: 'Atualizado em 01/05/2026'
 
@@ -801,7 +801,7 @@ const CARGOS_PPMT = mapearTabelaPoliciaPenal('ppmt', [
 );
 
 /* ============================================================ */
-/* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
+/* === AÇÕES JUDICIAIS (com tipo, ano, prazo, legislação) ===== */
 /* ============================================================ */
 
 const CARGOS_PPAC = mapearTabelaPoliciaPenal(

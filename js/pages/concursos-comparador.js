@@ -200,7 +200,7 @@ function popularInstituicoesComparadorPorEsfera(esfera, valorPreferido = '') {
   itens.forEach(item => {
     const grupo = esferaNormalizada === 'estadual'
       ? `${item.estadoNome} (${item.uf})`
-      : (esferaNormalizada === 'federal' ? 'União' : 'Municípios');
+      : 'União';
     if (grupo !== grupoAtual) {
       if (grupoAtual) html += '</optgroup>';
       html += `<optgroup label="${escapeHtml(grupo)}">`;
@@ -488,6 +488,68 @@ function carregarComparadorCarreiras() {
 }
 
 
+
+function textoListaConcurso(valor) {
+  if (Array.isArray(valor)) return valor.join('; ');
+  if (valor && typeof valor === 'object') {
+    if (valor.comuns || valor.especificas || valor.discursiva) {
+      return [
+        valor.comuns ? 'Conhecimentos comuns: ' + textoListaConcurso(valor.comuns) : '',
+        valor.especificas ? 'Conhecimentos específicos: ' + textoListaConcurso(valor.especificas) : '',
+        valor.discursiva ? 'Discursiva/oral: ' + valor.discursiva : ''
+      ].filter(Boolean).join(' | ');
+    }
+    if (valor.total || valor.taxa || valor.periodo || valor.locais_prova) {
+      return [
+        valor.total ? 'Total: ' + valor.total : '',
+        valor.taxa ? 'Taxa: ' + valor.taxa : '',
+        valor.periodo ? 'Período: ' + valor.periodo : '',
+        valor.locais_prova ? 'Locais de prova: ' + textoListaConcurso(valor.locais_prova) : ''
+      ].filter(Boolean).join(' · ');
+    }
+    return Object.keys(valor).map(function (chave) { return chave + ': ' + textoListaConcurso(valor[chave]); }).join(' · ');
+  }
+  return String(valor || 'Dados em breve');
+}
+
+function renderizarBlocosPcdfConcurso(c) {
+  if (!c || !c._estruturaCompleta) return '';
+  const abertos = Array.isArray(c.abertos) ? c.abertos : [];
+  const pedidos = Array.isArray(c.pedidos_abertura) ? c.pedidos_abertura : [];
+  const historico = Array.isArray(c.historico_recente) ? c.historico_recente : [];
+
+  const blocoAbertos = abertos.length ? `
+    <div class="direito-item acao">
+      <span class="direito-nome">Concurso vigente / cadastro de reserva</span>
+      ${abertos.map(function (item) { return `
+        <span class="direito-desc"><strong>${textoConteudoSeguro(item.cargo)}:</strong> ${textoConteudoSeguro(item.edital)}</span>
+        <span class="direito-desc"><strong>Vagas:</strong> ${textoConteudoSeguro(item.vagas)} · <strong>Banca:</strong> ${textoConteudoSeguro(item.banca)}</span>
+        <span class="direito-desc"><strong>Status:</strong> ${textoConteudoSeguro(item.previsao || item.validade)}</span>
+      `; }).join('')}
+    </div>` : '';
+
+  const blocoPedidos = pedidos.length ? `
+    <div class="direito-item acao">
+      <span class="direito-nome">Pedidos de abertura e autorizações</span>
+      ${pedidos.map(function (item) { return `
+        <span class="direito-desc"><strong>${textoConteudoSeguro(item.cargo)}:</strong> ${textoConteudoSeguro(item.status)}</span>
+        <span class="direito-desc"><strong>Vagas previstas:</strong> ${textoConteudoSeguro(item.vagas_previstas)} · <strong>Remuneração prevista:</strong> ${textoConteudoSeguro(item.remuneracao_prevista)}</span>
+        <span class="direito-desc"><strong>Próximo passo:</strong> ${textoConteudoSeguro(item.proximo_passo)}</span>
+      `; }).join('')}
+    </div>` : '';
+
+  const blocoHistorico = historico.length ? `
+    <div class="direito-item acao">
+      <span class="direito-nome">Histórico recente</span>
+      ${historico.map(function (item) { return `
+        <span class="direito-desc"><strong>${textoConteudoSeguro(item.cargo)}:</strong> ${textoConteudoSeguro(item.edital)} · ${textoConteudoSeguro(item.status)}</span>
+        <span class="direito-desc"><strong>Vagas:</strong> ${textoConteudoSeguro(item.vagas_detalhe || item.vagas)} · <strong>Inscritos:</strong> ${textoConteudoSeguro(item.inscritos)} · <strong>Banca:</strong> ${textoConteudoSeguro(item.banca)}</span>
+      `; }).join('')}
+    </div>` : '';
+
+  return blocoAbertos + blocoPedidos + blocoHistorico;
+}
+
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
@@ -515,6 +577,8 @@ function carregarConcursos() {
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${textoConteudoSeguro(c.previsao)}</span>
       ${urlPublicaValida(c.site) ? `<a href="${urlPublicaSegura(c.site)}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
     </div>
+
+    ${renderizarBlocosPcdfConcurso(c)}
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
@@ -591,7 +655,7 @@ function carregarAcoes() {
           <span class="badge-info ativa">${textoConteudoSeguro(a.ano)}</span>
         </div>
         <span class="direito-desc">${textoConteudoSeguro(a.desc)}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${textoConteudoSeguro(a.base)}</span>
+        <span class="direito-desc"><strong>Fundamento jurídico/jurisprudência:</strong> ${textoConteudoSeguro(a.base)}</span>
         ${fonteHtml}
         ${atualizadoHtml}
       </div>

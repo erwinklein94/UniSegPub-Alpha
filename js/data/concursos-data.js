@@ -775,3 +775,206 @@ const CONCURSOS = {
   }
 
 };
+
+CONCURSOS["pcdf"] = {
+  ultimo: {
+    cargo: "Delegado de Polícia",
+    edital: "Edital nº 1 PCDF Delegado, de 3 de fevereiro de 2026, publicado no DODF nº 23, de 4 de fevereiro de 2026, págs. 60 a 87; retificado pelo Edital nº 4 PCDF Delegado (nova janela de inscrição e novo cronograma de provas)",
+    salario: "R$ 26.690,15 (subsídio inicial, 3ª Classe, após Lei de reajuste de 12,82% sancionada em 1º de dezembro de 2025); topo da carreira em Classe Especial R$ 38.872,66; jornada de 40 horas semanais em regime de dedicação exclusiva",
+    vagas: "150 no total — 50 imediatas e 100 em cadastro de reserva. Distribuição: 81 ampla concorrência, 38 negros, 8 PCD, 5 indígenas, 3 quilombolas, 15 hipossuficientes",
+    cotas: "30% para negros, indígenas e quilombolas (Lei nº 15.142, de 3 de junho de 2025, e Decreto nº 12.536, de 27 de junho de 2025); 5% para pessoas com deficiência (Lei nº 8.112/1990, Lei nº 13.146/2015, Decreto Federal nº 9.508/2018, IN Conjunta MGI/MDHC nº 260/2025); reserva específica para hipossuficientes conforme Lei Distrital nº 4.949/2012, alterada pela Lei Distrital nº 7.248/2023",
+    idade: "Mínima de 18 anos completos; sem limite máximo definido em edital",
+    escolaridade: "Diploma de bacharel em Direito reconhecido pelo MEC; comprovação de três anos de atividade jurídica ou policial; Carteira Nacional de Habilitação (CNH) categoria 'B' ou superior",
+    materias: {
+      comuns: [
+        "Língua Portuguesa",
+        "Direito Constitucional",
+        "Direito Administrativo (com Lei nº 14.133/2021)",
+        "Direito Civil",
+        "Direito Processual Civil",
+        "Direito Tributário",
+        "Direito Ambiental",
+        "Direitos Humanos"
+      ],
+      especificas: [
+        "Direito Penal",
+        "Direito Processual Penal (com Pacote Anticrime — Lei nº 13.964/2019)",
+        "Legislação Penal Especial",
+        "Criminologia",
+        "Medicina Legal",
+        "Lei nº 14.735/2023 (Lei Orgânica Nacional das Polícias Civis)",
+        "Lei nº 13.675/2018 (Sistema Único de Segurança Pública — SUSP)",
+        "Lei Complementar DF nº 840/2011 (Regime Jurídico dos servidores do DF)",
+        "Regime Disciplinar da PCDF",
+        "Noções de Primeiros Socorros",
+        "Conhecimentos do Distrito Federal e geopolítica do DF"
+      ],
+      discursiva: "Prova discursiva (P2) composta por questões dissertativas e prova de peça profissional (P3) sobre atividade de polícia judiciária — aplicadas no mesmo dia da objetiva, no turno da tarde. Prova oral (P4) gravada em áudio e vídeo, eliminatória e classificatória."
+    },
+    banca: "Cebraspe — Centro Brasileiro de Pesquisa em Avaliação e Seleção e de Promoção de Eventos",
+    inscritos: {
+      total: "Dados em breve",
+      taxa: "R$ 310,00",
+      periodo: "07/05/2026 a 25/05/2026 (janela retificada pelo Edital nº 4); pagamento até 27/05/2026",
+      locais_prova: ["Distrito Federal"]
+    },
+    etapas: "Primeira etapa: prova objetiva (120 itens 'certo/errado', 3h30, manhã); prova discursiva (P2) e peça profissional (P3) (tarde); prova oral (P4) gravada; exames biométricos e avaliação médica; prova de capacidade física (TAF); avaliação psicológica; sindicância de vida pregressa e investigação social. Procedimento de heteroidentificação complementar à autodeclaração para candidatos negros, indígenas e quilombolas. Avaliação biopsicossocial para PCD. Segunda etapa: curso de formação profissional (eliminatório e classificatório) e avaliação de títulos (classificatória)",
+    cfsd: "Curso de Formação Profissional (CFP) na Escola Superior de Polícia Civil (ESPC), no Distrito Federal, sob responsabilidade do Cebraspe; eliminatório e classificatório",
+    estagio: "Estágio probatório de três anos, conforme regulamento da PCDF e Lei nº 8.112/1990",
+    validade: "Dois anos a partir da homologação do resultado final, prorrogável uma única vez por igual período",
+    previsao: "Concurso vigente, com inscrições abertas de 7 a 25 de maio de 2026. Provas objetiva e discursiva em 5 de julho de 2026; prova oral entre 8 e 11 de outubro de 2026. Todas as fases presenciais no Distrito Federal.",
+    site: "https://www.cebraspe.org.br/concursos/pc_df_26_delegado"
+  },
+
+  abertos: [
+    {
+      cargo: "Analista e Gestor de Apoio às Atividades Policiais Civis (Carreira Administrativa da PCDF)",
+      edital: "Edital nº 1 PCDF, de 5 de setembro de 2024, com retificações até o Edital nº 5 PCDF, de 21 de novembro de 2024 (pc_df_24_adm)",
+      salario: "Analista de Apoio: R$ 4.162,94 inicial (jornada de 30h semanais). Gestor de Apoio: R$ 6.539,35 a R$ 8.719,13 inicial conforme especialidade",
+      vagas: "744 no total — 260 imediatas e 484 em cadastro de reserva, distribuídas entre Analista de Apoio (nível médio, especialidade Agente Administrativo, 200 + 300 CR) e Gestor de Apoio (nível superior, especialidades em Administração, Análise de Sistemas, Banco de Dados, Direito, Educação Física, Engenharia, Medicina do Trabalho, Psicologia e outras)",
+      cotas: "PPI (negros), PCD, indígenas e hipossuficientes — conforme Lei Distrital nº 4.949/2012",
+      idade: "Mínima de 18 anos completos",
+      escolaridade: "Analista — nível médio completo. Gestor — diploma de graduação reconhecido pelo MEC na área da especialidade",
+      materias: {
+        comuns: [
+          "Língua Portuguesa",
+          "Matemática/Raciocínio Lógico",
+          "Atualidades",
+          "Noções de Direito Constitucional",
+          "Noções de Direito Administrativo",
+          "Lei Complementar DF nº 840/2011"
+        ],
+        especificas: ["Conhecimentos específicos por cargo/especialidade (70 itens)"],
+        discursiva: "Redação dissertativa de até 30 linhas (30 pontos) sobre tema relacionado ao cargo/especialidade"
+      },
+      banca: "Cebraspe",
+      inscritos: {
+        total: 69340,
+        taxa: "R$ 65,38 (nível médio) e R$ 98,31 (nível superior)",
+        periodo: "24/10/2024 a 12/11/2024",
+        locais_prova: ["Brasília/DF"]
+      },
+      etapas: "Prova objetiva (120 itens 'certo/errado' — 50 conhecimentos básicos + 70 específicos) e prova discursiva (redação); avaliação biopsicossocial para PCD; heteroidentificação complementar",
+      cfsd: "Não aplicável — carreira administrativa",
+      estagio: "Três anos, conforme Lei nº 8.112/1990",
+      validade: "Dois anos a partir da homologação (25/06/2025), prorrogável uma única vez — vigência até 25/06/2027",
+      previsao: "Homologado em 25 de junho de 2025; cadastro de reserva ativo. PLDO/PLOA do DF para 2026 prevê a nomeação de 150 aprovados na carreira de Gestor de Apoio.",
+      site: "https://www.cebraspe.org.br/concursos/pc_df_24_adm"
+    }
+  ],
+
+  pedidos_abertura: [
+    {
+      cargo: "Agente Policial de Custódia",
+      tipo: "Autorização governamental e reserva orçamentária no PACC 2026",
+      documento: "Autorização do governador Ibaneis Rocha publicada em 18/12/2024 e ratificação pública em dezembro de 2025; PACC 2026 da PCDF publicado em 14/01/2026 e retificado em abril de 2026 com R$ 500 mil para contratação da banca; previsão no PLOA 2026 do Distrito Federal",
+      status: "Autorizado; banca em definição (Cebraspe com autorização para contratação por dispensa de licitação após parecer da Procuradoria-Geral do DF; IADES apresentou proposta concorrente); termo de referência elaborado; sem edital publicado",
+      vagas_previstas: "50 imediatas e 100 em cadastro de reserva (total 150); 482 cargos vagos conforme Portal da Transparência do DF em fevereiro de 2026",
+      remuneracao_prevista: "R$ 13.794,41 inicial (3ª Classe, após reajuste de 12,82% sancionado em 01/12/2025)",
+      proximo_passo: "Formalização do contrato com a banca e publicação do edital de abertura",
+      fonte_url: "https://www.economia.df.gov.br/policia-civil-do-distrito-federal-pcdf"
+    },
+    {
+      cargo: "Perito Criminal, Perito Médico-Legista e Papiloscopista Policial (lote conjunto da Polícia Técnica)",
+      tipo: "Autorização governamental e reserva orçamentária no PACC 2026",
+      documento: "Autorização do governador Ibaneis Rocha publicada em dezembro de 2024 (assinatura conjunta do Secretário de Economia do DF Ney Ferraz Júnior e do Delegado-Geral José Werick de Carvalho); ratificação em dezembro de 2025; PACC 2026 com R$ 500 mil reservados para a banca; PLOA 2026 com previsão de provimento",
+      status: "Autorizado; processo de seleção de banca em curso desde 13/02/2026 com propostas de FGV, Instituto ACCESS, Instituto Verbena e Instituto IDCAP; sem edital publicado",
+      vagas_previstas: "315 no total — Perito Criminal (50 + 100 CR); Perito Médico-Legista (25 + 50 CR); Papiloscopista Policial (30 + 60 CR). Cargos vagos em fevereiro de 2026: 189 (Perito Criminal), 84 (Perito Médico-Legista) e 128 (Papiloscopista)",
+      remuneracao_prevista: "Perito Criminal e Perito Médico-Legista — R$ 26.690,15 inicial (mesma tabela de Delegado). Papiloscopista Policial — R$ 13.794,41 inicial",
+      proximo_passo: "Definição da banca, assinatura do contrato e publicação do edital — esperado para o segundo semestre de 2026",
+      fonte_url: "https://www.estrategiaconcursos.com.br/blog/concurso-pcdf/"
+    }
+  ],
+
+  historico_recente: [
+    {
+      cargo: "Agente de Polícia",
+      edital: "Edital nº 1 PCDF Agente, de 17/08/2020 (pc_df_20_agente)",
+      ano: 2020,
+      vagas: 1800,
+      vagas_detalhe: "600 imediatas + 1.200 em cadastro de reserva",
+      inscritos: 88894,
+      status: "Homologado; validade prorrogada por dois anos a partir de 25/09/2025 — vigência até setembro de 2027",
+      banca: "Cebraspe"
+    },
+    {
+      cargo: "Escrivão de Polícia",
+      edital: "Edital pc_df_19_escrivao (publicado em 2019; provas aplicadas em 2021 após adiamentos por pandemia)",
+      ano: 2019,
+      vagas: 300,
+      vagas_detalhe: "300 imediatas",
+      inscritos: 52636,
+      status: "Encerrado",
+      banca: "Cebraspe"
+    },
+    {
+      cargo: "Perito Criminal",
+      edital: "Edital PCDF Perito Criminal 2016",
+      ano: 2016,
+      vagas: 100,
+      vagas_detalhe: "20 imediatas + 80 em cadastro de reserva",
+      status: "Encerrado",
+      banca: "IADES"
+    },
+    {
+      cargo: "Perito Médico-Legista",
+      edital: "Edital nº 01/2014 PCDF Perito Médico-Legista",
+      ano: 2014,
+      vagas: 60,
+      vagas_detalhe: "20 imediatas (1 PCD) + 40 em cadastro de reserva",
+      status: "Encerrado",
+      banca: "Fundação Universa"
+    },
+    {
+      cargo: "Papiloscopista Policial",
+      edital: "Edital PCDF Papiloscopista 2014",
+      ano: 2014,
+      vagas: 157,
+      vagas_detalhe: "50 imediatas + 107 em cadastro de reserva",
+      status: "Encerrado",
+      banca: "Fundação Universa"
+    },
+    {
+      cargo: "Delegado de Polícia",
+      edital: "Edital PCDF Delegado 2014 (provas em 10/05/2015)",
+      ano: 2014,
+      vagas: "Dados em breve",
+      status: "Encerrado",
+      banca: "Fundação Universa"
+    }
+  ]
+};
+
+/* PCDF — compatibilidade com renderizadores legados e comparador. */
+(function normalizarConcursoPcdf() {
+  if (typeof CONCURSOS === 'undefined' || !CONCURSOS.pcdf || !CONCURSOS.pcdf.ultimo) return;
+  const pcdf = CONCURSOS.pcdf;
+  const ultimo = pcdf.ultimo;
+  function lista(valor) {
+    return Array.isArray(valor) ? valor.join('; ') : String(valor || 'Dados em breve');
+  }
+  function materiasTexto(materias) {
+    if (!materias || typeof materias !== 'object') return String(materias || 'Dados em breve');
+    const partes = [];
+    if (materias.comuns) partes.push('Conhecimentos comuns: ' + lista(materias.comuns));
+    if (materias.especificas) partes.push('Conhecimentos específicos: ' + lista(materias.especificas));
+    if (materias.discursiva) partes.push('Discursiva/oral: ' + materias.discursiva);
+    return partes.join(' | ') || 'Dados em breve';
+  }
+  function inscritosTexto(inscritos) {
+    if (!inscritos || typeof inscritos !== 'object') return String(inscritos || 'Dados em breve');
+    const locais = Array.isArray(inscritos.locais_prova) ? inscritos.locais_prova.join(', ') : inscritos.locais_prova;
+    return [
+      inscritos.total ? 'Total: ' + inscritos.total : '',
+      inscritos.taxa ? 'Taxa: ' + inscritos.taxa : '',
+      inscritos.periodo ? 'Período: ' + inscritos.periodo : '',
+      locais ? 'Locais de prova: ' + locais : ''
+    ].filter(Boolean).join(' · ') || 'Dados em breve';
+  }
+  Object.assign(pcdf, ultimo, {
+    materias: materiasTexto(ultimo.materias),
+    inscritos: inscritosTexto(ultimo.inscritos),
+    _estruturaCompleta: true
+  });
+})();
+

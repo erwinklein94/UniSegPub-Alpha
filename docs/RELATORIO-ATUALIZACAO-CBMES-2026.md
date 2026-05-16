@@ -10,7 +10,7 @@ Atualização institucional do Corpo de Bombeiros Militar do Estado do Espírito
 - Histórico institucional com origem em 1912, primeira estrutura de 1913, evolução da corporação e autonomia constitucional estadual.
 - Tabela de cargos `CARGOS_BMES` com postos/graduações, referências, valores oficiais de 12/2025, linhas de CFO 2026 e destaques de oficiais superiores pela Lei ES 12.783/2026.
 - Aba de remuneração tabelada oficial `REMUNERACAO_SP_OFICIAL.bmes`, com descrição de bruto, benefícios não somados e badges de referência.
-- Regras de direitos: saúde/assistência, subsídio, auxílio-alimentação, serviço extraordinário, fardamento, promoções, insalubridade, periculosidade e base legal.
+- Regras de direitos: saúde/assistência, subsídio, auxílio-alimentação, serviço extraordinário, fardamento, promoções, insalubridade, periculosidade e legislação.
 - Dados de concurso: CFO 2026/IDECAN, vagas, remuneração, cotas, requisitos, etapas, validade e site oficial.
 - Associações e entidades: ABMES, ASPRA-ES e ASSOMES.
 - Ações judiciais cabíveis: subsídio/enquadramento, CFO 2026, GSE, verbas indenizatórias, promoção/quadro e reserva/reforma/pensão.

@@ -58,7 +58,7 @@
     let html = '<option value="">Todas as instituições com artigo</option>';
     let grupoAtual = '';
     itens.forEach(item => {
-      const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : (esfera === 'federal' ? 'União' : 'Municípios');
+      const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : 'União';
       if (grupo !== grupoAtual) {
         if (grupoAtual) html += '</optgroup>';
         html += `<optgroup label="${escapeHtmlLocal(grupo)}">`;
@@ -88,7 +88,6 @@
     }
     if (esfera === 'federal') return 'federal selecionada';
     if (esfera === 'estadual') return 'estadual selecionada';
-    if (esfera === 'municipal') return 'municipal selecionada';
     return 'selecionado';
   }
 

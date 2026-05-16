@@ -8,7 +8,7 @@ const ANUNCIO_AREAS_LABELS = {
   home_topo: 'Topo da página principal',
   home_meio_consultas: 'Meio da página principal, após consultas principais',
   home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
-  menu_lateral: 'Menu lateral',
+  menu_lateral: 'Menu superior',
   remuneracao_antes_tabela: 'Aba Remuneração, antes da tabela',
   direitos_entre_formulario_parecer: 'Aba Direitos, entre formulário e parecer',
   concursos_antes_lista: 'Aba Concursos, antes da lista',

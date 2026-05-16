@@ -187,7 +187,8 @@ const HEADER_INSTITUICOES_INFO = {
   pmmt: { titulo: 'PMMT', desc: 'Polícia Militar de Mato Grosso' },
   bmmt: { titulo: 'CBMMT', desc: 'Corpo de Bombeiros Militar do Estado de Mato Grosso' },
   pcmt: { titulo: 'PCMT', desc: 'Polícia Judiciária Civil de Mato Grosso' },
-  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' }
+  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' },
+  pcdf: { titulo: 'PCDF', desc: 'Polícia Civil do Distrito Federal' }
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
@@ -1345,7 +1346,7 @@ const HEADER_INSTITUICOES_RESUMO = {
     "estado": "Alagoas",
     "estadoSigla": "AL",
     "tipo": "Polícia Militar",
-    "criacao": "03/02/1832 · Decisão Imperial nº 52 e Corpo de Guardas Municipais da Província",
+    "criacao": "03/02/1832 · Decisão Imperial nº 52 e corpo policial provincial",
     "ativa": 7493,
     "ativaLabel": "7.493 ativos · Governo de Alagoas/PMAL 2026",
     "reserva": 7308,
@@ -1710,7 +1711,7 @@ const HEADER_INSTITUICOES_RESUMO = {
     "estado": "Distrito Federal",
     "estadoSigla": "DF",
     "tipo": "Polícia Civil",
-    "criacao": "Polícia Civil do Distrito Federal · estrutura distrital",
+    "criacao": "10/05/1808 · Intendência-Geral de Polícia; PCDF em 1902; Brasília em 1960",
     "ativa": 3440,
     "ativaLabel": "3.440",
     "reserva": 3784,
@@ -1722,9 +1723,9 @@ const HEADER_INSTITUICOES_RESUMO = {
     "relacaoLabel": "1 ativo / 871 hab. · 0,115%",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Celina Leão",
-    "comando": "Delegado-Geral da PCDF — nome a confirmar em fonte oficial",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Delegado-Geral José Werick de Carvalho — nomeado em 02/10/2023",
+    "fonte": "Base PCDF: história, símbolos e legislação institucional pesquisadas em 15/05/2026; confirmar dados mutáveis em canais oficiais.",
+    "atualizado": "Base histórica revisada em 15/05/2026"
   },
   "ppdf": {
     "nome": "Polícia Penal do Distrito Federal",
@@ -3705,7 +3706,7 @@ function aplicarDadosEspecificosPmal() {
     estado: 'Alagoas',
     estadoSigla: 'AL',
     tipo: 'Polícia Militar',
-    criacao: '03/02/1832 · Decisão Imperial nº 52 e Corpo de Guardas Municipais da Província',
+    criacao: '03/02/1832 · Decisão Imperial nº 52 e corpo policial provincial',
     ativa: 7493,
     ativaLabel: '7.493 ativos · Governo de Alagoas/PMAL 2026',
     reserva: 7308,
@@ -3854,7 +3855,7 @@ function aplicarDadosEspecificosPcal() {
     estado: 'Alagoas',
     estadoSigla: 'AL',
     tipo: 'Polícia Civil',
-    criacao: '25/06/1975 · Lei AL nº 3.437 estrutura cargos da Polícia Civil; origem administrativa anterior na Guarda Civil de 1912',
+    criacao: '25/06/1975 · Lei AL nº 3.437 estrutura cargos da Polícia Civil; origem administrativa anterior na estrutura policial civil de 1912',
     ativa: 2000,
     ativaLabel: 'cerca de 2.000 integrantes (estimado) · portal PCAL',
     reserva: 0,
@@ -4022,7 +4023,7 @@ function ordenarOptgroupsInstituicoes(select) {
   if (!select) return;
   const placeholder = Array.from(select.childNodes).find(node => node.nodeType === Node.ELEMENT_NODE && node.tagName === 'OPTION' && node.value === '');
   const grupos = Array.from(select.querySelectorAll('optgroup')).sort((a, b) => {
-    const especiais = { 'Federais': -2, 'União': -2, 'Municípios': 99 };
+    const especiais = { 'Federais': -2, 'União': -2 };
     const prioridadeA = Object.prototype.hasOwnProperty.call(especiais, a.label) ? especiais[a.label] : 0;
     const prioridadeB = Object.prototype.hasOwnProperty.call(especiais, b.label) ? especiais[b.label] : 0;
     if (prioridadeA !== prioridadeB) return prioridadeA - prioridadeB;
@@ -5236,7 +5237,6 @@ function alternarHeaderComandoResumo(visivel) {
 }
 
 function calcularResumoPortalHeader() {
-  if (typeof garantirEstruturaGuardaMunicipalConsulta === 'function') garantirEstruturaGuardaMunicipalConsulta();
   const instituicoes = INSTITUICOES_VALIDAS.length;
   const estados = Object.keys(HEADER_ESTADOS).filter(chave => !['br', 'municipal'].includes(chave)).length;
   let ativa = 0;
@@ -5316,7 +5316,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-populacao', `${formatarNumeroHeader(resumoPortal.populacao)} (estimado)`);
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
   atualizarIndicadorPercentualPortal();
-  setTexto('header-resumo-governador', 'Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal');
+  setTexto('header-resumo-governador', 'Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal e Bombeiro Militar');
   setTexto('header-resumo-comando', '—');
 
   ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
@@ -5349,7 +5349,6 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
   const ehMilitar = instTexto.startsWith('pm') || instTexto === 'pmerj' || tipoTexto.includes('militar');
   const ehCivil = instTexto.startsWith('pc') || instTexto === 'pcerj' || tipoTexto.includes('civil');
   const ehFederal = ['pf', 'prf'].includes(instTexto) || dados.estadoSigla === 'BR';
-  const ehMunicipal = instTexto === 'gm' || tipoTexto.includes('guarda municipal');
 
   if (instTexto === 'pmesp') {
     return {
@@ -5430,7 +5429,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
     return {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
-      'header-label-criacao': 'Base legal/histórica',
+      'header-label-criacao': 'Fundamento histórico',
       'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Aposentados/inativos',
       'header-label-total': 'Mulheres no efetivo',
@@ -5438,21 +5437,6 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-relacao': dados.relacaoTitulo || 'Indicador',
       'header-label-governador': 'Governo responsável',
       'header-label-comando': 'Direção-Geral'
-    };
-  }
-
-  if (ehMunicipal) {
-    return {
-      'header-label-natureza': 'Natureza',
-      'header-label-uf': 'Jurisdição',
-      'header-label-criacao': 'Base local',
-      'header-label-ativa': 'Efetivo na ativa',
-      'header-label-reserva': 'Regime previdenciário',
-      'header-label-total': 'Mulheres no efetivo',
-      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
-      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
-      'header-label-governador': 'Poder Executivo local',
-      'header-label-comando': 'Comando/Direção'
     };
   }
 
@@ -5505,7 +5489,7 @@ function atualizarHeaderResumo(inst) {
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
-    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst || item.gm === inst;
+    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
   }) || 'sp';
 }
 
@@ -5740,11 +5724,6 @@ const PAGINAS_COM_SELECAO_INSTITUICAO = {
     subtitulo: 'A análise usa a instituição escolhida nesta aba e os dados funcionais preenchidos abaixo.',
     destino: 'resultados_dir'
   },
-  poderes: {
-    titulo: 'Consultar poderes e deveres por instituição',
-    subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
-    destino: 'poderes_resultado'
-  },
   brasoes: {
     titulo: 'Consultar brasão e história por instituição',
     subtitulo: 'Escolha a esfera e a instituição para ver o brasão, origem, criação, marcos históricos e dados institucionais.',
@@ -5771,119 +5750,9 @@ function instituicaoConsultaFoiSelecionada() {
   return !headerModoInicialPortal && !!currInst && INSTITUICOES_VALIDAS.includes(currInst);
 }
 
-function garantirEstruturaGuardaMunicipalConsulta() {
-  if (!INSTITUICOES_VALIDAS.includes('gm')) INSTITUICOES_VALIDAS.push('gm');
-
-  HEADER_INSTITUICOES_INFO.gm = HEADER_INSTITUICOES_INFO.gm || {
-    titulo: 'GM',
-    desc: 'Guarda Municipal'
-  };
-
-  HEADER_INSTITUICOES_IMAGENS.gm = HEADER_INSTITUICOES_IMAGENS.gm || 'img/LOGO/logoleao.webp';
-
-  HEADER_ESTADOS.municipal = HEADER_ESTADOS.municipal || {
-    nome: 'Municípios',
-    sigla: 'MUN',
-    gm: 'gm',
-    flag: HEADER_BRASIL_FLAG
-  };
-
-  HEADER_INSTITUICOES_RESUMO.gm = HEADER_INSTITUICOES_RESUMO.gm || {
-    nome: 'Guarda Municipal',
-    sigla: 'GM',
-    estado: 'Municípios',
-    estadoSigla: 'MUN',
-    tipo: 'Guarda Municipal',
-    criacao: 'Varia por município',
-    ativaLabel: 'Efetivo municipal — varia por cidade',
-    reservaLabel: 'Regime local — verificar município',
-    femininasLabel: 'Dados locais — consultar prefeitura',
-    populacaoLabel: 'Município selecionado',
-    relacaoLabel: 'Depende da lei municipal e do efetivo local',
-    populacaoTitulo: 'Abrangência',
-    relacaoTitulo: 'Relação efetivo/população',
-    governador: 'Prefeitura municipal / Secretaria municipal competente',
-    comando: 'Comando/direção da Guarda Municipal, conforme lei local',
-    atualizado: 'Conteúdo geral municipal'
-  };
-
-  CONFIGS_INSTITUICOES_GENERICAS.gm = CONFIGS_INSTITUICOES_GENERICAS.gm || {
-    titulo: 'GM',
-    desc: 'Guarda Municipal',
-    cor: '#0f766e',
-    alertaPrev: 'Guarda Municipal: conteúdo geral. Direitos, remuneração, concurso e organização dependem da lei municipal, estatuto local, plano de cargos, regime previdenciário e edital de cada cidade.'
-  };
-
-  if (typeof CARGOS_ESTRUTURA_GENERICAS !== 'undefined' && !CARGOS_ESTRUTURA_GENERICAS.gm) {
-    CARGOS_ESTRUTURA_GENERICAS.gm = [
-      { val: 'gm_guarda', text: 'Guarda Municipal / Agente da Guarda' },
-      { val: 'gm_inspetor', text: 'Inspetor / Classe intermediária — quando existir' },
-      { val: 'gm_comando', text: 'Comando / direção — conforme lei municipal' }
-    ];
-  }
-
-  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
-    REMUNERACAO_FONTES_OFICIAIS.gm = REMUNERACAO_FONTES_OFICIAIS.gm || {
-      nome: 'Guarda Municipal — verificar portal da transparência, lei municipal e edital local',
-      url: '#'
-    };
-  }
-
-  if (typeof CONCURSOS !== 'undefined') {
-    CONCURSOS.gm = CONCURSOS.gm || {
-      edital: 'Guarda Municipal — concurso municipal conforme cidade escolhida',
-      salario: 'Varia conforme lei municipal e edital local',
-      vagas: 'Varia por município',
-      cotas: 'Conforme edital municipal',
-      idade: 'Conforme edital e legislação local',
-      escolaridade: 'Geralmente ensino médio, podendo variar conforme município',
-      materias: 'Língua Portuguesa, legislação municipal, Estatuto Geral das Guardas Municipais, noções de Direito, conhecimentos gerais, informática e outras disciplinas conforme edital.',
-      banca: 'Conforme contratação municipal',
-      inscritos: 'Varia por edital',
-      etapas: 'Prova objetiva, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação quando previstos.',
-      cfsd: 'Curso de formação ou capacitação conforme matriz curricular e regulamento local.',
-      estagio: 'Conforme estatuto municipal.',
-      validade: 'Conforme edital.',
-      previsao: 'Consultar prefeitura e diário oficial do município.',
-      site: '#'
-    };
-  }
-
-  if (typeof ACOES_JUDICIAIS !== 'undefined') {
-    ACOES_JUDICIAIS.gm = ACOES_JUDICIAIS.gm || [
-      {
-        titulo: 'Guarda Municipal — direitos e enquadramentos locais',
-        status: 'Verificar caso individual',
-        ano: 'Tema permanente',
-        tipo: 'individual',
-        desc: 'Demandas podem envolver plano de carreira, adicional de risco, adicional noturno, horas extras, previdência, aposentadoria especial quando discutida, porte institucional, enquadramento e condições de trabalho.',
-        base: 'Lei municipal, Estatuto Geral das Guardas Municipais, Constituição, decisões judiciais aplicáveis e documentos funcionais.',
-        fonte: 'Consultar legislação municipal e advogado/entidade local',
-        fonteUrl: '',
-        atualizado: 'Conteúdo geral municipal'
-      }
-    ];
-  }
-
-  if (typeof ASSOCIACOES !== 'undefined') {
-    ASSOCIACOES.gm = ASSOCIACOES.gm || [
-      {
-        nome: 'Entidade representativa de Guardas Municipais — consultar município',
-        foco: 'Guardas municipais ativos, aposentados, pensionistas e familiares, conforme base territorial da entidade.',
-        acao: 'Acompanhamento de pautas de carreira, remuneração, plano de cargos, condições de trabalho, porte, formação e valorização profissional.',
-        site: '',
-        telefone: 'Consultar entidade local',
-        mensalidade: 'Consultar diretamente',
-        servicos: 'Jurídico, comunicação, convênios e representação institucional conforme estatuto da entidade.'
-      }
-    ];
-  }
-}
-
 function getEsferaConsultaInstituicao(inst) {
   inst = String(inst || '').toLowerCase();
   if (inst === 'pf' || inst === 'prf') return 'federal';
-  if (inst === 'gm' || inst === 'guarda_municipal') return 'municipal';
   return 'estadual';
 }
 
@@ -5891,7 +5760,6 @@ function getRamoConsultaInstituicao(inst) {
   inst = String(inst || '').toLowerCase();
   if (inst === 'pf') return 'Polícia Federal';
   if (inst === 'prf') return 'Polícia Rodoviária Federal';
-  if (inst === 'gm') return 'Guarda Municipal';
   if (inst.startsWith('bm')) return 'Bombeiro Militar';
   if (inst.startsWith('pp')) return 'Polícia Penal';
   if (inst.startsWith('pc')) return 'Polícia Civil';
@@ -5908,19 +5776,15 @@ function getOrdemConsultaInstituicao(inst) {
   if (dadosEstado.bm === inst) return 2;
   if (dadosEstado.pc === inst) return 3;
   if (dadosEstado.pp === inst) return 4;
-  if (inst === 'gm') return 1;
   return 9;
 }
 
 function getInstituicoesParaConsulta(esfera) {
-  garantirEstruturaGuardaMunicipalConsulta();
   const esferaNormalizada = String(esfera || '').toLowerCase();
   let base = [];
 
   if (esferaNormalizada === 'federal') {
     base = ['pf', 'prf'];
-  } else if (esferaNormalizada === 'municipal') {
-    base = ['gm'];
   } else if (esferaNormalizada === 'estadual') {
     base = INSTITUICOES_VALIDAS.filter(inst => getEsferaConsultaInstituicao(inst) === 'estadual');
   }
@@ -5950,11 +5814,6 @@ function getInstituicoesParaConsulta(esfera) {
     });
 }
 
-function removerSeletorAntigoPoderes() {
-  const antigo = document.getElementById('poderes_instituicao');
-  const bloco = antigo?.closest('.poderes-form-grid');
-  if (bloco) bloco.remove();
-}
 
 function criarHtmlSeletorConsulta(page, config) {
   const idEsfera = `consulta_esfera_${page}`;
@@ -5969,11 +5828,10 @@ function criarHtmlSeletorConsulta(page, config) {
       <div class="consulta-instituicao-grid">
         <div class="field">
           <label for="${idEsfera}">Tipo de instituição</label>
-          <select id="${idEsfera}" data-consulta-esfera data-consulta-page="${page}" aria-label="Selecione se a instituição é federal, estadual ou municipal">
+          <select id="${idEsfera}" data-consulta-esfera data-consulta-page="${page}" aria-label="Selecione se a instituição é federal ou estadual">
             <option value="" selected>Escolha a esfera</option>
             <option value="federal">Federal</option>
             <option value="estadual">Estadual</option>
-            <option value="municipal">Municipal</option>
           </select>
         </div>
         <div class="field">
@@ -5994,7 +5852,6 @@ function inserirSeletorConsultaNaPagina(page) {
   const card = pageEl?.querySelector('.card');
   if (!card || card.querySelector(`[data-consulta-selector="${page}"]`)) return;
 
-  if (page === 'poderes') removerSeletorAntigoPoderes();
 
   const h2 = card.querySelector('h2');
   const temp = document.createElement('div');
@@ -6005,7 +5862,6 @@ function inserirSeletorConsultaNaPagina(page) {
 }
 
 function montarSeletoresConsultaInstituicao() {
-  garantirEstruturaGuardaMunicipalConsulta();
   Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(inserirSeletorConsultaNaPagina);
   sincronizarSeletoresConsulta();
 }
@@ -6025,7 +5881,7 @@ function atualizarInstituicoesConsulta(page, esfera, valorPreferido = '') {
   let html = '<option value="">Escolha a instituição</option>';
   let grupoAtual = '';
   itens.forEach(item => {
-    const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : (esfera === 'federal' ? 'União' : 'Municípios');
+    const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : 'União';
     if (grupo !== grupoAtual) {
       if (grupoAtual) html += '</optgroup>';
       html += `<optgroup label="${escapeHtml(grupo)}">`;
@@ -6096,7 +5952,6 @@ function avisoSelecaoInstituicaoHtml(page) {
   const nomes = {
     remuneracao: 'a tabela de remuneração',
     direitos: 'a análise de direitos',
-    poderes: 'os poderes e deveres',
     brasoes: 'o brasão e a história institucional',
     concursos: 'os dados de concursos',
     acoes: 'as ações judiciais',
@@ -6105,7 +5960,7 @@ function avisoSelecaoInstituicaoHtml(page) {
   return `
     <div class="consulta-vazio" role="status">
       <strong>Escolha uma instituição nesta aba.</strong>
-      <span>Primeiro selecione se a instituição é federal, estadual ou municipal. Depois escolha a instituição específica para carregar ${nomes[page] || 'as informações'}.</span>
+      <span>Primeiro selecione se a instituição é federal ou estadual. Depois escolha a instituição específica para carregar ${nomes[page] || 'as informações'}.</span>
     </div>
   `;
 }
@@ -6114,7 +5969,6 @@ function atualizarTitulosConsultaSemInstituicao() {
   [
     'txt-inst-dir',
     'txt-inst-concursos',
-    'txt-inst-poderes',
     'txt-inst-brasoes',
     'txt-inst-remuneracao',
     'txt-inst-acoes',
@@ -6173,8 +6027,6 @@ function renderizarConteudoPaginaInstitucional(page) {
     analisarDireitos();
   } else if (page === 'concursos') {
     carregarConcursos();
-  } else if (page === 'poderes') {
-    inicializarPoderesDeveres();
   } else if (page === 'brasoes') {
     renderizarBrasoesHistoria();
   } else if (page === 'acoes') {
@@ -6208,7 +6060,7 @@ function obterResumoInstituicaoCompleto(inst) {
   const nome = resumo.nome || info.desc || sigla;
   const tipo = resumo.tipo || resumoInferirTipo(inst, resumo);
   const uf = resumo.estadoSigla || estado.sigla || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'BR' : '—');
-  const estadoNome = resumo.estado || estado.nome || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'Brasil' : 'Municípios');
+  const estadoNome = resumo.estado || estado.nome || 'Brasil';
   return { info, resumo, estadoChave, estado, sigla, nome, tipo, uf, estadoNome };
 }
 
@@ -6232,7 +6084,7 @@ function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pcap') return 'Estado do Amapá — Lei AP nº 637, de 14/12/2001, estruturou a organização básica da Polícia Civil; Lei AP nº 883/2005 consolidou órgãos de direção superior como a Delegacia-Geral.';
   if (inst === 'pcce') return 'Príncipe Regente D. João — Alvará de 10/05/1808, origem histórica da polícia judiciária brasileira; no Ceará, carreira organizada pelo Estatuto da Polícia Civil, Lei CE nº 12.124/1993, e normas posteriores.';
   if (inst === 'pmap') return 'Presidência da República — Lei Federal nº 6.270, de 26/11/1975, sancionada por Ernesto Geisel, criou a Polícia Militar do Território Federal do Amapá; antecedente histórico: Guarda Territorial do Amapá.';
-  if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando o Corpo de Guardas Municipais da província.';
+  if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando corpo policial provincial.';
   if (inst === 'pcal') return 'Estado de Alagoas — Lei AL nº 3.437, de 25/06/1975, estrutura cargos da Polícia Civil; Lei AL nº 6.441/2003 concede autonomia administrativa e financeira.';
   if (inst === 'ppal') return 'Estado de Alagoas — Lei AL nº 7.993/2018 reestruturou a carreira; Lei AL nº 8.650/2022 redenominou Agentes Penitenciários para Policiais Penais; Lei AL nº 9.849/2026 atualizou jornada e subsídios.';
   if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
@@ -6246,7 +6098,6 @@ function getCriadorInstitucional(inst, tipo, estadoNome) {
   const esfera = getEsferaConsultaInstituicao(inst);
   if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
   if (inst === 'prf') return 'Presidente Washington Luís — Decreto nº 18.323/1928 criou a Polícia das Estradas, origem histórica da PRF.';
-  if (esfera === 'municipal') return 'Município — criada por lei municipal e organizada pela prefeitura/secretaria competente.';
   if (/Polícia Penal/i.test(tipo)) return `${estadoNome} — carreira constitucionalizada pela EC 104/2019 e estruturada por normas estaduais/distritais.`;
   if (/Bombeiro/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização militar e comando próprio conforme legislação local.`;
   if (/Polícia Civil/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização da polícia judiciária conforme legislação local.`;
@@ -6351,9 +6202,9 @@ function getHistoricoPorTipo(inst, dados) {
 
   if (inst === 'pmal') {
     return {
-      origem: `A ${nome} tem origem oficial reconhecida em 3 de fevereiro de 1832, quando a Decisão Imperial nº 52 aprovou o plano do Corpo de Guardas Municipais da Província de Alagoas. Em 2026, a PMAL aparece como corporação quase bicentenária, com atuação de policiamento ostensivo e preservação da ordem pública nos 102 municípios alagoanos, efetivo ativo informado de 7.493 integrantes e Comando-Geral exercido pelo Cel QOC PM Paulo Amorim Feitosa Filho.`,
+      origem: `A ${nome} tem origem oficial reconhecida em 3 de fevereiro de 1832, quando a Decisão Imperial nº 52 aprovou a organização policial provincial de Alagoas. Em 2026, a PMAL aparece como corporação quase bicentenária, com atuação de policiamento ostensivo e preservação da ordem pública nos 102 municípios alagoanos, efetivo ativo informado de 7.493 integrantes e Comando-Geral exercido pelo Cel QOC PM Paulo Amorim Feitosa Filho.`,
       marcos: [
-        '1832: Decisão Imperial nº 52 aprova o plano do Corpo de Guardas Municipais da Província de Alagoas, marco reconhecido da origem da PMAL.',
+        '1832: Decisão Imperial nº 52 aprova a organização policial provincial de Alagoas, marco reconhecido da origem da PMAL.',
         '1851: criação da Banda de Música da PMAL, posteriormente reconhecida como patrimônio histórico, artístico e cultural imaterial do povo alagoano.',
         '1912: extinção e reativação da Força Pública/Batalhão de Polícia no mesmo ano, marco de reorganização institucional.',
         '1947/1993: criação da Formação de Bombeiros dentro da PM e posterior autonomia do Corpo de Bombeiros Militar de Alagoas.',
@@ -6367,10 +6218,10 @@ function getHistoricoPorTipo(inst, dados) {
 
   if (inst === 'pcal') {
     return {
-      origem: `A ${nome} é a polícia judiciária estadual de Alagoas, com raízes administrativas na reorganização da Força Pública e da Guarda Civil em 1912 e estrutura policial civil consolidada pela Lei AL nº 3.437/1975. A Lei AL nº 6.441/2003 marcou a autonomia administrativa e financeira da instituição, e em 2026 o Governo de Alagoas formou comissão para novo concurso de Agente e Escrivão, com 300 vagas previstas.`,
+      origem: `A ${nome} é a polícia judiciária estadual de Alagoas, com raízes administrativas na reorganização policial estadual de 1912 e estrutura policial civil consolidada pela Lei AL nº 3.437/1975. A Lei AL nº 6.441/2003 marcou a autonomia administrativa e financeira da instituição, e em 2026 o Governo de Alagoas formou comissão para novo concurso de Agente e Escrivão, com 300 vagas previstas.`,
       marcos: [
         '1808: criação da Intendência Geral de Polícia da Corte e do Brasil, marco nacional de organização policial que antecede as polícias civis estaduais.',
-        '1912: reorganização das forças estaduais em Alagoas e criação da Guarda Civil, junto à Polícia Militar, formando a Força Pública estadual.',
+        '1912: reorganização das forças estaduais em Alagoas, formando a estrutura policial estadual moderna.',
         '1975: Lei AL nº 3.437 institui cargos e estrutura a Polícia Civil do Estado de Alagoas.',
         '1982: criação da Escola de Polícia Civil de Alagoas — EPOCA, depois Academia de Polícia de Alagoas/APOCAL.',
         '1987: carreira de Delegado de Polícia Civil e departamentos de polícia judiciária ganham desenho próprio.',
@@ -6547,17 +6398,6 @@ function getHistoricoPorTipo(inst, dados) {
     };
   }
 
-  if (esfera === 'municipal') {
-    return {
-      origem: 'A Guarda Municipal é organizada por lei local e atua na proteção de bens, serviços e instalações municipais, com papel preventivo e comunitário. A história concreta varia conforme o município, sua lei de criação, estatuto, plano de carreira e estrutura administrativa.',
-      marcos: [
-        'Previsão constitucional das guardas municipais no art. 144 da Constituição.',
-        'Fortalecimento nacional com o Estatuto Geral das Guardas Municipais, que definiu princípios mínimos de atuação, proteção municipal e cooperação institucional.',
-        'Integração crescente com políticas de prevenção, ordenamento urbano, proteção escolar, videomonitoramento e defesa civil local.'
-      ]
-    };
-  }
-
   if (/Bombeiro/i.test(tipo)) {
     return {
       origem: `O ${nome} integra a segurança pública e a defesa civil do ${estadoNome}. Sua trajetória é ligada ao combate a incêndios, salvamento, resgate, prevenção, vistoria técnica e resposta a emergências, com organização militar estadual/distrital. Registro de criação/origem usado nesta base: ${criacao}.`,
@@ -6618,6 +6458,85 @@ function montarCamposResumoHistoria(inst, dados) {
   ];
 }
 
+
+function renderizarBrasoesHistoriaDetalheEspecial(cont, inst, especial) {
+  const tituloSpan = document.getElementById('txt-inst-brasoes');
+  if (tituloSpan) tituloSpan.textContent = especial.sigla_publica || inst.toUpperCase();
+  const lista = (itens, classe) => (Array.isArray(itens) ? itens : []).map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  const pares = (itens) => (Array.isArray(itens) ? itens : []).map(item => `
+    <article class="brasoes-resumo-item">
+      <span>${escapeHtml(item[0])}</span>
+      <strong>${escapeHtml(item[1])}</strong>
+    </article>
+  `).join('');
+  const paragrafos = (itens) => (Array.isArray(itens) ? itens : []).map(item => `<p>${escapeHtml(item)}</p>`).join('');
+
+  cont.innerHTML = `
+    <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
+      <div class="brasoes-imagem-wrap">
+        <img class="brasoes-imagem" src="${escapeHtml(especial.imagem || 'img/CIVIL/pcdf.webp')}" alt="Brasão ou insígnia da ${escapeHtml(especial.nome_oficial || 'PCDF')}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
+      </div>
+      <div class="brasoes-hero-copy">
+        <span class="brasoes-kicker">${escapeHtml(especial.esfera || 'estadual')}</span>
+        <h3>${escapeHtml(especial.sigla_publica || inst.toUpperCase())} — ${escapeHtml(especial.nome_oficial || '')}</h3>
+        <p>${escapeHtml(especial.uf || 'DF')} · Polícia Civil</p>
+        <small>${escapeHtml(especial.atualizado || 'Resumo institucional revisado')}</small>
+      </div>
+    </section>
+
+    <section class="brasoes-resumo-grid" aria-label="Resumo institucional detalhado">
+      ${pares(especial.indicadores)}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="História da instituição">
+      <div class="brasoes-section-title">
+        <span>História detalhada</span>
+        <h3>Origem e evolução institucional</h3>
+      </div>
+      ${paragrafos(especial.historia)}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Identidade visual e símbolos">
+      <div class="brasoes-section-title">
+        <span>Símbolos</span>
+        <h3>Como interpretar o brasão e a bandeira</h3>
+      </div>
+      <div class="brasoes-resumo-grid">
+        ${pares(especial.simbolos)}
+      </div>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Marcos históricos">
+      <div class="brasoes-section-title">
+        <span>Linha do tempo</span>
+        <h3>Marcos históricos da PCDF</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${lista(especial.marcos)}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Chefias e medalhística">
+      <div class="brasoes-section-title">
+        <span>Memória institucional</span>
+        <h3>Chefias e condecorações</h3>
+      </div>
+      <div class="brasoes-resumo-grid">
+        ${pares(especial.chefias)}
+      </div>
+      <ul class="brasoes-marcos">
+        ${lista(especial.medalhas)}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
+      <strong>Fonte-base do resumo:</strong>
+      <p>${escapeHtml(especial.fonte || 'Fontes públicas e oficiais quando disponíveis.')}</p>
+      <small>Conteúdo informativo, independente e não oficial. Dados de efetivo, chefia e datas podem mudar; confirme sempre em ato oficial, portal da transparência, diário oficial ou site institucional.</small>
+    </section>
+  `;
+}
+
 function renderizarBrasoesHistoria() {
   const cont = document.getElementById('brasoes_historia_resultado');
   if (!cont) return;
@@ -6627,6 +6546,11 @@ function renderizarBrasoesHistoria() {
   }
 
   const inst = currInst;
+  const especial = window.BRASOES_HISTORIA_DETALHES && window.BRASOES_HISTORIA_DETALHES[inst];
+  if (especial) {
+    renderizarBrasoesHistoriaDetalheEspecial(cont, inst, especial);
+    return;
+  }
   const dados = obterResumoInstituicaoCompleto(inst);
   const { sigla, nome, tipo, estadoNome, resumo } = dados;
   const imagem = imagemPrincipalBrasaoInstituicao(inst);
