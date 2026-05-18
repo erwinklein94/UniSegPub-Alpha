@@ -1,0 +1,147 @@
+{
+  "instituicao_id": "pcms",
+  "instituicao_nome": "Polícia Civil de Mato Grosso do Sul",
+  "sigla": "PCMS",
+  "uf": "MS",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Civil de Mato Grosso do Sul",
+  "resumo": "Tabela com valores brutos mensais identificados em fontes oficiais da PCMS e legislação estadual. Foram priorizados valores iniciais vigentes divulgados em concurso recente e, para cargos sem edital novo em 2025/2026, usados valores oficiais de subsídio por classe inicial publicados na legislação e em decreto estadual.",
+  "linhas": [
+    {
+      "cargo": "Escrivão de Polícia Judiciária",
+      "badge": "APJ",
+      "remuneracao": 6569.53,
+      "beneficios": 0,
+      "total": 6569.53,
+      "classe": "Classe inicial",
+      "criterio": "Remuneração inicial bruta mensal",
+      "benefDesc": "Não somados auxílio-alimentação, indenizações, plantões e adicionais pessoais.",
+      "fonteKey": "pcms",
+      "fonteNome": "Edital do concurso de Agente de Polícia Judiciária 2025",
+      "fonteUrl": "https://www.pc.ms.gov.br/wp-content/uploads/2025/07/Edital-Concurso.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Investigador de Polícia Judiciária",
+      "badge": "APJ",
+      "remuneracao": 6569.53,
+      "beneficios": 0,
+      "total": 6569.53,
+      "classe": "Classe inicial",
+      "criterio": "Remuneração inicial bruta mensal",
+      "benefDesc": "Não somados auxílio-alimentação, indenizações, plantões e adicionais pessoais.",
+      "fonteKey": "pcms",
+      "fonteNome": "Edital do concurso de Agente de Polícia Judiciária 2025",
+      "fonteUrl": "https://www.pc.ms.gov.br/wp-content/uploads/2025/07/Edital-Concurso.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia",
+      "badge": "DEL",
+      "remuneracao": 17014.18,
+      "beneficios": 0,
+      "total": 17014.18,
+      "classe": "3ª Classe",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não somados auxílio-alimentação, indenizações, substituições e adicionais pessoais.",
+      "fonteKey": "pcms",
+      "fonteNome": "Edital do concurso de Delegado 2021",
+      "fonteUrl": "https://www.pc.ms.gov.br/wp-content/uploads/2021/10/136264301_DP-PCMS.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Perito Papiloscopista",
+      "badge": "PAP",
+      "remuneracao": 4527.8,
+      "beneficios": 0,
+      "total": 4527.8,
+      "classe": "Classe inicial",
+      "criterio": "Remuneração inicial bruta mensal",
+      "benefDesc": "Não somados auxílio-alimentação, indenizações, plantões e adicionais pessoais.",
+      "fonteKey": "pcms",
+      "fonteNome": "Publicação oficial da PCMS sobre concurso de 2021",
+      "fonteUrl": "https://www.pc.ms.gov.br/concurso-com-vagas-para-perito-medico-e-criminal-agente-de-policia-cientifica-e-papiloscopista-soma-206-vagas/",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Científica",
+      "badge": "APC",
+      "remuneracao": 4527.8,
+      "beneficios": 0,
+      "total": 4527.8,
+      "classe": "Classe inicial",
+      "criterio": "Remuneração inicial bruta mensal",
+      "benefDesc": "Não somados auxílio-alimentação, indenizações, plantões e adicionais pessoais.",
+      "fonteKey": "pcms",
+      "fonteNome": "Publicação oficial da PCMS sobre concurso de 2021",
+      "fonteUrl": "https://www.pc.ms.gov.br/concurso-com-vagas-para-perito-medico-e-criminal-agente-de-policia-cientifica-e-papiloscopista-soma-206-vagas/",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Perito Oficial Forense",
+      "badge": "POF",
+      "remuneracao": 6687.87,
+      "beneficios": 0,
+      "total": 6687.87,
+      "classe": "3ª Classe",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não somados auxílio-alimentação, indenizações, plantões e adicionais pessoais.",
+      "fonteKey": "pcms",
+      "fonteNome": "Decreto estadual com tabela de subsídio da Polícia Civil",
+      "fonteUrl": "https://www.pc.ms.gov.br/wp-content/uploads/2015/09/DECRETO-N%C2%BA-14.635-DE-29-DE-DEZEMBRO-DE-2016..pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.pc.ms.gov.br/wp-content/uploads/2025/07/Edital-Concurso.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital do concurso de Agente de Polícia Judiciária 2025",
+      "url": "https://www.pc.ms.gov.br/wp-content/uploads/2025/07/Edital-Concurso.pdf",
+      "tipo": "edital",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Notícia oficial da PCMS sobre curso de formação 2026 de escrivão e investigador",
+      "url": "https://www.pc.ms.gov.br/policia-civil-da-inicio-a-curso-de-formacao-para-cargos-e-escrivao-e-investigador-de-policia-judiciaria/",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital do concurso de Delegado 2021",
+      "url": "https://www.pc.ms.gov.br/wp-content/uploads/2021/10/136264301_DP-PCMS.pdf",
+      "tipo": "edital",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Publicação oficial da PCMS sobre concurso de Perito Papiloscopista e Agente de Polícia Científica",
+      "url": "https://www.pc.ms.gov.br/concurso-com-vagas-para-perito-medico-e-criminal-agente-de-policia-cientifica-e-papiloscopista-soma-206-vagas/",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Decreto estadual com tabela de subsídio das carreiras da Polícia Civil",
+      "url": "https://www.pc.ms.gov.br/wp-content/uploads/2015/09/DECRETO-N%C2%BA-14.635-DE-29-DE-DEZEMBRO-DE-2016..pdf",
+      "tipo": "decreto",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 114 atualizada",
+      "url": "https://www.pc.ms.gov.br/wp-content/uploads/2025/03/LEI-COMPLEMENTAR-No-114-DE-19_12_2005-ATUALIZADA-1.pdf",
+      "tipo": "lei_complementar",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Há indícios de atualização recente para Agente de Polícia Judiciária em 2025/2026, mas não foi localizada no material aberto uma tabela consolidada nova para todas as carreiras da PCMS.",
+    "Para Delegado, Perito Papiloscopista, Agente de Polícia Científica e Perito Oficial Forense não foi encontrada tabela oficial mais recente e consolidada de 2025/2026 com todos os subsídios; por isso foram usados os valores oficiais mais claros disponíveis nas fontes encontradas.",
+    "Os valores informados são brutos mensais de ingresso ou da classe inicial identificada, sem somar verbas eventuais e vantagens pessoais.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

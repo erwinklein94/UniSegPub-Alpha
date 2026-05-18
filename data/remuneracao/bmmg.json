@@ -1,0 +1,97 @@
+{
+  "instituicao_id": "bmmg",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Minas Gerais",
+  "sigla": "CBMMG",
+  "uf": "MG",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do CBMMG",
+  "resumo": "Tabela com valores brutos mensais de ingresso no Corpo de Bombeiros Militar de Minas Gerais, com base em editais oficiais de 2026 e revisão geral de 5,4% válida a partir de janeiro de 2026.",
+  "linhas": [
+    {
+      "cargo": "Soldado de 2ª Classe",
+      "badge": "CFSd",
+      "remuneracao": 4562.3,
+      "beneficios": 0,
+      "total": 4562.3,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não somados abono fardamento, assistência à saúde e auxílio-alimentação.",
+      "fonteKey": "bmmg",
+      "fonteNome": "Edital CBMMG nº 10/2026 - CFSd 2027",
+      "fonteUrl": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2010%20de%202026_CFSD__2027.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Soldado de 1ª Classe",
+      "badge": "QPBM",
+      "remuneracao": 5332.6,
+      "beneficios": 0,
+      "total": 5332.6,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal após formação",
+      "benefDesc": "Não somados abono fardamento, assistência à saúde e auxílio-alimentação.",
+      "fonteKey": "bmmg",
+      "fonteNome": "Edital CBMMG nº 10/2026 - CFSd 2027",
+      "fonteUrl": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2010%20de%202026_CFSD__2027.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Cadete do 1º ano",
+      "badge": "CFO",
+      "remuneracao": 7506.8,
+      "beneficios": 0,
+      "total": 7506.8,
+      "classe": "Oficiais",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não somados abono fardamento, assistência à saúde e auxílio-alimentação.",
+      "fonteKey": "bmmg",
+      "fonteNome": "Edital CBMMG nº 09/2026 - CFO 2027",
+      "fonteUrl": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2009%20DE%202026_CFO_2027.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2010%20de%202026_CFSD__2027.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital CBMMG nº 10/2026 - Curso de Formação de Soldados 2027",
+      "url": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2010%20de%202026_CFSD__2027.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital CBMMG nº 09/2026 - Curso de Formação de Oficiais 2027",
+      "url": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2009%20DE%202026_CFO_2027.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 25.804, de 31/03/2026",
+      "url": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/25804/2026/",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 15.962, de 30/12/2005 - Anexo II",
+      "url": "https://www.almg.gov.br/atividade-parlamentar/leis/legislacao-mineira/lei/texto/print.html?ano=2005&comp=&cons=1&num=15962&tipo=LEI",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Página oficial de concursos do CBMMG",
+      "url": "https://www.bombeiros.mg.gov.br/concursos",
+      "tipo": "página oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Foram localizados com segurança valores oficiais de ingresso e pós-formação inicial. Não foram confirmadas, em fonte oficial direta e acessível, tabelas completas de todos os postos e graduações já atualizadas para 2026.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

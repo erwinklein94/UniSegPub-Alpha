@@ -1,0 +1,93 @@
+{
+  "instituicao_id": "bmms",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+  "sigla": "CBMMS",
+  "uf": "MS",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do CBMMS",
+  "resumo": "Tabela com subsídio bruto mensal de ingresso e referências de formação encontradas em fontes oficiais do Estado de Mato Grosso do Sul. Não foram localizadas, com segurança suficiente em fonte oficial acessível na pesquisa, as tabelas integrais e atuais de todos os postos e graduações do CBMMS para 2026.",
+  "linhas": [
+    {
+      "cargo": "Soldado Bombeiro Militar",
+      "badge": "Soldado",
+      "remuneracao": 4590.12,
+      "beneficios": 0,
+      "total": 4590.12,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal da graduação inicial",
+      "benefDesc": "Não soma auxílio-alimentação, indenizações, gratificações e adicionais.",
+      "fonteKey": "bmms",
+      "fonteNome": "Lei Complementar nº 218/2016 - tabela de subsídio reproduzida no Diário Oficial de MS",
+      "fonteUrl": "https://www.spdo.ms.gov.br/diariodoe/Index/Download/42491",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aluno-Soldado Bombeiro Militar",
+      "badge": "Aluno-Sd",
+      "remuneracao": 1864.06,
+      "beneficios": 0,
+      "total": 1864.06,
+      "classe": "Formação",
+      "criterio": "Remuneração bruta mensal durante o curso de formação",
+      "benefDesc": "Não soma auxílio-alimentação, indenizações, gratificações e adicionais.",
+      "fonteKey": "bmms",
+      "fonteNome": "Edital nº 2/2018 - SAD/SEJUSP/CBMMS/CFSD",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/15775/cbm_ms_2019_soldado-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Soldado Auxiliar de Operações de Bombeiro Militar",
+      "badge": "Temp BM",
+      "remuneracao": 3815.88,
+      "beneficios": 0,
+      "total": 3815.88,
+      "classe": "Temporários",
+      "criterio": "Vencimento base bruto mensal da função",
+      "benefDesc": "Não soma auxílio-alimentação, indenizações, gratificações e adicionais.",
+      "fonteKey": "bmms",
+      "fonteNome": "Diário Oficial de MS - processo seletivo temporário do CBMMS",
+      "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2025/05/30/DO11843_30_05_2025.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.spdo.ms.gov.br/diariodoe/Index/Download/42491",
+  "fontes": [
+    {
+      "titulo": "Lei Complementar nº 218/2016 - tabela de subsídio das carreiras Polícia Militar e Corpo de Bombeiros Militar, reproduzida no Diário Oficial de MS",
+      "url": "https://www.spdo.ms.gov.br/diariodoe/Index/Download/42491",
+      "tipo": "lei/diário oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de MS de 30/05/2025 - processo seletivo para Soldado Auxiliar de Operações de Bombeiro Militar",
+      "url": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2025/05/30/DO11843_30_05_2025.pdf",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital nº 2/2018 - SAD/SEJUSP/CBMMS/CFSD",
+      "url": "https://arquivos.qconcursos.com/regulamento/arquivo/15775/cbm_ms_2019_soldado-edital.pdf",
+      "tipo": "edital",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Portal Estadual de Concursos e Processos Seletivos de MS",
+      "url": "https://www.concursos.ms.gov.br/",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Pesquisa oficial localizou valor de ingresso para Soldado BM e valor de temporário, mas não confirmou com segurança a tabela completa e vigente de todos os postos e graduações do CBMMS em 2026.",
+    "O valor de Soldado BM encontrado decorre de tabela oficial de subsídio reproduzida no Diário Oficial, com vigência histórica indicada na própria norma; não foi localizada na pesquisa uma norma posterior acessível confirmando reajuste mais recente específico do CBMMS.",
+    "Valor de Aluno-Soldado veio de edital anterior de concurso e pode não refletir seleção futura sem nova atualização oficial.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

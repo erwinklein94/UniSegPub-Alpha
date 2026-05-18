@@ -1,0 +1,59 @@
+{
+  "instituicao_id": "bmrr",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Roraima",
+  "sigla": "BMRR",
+  "uf": "RR",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar de Roraima",
+  "resumo": "Foi localizada base oficial do sistema remuneratório dos militares estaduais de Roraima, aplicável ao CBMRR, mas as tabelas numéricas atualizadas de subsídio por posto/graduação não ficaram integralmente acessíveis nas fontes oficiais disponíveis durante a pesquisa. Como valor oficial diretamente recuperável, foi possível confirmar o subsídio de Soldado de 1ª Classe. Não foram somados auxílio-fardamento, funções gratificadas, serviço voluntário, indenizações e outras verbas eventuais.",
+  "linhas": [
+    {
+      "cargo": "Soldado de 1ª Classe",
+      "badge": "SD 1CL",
+      "remuneracao": 2598.49,
+      "beneficios": 0,
+      "total": 2598.49,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal do posto/graduação",
+      "benefDesc": "Não somados auxílio-fardamento, gratificações, serviço voluntário e indenizações",
+      "fonteKey": "bmrr",
+      "fonteNome": "Diário Oficial de Roraima - tabela de subsídio militar",
+      "fonteUrl": "https://imprensaoficial.rr.gov.br/app/_edicoes/2014/09/doe-20140919.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.bombeiros.rr.gov.br/portal/arquivosdpl.php",
+  "fontes": [
+    {
+      "titulo": "Lei Complementar nº 224/2014 - Sistema Remuneratório dos Militares do Estado de Roraima",
+      "url": "https://www.bombeiros.rr.gov.br/portal/arquivosdpl.php",
+      "tipo": "legislação",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Legislações - CBMRR",
+      "url": "https://cbm.rr.gov.br/legislacoes",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de Roraima - edição com tabela de subsídio militar",
+      "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2014/09/doe-20140919.pdf",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Tabela oficial numérica completa por posto/graduação não ficou acessível nas fontes oficiais consultadas.",
+    "Valor confirmado de forma direta na pesquisa: Soldado de 1ª Classe.",
+    "Demais postos e graduações foram omitidos para evitar publicação de valores sem confirmação oficial direta.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

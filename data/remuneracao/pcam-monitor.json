@@ -1,0 +1,28 @@
+{
+  "atualizado_em": "2026-05-18",
+  "instituicao_id": "pcam",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "forte",
+    "score": 100
+  },
+  "linhas": 6,
+  "usage": {
+    "input_tokens": 13821,
+    "input_tokens_details": {
+      "cached_tokens": 4736
+    },
+    "output_tokens": 1908,
+    "output_tokens_details": {
+      "reasoning_tokens": 293
+    },
+    "total_tokens": 15729
+  }
+}

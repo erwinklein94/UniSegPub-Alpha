@@ -1,0 +1,106 @@
+{
+  "instituicao_id": "pcsc",
+  "instituicao_nome": "Polícia Civil de Santa Catarina",
+  "sigla": "PCSC",
+  "uf": "SC",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Civil de Santa Catarina",
+  "resumo": "Tabela com valores brutos mensais de ingresso encontrados em fontes oficiais recentes da PCSC e do Diário Oficial de Santa Catarina. Os valores abaixo priorizam o subsídio mensal do cargo e indicam separadamente o vale-alimentação quando informado na fonte.",
+  "linhas": [
+    {
+      "cargo": "Delegado de Polícia Substituto",
+      "badge": "DELEGADO",
+      "remuneracao": 22828.99,
+      "beneficios": 0,
+      "total": 22828.99,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Sem somar vale-alimentação e adicionais.",
+      "fonteKey": "pcsc",
+      "fonteNome": "Diário Oficial de SC - Edital de Concurso Público nº 1/2023",
+      "fonteUrl": "https://portal.doe.sea.sc.gov.br/repositorio/2023/20231016/Jornal/22124.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Psicólogo Policial Civil",
+      "badge": "PSICOLOGO",
+      "remuneracao": 10620.99,
+      "beneficios": 0,
+      "total": 10620.99,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Sem somar vale-alimentação e adicionais.",
+      "fonteKey": "pcsc",
+      "fonteNome": "Diário Oficial de SC - Edital de Concurso Público nº 2/2023",
+      "fonteUrl": "https://portal.doe.sea.sc.gov.br/repositorio/2023/20231016/Jornal/22124.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Escrivão de Polícia Civil",
+      "badge": "ESCRIVAO",
+      "remuneracao": 9720,
+      "beneficios": 0,
+      "total": 9720,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Vale-alimentação de 550,00 não somado; sem adicionais.",
+      "fonteKey": "pcsc",
+      "fonteNome": "Diário Oficial de SC - Edital de Concurso Público nº 02/2025",
+      "fonteUrl": "https://portal.doe.sea.sc.gov.br/repositorio/2025/20251212/Jornal/22660.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Civil",
+      "badge": "AGENTE",
+      "remuneracao": 7290,
+      "beneficios": 0,
+      "total": 7290,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Vale-alimentação de 550,00 não somado; sem adicionais.",
+      "fonteKey": "pcsc",
+      "fonteNome": "Diário Oficial de SC - Edital de Concurso Público nº 01/2025",
+      "fonteUrl": "https://portal.doe.sea.sc.gov.br/repositorio/2025/20251212/Jornal/22660.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://pc.sc.gov.br/?p=35166",
+  "fontes": [
+    {
+      "titulo": "Polícia Civil de Santa Catarina lança concursos públicos com 300 vagas para Agente e Escrivão",
+      "url": "https://pc.sc.gov.br/?p=35166",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de SC - Edital de Concurso Público nº 01/2025 e nº 02/2025",
+      "url": "https://portal.doe.sea.sc.gov.br/repositorio/2025/20251212/Jornal/22660.pdf",
+      "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de SC - Edital de Concurso Público nº 1/2023 e nº 2/2023",
+      "url": "https://portal.doe.sea.sc.gov.br/repositorio/2023/20231016/Jornal/22124.pdf",
+      "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Concurso Público para a Polícia Civil do Estado de Santa Catarina",
+      "url": "https://conhecimento.fgv.br/concursos/pcsc23",
+      "tipo": "pagina_de_concurso",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Os valores de Agente e Escrivão foram separados do vale-alimentação para evitar inflar a remuneração bruta do cargo.",
+    "Não foram localizadas, nesta pesquisa, tabelas oficiais consolidadas por classes e referências de toda a carreira em uma única página governamental; por isso a tabela prioriza valores iniciais oficiais de ingresso por cargo.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

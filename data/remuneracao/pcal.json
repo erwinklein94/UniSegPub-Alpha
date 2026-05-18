@@ -1,0 +1,93 @@
+{
+  "instituicao_id": "pcal",
+  "instituicao_nome": "Polícia Civil do Estado de Alagoas",
+  "sigla": "PCAL",
+  "uf": "AL",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da PCAL",
+  "resumo": "Tabela com valores brutos mensais confirmados em fontes oficiais para cargos da Polícia Civil de Alagoas. Foram localizados com segurança os valores atualizados de 2025 para Agente de Polícia, Escrivão de Polícia e Delegado de Polícia na tabela remuneratória oficial do Estado. Benefícios e verbas eventuais não foram somados.",
+  "linhas": [
+    {
+      "cargo": "Agente de Polícia - Classe A",
+      "badge": "AGT PC",
+      "remuneracao": 6977.28,
+      "beneficios": 0,
+      "total": 6977.28,
+      "classe": "Agente/Escrivão",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, plantões, indenizações ou verbas eventuais.",
+      "fonteKey": "pcal",
+      "fonteNome": "Tabela Remuneratória 2025 - Escrivão e Agente de Polícia",
+      "fonteUrl": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Escrivão de Polícia - Classe A",
+      "badge": "ESC PC",
+      "remuneracao": 6977.28,
+      "beneficios": 0,
+      "total": 6977.28,
+      "classe": "Agente/Escrivão",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, plantões, indenizações ou verbas eventuais.",
+      "fonteKey": "pcal",
+      "fonteNome": "Tabela Remuneratória 2025 - Escrivão e Agente de Polícia",
+      "fonteUrl": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia - classe inicial",
+      "badge": "DEL PC",
+      "remuneracao": 24883.4,
+      "beneficios": 0,
+      "total": 24883.4,
+      "classe": "Delegados",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, plantões, indenizações ou verbas eventuais.",
+      "fonteKey": "pcal",
+      "fonteNome": "Tabela Remuneratória 2025 - Delegados",
+      "fonteUrl": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+  "fontes": [
+    {
+      "titulo": "Tabela Remuneratória 2025 - Escrivão e Agente de Polícia",
+      "url": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+      "tipo": "tabela oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Tabela Remuneratória 2025 - Delegados",
+      "url": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+      "tipo": "tabela oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Portal da Transparência de Alagoas - Legislação de Fixação Subsídios",
+      "url": "https://transparencia.al.gov.br/pessoal/legislacao/",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 9.032, de 6 de novembro de 2023",
+      "url": "https://transparencia.al.gov.br/media/legislacao/2023/Lei%20reestruturando%20Carreira%20da%20PC%2C%20de%2007-11-2023.pdf",
+      "tipo": "lei",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "A tabela oficial 2025 da SEPLAG foi localizada, mas a navegação pública não expôs todas as faixas internas de progressão no ambiente consultado.",
+    "Os valores de Delegado foram confirmados apenas para a referência inicial útil ao usuário final; recomenda-se revisão humana para completar todas as classes da carreira.",
+    "Não foram incluídos papiloscopista e cargos da perícia oficial porque pertencem à Perícia Oficial e não à página principal da PCAL nesta atualização.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

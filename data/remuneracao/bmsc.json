@@ -1,0 +1,113 @@
+{
+  "instituicao_id": "bmsc",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Santa Catarina",
+  "sigla": "CBMSC",
+  "uf": "SC",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do CBMSC",
+  "resumo": "Tabela com valores brutos mensais de ingresso e início de carreira do Corpo de Bombeiros Militar de Santa Catarina, com base em editais oficiais de 2026 e auxílio-alimentação informado separadamente, sem somar adicionais variáveis.",
+  "linhas": [
+    {
+      "cargo": "Aluno-Soldado Bombeiro Militar",
+      "badge": "CFP",
+      "remuneracao": 8015,
+      "beneficios": 0,
+      "total": 8015,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 550 não somado; sem adicionais e indenizações",
+      "fonteKey": "bmsc",
+      "fonteNome": "Edital 001-2026/DP/CBMSC - Curso de Formação de Praças",
+      "fonteUrl": "https://cdn.direcaoconcursos.com.br/uploads/2026/01/diarioOficial-2-40-57.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Soldado Bombeiro Militar",
+      "badge": "Soldado",
+      "remuneracao": 8015,
+      "beneficios": 0,
+      "total": 8015,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal do início da carreira",
+      "benefDesc": "Auxílio-alimentação de 550 não somado; sem adicionais e indenizações",
+      "fonteKey": "bmsc",
+      "fonteNome": "Edital 001-2026/DP/CBMSC - Curso de Formação de Praças",
+      "fonteUrl": "https://cdn.direcaoconcursos.com.br/uploads/2026/01/diarioOficial-2-40-57.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Cadete Bombeiro Militar",
+      "badge": "CFO",
+      "remuneracao": 18670.37,
+      "beneficios": 0,
+      "total": 18670.37,
+      "classe": "Oficiais",
+      "criterio": "Subsídio bruto mensal durante a formação",
+      "benefDesc": "Auxílio-alimentação de 550 não somado; sem adicionais e indenizações",
+      "fonteKey": "bmsc",
+      "fonteNome": "Edital 002-2026/DP/CBMSC - Curso de Formação de Oficiais",
+      "fonteUrl": "https://dhg1h5j42swfq.cloudfront.net/2026/01/27182630/edital-cbm-sc-2026-oficial.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "2º Tenente Bombeiro Militar",
+      "badge": "2Ten BM",
+      "remuneracao": 21284.4,
+      "beneficios": 0,
+      "total": 21284.4,
+      "classe": "Oficiais",
+      "criterio": "Subsídio bruto mensal do posto inicial",
+      "benefDesc": "Auxílio-alimentação de 550 não somado; sem adicionais e indenizações",
+      "fonteKey": "bmsc",
+      "fonteNome": "Edital 002-2026/DP/CBMSC - Curso de Formação de Oficiais",
+      "fonteUrl": "https://dhg1h5j42swfq.cloudfront.net/2026/01/27182630/edital-cbm-sc-2026-oficial.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://cdn.direcaoconcursos.com.br/uploads/2026/01/diarioOficial-2-40-57.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital 001-2026/DP/CBMSC - Curso de Formação de Praças",
+      "url": "https://cdn.direcaoconcursos.com.br/uploads/2026/01/diarioOficial-2-40-57.pdf",
+      "tipo": "edital oficial publicado no Diário Oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital 002-2026/DP/CBMSC - Curso de Formação de Oficiais",
+      "url": "https://dhg1h5j42swfq.cloudfront.net/2026/01/27182630/edital-cbm-sc-2026-oficial.pdf",
+      "tipo": "edital oficial publicado no Diário Oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "SSP/SC - Com salários de até R$ 21 mil, Corpo de Bombeiros Militar de SC abre inscrições",
+      "url": "https://ssp.sc.gov.br/com-salarios-de-ate-r-21-mil-corpo-de-bombeiros-militar-de-sc-abre-inscricoes-para-concurso-nesta-quarta/",
+      "tipo": "notícia oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 18.796, de 20 de dezembro de 2023",
+      "url": "https://www.lexml.gov.br/urn/urn:lex:br;santa.catarina:estadual:lei:2023-12-20;18796",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Página do concurso IDIB - CBMSC CFO 2026",
+      "url": "https://concurso.idib.org.br/Concurso.aspx?ID=336",
+      "tipo": "página da banca",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Os valores refletem o ingresso e o início da carreira em 2026.",
+    "Auxílio-alimentação de 550 foi identificado, mas não foi somado ao total.",
+    "Não foram localizadas, na pesquisa realizada, tabelas oficiais completas com todos os postos e graduações já consolidadas em uma única fonte oficial acessível.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

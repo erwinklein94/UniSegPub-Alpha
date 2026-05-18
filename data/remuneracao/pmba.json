@@ -1,0 +1,59 @@
+{
+  "instituicao_id": "pmba",
+  "instituicao_nome": "Polícia Militar da Bahia",
+  "sigla": "PMBA",
+  "uf": "BA",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da PMBA",
+  "resumo": "Foram localizadas fontes oficiais do Governo da Bahia informando reajustes remuneratórios para oficiais e praças da PMBA até 2026, com aumento linear de 7% sobre os soldos em 2025 e mais 2% em maio de 2026, além de reajustes em gratificações. Como a tabela oficial completa por posto não foi encontrada de forma íntegra em página oficial aberta durante a pesquisa, a tabela abaixo traz o valor confirmado de ingresso disponível e evita estimar postos sem publicação completa rastreável.",
+  "linhas": [
+    {
+      "cargo": "Soldado PM 1ª Classe",
+      "badge": "SD PM",
+      "remuneracao": 1666.56,
+      "beneficios": 0,
+      "total": 1666.56,
+      "classe": "Praças",
+      "criterio": "Soldo bruto mensal vigente em maio de 2026",
+      "benefDesc": "Não soma CET, GAPM, auxílio-fardamento nem outras gratificações",
+      "fonteKey": "pmba",
+      "fonteNome": "Lei nº 14.890/2025 e notícia oficial do Governo da Bahia sobre reajuste até 2026",
+      "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.ba.gov.br/comunicacao/noticias/2025-04/367939/governo-do-estado-propoe-ganhos-de-1476-ate-2026-para-oficiais-e-pracas-da",
+  "fontes": [
+    {
+      "titulo": "Governo do Estado propõe ganhos de 14,76% até 2026 para oficiais e praças da PM e Corpo de Bombeiros",
+      "url": "https://www.ba.gov.br/comunicacao/noticias/2025-04/367939/governo-do-estado-propoe-ganhos-de-1476-ate-2026-para-oficiais-e-pracas-da",
+      "tipo": "notícia oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governo do Estado propõe ganhos de 14,76% até 2026 para oficiais e praças da PM e Corpo de Bombeiros",
+      "url": "https://www.ba.gov.br/ssp/2025/04/25/governo-do-estado-propoe-ganhos-de-1476-ate-2026-para-oficiais-e-pracas-da-pm-e-corpo-de-bombeiros",
+      "tipo": "notícia oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 14.890 de 05 de maio de 2025",
+      "url": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf",
+      "tipo": "lei publicada em diário",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Tabela oficial completa por posto e graduação da PMBA não foi localizada de forma íntegra em página oficial aberta durante a pesquisa.",
+    "Valor listado refere-se ao soldo bruto mensal confirmado para Soldado, sem somar gratificações e adicionais.",
+    "Para ampliar a tabela com cabo, sargentos e oficiais, é necessária validação humana da íntegra dos anexos da Lei nº 14.890/2025 ou tabela oficial equivalente.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

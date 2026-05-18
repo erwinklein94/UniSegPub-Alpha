@@ -1,0 +1,143 @@
+{
+  "instituicao_id": "bmpa",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Pará",
+  "sigla": "BMPA",
+  "uf": "PA",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar do Pará",
+  "resumo": "Tabela com valores brutos mensais identificados em fonte oficial do Governo do Pará para a carreira militar estadual do CBMPA, com destaque para praças ativas e ingresso recente por concurso. Benefícios variáveis e verbas eventuais não foram somados.",
+  "linhas": [
+    {
+      "cargo": "Aluno Praça BM",
+      "badge": "CFP",
+      "remuneracao": 848.16,
+      "beneficios": 0,
+      "total": 848.16,
+      "classe": "Formação",
+      "criterio": "Remuneração bruta mensal durante o curso de formação.",
+      "benefDesc": "Auxílio-alimentação do edital não somado ao total.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Edital CFP CBMPA 2022",
+      "fonteUrl": "https://www.bombeiros.pa.gov.br/wp-content/uploads/2022/04/EDITAL-CFP-2022-BOMBEIRO-MILITAR-PARA.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Praça BM após o curso",
+      "badge": "INGRESSO",
+      "remuneracao": 3053.39,
+      "beneficios": 0,
+      "total": 3053.39,
+      "classe": "Ingresso",
+      "criterio": "Remuneração bruta mensal após conclusão do curso de formação.",
+      "benefDesc": "Auxílio-alimentação do edital não somado ao total.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Edital CFP CBMPA 2022",
+      "fonteUrl": "https://www.bombeiros.pa.gov.br/wp-content/uploads/2022/04/EDITAL-CFP-2022-BOMBEIRO-MILITAR-PARA.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Soldado",
+      "badge": "SD BM",
+      "remuneracao": 4375.8,
+      "beneficios": 0,
+      "total": 4375.8,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal do posto na tabela ativa.",
+      "benefDesc": "Auxílio-alimentação e verbas eventuais não somados.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Tabela de Remuneração Abril 2022 - CBMPA Ativo",
+      "fonteUrl": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Cabo",
+      "badge": "CB BM",
+      "remuneracao": 4460.8,
+      "beneficios": 0,
+      "total": 4460.8,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal do posto na tabela ativa.",
+      "benefDesc": "Auxílio-alimentação e verbas eventuais não somados.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Tabela de Remuneração Abril 2022 - CBMPA Ativo",
+      "fonteUrl": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "3º Sargento",
+      "badge": "3SGT BM",
+      "remuneracao": 4525.8,
+      "beneficios": 0,
+      "total": 4525.8,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal do posto na tabela ativa.",
+      "benefDesc": "Auxílio-alimentação e verbas eventuais não somados.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Tabela de Remuneração Abril 2022 - CBMPA Ativo",
+      "fonteUrl": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "2º Sargento",
+      "badge": "2SGT BM",
+      "remuneracao": 4590.8,
+      "beneficios": 0,
+      "total": 4590.8,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal do posto na tabela ativa.",
+      "benefDesc": "Auxílio-alimentação e verbas eventuais não somados.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Tabela de Remuneração Abril 2022 - CBMPA Ativo",
+      "fonteUrl": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "1º Sargento",
+      "badge": "1SGT BM",
+      "remuneracao": 4625.8,
+      "beneficios": 0,
+      "total": 4625.8,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal do posto na tabela ativa.",
+      "benefDesc": "Auxílio-alimentação e verbas eventuais não somados.",
+      "fonteKey": "bmpa",
+      "fonteNome": "Tabela de Remuneração Abril 2022 - CBMPA Ativo",
+      "fonteUrl": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+  "fontes": [
+    {
+      "titulo": "Tabela de Remuneração Abril 2022 - CBMPA Ativo",
+      "url": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+      "tipo": "tabela salarial oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital CFP CBMPA 2022",
+      "url": "https://www.bombeiros.pa.gov.br/wp-content/uploads/2022/04/EDITAL-CFP-2022-BOMBEIRO-MILITAR-PARA.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Remuneração e Diárias - CBMPA",
+      "url": "https://www.bombeiros.pa.gov.br/remuneracao-e-diarias/",
+      "tipo": "pagina oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Tabela oficial localizada com valores claros para praças ativas, mas a pesquisa não retornou de forma confiável a mesma tabela completa de oficiais no recorte consultado.",
+    "Os valores mais completos encontrados em fonte oficial são de abril de 2022 para a tabela ativa e podem ter sofrido reajustes posteriores.",
+    "No ingresso por concurso, o edital informa também auxílio-alimentação, mas ele não foi somado ao total para evitar inflar a remuneração.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

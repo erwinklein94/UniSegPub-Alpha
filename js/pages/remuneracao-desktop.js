@@ -44,7 +44,8 @@
     filter: 'todos',
     sort: 'hierarquia',
     search: '',
-    page: 1
+    page: 1,
+    requestedInst: DEFAULT_INST
   };
 
   const friendlyNames = {
@@ -176,17 +177,27 @@
   }
 
   function loadRows(inst) {
+    if (window.REMUNERACAO_AUTOMATIZADA && window.REMUNERACAO_AUTOMATIZADA[inst]) {
+      return window.REMUNERACAO_AUTOMATIZADA[inst].linhas.slice();
+    }
+    if (typeof window.gerarRemuneracaoTabelada === 'function') {
+      try {
+        const linhas = window.gerarRemuneracaoTabelada(inst) || [];
+        if (linhas.length) return linhas;
+      } catch (err) {
+        console.warn('Não foi possível carregar remuneração automática:', err);
+      }
+    }
     if (inst === 'pmesp') return pmespRows2026.slice();
-    if (typeof window.gerarRemuneracaoTabelada !== 'function') return [];
-    try { return window.gerarRemuneracaoTabelada(inst) || []; }
-    catch (err) { console.warn('Não foi possível carregar remuneração:', err); return []; }
+    return [];
   }
 
   function updateInstitutionUi() {
     const inst = state.inst;
     const name = optionName(inst);
-    const uf = ufByInst[inst] || 'BR';
-    const esfera = selectedOption(inst)?.dataset.esfera === 'federal' ? 'Federal' : 'Estadual';
+    const option = selectedOption(inst);
+    const uf = option?.dataset.uf || ufByInst[inst] || 'BR';
+    const esfera = option?.dataset.esfera === 'federal' ? 'Federal' : 'Estadual';
     const sig = sigla(inst);
 
     $('#remu-title-inst').textContent = name;
@@ -290,6 +301,10 @@
       if (!opt.value) { opt.hidden = false; return; }
       opt.hidden = Boolean(esfera) && opt.dataset.esfera !== esfera;
     });
+    Array.from(select.querySelectorAll('optgroup')).forEach(group => {
+      const visiveis = Array.from(group.querySelectorAll('option')).some(opt => !opt.hidden);
+      group.hidden = !visiveis;
+    });
     const current = selectedOption(select.value);
     if (current && current.hidden) select.value = '';
   }
@@ -314,6 +329,7 @@
   function init() {
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('inst') || $('#remu-filtro-instituicao')?.value || DEFAULT_INST;
+    state.requestedInst = requested;
     setInst(requested);
 
     $('#remu-filtro-esfera')?.addEventListener('change', () => {
@@ -331,6 +347,29 @@
       state.search = event.target.value;
       state.page = 1;
       renderTable();
+    });
+
+    document.addEventListener('remuneracao:json-carregado', event => {
+      const id = event.detail && event.detail.instituicao_id;
+      if (!id || id !== state.inst) return;
+      state.rows = loadRows(state.inst);
+      state.page = 1;
+      updateStats();
+      updateFilterCounts();
+      renderTable();
+    });
+
+    document.addEventListener('remuneracao:config-carregado', event => {
+      const config = event.detail && Array.isArray(event.detail.config) ? event.detail.config : [];
+      config.forEach(item => {
+        if (!item || !item.id) return;
+        const id = String(item.id).toLowerCase();
+        friendlyNames[id] = item.nome || item.sigla || id.toUpperCase();
+        ufByInst[id] = item.uf || ufByInst[id] || 'BR';
+      });
+      updateInstitutionOptions();
+      const alvo = state.requestedInst && selectedOption(state.requestedInst) ? state.requestedInst : state.inst;
+      setInst(alvo);
     });
 
     document.addEventListener('click', event => {

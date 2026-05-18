@@ -1,0 +1,93 @@
+{
+  "instituicao_id": "pmma",
+  "instituicao_nome": "Polícia Militar de Maranhão",
+  "sigla": "PMMA",
+  "uf": "MA",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da PMMA",
+  "resumo": "Tabela com subsídio bruto mensal dos cargos da Polícia Militar do Maranhão, usando a norma mais recente localizada para a carreira militar estadual e sem somar auxílio-alimentação ao total.",
+  "linhas": [
+    {
+      "cargo": "Soldado",
+      "badge": "SD",
+      "remuneracao": 6149.08,
+      "beneficios": 0,
+      "total": 6149.08,
+      "classe": "Praças",
+      "criterio": "Subsídio bruto mensal vigente",
+      "benefDesc": "Sem somar auxílio-alimentação e adicionais eventuais.",
+      "fonteKey": "pmma",
+      "fonteNome": "Medida Provisória nº 496/2025",
+      "fonteUrl": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7620",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Coronel",
+      "badge": "CEL",
+      "remuneracao": 21269.27,
+      "beneficios": 0,
+      "total": 21269.27,
+      "classe": "Oficiais",
+      "criterio": "Subsídio bruto mensal vigente",
+      "benefDesc": "Sem somar auxílio-alimentação e adicionais eventuais.",
+      "fonteKey": "pmma",
+      "fonteNome": "Medida Provisória nº 496/2025",
+      "fonteUrl": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7620",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Tenente-Coronel",
+      "badge": "TC",
+      "remuneracao": 17420.77,
+      "beneficios": 0,
+      "total": 17420.77,
+      "classe": "Oficiais",
+      "criterio": "Subsídio bruto mensal vigente",
+      "benefDesc": "Sem somar auxílio-alimentação e adicionais eventuais.",
+      "fonteKey": "pmma",
+      "fonteNome": "Medida Provisória nº 496/2025",
+      "fonteUrl": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7620",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7620",
+  "fontes": [
+    {
+      "titulo": "Medida Provisória nº 496, de 1º de julho de 2025",
+      "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7620",
+      "tipo": "legislação estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Tabela de Cargos e Funções do Portal da Transparência do Maranhão",
+      "url": "https://www.transparencia.ma.gov.br/wp/tabeladecargosefuncoes",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Ordinária nº 12.266, de 15 de maio de 2024",
+      "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7275",
+      "tipo": "legislação estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Remuneração de Servidores do Portal da Transparência do Maranhão",
+      "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "A norma oficial mais recente encontrada confirma a existência do Anexo Único com a tabela de subsídios, mas o anexo completo não ficou integralmente acessível no ambiente de pesquisa.",
+    "Foram confirmados com boa segurança os valores de Soldado, Tenente-Coronel e Coronel; os demais postos e graduações devem passar por revisão humana antes de publicação completa.",
+    "O auxílio-alimentação existe em lei própria da carreira, mas não foi somado aos totais desta tabela.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

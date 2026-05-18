@@ -1,6 +1,6 @@
 # Relatório simples de qualidade dos concursos
 
-Gerado em: 2026-05-17
+Gerado em: 2026-05-18
 
 ## Resumo
 

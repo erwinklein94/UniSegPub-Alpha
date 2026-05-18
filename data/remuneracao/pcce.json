@@ -1,0 +1,121 @@
+{
+  "instituicao_id": "pcce",
+  "instituicao_nome": "Polícia Civil do Estado do Ceará",
+  "sigla": "PCCE",
+  "uf": "CE",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da PCCE",
+  "resumo": "Tabela com valores brutos mensais por cargo da Polícia Civil do Estado do Ceará, priorizando subsídio legal e remuneração inicial de concurso recente. Para Oficial Investigador, foi usado o valor inicial do edital mais recente com revisão geral de 5% de 2026. Para Delegado, foram usados os subsídios por classe da lei da carreira, atualizados pela revisão geral de 5% de 2026.",
+  "linhas": [
+    {
+      "cargo": "Oficial Investigador de Polícia",
+      "badge": "OIP",
+      "remuneracao": 7069.35,
+      "beneficios": 0,
+      "total": 7069.35,
+      "classe": "Classe inicial",
+      "criterio": "Remuneração bruta mensal inicial",
+      "benefDesc": "Não soma auxílio-alimentação nem adicionais.",
+      "fonteKey": "pcce",
+      "fonteNome": "Edital do concurso para Oficial Investigador da PCCE e revisão geral de 2026",
+      "fonteUrl": "https://www.ceara.gov.br/wp-content/uploads/2025/04/Edital-Policia-Civil-2025-38-54-2.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia Civil - 1ª Classe",
+      "badge": "DPC 1CL",
+      "remuneracao": 17538.27,
+      "beneficios": 0,
+      "total": 17538.27,
+      "classe": "1ª Classe",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação nem verbas eventuais.",
+      "fonteKey": "pcce",
+      "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
+      "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia Civil - 2ª Classe",
+      "badge": "DPC 2CL",
+      "remuneracao": 19830.32,
+      "beneficios": 0,
+      "total": 19830.32,
+      "classe": "2ª Classe",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação nem verbas eventuais.",
+      "fonteKey": "pcce",
+      "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
+      "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia Civil - 3ª Classe",
+      "badge": "DPC 3CL",
+      "remuneracao": 22437.69,
+      "beneficios": 0,
+      "total": 22437.69,
+      "classe": "3ª Classe",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação nem verbas eventuais.",
+      "fonteKey": "pcce",
+      "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
+      "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia Civil - Classe Especial",
+      "badge": "DPC ESP",
+      "remuneracao": 25405.71,
+      "beneficios": 0,
+      "total": 25405.71,
+      "classe": "Classe Especial",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação nem verbas eventuais.",
+      "fonteKey": "pcce",
+      "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
+      "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.ceara.gov.br/wp-content/uploads/2025/04/Edital-Policia-Civil-2025-38-54-2.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital do concurso para Oficial Investigador de Polícia da PCCE",
+      "url": "https://www.ceara.gov.br/wp-content/uploads/2025/04/Edital-Policia-Civil-2025-38-54-2.pdf",
+      "tipo": "edital",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 17.389, de 26 de fevereiro de 2021, subsídio de Delegado de Polícia Civil",
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
+      "tipo": "lei",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei de revisão geral da remuneração dos servidores públicos estaduais do Ceará em 2026",
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/SERVIDORES%20P%C3%9ABLICOS%20E%20MILITARES",
+      "tipo": "lei",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Notícia oficial do Governo do Ceará sobre reajuste salarial de 5% em 2026",
+      "url": "https://www.ce.gov.br/2026/02/26/governo-do-ceara-anuncia-reajuste-salarial-e-do-auxilio-alimentacao-para-servidores-estaduais/",
+      "tipo": "noticia_oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Não localizei, com confirmação oficial clara e atual em 2026, uma tabela completa de subsídio por classe para Oficial Investigador além da remuneração inicial do concurso.",
+    "Os cargos antigos de Inspetor e Escrivão foram unificados em Oficial Investigador de Polícia, o que pode exigir consolidação editorial da página.",
+    "A revisão geral de 5% de 2026 foi aplicada aos valores-base identificados para estimar o bruto mensal vigente.",
+    "Classificação automática: Atualização forte (82/100)."
+  ]
+}

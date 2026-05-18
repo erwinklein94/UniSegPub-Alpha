@@ -1,0 +1,5394 @@
+[
+  {
+    "id": "prf",
+    "nome": "Polícia Rodoviária Federal",
+    "sigla": "PRF",
+    "uf": "BR",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/prf.json",
+    "arquivo_monitoramento": "data/remuneracao/prf-monitor.json",
+    "site_principal": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
+    "fontes_base": [
+      "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
+      "https://www.cebraspe.org.br/concursos/PRF_21"
+    ],
+    "dominios_oficiais": [
+      "cebraspe.org.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "prf",
+      "policial federal",
+      "federal",
+      "cebraspe"
+    ],
+    "consultas_sugeridas": [
+      "PRF remuneração tabela salarial BR",
+      "Polícia Rodoviária Federal salário soldado delegado agente bombeiro policial penal 2026",
+      "PRF subsídio vencimento remuneração bruto tabela oficial",
+      "PRF lei remuneração carreira segurança pública BR",
+      "PRF portal transparência remuneração cargo",
+      "PRF edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Rodoviária Federal",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcdf",
+    "nome": "Polícia Civil do Distrito Federal",
+    "sigla": "PCDF",
+    "uf": "DF",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcdf.json",
+    "arquivo_monitoramento": "data/remuneracao/pcdf-monitor.json",
+    "site_principal": "https://www.cebraspe.org.br/concursos/pc_df_26_delegado",
+    "fontes_base": [
+      "https://www.cebraspe.org.br/concursos/pc_df_26_delegado"
+    ],
+    "dominios_oficiais": [
+      "cebraspe.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcdf",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCDF remuneração tabela salarial DF",
+      "Polícia Civil do Distrito Federal salário soldado delegado agente bombeiro policial penal 2026",
+      "PCDF subsídio vencimento remuneração bruto tabela oficial",
+      "PCDF lei remuneração carreira segurança pública DF",
+      "PCDF portal transparência remuneração cargo",
+      "PCDF edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmesp",
+    "nome": "Polícia Militar do Estado de São Paulo",
+    "sigla": "PMESP",
+    "uf": "SP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmesp.json",
+    "arquivo_monitoramento": "data/remuneracao/pmesp-monitor.json",
+    "site_principal": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+    "fontes_base": [
+      "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+      "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2026/lei.complementar-18441-02.04.2026.html",
+      "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2015/lei.complementar-1262-01.07.2015.html"
+    ],
+    "dominios_oficiais": [
+      "sggd.sp.gov.br",
+      "al.sp.gov.br",
+      "sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmesp",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMESP remuneração total julho 2025 SGGD policial",
+      "PMESP salário soldado cabo sargento tenente capitão coronel RETP 2025",
+      "Lei Complementar 18.441 2026 PMESP vencimentos base RETP",
+      "Lei Complementar 1.262 2015 PMESP RETP remuneração policial militar SP",
+      "SGGD SP área policial PMESP total julho 2025 remuneração"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmsp",
+    "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+    "sigla": "CBPMESP",
+    "uf": "SP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmsp.json",
+    "arquivo_monitoramento": "data/remuneracao/bmsp-monitor.json",
+    "site_principal": "https://concursos.policiamilitar.sp.gov.br",
+    "fontes_base": [
+      "https://concursos.policiamilitar.sp.gov.br"
+    ],
+    "dominios_oficiais": [
+      "concursos.policiamilitar.sp.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmsp",
+      "cbpmesp",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "bombeiro",
+      "bombeiros"
+    ],
+    "consultas_sugeridas": [
+      "CBPMESP remuneração tabela salarial SP",
+      "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo salário soldado delegado agente bombeiro policial penal 2026",
+      "CBPMESP subsídio vencimento remuneração bruto tabela oficial",
+      "CBPMESP lei remuneração carreira segurança pública SP",
+      "CBPMESP portal transparência remuneração cargo",
+      "CBPMESP edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar / órgão da PMESP",
+    "concurso_compartilhado_com": "pmesp",
+    "observacao_automacao": "CBPMESP normalmente usa ingresso/carreira vinculada à PMESP; o motor pode reaproveitar dados da PMESP no modo econômico.",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcsp",
+    "nome": "Polícia Civil do Estado de São Paulo",
+    "sigla": "PCSP",
+    "uf": "SP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcsp.json",
+    "arquivo_monitoramento": "data/remuneracao/pcsp-monitor.json",
+    "site_principal": "https://www.policiacivil.sp.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.sp.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiacivil.sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcsp",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCSP remuneração tabela salarial SP",
+      "Polícia Civil do Estado de São Paulo salário soldado delegado agente bombeiro policial penal 2026",
+      "PCSP subsídio vencimento remuneração bruto tabela oficial",
+      "PCSP lei remuneração carreira segurança pública SP",
+      "PCSP portal transparência remuneração cargo",
+      "PCSP edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppsp",
+    "nome": "Polícia Penal do Estado de São Paulo",
+    "sigla": "PPSP",
+    "uf": "SP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppsp.json",
+    "arquivo_monitoramento": "data/remuneracao/ppsp-monitor.json",
+    "site_principal": "https://www.institutoaocp.org.br/concursos/664",
+    "fontes_base": [
+      "https://www.institutoaocp.org.br/concursos/664"
+    ],
+    "dominios_oficiais": [
+      "institutoaocp.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppsp",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ],
+    "consultas_sugeridas": [
+      "PPSP remuneração tabela salarial SP",
+      "Polícia Penal do Estado de São Paulo salário soldado delegado agente bombeiro policial penal 2026",
+      "PPSP subsídio vencimento remuneração bruto tabela oficial",
+      "PPSP lei remuneração carreira segurança pública SP",
+      "PPSP portal transparência remuneração cargo",
+      "PPSP edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmal",
+    "nome": "Polícia Militar do Estado de Alagoas",
+    "sigla": "PMAL",
+    "uf": "AL",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmal.json",
+    "arquivo_monitoramento": "data/remuneracao/pmal-monitor.json",
+    "site_principal": "https://www.cebraspe.org.br/concursos/pm_al_26",
+    "fontes_base": [
+      "https://www.cebraspe.org.br/concursos/pm_al_26"
+    ],
+    "dominios_oficiais": [
+      "cebraspe.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmal",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMAL remuneração tabela salarial AL",
+      "Polícia Militar do Estado de Alagoas salário soldado delegado agente bombeiro policial penal 2026",
+      "PMAL subsídio vencimento remuneração bruto tabela oficial",
+      "PMAL lei remuneração carreira segurança pública AL",
+      "PMAL portal transparência remuneração cargo",
+      "PMAL edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcal",
+    "nome": "Polícia Civil do Estado de Alagoas",
+    "sigla": "PCAL",
+    "uf": "AL",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcal.json",
+    "arquivo_monitoramento": "data/remuneracao/pcal-monitor.json",
+    "site_principal": "https://pc.al.gov.br/",
+    "fontes_base": [
+      "https://pc.al.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.al.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcal",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCAL remuneração tabela salarial AL",
+      "Polícia Civil do Estado de Alagoas salário soldado delegado agente bombeiro policial penal 2026",
+      "PCAL subsídio vencimento remuneração bruto tabela oficial",
+      "PCAL lei remuneração carreira segurança pública AL",
+      "PCAL portal transparência remuneração cargo",
+      "PCAL edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppal",
+    "nome": "Polícia Penal do Estado de Alagoas",
+    "sigla": "PPAL",
+    "uf": "AL",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppal.json",
+    "arquivo_monitoramento": "data/remuneracao/ppal-monitor.json",
+    "site_principal": "https://www.seris.al.gov.br/",
+    "fontes_base": [
+      "https://www.seris.al.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "seris.al.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppal",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ],
+    "consultas_sugeridas": [
+      "PPAL remuneração tabela salarial AL",
+      "Polícia Penal do Estado de Alagoas salário soldado delegado agente bombeiro policial penal 2026",
+      "PPAL subsídio vencimento remuneração bruto tabela oficial",
+      "PPAL lei remuneração carreira segurança pública AL",
+      "PPAL portal transparência remuneração cargo",
+      "PPAL edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmmg",
+    "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+    "sigla": "CBMMG",
+    "uf": "MG",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmmg.json",
+    "arquivo_monitoramento": "data/remuneracao/bmmg-monitor.json",
+    "site_principal": "https://www.bombeiros.mg.gov.br/concursos",
+    "fontes_base": [
+      "https://www.bombeiros.mg.gov.br/concursos"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.mg.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmmg",
+      "cbmmg",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMMG remuneração tabela salarial MG",
+      "Corpo de Bombeiros Militar de Minas Gerais salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMMG subsídio vencimento remuneração bruto tabela oficial",
+      "CBMMG lei remuneração carreira segurança pública MG",
+      "CBMMG portal transparência remuneração cargo",
+      "CBMMG edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppmg",
+    "nome": "Polícia Penal de Minas Gerais",
+    "sigla": "PPMG",
+    "uf": "MG",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppmg.json",
+    "arquivo_monitoramento": "data/remuneracao/ppmg-monitor.json",
+    "site_principal": "https://www.seguranca.mg.gov.br/",
+    "fontes_base": [
+      "https://www.seguranca.mg.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "seguranca.mg.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppmg",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ],
+    "consultas_sugeridas": [
+      "PPMG remuneração tabela salarial MG",
+      "Polícia Penal de Minas Gerais salário soldado delegado agente bombeiro policial penal 2026",
+      "PPMG subsídio vencimento remuneração bruto tabela oficial",
+      "PPMG lei remuneração carreira segurança pública MG",
+      "PPMG portal transparência remuneração cargo",
+      "PPMG edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmmg",
+    "nome": "Polícia Militar de Minas Gerais",
+    "sigla": "PMMG",
+    "uf": "MG",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmmg.json",
+    "arquivo_monitoramento": "data/remuneracao/pmmg-monitor.json",
+    "site_principal": "https://www.policiamilitar.mg.gov.br",
+    "fontes_base": [
+      "https://www.policiamilitar.mg.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiamilitar.mg.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmmg",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMMG remuneração tabela salarial MG",
+      "Polícia Militar de Minas Gerais salário soldado delegado agente bombeiro policial penal 2026",
+      "PMMG subsídio vencimento remuneração bruto tabela oficial",
+      "PMMG lei remuneração carreira segurança pública MG",
+      "PMMG portal transparência remuneração cargo",
+      "PMMG edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcmg",
+    "nome": "Polícia Civil de Minas Gerais",
+    "sigla": "PCMG",
+    "uf": "MG",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcmg.json",
+    "arquivo_monitoramento": "data/remuneracao/pcmg-monitor.json",
+    "site_principal": "https://www.policiacivil.mg.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.mg.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiacivil.mg.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcmg",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCMG remuneração tabela salarial MG",
+      "Polícia Civil de Minas Gerais salário soldado delegado agente bombeiro policial penal 2026",
+      "PCMG subsídio vencimento remuneração bruto tabela oficial",
+      "PCMG lei remuneração carreira segurança pública MG",
+      "PCMG portal transparência remuneração cargo",
+      "PCMG edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmpr",
+    "nome": "Corpo de Bombeiros Militar do Paraná",
+    "sigla": "CBMPR",
+    "uf": "PR",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmpr.json",
+    "arquivo_monitoramento": "data/remuneracao/bmpr-monitor.json",
+    "site_principal": "https://www.bombeiros.pr.gov.br/Pagina/Concursos",
+    "fontes_base": [
+      "https://www.bombeiros.pr.gov.br/Pagina/Concursos"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pr.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmpr",
+      "cbmpr",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMPR remuneração tabela salarial PR",
+      "Corpo de Bombeiros Militar do Paraná salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMPR subsídio vencimento remuneração bruto tabela oficial",
+      "CBMPR lei remuneração carreira segurança pública PR",
+      "CBMPR portal transparência remuneração cargo",
+      "CBMPR edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmpr",
+    "nome": "Polícia Militar do Paraná",
+    "sigla": "PMPR",
+    "uf": "PR",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmpr.json",
+    "arquivo_monitoramento": "data/remuneracao/pmpr-monitor.json",
+    "site_principal": "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento",
+    "fontes_base": [
+      "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pmpr.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmpr",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMPR remuneração tabela salarial PR",
+      "Polícia Militar do Paraná salário soldado delegado agente bombeiro policial penal 2026",
+      "PMPR subsídio vencimento remuneração bruto tabela oficial",
+      "PMPR lei remuneração carreira segurança pública PR",
+      "PMPR portal transparência remuneração cargo",
+      "PMPR edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcpr",
+    "nome": "Polícia Civil do Paraná",
+    "sigla": "PCPR",
+    "uf": "PR",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcpr.json",
+    "arquivo_monitoramento": "data/remuneracao/pcpr-monitor.json",
+    "site_principal": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
+    "fontes_base": [
+      "https://www.pcpr.pr.gov.br/Pagina/Concursos"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pcpr.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcpr",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPR remuneração tabela salarial PR",
+      "Polícia Civil do Paraná salário soldado delegado agente bombeiro policial penal 2026",
+      "PCPR subsídio vencimento remuneração bruto tabela oficial",
+      "PCPR lei remuneração carreira segurança pública PR",
+      "PCPR portal transparência remuneração cargo",
+      "PCPR edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmam",
+    "nome": "Polícia Militar do Estado do Amazonas",
+    "sigla": "PMAM",
+    "uf": "AM",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmam.json",
+    "arquivo_monitoramento": "data/remuneracao/pmam-monitor.json",
+    "site_principal": "https://conhecimento.fgv.br/concursos/pmam21",
+    "fontes_base": [
+      "https://conhecimento.fgv.br/concursos/pmam21"
+    ],
+    "dominios_oficiais": [
+      "conhecimento.fgv.br",
+      "fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmam",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMAM remuneração tabela salarial AM",
+      "Polícia Militar do Estado do Amazonas salário soldado delegado agente bombeiro policial penal 2026",
+      "PMAM subsídio vencimento remuneração bruto tabela oficial",
+      "PMAM lei remuneração carreira segurança pública AM",
+      "PMAM portal transparência remuneração cargo",
+      "PMAM edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcam",
+    "nome": "Polícia Civil do Estado do Amazonas",
+    "sigla": "PCAM",
+    "uf": "AM",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcam.json",
+    "arquivo_monitoramento": "data/remuneracao/pcam-monitor.json",
+    "site_principal": "https://conhecimento.fgv.br/concursos/pcam21",
+    "fontes_base": [
+      "https://conhecimento.fgv.br/concursos/pcam21"
+    ],
+    "dominios_oficiais": [
+      "conhecimento.fgv.br",
+      "fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcam",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCAM remuneração tabela salarial AM",
+      "Polícia Civil do Estado do Amazonas salário soldado delegado agente bombeiro policial penal 2026",
+      "PCAM subsídio vencimento remuneração bruto tabela oficial",
+      "PCAM lei remuneração carreira segurança pública AM",
+      "PCAM portal transparência remuneração cargo",
+      "PCAM edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmerj",
+    "nome": "Polícia Militar do Rio de Janeiro",
+    "sigla": "PMERJ",
+    "uf": "RJ",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmerj.json",
+    "arquivo_monitoramento": "data/remuneracao/pmerj-monitor.json",
+    "site_principal": "https://concursos.sepm.rj.gov.br",
+    "fontes_base": [
+      "https://concursos.sepm.rj.gov.br"
+    ],
+    "dominios_oficiais": [
+      "concursos.sepm.rj.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmerj",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMERJ remuneração tabela salarial RJ",
+      "Polícia Militar do Rio de Janeiro salário soldado delegado agente bombeiro policial penal 2026",
+      "PMERJ subsídio vencimento remuneração bruto tabela oficial",
+      "PMERJ lei remuneração carreira segurança pública RJ",
+      "PMERJ portal transparência remuneração cargo",
+      "PMERJ edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmrj",
+    "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+    "sigla": "CBMERJ",
+    "uf": "RJ",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmrj.json",
+    "arquivo_monitoramento": "data/remuneracao/bmrj-monitor.json",
+    "site_principal": "https://www.cbmerj.rj.gov.br/cursos-e-concursos/",
+    "fontes_base": [
+      "https://www.cbmerj.rj.gov.br/cursos-e-concursos/"
+    ],
+    "dominios_oficiais": [
+      "cbmerj.rj.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmrj",
+      "cbmerj",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMERJ remuneração tabela salarial RJ",
+      "Corpo de Bombeiros Militar do Estado do Rio de Janeiro salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMERJ subsídio vencimento remuneração bruto tabela oficial",
+      "CBMERJ lei remuneração carreira segurança pública RJ",
+      "CBMERJ portal transparência remuneração cargo",
+      "CBMERJ edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcerj",
+    "nome": "Polícia Civil do Rio de Janeiro",
+    "sigla": "PCERJ",
+    "uf": "RJ",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcerj.json",
+    "arquivo_monitoramento": "data/remuneracao/pcerj-monitor.json",
+    "site_principal": "https://www.policiacivil.rj.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.rj.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiacivil.rj.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcerj",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCERJ remuneração tabela salarial RJ",
+      "Polícia Civil do Rio de Janeiro salário soldado delegado agente bombeiro policial penal 2026",
+      "PCERJ subsídio vencimento remuneração bruto tabela oficial",
+      "PCERJ lei remuneração carreira segurança pública RJ",
+      "PCERJ portal transparência remuneração cargo",
+      "PCERJ edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmba",
+    "nome": "Polícia Militar da Bahia",
+    "sigla": "PMBA",
+    "uf": "BA",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmba.json",
+    "arquivo_monitoramento": "data/remuneracao/pmba-monitor.json",
+    "site_principal": "https://www.pm.ba.gov.br",
+    "fontes_base": [
+      "https://www.pm.ba.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.ba.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmba",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMBA remuneração tabela salarial BA",
+      "Polícia Militar da Bahia salário soldado delegado agente bombeiro policial penal 2026",
+      "PMBA subsídio vencimento remuneração bruto tabela oficial",
+      "PMBA lei remuneração carreira segurança pública BA",
+      "PMBA portal transparência remuneração cargo",
+      "PMBA edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcba",
+    "nome": "Polícia Civil da Bahia",
+    "sigla": "PCBA",
+    "uf": "BA",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcba.json",
+    "arquivo_monitoramento": "data/remuneracao/pcba-monitor.json",
+    "site_principal": "https://www.policiacivil.ba.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.ba.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiacivil.ba.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcba",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCBA remuneração tabela salarial BA",
+      "Polícia Civil da Bahia salário soldado delegado agente bombeiro policial penal 2026",
+      "PCBA subsídio vencimento remuneração bruto tabela oficial",
+      "PCBA lei remuneração carreira segurança pública BA",
+      "PCBA portal transparência remuneração cargo",
+      "PCBA edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmrs",
+    "nome": "Brigada Militar do Rio Grande do Sul",
+    "sigla": "PMRS",
+    "uf": "RS",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmrs.json",
+    "arquivo_monitoramento": "data/remuneracao/pmrs-monitor.json",
+    "site_principal": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+    "fontes_base": [
+      "https://www.brigadamilitar.rs.gov.br/concursos-2025"
+    ],
+    "dominios_oficiais": [
+      "brigadamilitar.rs.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmrs",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMRS remuneração tabela salarial RS",
+      "Brigada Militar do Rio Grande do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "PMRS subsídio vencimento remuneração bruto tabela oficial",
+      "PMRS lei remuneração carreira segurança pública RS",
+      "PMRS portal transparência remuneração cargo",
+      "PMRS edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcrs",
+    "nome": "Polícia Civil do Rio Grande do Sul",
+    "sigla": "PCRS",
+    "uf": "RS",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcrs.json",
+    "arquivo_monitoramento": "data/remuneracao/pcrs-monitor.json",
+    "site_principal": "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
+    "fontes_base": [
+      "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcrs",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRS remuneração tabela salarial RS",
+      "Polícia Civil do Rio Grande do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "PCRS subsídio vencimento remuneração bruto tabela oficial",
+      "PCRS lei remuneração carreira segurança pública RS",
+      "PCRS portal transparência remuneração cargo",
+      "PCRS edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmsc",
+    "nome": "Polícia Militar de Santa Catarina",
+    "sigla": "PMSC",
+    "uf": "SC",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmsc.json",
+    "arquivo_monitoramento": "data/remuneracao/pmsc-monitor.json",
+    "site_principal": "https://www.pm.sc.gov.br/concursos",
+    "fontes_base": [
+      "https://www.pm.sc.gov.br/concursos"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.sc.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmsc",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMSC remuneração tabela salarial SC",
+      "Polícia Militar de Santa Catarina salário soldado delegado agente bombeiro policial penal 2026",
+      "PMSC subsídio vencimento remuneração bruto tabela oficial",
+      "PMSC lei remuneração carreira segurança pública SC",
+      "PMSC portal transparência remuneração cargo",
+      "PMSC edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmsc",
+    "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+    "sigla": "CBMSC",
+    "uf": "SC",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmsc.json",
+    "arquivo_monitoramento": "data/remuneracao/bmsc-monitor.json",
+    "site_principal": "https://concurso.idib.org.br/",
+    "fontes_base": [
+      "https://concurso.idib.org.br/"
+    ],
+    "dominios_oficiais": [
+      "concurso.idib.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmsc",
+      "cbmsc",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMSC remuneração tabela salarial SC",
+      "Corpo de Bombeiros Militar de Santa Catarina salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMSC subsídio vencimento remuneração bruto tabela oficial",
+      "CBMSC lei remuneração carreira segurança pública SC",
+      "CBMSC portal transparência remuneração cargo",
+      "CBMSC edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcsc",
+    "nome": "Polícia Civil de Santa Catarina",
+    "sigla": "PCSC",
+    "uf": "SC",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcsc.json",
+    "arquivo_monitoramento": "data/remuneracao/pcsc-monitor.json",
+    "site_principal": "https://pc.sc.gov.br/?p=35166",
+    "fontes_base": [
+      "https://pc.sc.gov.br/?p=35166"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.sc.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcsc",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCSC remuneração tabela salarial SC",
+      "Polícia Civil de Santa Catarina salário soldado delegado agente bombeiro policial penal 2026",
+      "PCSC subsídio vencimento remuneração bruto tabela oficial",
+      "PCSC lei remuneração carreira segurança pública SC",
+      "PCSC portal transparência remuneração cargo",
+      "PCSC edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmes",
+    "nome": "Polícia Militar do Espírito Santo",
+    "sigla": "PMES",
+    "uf": "ES",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmes.json",
+    "arquivo_monitoramento": "data/remuneracao/pmes-monitor.json",
+    "site_principal": "https://pm.es.gov.br/concursos",
+    "fontes_base": [
+      "https://pm.es.gov.br/concursos"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmes",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMES remuneração tabela salarial ES",
+      "Polícia Militar do Espírito Santo salário soldado delegado agente bombeiro policial penal 2026",
+      "PMES subsídio vencimento remuneração bruto tabela oficial",
+      "PMES lei remuneração carreira segurança pública ES",
+      "PMES portal transparência remuneração cargo",
+      "PMES edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmes",
+    "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+    "sigla": "CBMES",
+    "uf": "ES",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmes.json",
+    "arquivo_monitoramento": "data/remuneracao/bmes-monitor.json",
+    "site_principal": "https://cb.es.gov.br/cfo2023",
+    "fontes_base": [
+      "https://cb.es.gov.br/cfo2023"
+    ],
+    "dominios_oficiais": [
+      "cb.es.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmes",
+      "cbmes",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMES remuneração tabela salarial ES",
+      "Corpo de Bombeiros Militar do Estado do Espírito Santo salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMES subsídio vencimento remuneração bruto tabela oficial",
+      "CBMES lei remuneração carreira segurança pública ES",
+      "CBMES portal transparência remuneração cargo",
+      "CBMES edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pces",
+    "nome": "Polícia Civil do Espírito Santo",
+    "sigla": "PCES",
+    "uf": "ES",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pces.json",
+    "arquivo_monitoramento": "data/remuneracao/pces-monitor.json",
+    "site_principal": "https://pc.es.gov.br/",
+    "fontes_base": [
+      "https://pc.es.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pces",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCES remuneração tabela salarial ES",
+      "Polícia Civil do Espírito Santo salário soldado delegado agente bombeiro policial penal 2026",
+      "PCES subsídio vencimento remuneração bruto tabela oficial",
+      "PCES lei remuneração carreira segurança pública ES",
+      "PCES portal transparência remuneração cargo",
+      "PCES edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmms",
+    "nome": "Polícia Militar de Mato Grosso do Sul",
+    "sigla": "PMMS",
+    "uf": "MS",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmms.json",
+    "arquivo_monitoramento": "data/remuneracao/pmms-monitor.json",
+    "site_principal": "https://www.pm.ms.gov.br/",
+    "fontes_base": [
+      "https://www.pm.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.ms.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmms",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMMS remuneração tabela salarial MS",
+      "Polícia Militar de Mato Grosso do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "PMMS subsídio vencimento remuneração bruto tabela oficial",
+      "PMMS lei remuneração carreira segurança pública MS",
+      "PMMS portal transparência remuneração cargo",
+      "PMMS edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmms",
+    "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+    "sigla": "CBMMS",
+    "uf": "MS",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmms.json",
+    "arquivo_monitoramento": "data/remuneracao/bmms-monitor.json",
+    "site_principal": "https://www.concursos.ms.gov.br/",
+    "fontes_base": [
+      "https://www.concursos.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "concursos.ms.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmms",
+      "cbmms",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMMS remuneração tabela salarial MS",
+      "Corpo de Bombeiros Militar de Mato Grosso do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMMS subsídio vencimento remuneração bruto tabela oficial",
+      "CBMMS lei remuneração carreira segurança pública MS",
+      "CBMMS portal transparência remuneração cargo",
+      "CBMMS edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcms",
+    "nome": "Polícia Civil de Mato Grosso do Sul",
+    "sigla": "PCMS",
+    "uf": "MS",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcms.json",
+    "arquivo_monitoramento": "data/remuneracao/pcms-monitor.json",
+    "site_principal": "https://www.pc.ms.gov.br/",
+    "fontes_base": [
+      "https://www.pc.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.ms.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcms",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCMS remuneração tabela salarial MS",
+      "Polícia Civil de Mato Grosso do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "PCMS subsídio vencimento remuneração bruto tabela oficial",
+      "PCMS lei remuneração carreira segurança pública MS",
+      "PCMS portal transparência remuneração cargo",
+      "PCMS edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppms",
+    "nome": "Polícia Penal de Mato Grosso do Sul",
+    "sigla": "PPMS",
+    "uf": "MS",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppms.json",
+    "arquivo_monitoramento": "data/remuneracao/ppms-monitor.json",
+    "site_principal": "https://www.agepen.ms.gov.br/",
+    "fontes_base": [
+      "https://www.agepen.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "agepen.ms.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppms",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ],
+    "consultas_sugeridas": [
+      "PPMS remuneração tabela salarial MS",
+      "Polícia Penal de Mato Grosso do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "PPMS subsídio vencimento remuneração bruto tabela oficial",
+      "PPMS lei remuneração carreira segurança pública MS",
+      "PPMS portal transparência remuneração cargo",
+      "PPMS edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmmt",
+    "nome": "Polícia Militar de Mato Grosso",
+    "sigla": "PMMT",
+    "uf": "MT",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmmt.json",
+    "arquivo_monitoramento": "data/remuneracao/pmmt-monitor.json",
+    "site_principal": "https://www.pm.mt.gov.br/",
+    "fontes_base": [
+      "https://www.pm.mt.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmmt",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMMT remuneração tabela salarial MT",
+      "Polícia Militar de Mato Grosso salário soldado delegado agente bombeiro policial penal 2026",
+      "PMMT subsídio vencimento remuneração bruto tabela oficial",
+      "PMMT lei remuneração carreira segurança pública MT",
+      "PMMT portal transparência remuneração cargo",
+      "PMMT edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmmt",
+    "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+    "sigla": "CBMMT",
+    "uf": "MT",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmmt.json",
+    "arquivo_monitoramento": "data/remuneracao/bmmt-monitor.json",
+    "site_principal": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
+    "fontes_base": [
+      "https://www.bombeiros.mt.gov.br/concursos-e-seletivos"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.mt.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmmt",
+      "cbmmt",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMMT remuneração tabela salarial MT",
+      "Corpo de Bombeiros Militar do Estado de Mato Grosso salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMMT subsídio vencimento remuneração bruto tabela oficial",
+      "CBMMT lei remuneração carreira segurança pública MT",
+      "CBMMT portal transparência remuneração cargo",
+      "CBMMT edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcmt",
+    "nome": "Polícia Judiciária Civil de Mato Grosso",
+    "sigla": "PCMT",
+    "uf": "MT",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcmt.json",
+    "arquivo_monitoramento": "data/remuneracao/pcmt-monitor.json",
+    "site_principal": "https://www.pjc.mt.gov.br/",
+    "fontes_base": [
+      "https://www.pjc.mt.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pjc.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcmt",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCMT remuneração tabela salarial MT",
+      "Polícia Judiciária Civil de Mato Grosso salário soldado delegado agente bombeiro policial penal 2026",
+      "PCMT subsídio vencimento remuneração bruto tabela oficial",
+      "PCMT lei remuneração carreira segurança pública MT",
+      "PCMT portal transparência remuneração cargo",
+      "PCMT edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppmt",
+    "nome": "Polícia Penal de Mato Grosso",
+    "sigla": "PPMT",
+    "uf": "MT",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppmt.json",
+    "arquivo_monitoramento": "data/remuneracao/ppmt-monitor.json",
+    "site_principal": "https://www.sejus.mt.gov.br/",
+    "fontes_base": [
+      "https://www.sejus.mt.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "sejus.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppmt",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ],
+    "consultas_sugeridas": [
+      "PPMT remuneração tabela salarial MT",
+      "Polícia Penal de Mato Grosso salário soldado delegado agente bombeiro policial penal 2026",
+      "PPMT subsídio vencimento remuneração bruto tabela oficial",
+      "PPMT lei remuneração carreira segurança pública MT",
+      "PPMT portal transparência remuneração cargo",
+      "PPMT edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmac",
+    "nome": "Polícia Militar do Acre",
+    "sigla": "PMAC",
+    "uf": "AC",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmac.json",
+    "arquivo_monitoramento": "data/remuneracao/pmac-monitor.json",
+    "site_principal": "https://conhecimento.fgv.br/concursos/pmac23",
+    "fontes_base": [
+      "https://conhecimento.fgv.br/concursos/pmac23"
+    ],
+    "dominios_oficiais": [
+      "conhecimento.fgv.br",
+      "fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmac",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMAC remuneração tabela salarial AC",
+      "Polícia Militar do Acre salário soldado delegado agente bombeiro policial penal 2026",
+      "PMAC subsídio vencimento remuneração bruto tabela oficial",
+      "PMAC lei remuneração carreira segurança pública AC",
+      "PMAC portal transparência remuneração cargo",
+      "PMAC edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcac",
+    "nome": "Polícia Civil do Acre",
+    "sigla": "PCAC",
+    "uf": "AC",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcac.json",
+    "arquivo_monitoramento": "data/remuneracao/pcac-monitor.json",
+    "site_principal": "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/",
+    "fontes_base": [
+      "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/"
+    ],
+    "dominios_oficiais": [
+      "agencia.ac.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcac",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCAC remuneração tabela salarial AC",
+      "Polícia Civil do Acre salário soldado delegado agente bombeiro policial penal 2026",
+      "PCAC subsídio vencimento remuneração bruto tabela oficial",
+      "PCAC lei remuneração carreira segurança pública AC",
+      "PCAC portal transparência remuneração cargo",
+      "PCAC edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppac",
+    "nome": "Polícia Penal do Acre",
+    "sigla": "PPAC",
+    "uf": "AC",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppac.json",
+    "arquivo_monitoramento": "data/remuneracao/ppac-monitor.json",
+    "site_principal": "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/",
+    "fontes_base": [
+      "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "sead.ac.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppac",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ],
+    "consultas_sugeridas": [
+      "PPAC remuneração tabela salarial AC",
+      "Polícia Penal do Acre salário soldado delegado agente bombeiro policial penal 2026",
+      "PPAC subsídio vencimento remuneração bruto tabela oficial",
+      "PPAC lei remuneração carreira segurança pública AC",
+      "PPAC portal transparência remuneração cargo",
+      "PPAC edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
+  },
+  {
+    "id": "pmap",
+    "nome": "Polícia Militar do Estado do Amapá",
+    "sigla": "PMAP",
+    "uf": "AP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmap.json",
+    "arquivo_monitoramento": "data/remuneracao/pmap-monitor.json",
+    "site_principal": "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
+    "fontes_base": [
+      "https://sead.portal.ap.gov.br/concursos/vigentes/24027"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "sead.portal.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmap",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca"
+    ],
+    "consultas_sugeridas": [
+      "PMAP remuneração tabela salarial AP",
+      "Polícia Militar do Estado do Amapá salário soldado delegado agente bombeiro policial penal 2026",
+      "PMAP subsídio vencimento remuneração bruto tabela oficial",
+      "PMAP lei remuneração carreira segurança pública AP",
+      "PMAP portal transparência remuneração cargo",
+      "PMAP edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcap",
+    "nome": "Polícia Civil do Estado do Amapá",
+    "sigla": "PCAP",
+    "uf": "AP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcap.json",
+    "arquivo_monitoramento": "data/remuneracao/pcap-monitor.json",
+    "site_principal": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
+    "fontes_base": [
+      "https://sead.portal.ap.gov.br/concursos/vigentes/3736"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "sead.portal.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcap",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCAP remuneração tabela salarial AP",
+      "Polícia Civil do Estado do Amapá salário soldado delegado agente bombeiro policial penal 2026",
+      "PCAP subsídio vencimento remuneração bruto tabela oficial",
+      "PCAP lei remuneração carreira segurança pública AP",
+      "PCAP portal transparência remuneração cargo",
+      "PCAP edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "bmap",
+    "nome": "Corpo de Bombeiros Militar do Amapá",
+    "sigla": "CBMAP",
+    "uf": "AP",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmap.json",
+    "arquivo_monitoramento": "data/remuneracao/bmap-monitor.json",
+    "site_principal": "https://bombeiros.portal.ap.gov.br/",
+    "fontes_base": [
+      "https://bombeiros.portal.ap.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.portal.ap.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmap",
+      "cbmap",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ],
+    "consultas_sugeridas": [
+      "CBMAP remuneração tabela salarial AP",
+      "Corpo de Bombeiros Militar do Amapá salário soldado delegado agente bombeiro policial penal 2026",
+      "CBMAP subsídio vencimento remuneração bruto tabela oficial",
+      "CBMAP lei remuneração carreira segurança pública AP",
+      "CBMAP portal transparência remuneração cargo",
+      "CBMAP edital remuneração cargo inicial"
+    ],
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
+  },
+  {
+    "id": "pcce",
+    "nome": "Polícia Civil do Estado do Ceará",
+    "sigla": "PCCE",
+    "uf": "CE",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcce.json",
+    "arquivo_monitoramento": "data/remuneracao/pcce-monitor.json",
+    "site_principal": "https://www.cev.uece.br/oippcce/",
+    "fontes_base": [
+      "https://www.cev.uece.br/oippcce/"
+    ],
+    "dominios_oficiais": [
+      "cev.uece.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcce",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCCE remuneração tabela salarial CE",
+      "Polícia Civil do Estado do Ceará salário soldado delegado agente bombeiro policial penal 2026",
+      "PCCE subsídio vencimento remuneração bruto tabela oficial",
+      "PCCE lei remuneração carreira segurança pública CE",
+      "PCCE portal transparência remuneração cargo",
+      "PCCE edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
+  },
+  {
+    "id": "pf",
+    "nome": "Polícia Federal",
+    "sigla": "PF",
+    "uf": "BR",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pf.json",
+    "arquivo_monitoramento": "data/remuneracao/pf-monitor.json",
+    "site_principal": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+    "fontes_base": [
+      "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+      "https://www.cebraspe.org.br/concursos/PF_25"
+    ],
+    "dominios_oficiais": [
+      "cebraspe.org.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pf",
+      "policial federal",
+      "federal",
+      "cebraspe"
+    ],
+    "consultas_sugeridas": [
+      "PF remuneração tabela salarial BR",
+      "Polícia Federal salário soldado delegado agente bombeiro policial penal 2026",
+      "PF subsídio vencimento remuneração bruto tabela oficial",
+      "PF lei remuneração carreira segurança pública BR",
+      "PF portal transparência remuneração cargo",
+      "PF edital remuneração cargo inicial"
+    ],
+    "tipo": "Polícia Federal / Polícia Judiciária da União",
+    "fila_unificada": true
+  },
+  {
+    "id": "ppam",
+    "nome": "Polícia Penal de Amazonas",
+    "sigla": "PPAM",
+    "uf": "AM",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppam.json",
+    "arquivo_monitoramento": "data/remuneracao/ppam-monitor.json",
+    "site_principal": "https://www.am.gov.br",
+    "fontes_base": [
+      "https://www.am.gov.br",
+      "https://www.policiapenal.am.gov.br",
+      "https://www.seap.am.gov.br"
+    ],
+    "dominios_oficiais": [
+      "am.gov.br",
+      "gov.br",
+      "policiapenal.am.gov.br",
+      "seap.am.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppam",
+      "PPAM",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPAM remuneração tabela salarial AM",
+      "Polícia Penal de Amazonas salário soldado delegado agente bombeiro policial penal 2026",
+      "PPAM subsídio vencimento remuneração bruto tabela oficial",
+      "PPAM lei remuneração carreira segurança pública AM",
+      "PPAM portal transparência remuneração cargo",
+      "PPAM edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppap",
+    "nome": "Polícia Penal de Amapá",
+    "sigla": "PPAP",
+    "uf": "AP",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppap.json",
+    "arquivo_monitoramento": "data/remuneracao/ppap-monitor.json",
+    "site_principal": "https://www.ap.gov.br",
+    "fontes_base": [
+      "https://www.ap.gov.br",
+      "https://www.policiapenal.ap.gov.br",
+      "https://www.seap.ap.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ap.gov.br",
+      "gov.br",
+      "policiapenal.ap.gov.br",
+      "seap.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppap",
+      "PPAP",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPAP remuneração tabela salarial AP",
+      "Polícia Penal de Amapá salário soldado delegado agente bombeiro policial penal 2026",
+      "PPAP subsídio vencimento remuneração bruto tabela oficial",
+      "PPAP lei remuneração carreira segurança pública AP",
+      "PPAP portal transparência remuneração cargo",
+      "PPAP edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmce",
+    "nome": "Polícia Militar de Ceará",
+    "sigla": "PMCE",
+    "uf": "CE",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmce.json",
+    "arquivo_monitoramento": "data/remuneracao/pmce-monitor.json",
+    "site_principal": "https://www.pm.ce.gov.br",
+    "fontes_base": [
+      "https://www.pm.ce.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ce.gov.br",
+      "gov.br",
+      "pm.ce.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmce",
+      "PMCE",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMCE remuneração tabela salarial CE",
+      "Polícia Militar de Ceará salário soldado delegado agente bombeiro policial penal 2026",
+      "PMCE subsídio vencimento remuneração bruto tabela oficial",
+      "PMCE lei remuneração carreira segurança pública CE",
+      "PMCE portal transparência remuneração cargo",
+      "PMCE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppce",
+    "nome": "Polícia Penal de Ceará",
+    "sigla": "PPCE",
+    "uf": "CE",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppce.json",
+    "arquivo_monitoramento": "data/remuneracao/ppce-monitor.json",
+    "site_principal": "https://www.ce.gov.br",
+    "fontes_base": [
+      "https://www.ce.gov.br",
+      "https://www.policiapenal.ce.gov.br",
+      "https://www.seap.ce.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ce.gov.br",
+      "gov.br",
+      "policiapenal.ce.gov.br",
+      "seap.ce.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppce",
+      "PPCE",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPCE remuneração tabela salarial CE",
+      "Polícia Penal de Ceará salário soldado delegado agente bombeiro policial penal 2026",
+      "PPCE subsídio vencimento remuneração bruto tabela oficial",
+      "PPCE lei remuneração carreira segurança pública CE",
+      "PPCE portal transparência remuneração cargo",
+      "PPCE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmdf",
+    "nome": "Polícia Militar de Distrito Federal",
+    "sigla": "PMDF",
+    "uf": "DF",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmdf.json",
+    "arquivo_monitoramento": "data/remuneracao/pmdf-monitor.json",
+    "site_principal": "https://www.pmdf.df.gov.br",
+    "fontes_base": [
+      "https://www.pmdf.df.gov.br"
+    ],
+    "dominios_oficiais": [
+      "df.gov.br",
+      "gov.br",
+      "pmdf.df.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmdf",
+      "PMDF",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMDF remuneração tabela salarial DF",
+      "Polícia Militar de Distrito Federal salário soldado delegado agente bombeiro policial penal 2026",
+      "PMDF subsídio vencimento remuneração bruto tabela oficial",
+      "PMDF lei remuneração carreira segurança pública DF",
+      "PMDF portal transparência remuneração cargo",
+      "PMDF edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppdf",
+    "nome": "Polícia Penal de Distrito Federal",
+    "sigla": "PPDF",
+    "uf": "DF",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppdf.json",
+    "arquivo_monitoramento": "data/remuneracao/ppdf-monitor.json",
+    "site_principal": "https://www.seape.df.gov.br",
+    "fontes_base": [
+      "https://www.seape.df.gov.br"
+    ],
+    "dominios_oficiais": [
+      "df.gov.br",
+      "gov.br",
+      "seape.df.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppdf",
+      "PPDF",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPDF remuneração tabela salarial DF",
+      "Polícia Penal de Distrito Federal salário soldado delegado agente bombeiro policial penal 2026",
+      "PPDF subsídio vencimento remuneração bruto tabela oficial",
+      "PPDF lei remuneração carreira segurança pública DF",
+      "PPDF portal transparência remuneração cargo",
+      "PPDF edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmgo",
+    "nome": "Polícia Militar de Goiás",
+    "sigla": "PMGO",
+    "uf": "GO",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmgo.json",
+    "arquivo_monitoramento": "data/remuneracao/pmgo-monitor.json",
+    "site_principal": "https://www.pm.go.gov.br",
+    "fontes_base": [
+      "https://www.pm.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "go.gov.br",
+      "gov.br",
+      "pm.go.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmgo",
+      "PMGO",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMGO remuneração tabela salarial GO",
+      "Polícia Militar de Goiás salário soldado delegado agente bombeiro policial penal 2026",
+      "PMGO subsídio vencimento remuneração bruto tabela oficial",
+      "PMGO lei remuneração carreira segurança pública GO",
+      "PMGO portal transparência remuneração cargo",
+      "PMGO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcgo",
+    "nome": "Polícia Civil de Goiás",
+    "sigla": "PCGO",
+    "uf": "GO",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcgo.json",
+    "arquivo_monitoramento": "data/remuneracao/pcgo-monitor.json",
+    "site_principal": "https://www.policiacivil.go.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "go.gov.br",
+      "gov.br",
+      "policiacivil.go.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcgo",
+      "PCGO",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCGO remuneração tabela salarial GO",
+      "Polícia Civil de Goiás salário soldado delegado agente bombeiro policial penal 2026",
+      "PCGO subsídio vencimento remuneração bruto tabela oficial",
+      "PCGO lei remuneração carreira segurança pública GO",
+      "PCGO portal transparência remuneração cargo",
+      "PCGO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppgo",
+    "nome": "Polícia Penal de Goiás",
+    "sigla": "PPGO",
+    "uf": "GO",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppgo.json",
+    "arquivo_monitoramento": "data/remuneracao/ppgo-monitor.json",
+    "site_principal": "https://www.go.gov.br",
+    "fontes_base": [
+      "https://www.go.gov.br",
+      "https://www.policiapenal.go.gov.br",
+      "https://www.seap.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "go.gov.br",
+      "gov.br",
+      "policiapenal.go.gov.br",
+      "seap.go.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppgo",
+      "PPGO",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPGO remuneração tabela salarial GO",
+      "Polícia Penal de Goiás salário soldado delegado agente bombeiro policial penal 2026",
+      "PPGO subsídio vencimento remuneração bruto tabela oficial",
+      "PPGO lei remuneração carreira segurança pública GO",
+      "PPGO portal transparência remuneração cargo",
+      "PPGO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmma",
+    "nome": "Polícia Militar de Maranhão",
+    "sigla": "PMMA",
+    "uf": "MA",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmma.json",
+    "arquivo_monitoramento": "data/remuneracao/pmma-monitor.json",
+    "site_principal": "https://www.pm.ma.gov.br",
+    "fontes_base": [
+      "https://www.pm.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "ma.gov.br",
+      "pm.ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmma",
+      "PMMA",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMMA remuneração tabela salarial MA",
+      "Polícia Militar de Maranhão salário soldado delegado agente bombeiro policial penal 2026",
+      "PMMA subsídio vencimento remuneração bruto tabela oficial",
+      "PMMA lei remuneração carreira segurança pública MA",
+      "PMMA portal transparência remuneração cargo",
+      "PMMA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcma",
+    "nome": "Polícia Civil de Maranhão",
+    "sigla": "PCMA",
+    "uf": "MA",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcma.json",
+    "arquivo_monitoramento": "data/remuneracao/pcma-monitor.json",
+    "site_principal": "https://www.policiacivil.ma.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "ma.gov.br",
+      "policiacivil.ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcma",
+      "PCMA",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCMA remuneração tabela salarial MA",
+      "Polícia Civil de Maranhão salário soldado delegado agente bombeiro policial penal 2026",
+      "PCMA subsídio vencimento remuneração bruto tabela oficial",
+      "PCMA lei remuneração carreira segurança pública MA",
+      "PCMA portal transparência remuneração cargo",
+      "PCMA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppma",
+    "nome": "Polícia Penal de Maranhão",
+    "sigla": "PPMA",
+    "uf": "MA",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppma.json",
+    "arquivo_monitoramento": "data/remuneracao/ppma-monitor.json",
+    "site_principal": "https://www.ma.gov.br",
+    "fontes_base": [
+      "https://www.ma.gov.br",
+      "https://www.policiapenal.ma.gov.br",
+      "https://www.seap.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "ma.gov.br",
+      "policiapenal.ma.gov.br",
+      "seap.ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppma",
+      "PPMA",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPMA remuneração tabela salarial MA",
+      "Polícia Penal de Maranhão salário soldado delegado agente bombeiro policial penal 2026",
+      "PPMA subsídio vencimento remuneração bruto tabela oficial",
+      "PPMA lei remuneração carreira segurança pública MA",
+      "PPMA portal transparência remuneração cargo",
+      "PPMA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmpa",
+    "nome": "Polícia Militar de Pará",
+    "sigla": "PMPA",
+    "uf": "PA",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmpa.json",
+    "arquivo_monitoramento": "data/remuneracao/pmpa-monitor.json",
+    "site_principal": "https://www.pm.pa.gov.br",
+    "fontes_base": [
+      "https://www.pm.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pa.gov.br",
+      "pm.pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpa",
+      "PMPA",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPA remuneração tabela salarial PA",
+      "Polícia Militar de Pará salário soldado delegado agente bombeiro policial penal 2026",
+      "PMPA subsídio vencimento remuneração bruto tabela oficial",
+      "PMPA lei remuneração carreira segurança pública PA",
+      "PMPA portal transparência remuneração cargo",
+      "PMPA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcpa",
+    "nome": "Polícia Civil de Pará",
+    "sigla": "PCPA",
+    "uf": "PA",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcpa.json",
+    "arquivo_monitoramento": "data/remuneracao/pcpa-monitor.json",
+    "site_principal": "https://www.policiacivil.pa.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pa.gov.br",
+      "policiacivil.pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpa",
+      "PCPA",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPA remuneração tabela salarial PA",
+      "Polícia Civil de Pará salário soldado delegado agente bombeiro policial penal 2026",
+      "PCPA subsídio vencimento remuneração bruto tabela oficial",
+      "PCPA lei remuneração carreira segurança pública PA",
+      "PCPA portal transparência remuneração cargo",
+      "PCPA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pppa",
+    "nome": "Polícia Penal de Pará",
+    "sigla": "PPPA",
+    "uf": "PA",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pppa.json",
+    "arquivo_monitoramento": "data/remuneracao/pppa-monitor.json",
+    "site_principal": "https://www.pa.gov.br",
+    "fontes_base": [
+      "https://www.pa.gov.br",
+      "https://www.policiapenal.pa.gov.br",
+      "https://www.seap.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pa.gov.br",
+      "policiapenal.pa.gov.br",
+      "seap.pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppa",
+      "PPPA",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPA remuneração tabela salarial PA",
+      "Polícia Penal de Pará salário soldado delegado agente bombeiro policial penal 2026",
+      "PPPA subsídio vencimento remuneração bruto tabela oficial",
+      "PPPA lei remuneração carreira segurança pública PA",
+      "PPPA portal transparência remuneração cargo",
+      "PPPA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmpb",
+    "nome": "Polícia Militar de Paraíba",
+    "sigla": "PMPB",
+    "uf": "PB",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmpb.json",
+    "arquivo_monitoramento": "data/remuneracao/pmpb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.pm.pb.gov.br",
+      "https://www.pmpb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pb.gov.br",
+      "pm.pb.gov.br",
+      "pmpb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpb",
+      "PMPB",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPB remuneração tabela salarial PB",
+      "Polícia Militar de Paraíba salário soldado delegado agente bombeiro policial penal 2026",
+      "PMPB subsídio vencimento remuneração bruto tabela oficial",
+      "PMPB lei remuneração carreira segurança pública PB",
+      "PMPB portal transparência remuneração cargo",
+      "PMPB edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcpb",
+    "nome": "Polícia Civil de Paraíba",
+    "sigla": "PCPB",
+    "uf": "PB",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcpb.json",
+    "arquivo_monitoramento": "data/remuneracao/pcpb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.pc.pb.gov.br",
+      "https://www.policiacivil.pb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pb.gov.br",
+      "pc.pb.gov.br",
+      "policiacivil.pb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpb",
+      "PCPB",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPB remuneração tabela salarial PB",
+      "Polícia Civil de Paraíba salário soldado delegado agente bombeiro policial penal 2026",
+      "PCPB subsídio vencimento remuneração bruto tabela oficial",
+      "PCPB lei remuneração carreira segurança pública PB",
+      "PCPB portal transparência remuneração cargo",
+      "PCPB edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pppb",
+    "nome": "Polícia Penal de Paraíba",
+    "sigla": "PPPB",
+    "uf": "PB",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pppb.json",
+    "arquivo_monitoramento": "data/remuneracao/pppb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.policiapenal.pb.gov.br",
+      "https://www.seap.pb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pb.gov.br",
+      "policiapenal.pb.gov.br",
+      "seap.pb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppb",
+      "PPPB",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPB remuneração tabela salarial PB",
+      "Polícia Penal de Paraíba salário soldado delegado agente bombeiro policial penal 2026",
+      "PPPB subsídio vencimento remuneração bruto tabela oficial",
+      "PPPB lei remuneração carreira segurança pública PB",
+      "PPPB portal transparência remuneração cargo",
+      "PPPB edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmpe",
+    "nome": "Polícia Militar de Pernambuco",
+    "sigla": "PMPE",
+    "uf": "PE",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmpe.json",
+    "arquivo_monitoramento": "data/remuneracao/pmpe-monitor.json",
+    "site_principal": "https://www.pm.pe.gov.br",
+    "fontes_base": [
+      "https://www.pm.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pe.gov.br",
+      "pm.pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpe",
+      "PMPE",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPE remuneração tabela salarial PE",
+      "Polícia Militar de Pernambuco salário soldado delegado agente bombeiro policial penal 2026",
+      "PMPE subsídio vencimento remuneração bruto tabela oficial",
+      "PMPE lei remuneração carreira segurança pública PE",
+      "PMPE portal transparência remuneração cargo",
+      "PMPE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcpe",
+    "nome": "Polícia Civil de Pernambuco",
+    "sigla": "PCPE",
+    "uf": "PE",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcpe.json",
+    "arquivo_monitoramento": "data/remuneracao/pcpe-monitor.json",
+    "site_principal": "https://www.policiacivil.pe.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pe.gov.br",
+      "policiacivil.pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpe",
+      "PCPE",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPE remuneração tabela salarial PE",
+      "Polícia Civil de Pernambuco salário soldado delegado agente bombeiro policial penal 2026",
+      "PCPE subsídio vencimento remuneração bruto tabela oficial",
+      "PCPE lei remuneração carreira segurança pública PE",
+      "PCPE portal transparência remuneração cargo",
+      "PCPE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pppe",
+    "nome": "Polícia Penal de Pernambuco",
+    "sigla": "PPPE",
+    "uf": "PE",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pppe.json",
+    "arquivo_monitoramento": "data/remuneracao/pppe-monitor.json",
+    "site_principal": "https://www.pe.gov.br",
+    "fontes_base": [
+      "https://www.pe.gov.br",
+      "https://www.policiapenal.pe.gov.br",
+      "https://www.seap.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pe.gov.br",
+      "policiapenal.pe.gov.br",
+      "seap.pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppe",
+      "PPPE",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPE remuneração tabela salarial PE",
+      "Polícia Penal de Pernambuco salário soldado delegado agente bombeiro policial penal 2026",
+      "PPPE subsídio vencimento remuneração bruto tabela oficial",
+      "PPPE lei remuneração carreira segurança pública PE",
+      "PPPE portal transparência remuneração cargo",
+      "PPPE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmpi",
+    "nome": "Polícia Militar de Piauí",
+    "sigla": "PMPI",
+    "uf": "PI",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmpi.json",
+    "arquivo_monitoramento": "data/remuneracao/pmpi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.pm.pi.gov.br",
+      "https://www.pmpi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pi.gov.br",
+      "pm.pi.gov.br",
+      "pmpi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpi",
+      "PMPI",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPI remuneração tabela salarial PI",
+      "Polícia Militar de Piauí salário soldado delegado agente bombeiro policial penal 2026",
+      "PMPI subsídio vencimento remuneração bruto tabela oficial",
+      "PMPI lei remuneração carreira segurança pública PI",
+      "PMPI portal transparência remuneração cargo",
+      "PMPI edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcpi",
+    "nome": "Polícia Civil de Piauí",
+    "sigla": "PCPI",
+    "uf": "PI",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcpi.json",
+    "arquivo_monitoramento": "data/remuneracao/pcpi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.pc.pi.gov.br",
+      "https://www.policiacivil.pi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.pi.gov.br",
+      "pi.gov.br",
+      "policiacivil.pi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpi",
+      "PCPI",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPI remuneração tabela salarial PI",
+      "Polícia Civil de Piauí salário soldado delegado agente bombeiro policial penal 2026",
+      "PCPI subsídio vencimento remuneração bruto tabela oficial",
+      "PCPI lei remuneração carreira segurança pública PI",
+      "PCPI portal transparência remuneração cargo",
+      "PCPI edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pppi",
+    "nome": "Polícia Penal de Piauí",
+    "sigla": "PPPI",
+    "uf": "PI",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pppi.json",
+    "arquivo_monitoramento": "data/remuneracao/pppi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.policiapenal.pi.gov.br",
+      "https://www.seap.pi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pi.gov.br",
+      "policiapenal.pi.gov.br",
+      "seap.pi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppi",
+      "PPPI",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPI remuneração tabela salarial PI",
+      "Polícia Penal de Piauí salário soldado delegado agente bombeiro policial penal 2026",
+      "PPPI subsídio vencimento remuneração bruto tabela oficial",
+      "PPPI lei remuneração carreira segurança pública PI",
+      "PPPI portal transparência remuneração cargo",
+      "PPPI edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmrn",
+    "nome": "Polícia Militar de Rio Grande do Norte",
+    "sigla": "PMRN",
+    "uf": "RN",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmrn.json",
+    "arquivo_monitoramento": "data/remuneracao/pmrn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.pm.rn.gov.br",
+      "https://www.pmrn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.rn.gov.br",
+      "pmrn.gov.br",
+      "rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmrn",
+      "PMRN",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMRN remuneração tabela salarial RN",
+      "Polícia Militar de Rio Grande do Norte salário soldado delegado agente bombeiro policial penal 2026",
+      "PMRN subsídio vencimento remuneração bruto tabela oficial",
+      "PMRN lei remuneração carreira segurança pública RN",
+      "PMRN portal transparência remuneração cargo",
+      "PMRN edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcrn",
+    "nome": "Polícia Civil de Rio Grande do Norte",
+    "sigla": "PCRN",
+    "uf": "RN",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcrn.json",
+    "arquivo_monitoramento": "data/remuneracao/pcrn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.pc.rn.gov.br",
+      "https://www.policiacivil.rn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.rn.gov.br",
+      "policiacivil.rn.gov.br",
+      "rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcrn",
+      "PCRN",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRN remuneração tabela salarial RN",
+      "Polícia Civil de Rio Grande do Norte salário soldado delegado agente bombeiro policial penal 2026",
+      "PCRN subsídio vencimento remuneração bruto tabela oficial",
+      "PCRN lei remuneração carreira segurança pública RN",
+      "PCRN portal transparência remuneração cargo",
+      "PCRN edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pprn",
+    "nome": "Polícia Penal de Rio Grande do Norte",
+    "sigla": "PPRN",
+    "uf": "RN",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pprn.json",
+    "arquivo_monitoramento": "data/remuneracao/pprn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.policiapenal.rn.gov.br",
+      "https://www.seap.rn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rn.gov.br",
+      "rn.gov.br",
+      "seap.rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprn",
+      "PPRN",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRN remuneração tabela salarial RN",
+      "Polícia Penal de Rio Grande do Norte salário soldado delegado agente bombeiro policial penal 2026",
+      "PPRN subsídio vencimento remuneração bruto tabela oficial",
+      "PPRN lei remuneração carreira segurança pública RN",
+      "PPRN portal transparência remuneração cargo",
+      "PPRN edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmro",
+    "nome": "Polícia Militar de Rondônia",
+    "sigla": "PMRO",
+    "uf": "RO",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmro.json",
+    "arquivo_monitoramento": "data/remuneracao/pmro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.pm.ro.gov.br",
+      "https://www.pmro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.ro.gov.br",
+      "pmro.gov.br",
+      "ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmro",
+      "PMRO",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMRO remuneração tabela salarial RO",
+      "Polícia Militar de Rondônia salário soldado delegado agente bombeiro policial penal 2026",
+      "PMRO subsídio vencimento remuneração bruto tabela oficial",
+      "PMRO lei remuneração carreira segurança pública RO",
+      "PMRO portal transparência remuneração cargo",
+      "PMRO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcro",
+    "nome": "Polícia Civil de Rondônia",
+    "sigla": "PCRO",
+    "uf": "RO",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcro.json",
+    "arquivo_monitoramento": "data/remuneracao/pcro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.pc.ro.gov.br",
+      "https://www.policiacivil.ro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.ro.gov.br",
+      "policiacivil.ro.gov.br",
+      "ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcro",
+      "PCRO",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRO remuneração tabela salarial RO",
+      "Polícia Civil de Rondônia salário soldado delegado agente bombeiro policial penal 2026",
+      "PCRO subsídio vencimento remuneração bruto tabela oficial",
+      "PCRO lei remuneração carreira segurança pública RO",
+      "PCRO portal transparência remuneração cargo",
+      "PCRO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppro",
+    "nome": "Polícia Penal de Rondônia",
+    "sigla": "PPRO",
+    "uf": "RO",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppro.json",
+    "arquivo_monitoramento": "data/remuneracao/ppro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.policiapenal.ro.gov.br",
+      "https://www.seap.ro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.ro.gov.br",
+      "ro.gov.br",
+      "seap.ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppro",
+      "PPRO",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRO remuneração tabela salarial RO",
+      "Polícia Penal de Rondônia salário soldado delegado agente bombeiro policial penal 2026",
+      "PPRO subsídio vencimento remuneração bruto tabela oficial",
+      "PPRO lei remuneração carreira segurança pública RO",
+      "PPRO portal transparência remuneração cargo",
+      "PPRO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmrr",
+    "nome": "Polícia Militar de Roraima",
+    "sigla": "PMRR",
+    "uf": "RR",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmrr.json",
+    "arquivo_monitoramento": "data/remuneracao/pmrr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.pm.rr.gov.br",
+      "https://www.pmrr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.rr.gov.br",
+      "pmrr.gov.br",
+      "rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmrr",
+      "PMRR",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMRR remuneração tabela salarial RR",
+      "Polícia Militar de Roraima salário soldado delegado agente bombeiro policial penal 2026",
+      "PMRR subsídio vencimento remuneração bruto tabela oficial",
+      "PMRR lei remuneração carreira segurança pública RR",
+      "PMRR portal transparência remuneração cargo",
+      "PMRR edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcrr",
+    "nome": "Polícia Civil de Roraima",
+    "sigla": "PCRR",
+    "uf": "RR",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcrr.json",
+    "arquivo_monitoramento": "data/remuneracao/pcrr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.pc.rr.gov.br",
+      "https://www.policiacivil.rr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.rr.gov.br",
+      "policiacivil.rr.gov.br",
+      "rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcrr",
+      "PCRR",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRR remuneração tabela salarial RR",
+      "Polícia Civil de Roraima salário soldado delegado agente bombeiro policial penal 2026",
+      "PCRR subsídio vencimento remuneração bruto tabela oficial",
+      "PCRR lei remuneração carreira segurança pública RR",
+      "PCRR portal transparência remuneração cargo",
+      "PCRR edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pprr",
+    "nome": "Polícia Penal de Roraima",
+    "sigla": "PPRR",
+    "uf": "RR",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pprr.json",
+    "arquivo_monitoramento": "data/remuneracao/pprr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.policiapenal.rr.gov.br",
+      "https://www.seap.rr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rr.gov.br",
+      "rr.gov.br",
+      "seap.rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprr",
+      "PPRR",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRR remuneração tabela salarial RR",
+      "Polícia Penal de Roraima salário soldado delegado agente bombeiro policial penal 2026",
+      "PPRR subsídio vencimento remuneração bruto tabela oficial",
+      "PPRR lei remuneração carreira segurança pública RR",
+      "PPRR portal transparência remuneração cargo",
+      "PPRR edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmse",
+    "nome": "Polícia Militar de Sergipe",
+    "sigla": "PMSE",
+    "uf": "SE",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmse.json",
+    "arquivo_monitoramento": "data/remuneracao/pmse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.pm.se.gov.br",
+      "https://www.pmse.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.se.gov.br",
+      "pmse.gov.br",
+      "se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmse",
+      "PMSE",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMSE remuneração tabela salarial SE",
+      "Polícia Militar de Sergipe salário soldado delegado agente bombeiro policial penal 2026",
+      "PMSE subsídio vencimento remuneração bruto tabela oficial",
+      "PMSE lei remuneração carreira segurança pública SE",
+      "PMSE portal transparência remuneração cargo",
+      "PMSE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcse",
+    "nome": "Polícia Civil de Sergipe",
+    "sigla": "PCSE",
+    "uf": "SE",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcse.json",
+    "arquivo_monitoramento": "data/remuneracao/pcse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.pc.se.gov.br",
+      "https://www.policiacivil.se.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.se.gov.br",
+      "policiacivil.se.gov.br",
+      "se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcse",
+      "PCSE",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCSE remuneração tabela salarial SE",
+      "Polícia Civil de Sergipe salário soldado delegado agente bombeiro policial penal 2026",
+      "PCSE subsídio vencimento remuneração bruto tabela oficial",
+      "PCSE lei remuneração carreira segurança pública SE",
+      "PCSE portal transparência remuneração cargo",
+      "PCSE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppse",
+    "nome": "Polícia Penal de Sergipe",
+    "sigla": "PPSE",
+    "uf": "SE",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppse.json",
+    "arquivo_monitoramento": "data/remuneracao/ppse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.policiapenal.se.gov.br",
+      "https://www.seap.se.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.se.gov.br",
+      "se.gov.br",
+      "seap.se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppse",
+      "PPSE",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPSE remuneração tabela salarial SE",
+      "Polícia Penal de Sergipe salário soldado delegado agente bombeiro policial penal 2026",
+      "PPSE subsídio vencimento remuneração bruto tabela oficial",
+      "PPSE lei remuneração carreira segurança pública SE",
+      "PPSE portal transparência remuneração cargo",
+      "PPSE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pmto",
+    "nome": "Polícia Militar de Tocantins",
+    "sigla": "PMTO",
+    "uf": "TO",
+    "tipo": "Polícia Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pmto.json",
+    "arquivo_monitoramento": "data/remuneracao/pmto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.pm.to.gov.br",
+      "https://www.pmto.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.to.gov.br",
+      "pmto.gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmto",
+      "PMTO",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMTO remuneração tabela salarial TO",
+      "Polícia Militar de Tocantins salário soldado delegado agente bombeiro policial penal 2026",
+      "PMTO subsídio vencimento remuneração bruto tabela oficial",
+      "PMTO lei remuneração carreira segurança pública TO",
+      "PMTO portal transparência remuneração cargo",
+      "PMTO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pcto",
+    "nome": "Polícia Civil de Tocantins",
+    "sigla": "PCTO",
+    "uf": "TO",
+    "tipo": "Polícia Civil",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pcto.json",
+    "arquivo_monitoramento": "data/remuneracao/pcto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.pc.to.gov.br",
+      "https://www.policiacivil.to.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.to.gov.br",
+      "policiacivil.to.gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcto",
+      "PCTO",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCTO remuneração tabela salarial TO",
+      "Polícia Civil de Tocantins salário soldado delegado agente bombeiro policial penal 2026",
+      "PCTO subsídio vencimento remuneração bruto tabela oficial",
+      "PCTO lei remuneração carreira segurança pública TO",
+      "PCTO portal transparência remuneração cargo",
+      "PCTO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppto",
+    "nome": "Polícia Penal de Tocantins",
+    "sigla": "PPTO",
+    "uf": "TO",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppto.json",
+    "arquivo_monitoramento": "data/remuneracao/ppto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.policiapenal.to.gov.br",
+      "https://www.seap.to.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.to.gov.br",
+      "seap.to.gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppto",
+      "PPTO",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPTO remuneração tabela salarial TO",
+      "Polícia Penal de Tocantins salário soldado delegado agente bombeiro policial penal 2026",
+      "PPTO subsídio vencimento remuneração bruto tabela oficial",
+      "PPTO lei remuneração carreira segurança pública TO",
+      "PPTO portal transparência remuneração cargo",
+      "PPTO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmac",
+    "nome": "Corpo de Bombeiros Militar do Acre",
+    "sigla": "BMAC",
+    "uf": "AC",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmac.json",
+    "arquivo_monitoramento": "data/remuneracao/bmac-monitor.json",
+    "site_principal": "https://www.ac.gov.br",
+    "fontes_base": [
+      "https://www.ac.gov.br",
+      "https://www.cbm.ac.gov.br",
+      "https://www.cbmac.gov.br",
+      "https://www.bombeiros.ac.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ac.gov.br",
+      "bombeiros.ac.gov.br",
+      "cbm.ac.gov.br",
+      "cbmac.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmac",
+      "BMAC",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMAC remuneração tabela salarial AC",
+      "Corpo de Bombeiros Militar do Acre salário soldado delegado agente bombeiro policial penal 2026",
+      "BMAC subsídio vencimento remuneração bruto tabela oficial",
+      "BMAC lei remuneração carreira segurança pública AC",
+      "BMAC portal transparência remuneração cargo",
+      "BMAC edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmal",
+    "nome": "Corpo de Bombeiros Militar de Alagoas",
+    "sigla": "BMAL",
+    "uf": "AL",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmal.json",
+    "arquivo_monitoramento": "data/remuneracao/bmal-monitor.json",
+    "site_principal": "https://www.al.gov.br",
+    "fontes_base": [
+      "https://www.al.gov.br",
+      "https://www.cbm.al.gov.br",
+      "https://www.cbmal.gov.br",
+      "https://www.bombeiros.al.gov.br"
+    ],
+    "dominios_oficiais": [
+      "al.gov.br",
+      "bombeiros.al.gov.br",
+      "cbm.al.gov.br",
+      "cbmal.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmal",
+      "BMAL",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMAL remuneração tabela salarial AL",
+      "Corpo de Bombeiros Militar de Alagoas salário soldado delegado agente bombeiro policial penal 2026",
+      "BMAL subsídio vencimento remuneração bruto tabela oficial",
+      "BMAL lei remuneração carreira segurança pública AL",
+      "BMAL portal transparência remuneração cargo",
+      "BMAL edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmam",
+    "nome": "Corpo de Bombeiros Militar do Amazonas",
+    "sigla": "BMAM",
+    "uf": "AM",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmam.json",
+    "arquivo_monitoramento": "data/remuneracao/bmam-monitor.json",
+    "site_principal": "https://www.am.gov.br",
+    "fontes_base": [
+      "https://www.am.gov.br",
+      "https://www.cbm.am.gov.br",
+      "https://www.cbmam.gov.br",
+      "https://www.bombeiros.am.gov.br"
+    ],
+    "dominios_oficiais": [
+      "am.gov.br",
+      "bombeiros.am.gov.br",
+      "cbm.am.gov.br",
+      "cbmam.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmam",
+      "BMAM",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMAM remuneração tabela salarial AM",
+      "Corpo de Bombeiros Militar do Amazonas salário soldado delegado agente bombeiro policial penal 2026",
+      "BMAM subsídio vencimento remuneração bruto tabela oficial",
+      "BMAM lei remuneração carreira segurança pública AM",
+      "BMAM portal transparência remuneração cargo",
+      "BMAM edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmba",
+    "nome": "Corpo de Bombeiros Militar da Bahia",
+    "sigla": "BMBA",
+    "uf": "BA",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmba.json",
+    "arquivo_monitoramento": "data/remuneracao/bmba-monitor.json",
+    "site_principal": "https://www.cbm.ba.gov.br",
+    "fontes_base": [
+      "https://www.cbm.ba.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ba.gov.br",
+      "cbm.ba.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmba",
+      "BMBA",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMBA remuneração tabela salarial BA",
+      "Corpo de Bombeiros Militar da Bahia salário soldado delegado agente bombeiro policial penal 2026",
+      "BMBA subsídio vencimento remuneração bruto tabela oficial",
+      "BMBA lei remuneração carreira segurança pública BA",
+      "BMBA portal transparência remuneração cargo",
+      "BMBA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmce",
+    "nome": "Corpo de Bombeiros Militar do Ceará",
+    "sigla": "BMCE",
+    "uf": "CE",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmce.json",
+    "arquivo_monitoramento": "data/remuneracao/bmce-monitor.json",
+    "site_principal": "https://www.bombeiros.ce.gov.br",
+    "fontes_base": [
+      "https://www.bombeiros.ce.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.ce.gov.br",
+      "ce.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmce",
+      "BMCE",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMCE remuneração tabela salarial CE",
+      "Corpo de Bombeiros Militar do Ceará salário soldado delegado agente bombeiro policial penal 2026",
+      "BMCE subsídio vencimento remuneração bruto tabela oficial",
+      "BMCE lei remuneração carreira segurança pública CE",
+      "BMCE portal transparência remuneração cargo",
+      "BMCE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmdf",
+    "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+    "sigla": "BMDF",
+    "uf": "DF",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmdf.json",
+    "arquivo_monitoramento": "data/remuneracao/bmdf-monitor.json",
+    "site_principal": "https://www.cbm.df.gov.br",
+    "fontes_base": [
+      "https://www.cbm.df.gov.br"
+    ],
+    "dominios_oficiais": [
+      "cbm.df.gov.br",
+      "df.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmdf",
+      "BMDF",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMDF remuneração tabela salarial DF",
+      "Corpo de Bombeiros Militar do Distrito Federal salário soldado delegado agente bombeiro policial penal 2026",
+      "BMDF subsídio vencimento remuneração bruto tabela oficial",
+      "BMDF lei remuneração carreira segurança pública DF",
+      "BMDF portal transparência remuneração cargo",
+      "BMDF edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmgo",
+    "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+    "sigla": "BMGO",
+    "uf": "GO",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmgo.json",
+    "arquivo_monitoramento": "data/remuneracao/bmgo-monitor.json",
+    "site_principal": "https://www.bombeiros.go.gov.br",
+    "fontes_base": [
+      "https://www.bombeiros.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.go.gov.br",
+      "go.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmgo",
+      "BMGO",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMGO remuneração tabela salarial GO",
+      "Corpo de Bombeiros Militar do Estado de Goiás salário soldado delegado agente bombeiro policial penal 2026",
+      "BMGO subsídio vencimento remuneração bruto tabela oficial",
+      "BMGO lei remuneração carreira segurança pública GO",
+      "BMGO portal transparência remuneração cargo",
+      "BMGO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmma",
+    "nome": "Corpo de Bombeiros Militar do Maranhão",
+    "sigla": "BMMA",
+    "uf": "MA",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmma.json",
+    "arquivo_monitoramento": "data/remuneracao/bmma-monitor.json",
+    "site_principal": "https://www.ma.gov.br",
+    "fontes_base": [
+      "https://www.ma.gov.br",
+      "https://www.cbm.ma.gov.br",
+      "https://www.cbmma.gov.br",
+      "https://www.bombeiros.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.ma.gov.br",
+      "cbm.ma.gov.br",
+      "cbmma.gov.br",
+      "gov.br",
+      "ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmma",
+      "BMMA",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMMA remuneração tabela salarial MA",
+      "Corpo de Bombeiros Militar do Maranhão salário soldado delegado agente bombeiro policial penal 2026",
+      "BMMA subsídio vencimento remuneração bruto tabela oficial",
+      "BMMA lei remuneração carreira segurança pública MA",
+      "BMMA portal transparência remuneração cargo",
+      "BMMA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmpa",
+    "nome": "Corpo de Bombeiros Militar do Pará",
+    "sigla": "BMPA",
+    "uf": "PA",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmpa.json",
+    "arquivo_monitoramento": "data/remuneracao/bmpa-monitor.json",
+    "site_principal": "https://www.pa.gov.br",
+    "fontes_base": [
+      "https://www.pa.gov.br",
+      "https://www.cbm.pa.gov.br",
+      "https://www.cbmpa.gov.br",
+      "https://www.bombeiros.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pa.gov.br",
+      "cbm.pa.gov.br",
+      "cbmpa.gov.br",
+      "gov.br",
+      "pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpa",
+      "BMPA",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPA remuneração tabela salarial PA",
+      "Corpo de Bombeiros Militar do Pará salário soldado delegado agente bombeiro policial penal 2026",
+      "BMPA subsídio vencimento remuneração bruto tabela oficial",
+      "BMPA lei remuneração carreira segurança pública PA",
+      "BMPA portal transparência remuneração cargo",
+      "BMPA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmpb",
+    "nome": "Corpo de Bombeiros Militar da Paraíba",
+    "sigla": "BMPB",
+    "uf": "PB",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmpb.json",
+    "arquivo_monitoramento": "data/remuneracao/bmpb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.cbm.pb.gov.br",
+      "https://www.cbmpb.gov.br",
+      "https://www.bombeiros.pb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pb.gov.br",
+      "cbm.pb.gov.br",
+      "cbmpb.gov.br",
+      "gov.br",
+      "pb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpb",
+      "BMPB",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPB remuneração tabela salarial PB",
+      "Corpo de Bombeiros Militar da Paraíba salário soldado delegado agente bombeiro policial penal 2026",
+      "BMPB subsídio vencimento remuneração bruto tabela oficial",
+      "BMPB lei remuneração carreira segurança pública PB",
+      "BMPB portal transparência remuneração cargo",
+      "BMPB edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmpe",
+    "nome": "Corpo de Bombeiros Militar de Pernambuco",
+    "sigla": "BMPE",
+    "uf": "PE",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmpe.json",
+    "arquivo_monitoramento": "data/remuneracao/bmpe-monitor.json",
+    "site_principal": "https://www.pe.gov.br",
+    "fontes_base": [
+      "https://www.pe.gov.br",
+      "https://www.cbm.pe.gov.br",
+      "https://www.cbmpe.gov.br",
+      "https://www.bombeiros.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pe.gov.br",
+      "cbm.pe.gov.br",
+      "cbmpe.gov.br",
+      "gov.br",
+      "pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpe",
+      "BMPE",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPE remuneração tabela salarial PE",
+      "Corpo de Bombeiros Militar de Pernambuco salário soldado delegado agente bombeiro policial penal 2026",
+      "BMPE subsídio vencimento remuneração bruto tabela oficial",
+      "BMPE lei remuneração carreira segurança pública PE",
+      "BMPE portal transparência remuneração cargo",
+      "BMPE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmpi",
+    "nome": "Corpo de Bombeiros Militar do Piauí",
+    "sigla": "BMPI",
+    "uf": "PI",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmpi.json",
+    "arquivo_monitoramento": "data/remuneracao/bmpi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.cbm.pi.gov.br",
+      "https://www.cbmpi.gov.br",
+      "https://www.bombeiros.pi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pi.gov.br",
+      "cbm.pi.gov.br",
+      "cbmpi.gov.br",
+      "gov.br",
+      "pi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpi",
+      "BMPI",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPI remuneração tabela salarial PI",
+      "Corpo de Bombeiros Militar do Piauí salário soldado delegado agente bombeiro policial penal 2026",
+      "BMPI subsídio vencimento remuneração bruto tabela oficial",
+      "BMPI lei remuneração carreira segurança pública PI",
+      "BMPI portal transparência remuneração cargo",
+      "BMPI edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmrn",
+    "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
+    "sigla": "BMRN",
+    "uf": "RN",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmrn.json",
+    "arquivo_monitoramento": "data/remuneracao/bmrn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.cbm.rn.gov.br",
+      "https://www.cbmrn.gov.br",
+      "https://www.bombeiros.rn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.rn.gov.br",
+      "cbm.rn.gov.br",
+      "cbmrn.gov.br",
+      "gov.br",
+      "rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmrn",
+      "BMRN",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRN remuneração tabela salarial RN",
+      "Corpo de Bombeiros Militar do Rio Grande do Norte salário soldado delegado agente bombeiro policial penal 2026",
+      "BMRN subsídio vencimento remuneração bruto tabela oficial",
+      "BMRN lei remuneração carreira segurança pública RN",
+      "BMRN portal transparência remuneração cargo",
+      "BMRN edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmro",
+    "nome": "Corpo de Bombeiros Militar de Rondônia",
+    "sigla": "BMRO",
+    "uf": "RO",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmro.json",
+    "arquivo_monitoramento": "data/remuneracao/bmro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.cbm.ro.gov.br",
+      "https://www.cbmro.gov.br",
+      "https://www.bombeiros.ro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.ro.gov.br",
+      "cbm.ro.gov.br",
+      "cbmro.gov.br",
+      "gov.br",
+      "ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmro",
+      "BMRO",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRO remuneração tabela salarial RO",
+      "Corpo de Bombeiros Militar de Rondônia salário soldado delegado agente bombeiro policial penal 2026",
+      "BMRO subsídio vencimento remuneração bruto tabela oficial",
+      "BMRO lei remuneração carreira segurança pública RO",
+      "BMRO portal transparência remuneração cargo",
+      "BMRO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmrr",
+    "nome": "Corpo de Bombeiros Militar de Roraima",
+    "sigla": "BMRR",
+    "uf": "RR",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmrr.json",
+    "arquivo_monitoramento": "data/remuneracao/bmrr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.cbm.rr.gov.br",
+      "https://www.cbmrr.gov.br",
+      "https://www.bombeiros.rr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.rr.gov.br",
+      "cbm.rr.gov.br",
+      "cbmrr.gov.br",
+      "gov.br",
+      "rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmrr",
+      "BMRR",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRR remuneração tabela salarial RR",
+      "Corpo de Bombeiros Militar de Roraima salário soldado delegado agente bombeiro policial penal 2026",
+      "BMRR subsídio vencimento remuneração bruto tabela oficial",
+      "BMRR lei remuneração carreira segurança pública RR",
+      "BMRR portal transparência remuneração cargo",
+      "BMRR edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmrs",
+    "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
+    "sigla": "BMRS",
+    "uf": "RS",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmrs.json",
+    "arquivo_monitoramento": "data/remuneracao/bmrs-monitor.json",
+    "site_principal": "https://www.bombeiros.rs.gov.br",
+    "fontes_base": [
+      "https://www.bombeiros.rs.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.rs.gov.br",
+      "gov.br",
+      "rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmrs",
+      "BMRS",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRS remuneração tabela salarial RS",
+      "Corpo de Bombeiros Militar do Rio Grande do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "BMRS subsídio vencimento remuneração bruto tabela oficial",
+      "BMRS lei remuneração carreira segurança pública RS",
+      "BMRS portal transparência remuneração cargo",
+      "BMRS edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmse",
+    "nome": "Corpo de Bombeiros Militar de Sergipe",
+    "sigla": "BMSE",
+    "uf": "SE",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmse.json",
+    "arquivo_monitoramento": "data/remuneracao/bmse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.cbm.se.gov.br",
+      "https://www.cbmse.gov.br",
+      "https://www.bombeiros.se.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.se.gov.br",
+      "cbm.se.gov.br",
+      "cbmse.gov.br",
+      "gov.br",
+      "se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmse",
+      "BMSE",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMSE remuneração tabela salarial SE",
+      "Corpo de Bombeiros Militar de Sergipe salário soldado delegado agente bombeiro policial penal 2026",
+      "BMSE subsídio vencimento remuneração bruto tabela oficial",
+      "BMSE lei remuneração carreira segurança pública SE",
+      "BMSE portal transparência remuneração cargo",
+      "BMSE edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "bmto",
+    "nome": "Corpo de Bombeiros Militar do Tocantins",
+    "sigla": "BMTO",
+    "uf": "TO",
+    "tipo": "Bombeiro Militar",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/bmto.json",
+    "arquivo_monitoramento": "data/remuneracao/bmto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.cbm.to.gov.br",
+      "https://www.cbmto.gov.br",
+      "https://www.bombeiros.to.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.to.gov.br",
+      "cbm.to.gov.br",
+      "cbmto.gov.br",
+      "gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmto",
+      "BMTO",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMTO remuneração tabela salarial TO",
+      "Corpo de Bombeiros Militar do Tocantins salário soldado delegado agente bombeiro policial penal 2026",
+      "BMTO subsídio vencimento remuneração bruto tabela oficial",
+      "BMTO lei remuneração carreira segurança pública TO",
+      "BMTO portal transparência remuneração cargo",
+      "BMTO edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pprj",
+    "nome": "Polícia Penal do Rio de Janeiro",
+    "sigla": "PPRJ",
+    "uf": "RJ",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pprj.json",
+    "arquivo_monitoramento": "data/remuneracao/pprj-monitor.json",
+    "site_principal": "https://www.rj.gov.br",
+    "fontes_base": [
+      "https://www.rj.gov.br",
+      "https://www.policiapenal.rj.gov.br",
+      "https://www.seap.rj.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rj.gov.br",
+      "rj.gov.br",
+      "seap.rj.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprj",
+      "PPRJ",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRJ remuneração tabela salarial RJ",
+      "Polícia Penal do Rio de Janeiro salário soldado delegado agente bombeiro policial penal 2026",
+      "PPRJ subsídio vencimento remuneração bruto tabela oficial",
+      "PPRJ lei remuneração carreira segurança pública RJ",
+      "PPRJ portal transparência remuneração cargo",
+      "PPRJ edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppba",
+    "nome": "Polícia Penal da Bahia",
+    "sigla": "PPBA",
+    "uf": "BA",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppba.json",
+    "arquivo_monitoramento": "data/remuneracao/ppba-monitor.json",
+    "site_principal": "https://www.ba.gov.br",
+    "fontes_base": [
+      "https://www.ba.gov.br",
+      "https://www.policiapenal.ba.gov.br",
+      "https://www.seap.ba.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ba.gov.br",
+      "gov.br",
+      "policiapenal.ba.gov.br",
+      "seap.ba.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppba",
+      "PPBA",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPBA remuneração tabela salarial BA",
+      "Polícia Penal da Bahia salário soldado delegado agente bombeiro policial penal 2026",
+      "PPBA subsídio vencimento remuneração bruto tabela oficial",
+      "PPBA lei remuneração carreira segurança pública BA",
+      "PPBA portal transparência remuneração cargo",
+      "PPBA edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pppr",
+    "nome": "Polícia Penal do Paraná",
+    "sigla": "PPPR",
+    "uf": "PR",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pppr.json",
+    "arquivo_monitoramento": "data/remuneracao/pppr-monitor.json",
+    "site_principal": "https://www.pr.gov.br",
+    "fontes_base": [
+      "https://www.pr.gov.br",
+      "https://www.policiapenal.pr.gov.br",
+      "https://www.seap.pr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.pr.gov.br",
+      "pr.gov.br",
+      "seap.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppr",
+      "PPPR",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPR remuneração tabela salarial PR",
+      "Polícia Penal do Paraná salário soldado delegado agente bombeiro policial penal 2026",
+      "PPPR subsídio vencimento remuneração bruto tabela oficial",
+      "PPPR lei remuneração carreira segurança pública PR",
+      "PPPR portal transparência remuneração cargo",
+      "PPPR edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "pprs",
+    "nome": "Polícia Penal do Rio Grande do Sul",
+    "sigla": "PPRS",
+    "uf": "RS",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/pprs.json",
+    "arquivo_monitoramento": "data/remuneracao/pprs-monitor.json",
+    "site_principal": "https://www.rs.gov.br",
+    "fontes_base": [
+      "https://www.rs.gov.br",
+      "https://www.policiapenal.rs.gov.br",
+      "https://www.seap.rs.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rs.gov.br",
+      "rs.gov.br",
+      "seap.rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprs",
+      "PPRS",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRS remuneração tabela salarial RS",
+      "Polícia Penal do Rio Grande do Sul salário soldado delegado agente bombeiro policial penal 2026",
+      "PPRS subsídio vencimento remuneração bruto tabela oficial",
+      "PPRS lei remuneração carreira segurança pública RS",
+      "PPRS portal transparência remuneração cargo",
+      "PPRS edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppsc",
+    "nome": "Polícia Penal de Santa Catarina",
+    "sigla": "PPSC",
+    "uf": "SC",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppsc.json",
+    "arquivo_monitoramento": "data/remuneracao/ppsc-monitor.json",
+    "site_principal": "https://www.sc.gov.br",
+    "fontes_base": [
+      "https://www.sc.gov.br",
+      "https://www.policiapenal.sc.gov.br",
+      "https://www.seap.sc.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.sc.gov.br",
+      "sc.gov.br",
+      "seap.sc.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppsc",
+      "PPSC",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPSC remuneração tabela salarial SC",
+      "Polícia Penal de Santa Catarina salário soldado delegado agente bombeiro policial penal 2026",
+      "PPSC subsídio vencimento remuneração bruto tabela oficial",
+      "PPSC lei remuneração carreira segurança pública SC",
+      "PPSC portal transparência remuneração cargo",
+      "PPSC edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  },
+  {
+    "id": "ppes",
+    "nome": "Polícia Penal do Espírito Santo",
+    "sigla": "PPES",
+    "uf": "ES",
+    "tipo": "Polícia Penal",
+    "tema": "remuneracao",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
+    "arquivo_saida": "data/remuneracao/ppes.json",
+    "arquivo_monitoramento": "data/remuneracao/ppes-monitor.json",
+    "site_principal": "https://www.es.gov.br",
+    "fontes_base": [
+      "https://www.es.gov.br",
+      "https://www.policiapenal.es.gov.br",
+      "https://www.seap.es.gov.br"
+    ],
+    "dominios_oficiais": [
+      "es.gov.br",
+      "gov.br",
+      "policiapenal.es.gov.br",
+      "seap.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppes",
+      "PPES",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPES remuneração tabela salarial ES",
+      "Polícia Penal do Espírito Santo salário soldado delegado agente bombeiro policial penal 2026",
+      "PPES subsídio vencimento remuneração bruto tabela oficial",
+      "PPES lei remuneração carreira segurança pública ES",
+      "PPES portal transparência remuneração cargo",
+      "PPES edital remuneração cargo inicial"
+    ],
+    "fila_unificada": true
+  }
+]

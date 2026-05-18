@@ -1,0 +1,5055 @@
+{
+  "gerado_em": "2026-05-18",
+  "resumo": {
+    "total": 110,
+    "pendentes": 34,
+    "fracas": 18,
+    "fortes": 58
+  },
+  "fila_acoes": [
+    {
+      "id": "pcmt",
+      "sigla": "PCMT",
+      "nome": "Polícia Judiciária Civil de Mato Grosso",
+      "uf": "MT",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 6,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "pendente",
+          "score": 0
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pcmt",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmrr",
+      "sigla": "PMRR",
+      "nome": "Polícia Militar de Roraima",
+      "uf": "RR",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pmrr",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmrs",
+      "sigla": "PMRS",
+      "nome": "Brigada Militar do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pmrs",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmsc",
+      "sigla": "PMSC",
+      "nome": "Polícia Militar de Santa Catarina",
+      "uf": "SC",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pmsc",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmse",
+      "sigla": "PMSE",
+      "nome": "Polícia Militar de Sergipe",
+      "uf": "SE",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pmse",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmto",
+      "sigla": "PMTO",
+      "nome": "Polícia Militar de Tocantins",
+      "uf": "TO",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pmto",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppac",
+      "sigla": "PPAC",
+      "nome": "Polícia Penal do Acre",
+      "uf": "AC",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppac",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppal",
+      "sigla": "PPAL",
+      "nome": "Polícia Penal do Estado de Alagoas",
+      "uf": "AL",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppal",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppam",
+      "sigla": "PPAM",
+      "nome": "Polícia Penal de Amazonas",
+      "uf": "AM",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppam",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppap",
+      "sigla": "PPAP",
+      "nome": "Polícia Penal de Amapá",
+      "uf": "AP",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppap",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppba",
+      "sigla": "PPBA",
+      "nome": "Polícia Penal da Bahia",
+      "uf": "BA",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppba",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppce",
+      "sigla": "PPCE",
+      "nome": "Polícia Penal de Ceará",
+      "uf": "CE",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppce",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppdf",
+      "sigla": "PPDF",
+      "nome": "Polícia Penal de Distrito Federal",
+      "uf": "DF",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppdf",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppes",
+      "sigla": "PPES",
+      "nome": "Polícia Penal do Espírito Santo",
+      "uf": "ES",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppes",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppgo",
+      "sigla": "PPGO",
+      "nome": "Polícia Penal de Goiás",
+      "uf": "GO",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppgo",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppma",
+      "sigla": "PPMA",
+      "nome": "Polícia Penal de Maranhão",
+      "uf": "MA",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppma",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppmg",
+      "sigla": "PPMG",
+      "nome": "Polícia Penal de Minas Gerais",
+      "uf": "MG",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppmg",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppms",
+      "sigla": "PPMS",
+      "nome": "Polícia Penal de Mato Grosso do Sul",
+      "uf": "MS",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppms",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppmt",
+      "sigla": "PPMT",
+      "nome": "Polícia Penal de Mato Grosso",
+      "uf": "MT",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppmt",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppa",
+      "sigla": "PPPA",
+      "nome": "Polícia Penal de Pará",
+      "uf": "PA",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pppa",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppb",
+      "sigla": "PPPB",
+      "nome": "Polícia Penal de Paraíba",
+      "uf": "PB",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pppb",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppe",
+      "sigla": "PPPE",
+      "nome": "Polícia Penal de Pernambuco",
+      "uf": "PE",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pppe",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppi",
+      "sigla": "PPPI",
+      "nome": "Polícia Penal de Piauí",
+      "uf": "PI",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pppi",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppr",
+      "sigla": "PPPR",
+      "nome": "Polícia Penal do Paraná",
+      "uf": "PR",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pppr",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprj",
+      "sigla": "PPRJ",
+      "nome": "Polícia Penal do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pprj",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprn",
+      "sigla": "PPRN",
+      "nome": "Polícia Penal de Rio Grande do Norte",
+      "uf": "RN",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pprn",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppro",
+      "sigla": "PPRO",
+      "nome": "Polícia Penal de Rondônia",
+      "uf": "RO",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppro",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprr",
+      "sigla": "PPRR",
+      "nome": "Polícia Penal de Roraima",
+      "uf": "RR",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pprr",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprs",
+      "sigla": "PPRS",
+      "nome": "Polícia Penal do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "pprs",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppsc",
+      "sigla": "PPSC",
+      "nome": "Polícia Penal de Santa Catarina",
+      "uf": "SC",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppsc",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppse",
+      "sigla": "PPSE",
+      "nome": "Polícia Penal de Sergipe",
+      "uf": "SE",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppse",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppsp",
+      "sigla": "PPSP",
+      "nome": "Polícia Penal do Estado de São Paulo",
+      "uf": "SP",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppsp",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppto",
+      "sigla": "PPTO",
+      "nome": "Polícia Penal de Tocantins",
+      "uf": "TO",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "ppto",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "prf",
+      "sigla": "PRF",
+      "nome": "Polícia Rodoviária Federal",
+      "uf": "BR",
+      "acao": "pendentes",
+      "classe": "pendente",
+      "score": 0,
+      "linhas_com_valor": 0,
+      "fontes": 0,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": null,
+      "monitor": null,
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "instituicao": "prf",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "bmrr",
+      "sigla": "BMRR",
+      "nome": "Corpo de Bombeiros Militar de Roraima",
+      "uf": "RR",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmrr",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pces",
+      "sigla": "PCES",
+      "nome": "Polícia Civil do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pces",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmba",
+      "sigla": "PMBA",
+      "nome": "Polícia Militar da Bahia",
+      "uf": "BA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmba",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmce",
+      "sigla": "PMCE",
+      "nome": "Polícia Militar de Ceará",
+      "uf": "CE",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmce",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmmg",
+      "sigla": "PMMG",
+      "nome": "Polícia Militar de Minas Gerais",
+      "uf": "MG",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmmg",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmes",
+      "sigla": "CBMES",
+      "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmes",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmmg",
+      "sigla": "CBMMG",
+      "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+      "uf": "MG",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmmg",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmms",
+      "sigla": "CBMMS",
+      "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+      "uf": "MS",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmms",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmmt",
+      "sigla": "CBMMT",
+      "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+      "uf": "MT",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmmt",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmrj",
+      "sigla": "CBMERJ",
+      "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmrj",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmsc",
+      "sigla": "CBMSC",
+      "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+      "uf": "SC",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmsc",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcal",
+      "sigla": "PCAL",
+      "nome": "Polícia Civil do Estado de Alagoas",
+      "uf": "AL",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcal",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcba",
+      "sigla": "PCBA",
+      "nome": "Polícia Civil da Bahia",
+      "uf": "BA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcba",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcce",
+      "sigla": "PCCE",
+      "nome": "Polícia Civil do Estado do Ceará",
+      "uf": "CE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 82,
+      "linhas_com_valor": 5,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcmg",
+      "sigla": "PCMG",
+      "nome": "Polícia Civil de Minas Gerais",
+      "uf": "MG",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 82,
+      "linhas_com_valor": 5,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcpe",
+      "sigla": "PCPE",
+      "nome": "Polícia Civil de Pernambuco",
+      "uf": "PE",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcpe",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcrs",
+      "sigla": "PCRS",
+      "nome": "Polícia Civil do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcrs",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcsc",
+      "sigla": "PCSC",
+      "nome": "Polícia Civil de Santa Catarina",
+      "uf": "SC",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcsc",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmam",
+      "sigla": "PMAM",
+      "nome": "Polícia Militar do Estado do Amazonas",
+      "uf": "AM",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmam",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmma",
+      "sigla": "PMMA",
+      "nome": "Polícia Militar de Maranhão",
+      "uf": "MA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmma",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmac",
+      "sigla": "BMAC",
+      "nome": "Corpo de Bombeiros Militar do Acre",
+      "uf": "AC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 19,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmal",
+      "sigla": "BMAL",
+      "nome": "Corpo de Bombeiros Militar de Alagoas",
+      "uf": "AL",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 31,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmam",
+      "sigla": "BMAM",
+      "nome": "Corpo de Bombeiros Militar do Amazonas",
+      "uf": "AM",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 11,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmap",
+      "sigla": "CBMAP",
+      "nome": "Corpo de Bombeiros Militar do Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmba",
+      "sigla": "BMBA",
+      "nome": "Corpo de Bombeiros Militar da Bahia",
+      "uf": "BA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmce",
+      "sigla": "BMCE",
+      "nome": "Corpo de Bombeiros Militar do Ceará",
+      "uf": "CE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmdf",
+      "sigla": "BMDF",
+      "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 16,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmgo",
+      "sigla": "BMGO",
+      "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 16,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmma",
+      "sigla": "BMMA",
+      "nome": "Corpo de Bombeiros Militar do Maranhão",
+      "uf": "MA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpa",
+      "sigla": "BMPA",
+      "nome": "Corpo de Bombeiros Militar do Pará",
+      "uf": "PA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 7,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpb",
+      "sigla": "BMPB",
+      "nome": "Corpo de Bombeiros Militar da Paraíba",
+      "uf": "PB",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpe",
+      "sigla": "BMPE",
+      "nome": "Corpo de Bombeiros Militar de Pernambuco",
+      "uf": "PE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 48,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpi",
+      "sigla": "BMPI",
+      "nome": "Corpo de Bombeiros Militar do Piauí",
+      "uf": "PI",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpr",
+      "sigla": "CBMPR",
+      "nome": "Corpo de Bombeiros Militar do Paraná",
+      "uf": "PR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmrn",
+      "sigla": "BMRN",
+      "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
+      "uf": "RN",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmro",
+      "sigla": "BMRO",
+      "nome": "Corpo de Bombeiros Militar de Rondônia",
+      "uf": "RO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmrs",
+      "sigla": "BMRS",
+      "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 15,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmse",
+      "sigla": "BMSE",
+      "nome": "Corpo de Bombeiros Militar de Sergipe",
+      "uf": "SE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 15,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmsp",
+      "sigla": "CBPMESP",
+      "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+      "uf": "SP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmto",
+      "sigla": "BMTO",
+      "nome": "Corpo de Bombeiros Militar do Tocantins",
+      "uf": "TO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcac",
+      "sigla": "PCAC",
+      "nome": "Polícia Civil do Acre",
+      "uf": "AC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 35,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcam",
+      "sigla": "PCAM",
+      "nome": "Polícia Civil do Estado do Amazonas",
+      "uf": "AM",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 6,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcap",
+      "sigla": "PCAP",
+      "nome": "Polícia Civil do Estado do Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 22,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcdf",
+      "sigla": "PCDF",
+      "nome": "Polícia Civil do Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 20,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcerj",
+      "sigla": "PCERJ",
+      "nome": "Polícia Civil do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 22,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcgo",
+      "sigla": "PCGO",
+      "nome": "Polícia Civil de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 28,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcma",
+      "sigla": "PCMA",
+      "nome": "Polícia Civil de Maranhão",
+      "uf": "MA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcms",
+      "sigla": "PCMS",
+      "nome": "Polícia Civil de Mato Grosso do Sul",
+      "uf": "MS",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 6,
+      "fontes": 6,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcpa",
+      "sigla": "PCPA",
+      "nome": "Polícia Civil de Pará",
+      "uf": "PA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 20,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcpb",
+      "sigla": "PCPB",
+      "nome": "Polícia Civil de Paraíba",
+      "uf": "PB",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 7,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcpi",
+      "sigla": "PCPI",
+      "nome": "Polícia Civil de Piauí",
+      "uf": "PI",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcpr",
+      "sigla": "PCPR",
+      "nome": "Polícia Civil do Paraná",
+      "uf": "PR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcrn",
+      "sigla": "PCRN",
+      "nome": "Polícia Civil de Rio Grande do Norte",
+      "uf": "RN",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 21,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcro",
+      "sigla": "PCRO",
+      "nome": "Polícia Civil de Rondônia",
+      "uf": "RO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 52,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcrr",
+      "sigla": "PCRR",
+      "nome": "Polícia Civil de Roraima",
+      "uf": "RR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 9,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcse",
+      "sigla": "PCSE",
+      "nome": "Polícia Civil de Sergipe",
+      "uf": "SE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 10,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcsp",
+      "sigla": "PCSP",
+      "nome": "Polícia Civil do Estado de São Paulo",
+      "uf": "SP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 56,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcto",
+      "sigla": "PCTO",
+      "nome": "Polícia Civil de Tocantins",
+      "uf": "TO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 10,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pf",
+      "sigla": "PF",
+      "nome": "Polícia Federal",
+      "uf": "BR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 10,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmac",
+      "sigla": "PMAC",
+      "nome": "Polícia Militar do Acre",
+      "uf": "AC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmal",
+      "sigla": "PMAL",
+      "nome": "Polícia Militar do Estado de Alagoas",
+      "uf": "AL",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 27,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmap",
+      "sigla": "PMAP",
+      "nome": "Polícia Militar do Estado do Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmdf",
+      "sigla": "PMDF",
+      "nome": "Polícia Militar de Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmerj",
+      "sigla": "PMERJ",
+      "nome": "Polícia Militar do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmes",
+      "sigla": "PMES",
+      "nome": "Polícia Militar do Espírito Santo",
+      "uf": "ES",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmesp",
+      "sigla": "PMESP",
+      "nome": "Polícia Militar do Estado de São Paulo",
+      "uf": "SP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 19,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmgo",
+      "sigla": "PMGO",
+      "nome": "Polícia Militar de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmms",
+      "sigla": "PMMS",
+      "nome": "Polícia Militar de Mato Grosso do Sul",
+      "uf": "MS",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmmt",
+      "sigla": "PMMT",
+      "nome": "Polícia Militar de Mato Grosso",
+      "uf": "MT",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmpa",
+      "sigla": "PMPA",
+      "nome": "Polícia Militar de Pará",
+      "uf": "PA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 9,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmpb",
+      "sigla": "PMPB",
+      "nome": "Polícia Militar de Paraíba",
+      "uf": "PB",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmpe",
+      "sigla": "PMPE",
+      "nome": "Polícia Militar de Pernambuco",
+      "uf": "PE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmpi",
+      "sigla": "PMPI",
+      "nome": "Polícia Militar de Piauí",
+      "uf": "PI",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmpr",
+      "sigla": "PMPR",
+      "nome": "Polícia Militar do Paraná",
+      "uf": "PR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 30,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmrn",
+      "sigla": "PMRN",
+      "nome": "Polícia Militar de Rio Grande do Norte",
+      "uf": "RN",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmro",
+      "sigla": "PMRO",
+      "nome": "Polícia Militar de Rondônia",
+      "uf": "RO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    }
+  ],
+  "grupos": {
+    "pendentes": [
+      {
+        "id": "prf",
+        "sigla": "PRF",
+        "nome": "Polícia Rodoviária Federal",
+        "uf": "BR",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "prf",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppsp",
+        "sigla": "PPSP",
+        "nome": "Polícia Penal do Estado de São Paulo",
+        "uf": "SP",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppsp",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppal",
+        "sigla": "PPAL",
+        "nome": "Polícia Penal do Estado de Alagoas",
+        "uf": "AL",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppal",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppmg",
+        "sigla": "PPMG",
+        "nome": "Polícia Penal de Minas Gerais",
+        "uf": "MG",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppmg",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pmrs",
+        "sigla": "PMRS",
+        "nome": "Brigada Militar do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pmrs",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pmsc",
+        "sigla": "PMSC",
+        "nome": "Polícia Militar de Santa Catarina",
+        "uf": "SC",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pmsc",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppms",
+        "sigla": "PPMS",
+        "nome": "Polícia Penal de Mato Grosso do Sul",
+        "uf": "MS",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppms",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pcmt",
+        "sigla": "PCMT",
+        "nome": "Polícia Judiciária Civil de Mato Grosso",
+        "uf": "MT",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 6,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "pendente",
+            "score": 0
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pcmt",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppmt",
+        "sigla": "PPMT",
+        "nome": "Polícia Penal de Mato Grosso",
+        "uf": "MT",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppmt",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppac",
+        "sigla": "PPAC",
+        "nome": "Polícia Penal do Acre",
+        "uf": "AC",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppac",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppam",
+        "sigla": "PPAM",
+        "nome": "Polícia Penal de Amazonas",
+        "uf": "AM",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppam",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppap",
+        "sigla": "PPAP",
+        "nome": "Polícia Penal de Amapá",
+        "uf": "AP",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppap",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppce",
+        "sigla": "PPCE",
+        "nome": "Polícia Penal de Ceará",
+        "uf": "CE",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppce",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppdf",
+        "sigla": "PPDF",
+        "nome": "Polícia Penal de Distrito Federal",
+        "uf": "DF",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppdf",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppgo",
+        "sigla": "PPGO",
+        "nome": "Polícia Penal de Goiás",
+        "uf": "GO",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppgo",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppma",
+        "sigla": "PPMA",
+        "nome": "Polícia Penal de Maranhão",
+        "uf": "MA",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppma",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppa",
+        "sigla": "PPPA",
+        "nome": "Polícia Penal de Pará",
+        "uf": "PA",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pppa",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppb",
+        "sigla": "PPPB",
+        "nome": "Polícia Penal de Paraíba",
+        "uf": "PB",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pppb",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppe",
+        "sigla": "PPPE",
+        "nome": "Polícia Penal de Pernambuco",
+        "uf": "PE",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pppe",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppi",
+        "sigla": "PPPI",
+        "nome": "Polícia Penal de Piauí",
+        "uf": "PI",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pppi",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pprn",
+        "sigla": "PPRN",
+        "nome": "Polícia Penal de Rio Grande do Norte",
+        "uf": "RN",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pprn",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppro",
+        "sigla": "PPRO",
+        "nome": "Polícia Penal de Rondônia",
+        "uf": "RO",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppro",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pmrr",
+        "sigla": "PMRR",
+        "nome": "Polícia Militar de Roraima",
+        "uf": "RR",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pmrr",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pprr",
+        "sigla": "PPRR",
+        "nome": "Polícia Penal de Roraima",
+        "uf": "RR",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pprr",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pmse",
+        "sigla": "PMSE",
+        "nome": "Polícia Militar de Sergipe",
+        "uf": "SE",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pmse",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppse",
+        "sigla": "PPSE",
+        "nome": "Polícia Penal de Sergipe",
+        "uf": "SE",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppse",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pmto",
+        "sigla": "PMTO",
+        "nome": "Polícia Militar de Tocantins",
+        "uf": "TO",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pmto",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppto",
+        "sigla": "PPTO",
+        "nome": "Polícia Penal de Tocantins",
+        "uf": "TO",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppto",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pprj",
+        "sigla": "PPRJ",
+        "nome": "Polícia Penal do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pprj",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppba",
+        "sigla": "PPBA",
+        "nome": "Polícia Penal da Bahia",
+        "uf": "BA",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppba",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppr",
+        "sigla": "PPPR",
+        "nome": "Polícia Penal do Paraná",
+        "uf": "PR",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pppr",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pprs",
+        "sigla": "PPRS",
+        "nome": "Polícia Penal do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "pprs",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppsc",
+        "sigla": "PPSC",
+        "nome": "Polícia Penal de Santa Catarina",
+        "uf": "SC",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppsc",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppes",
+        "sigla": "PPES",
+        "nome": "Polícia Penal do Espírito Santo",
+        "uf": "ES",
+        "acao": "pendentes",
+        "classe": "pendente",
+        "score": 0,
+        "linhas_com_valor": 0,
+        "fontes": 0,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": null,
+        "monitor": null,
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "instituicao": "ppes",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      }
+    ],
+    "fracas": [
+      {
+        "id": "pcal",
+        "sigla": "PCAL",
+        "nome": "Polícia Civil do Estado de Alagoas",
+        "uf": "AL",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcal",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmmg",
+        "sigla": "CBMMG",
+        "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+        "uf": "MG",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmmg",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmmg",
+        "sigla": "PMMG",
+        "nome": "Polícia Militar de Minas Gerais",
+        "uf": "MG",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmmg",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmam",
+        "sigla": "PMAM",
+        "nome": "Polícia Militar do Estado do Amazonas",
+        "uf": "AM",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmam",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmrj",
+        "sigla": "CBMERJ",
+        "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmrj",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmba",
+        "sigla": "PMBA",
+        "nome": "Polícia Militar da Bahia",
+        "uf": "BA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmba",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pcba",
+        "sigla": "PCBA",
+        "nome": "Polícia Civil da Bahia",
+        "uf": "BA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcba",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pcrs",
+        "sigla": "PCRS",
+        "nome": "Polícia Civil do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcrs",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmsc",
+        "sigla": "CBMSC",
+        "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+        "uf": "SC",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmsc",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pcsc",
+        "sigla": "PCSC",
+        "nome": "Polícia Civil de Santa Catarina",
+        "uf": "SC",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcsc",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmes",
+        "sigla": "CBMES",
+        "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+        "uf": "ES",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmes",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pces",
+        "sigla": "PCES",
+        "nome": "Polícia Civil do Espírito Santo",
+        "uf": "ES",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pces",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmms",
+        "sigla": "CBMMS",
+        "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+        "uf": "MS",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmms",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmmt",
+        "sigla": "CBMMT",
+        "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+        "uf": "MT",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmmt",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmce",
+        "sigla": "PMCE",
+        "nome": "Polícia Militar de Ceará",
+        "uf": "CE",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmce",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmma",
+        "sigla": "PMMA",
+        "nome": "Polícia Militar de Maranhão",
+        "uf": "MA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmma",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pcpe",
+        "sigla": "PCPE",
+        "nome": "Polícia Civil de Pernambuco",
+        "uf": "PE",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcpe",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmrr",
+        "sigla": "BMRR",
+        "nome": "Corpo de Bombeiros Militar de Roraima",
+        "uf": "RR",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmrr",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      }
+    ],
+    "fortes": [
+      {
+        "id": "pcdf",
+        "sigla": "PCDF",
+        "nome": "Polícia Civil do Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 20,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmesp",
+        "sigla": "PMESP",
+        "nome": "Polícia Militar do Estado de São Paulo",
+        "uf": "SP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 19,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmsp",
+        "sigla": "CBPMESP",
+        "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+        "uf": "SP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcsp",
+        "sigla": "PCSP",
+        "nome": "Polícia Civil do Estado de São Paulo",
+        "uf": "SP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 56,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmal",
+        "sigla": "PMAL",
+        "nome": "Polícia Militar do Estado de Alagoas",
+        "uf": "AL",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 27,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcmg",
+        "sigla": "PCMG",
+        "nome": "Polícia Civil de Minas Gerais",
+        "uf": "MG",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 82,
+        "linhas_com_valor": 5,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpr",
+        "sigla": "CBMPR",
+        "nome": "Corpo de Bombeiros Militar do Paraná",
+        "uf": "PR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmpr",
+        "sigla": "PMPR",
+        "nome": "Polícia Militar do Paraná",
+        "uf": "PR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 30,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcpr",
+        "sigla": "PCPR",
+        "nome": "Polícia Civil do Paraná",
+        "uf": "PR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcam",
+        "sigla": "PCAM",
+        "nome": "Polícia Civil do Estado do Amazonas",
+        "uf": "AM",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 6,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmerj",
+        "sigla": "PMERJ",
+        "nome": "Polícia Militar do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcerj",
+        "sigla": "PCERJ",
+        "nome": "Polícia Civil do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 22,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmes",
+        "sigla": "PMES",
+        "nome": "Polícia Militar do Espírito Santo",
+        "uf": "ES",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmms",
+        "sigla": "PMMS",
+        "nome": "Polícia Militar de Mato Grosso do Sul",
+        "uf": "MS",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcms",
+        "sigla": "PCMS",
+        "nome": "Polícia Civil de Mato Grosso do Sul",
+        "uf": "MS",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 6,
+        "fontes": 6,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmmt",
+        "sigla": "PMMT",
+        "nome": "Polícia Militar de Mato Grosso",
+        "uf": "MT",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmac",
+        "sigla": "PMAC",
+        "nome": "Polícia Militar do Acre",
+        "uf": "AC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcac",
+        "sigla": "PCAC",
+        "nome": "Polícia Civil do Acre",
+        "uf": "AC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 35,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmap",
+        "sigla": "PMAP",
+        "nome": "Polícia Militar do Estado do Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcap",
+        "sigla": "PCAP",
+        "nome": "Polícia Civil do Estado do Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 22,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmap",
+        "sigla": "CBMAP",
+        "nome": "Corpo de Bombeiros Militar do Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcce",
+        "sigla": "PCCE",
+        "nome": "Polícia Civil do Estado do Ceará",
+        "uf": "CE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 82,
+        "linhas_com_valor": 5,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pf",
+        "sigla": "PF",
+        "nome": "Polícia Federal",
+        "uf": "BR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 10,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmdf",
+        "sigla": "PMDF",
+        "nome": "Polícia Militar de Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmgo",
+        "sigla": "PMGO",
+        "nome": "Polícia Militar de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcgo",
+        "sigla": "PCGO",
+        "nome": "Polícia Civil de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 28,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcma",
+        "sigla": "PCMA",
+        "nome": "Polícia Civil de Maranhão",
+        "uf": "MA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmpa",
+        "sigla": "PMPA",
+        "nome": "Polícia Militar de Pará",
+        "uf": "PA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 9,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcpa",
+        "sigla": "PCPA",
+        "nome": "Polícia Civil de Pará",
+        "uf": "PA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 20,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmpb",
+        "sigla": "PMPB",
+        "nome": "Polícia Militar de Paraíba",
+        "uf": "PB",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcpb",
+        "sigla": "PCPB",
+        "nome": "Polícia Civil de Paraíba",
+        "uf": "PB",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 7,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmpe",
+        "sigla": "PMPE",
+        "nome": "Polícia Militar de Pernambuco",
+        "uf": "PE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmpi",
+        "sigla": "PMPI",
+        "nome": "Polícia Militar de Piauí",
+        "uf": "PI",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcpi",
+        "sigla": "PCPI",
+        "nome": "Polícia Civil de Piauí",
+        "uf": "PI",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmrn",
+        "sigla": "PMRN",
+        "nome": "Polícia Militar de Rio Grande do Norte",
+        "uf": "RN",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcrn",
+        "sigla": "PCRN",
+        "nome": "Polícia Civil de Rio Grande do Norte",
+        "uf": "RN",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 21,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmro",
+        "sigla": "PMRO",
+        "nome": "Polícia Militar de Rondônia",
+        "uf": "RO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcro",
+        "sigla": "PCRO",
+        "nome": "Polícia Civil de Rondônia",
+        "uf": "RO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 52,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcrr",
+        "sigla": "PCRR",
+        "nome": "Polícia Civil de Roraima",
+        "uf": "RR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 9,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcse",
+        "sigla": "PCSE",
+        "nome": "Polícia Civil de Sergipe",
+        "uf": "SE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 10,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcto",
+        "sigla": "PCTO",
+        "nome": "Polícia Civil de Tocantins",
+        "uf": "TO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 10,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmac",
+        "sigla": "BMAC",
+        "nome": "Corpo de Bombeiros Militar do Acre",
+        "uf": "AC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 19,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmal",
+        "sigla": "BMAL",
+        "nome": "Corpo de Bombeiros Militar de Alagoas",
+        "uf": "AL",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 31,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmam",
+        "sigla": "BMAM",
+        "nome": "Corpo de Bombeiros Militar do Amazonas",
+        "uf": "AM",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 11,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmba",
+        "sigla": "BMBA",
+        "nome": "Corpo de Bombeiros Militar da Bahia",
+        "uf": "BA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmce",
+        "sigla": "BMCE",
+        "nome": "Corpo de Bombeiros Militar do Ceará",
+        "uf": "CE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmdf",
+        "sigla": "BMDF",
+        "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 16,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmgo",
+        "sigla": "BMGO",
+        "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 16,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmma",
+        "sigla": "BMMA",
+        "nome": "Corpo de Bombeiros Militar do Maranhão",
+        "uf": "MA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpa",
+        "sigla": "BMPA",
+        "nome": "Corpo de Bombeiros Militar do Pará",
+        "uf": "PA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 7,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpb",
+        "sigla": "BMPB",
+        "nome": "Corpo de Bombeiros Militar da Paraíba",
+        "uf": "PB",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpe",
+        "sigla": "BMPE",
+        "nome": "Corpo de Bombeiros Militar de Pernambuco",
+        "uf": "PE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 48,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpi",
+        "sigla": "BMPI",
+        "nome": "Corpo de Bombeiros Militar do Piauí",
+        "uf": "PI",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmrn",
+        "sigla": "BMRN",
+        "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
+        "uf": "RN",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmro",
+        "sigla": "BMRO",
+        "nome": "Corpo de Bombeiros Militar de Rondônia",
+        "uf": "RO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmrs",
+        "sigla": "BMRS",
+        "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 15,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmse",
+        "sigla": "BMSE",
+        "nome": "Corpo de Bombeiros Militar de Sergipe",
+        "uf": "SE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 15,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmto",
+        "sigla": "BMTO",
+        "nome": "Corpo de Bombeiros Militar do Tocantins",
+        "uf": "TO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "instituicao_id": "pcpr",
+  "instituicao_nome": "Polícia Civil do Paraná",
+  "sigla": "PCPR",
+  "uf": "PR",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Civil do Paraná",
+  "resumo": "Tabela com subsídios brutos mensais dos cargos da Polícia Civil do Paraná, usando as tabelas oficiais de remunerações vigentes em janeiro de 2026 do Governo do Paraná. Valores apresentados na posição inicial e na posição final de cada carreira/cargo listado.",
+  "linhas": [
+    {
+      "cargo": "Delegado de Polícia",
+      "badge": "INICIAL",
+      "remuneracao": 24247.12,
+      "beneficios": 0,
+      "total": 24247.12,
+      "classe": "4ª classe - nível I",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia",
+      "badge": "TOPO",
+      "remuneracao": 38570.72,
+      "beneficios": 0,
+      "total": 38570.72,
+      "classe": "1ª classe - nível XI",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Judiciária",
+      "badge": "INICIAL",
+      "remuneracao": 7818.45,
+      "beneficios": 0,
+      "total": 7818.45,
+      "classe": "Classe única - nível I",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Judiciária",
+      "badge": "TOPO",
+      "remuneracao": 18513.49,
+      "beneficios": 0,
+      "total": 18513.49,
+      "classe": "Classe única - nível XI",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Papiloscopista Policial",
+      "badge": "INICIAL",
+      "remuneracao": 7818.45,
+      "beneficios": 0,
+      "total": 7818.45,
+      "classe": "Classe única - nível I",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Papiloscopista Policial",
+      "badge": "TOPO",
+      "remuneracao": 18513.49,
+      "beneficios": 0,
+      "total": 18513.49,
+      "classe": "Classe única - nível XI",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Operações Policiais",
+      "badge": "INICIAL",
+      "remuneracao": 6479.95,
+      "beneficios": 0,
+      "total": 6479.95,
+      "classe": "Classe única - nível I",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Operações Policiais",
+      "badge": "TOPO",
+      "remuneracao": 11000,
+      "beneficios": 0,
+      "total": 11000,
+      "classe": "Classe única - nível XI",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Sem somar auxílio-alimentação, FPP, gratificações, adicionais e verbas eventuais.",
+      "fonteKey": "pcpr",
+      "fonteNome": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+  "fontes": [
+    {
+      "titulo": "Tabelas de Remunerações vigentes em janeiro de 2026 - Governo do Paraná",
+      "url": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+      "tipo": "tabela oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Carreiras e Tabelas Salariais - Secretaria da Administração e da Previdência do Paraná",
+      "url": "https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Concursos - Polícia Civil do Paraná",
+      "url": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
+      "tipo": "página institucional",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Valores apresentados como subsídio bruto mensal, sem incluir auxílio-alimentação, Função Policial Privativa, gratificações, adicionais por função e verbas eventuais.",
+    "A tabela oficial consultada está publicada como remunerações vigentes em janeiro de 2026 e traz os anexos da Polícia Civil com referência de tabela 2025, mas é o compilado oficial vigente encontrado para 2026.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

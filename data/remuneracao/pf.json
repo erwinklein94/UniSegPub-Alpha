@@ -1,0 +1,190 @@
+{
+  "instituicao_id": "pf",
+  "instituicao_nome": "Polícia Federal",
+  "sigla": "PF",
+  "uf": "BR",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Federal",
+  "resumo": "Tabela com subsídio bruto mensal da Carreira Policial Federal, com foco nos cargos e classes úteis ao público geral. Valores vigentes na tabela legal com efeitos financeiros a partir de 1º de maio de 2026.",
+  "linhas": [
+    {
+      "cargo": "Delegado de Polícia Federal",
+      "badge": "DPF",
+      "remuneracao": 27831.7,
+      "beneficios": 0,
+      "total": 27831.7,
+      "classe": "Terceira categoria",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Perito Criminal Federal",
+      "badge": "PCF",
+      "remuneracao": 27831.7,
+      "beneficios": 0,
+      "total": 27831.7,
+      "classe": "Terceira categoria",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Escrivão de Polícia Federal",
+      "badge": "EPF",
+      "remuneracao": 14710.1,
+      "beneficios": 0,
+      "total": 14710.1,
+      "classe": "3ª classe",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Federal",
+      "badge": "APF",
+      "remuneracao": 14710.1,
+      "beneficios": 0,
+      "total": 14710.1,
+      "classe": "3ª classe",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Papiloscopista Policial Federal",
+      "badge": "PPF",
+      "remuneracao": 14710.1,
+      "beneficios": 0,
+      "total": 14710.1,
+      "classe": "3ª classe",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia Federal",
+      "badge": "DPF",
+      "remuneracao": 41350,
+      "beneficios": 0,
+      "total": 41350,
+      "classe": "Especial",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Perito Criminal Federal",
+      "badge": "PCF",
+      "remuneracao": 41350,
+      "beneficios": 0,
+      "total": 41350,
+      "classe": "Especial",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Escrivão de Polícia Federal",
+      "badge": "EPF",
+      "remuneracao": 25250,
+      "beneficios": 0,
+      "total": 25250,
+      "classe": "Especial",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Federal",
+      "badge": "APF",
+      "remuneracao": 25250,
+      "beneficios": 0,
+      "total": 25250,
+      "classe": "Especial",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Papiloscopista Policial Federal",
+      "badge": "PPF",
+      "remuneracao": 25250,
+      "beneficios": 0,
+      "total": 25250,
+      "classe": "Especial",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Auxílio-alimentação e outras verbas não somados",
+      "fonteKey": "pf",
+      "fonteNome": "Lei nº 14.875/2024 - Anexo XXVI",
+      "fonteUrl": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+  "fontes": [
+    {
+      "titulo": "Lei nº 14.875/2024 - Anexos com a tabela de subsídio da Carreira Policial Federal",
+      "url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "tipo": "lei federal",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Tabela de Remuneração dos Servidores Públicos Federais Civis e dos Ex-Territórios",
+      "url": "https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Carreira Policial - 2025 — Polícia Federal",
+      "url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/edital/carreira-policial-2025",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital nº 1 – PF – Policial, de 20 de maio de 2025",
+      "url": "https://cdn.cebraspe.org.br/concursos/PF_25/arquivos/Ed_1_PF_25_Abertura.pdf",
+      "tipo": "edital",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Tabela montada com valores brutos mensais de subsídio vigentes a partir de 1º de maio de 2026.",
+    "Os totais não incluem auxílio-alimentação, indenizações, abono de permanência, serviço extraordinário, diárias ou outras parcelas eventuais.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

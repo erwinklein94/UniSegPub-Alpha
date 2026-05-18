@@ -1,0 +1,177 @@
+{
+  "instituicao_id": "pcrr",
+  "instituicao_nome": "Polícia Civil de Roraima",
+  "sigla": "PCRR",
+  "uf": "RR",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Civil de Roraima",
+  "resumo": "Tabela com valores brutos mensais por cargo da Polícia Civil de Roraima, priorizando subsídio da classe inicial identificado em edital público recente. Benefícios não foram somados ao total.",
+  "linhas": [
+    {
+      "cargo": "Delegado de Polícia Civil",
+      "badge": "DEL",
+      "remuneracao": 20410.04,
+      "beneficios": 0,
+      "total": 20410.04,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Concurso PC-RR 2022 Delegado",
+      "fonteUrl": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Médico Legista de Polícia Civil",
+      "badge": "ML",
+      "remuneracao": 12901.17,
+      "beneficios": 0,
+      "total": 12901.17,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Odonto-Legista de Polícia Civil",
+      "badge": "OL",
+      "remuneracao": 12901.17,
+      "beneficios": 0,
+      "total": 12901.17,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Perito Criminal de Polícia Civil",
+      "badge": "PC",
+      "remuneracao": 12901.17,
+      "beneficios": 0,
+      "total": 12901.17,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Escrivão de Polícia Civil",
+      "badge": "EPC",
+      "remuneracao": 5053.55,
+      "beneficios": 0,
+      "total": 5053.55,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Civil",
+      "badge": "APC",
+      "remuneracao": 5053.55,
+      "beneficios": 0,
+      "total": 5053.55,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Perito Papiloscopista de Polícia Civil",
+      "badge": "PAP",
+      "remuneracao": 5053.55,
+      "beneficios": 0,
+      "total": 5053.55,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Auxiliar de Perito Criminal de Polícia Civil",
+      "badge": "APC-Per",
+      "remuneracao": 3369.03,
+      "beneficios": 0,
+      "total": 3369.03,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Auxiliar de Necrópsia de Polícia Civil",
+      "badge": "ANEC",
+      "remuneracao": 3369.03,
+      "beneficios": 0,
+      "total": 3369.03,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 500 não somado ao total.",
+      "fonteKey": "pcrr",
+      "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
+      "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
+  "fontes": [
+    {
+      "titulo": "Concurso PC-RR 2022 Delegado",
+      "url": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
+      "tipo": "edital/espelho de concurso",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital nº 2 PCRR SEGAD 2022",
+      "url": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+      "tipo": "edital",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de Roraima - tabela de subsídios da Polícia Civil",
+      "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2015/09/doe-20150904.pdf",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Orgânica da Polícia Civil de Roraima",
+      "url": "https://api.transparencia.rr.gov.br/storage/competencias/667b1936-3be0-4580-8600-b48c7d602c33.pdf",
+      "tipo": "lei complementar",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Tabela oficial de subsídios mais recente localizada no Diário Oficial é antiga e diverge dos valores iniciais divulgados nos editais de 2022.",
+    "Os valores publicados priorizam a classe inicial dos editais de concurso por serem mais úteis ao usuário final e mais recentes do que a tabela antiga localizada.",
+    "Benefícios e bolsas de formação não foram somados para evitar inflar a remuneração mensal do cargo efetivo.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "instituicao_id": "pcrs",
+  "instituicao_nome": "Polícia Civil do Rio Grande do Sul",
+  "sigla": "PCRS",
+  "uf": "RS",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Civil do Rio Grande do Sul",
+  "resumo": "Tabela com valores brutos mensais de ingresso encontrados em fontes oficiais recentes da Polícia Civil do RS para os principais cargos da instituição.",
+  "linhas": [
+    {
+      "cargo": "Escrivão de Polícia",
+      "badge": "EP",
+      "remuneracao": 7299.54,
+      "beneficios": 0,
+      "total": 7299.54,
+      "classe": "Classe inicial",
+      "criterio": "Vencimento bruto mensal da classe inicial",
+      "benefDesc": "Não inclui auxílio-alimentação, adicionais, abonos, gratificações ou vantagens pessoais.",
+      "fonteKey": "pcrs",
+      "fonteNome": "Edital nº 06/2025 – Concurso de Escrivão e Inspetor",
+      "fonteUrl": "https://www.pc.rs.gov.br/upload/arquivos/202510/24083812-edital-de-abertura-agentes-admin-correto.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Inspetor de Polícia",
+      "badge": "IP",
+      "remuneracao": 7299.54,
+      "beneficios": 0,
+      "total": 7299.54,
+      "classe": "Classe inicial",
+      "criterio": "Vencimento bruto mensal da classe inicial",
+      "benefDesc": "Não inclui auxílio-alimentação, adicionais, abonos, gratificações ou vantagens pessoais.",
+      "fonteKey": "pcrs",
+      "fonteNome": "Edital nº 06/2025 – Concurso de Escrivão e Inspetor",
+      "fonteUrl": "https://www.pc.rs.gov.br/upload/arquivos/202510/24083812-edital-de-abertura-agentes-admin-correto.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia",
+      "badge": "DP",
+      "remuneracao": 23334.43,
+      "beneficios": 0,
+      "total": 23334.43,
+      "classe": "Classe inicial",
+      "criterio": "Vencimento bruto mensal da classe inicial",
+      "benefDesc": "Não inclui auxílio-alimentação, adicionais, abonos, gratificações ou vantagens pessoais.",
+      "fonteKey": "pcrs",
+      "fonteNome": "Edital de Abertura nº 04/2025 para Delegado de Polícia",
+      "fonteUrl": "https://www.pc.rs.gov.br/upload/arquivos/202510/13082837-edital-de-abertura-04-2025-admin-f.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.pc.rs.gov.br/upload/arquivos/202510/24083812-edital-de-abertura-agentes-admin-correto.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital nº 06/2025 – Concurso Público de Ingresso nas Carreiras de Escrivão de Polícia e de Inspetor de Polícia",
+      "url": "https://www.pc.rs.gov.br/upload/arquivos/202510/24083812-edital-de-abertura-agentes-admin-correto.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital de Abertura nº 04/2025 para Delegado de Polícia",
+      "url": "https://www.pc.rs.gov.br/upload/arquivos/202510/13082837-edital-de-abertura-04-2025-admin-f.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Publicado Edital de Abertura de Concurso Público de Ingresso nas Carreiras de Escrivão de Polícia e de Inspetor de Polícia",
+      "url": "https://www.pc.rs.gov.br/publicado-edital-de-abertura-de-concurso-publico-de-ingresso-nas-carreiras-de-escrivao-de-policia-e-de-inspetor-de-policia",
+      "tipo": "página oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Concurso Público para Delegado de Polícia (2025)",
+      "url": "https://www.pc.rs.gov.br/concurso-publico-para-delegado-de-policia-2025",
+      "tipo": "página oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Foram localizados valores oficiais recentes de ingresso para Escrivão, Inspetor e Delegado. Não foram encontrados, na pesquisa realizada, valores oficiais consolidados por todas as classes da carreira em tabela única oficial da instituição.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

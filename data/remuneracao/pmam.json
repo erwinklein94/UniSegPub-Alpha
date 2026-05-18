@@ -1,0 +1,100 @@
+{
+  "instituicao_id": "pmam",
+  "instituicao_nome": "Polícia Militar do Estado do Amazonas",
+  "sigla": "PMAM",
+  "uf": "AM",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da PMAM",
+  "resumo": "Tabela com valores brutos mensais confirmados em fontes oficiais para ingresso e referência legal da carreira militar estadual da PMAM. Os valores abaixo refletem remuneração básica bruta divulgada em edital oficial e legislação estadual; não incluem adicionais pessoais, gratificações de curso, tempo de serviço, função, auxílio-fardamento, SEG ou outras verbas eventuais.",
+  "linhas": [
+    {
+      "cargo": "Aluno-Soldado PM",
+      "badge": "AL SD",
+      "remuneracao": 2657.28,
+      "beneficios": 0,
+      "total": 2657.28,
+      "classe": "Praças",
+      "criterio": "Remuneração básica inicial do curso de formação.",
+      "benefDesc": "Não soma auxílio-fardamento, SEG, adicionais e verbas eventuais.",
+      "fonteKey": "pmam",
+      "fonteNome": "Edital 01/2021-PMAM",
+      "fonteUrl": "https://pm.am.gov.br/portal/document/download/edital_pmam_2021.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aluno-Oficial PM",
+      "badge": "AL OF",
+      "remuneracao": 7180.34,
+      "beneficios": 0,
+      "total": 7180.34,
+      "classe": "Oficiais",
+      "criterio": "Remuneração básica inicial do curso de formação.",
+      "benefDesc": "Não soma adicionais, função, curso e verbas eventuais.",
+      "fonteKey": "pmam",
+      "fonteNome": "Edital 01/2021-PMAM",
+      "fonteUrl": "https://pm.am.gov.br/portal/document/download/edital_pmam_2021.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aluno-Oficial de Saúde PM",
+      "badge": "AL OFS",
+      "remuneracao": 7180.34,
+      "beneficios": 0,
+      "total": 7180.34,
+      "classe": "Oficiais de Saúde",
+      "criterio": "Remuneração básica inicial do curso de formação.",
+      "benefDesc": "Não soma adicionais, função, curso e verbas eventuais.",
+      "fonteKey": "pmam",
+      "fonteNome": "Edital 01/2021-PMAM",
+      "fonteUrl": "https://pm.am.gov.br/portal/document/download/edital_pmam_2021.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://pm.am.gov.br/portal/document/download/edital_pmam_2021.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital 01/2021-PMAM",
+      "url": "https://pm.am.gov.br/portal/document/download/edital_pmam_2021.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei n.º 3.725, de 19 de março de 2012",
+      "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2012/3/2382",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei n.º 5.772, de 10 de janeiro de 2022",
+      "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2022/1/6753?o=1",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "PMAM - Legislação Estadual",
+      "url": "https://www.pm.am.gov.br/portal/legislacao?category=2&topic=2",
+      "tipo": "página oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "ALEAM - aprovação de reajuste salarial para as Polícias Civil, Militar e Bombeiros",
+      "url": "https://www.aleam.gov.br/delegado-pericles-articula-aprovacao-de-reajuste-salarial-para-as-policias-civil-militar-e-bombeiros/",
+      "tipo": "página institucional",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Foi possível confirmar com segurança os valores brutos iniciais de ingresso em fonte oficial.",
+    "A legislação de remuneração da PMAM teve reajustes posteriores, mas os anexos consolidados com a tabela completa por posto e graduação não estavam acessíveis de forma íntegra nas fontes abertas localizadas.",
+    "Para publicar tabela completa por posto e graduação da ativa, recomenda-se revisão humana com extração do anexo remuneratório consolidado mais recente da Lei nº 3.725/2012 e suas alterações.",
+    "Não foram somados benefícios, gratificações de curso, tempo de serviço, função, SEG nem verbas eventuais.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

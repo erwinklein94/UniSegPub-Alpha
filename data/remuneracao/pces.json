@@ -1,0 +1,67 @@
+{
+  "instituicao_id": "pces",
+  "instituicao_nome": "Polícia Civil do Espírito Santo",
+  "sigla": "PCES",
+  "uf": "ES",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da PCES",
+  "resumo": "Tabela com valores brutos mensais de entrada e de topo de carreira localizados em norma oficial do Espírito Santo. Os valores abaixo são de subsídio e não somam auxílio-alimentação, adicional noturno, serviço extraordinário, funções gratificadas ou verbas eventuais.",
+  "linhas": [
+    {
+      "cargo": "Oficial Investigador de Polícia - 3ª categoria, referência 1",
+      "badge": "OIP",
+      "remuneracao": 9015.2,
+      "beneficios": 0,
+      "total": 9015.2,
+      "classe": "Policial civil",
+      "criterio": "Subsídio bruto mensal da classe inicial.",
+      "benefDesc": "Não soma auxílios, extras, adicionais ou função gratificada.",
+      "fonteKey": "pces",
+      "fonteNome": "Lei Complementar 1.093/2024 - Anexo VII",
+      "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Oficial Investigador de Polícia - especial, referência 15",
+      "badge": "OIP",
+      "remuneracao": 15767.81,
+      "beneficios": 0,
+      "total": 15767.81,
+      "classe": "Policial civil",
+      "criterio": "Subsídio bruto mensal do topo da carreira.",
+      "benefDesc": "Não soma auxílios, extras, adicionais ou função gratificada.",
+      "fonteKey": "pces",
+      "fonteNome": "Lei Complementar 1.093/2024 - Anexo VII",
+      "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+  "fontes": [
+    {
+      "titulo": "Lei Complementar 1.093/2024 - cria o cargo de Oficial Investigador de Polícia e traz a tabela de subsídio com vigência a partir de 1º de dezembro de 2025",
+      "url": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+      "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Portal oficial da Polícia Civil do Espírito Santo",
+      "url": "https://pc.es.gov.br/",
+      "tipo": "site_oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Foi localizada com segurança apenas a tabela oficial do cargo de Oficial Investigador de Polícia, criada pela LC 1.093/2024.",
+    "As carreiras de Delegado de Polícia, Médico Legista e Perito Oficial Criminal não tiveram tabela oficial consolidada acessível com extração confiável nesta pesquisa.",
+    "Tabela útil montada somente com valores oficiais confirmados e vigentes a partir de 1º de dezembro de 2025.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

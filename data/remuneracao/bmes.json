@@ -1,0 +1,101 @@
+{
+  "instituicao_id": "bmes",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+  "sigla": "CBMES",
+  "uf": "ES",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do CBMES",
+  "resumo": "Foram localizados valores brutos oficiais recentes para a carreira de Oficial Combatente do CBMES no edital consolidado de 2026. Não foram confirmadas, com segurança suficiente em fonte oficial acessível, as tabelas completas por todos os postos e graduações da corporação nesta pesquisa.",
+  "linhas": [
+    {
+      "cargo": "Aluno-Oficial – 1º ano",
+      "badge": "QOCBM",
+      "remuneracao": 4113.27,
+      "beneficios": 0,
+      "total": 4113.27,
+      "classe": "Oficial Combatente",
+      "criterio": "Vencimento bruto mensal do 1º ano",
+      "benefDesc": "Não soma auxílio-alimentação.",
+      "fonteKey": "bmes",
+      "fonteNome": "Edital consolidado CFO CBMES 2026",
+      "fonteUrl": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aluno-Oficial – 2º ano",
+      "badge": "QOCBM",
+      "remuneracao": 5027.34,
+      "beneficios": 0,
+      "total": 5027.34,
+      "classe": "Oficial Combatente",
+      "criterio": "Vencimento bruto mensal do 2º ano",
+      "benefDesc": "Não soma auxílio-alimentação.",
+      "fonteKey": "bmes",
+      "fonteNome": "Edital consolidado CFO CBMES 2026",
+      "fonteUrl": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aluno-Oficial – 3º ano",
+      "badge": "QOCBM",
+      "remuneracao": 5484.36,
+      "beneficios": 0,
+      "total": 5484.36,
+      "classe": "Oficial Combatente",
+      "criterio": "Vencimento bruto mensal do 3º ano",
+      "benefDesc": "Não soma auxílio-alimentação.",
+      "fonteKey": "bmes",
+      "fonteNome": "Edital consolidado CFO CBMES 2026",
+      "fonteUrl": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aspirante-a-Oficial",
+      "badge": "QOCBM",
+      "remuneracao": 10221.74,
+      "beneficios": 0,
+      "total": 10221.74,
+      "classe": "Oficial Combatente",
+      "criterio": "Vencimento bruto mensal da classe inicial após formação",
+      "benefDesc": "Não soma auxílio-alimentação nem gratificação de serviço extraordinário.",
+      "fonteKey": "bmes",
+      "fonteNome": "Edital consolidado CFO CBMES 2026",
+      "fonteUrl": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital consolidado do Concurso para Oficial Combatente Bombeiro Militar do CBMES 2026",
+      "url": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 11.985/2023 - reajuste aos servidores da PM e do CBM",
+      "url": "https://www3.al.es.gov.br/Arquivo/Documents/legislacao/html/LEI119852023.html",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Página de legislação da Lei Ordinária 11.985/2023 na ALES",
+      "url": "https://www3.al.es.gov.br/legislacao/norma.aspx?ano=2023&id=82588&temas=18",
+      "tipo": "legislação oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Pesquisa encontrou tabela oficial útil apenas para a formação e para Aspirante-a-Oficial.",
+    "Tabela completa por postos e graduações do CBMES não foi confirmada integralmente em fonte oficial acessível nesta pesquisa.",
+    "Valores informados são brutos e não incluem auxílio-alimentação; no caso de Aspirante-a-Oficial, também não incluem gratificação de serviço extraordinário.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

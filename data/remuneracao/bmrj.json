@@ -1,0 +1,106 @@
+{
+  "instituicao_id": "bmrj",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+  "sigla": "CBMERJ",
+  "uf": "RJ",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do CBMERJ",
+  "resumo": "Tabela com valores brutos mensais identificados em fontes oficiais recentes do CBMERJ para cargos de ingresso e progressão imediata informada em edital oficial.",
+  "linhas": [
+    {
+      "cargo": "Soldado BM",
+      "badge": "Soldado",
+      "remuneracao": 2791.72,
+      "beneficios": 0,
+      "total": 2791.72,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal do cargo de ingresso.",
+      "benefDesc": "Não soma gratificação de habilitação profissional.",
+      "fonteKey": "bmrj",
+      "fonteNome": "Edital CBMERJ 001/2023",
+      "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "3º Sargento BM",
+      "badge": "3Sgt BM",
+      "remuneracao": 5056.46,
+      "beneficios": 0,
+      "total": 5056.46,
+      "classe": "Praças",
+      "criterio": "Remuneração bruta mensal informada em edital oficial.",
+      "benefDesc": "Não soma gratificação de habilitação profissional.",
+      "fonteKey": "bmrj",
+      "fonteNome": "Edital CBMERJ 001/2023",
+      "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Cadete BM 1º CFO",
+      "badge": "Cadete",
+      "remuneracao": 4227.16,
+      "beneficios": 0,
+      "total": 4227.16,
+      "classe": "Oficiais",
+      "criterio": "Remuneração inicial bruta mensal do curso de formação.",
+      "benefDesc": "Não foram somados benefícios extras além do valor inicial do cargo.",
+      "fonteKey": "bmrj",
+      "fonteNome": "Concurso Público ABMDPII - CBMERJ / 2026",
+      "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/Edital-CFO-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Aspirante a Oficial BM",
+      "badge": "Asp Of BM",
+      "remuneracao": 9313.32,
+      "beneficios": 0,
+      "total": 9313.32,
+      "classe": "Oficiais",
+      "criterio": "Remuneração bruta mensal após conclusão do CFO.",
+      "benefDesc": "Não foram somados adicionais pessoais ou eventuais.",
+      "fonteKey": "bmrj",
+      "fonteNome": "Concurso Público ABMDPII - CBMERJ / 2026",
+      "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/Edital-CFO-2026.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital CBMERJ 001/2023",
+      "url": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Concurso Público ABMDPII - CBMERJ / 2026",
+      "url": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/Edital-CFO-2026.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Caderno de Remuneração | GESPERJ",
+      "url": "https://www.rj.gov.br/gesperj/Caderno_de_Remunera%C3%A7%C3%A3o_",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Janeiro de 2026",
+      "url": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno_de_RH-Jan2026.pdf",
+      "tipo": "caderno governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Não foi localizada, em fonte oficial aberta com tabela consolidada por posto e graduação do CBMERJ, uma grade completa recente de remuneração bruta mensal para toda a carreira.",
+    "Os valores publicados em editais oficiais são úteis e objetivos, mas não substituem uma tabela remuneratória integral por posto e graduação.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

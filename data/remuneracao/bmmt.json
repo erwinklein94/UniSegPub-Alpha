@@ -1,0 +1,93 @@
+{
+  "instituicao_id": "bmmt",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+  "sigla": "CBMMT",
+  "uf": "MT",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal do CBMMT",
+  "resumo": "Foram localizados valores oficiais e recentes para cargos temporários do CBMMT em publicações institucionais e legislação estadual. Para a carreira militar efetiva, a lei localizada confirma que a remuneração dos temporários toma por base o subsídio dos cargos de carreira, mas a tabela completa de subsídio por posto/graduação não foi recuperada de forma legível na pesquisa.",
+  "linhas": [
+    {
+      "cargo": "Soldado BM de Segunda Classe Temporário",
+      "badge": "SD 2CL TMP",
+      "remuneracao": 3602.23,
+      "beneficios": 0,
+      "total": 3602.23,
+      "classe": "Praça temporária",
+      "criterio": "Remuneração bruta mensal inicial do cargo temporário.",
+      "benefDesc": "Auxílio-alimentação não somado.",
+      "fonteKey": "bmmt",
+      "fonteNome": "CBMMT - processo seletivo para soldado BM temporário de segunda classe",
+      "fonteUrl": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-divulga-resultado-preliminar-das-inscri%C3%A7%C3%B5es-do-processo-seletivo",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Soldado BM de Saúde de Segunda Classe Temporário",
+      "badge": "SD SAU 2C",
+      "remuneracao": 3602.23,
+      "beneficios": 0,
+      "total": 3602.23,
+      "classe": "Praça temporária de saúde",
+      "criterio": "Remuneração bruta mensal inicial do cargo temporário.",
+      "benefDesc": "Auxílio-alimentação não somado.",
+      "fonteKey": "bmmt",
+      "fonteNome": "CBMMT - seletivo para técnicos de enfermagem e enfermeiros",
+      "fonteUrl": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Soldado BM de Saúde Temporário",
+      "badge": "SD SAU TMP",
+      "remuneracao": 6003.71,
+      "beneficios": 0,
+      "total": 6003.71,
+      "classe": "Praça temporária de saúde",
+      "criterio": "Remuneração bruta mensal do cargo temporário.",
+      "benefDesc": "Auxílio-alimentação não somado.",
+      "fonteKey": "bmmt",
+      "fonteNome": "CBMMT - seletivo para técnicos de enfermagem e enfermeiros",
+      "fonteUrl": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
+  "fontes": [
+    {
+      "titulo": "CBMMT - processo seletivo para soldado BM temporário de segunda classe",
+      "url": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-divulga-resultado-preliminar-das-inscri%C3%A7%C3%B5es-do-processo-seletivo",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CBMMT - seletivo para técnicos de enfermagem e enfermeiros",
+      "url": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei publicada no Diário Oficial sobre bombeiros militares temporários",
+      "url": "https://iomat.mt.gov.br/portal/edicoes/download/16645",
+      "tipo": "lei_diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Página de concursos e seletivos do CBMMT",
+      "url": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Pesquisa encontrou valores oficiais úteis para cargos temporários, mas não recuperou a tabela completa e legível de subsídio da carreira efetiva do CBMMT.",
+    "A lei localizada confirma que temporários usam como base o subsídio dos militares de carreira, porém sem a planilha completa de postos e graduações não foi possível montar uma tabela ampla da carreira efetiva.",
+    "Benefícios como auxílio-alimentação, adicional de férias, gratificação natalina, diárias e ajuda-fardamento não foram somados aos totais.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

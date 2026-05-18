@@ -1,0 +1,62 @@
+{
+  "instituicao_id": "pcmt",
+  "instituicao_nome": "Polícia Judiciária Civil de Mato Grosso",
+  "sigla": "PCMT",
+  "uf": "MT",
+  "tema": "remuneracao",
+  "status": "Pesquisa pendente",
+  "titulo": "Remuneração bruta mensal da Polícia Judiciária Civil de Mato Grosso",
+  "resumo": "As fontes oficiais abertas localizadas nesta atualização confirmam os cargos de Delegado de Polícia, Escrivão de Polícia e Investigador de Polícia, além da existência de leis estaduais que fixam subsídio para as carreiras e de nomeações recentes em 2026. Porém, não foi localizada em acesso aberto uma tabela oficial, completa e auditável com os valores brutos mensais vigentes por cargo e classe da PCMT para publicação segura. Para evitar divulgar valores possivelmente desatualizados ou incompletos, a tabela foi mantida sem linhas remuneratórias.",
+  "linhas": [],
+  "fonte_principal": "https://www.al.mt.gov.br/norma-juridica/urn%3Alex%3Abr%3Bmato.grosso%3Aestadual%3Alei.complementar%3A2015-05-13%3B565/ficha-tecnica",
+  "fontes": [
+    {
+      "titulo": "Lei Complementar nº 565 de 13 de maio de 2015 - ficha técnica",
+      "url": "https://www.al.mt.gov.br/norma-juridica/urn%3Alex%3Abr%3Bmato.grosso%3Aestadual%3Alei.complementar%3A2015-05-13%3B565/ficha-tecnica",
+      "tipo": "lei complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Estatuto da Polícia Judiciária Civil de Mato Grosso",
+      "url": "https://www.al.mt.gov.br/storage/webdisco/docs_administrativos/doc_1146.pdf",
+      "tipo": "lei complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Perguntas frequentes da Polícia Judiciária Civil de Mato Grosso",
+      "url": "https://www.transparencia.mt.gov.br/web/pjc/perguntas-frequentes2",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Nomeados aos cargos de escrivão e investigador da Polícia Civil devem ficar atentos aos prazos e procedimentos",
+      "url": "https://www.pjc.mt.gov.br/en/w/nomeados-aos-cargos-de-escriv%C3%A3o-e-investigador-da-pol%C3%ADcia-civil-devem-ficar-atentos-aos-prazos-e-procedimentos",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governo de MT nomeia 235 aprovados no concurso da Polícia Civil",
+      "url": "https://www.pjc.mt.gov.br/en/w/governo-de-mt-nomeia-235-aprovados-no-concurso-da-pol%C3%ADcia-civil",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governo lança edital de concurso público para cargos das forças de segurança de MT",
+      "url": "https://www.transparencia.mt.gov.br/web/mt/w/18725938-governo-lanca-edital-de-concurso-publico-para-cargos-das-forcas-de-seguranca-de-mt",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "pendente",
+  "score_publicacao": 0,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Não foi localizada, em fonte oficial aberta acessível durante a pesquisa, tabela salarial consolidada da PCMT com valores brutos mensais vigentes em 2026 por cargo e classe.",
+    "As fontes oficiais abertas confirmam cargos, estrutura de carreira e existência de leis de subsídio, mas não trouxeram valores numéricos completos e auditáveis para publicação segura.",
+    "Para evitar divulgar remuneração possivelmente desatualizada, incompleta ou inferida, nenhuma linha remuneratória foi preenchida nesta atualização.",
+    "Classificação automática: Pesquisa pendente (0/100)."
+  ]
+}

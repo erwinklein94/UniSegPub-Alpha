@@ -1,0 +1,191 @@
+{
+  "instituicao_id": "pcse",
+  "instituicao_nome": "Polícia Civil de Sergipe",
+  "sigla": "PCSE",
+  "uf": "SE",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Civil de Sergipe",
+  "resumo": "Tabela com subsídios brutos mensais vigentes em 2026 para os cargos de Delegado de Polícia e Oficial Investigador de Polícia da Polícia Civil de Sergipe, por classe de carreira. Não foram somadas vantagens pessoais, periculosidade, plantões, funções, férias, 13º ou verbas eventuais.",
+  "linhas": [
+    {
+      "cargo": "Delegado de Polícia Substituto",
+      "badge": "DEL SUB",
+      "remuneracao": 14266.18,
+      "beneficios": 0,
+      "total": 14266.18,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.936/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia de 3ª Classe",
+      "badge": "DEL 3",
+      "remuneracao": 21387.45,
+      "beneficios": 0,
+      "total": 21387.45,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.936/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia de 2ª Classe",
+      "badge": "DEL 2",
+      "remuneracao": 25290.06,
+      "beneficios": 0,
+      "total": 25290.06,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.936/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia de 1ª Classe",
+      "badge": "DEL 1",
+      "remuneracao": 29180.84,
+      "beneficios": 0,
+      "total": 29180.84,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.936/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia de Classe Especial",
+      "badge": "DEL ESP",
+      "remuneracao": 32729.02,
+      "beneficios": 0,
+      "total": 32729.02,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.936/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Oficial Investigador de Polícia Substituto",
+      "badge": "OIP SUB",
+      "remuneracao": 5836.18,
+      "beneficios": 0,
+      "total": 5836.18,
+      "classe": "Oficial Investigador",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.933/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Oficial Investigador de Polícia de 3ª Classe",
+      "badge": "OIP 3",
+      "remuneracao": 8430.03,
+      "beneficios": 0,
+      "total": 8430.03,
+      "classe": "Oficial Investigador",
+      "criterio": "Subsídio bruto mensal da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.933/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Oficial Investigador de Polícia de 2ª Classe",
+      "badge": "OIP 2",
+      "remuneracao": 9726.95,
+      "beneficios": 0,
+      "total": 9726.95,
+      "classe": "Oficial Investigador",
+      "criterio": "Subsídio bruto mensal da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.933/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Oficial Investigador de Polícia de 1ª Classe",
+      "badge": "OIP 1",
+      "remuneracao": 12320.81,
+      "beneficios": 0,
+      "total": 12320.81,
+      "classe": "Oficial Investigador",
+      "criterio": "Subsídio bruto mensal da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.933/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Oficial Investigador de Polícia de Classe Especial",
+      "badge": "OIP ESP",
+      "remuneracao": 13805.1,
+      "beneficios": 0,
+      "total": 13805.1,
+      "classe": "Oficial Investigador",
+      "criterio": "Subsídio bruto mensal do topo da carreira",
+      "benefDesc": "Não soma VPI, periculosidade, funções, plantões e verbas eventuais",
+      "fonteKey": "pcse",
+      "fonteNome": "Lei nº 9.933/2026",
+      "fonteUrl": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+  "fontes": [
+    {
+      "titulo": "Lei nº 9.933, de 1º de abril de 2026 – Reajuste 2026 Oficial Investigador de Polícia",
+      "url": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 9.936, de 1º de abril de 2026 – Reajuste 2026 Delegados",
+      "url": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "SEAD Sergipe – Tabelas de Remuneração",
+      "url": "https://sead.se.gov.br/tabelas-de-remuneracao/",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "SEAD Sergipe – Delegados: legislação e tabelas",
+      "url": "https://sead.se.gov.br/delegados-legislacao-e-tabelas/",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "A carreira de Agente de Polícia e Escrivão foi unificada na denominação Oficial Investigador de Polícia em Sergipe.",
+    "Os valores informados são subsídios brutos mensais vigentes a partir de 1º de abril de 2026.",
+    "Periculosidade e vantagens pessoais não foram somadas para evitar inflar a remuneração.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}
