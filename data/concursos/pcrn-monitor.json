@@ -1,49 +1,27 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pcrn",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 87,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 18
+  },
+  "depois": {
+    "classe": "forte",
+    "score": 84
+  },
   "usage": {
-    "input_tokens": 11335,
+    "input_tokens": 31179,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 922,
+    "output_tokens": 1751,
     "output_tokens_details": {
-      "reasoning_tokens": 106
+      "reasoning_tokens": 552
     },
-    "total_tokens": 12257
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.rn.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.pc.rn.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.policiacivil.rn.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    }
-  ]
+    "total_tokens": 32930
+  }
 }

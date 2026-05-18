@@ -1,27 +1,27 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pmpi",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 16
-  },
-  "depois": {
     "classe": "fraca",
     "score": 48
   },
+  "depois": {
+    "classe": "forte",
+    "score": 92
+  },
   "usage": {
-    "input_tokens": 43732,
+    "input_tokens": 35825,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 2020,
+    "output_tokens": 2188,
     "output_tokens_details": {
-      "reasoning_tokens": 645
+      "reasoning_tokens": 866
     },
-    "total_tokens": 45752
+    "total_tokens": 38013
   }
 }

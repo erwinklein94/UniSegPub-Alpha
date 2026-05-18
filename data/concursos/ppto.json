@@ -5,55 +5,63 @@
   "uf": "TO",
   "tema": "concursos",
   "status": "Atualização fraca",
-  "titulo": "PPTO: concurso da área penal do Tocantins teve edital em 2014 e homologação final em 2021",
-  "resumo": "O concurso usado como base da atual Polícia Penal do Tocantins foi o da Defesa Social e Segurança Penitenciária, com edital de 2014, organização da Funcab e vagas para o então cargo de Técnico em Defesa Social, hoje denominado Agente de Execução Penal. O resultado final foi homologado em 19 de abril de 2021.",
-  "edital": "Edital 04/2014, publicado em 3 de outubro de 2014, para o quadro da Defesa Social e Segurança Penitenciária do Tocantins. Para a área penal, o cargo era Técnico em Defesa Social, atual Agente de Execução Penal. Situação: concurso anterior com resultado final homologado em 19 de abril de 2021.",
-  "salario": "Técnico em Defesa Social, atual Agente de Execução Penal: R$ 2.326,82 no edital de 2014, para 40 horas semanais.",
-  "vagas": "739 vagas imediatas para Técnico em Defesa Social, sendo 642 masculinas e 97 femininas, além de 39 vagas reservadas a pessoas com deficiência dentro desse cargo, no edital de 2014.",
-  "cotas": "Para Técnico em Defesa Social, 34 vagas para pessoas com deficiência no masculino e 5 no feminino.",
-  "idade": "Não localizado nas fontes consultadas.",
+  "titulo": "PPTO: último concurso da área penal é o de 2014, com homologação final em 19 de abril de 2021",
+  "resumo": "Não foi localizado novo edital da Polícia Penal do Tocantins nas fontes oficiais consultadas. O último concurso que formou a atual carreira penal do estado foi o Edital nº 04/001-2014, da Defesa Social e Segurança Penitenciária, para o cargo de Técnico em Defesa Social, atual Agente de Execução Penal. O resultado final foi homologado em 19 de abril de 2021.",
+  "edital": "Edital nº 04/001-2014, publicado em 15 de outubro de 2014, para a Defesa Social e Segurança Penitenciária do Tocantins. Na área penal, ofertou o cargo de Técnico em Defesa Social, atual Agente de Execução Penal. Situação atual: resultado final homologado em 19 de abril de 2021. Não foi localizado novo edital da Polícia Penal do Tocantins nas fontes consultadas.",
+  "salario": "Técnico em Defesa Social, atual Agente de Execução Penal: R$ 2.326,82 para jornada de 40 horas semanais.",
+  "vagas": "778 vagas imediatas para Técnico em Defesa Social, atual Agente de Execução Penal, sendo 676 masculinas e 102 femininas, além de cadastro de reserva. Reserva para pessoas com deficiência: 42 vagas, sendo 36 masculinas e 6 femininas.",
+  "cotas": "42 vagas reservadas para pessoas com deficiência no cargo de Técnico em Defesa Social, sendo 36 masculinas e 6 femininas.",
+  "idade": "Idade mínima de 18 anos para matrícula no curso de formação profissional. Altura mínima não localizada nas fontes consultadas. CNH categoria B, no mínimo, exigida para posse quando for o caso.",
   "escolaridade": "Ensino médio completo para o cargo de Técnico em Defesa Social, atual Agente de Execução Penal.",
-  "materias": "Língua Portuguesa, Atualidades com conhecimento regional, História e Geografia do Tocantins, Ética e Legislação na Administração Pública, Direitos Humanos e Conhecimentos Específicos.",
+  "materias": "Língua Portuguesa, Atualidades com conhecimento regional, História e Geografia do Estado do Tocantins, Ética e Legislação na Administração Pública, Noções de Informática, Direitos Humanos e conhecimentos específicos do cargo.",
   "banca": "Fundação Professor Carlos Augusto Bittencourt, Funcab.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Prova objetiva, teste de aptidão física, avaliação psicológica, curso de formação profissional e exames admissionais/documentais para matrícula na formação.",
-  "cfsd": "Curso de formação profissional em tempo integral, com dedicação exclusiva, inclusive em horários diurno e noturno, sábados, domingos e feriados.",
+  "etapas": "Prova objetiva, teste de aptidão física, avaliação psicológica e curso de formação profissional.",
+  "cfsd": "Curso de formação profissional realizado em Palmas, em regime de semi-internato, com tempo integral, frequência obrigatória e dedicação exclusiva.",
   "estagio": "Não localizado nas fontes consultadas.",
-  "validade": "2 anos, contados da homologação do resultado final, com possibilidade de prorrogação uma vez por igual período.",
+  "validade": "2 anos a contar da publicação da homologação do resultado final, com possibilidade de prorrogação uma vez por igual período.",
   "previsao": "Não localizado nas fontes consultadas.",
   "site": "https://www.to.gov.br",
   "fontes": [
     {
-      "titulo": "Edital 04 de 03 de outubro de 2014 - Concurso Público para provimento de cargos do quadro da Defesa Social e Segurança Penitenciária do Estado do Tocantins",
-      "url": "https://blog-static.infra.grancursosonline.com.br/wp-content/uploads/2020/12/04191303/EDITAL_POLICIA_PENAL_TO_2014.pdf",
+      "titulo": "Edital nº 04/001-2014 do concurso público para provimento de cargos do quadro da Defesa Social e Segurança Penitenciária do Estado do Tocantins",
+      "url": "https://central.to.gov.br/download/117209",
       "tipo": "edital PDF",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Diário Oficial do Estado do Tocantins - Decreto nº 6.245, de 19 de abril de 2021",
-      "url": "https://central.to.gov.br/download/117358",
+      "titulo": "Diário Oficial do Estado do Tocantins de 20 de abril de 2021, com o Decreto nº 6.245, de 19 de abril de 2021, de homologação do resultado final",
+      "url": "https://doe.to.gov.br/diario/4355/download",
       "tipo": "diário oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Diário Oficial do Estado do Tocantins - Lei nº 3.466, de 2 de maio de 2019",
+      "titulo": "Diário Oficial do Estado do Tocantins com a Lei nº 3.466, de 2 de maio de 2019",
       "url": "https://doe.to.gov.br/diario/3835/download",
       "tipo": "lei estadual",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital de convocação para o teste de aptidão física do concurso da Defesa Social e Segurança Penitenciária do Tocantins",
+      "url": "https://central.to.gov.br/download/144150",
+      "tipo": "edital PDF",
+      "data_consulta": "2026-05-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-17",
+  "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "O cargo usado como referência do concurso é Técnico em Defesa Social, renomeado para Agente de Execução Penal pela Lei nº 3.466/2019.",
-    "Não foi localizado novo edital específico da Polícia Penal do Tocantins nas fontes consultadas.",
-    "As informações de remuneração e vagas publicadas acima são do edital de 2014, que originou nomeações e homologação final posterior.",
-    "Classificação automática: Atualização fraca (56/100)."
+    "O cargo de Técnico em Defesa Social passou a se chamar Agente de Execução Penal em 2019.",
+    "Não foi localizado novo edital específico da Polícia Penal do Tocantins nas fontes oficiais consultadas.",
+    "As informações de vagas, remuneração, requisitos e etapas publicadas são do edital de 2014, que originou a atual carreira penal no estado.",
+    "Resultado final homologado em 19 de abril de 2021.",
+    "Classificação automática: Atualização fraca (56/100).",
+    "Classificação automática: Atualização fraca (76/100)."
   ],
   "classe_atualizacao": "fraca",
   "qualidade_publicacao": "fraca",
-  "score_publicacao": "56",
+  "score_publicacao": "76",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }

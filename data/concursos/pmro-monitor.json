@@ -1,27 +1,27 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pmro",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 12
-  },
-  "depois": {
     "classe": "fraca",
     "score": 54
   },
+  "depois": {
+    "classe": "fraca",
+    "score": 76
+  },
   "usage": {
-    "input_tokens": 31383,
+    "input_tokens": 35599,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1844,
+    "output_tokens": 2041,
     "output_tokens_details": {
-      "reasoning_tokens": 576
+      "reasoning_tokens": 649
     },
-    "total_tokens": 33227
+    "total_tokens": 37640
   }
 }

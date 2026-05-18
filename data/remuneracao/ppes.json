@@ -1,0 +1,59 @@
+{
+  "instituicao_id": "ppes",
+  "instituicao_nome": "Polícia Penal do Espírito Santo",
+  "sigla": "PPES",
+  "uf": "ES",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Penal do Espírito Santo",
+  "resumo": "A carreira pesquisada é a de Policial Penal. O valor inicial confirmado mais recente encontrado em fonte oficial foi o subsídio de R$ 5.631,16, divulgado na página oficial do concurso PPES nº 01/2025. O auxílio-alimentação de R$ 800,00 aparece separado e não foi somado ao total.",
+  "linhas": [
+    {
+      "cargo": "Policial Penal",
+      "badge": "Inicial",
+      "remuneracao": 5631.16,
+      "beneficios": 0,
+      "total": 5631.16,
+      "classe": "Carreira Policial Penal",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Auxílio-alimentação de 800,00 não somado",
+      "fonteKey": "ppes",
+      "fonteNome": "SEGER - Concurso PPES - Edital nº 01/2025 - Policial Penal",
+      "fonteUrl": "https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal",
+  "fontes": [
+    {
+      "titulo": "SEGER - Concurso PPES - Edital nº 01/2025 - Policial Penal",
+      "url": "https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 1.059/2023 - Plano de Carreira dos Policiais Penais",
+      "url": "https://www3.al.es.gov.br/Arquivo/Documents/legislacao/html/LEC10592023.html",
+      "tipo": "lei_complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 1.118/2025 - Altera a LC nº 1.059/2023",
+      "url": "https://www3.al.es.gov.br/legislacao/norma.aspx?id=104312",
+      "tipo": "lei_complementar",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Tabela útil encontrada apenas para o cargo de Policial Penal em valor inicial confirmado em fonte oficial recente.",
+    "Não foi localizada, em formato acessível na pesquisa, a tabela completa com todas as referências atualizadas da carreira para extração segura dos demais níveis.",
+    "O total informado considera somente subsídio bruto mensal, sem somar auxílio-alimentação nem adicionais eventuais.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

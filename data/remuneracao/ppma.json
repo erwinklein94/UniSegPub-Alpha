@@ -1,0 +1,65 @@
+{
+  "instituicao_id": "ppma",
+  "instituicao_nome": "Polícia Penal de Maranhão",
+  "sigla": "PPMA",
+  "uf": "MA",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Penal do Maranhão",
+  "resumo": "Foi localizada fonte oficial estadual que fixa os subsídios dos cargos de Inspetor de Polícia Penal I e II no Maranhão. Não foram encontrados, com segurança suficiente em fonte oficial acessível, os valores detalhados por todas as classes e referências para publicação de tabela completa da carreira.",
+  "linhas": [
+    {
+      "cargo": "Inspetor de Polícia Penal I",
+      "badge": "IPP I",
+      "remuneracao": 6668.07,
+      "beneficios": 0,
+      "total": 6668.07,
+      "classe": "Carreira policial penal",
+      "criterio": "Subsídio bruto mensal do cargo inicial",
+      "benefDesc": "Sem somar auxílio-alimentação, indenizações, plantões ou verbas eventuais",
+      "fonteKey": "ppma",
+      "fonteNome": "Lei Ordinária nº 12.285/2024 do Estado do Maranhão",
+      "fonteUrl": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7127",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7127",
+  "fontes": [
+    {
+      "titulo": "Lei Ordinária nº 12.285, de 28 de maio de 2024",
+      "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7127",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Tabela de Cargos e Funções do Portal da Transparência do Maranhão",
+      "url": "https://www.transparencia.ma.gov.br/wp/tabeladecargosefuncoes",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Remuneração de Servidores do Portal da Transparência do Maranhão",
+      "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei que institui a Polícia Penal no sistema penitenciário do Maranhão",
+      "url": "https://seap.ma.gov.br/noticias/governador-sanciona-lei-que-institui-a-policia-penal-no-sistema-penitenciario-do-maranhao",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Tabela oficial acessível confirma a existência de subsídio para Inspetor de Polícia Penal I e II, mas o anexo com todos os valores por classe e referência não ficou disponível em formato legível na consulta.",
+    "Não foi localizado com segurança suficiente, em fonte oficial aberta e legível, o valor consolidado por classe de Inspetor de Polícia Penal II para publicação.",
+    "Demais cargos de apoio e especialidades da estrutura penitenciária não foram incluídos porque a pesquisa não confirmou remuneração bruta mensal atual em fonte oficial acessível.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

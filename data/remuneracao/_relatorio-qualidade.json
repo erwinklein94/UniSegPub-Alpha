@@ -2,811 +2,11 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 34,
-    "fracas": 18,
-    "fortes": 58
+    "pendentes": 0,
+    "fracas": 28,
+    "fortes": 82
   },
   "fila_acoes": [
-    {
-      "id": "pcmt",
-      "sigla": "PCMT",
-      "nome": "Polícia Judiciária Civil de Mato Grosso",
-      "uf": "MT",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 6,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "pendente",
-          "score": 0
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcmt",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmrr",
-      "sigla": "PMRR",
-      "nome": "Polícia Militar de Roraima",
-      "uf": "RR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmrr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmrs",
-      "sigla": "PMRS",
-      "nome": "Brigada Militar do Rio Grande do Sul",
-      "uf": "RS",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmrs",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmsc",
-      "sigla": "PMSC",
-      "nome": "Polícia Militar de Santa Catarina",
-      "uf": "SC",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmsc",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmse",
-      "sigla": "PMSE",
-      "nome": "Polícia Militar de Sergipe",
-      "uf": "SE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmse",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmto",
-      "sigla": "PMTO",
-      "nome": "Polícia Militar de Tocantins",
-      "uf": "TO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmto",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppac",
-      "sigla": "PPAC",
-      "nome": "Polícia Penal do Acre",
-      "uf": "AC",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppac",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppal",
-      "sigla": "PPAL",
-      "nome": "Polícia Penal do Estado de Alagoas",
-      "uf": "AL",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppal",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppam",
-      "sigla": "PPAM",
-      "nome": "Polícia Penal de Amazonas",
-      "uf": "AM",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppam",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppap",
-      "sigla": "PPAP",
-      "nome": "Polícia Penal de Amapá",
-      "uf": "AP",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppap",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppba",
-      "sigla": "PPBA",
-      "nome": "Polícia Penal da Bahia",
-      "uf": "BA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppba",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppce",
-      "sigla": "PPCE",
-      "nome": "Polícia Penal de Ceará",
-      "uf": "CE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppce",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppdf",
-      "sigla": "PPDF",
-      "nome": "Polícia Penal de Distrito Federal",
-      "uf": "DF",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppdf",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppes",
-      "sigla": "PPES",
-      "nome": "Polícia Penal do Espírito Santo",
-      "uf": "ES",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppes",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppgo",
-      "sigla": "PPGO",
-      "nome": "Polícia Penal de Goiás",
-      "uf": "GO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppgo",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppma",
-      "sigla": "PPMA",
-      "nome": "Polícia Penal de Maranhão",
-      "uf": "MA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppma",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppmg",
-      "sigla": "PPMG",
-      "nome": "Polícia Penal de Minas Gerais",
-      "uf": "MG",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppmg",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppms",
-      "sigla": "PPMS",
-      "nome": "Polícia Penal de Mato Grosso do Sul",
-      "uf": "MS",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppms",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppmt",
-      "sigla": "PPMT",
-      "nome": "Polícia Penal de Mato Grosso",
-      "uf": "MT",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppmt",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppa",
-      "sigla": "PPPA",
-      "nome": "Polícia Penal de Pará",
-      "uf": "PA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pppa",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppb",
-      "sigla": "PPPB",
-      "nome": "Polícia Penal de Paraíba",
-      "uf": "PB",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pppb",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppe",
-      "sigla": "PPPE",
-      "nome": "Polícia Penal de Pernambuco",
-      "uf": "PE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pppe",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppi",
-      "sigla": "PPPI",
-      "nome": "Polícia Penal de Piauí",
-      "uf": "PI",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pppi",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppr",
-      "sigla": "PPPR",
-      "nome": "Polícia Penal do Paraná",
-      "uf": "PR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pppr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprj",
-      "sigla": "PPRJ",
-      "nome": "Polícia Penal do Rio de Janeiro",
-      "uf": "RJ",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pprj",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprn",
-      "sigla": "PPRN",
-      "nome": "Polícia Penal de Rio Grande do Norte",
-      "uf": "RN",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pprn",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppro",
-      "sigla": "PPRO",
-      "nome": "Polícia Penal de Rondônia",
-      "uf": "RO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppro",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprr",
-      "sigla": "PPRR",
-      "nome": "Polícia Penal de Roraima",
-      "uf": "RR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pprr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprs",
-      "sigla": "PPRS",
-      "nome": "Polícia Penal do Rio Grande do Sul",
-      "uf": "RS",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pprs",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppsc",
-      "sigla": "PPSC",
-      "nome": "Polícia Penal de Santa Catarina",
-      "uf": "SC",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppsc",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppse",
-      "sigla": "PPSE",
-      "nome": "Polícia Penal de Sergipe",
-      "uf": "SE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppse",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppsp",
-      "sigla": "PPSP",
-      "nome": "Polícia Penal do Estado de São Paulo",
-      "uf": "SP",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppsp",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppto",
-      "sigla": "PPTO",
-      "nome": "Polícia Penal de Tocantins",
-      "uf": "TO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "ppto",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "prf",
-      "sigla": "PRF",
-      "nome": "Polícia Rodoviária Federal",
-      "uf": "BR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "prf",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmrr",
-      "sigla": "BMRR",
-      "nome": "Corpo de Bombeiros Militar de Roraima",
-      "uf": "RR",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 1,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "bmrr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pces",
-      "sigla": "PCES",
-      "nome": "Polícia Civil do Espírito Santo",
-      "uf": "ES",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 2,
-      "fontes": 2,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pces",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pmba",
-      "sigla": "PMBA",
-      "nome": "Polícia Militar da Bahia",
-      "uf": "BA",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 1,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pmba",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pmce",
-      "sigla": "PMCE",
-      "nome": "Polícia Militar de Ceará",
-      "uf": "CE",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 2,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pmce",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
     {
       "id": "pmmg",
       "sigla": "PMMG",
@@ -816,7 +16,7 @@
       "classe": "fraca",
       "score": 65,
       "linhas_com_valor": 2,
-      "fontes": 5,
+      "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
       "monitor": {
@@ -831,6 +31,174 @@
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pmmg",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppac",
+      "sigla": "PPAC",
+      "nome": "Polícia Penal do Acre",
+      "uf": "AC",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppac",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppba",
+      "sigla": "PPBA",
+      "nome": "Polícia Penal da Bahia",
+      "uf": "BA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppba",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppce",
+      "sigla": "PPCE",
+      "nome": "Polícia Penal de Ceará",
+      "uf": "CE",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppce",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppes",
+      "sigla": "PPES",
+      "nome": "Polícia Penal do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppes",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppma",
+      "sigla": "PPMA",
+      "nome": "Polícia Penal de Maranhão",
+      "uf": "MA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppma",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppmg",
+      "sigla": "PPMG",
+      "nome": "Polícia Penal de Minas Gerais",
+      "uf": "MG",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppmg",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -1083,6 +451,34 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pces",
+      "sigla": "PCES",
+      "nome": "Polícia Civil do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 6,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pces",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "pcmg",
       "sigla": "PCMG",
       "nome": "Polícia Civil de Minas Gerais",
@@ -1104,6 +500,34 @@
         }
       },
       "workflow_sugerido": null
+    },
+    {
+      "id": "pcmt",
+      "sigla": "PCMT",
+      "nome": "Polícia Judiciária Civil de Mato Grosso",
+      "uf": "MT",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcmt",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
     },
     {
       "id": "pcpe",
@@ -1218,6 +642,34 @@
       }
     },
     {
+      "id": "pmce",
+      "sigla": "PMCE",
+      "nome": "Polícia Militar de Ceará",
+      "uf": "CE",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmce",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "pmma",
       "sigla": "PMMA",
       "nome": "Polícia Militar de Maranhão",
@@ -1244,6 +696,192 @@
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
+    },
+    {
+      "id": "pmrs",
+      "sigla": "PMRS",
+      "nome": "Brigada Militar do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmrs",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pppa",
+      "sigla": "PPPA",
+      "nome": "Polícia Penal de Pará",
+      "uf": "PA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pppa",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pppi",
+      "sigla": "PPPI",
+      "nome": "Polícia Penal de Piauí",
+      "uf": "PI",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 82,
+      "linhas_com_valor": 5,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pprj",
+      "sigla": "PPRJ",
+      "nome": "Polícia Penal do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pprj",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppro",
+      "sigla": "PPRO",
+      "nome": "Polícia Penal de Rondônia",
+      "uf": "RO",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "ppro",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pprs",
+      "sigla": "PPRS",
+      "nome": "Polícia Penal do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pprs",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "ppto",
+      "sigla": "PPTO",
+      "nome": "Polícia Penal de Tocantins",
+      "uf": "TO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 82,
+      "linhas_com_valor": 5,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": null
     },
     {
       "id": "bmac",
@@ -1600,6 +1238,29 @@
       "score": 100,
       "linhas_com_valor": 13,
       "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmrr",
+      "sigla": "BMRR",
+      "nome": "Corpo de Bombeiros Militar de Roraima",
+      "uf": "RR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 15,
+      "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
       "monitor": {
@@ -2212,6 +1873,29 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pmba",
+      "sigla": "PMBA",
+      "nome": "Polícia Militar da Bahia",
+      "uf": "BA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 10,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "pmdf",
       "sigla": "PMDF",
       "nome": "Polícia Militar de Distrito Federal",
@@ -2524,699 +2208,470 @@
         }
       },
       "workflow_sugerido": null
+    },
+    {
+      "id": "pmrr",
+      "sigla": "PMRR",
+      "nome": "Polícia Militar de Roraima",
+      "uf": "RR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmsc",
+      "sigla": "PMSC",
+      "nome": "Polícia Militar de Santa Catarina",
+      "uf": "SC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 19,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmse",
+      "sigla": "PMSE",
+      "nome": "Polícia Militar de Sergipe",
+      "uf": "SE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmto",
+      "sigla": "PMTO",
+      "nome": "Polícia Militar de Tocantins",
+      "uf": "TO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppal",
+      "sigla": "PPAL",
+      "nome": "Polícia Penal do Estado de Alagoas",
+      "uf": "AL",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 28,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppam",
+      "sigla": "PPAM",
+      "nome": "Polícia Penal de Amazonas",
+      "uf": "AM",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppap",
+      "sigla": "PPAP",
+      "nome": "Polícia Penal de Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppdf",
+      "sigla": "PPDF",
+      "nome": "Polícia Penal de Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 20,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppgo",
+      "sigla": "PPGO",
+      "nome": "Polícia Penal de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 10,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppms",
+      "sigla": "PPMS",
+      "nome": "Polícia Penal de Mato Grosso do Sul",
+      "uf": "MS",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 9,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppmt",
+      "sigla": "PPMT",
+      "nome": "Polícia Penal de Mato Grosso",
+      "uf": "MT",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pppb",
+      "sigla": "PPPB",
+      "nome": "Polícia Penal de Paraíba",
+      "uf": "PB",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 35,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pppe",
+      "sigla": "PPPE",
+      "nome": "Polícia Penal de Pernambuco",
+      "uf": "PE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pppr",
+      "sigla": "PPPR",
+      "nome": "Polícia Penal do Paraná",
+      "uf": "PR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pprn",
+      "sigla": "PPRN",
+      "nome": "Polícia Penal de Rio Grande do Norte",
+      "uf": "RN",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 21,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pprr",
+      "sigla": "PPRR",
+      "nome": "Polícia Penal de Roraima",
+      "uf": "RR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppsc",
+      "sigla": "PPSC",
+      "nome": "Polícia Penal de Santa Catarina",
+      "uf": "SC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppse",
+      "sigla": "PPSE",
+      "nome": "Polícia Penal de Sergipe",
+      "uf": "SE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 6,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppsp",
+      "sigla": "PPSP",
+      "nome": "Polícia Penal do Estado de São Paulo",
+      "uf": "SP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 20,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "prf",
+      "sigla": "PRF",
+      "nome": "Polícia Rodoviária Federal",
+      "uf": "BR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
     }
   ],
   "grupos": {
-    "pendentes": [
-      {
-        "id": "prf",
-        "sigla": "PRF",
-        "nome": "Polícia Rodoviária Federal",
-        "uf": "BR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "prf",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppsp",
-        "sigla": "PPSP",
-        "nome": "Polícia Penal do Estado de São Paulo",
-        "uf": "SP",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppsp",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppal",
-        "sigla": "PPAL",
-        "nome": "Polícia Penal do Estado de Alagoas",
-        "uf": "AL",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppal",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppmg",
-        "sigla": "PPMG",
-        "nome": "Polícia Penal de Minas Gerais",
-        "uf": "MG",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmrs",
-        "sigla": "PMRS",
-        "nome": "Brigada Militar do Rio Grande do Sul",
-        "uf": "RS",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmrs",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmsc",
-        "sigla": "PMSC",
-        "nome": "Polícia Militar de Santa Catarina",
-        "uf": "SC",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmsc",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppms",
-        "sigla": "PPMS",
-        "nome": "Polícia Penal de Mato Grosso do Sul",
-        "uf": "MS",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppms",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcmt",
-        "sigla": "PCMT",
-        "nome": "Polícia Judiciária Civil de Mato Grosso",
-        "uf": "MT",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 6,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "pendente",
-            "score": 0
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcmt",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppmt",
-        "sigla": "PPMT",
-        "nome": "Polícia Penal de Mato Grosso",
-        "uf": "MT",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppmt",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppac",
-        "sigla": "PPAC",
-        "nome": "Polícia Penal do Acre",
-        "uf": "AC",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppac",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppam",
-        "sigla": "PPAM",
-        "nome": "Polícia Penal de Amazonas",
-        "uf": "AM",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppam",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppap",
-        "sigla": "PPAP",
-        "nome": "Polícia Penal de Amapá",
-        "uf": "AP",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppap",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppce",
-        "sigla": "PPCE",
-        "nome": "Polícia Penal de Ceará",
-        "uf": "CE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppce",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppdf",
-        "sigla": "PPDF",
-        "nome": "Polícia Penal de Distrito Federal",
-        "uf": "DF",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppdf",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppgo",
-        "sigla": "PPGO",
-        "nome": "Polícia Penal de Goiás",
-        "uf": "GO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppgo",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppma",
-        "sigla": "PPMA",
-        "nome": "Polícia Penal de Maranhão",
-        "uf": "MA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppma",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppa",
-        "sigla": "PPPA",
-        "nome": "Polícia Penal de Pará",
-        "uf": "PA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pppa",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppb",
-        "sigla": "PPPB",
-        "nome": "Polícia Penal de Paraíba",
-        "uf": "PB",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pppb",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppe",
-        "sigla": "PPPE",
-        "nome": "Polícia Penal de Pernambuco",
-        "uf": "PE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pppe",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppi",
-        "sigla": "PPPI",
-        "nome": "Polícia Penal de Piauí",
-        "uf": "PI",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pppi",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprn",
-        "sigla": "PPRN",
-        "nome": "Polícia Penal de Rio Grande do Norte",
-        "uf": "RN",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pprn",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppro",
-        "sigla": "PPRO",
-        "nome": "Polícia Penal de Rondônia",
-        "uf": "RO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppro",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmrr",
-        "sigla": "PMRR",
-        "nome": "Polícia Militar de Roraima",
-        "uf": "RR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmrr",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprr",
-        "sigla": "PPRR",
-        "nome": "Polícia Penal de Roraima",
-        "uf": "RR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pprr",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmse",
-        "sigla": "PMSE",
-        "nome": "Polícia Militar de Sergipe",
-        "uf": "SE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmse",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppse",
-        "sigla": "PPSE",
-        "nome": "Polícia Penal de Sergipe",
-        "uf": "SE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppse",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmto",
-        "sigla": "PMTO",
-        "nome": "Polícia Militar de Tocantins",
-        "uf": "TO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmto",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppto",
-        "sigla": "PPTO",
-        "nome": "Polícia Penal de Tocantins",
-        "uf": "TO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppto",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprj",
-        "sigla": "PPRJ",
-        "nome": "Polícia Penal do Rio de Janeiro",
-        "uf": "RJ",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pprj",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppba",
-        "sigla": "PPBA",
-        "nome": "Polícia Penal da Bahia",
-        "uf": "BA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppba",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppr",
-        "sigla": "PPPR",
-        "nome": "Polícia Penal do Paraná",
-        "uf": "PR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pppr",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprs",
-        "sigla": "PPRS",
-        "nome": "Polícia Penal do Rio Grande do Sul",
-        "uf": "RS",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pprs",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppsc",
-        "sigla": "PPSC",
-        "nome": "Polícia Penal de Santa Catarina",
-        "uf": "SC",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppsc",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppes",
-        "sigla": "PPES",
-        "nome": "Polícia Penal do Espírito Santo",
-        "uf": "ES",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "ppes",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      }
-    ],
+    "pendentes": [],
     "fracas": [
       {
         "id": "pcal",
@@ -3275,6 +2730,34 @@
         }
       },
       {
+        "id": "ppmg",
+        "sigla": "PPMG",
+        "nome": "Polícia Penal de Minas Gerais",
+        "uf": "MG",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "ppmg",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
         "id": "pmmg",
         "sigla": "PMMG",
         "nome": "Polícia Militar de Minas Gerais",
@@ -3283,7 +2766,7 @@
         "classe": "fraca",
         "score": 65,
         "linhas_com_valor": 2,
-        "fontes": 5,
+        "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -3359,34 +2842,6 @@
         }
       },
       {
-        "id": "pmba",
-        "sigla": "PMBA",
-        "nome": "Polícia Militar da Bahia",
-        "uf": "BA",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 1,
-        "fontes": 3,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "pmba",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
         "id": "pcba",
         "sigla": "PCBA",
         "nome": "Polícia Civil da Bahia",
@@ -3410,6 +2865,34 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pcba",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmrs",
+        "sigla": "PMRS",
+        "nome": "Brigada Militar do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmrs",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -3533,9 +3016,9 @@
         "uf": "ES",
         "acao": "fracas",
         "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 2,
-        "fontes": 2,
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 6,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -3544,7 +3027,7 @@
           "usou_openai": true,
           "depois": {
             "classe": "fraca",
-            "score": 65
+            "score": 82
           }
         },
         "workflow_sugerido": {
@@ -3611,14 +3094,42 @@
         }
       },
       {
-        "id": "pmce",
-        "sigla": "PMCE",
-        "nome": "Polícia Militar de Ceará",
-        "uf": "CE",
+        "id": "pcmt",
+        "sigla": "PCMT",
+        "nome": "Polícia Judiciária Civil de Mato Grosso",
+        "uf": "MT",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcmt",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "ppac",
+        "sigla": "PPAC",
+        "nome": "Polícia Penal do Acre",
+        "uf": "AC",
         "acao": "fracas",
         "classe": "fraca",
         "score": 65,
-        "linhas_com_valor": 2,
+        "linhas_com_valor": 1,
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
@@ -3633,7 +3144,63 @@
         },
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
+          "instituicao": "ppac",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmce",
+        "sigla": "PMCE",
+        "nome": "Polícia Militar de Ceará",
+        "uf": "CE",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
           "instituicao": "pmce",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "ppce",
+        "sigla": "PPCE",
+        "nome": "Polícia Penal de Ceará",
+        "uf": "CE",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "ppce",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -3667,6 +3234,62 @@
         }
       },
       {
+        "id": "ppma",
+        "sigla": "PPMA",
+        "nome": "Polícia Penal de Maranhão",
+        "uf": "MA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "ppma",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pppa",
+        "sigla": "PPPA",
+        "nome": "Polícia Penal de Pará",
+        "uf": "PA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pppa",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
         "id": "pcpe",
         "sigla": "PCPE",
         "nome": "Polícia Civil de Pernambuco",
@@ -3695,10 +3318,66 @@
         }
       },
       {
-        "id": "bmrr",
-        "sigla": "BMRR",
-        "nome": "Corpo de Bombeiros Militar de Roraima",
-        "uf": "RR",
+        "id": "ppro",
+        "sigla": "PPRO",
+        "nome": "Polícia Penal de Rondônia",
+        "uf": "RO",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "ppro",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pprj",
+        "sigla": "PPRJ",
+        "nome": "Polícia Penal do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pprj",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "ppba",
+        "sigla": "PPBA",
+        "nome": "Polícia Penal da Bahia",
+        "uf": "BA",
         "acao": "fracas",
         "classe": "fraca",
         "score": 65,
@@ -3717,13 +3396,92 @@
         },
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
-          "instituicao": "bmrr",
+          "instituicao": "ppba",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pprs",
+        "sigla": "PPRS",
+        "nome": "Polícia Penal do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pprs",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "ppes",
+        "sigla": "PPES",
+        "nome": "Polícia Penal do Espírito Santo",
+        "uf": "ES",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "ppes",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
       }
     ],
     "fortes": [
+      {
+        "id": "prf",
+        "sigla": "PRF",
+        "nome": "Polícia Rodoviária Federal",
+        "uf": "BR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
       {
         "id": "pcdf",
         "sigla": "PCDF",
@@ -3809,6 +3567,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "ppsp",
+        "sigla": "PPSP",
+        "nome": "Polícia Penal do Estado de São Paulo",
+        "uf": "SP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 20,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmal",
         "sigla": "PMAL",
         "nome": "Polícia Militar do Estado de Alagoas",
@@ -3817,6 +3598,29 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 27,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppal",
+        "sigla": "PPAL",
+        "nome": "Polícia Penal do Estado de Alagoas",
+        "uf": "AL",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 28,
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
@@ -3993,6 +3797,52 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pmba",
+        "sigla": "PMBA",
+        "nome": "Polícia Militar da Bahia",
+        "uf": "BA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 10,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmsc",
+        "sigla": "PMSC",
+        "nome": "Polícia Militar de Santa Catarina",
+        "uf": "SC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 19,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmes",
         "sigla": "PMES",
         "nome": "Polícia Militar do Espírito Santo",
@@ -4062,6 +3912,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "ppms",
+        "sigla": "PPMS",
+        "nome": "Polícia Penal de Mato Grosso do Sul",
+        "uf": "MS",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 9,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmmt",
         "sigla": "PMMT",
         "nome": "Polícia Militar de Mato Grosso",
@@ -4071,6 +3944,29 @@
         "score": 100,
         "linhas_com_valor": 18,
         "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppmt",
+        "sigla": "PPMT",
+        "nome": "Polícia Penal de Mato Grosso",
+        "uf": "MT",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4246,6 +4142,52 @@
         "workflow_sugerido": null
       },
       {
+        "id": "ppam",
+        "sigla": "PPAM",
+        "nome": "Polícia Penal de Amazonas",
+        "uf": "AM",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppap",
+        "sigla": "PPAP",
+        "nome": "Polícia Penal de Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmdf",
         "sigla": "PMDF",
         "nome": "Polícia Militar de Distrito Federal",
@@ -4255,6 +4197,29 @@
         "score": 100,
         "linhas_com_valor": 14,
         "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppdf",
+        "sigla": "PPDF",
+        "nome": "Polícia Penal de Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 20,
+        "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4301,6 +4266,29 @@
         "score": 100,
         "linhas_com_valor": 28,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppgo",
+        "sigla": "PPGO",
+        "nome": "Polícia Penal de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 10,
+        "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4430,6 +4418,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pppb",
+        "sigla": "PPPB",
+        "nome": "Polícia Penal de Paraíba",
+        "uf": "PB",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 35,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmpe",
         "sigla": "PMPE",
         "nome": "Polícia Militar de Pernambuco",
@@ -4439,6 +4450,29 @@
         "score": 100,
         "linhas_com_valor": 12,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pppe",
+        "sigla": "PPPE",
+        "nome": "Polícia Penal de Pernambuco",
+        "uf": "PE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 1,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4499,6 +4533,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pppi",
+        "sigla": "PPPI",
+        "nome": "Polícia Penal de Piauí",
+        "uf": "PI",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 82,
+        "linhas_com_valor": 5,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmrn",
         "sigla": "PMRN",
         "nome": "Polícia Militar de Rio Grande do Norte",
@@ -4531,6 +4588,29 @@
         "score": 100,
         "linhas_com_valor": 21,
         "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pprn",
+        "sigla": "PPRN",
+        "nome": "Polícia Penal de Rio Grande do Norte",
+        "uf": "RN",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 21,
+        "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4591,6 +4671,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pmrr",
+        "sigla": "PMRR",
+        "nome": "Polícia Militar de Roraima",
+        "uf": "RR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pcrr",
         "sigla": "PCRR",
         "nome": "Polícia Civil de Roraima",
@@ -4600,6 +4703,52 @@
         "score": 100,
         "linhas_com_valor": 9,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pprr",
+        "sigla": "PPRR",
+        "nome": "Polícia Penal de Roraima",
+        "uf": "RR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmse",
+        "sigla": "PMSE",
+        "nome": "Polícia Militar de Sergipe",
+        "uf": "SE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4637,6 +4786,52 @@
         "workflow_sugerido": null
       },
       {
+        "id": "ppse",
+        "sigla": "PPSE",
+        "nome": "Polícia Penal de Sergipe",
+        "uf": "SE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 6,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmto",
+        "sigla": "PMTO",
+        "nome": "Polícia Militar de Tocantins",
+        "uf": "TO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pcto",
         "sigla": "PCTO",
         "nome": "Polícia Civil de Tocantins",
@@ -4655,6 +4850,29 @@
           "depois": {
             "classe": "forte",
             "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppto",
+        "sigla": "PPTO",
+        "nome": "Polícia Penal de Tocantins",
+        "uf": "TO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 82,
+        "linhas_com_valor": 5,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 82
           }
         },
         "workflow_sugerido": null
@@ -4982,6 +5200,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "bmrr",
+        "sigla": "BMRR",
+        "nome": "Corpo de Bombeiros Militar de Roraima",
+        "uf": "RR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 15,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "bmrs",
         "sigla": "BMRS",
         "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
@@ -5037,6 +5278,52 @@
         "score": 100,
         "linhas_com_valor": 17,
         "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pppr",
+        "sigla": "PPPR",
+        "nome": "Polícia Penal do Paraná",
+        "uf": "PR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppsc",
+        "sigla": "PPSC",
+        "nome": "Polícia Penal de Santa Catarina",
+        "uf": "SC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {

@@ -6,7 +6,7 @@
   "tema": "remuneracao",
   "status": "Atualização fraca",
   "titulo": "Remuneração bruta mensal da PMCE",
-  "resumo": "Tabela com valores brutos mensais confirmados em fonte oficial recente para ingresso na carreira de praça da Polícia Militar do Ceará. Não foram somados auxílios, gratificações de função, adicionais eventuais, indenizações ou verbas pessoais.",
+  "resumo": "Tabela com valores brutos mensais confirmados em fontes oficiais recentes para ingresso na carreira de praça e para 2º Tenente do quadro complementar da Polícia Militar do Ceará. Não foram somados auxílios, gratificações de função, adicionais eventuais, indenizações ou verbas pessoais.",
   "linhas": [
     {
       "cargo": "Aluno-Soldado",
@@ -35,9 +35,23 @@
       "fonteNome": "Edital nº 001/2025 Soldado PMCE",
       "fonteUrl": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/04/Edital-PMCE-2025.pdf",
       "valorPendente": false
+    },
+    {
+      "cargo": "2º Tenente",
+      "badge": "QOCPM",
+      "remuneracao": 9469.93,
+      "beneficios": 0,
+      "total": 9469.93,
+      "classe": "Oficiais",
+      "criterio": "Remuneração bruta mensal do cargo",
+      "benefDesc": "Sem somar auxílios, gratificações e verbas eventuais",
+      "fonteKey": "pmce",
+      "fonteNome": "Edital nº 01/2025 2º Tenente do Quadro de Oficiais Complementar Policial Militar",
+      "fonteUrl": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/08/Edital-DOE-PM-Oficiais-.pdf",
+      "valorPendente": false
     }
   ],
-  "fonte_principal": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/04/Edital-PMCE-2025.pdf",
+  "fonte_principal": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/08/Edital-DOE-PM-Oficiais-.pdf",
   "fontes": [
     {
       "titulo": "Edital nº 001/2025 Soldado PMCE",
@@ -46,28 +60,28 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Comunicado nº 003/2026 CCOP PMCE",
-      "url": "https://www.pm.ce.gov.br/2026/03/23/comunicado-numero-003-2026-ccop-pmce/",
-      "tipo": "página oficial",
+      "titulo": "Edital nº 01/2025 2º Tenente do Quadro de Oficiais Complementar Policial Militar",
+      "url": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/08/Edital-DOE-PM-Oficiais-.pdf",
+      "tipo": "edital oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Lei nº 17.183, de 23 de março de 2020",
-      "url": "https://www2.al.ce.gov.br/legislativo/legislacao5/leis2020/17183.htm",
-      "tipo": "lei estadual",
+      "titulo": "Governo do Ceará anuncia concurso com 113 vagas para 2º Tenente da Polícia Militar",
+      "url": "https://www.aesp.ce.gov.br/2022/11/01/governo-do-ceara-anuncia-concurso-com-113-vagas-para-2o-tenente-da-policia-militar/",
+      "tipo": "página oficial",
       "data_consulta": "2026-05-18"
     }
   ],
   "ultima_pesquisa": "2026-05-18",
   "classe_atualizacao": "fraca",
-  "score_publicacao": 65,
+  "score_publicacao": 82,
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
   "alertas": [
-    "Foi possível confirmar com segurança apenas valores oficiais de ingresso na carreira de praça.",
-    "A lei remuneratória foi localizada, mas o anexo com a tabela completa por posto e graduação não ficou integralmente acessível na pesquisa automatizada.",
-    "Tabela final mantida útil e objetiva com valores oficiais confirmados, sem estimativas para demais postos.",
-    "Classificação automática: Atualização fraca (65/100)."
+    "Tabela montada apenas com valores brutos mensais localizados com clareza em fontes oficiais recentes.",
+    "Não foram somados auxílio-alimentação, gratificações operacionais, adicionais por função, indenizações ou verbas pessoais.",
+    "Não foi localizada na pesquisa automatizada uma tabela oficial completa e consolidada com todos os postos e graduações da carreira da PMCE em um único documento acessível.",
+    "Classificação automática: Atualização fraca (82/100)."
   ]
 }

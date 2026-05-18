@@ -1,0 +1,129 @@
+{
+  "instituicao_id": "ppse",
+  "instituicao_nome": "Polícia Penal de Sergipe",
+  "sigla": "PPSE",
+  "uf": "SE",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Penal de Sergipe",
+  "resumo": "A carreira efetiva identificada para a instituição é a de Agente de Polícia Penal. A tabela oficial da Lei Complementar nº 366/2022, com alteração posterior, traz vencimentos básicos por classe. Para o usuário leigo, a referência mais útil é a remuneração bruta mensal por classe, sem somar adicionais variáveis.",
+  "linhas": [
+    {
+      "cargo": "Agente de Polícia Penal - Classe I",
+      "badge": "APP I",
+      "remuneracao": 2417.46,
+      "beneficios": 0,
+      "total": 2417.46,
+      "classe": "Classe I",
+      "criterio": "Vencimento básico bruto mensal da classe inicial.",
+      "benefDesc": "Não soma gratificação por titulação, funções, plantões, férias, 13º e verbas eventuais.",
+      "fonteKey": "ppse",
+      "fonteNome": "Lei Complementar nº 423/2024",
+      "fonteUrl": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Penal - Classe II",
+      "badge": "APP II",
+      "remuneracao": 4107.33,
+      "beneficios": 0,
+      "total": 4107.33,
+      "classe": "Classe II",
+      "criterio": "Vencimento básico bruto mensal da classe.",
+      "benefDesc": "Não soma gratificação por titulação, funções, plantões, férias, 13º e verbas eventuais.",
+      "fonteKey": "ppse",
+      "fonteNome": "Lei Complementar nº 423/2024",
+      "fonteUrl": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Penal - Classe III",
+      "badge": "APP III",
+      "remuneracao": 4764.5,
+      "beneficios": 0,
+      "total": 4764.5,
+      "classe": "Classe III",
+      "criterio": "Vencimento básico bruto mensal da classe.",
+      "benefDesc": "Não soma gratificação por titulação, funções, plantões, férias, 13º e verbas eventuais.",
+      "fonteKey": "ppse",
+      "fonteNome": "Lei Complementar nº 423/2024",
+      "fonteUrl": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Penal - Classe IV",
+      "badge": "APP IV",
+      "remuneracao": 5750.26,
+      "beneficios": 0,
+      "total": 5750.26,
+      "classe": "Classe IV",
+      "criterio": "Vencimento básico bruto mensal da classe.",
+      "benefDesc": "Não soma gratificação por titulação, funções, plantões, férias, 13º e verbas eventuais.",
+      "fonteKey": "ppse",
+      "fonteNome": "Lei Complementar nº 423/2024",
+      "fonteUrl": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Penal - Classe V",
+      "badge": "APP V",
+      "remuneracao": 6454.37,
+      "beneficios": 0,
+      "total": 6454.37,
+      "classe": "Classe V",
+      "criterio": "Vencimento básico bruto mensal da classe.",
+      "benefDesc": "Não soma gratificação por titulação, funções, plantões, férias, 13º e verbas eventuais.",
+      "fonteKey": "ppse",
+      "fonteNome": "Lei Complementar nº 423/2024",
+      "fonteUrl": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Agente de Polícia Penal - Classe VI",
+      "badge": "APP VI",
+      "remuneracao": 6923.78,
+      "beneficios": 0,
+      "total": 6923.78,
+      "classe": "Classe VI",
+      "criterio": "Vencimento básico bruto mensal da classe final.",
+      "benefDesc": "Não soma gratificação por titulação, funções, plantões, férias, 13º e verbas eventuais.",
+      "fonteKey": "ppse",
+      "fonteNome": "Lei Complementar nº 423/2024",
+      "fonteUrl": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+  "fontes": [
+    {
+      "titulo": "Lei Complementar nº 423/2024 - altera o Anexo Único da Lei Complementar nº 366/2022 e atualiza o vencimento básico de Agente de Polícia Penal",
+      "url": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Portal da Transparência de Sergipe - padrão remuneratório da SEJUC com cargo Agente de Polícia Penal",
+      "url": "https://www.transparencia.se.gov.br/Pessoal/VencimentoCargo.xhtml?orgao=SEJUC",
+      "tipo": "portal da transparência",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 366/2022 - regulamenta a Polícia Penal de Sergipe",
+      "url": "https://www.sead.se.gov.br/wp-content/uploads/2022/06/Lei-no-366-2022.pdf",
+      "tipo": "lei complementar",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Os valores publicados são de vencimento básico por classe da carreira de Agente de Polícia Penal.",
+    "A remuneração bruta recebida por servidor em folha pode ficar maior por causa de titulação, função, complementos, férias e 13º.",
+    "Não foi localizada lei de subsídio em parcela única mais recente do que a atualização do Anexo da LC nº 366/2022; por isso foi usada a tabela legal de vencimento básico vigente encontrada.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

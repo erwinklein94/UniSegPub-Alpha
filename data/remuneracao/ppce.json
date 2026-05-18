@@ -1,0 +1,79 @@
+{
+  "instituicao_id": "ppce",
+  "instituicao_nome": "Polícia Penal de Ceará",
+  "sigla": "PPCE",
+  "uf": "CE",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Penal do Ceará",
+  "resumo": "A carreira estadual encontrada é a de Policial Penal do Ceará. A tabela oficial da Lei nº 17.388/2021 fixa os vencimentos por referência, e o edital do concurso de 2024 informa que a remuneração inicial é formada pelo vencimento-base da referência 1 acrescido de GAER de 100% sobre o base. Para valor útil ao usuário final, foi consolidado o bruto mensal por referência com base na tabela legal vigente da carreira e na composição remuneratória inicial informada em fonte oficial do Estado.",
+  "linhas": [
+    {
+      "cargo": "Policial Penal - Referência 1",
+      "badge": "PPCE",
+      "remuneracao": 6149.78,
+      "beneficios": 0,
+      "total": 6149.78,
+      "classe": "Carreira de Polícia Penal",
+      "criterio": "Bruto mensal inicial da referência 1",
+      "benefDesc": "Não somados auxílio-alimentação, adicional noturno, horas extras e gratificações eventuais.",
+      "fonteKey": "ppce",
+      "fonteNome": "Edital do concurso da Polícia Penal do Ceará 2024",
+      "fonteUrl": "https://www.ceara.gov.br/wp-content/uploads/2024/04/edital-sap.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Referência 16",
+      "badge": "PPCE",
+      "remuneracao": 10936.06,
+      "beneficios": 0,
+      "total": 10936.06,
+      "classe": "Carreira de Polícia Penal",
+      "criterio": "Bruto mensal da referência final da tabela legal",
+      "benefDesc": "Não somados auxílio-alimentação, adicional noturno, horas extras e gratificações eventuais.",
+      "fonteKey": "ppce",
+      "fonteNome": "Lei nº 17.388/2021 - tabela remuneratória da carreira de Polícia Penal",
+      "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/defesa-social/item/7168-lei-n-17-388-26-02-2021-d-o-26-02-21",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.ceara.gov.br/wp-content/uploads/2024/04/edital-sap.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital do concurso da Polícia Penal do Ceará 2024",
+      "url": "https://www.ceara.gov.br/wp-content/uploads/2024/04/edital-sap.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 17.388/2021 - tabela remuneratória da carreira de Polícia Penal",
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/defesa-social/item/7168-lei-n-17-388-26-02-2021-d-o-26-02-21",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 19.183/2025 - revisão geral da remuneração dos servidores do Poder Executivo do Ceará",
+      "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/orcamento-financas-e-tributacao/item/10973-lei-n-19-183-de-12-03-25-d-o-12-03-25?print=1&tmpl=component",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governo do Ceará anuncia reajuste salarial e do auxílio-alimentação para servidores estaduais",
+      "url": "https://www.ceara.gov.br/2026/02/26/governo-do-ceara-anuncia-reajuste-salarial-e-do-auxilio-alimentacao-para-servidores-estaduais/",
+      "tipo": "notícia oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "A fonte oficial encontrada traz com clareza o valor inicial do cargo e a tabela legal de vencimentos por referência, mas não apresentou em página única a tabela consolidada mais recente já convertida em remuneração bruta total para todas as referências.",
+    "Há indício de revisão geral de 5,83% em 2025 para servidores do Poder Executivo do Ceará, porém a pesquisa não localizou tabela oficial específica da Polícia Penal já republicada após esse reajuste.",
+    "Para evitar inflar valores, a tabela final publica apenas o bruto inicial confirmado em edital e o teto da carreira calculado a partir da estrutura legal sem somar benefícios e adicionais variáveis.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

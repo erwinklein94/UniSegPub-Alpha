@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "ppma",
   "grupo_atualizacao": "pendentes",
   "modelo": "gpt-5.4",
@@ -7,21 +7,21 @@
   "usou_web_search_openai": true,
   "antes": {
     "classe": "pendente",
-    "score": 0
+    "score": 76
   },
   "depois": {
-    "classe": "pendente",
-    "score": 20
+    "classe": "forte",
+    "score": 84
   },
   "usage": {
-    "input_tokens": 35305,
+    "input_tokens": 26999,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1574,
+    "output_tokens": 1365,
     "output_tokens_details": {
-      "reasoning_tokens": 632
+      "reasoning_tokens": 363
     },
-    "total_tokens": 36879
+    "total_tokens": 28364
   }
 }

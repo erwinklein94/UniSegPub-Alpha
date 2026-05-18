@@ -6,7 +6,7 @@
   "tema": "remuneracao",
   "status": "Atualização fraca",
   "titulo": "Remuneração bruta mensal por cargo da Polícia Militar de Minas Gerais",
-  "resumo": "Tabela com valores brutos mensais iniciais identificados para ingresso na PMMG, com atualização pelo reajuste geral de 5,4% vigente a partir de 1º de janeiro de 2026.",
+  "resumo": "Tabela com valores brutos mensais iniciais identificados para ingresso na PMMG, atualizados pelo reajuste geral de 5,4% vigente desde 1º de janeiro de 2026 sobre as remunerações básicas de soldado e cadete publicadas em fontes oficiais de concursos e legislação estadual.",
   "linhas": [
     {
       "cargo": "Soldado de 2ª Classe",
@@ -15,10 +15,10 @@
       "beneficios": 0,
       "total": 4596.31,
       "classe": "Praças",
-      "criterio": "Subsídio bruto mensal da classe inicial em 2026.",
-      "benefDesc": "Não soma auxílio-fardamento, alimentação, abonos, indenizações ou adicionais.",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-fardamento, alimentação, assistência, indenizações ou adicionais.",
       "fonteKey": "pmmg",
-      "fonteNome": "Lei estadual de revisão geral de 2026 e edital de ingresso de Soldado da PMMG",
+      "fonteNome": "Lei nº 25.804/2026 e registro oficial de concurso da PMMG para Soldado",
       "fonteUrl": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/25804/2026/",
       "valorPendente": false
     },
@@ -29,10 +29,10 @@
       "beneficios": 0,
       "total": 7562.77,
       "classe": "Oficiais",
-      "criterio": "Subsídio bruto mensal da classe inicial em 2026.",
-      "benefDesc": "Não soma auxílio-fardamento, alimentação, abonos, indenizações ou adicionais.",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-fardamento, alimentação, assistência, indenizações ou adicionais.",
       "fonteKey": "pmmg",
-      "fonteNome": "Lei estadual de revisão geral de 2026 e edital de ingresso ao CFO da PMMG",
+      "fonteNome": "Lei nº 25.804/2026 e registro oficial de concurso da PMMG para Cadete",
       "fonteUrl": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/25804/2026/",
       "valorPendente": false
     }
@@ -46,27 +46,21 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Lei nº 15.436, de 11/01/2005 - legislação relevante sobre pessoal militar da PMMG",
-      "url": "https://www.almg.gov.br/legislacao-mineira/LEI/15436/2005/",
-      "tipo": "lei estadual",
+      "titulo": "Registro oficial de concurso da PMMG com remuneração básica inicial para Cadete do 1º Ano do CFO de R$ 7.175,30",
+      "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3161539",
+      "tipo": "registro oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Registro oficial de concurso da PMMG com remuneração básica inicial para Soldado de 2ª Classe de R$ 4.360,83",
+      "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3720960",
+      "tipo": "registro oficial",
       "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Portal oficial da Polícia Militar de Minas Gerais",
       "url": "https://www.policiamilitar.mg.gov.br",
       "tipo": "site oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Registro de edital do concurso para Soldado da PMMG com remuneração básica inicial de R$ 4.360,83",
-      "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3720960",
-      "tipo": "edital/registro oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Registro de edital do concurso para Oficial da PMMG com remuneração básica inicial de R$ 7.175,30",
-      "url": "https://tcnotas.tce.mg.gov.br/TCJuris/Nota/BuscarArquivo/3526334",
-      "tipo": "edital/registro oficial",
       "data_consulta": "2026-05-18"
     }
   ],
@@ -77,8 +71,8 @@
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
   "alertas": [
-    "Foram localizados com segurança os valores iniciais de ingresso para Soldado de 2ª Classe e Cadete do 1º Ano do CFO, ajustados pelo índice legal de 5,4% de 2026.",
-    "Não foram confirmadas, em fonte oficial acessível na pesquisa, tabelas completas por posto e graduação de toda a carreira já convertidas para 2026.",
+    "Foram confirmados em fonte oficial os valores básicos de ingresso para Soldado de 2ª Classe e Cadete do 1º Ano do CFO, com atualização pelo reajuste geral de 5,4% de 2026.",
+    "Não foi localizada, em fonte oficial aberta e acessível nesta pesquisa, uma tabela completa consolidada de 2026 com todos os postos e graduações da carreira da PMMG.",
     "Os valores informados são brutos mensais iniciais e não incluem verbas eventuais ou adicionais.",
     "Classificação automática: Atualização fraca (65/100)."
   ]

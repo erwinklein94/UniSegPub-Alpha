@@ -1,0 +1,28 @@
+{
+  "atualizado_em": "2026-05-18",
+  "instituicao_id": "ppro",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "fraca",
+    "score": 82
+  },
+  "linhas": 4,
+  "usage": {
+    "input_tokens": 27661,
+    "input_tokens_details": {
+      "cached_tokens": 4736
+    },
+    "output_tokens": 1506,
+    "output_tokens_details": {
+      "reasoning_tokens": 400
+    },
+    "total_tokens": 29167
+  }
+}

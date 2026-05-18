@@ -1,0 +1,150 @@
+{
+  "instituicao_id": "ppmt",
+  "instituicao_nome": "Polícia Penal de Mato Grosso",
+  "sigla": "PPMT",
+  "uf": "MT",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Penal de Mato Grosso",
+  "resumo": "Tabela com subsídio bruto mensal do cargo da carreira policial penal em Mato Grosso, com referência da classe inicial e da classe final previstas na tabela oficial estadual.",
+  "linhas": [
+    {
+      "cargo": "Policial Penal - Classe A, nível 1",
+      "badge": "Inicial",
+      "remuneracao": 4216.22,
+      "beneficios": 0,
+      "total": 4216.22,
+      "classe": "Classe A",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe B, nível 1",
+      "badge": "Classe B",
+      "remuneracao": 5112.98,
+      "beneficios": 0,
+      "total": 5112.98,
+      "classe": "Classe B",
+      "criterio": "Subsídio bruto mensal",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe C, nível 1",
+      "badge": "Classe C",
+      "remuneracao": 6584.17,
+      "beneficios": 0,
+      "total": 6584.17,
+      "classe": "Classe C",
+      "criterio": "Subsídio bruto mensal",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe D, nível 1",
+      "badge": "Classe D",
+      "remuneracao": 8552.91,
+      "beneficios": 0,
+      "total": 8552.91,
+      "classe": "Classe D",
+      "criterio": "Subsídio bruto mensal",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe A, nível 12",
+      "badge": "Topo A",
+      "remuneracao": 6076.74,
+      "beneficios": 0,
+      "total": 6076.74,
+      "classe": "Classe A",
+      "criterio": "Subsídio bruto mensal no topo da classe",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe B, nível 12",
+      "badge": "Topo B",
+      "remuneracao": 7965.63,
+      "beneficios": 0,
+      "total": 7965.63,
+      "classe": "Classe B",
+      "criterio": "Subsídio bruto mensal no topo da classe",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe C, nível 12",
+      "badge": "Topo C",
+      "remuneracao": 10543.62,
+      "beneficios": 0,
+      "total": 10543.62,
+      "classe": "Classe C",
+      "criterio": "Subsídio bruto mensal no topo da classe",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal - Classe D, nível 12",
+      "badge": "Topo D",
+      "remuneracao": 13706.66,
+      "beneficios": 0,
+      "total": 13706.66,
+      "classe": "Classe D",
+      "criterio": "Subsídio bruto mensal da classe final",
+      "benefDesc": "Não soma auxílio-alimentação, extras, insalubridade ou adicionais eventuais.",
+      "fonteKey": "ppmt",
+      "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
+      "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+  "fontes": [
+    {
+      "titulo": "Lei Estadual nº 11.718, de 01 de abril de 2022 - Diário Oficial do Estado de Mato Grosso",
+      "url": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+      "tipo": "lei",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "SESP MT - FAQ com enquadramento da carreira dos Profissionais do Sistema Penitenciário",
+      "url": "https://www.pge.mt.gov.br/web/sesp/perguntas-frequentes",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "A tabela oficial localizada usa a nomenclatura histórica 'Agente do Sistema Penitenciário', hoje vinculada à carreira da Polícia Penal em Mato Grosso.",
+    "Não foram somados benefícios, horas extras, adicional noturno, insalubridade, plantões ou verbas indenizatórias.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

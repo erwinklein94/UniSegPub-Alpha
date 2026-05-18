@@ -1,35 +1,27 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pmdf",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 87,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 30
+  },
+  "depois": {
+    "classe": "fraca",
+    "score": 68
+  },
   "usage": {
-    "input_tokens": 11014,
+    "input_tokens": 22949,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 898,
+    "output_tokens": 1254,
     "output_tokens_details": {
-      "reasoning_tokens": 114
+      "reasoning_tokens": 276
     },
-    "total_tokens": 11912
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.pmdf.df.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    }
-  ]
+    "total_tokens": 24203
+  }
 }

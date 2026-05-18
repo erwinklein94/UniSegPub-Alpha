@@ -1,0 +1,91 @@
+{
+  "instituicao_id": "pmrs",
+  "instituicao_nome": "Brigada Militar do Rio Grande do Sul",
+  "sigla": "PMRS",
+  "uf": "RS",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Brigada Militar do Rio Grande do Sul",
+  "resumo": "Tabela com valores brutos mensais identificados em fontes oficiais recentes da Brigada Militar do RS para cargos de ingresso e primeiro posto das carreiras policial-militar e de saúde.",
+  "linhas": [
+    {
+      "cargo": "Soldado de Primeira Classe",
+      "badge": "Soldado",
+      "remuneracao": 5944.85,
+      "beneficios": 0,
+      "total": 5944.85,
+      "classe": "Praça - classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílios, gratificações, adicionais ou vantagens pessoais.",
+      "fonteKey": "pmrs",
+      "fonteNome": "Edital DA/DRESA nº SD-P 01/2025 - Soldado de Primeira Classe",
+      "fonteUrl": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/21083233-edital-da-dresa-n-01-2025-soldado-de-primeira-classe.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Capitão QOEM",
+      "badge": "Capitão",
+      "remuneracao": 21513.44,
+      "beneficios": 0,
+      "total": 21513.44,
+      "classe": "Oficial - primeiro posto",
+      "criterio": "Remuneração bruta mensal do primeiro posto",
+      "benefDesc": "Não soma auxílios, gratificações, adicionais ou vantagens pessoais.",
+      "fonteKey": "pmrs",
+      "fonteNome": "Edital DA/DRESA nº CSPM 01/2025 - Curso Superior de Polícia Militar",
+      "fonteUrl": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/31113326-edital-da-dresa-n-cspm-01-2025-edital-de-abertura-cspm.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Capitão QOES",
+      "badge": "Cap Saúde",
+      "remuneracao": 21513.44,
+      "beneficios": 0,
+      "total": 21513.44,
+      "classe": "Oficial de Saúde - primeiro posto",
+      "criterio": "Remuneração bruta mensal do primeiro posto",
+      "benefDesc": "Não soma auxílios, gratificações, adicionais ou vantagens pessoais.",
+      "fonteKey": "pmrs",
+      "fonteNome": "Edital DA/DRESA nº CBOS 01/2025 - Oficiais Especialistas em Saúde",
+      "fonteUrl": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202504/03111726-edital-da-dresa-n-cbos-01-2025-edital-de-abertura-cbos.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/21083233-edital-da-dresa-n-01-2025-soldado-de-primeira-classe.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital DA/DRESA nº SD-P 01/2025 - Soldado de Primeira Classe",
+      "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/21083233-edital-da-dresa-n-01-2025-soldado-de-primeira-classe.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital DA/DRESA nº CSPM 01/2025 - Curso Superior de Polícia Militar",
+      "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/31113326-edital-da-dresa-n-cspm-01-2025-edital-de-abertura-cspm.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital DA/DRESA nº CBOS 01/2025 - Oficiais Especialistas em Saúde",
+      "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202504/03111726-edital-da-dresa-n-cbos-01-2025-edital-de-abertura-cbos.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Página de concursos 2025 da Brigada Militar",
+      "url": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+      "tipo": "página oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Foram localizados valores oficiais recentes para soldado de ingresso e para o primeiro posto das carreiras de oficiais. Não foram identificadas, na pesquisa realizada, tabelas oficiais consolidadas com todas as graduações e postos da PMRS em uma única fonte pública de fácil extração.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

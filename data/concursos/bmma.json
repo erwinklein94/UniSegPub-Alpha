@@ -4,88 +4,69 @@
   "sigla": "BMMA",
   "uf": "MA",
   "tema": "concursos",
-  "status": "em andamento",
+  "status": "Atualização forte",
   "titulo": "CFO BM 2026 segue em andamento no CBMMA",
-  "resumo": "O ingresso de oficiais do CBMMA segue em andamento pelo PAES 2026 da UEMA, com fases complementares conduzidas pela corporação em 2026",
-  "edital": "Edital nº 57/2025-GR/UEMA para o CFO BM 2026; seleções e convocações complementares seguem sendo publicadas pela Comissão de Concurso do CBMMA em 2026",
-  "salario": "Pesquisa inicial pendente",
-  "vagas": "15 vagas para o Curso de Formação de Oficiais do CBMMA no PAES 2026, sendo 11 de ampla concorrência, 1 para PcD e 3 para candidatos negros",
-  "cotas": "No CFO BM 2026, 20% das vagas são para candidatos negros e 5% para pessoas com deficiência; os demais 75% são de ampla concorrência",
+  "resumo": "O ingresso no Curso de Formação de Oficiais Bombeiro Militar de 2026 segue em andamento, com prova intelectual pelo PAES 2026 da UEMA e fases complementares conduzidas pelo CBMMA em 2026.",
+  "edital": "Edital nº 57/2025-GR/UEMA, com normas do PAES 2026 e anexo específico do CFO do CBMMA para provimento de Cadete BM do 1º ano. Em 2026, a Comissão de Concurso do CBMMA publicou editais de divulgação das fases complementares do certame.",
+  "salario": "Cadete BM: R$ 5.046,49. Aspirante-a-Oficial BM: R$ 8.520,06. 2º Tenente BM: a partir de R$ 9.830,83. Auxílio-alimentação: R$ 400,00.",
+  "vagas": "15 vagas para Cadete BM do 1º ano do CFO BM, sendo 11 para ampla concorrência, 3 para candidatos negros e 1 para pessoas com deficiência.",
+  "cotas": "20% das vagas para candidatos negros e 5% para pessoas com deficiência.",
   "idade": "Brasileiro nato, ambos os sexos; idade máxima de 35 anos para civis até o encerramento da inscrição; para militares não há limite de idade",
-  "escolaridade": "Ensino médio completo, com ingresso no Curso de Formação de Oficiais do CBMMA por meio do PAES 2026 da UEMA",
-  "materias": "Língua Portuguesa; Literatura; Língua Estrangeira; Matemática; Física; Química; Biologia; História; Geografia; Sociologia; Filosofia; produção textual",
-  "banca": "UEMA",
-  "inscritos": "Pesquisa inicial pendente",
-  "etapas": "Exame intelectual pelo PAES 2026; exames biométricos, médicos e odontológicos; Teste de Aptidão Física; exame psicotécnico; avaliação documental; avaliação de cotas para candidatos negros",
-  "cfsd": "Há previsão de Curso de Formação de Oficiais em regime de tempo integral, com atividades na UEMA e no CBMMA, incluindo aulas na Academia de Bombeiros Militar Josué Monte…",
-  "estagio": "O cadete poderá ser submetido a estágio durante o curso de formação, concorrendo às escalas ordinárias e extraordinárias da corporação",
-  "validade": "Pesquisa inicial pendente",
-  "previsao": "Aguardar novas divulgações da Comissão de Concurso do CFO BM 2026 e a conclusão das fases complementares do certame",
+  "escolaridade": "Ensino médio completo, com ingresso por meio do PAES 2026 da UEMA.",
+  "materias": "Língua Portuguesa, Literatura, língua estrangeira, Matemática, Física, Química, Biologia, História, Geografia, Sociologia, Filosofia e produção textual.",
+  "banca": "UEMA.",
+  "inscritos": "Não localizado nas fontes consultadas.",
+  "etapas": "Exame intelectual pelo PAES 2026; avaliação documental; avaliação de cotas para candidatos negros; exames médicos, biométricos e odontológicos; teste de aptidão física; exame psicotécnico.",
+  "cfsd": "Curso de Formação de Oficiais em regime de dedicação integral na Academia de Bombeiro Militar Josué Montello, com atividades acadêmicas e estágios operacionais supervisionados.",
+  "estagio": "Após a conclusão do CFO, o aprovado poderá ser declarado Aspirante-a-Oficial BM e, após período mínimo de 6 meses de estágio, poderá ser promovido a 2º Tenente BM.",
+  "validade": "Não localizado nas fontes consultadas.",
+  "previsao": "Certame do CFO BM 2026 segue em andamento, com fases complementares e editais de divulgação publicados pelo CBMMA em 2026. Também há anúncio oficial de futuro concurso com 500 vagas para soldado músico e combatente, divulgado em 2 de outubro de 2024.",
   "site": "https://cbm.ssp.ma.gov.br/",
   "fontes": [
     {
-      "titulo": "CBMMA — site oficial",
-      "url": "https://cbm.ssp.ma.gov.br/",
+      "titulo": "UEMA — Edital nº 57/2025-GR/UEMA",
+      "url": "https://www.uema.br/2025/07/edital-n-o-57-2025-gr-uema/",
       "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "UEMA — Edital 57/2025-GR/UEMA PDF",
+      "url": "https://www.uema.br/wp-content/uploads/2025/07/Edital_57-2025-GR-UEMA_-_PAES_2026_FINAL.pdf",
+      "tipo": "edital pdf",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CBMMA — abril de 2026",
+      "url": "https://cbm.ssp.ma.gov.br/2026/04/",
+      "tipo": "site oficial",
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "CBMMA — Governo abre 500 vagas em concurso público para o Corpo de Bombeiros",
       "url": "https://cbm.ssp.ma.gov.br/2024/10/02/governo-abre-500-vagas-em-concurso-publico-para-o-corpo-de-bombeiros/",
       "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "CBMMA — Edital de Divulgação nº 04/2026/Comissão de Concurso – CFO BM 2026",
-      "url": "https://cbm.ssp.ma.gov.br/2026/03/06/500-edital-de-divulgacao-no-04-2026-comissao-de-concurso-cfo-bm-2026/",
+      "titulo": "Governo do Maranhão — Governo anuncia 500 vagas em concurso público para o Corpo de Bombeiros",
+      "url": "https://www.ma.gov.br/noticias/governo-anuncia-500-vagas-em-concurso-publico-para-o-corpo-de-bombeiros/fotos",
       "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "UEMA — Edital nº 57/2025-GR/UEMA",
-      "url": "https://www.uema.br/2025/07/edital-n-o-57-2025-gr-uema/",
-      "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "UEMA — Edital 57/2025-GR/UEMA PDF",
-      "url": "https://www.uema.br/wp-content/uploads/2025/07/Edital_57-2025-GR-UEMA_-_PAES_2026_FINAL.pdf",
-      "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-17",
+  "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "alto",
   "precisa_revisao_humana": false,
   "alertas": [
-    "A publicação oficial de outubro de 2024 informa previsão de 500 vagas para futuro concurso do CBMMA, com oportunidades para soldado músico e combatente, mas esse quantitativo não corresponde ao CFO BM 2026 da UEMA.",
-    "O salário do CFO BM 2026 não foi localizado de forma clara nas fontes oficiais consultadas.",
-    "Altura mínima, CNH, número de inscritos, prazo de validade e estágio probatório não foram localizados nas fontes consultadas.",
-    "As fases complementares do CFO BM 2026 seguem sendo divulgadas em editais próprios da Comissão de Concurso do CBMMA.",
-    "Campo edital atualizado/priorizado pelo modo qualificado pago.",
-    "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo cotas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo idade atualizado/priorizado pelo modo qualificado pago.",
-    "Campo escolaridade atualizado/priorizado pelo modo qualificado pago.",
-    "Campo materias atualizado/priorizado pelo modo qualificado pago.",
-    "Campo banca atualizado/priorizado pelo modo qualificado pago.",
-    "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
-    "Campo estagio atualizado/priorizado pelo modo qualificado pago.",
-    "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (100/100). Campos concretos: 6/14.",
-    "Resultado do modo qualificado pago aplicado no JSON principal."
+    "O concurso em andamento confirmado nas fontes oficiais é o CFO BM 2026, com 15 vagas para Cadete BM.",
+    "O anúncio de 500 vagas publicado em 2 de outubro de 2024 refere-se a futuro concurso para soldado músico e combatente e não ao CFO BM 2026.",
+    "Não foram localizados nas fontes consultadas número de inscritos, altura mínima, exigência de CNH e prazo de validade do concurso.",
+    "As fases complementares do CFO BM 2026 seguem com publicações próprias da Comissão de Concurso do CBMMA em 2026.",
+    "Classificação automática: Atualização forte (84/100)."
   ],
-  "texto_final_limpo": true,
-  "padrao_editorial": "usuario-final-sem-links-nos-campos",
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 100,
-  "modo_qualidade": "qualificado",
-  "bloquear_publicacao": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true
+  "classe_atualizacao": "forte",
+  "qualidade_publicacao": "forte",
+  "score_publicacao": "84",
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true
 }

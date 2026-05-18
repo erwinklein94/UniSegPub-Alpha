@@ -5,55 +5,62 @@
   "uf": "PE",
   "tema": "concursos",
   "status": "Atualização fraca",
-  "titulo": "PPPE: último concurso ofertou 200 vagas para Policial Penal e teve nomeações concluídas",
-  "resumo": "A Polícia Penal de Pernambuco realizou concurso público para o cargo de Policial Penal, com 200 vagas imediatas e formação de cadastro de reserva. O certame foi organizado pelo Cebraspe. Em 2026, o governo concluiu a nomeação dos aprovados do último concurso, com 315 novas nomeações para completar o aproveitamento dos aprovados.",
-  "edital": "Edital nº 001/2021 para Policial Penal do Estado de Pernambuco. Concurso realizado, com 200 vagas imediatas e cadastro de reserva. Situação atual: aprovados do último concurso já nomeados.",
-  "salario": "R$ 3.900,00 de remuneração inicial para o cargo de Policial Penal.",
-  "vagas": "200 vagas imediatas para Policial Penal, além de cadastro de reserva. Distribuição indicada no edital: 175 vagas para homens e 14 para mulheres na ampla concorrência, além de 10 para homens e 1 para mulheres nas vagas reservadas a pessoas com deficiência.",
-  "cotas": "Não localizado nas fontes consultadas.",
+  "titulo": "PPPE: último concurso ofertou 200 vagas para Policial Penal e segue sem novo edital localizado",
+  "resumo": "A Polícia Penal de Pernambuco realizou o concurso público regido pelo Edital nº 001/2021 para o cargo de Policial Penal do Estado, com 200 vagas imediatas e formação de cadastro de reserva. O certame foi organizado pelo Cebraspe. Nas fontes oficiais consultadas, não foi localizado novo edital publicado para a PPPE até 18/05/2026.",
+  "edital": "Edital nº 001/2021 para o cargo de Policial Penal do Estado. Concurso realizado, com 200 vagas imediatas e cadastro de reserva. Nas fontes oficiais consultadas, não foi localizado novo edital publicado até 18/05/2026.",
+  "salario": "R$ 3.900,00 de remuneração inicial para Policial Penal do Estado.",
+  "vagas": "200 vagas imediatas para Policial Penal do Estado, além de cadastro de reserva. Distribuição: 175 vagas para homens e 14 para mulheres na ampla concorrência, além de 10 para homens e 1 para mulheres nas vagas reservadas a pessoas com deficiência.",
+  "cotas": "Reserva de 5% das vagas para pessoas com deficiência. No quantitativo inicial, foram 10 vagas para homens e 1 para mulher.",
   "idade": "Não localizado nas fontes consultadas.",
-  "escolaridade": "Nível superior completo em qualquer área, com diploma reconhecido pelo MEC.",
-  "materias": "Língua Portuguesa, Ética no Serviço Público, Informática, Direito Constitucional, Direito Administrativo, Direitos Humanos, Direito Penal, Processo Penal, Legislação Penal Especial e Execução Penal.",
+  "escolaridade": "Nível superior completo em qualquer área, em instituição reconhecida pelo MEC.",
+  "materias": "Língua Portuguesa, Ética no Serviço Público, Noções de Informática, Direitos Humanos, Direito Constitucional, Direito Administrativo, Direito Penal, Direito Processual Penal, Legislação Penal Especial e Execução Penal.",
   "banca": "Cebraspe.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Provas objetivas, prova discursiva, avaliação médica, exame de aptidão física, avaliação psicológica, investigação social e curso de formação profissional.",
-  "cfsd": "Curso de formação profissional com até 560 horas presenciais, em tempo integral, realizado em Itaquitinga e ou Recife. Durante o curso, houve bolsa de formação correspondente a 60% do vencimento do cargo.",
+  "etapas": "Provas objetivas, prova discursiva, exames médicos, teste de aptidão física, avaliação psicológica, investigação social, avaliação biopsicossocial para candidatos com deficiência e curso de formação.",
+  "cfsd": "Curso de formação com até 560 horas presenciais, em tempo integral, com atividades diurnas e noturnas, inclusive aos fins de semana e feriados, realizado em Recife e ou Itaquitinga. Durante o curso, houve bolsa-auxílio mensal de 60% do vencimento do cargo de Policial Penal em atividade, nível PPE I-A.",
   "estagio": "Não localizado nas fontes consultadas.",
-  "validade": "2 anos, contados da homologação do primeiro resultado final, prorrogável uma única vez por igual período.",
+  "validade": "2 anos, contados da homologação do resultado final, prorrogável uma única vez por igual período.",
   "previsao": "Não localizado nas fontes consultadas.",
   "site": "https://www.pe.gov.br",
   "fontes": [
     {
-      "titulo": "Edital do concurso público para Policial Penal do Estado de Pernambuco",
-      "url": "https://jcconcursos.com.br/media/uploads/anexos/concurso-policia-penal-pe-edital-2021.pdf",
+      "titulo": "Edital de concurso público nº 001/2021 – SERES/PE",
+      "url": "https://cdn.cebraspe.org.br/concursos/SERES_PE_21/arquivos/EDITAL___PORTARIA_CONJUNTA_SAD.SJDH.SERES_N_123__DE_28_DE_DEZEMBRO_DE_2021.PDF",
       "tipo": "edital PDF",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Licitações da Secretaria de Administração Penitenciária e Ressocialização de Pernambuco",
-      "url": "https://www.seap.pe.gov.br/index.php/mais/licitacoes",
+      "titulo": "Edital de convocação para o curso de formação – SERES/PE",
+      "url": "https://cdn.cebraspe.org.br/concursos/seres_pe_21/arquivos/ED_19_2021_SERES_PE_CONV_CF_1.PDF",
+      "tipo": "edital PDF",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governo de Pernambuco antecipa divulgação do edital do concurso da Polícia Militar e Bombeiro Militar",
+      "url": "https://pe.gov.br/noticias/administracao/2023/11/11/governo-do-estado-antecipa-divulgacao-do-edital-do-concurso-da-policia-militar-e-bombeiro-militar/",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Notícia sobre nomeação de 315 aprovados no concurso da Polícia Penal de Pernambuco",
-      "url": "https://tribunaonline.com.br/pernambuco/cidades/pernambuco-divulga-nomeacao-de-315-aprovados-em-concurso-da-policia-penal-293655",
-      "tipo": "fonte jornalística de apoio",
-      "data_consulta": "2026-05-17"
+      "titulo": "Portal da Secretaria de Administração Penitenciária e Ressocialização de Pernambuco",
+      "url": "https://www.seap.pe.gov.br/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-17",
+  "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Último concurso identificado é o Edital nº 001/2021 para Policial Penal.",
-    "Nomeações de aprovados do último concurso foram noticiadas em 2026, indicando aproveitamento do cadastro de reserva.",
-    "Não foi localizada, nas fontes consultadas, nova autorização ou edital publicado para outro concurso da PPPE até 2026-05-17.",
-    "Classificação automática: Atualização fraca (60/100)."
+    "Último concurso oficial localizado é o Edital nº 001/2021 para Policial Penal do Estado.",
+    "Nas fontes oficiais consultadas, não foi localizado novo edital da PPPE até 18/05/2026.",
+    "A remuneração inicial publicada no edital de 2021 foi de R$ 3.900,00.",
+    "Foi localizada referência oficial de que a gestão estadual empossou 338 policiais penais aprovados no concurso de 2021.",
+    "Classificação automática: Atualização fraca (68/100)."
   ],
   "classe_atualizacao": "fraca",
   "qualidade_publicacao": "fraca",
-  "score_publicacao": "60",
+  "score_publicacao": "68",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }

@@ -1,27 +1,27 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pppb",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 0
-  },
-  "depois": {
     "classe": "fraca",
     "score": 48
   },
+  "depois": {
+    "classe": "fraca",
+    "score": 64
+  },
   "usage": {
-    "input_tokens": 42769,
+    "input_tokens": 26620,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1584,
+    "output_tokens": 1364,
     "output_tokens_details": {
-      "reasoning_tokens": 573
+      "reasoning_tokens": 444
     },
-    "total_tokens": 44353
+    "total_tokens": 27984
   }
 }

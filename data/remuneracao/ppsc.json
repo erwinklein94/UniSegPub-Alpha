@@ -1,0 +1,157 @@
+{
+  "instituicao_id": "ppsc",
+  "instituicao_nome": "Polícia Penal de Santa Catarina",
+  "sigla": "PPSC",
+  "uf": "SC",
+  "tema": "remuneracao",
+  "status": "Atualização forte",
+  "titulo": "Remuneração bruta mensal da Polícia Penal de Santa Catarina",
+  "resumo": "Tabela com subsídio bruto mensal da carreira de Policial Penal de Santa Catarina, atualizada com base no Anexo III da Lei Complementar nº 774/2021 e no reajuste de 21,5% previsto na Lei Complementar nº 872/2025, com parcelas até abril de 2026.",
+  "linhas": [
+    {
+      "cargo": "Policial Penal Classe I",
+      "badge": "CL I",
+      "remuneracao": 7290,
+      "beneficios": 0,
+      "total": 7290,
+      "classe": "Classe I",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe II",
+      "badge": "CL II",
+      "remuneracao": 7897.5,
+      "beneficios": 0,
+      "total": 7897.5,
+      "classe": "Classe II",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe III",
+      "badge": "CL III",
+      "remuneracao": 8505,
+      "beneficios": 0,
+      "total": 8505,
+      "classe": "Classe III",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe IV",
+      "badge": "CL IV",
+      "remuneracao": 9720,
+      "beneficios": 0,
+      "total": 9720,
+      "classe": "Classe IV",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe V",
+      "badge": "CL V",
+      "remuneracao": 10969.02,
+      "beneficios": 0,
+      "total": 10969.02,
+      "classe": "Classe V",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe VI",
+      "badge": "CL VI",
+      "remuneracao": 12904.52,
+      "beneficios": 0,
+      "total": 12904.52,
+      "classe": "Classe VI",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe VII",
+      "badge": "CL VII",
+      "remuneracao": 15181.43,
+      "beneficios": 0,
+      "total": 15181.43,
+      "classe": "Classe VII",
+      "criterio": "Subsídio bruto mensal da classe",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Policial Penal Classe VIII",
+      "badge": "CL VIII",
+      "remuneracao": 19440,
+      "beneficios": 0,
+      "total": 19440,
+      "classe": "Classe VIII",
+      "criterio": "Subsídio bruto mensal da classe final",
+      "benefDesc": "Não soma auxílio-alimentação, função de confiança, hora extra e verbas eventuais.",
+      "fonteKey": "ppsc",
+      "fonteNome": "Lei Complementar nº 774/2021 + Lei Complementar nº 872/2025",
+      "fonteUrl": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+  "fontes": [
+    {
+      "titulo": "Lei Complementar nº 774, de 27 de outubro de 2021",
+      "url": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 872, de 24 de abril de 2025",
+      "url": "https://leis.alesc.sc.gov.br/html/2025/872_2025_lei_complementar.html",
+      "tipo": "lei estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Tramitação do PLC 3/2025 convertido na Lei Complementar nº 872/2025",
+      "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/NxEb7/tramitacoes",
+      "tipo": "tramitação legislativa",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "forte",
+  "score_publicacao": 100,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": false,
+  "alertas": [
+    "Os valores representam subsídio bruto mensal da carreira de Policial Penal em Santa Catarina.",
+    "A tabela foi calculada com o reajuste total de 21,5% previsto em parcelas com vigência final em abril de 2026.",
+    "Não foram somadas verbas variáveis ou indenizatórias.",
+    "Classificação automática: Atualização forte (100/100)."
+  ]
+}

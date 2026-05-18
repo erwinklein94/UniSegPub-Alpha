@@ -6,7 +6,7 @@
   "tema": "remuneracao",
   "status": "Atualização fraca",
   "titulo": "Remuneração bruta mensal da PCES",
-  "resumo": "Tabela com valores brutos mensais de entrada e de topo de carreira localizados em norma oficial do Espírito Santo. Os valores abaixo são de subsídio e não somam auxílio-alimentação, adicional noturno, serviço extraordinário, funções gratificadas ou verbas eventuais.",
+  "resumo": "Tabela com valores brutos mensais por cargo e topo ou entrada de carreira localizados em normas oficiais do Espírito Santo. Os valores abaixo são de subsídio e não somam auxílio-alimentação, adicional noturno, serviço extraordinário, funções gratificadas ou verbas eventuais.",
   "linhas": [
     {
       "cargo": "Oficial Investigador de Polícia - 3ª categoria, referência 1",
@@ -16,7 +16,7 @@
       "total": 9015.2,
       "classe": "Policial civil",
       "criterio": "Subsídio bruto mensal da classe inicial.",
-      "benefDesc": "Não soma auxílios, extras, adicionais ou função gratificada.",
+      "benefDesc": "Não soma auxílio-alimentação, extras, adicionais ou função gratificada.",
       "fonteKey": "pces",
       "fonteNome": "Lei Complementar 1.093/2024 - Anexo VII",
       "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
@@ -30,9 +30,37 @@
       "total": 15767.81,
       "classe": "Policial civil",
       "criterio": "Subsídio bruto mensal do topo da carreira.",
-      "benefDesc": "Não soma auxílios, extras, adicionais ou função gratificada.",
+      "benefDesc": "Não soma auxílio-alimentação, extras, adicionais ou função gratificada.",
       "fonteKey": "pces",
       "fonteNome": "Lei Complementar 1.093/2024 - Anexo VII",
+      "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia - substituto, referência 1",
+      "badge": "DP",
+      "remuneracao": 17047.65,
+      "beneficios": 0,
+      "total": 17047.65,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal da classe inicial.",
+      "benefDesc": "Não soma auxílio-alimentação, extras, adicionais ou função gratificada.",
+      "fonteKey": "pces",
+      "fonteNome": "Lei Complementar 1.093/2024 - Anexo V",
+      "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Delegado de Polícia - especial, referência 15",
+      "badge": "DP",
+      "remuneracao": 24969.15,
+      "beneficios": 0,
+      "total": 24969.15,
+      "classe": "Delegado",
+      "criterio": "Subsídio bruto mensal do topo da carreira.",
+      "benefDesc": "Não soma auxílio-alimentação, extras, adicionais ou função gratificada.",
+      "fonteKey": "pces",
+      "fonteNome": "Lei Complementar 1.093/2024 - Anexo V",
       "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
       "valorPendente": false
     }
@@ -40,9 +68,33 @@
   "fonte_principal": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
   "fontes": [
     {
-      "titulo": "Lei Complementar 1.093/2024 - cria o cargo de Oficial Investigador de Polícia e traz a tabela de subsídio com vigência a partir de 1º de dezembro de 2025",
+      "titulo": "Lei Complementar 1.093/2024 - reorganiza carreiras da Polícia Civil e traz tabelas de subsídio com vigência a partir de 1º de dezembro de 2025",
       "url": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
       "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar 748/2013 - altera estrutura de referências e tabelas de subsídio de carreiras policiais civis",
+      "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PC_lc%20n%20748_2013%20-%20altera%20estrutura%20referencias%20e%20tabela%20de%20subsidio.pdf",
+      "tipo": "lei_complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar 740/2013 - altera tabela de subsídio dos delegados",
+      "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PC_lc%20n%20740_2013%20-%20altera%20tabela%20de%20subsdio%20delegados.pdf",
+      "tipo": "lei_complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar 531/2009 - remuneração por subsídio para investigador, perito criminal, perito criminal especial e fotógrafo criminal",
+      "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PC_lc%20n%20531_2009%20-%20modalidade%20de%20remunerao%20por%20subsdio%20para%20os%20cargos%20de%20investigad.pdf",
+      "tipo": "lei_complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar 412/2007 - remuneração por subsídio para a carreira de delegado de polícia",
+      "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PM_lc%20n%20412_2007%20-%20modalidade%20de%20remunerao%20por%20subsdio%20para%20a%20carreira%20de%20delegados.pdf",
+      "tipo": "lei_complementar",
       "data_consulta": "2026-05-18"
     },
     {
@@ -54,14 +106,16 @@
   ],
   "ultima_pesquisa": "2026-05-18",
   "classe_atualizacao": "fraca",
-  "score_publicacao": 65,
+  "score_publicacao": 82,
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
   "alertas": [
-    "Foi localizada com segurança apenas a tabela oficial do cargo de Oficial Investigador de Polícia, criada pela LC 1.093/2024.",
-    "As carreiras de Delegado de Polícia, Médico Legista e Perito Oficial Criminal não tiveram tabela oficial consolidada acessível com extração confiável nesta pesquisa.",
-    "Tabela útil montada somente com valores oficiais confirmados e vigentes a partir de 1º de dezembro de 2025.",
-    "Classificação automática: Atualização fraca (65/100)."
+    "Foi confirmada em fonte oficial a tabela vigente do cargo de Oficial Investigador de Polícia a partir de 1º de dezembro de 2025.",
+    "Também foi confirmada em fonte oficial a remuneração de entrada e de topo da carreira de Delegado de Polícia com vigência a partir de 1º de dezembro de 2025.",
+    "As demais carreiras históricas localizadas em leis anteriores tiveram tabelas antigas encontradas, mas sem consolidação segura e completa da vigência atual nesta pesquisa.",
+    "Tabela final publicada apenas com valores oficiais confirmados com segurança.",
+    "Classificação automática: Atualização parcial (82/100).",
+    "Classificação automática: Atualização fraca (82/100)."
   ]
 }

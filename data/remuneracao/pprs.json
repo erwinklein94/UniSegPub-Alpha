@@ -1,0 +1,80 @@
+{
+  "instituicao_id": "pprs",
+  "instituicao_nome": "Polícia Penal do Rio Grande do Sul",
+  "sigla": "PPRS",
+  "uf": "RS",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Penal do Rio Grande do Sul",
+  "resumo": "Tabela com valores brutos mensais localizados em fonte oficial do Governo do RS para os cargos da Polícia Penal em competência de janeiro de 2026, com destaque para o cargo de Policial Penal e carreiras próprias vinculadas à instituição.",
+  "linhas": [
+    {
+      "cargo": "Policial Penal",
+      "badge": "PPRS",
+      "remuneracao": 16650,
+      "beneficios": 0,
+      "total": 16650,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, diárias, plantões ou adicionais pessoais.",
+      "fonteKey": "pprs",
+      "fonteNome": "Relação de Remuneração do Governo do RS - competência 01/2026",
+      "fonteUrl": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Analista da Polícia Penal",
+      "badge": "ANPP",
+      "remuneracao": 18500,
+      "beneficios": 0,
+      "total": 18500,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, diárias, plantões ou adicionais pessoais.",
+      "fonteKey": "pprs",
+      "fonteNome": "Relação de Remuneração do Governo do RS - competência 01/2026",
+      "fonteUrl": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+      "valorPendente": false
+    },
+    {
+      "cargo": "Técnico Administrativo da Polícia Penal",
+      "badge": "TAPP",
+      "remuneracao": 14800,
+      "beneficios": 0,
+      "total": 14800,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não soma auxílio-alimentação, diárias, plantões ou adicionais pessoais.",
+      "fonteKey": "pprs",
+      "fonteNome": "Relação de Remuneração do Governo do RS - competência 01/2026",
+      "fonteUrl": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+  "fontes": [
+    {
+      "titulo": "Relação de Remuneração do Governo do RS - competência 01/2026",
+      "url": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+      "tipo": "tabela oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governo do Estado publica edital de concurso da Polícia Penal nesta terça-feira (12)",
+      "url": "https://estado.rs.gov.br/governo-do-estado-publica-edital-de-concurso-da-policia-penal-nesta-terca-feira-12",
+      "tipo": "pagina governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 82,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Os valores apresentados são brutos mensais de classe inicial localizados em tabela oficial do Governo do RS com competência 01/2026.",
+    "Benefícios eventuais e vantagens pessoais não foram somados.",
+    "Classificação automática: Atualização fraca (82/100)."
+  ]
+}

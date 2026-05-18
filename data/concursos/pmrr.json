@@ -5,68 +5,57 @@
   "uf": "RR",
   "tema": "concursos",
   "status": "Pesquisa pendente",
-  "titulo": "PMRR tem concurso anunciado para 600 vagas de praças",
-  "resumo": "O Governo de Roraima anunciou em 6 de maio de 2026 um novo concurso da PMRR com previsão de 600 vagas para praças, em turmas anuais de 150 aprovados. Até 17 de maio de 2026, não foi localizado edital publicado do novo certame.",
-  "edital": "Novo concurso anunciado em 06/05/2026 para 600 vagas de praças. Até 17/05/2026, edital não localizado. Último edital oficial localizado para soldado é de 2018, com 400 vagas para Soldado PM 2ª Classe do Quadro de Praças Combatentes.",
+  "titulo": "PMRR tem concurso anunciado com 600 vagas para praças",
+  "resumo": "O Governo de Roraima anunciou em 6 de maio de 2026 um novo concurso da PMRR com previsão de 600 vagas para praças, com formação anual de 150 aprovados até completar o total. Até 18 de maio de 2026, não foi localizado edital publicado desse novo certame. O último edital oficial localizado é o Edital nº 001/2018, para Soldado PM 2ª Classe.",
+  "edital": "Novo concurso anunciado em 06/05/2026 com 600 vagas para praças, ainda sem edital publicado localizado. Último edital oficial localizado: Edital nº 001/2018 para Soldado PM 2ª Classe do Quadro de Praças Combatentes.",
   "salario": "Não localizado nas fontes consultadas.",
-  "vagas": "600 vagas previstas para praças no concurso anunciado em 2026, com convocação em turmas anuais de 150 aprovados. No último edital oficial localizado, foram 400 vagas para Soldado PM 2ª Classe do Quadro de Praças Combatentes, com 15% destinadas ao gênero feminino.",
-  "cotas": "Não localizado nas fontes consultadas.",
-  "idade": "Não localizado nas fontes consultadas.",
-  "escolaridade": "Não localizado nas fontes consultadas.",
-  "materias": "Não localizado nas fontes consultadas.",
-  "banca": "Não localizada nas fontes consultadas para o concurso anunciado em 2026. No último edital oficial localizado, a organização ficou com a UERR.",
+  "vagas": "600 vagas anunciadas em 2026 para praças, com ingresso em turmas anuais de 150 aprovados até completar o total. No último edital oficial localizado, em 2018, foram 400 vagas para Soldado PM 2ª Classe.",
+  "cotas": "No edital de 2018, 15% das vagas foram reservadas para candidatas do sexo feminino. Também houve reserva de 5% para pessoas com deficiência em atos posteriores do certame.",
+  "idade": "No edital de 2018, exigiu idade de 18 a 35 anos no ingresso e CNH categoria B, no mínimo. Altura mínima não localizada nas fontes consultadas.",
+  "escolaridade": "No edital de 2018, exigiu ensino médio completo.",
+  "materias": "No edital de 2018, a prova objetiva cobrou Língua Portuguesa, Noções de Direito Constitucional, Direito Penal, Direito Processual Penal, Direito Administrativo, Legislação Extravagante, Legislação da PMRR, Atualidades Gerais, História de Roraima e Geografia de Roraima.",
+  "banca": "No concurso anunciado em 2026, não localizada nas fontes consultadas. No último edital oficial localizado, a organização ficou com a UERR.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Para o concurso anunciado em 2026, não localizadas nas fontes consultadas. No último edital para soldado, houve prova objetiva, exames médicos e odontológicos, exame toxicológico, teste de aptidão física, avaliação psicológica e investigação social.",
-  "cfsd": "No anúncio de 2026, o governo informou ingresso em turmas anuais de 150 aprovados até completar as 600 vagas. No último edital oficial localizado, o curso de formação foi previsto em turmas e com duração mínima de 6 meses.",
-  "estagio": "Não localizado nas fontes consultadas.",
-  "validade": "Não localizado nas fontes consultadas.",
-  "previsao": "O governador anunciou em 06/05/2026 a realização de novo concurso com 600 vagas para praças ainda em 2026.",
+  "etapas": "No concurso anunciado em 2026, não localizadas nas fontes consultadas. No edital de 2018, houve prova objetiva, exames médicos, odontológicos e toxicológicos, exame de aptidão física, avaliação psicológica, investigação social e curso de formação.",
+  "cfsd": "No anúncio de 2026, o governo informou formação anual de 150 aprovados até completar 600 vagas. No edital de 2018, o curso teve duração mínima de 6 meses.",
+  "estagio": "No último edital oficial localizado, o curso incluiu estágio operacional.",
+  "validade": "No edital de 2018, a validade foi de 2 anos, prorrogável uma vez por igual período.",
+  "previsao": "Novo concurso anunciado em 06/05/2026 com previsão de 600 vagas para praças.",
   "site": "https://www.rr.gov.br",
   "fontes": [
     {
       "titulo": "Na posse da primeira comandante da PM de Roraima, governador anuncia concurso com 600 vagas",
       "url": "https://portal.rr.gov.br/na-posse-da-primeira-comandante-da-pm-de-roraima-governador-anuncia-concurso-com-600-vagas/",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Em entrevista, Soldado Sampaio elenca prioridades de gestão do Governo de Roraima",
-      "url": "https://portal.rr.gov.br/em-entrevista-soldado-sampaio-elenca-prioridades-de-gestao-do-governo-de-roraima/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Diário Oficial do Estado de Roraima - Edital do concurso da PMRR de 2018",
+      "titulo": "Diário Oficial de Roraima de 03/05/2018 com o Edital nº 001/2018 do concurso da PMRR",
       "url": "https://www.imprensaoficial.rr.gov.br/app/_edicoes/2018/05/doe-20180503.pdf",
-      "tipo": "diário oficial / edital PDF",
-      "data_consulta": "2026-05-17"
+      "tipo": "diário oficial / edital",
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Diário Oficial do Estado de Roraima - Edital do concurso da PMRR de 2012",
-      "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2012/10/doe-20121023.pdf",
-      "tipo": "diário oficial / edital PDF",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Estatuto dos Militares do Estado de Roraima",
-      "url": "https://pm.rr.gov.br/legislacao/docs/1-Lei_Complementar_n___194__de_13_de_fevereiro_de_2012_-_Estatuto_dos_Militares_do_Estado_de_Roraima-20250706201132.pdf",
-      "tipo": "legislação oficial",
-      "data_consulta": "2026-05-17"
+      "titulo": "Concurso PM 2018 Ed 001/2018 – EDITAL Nº 046 de 05/07/2023 - Alteração de Cronograma",
+      "url": "https://cpc.uerr.edu.br/post/11090/",
+      "tipo": "banca organizadora",
+      "data_consulta": "2026-05-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-17",
+  "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Há anúncio oficial de novo concurso em 06/05/2026, mas até 17/05/2026 o edital não foi localizado.",
-    "Salário, banca, cotas gerais e etapas específicas do concurso de 2026 ainda não foram localizados nas fontes oficiais consultadas.",
-    "Campos complementares foram preenchidos com base no último edital oficial localizado, apenas como referência histórica.",
+    "Há anúncio oficial de novo concurso em 06/05/2026, mas até 18/05/2026 o edital não foi localizado.",
+    "Salário, banca, etapas e requisitos específicos do concurso anunciado em 2026 não foram localizados nas fontes consultadas.",
+    "Campos de requisitos, matérias, validade e curso de formação foram preenchidos com base no último edital oficial localizado, de 2018.",
+    "Foi localizado ato da UERR de 05/07/2023 com alteração de cronograma do concurso de 2018, indicando movimentação posterior desse certame.",
     "Revisão humana recomendada até a publicação do edital de 2026.",
-    "Classificação automática: Pesquisa pendente (8/100)."
+    "Classificação automática: Pesquisa pendente (70/100)."
   ],
   "classe_atualizacao": "pendente",
   "qualidade_publicacao": "pendente",
-  "score_publicacao": "8",
+  "score_publicacao": "70",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }

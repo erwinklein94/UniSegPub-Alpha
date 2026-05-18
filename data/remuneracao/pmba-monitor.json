@@ -1,28 +1,28 @@
 {
   "atualizado_em": "2026-05-18",
   "instituicao_id": "pmba",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 0
-  },
-  "depois": {
     "classe": "fraca",
     "score": 65
   },
-  "linhas": 1,
+  "depois": {
+    "classe": "forte",
+    "score": 100
+  },
+  "linhas": 10,
   "usage": {
-    "input_tokens": 25055,
+    "input_tokens": 20336,
     "input_tokens_details": {
-      "cached_tokens": 4736
+      "cached_tokens": 0
     },
-    "output_tokens": 1295,
+    "output_tokens": 2400,
     "output_tokens_details": {
-      "reasoning_tokens": 479
+      "reasoning_tokens": 246
     },
-    "total_tokens": 26350
+    "total_tokens": 22736
   }
 }

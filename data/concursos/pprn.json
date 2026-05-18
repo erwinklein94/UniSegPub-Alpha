@@ -4,80 +4,82 @@
   "sigla": "PPRN",
   "uf": "RN",
   "tema": "concursos",
-  "status": "Atualização fraca",
-  "titulo": "PPRN: concurso previsto no RN com 300 vagas e banca Cebraspe",
-  "resumo": "A Polícia Penal do Rio Grande do Norte tem concurso previsto. A seleção mais recente em andamento institucional aponta 300 vagas imediatas, com 200 para Policial Penal e demais oportunidades em áreas de assistência penitenciária e cargos administrativos. A banca definida é o Cebraspe.",
-  "edital": "Novo concurso previsto para 2026, com banca Cebraspe definida e 300 vagas imediatas anunciadas. O último edital publicado foi o Edital nº 001/2017, para Agente Penitenciário, cargo atualmente denominado Policial Penal.",
-  "salario": "Policial Penal: salário base de R$ 5.325,95, podendo chegar a R$ 10.715,95 com auxílio-fardamento de R$ 300,00, auxílio-alimentação de R$ 800,00 e diária operacional variável. No último concurso, a remuneração inicial informada era de R$ 3.153,74.",
-  "vagas": "300 vagas imediatas no concurso previsto, sendo 200 para Policial Penal, 60 para Especialista em Assistência Penitenciária e 40 para cargos administrativos. Há também 1.560 vagas em cadastro de reserva. No último edital, foram 571 vagas para Agente Penitenciário.",
-  "cotas": "Não localizado nas fontes consultadas.",
-  "idade": "Não localizado nas fontes consultadas.",
-  "escolaridade": "No último concurso para Agente Penitenciário, a exigência foi de ensino médio completo. Para o novo concurso previsto, as fontes consultadas indicam vagas de nível médio e superior, mas não apresentam o requisito final por cargo de forma oficial acessível nas fontes localizadas.",
-  "materias": "Língua Portuguesa e Redação Oficial, Informática, Administração Pública, Direito Administrativo, Direito Constitucional, Direito Penal, Direitos Humanos e Tratamento Penal, Regime Jurídico e Estatutos, Ética Profissional e Lei de Execução Penal.",
-  "banca": "Cebraspe no concurso previsto para 2026. No último concurso, a banca foi o Idecan.",
+  "status": "Atualização forte",
+  "titulo": "PPRN: concurso de 2017 segue em andamento com novas convocações para curso de formação; novo certame com 300 vagas foi anunciado",
+  "resumo": "A Polícia Penal do Rio Grande do Norte ainda movimenta o concurso de 2017, atualmente com convocações para o IV Curso Específico de Formação de Policial Penal. Além disso, a reestruturação da carreira e do quadro da SEAP criou 556 cargos de Policial Penal, 60 de Especialista em Assistência Penitenciária e previsão de apoio com até 40 cargos administrativos, o que reforça a expectativa de novo concurso.",
+  "edital": "O último edital publicado foi o Edital nº 001/2017, para Agente Penitenciário, cargo atualmente denominado Policial Penal, com 571 vagas. Em janeiro de 2024 houve publicação de resultado de matrícula para o IV Curso Específico de Formação, indicando continuidade do certame de 2017. Não foi localizado edital de abertura mais recente publicado até a presente pesquisa.",
+  "salario": "Policial Penal: não localizado de forma objetiva nas fontes oficiais consultadas nesta pesquisa. Especialista em Assistência Penitenciária, nível inicial: R$ 3.500,00 para Assistente Social, Psicólogo e Terapeuta Ocupacional. Cargos administrativos da SEAP: subsídios previstos na Lei Complementar nº 432/2010, mas os valores objetivos por cargo não ficaram integralmente acessíveis nas fontes localizadas.",
+  "vagas": "Último edital: 571 vagas para Agente Penitenciário, atual Policial Penal. Estrutura legal mais recente da SEAP: 556 cargos de Policial Penal criados, 60 cargos de Especialista em Assistência Penitenciária, sendo 20 para Assistente Social, 20 para Psicólogo, 14 para Terapeuta Ocupacional e 6 para Médico Psiquiatra, além de apoio com até 40 cargos administrativos.",
+  "cotas": "No edital de 2017, 29 vagas foram reservadas para pessoas com deficiência dentro do total de 571 vagas.",
+  "idade": "No concurso de 2017, a exigência mínima foi de 18 anos na posse. Altura mínima, CNH e outros requisitos físicos objetivos não ficaram integralmente acessíveis nas fontes consultadas desta atualização.",
+  "escolaridade": "No edital de 2017 para Agente Penitenciário, a exigência foi de nível superior completo. Para a estrutura atual da SEAP, os cargos de Especialista em Assistência Penitenciária exigem formação superior específica em Serviço Social, Psicologia, Terapia Ocupacional e Medicina Psiquiátrica. Os cargos administrativos previstos abrangem níveis médio e superior, conforme a especialidade.",
+  "materias": "No último concurso para Agente Penitenciário, as principais disciplinas incluíram Língua Portuguesa e Redação Oficial, Informática, Administração Pública, Direito Administrativo, Direito Constitucional, Direito Penal, Direitos Humanos e Tratamento Penal, Regime Jurídico e Lei de Execução Penal.",
+  "banca": "Idecan no concurso de 2017. Para novo concurso anunciado, não foi localizado ato oficial de contratação da banca nas fontes oficiais consultadas nesta atualização.",
   "inscritos": "Não localizado nas fontes consultadas.",
   "etapas": "Prova objetiva, teste de aptidão física, avaliação psicológica, exame toxicológico, investigação social e curso de formação.",
-  "cfsd": "Curso específico de formação de policial penal como etapa final do certame.",
-  "estagio": "Não localizado nas fontes consultadas.",
+  "cfsd": "Curso Específico de Formação de Policial Penal como fase final do concurso. Em janeiro de 2024 foi publicada relação de matriculados e habilitados para o IV CFP/SEAP.",
+  "estagio": "Estágio probatório de 3 anos após o ingresso na carreira.",
   "validade": "Não localizado nas fontes consultadas.",
-  "previsao": "Não localizado nas fontes consultadas.",
+  "previsao": "Há sinalização de novo concurso após a reestruturação da carreira e criação de cargos em 2025, mas não foi localizado cronograma oficial de publicação.",
   "site": "https://www.rn.gov.br",
   "fontes": [
     {
       "titulo": "Portal do Governo do RN",
       "url": "https://www.rn.gov.br",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Portal da Polícia Penal do RN",
       "url": "https://www.policiapenal.rn.gov.br",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Portal da SEAP/RN",
       "url": "https://www.seap.rn.gov.br",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Diário Oficial do RN - Edital nº 001/2017 SEARH/SEJUC/RN",
       "url": "https://www.diariooficial.rn.gov.br/dei/dorn3/documentos/00000001/20170524/573059.htm",
       "tipo": "diário oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Diário Oficial do RN - Homologação do resultado final do concurso 2017",
       "url": "https://www.diariooficial.rn.gov.br/dei/dorn3/documentos/00000001/20171206/593580.htm",
       "tipo": "diário oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Diário Oficial do RN - Resultado da matrícula do IV Curso Específico de Formação de Policial Penal",
+      "titulo": "Diário Oficial do RN - Resultado da entrega de documentação para o IV Curso Específico de Formação de Policial Penal",
       "url": "https://webdisk.diariooficial.rn.gov.br/Jornal/12024-01-30.pdf",
       "tipo": "diário oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Ache Concursos - SEAP-RN 2026 define banca e terá 300 vagas na Polícia Penal",
-      "url": "https://www.acheconcursos.com.br/noticias/concurso-seap-rn-2026-define-banca-e-tera-300-vagas-na-policia-penal-89097",
-      "tipo": "fonte jornalística de apoio",
-      "data_consulta": "2026-05-17"
+      "titulo": "Diário Oficial do RN - Lei Complementar com criação de cargos da SEAP",
+      "url": "https://webdisk.diariooficial.rn.gov.br/Jornal/12025-09-10.pdf",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-17",
+  "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "médio",
-  "precisa_revisao_humana": true,
+  "precisa_revisao_humana": false,
   "alertas": [
-    "O novo concurso foi localizado com banca definida e vagas anunciadas, mas sem edital oficial de abertura acessível nas fontes oficiais consultadas.",
-    "Parte dos dados do concurso previsto de 2026 foi confirmada em fonte jornalística de apoio e deve ser revisada assim que o edital de abertura for publicado.",
-    "Os requisitos de altura mínima, CNH, validade do concurso e detalhamento oficial de escolaridade por cargo não foram localizados nas fontes consultadas.",
-    "Classificação automática: Atualização fraca (52/100)."
+    "O concurso de 2017 ainda teve movimentação oficial em 2024 com convocação para curso de formação, o que indica continuidade prática do certame.",
+    "Não foi localizado edital de abertura de novo concurso publicado nas fontes oficiais consultadas até 18/05/2026.",
+    "A informação sobre banca Cebraspe e 300 vagas não foi confirmada por ato oficial acessível nas fontes oficiais usadas nesta atualização.",
+    "Os valores objetivos de remuneração do cargo de Policial Penal e dos cargos administrativos não ficaram integralmente acessíveis nas fontes oficiais localizadas.",
+    "Altura mínima, CNH e validade do concurso não foram localizados de forma objetiva nas fontes consultadas.",
+    "Classificação automática: Atualização forte (84/100)."
   ],
-  "classe_atualizacao": "fraca",
-  "qualidade_publicacao": "fraca",
-  "score_publicacao": "52",
+  "classe_atualizacao": "forte",
+  "qualidade_publicacao": "forte",
+  "score_publicacao": "84",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }

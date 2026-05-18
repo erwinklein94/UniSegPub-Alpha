@@ -1,0 +1,58 @@
+{
+  "instituicao_id": "ppac",
+  "instituicao_nome": "Polícia Penal do Acre",
+  "sigla": "PPAC",
+  "uf": "AC",
+  "tema": "remuneracao",
+  "status": "Atualização fraca",
+  "titulo": "Remuneração bruta mensal da Polícia Penal do Acre",
+  "resumo": "Tabela com remuneração bruta mensal identificada em fontes oficiais do Estado do Acre para o cargo de Agente de Polícia Penal. O valor abaixo reflete a remuneração inicial bruta mensal publicada em edital oficial recente do concurso da Polícia Penal do Acre.",
+  "linhas": [
+    {
+      "cargo": "Agente de Polícia Penal",
+      "badge": "Inicial",
+      "remuneracao": 4366.6,
+      "beneficios": 0,
+      "total": 4366.6,
+      "classe": "Classe inicial",
+      "criterio": "Subsídio bruto mensal da classe inicial",
+      "benefDesc": "Não somados adicional por titulação, sexta-parte, diárias e prêmio anual.",
+      "fonteKey": "ppac",
+      "fonteNome": "Edital nº 001 SEAD/IAPEN, de 19 de junho de 2023",
+      "fonteUrl": "https://sead.ac.gov.br/wp-content/uploads/2025/05/Edital-no-001-IAPEN-Edital-de-Abertura-19-06-2023.pdf",
+      "valorPendente": false
+    }
+  ],
+  "fonte_principal": "https://sead.ac.gov.br/wp-content/uploads/2025/05/Edital-no-001-IAPEN-Edital-de-Abertura-19-06-2023.pdf",
+  "fontes": [
+    {
+      "titulo": "Edital nº 001 SEAD/IAPEN, de 19 de junho de 2023",
+      "url": "https://sead.ac.gov.br/wp-content/uploads/2025/05/Edital-no-001-IAPEN-Edital-de-Abertura-19-06-2023.pdf",
+      "tipo": "edital oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 392, de 17 de dezembro de 2021",
+      "url": "https://www.legis.ac.gov.br/detalhar_imprimir/5038",
+      "tipo": "lei complementar estadual",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Página oficial de editais do IAPEN/AC",
+      "url": "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "fraca",
+  "score_publicacao": 65,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Foi localizado valor oficial claro para o cargo de Agente de Polícia Penal, mas não foi possível extrair de forma confiável a tabela completa por classe e referência da carreira na legislação consultada.",
+    "O valor publicado em edital oficial recente foi priorizado por ser objetivo e diretamente utilizável pelo leitor leigo.",
+    "Classificação automática: Atualização fraca (65/100)."
+  ]
+}

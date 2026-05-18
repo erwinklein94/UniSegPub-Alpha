@@ -4,102 +4,99 @@
   "sigla": "CBMMS",
   "uf": "MS",
   "tema": "concursos",
-  "status": "há seleções vigentes em 2025/2026 e concursos anteriores concluídos",
-  "titulo": "CBMMS tem seleções internas e processos seletivos ativos em 2025/2026",
-  "resumo": "O CBMMS mantém seleções internas e processos seletivos simplificados ativos no portal oficial de concursos de MS, além de concursos anteriores já concluídos",
-  "edital": "Processo Seletivo Interno SAD/SEJUSP/CBMMS/CFS-BM/2026 em andamento; Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 em andamento; Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QOETBM/2025 em andamento",
-  "salario": "A remuneração varia conforme o cargo, o vínculo e a tabela de subsídio aplicada em cada edital do CBMMS",
-  "vagas": "Há seleções vigentes e histórico de concursos anteriores do CBMMS no portal oficial de concursos de MS; o quantitativo depende do edital específico",
-  "cotas": "As reservas de vagas seguem o edital específico e a legislação estadual aplicável",
-  "idade": "Os requisitos de idade seguem o edital específico e a legislação estadual aplicável",
-  "escolaridade": "A escolaridade varia conforme o cargo e o edital específico do CBMMS",
-  "materias": "O conteúdo programático é definido no edital específico de cada seleção",
-  "banca": "Banca e organização conforme o edital de cada concurso ou processo seletivo publicado no portal oficial",
-  "inscritos": "As relações de inscritos e demais comunicados são publicadas no portal oficial de concursos do Governo de MS",
-  "etapas": "Prova objetiva; exame de saúde; teste de habilitação física; avaliação documental; investigação social; convocações; classificação final",
-  "cfsd": "Há histórico de CFSD do CBMMS em 2022, com publicações de matrícula e curso de formação no portal oficial",
-  "estagio": "O estágio e a formação seguem o estatuto aplicável e o edital específico do certame",
-  "validade": "A validade é definida no edital específico de cada concurso ou processo seletivo",
-  "previsao": "Seguem convocações, resultados e homologações dos certames vigentes de 2025/2026",
+  "status": "Atualização fraca",
+  "titulo": "CBMMS tem seleções temporárias ativas e último concurso efetivo realizado em 2022",
+  "resumo": "O CBMMS mantém processos seletivos em andamento em 2025/2026 para quadros temporários e seleção interna. O último concurso público efetivo identificado para ingresso foi o de 2022, com editais para soldado e oficial.",
+  "edital": "Processo Seletivo Interno SAD/SEJUSP/CBMMS/CFS-BM/2026 em andamento; Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 em andamento para Soldado Auxiliar de Operações de Bombeiro Militar; Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QOETBM/2025 em andamento para oficiais temporários; último concurso público efetivo identificado: SAD/SEJUSP/CBMMS/CFSD/2022 e SAD/SEJUSP/CBMMS/CFO/2022.",
+  "salario": "QPTBM/2025: não localizado com segurança nas fontes oficiais consultadas. CFSD/2022: R$ 2.252,25 durante o curso de formação e R$ 5.005,00 após a formação. CFO/2022: não localizado com segurança nas fontes consultadas.",
+  "vagas": "QPTBM/2025: 230 vagas para Soldado Auxiliar de Operações de Bombeiro Militar. CFSD/2022: 250 vagas para soldado, sendo 192 ampla concorrência, 50 para candidatos negros e 8 para indígenas. CFO/2022: 20 vagas para oficial.",
+  "cotas": "CFSD/2022: 50 vagas reservadas para candidatos negros e 8 para indígenas. Nas seleções de 2025 houve verificação de cotas, mas o quantitativo exato não foi localizado nas fontes consultadas.",
+  "idade": "Não localizado nas fontes consultadas.",
+  "escolaridade": "QPTBM/2025: ensino médio completo e CNH no mínimo categoria B. CFSD/2022: nível superior. CFO/2022: nível superior.",
+  "materias": "CFO/2022: Língua Portuguesa. As demais disciplinas do CFSD/2022 e dos seletivos de 2025 não foram localizadas com segurança nas fontes consultadas.",
+  "banca": "CFSD/2022: IDECAN. QPTBM/2025: seleção conduzida pela Coordenadoria de Processos Seletivos da SAD/MS. QOETBM/2025 e CFS-BM/2026: não localizado com segurança nas fontes consultadas.",
+  "inscritos": "As relações de inscritos, resultados, convocações e homologações foram localizadas no portal oficial de concursos de MS para os certames de 2025/2026.",
+  "etapas": "Inscrição; análise documental; investigação social; teste de habilitação física em parte das seleções; classificação final; homologação; convocações.",
+  "cfsd": "O concurso CFSD/2022 do CBMMS foi localizado como concurso público de provas para soldado e teve desdobramentos posteriores de investigação social e matrícula no curso de formação.",
+  "estagio": "Não localizado nas fontes consultadas.",
+  "validade": "Não localizado nas fontes consultadas.",
+  "previsao": "Em maio de 2026, o CBMMS segue com seleção interna CFS-BM/2026 em andamento e com processos seletivos temporários de 2025 ainda com convocações e publicações recentes.",
   "site": "https://www.concursos.ms.gov.br/",
   "fontes": [
     {
       "titulo": "Portal oficial de Concursos Públicos e Processos Seletivos de MS",
       "url": "https://www.concursos.ms.gov.br/",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Lista oficial de editais do CBMMS no portal de concursos de MS",
       "url": "https://www2.concursos.ms.gov.br/?location=editais",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Processo Seletivo Interno SAD/SEJUSP/CBMMS/CFS-BM/2026 no portal oficial",
-      "url": "https://www2.concursos.ms.gov.br/?concurso=188&location=editais_complemento",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 no portal oficial",
       "url": "https://www2.concursos.ms.gov.br/?concurso=177&location=editais_complemento",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QOETBM/2025 no portal oficial",
       "url": "https://www2.concursos.ms.gov.br/?concurso=180&location=editais_complemento",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Processo Seletivo Interno SAD/SEJUSP/CBMMS/CFS-BM/2026 no portal oficial",
+      "url": "https://www2.concursos.ms.gov.br/?concurso=188&location=editais_complemento",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Concurso Público SAD/SEJUSP/CBMMS/CFSD/2022 no portal oficial",
       "url": "https://www2.concursos.ms.gov.br/?concurso=124&location=editais_complemento",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
     },
     {
       "titulo": "Concurso Público SAD/SEJUSP/CBMMS/CFO/2022 no portal oficial",
       "url": "https://www2.concursos.ms.gov.br/?concurso=126&location=editais_complemento",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial Eletrônico com conteúdo programático do CFO/2022",
+      "url": "https://cdn.direcaoconcursos.com.br/uploads/2022/09/Oficial-Bombeiros-MS.pdf",
+      "tipo": "diário oficial em PDF espelhado",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Resumo jornalístico do CFSD/2022 com vagas, salário e banca",
+      "url": "https://www.direcaoconcursos.com.br/noticias/concurso-bombeiros-ms-edital-publicado/",
+      "tipo": "fonte jornalística de apoio",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Resumo jornalístico do CFO/2022 com vagas",
+      "url": "https://www.direcaoconcursos.com.br/noticias/concurso-bombeiros-ms-edital-publicado-oficial/",
+      "tipo": "fonte jornalística de apoio",
+      "data_consulta": "2026-05-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-17",
+  "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "As fontes oficiais confirmam seleções vigentes e concursos anteriores do CBMMS, mas a extração automática não recuperou com segurança os dados numéricos finos.",
-    "Não foram localizados com segurança salário, vagas totais, banca nominal, escolaridade detalhada, idade, cotas e validade em um único edital recente.",
-    "Manter revisão humana para campos que exijam precisão total antes da publicação final.",
-    "O portal oficial mostra o processo interno CFS-BM/2026 e os seletivos QPTBM/2025 e QOETBM/2025 como ativos, e os concursos efetivos de 2022 como concluídos.",
-    "Campo edital atualizado/priorizado pelo modo qualificado pago.",
-    "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo cotas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo idade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo escolaridade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo materias preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo banca preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
-    "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: baixa (36/100). Campos concretos: 6/14.",
-    "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 36/100, qualidade baixa. Revisão humana recomendada.",
-    "Resultado pago da OpenAI priorizado no JSON principal para evitar gasto sem alteração visível no site.",
-    "Resultado do modo qualificado pago aplicado no JSON principal."
+    "O portal oficial confirmou certames ativos e concursos anteriores, mas parte dos PDFs oficiais não abriu corretamente durante a coleta.",
+    "Os dados objetivos mais seguros localizados foram 230 vagas no QPTBM/2025, 250 vagas no CFSD/2022 e 20 vagas no CFO/2022.",
+    "Salário do QPTBM/2025, idade detalhada e validade não foram localizados com segurança nas fontes consultadas.",
+    "Há seletivos temporários vigentes em 2025 e seleção interna em 2026, além de concursos efetivos anteriores já concluídos.",
+    "Classificação automática: Atualização fraca (76/100)."
   ],
-  "texto_final_limpo": true,
-  "padrao_editorial": "usuario-final-sem-links-nos-campos",
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 36,
-  "modo_qualidade": "qualificado",
-  "bloquear_publicacao": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true
+  "classe_atualizacao": "fraca",
+  "qualidade_publicacao": "fraca",
+  "score_publicacao": "76",
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true
 }

@@ -1,27 +1,27 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pprn",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 0
-  },
-  "depois": {
     "classe": "fraca",
     "score": 52
   },
+  "depois": {
+    "classe": "forte",
+    "score": 84
+  },
   "usage": {
-    "input_tokens": 38029,
+    "input_tokens": 39313,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1953,
+    "output_tokens": 2013,
     "output_tokens_details": {
-      "reasoning_tokens": 723
+      "reasoning_tokens": 575
     },
-    "total_tokens": 39982
+    "total_tokens": 41326
   }
 }
