@@ -10,7 +10,7 @@ Chave publishable (somente leitura, usada no navegador): `sb_publishable_2Yj2Ifq
 - ✅ Migration aplicada no projeto: tabelas `instituicoes`, `concursos`, `remuneracoes`, `remuneracao_linhas` com RLS (leitura pública, escrita bloqueada).
 - ✅ Dados importados: 110 instituições, 110 concursos, 110 remunerações e 1.394 linhas salariais. A coluna `raw` guarda o JSON original de cada instituição.
 - ✅ Front-end em produção: as páginas Concursos e Remuneração leem do Supabase via `js/services/supabase-api.js` (Concursos passou de ~110 requisições para 2). Os JSONs em `data/` e `config/` continuam como fallback se o Supabase estiver fora do ar.
-- Próximo passo: completar o conteúdo das abas fracas e migrar os dados embutidos em `js/data/*.js` (ações judiciais, associações, brasões etc.) para o banco.
+- ✅ (2026-07-10) Dados embutidos migrados para o banco: 132 datasets na tabela `datasets` (antes ~950 KB em `js/data/*.js`, carregados por `js/services/dados-portal.js` com cache local de 6h) e 306 cards de conteúdo na tabela `cards_estaticos` (antes ~18 mil linhas de HTML nas abas Ações, Associações, Brasões, Direitos, Poderes e Concursos, injetados por `js/pages/cards-estaticos-supabase.js`). Para editar conteúdo, altere no Supabase — não há mais dados no código.
 
 ## O que está incluído
 

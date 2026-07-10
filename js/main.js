@@ -3,10 +3,9 @@
    Não há bundle gerado em runtime; isto evita manter um artefato grande e não utilizado.
 */
 const UNISEGPUB_JS_ORDER = [
-  'js/data/parametros-cargos.js',
-  'js/data/policia-penal.js',
+  'js/services/supabase-api.js',
+  'js/services/dados-portal.js',
   'js/data/bases-conteudo.js',
-  'js/data/produtos-data.js',
   'js/ui/navegacao-ui.js',
   'js/services/remuneracao.js',
   'js/ui/header-estados.js',

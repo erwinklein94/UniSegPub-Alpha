@@ -114,7 +114,7 @@
   function registrarDetalhe(id, dados) {
     /* Sobrescreve com segurança: só processamos instituições sem card estático,
        cujas entradas em ACOES_JUDICIAIS são preenchimento genérico de runtime. */
-    if (typeof ACOES_JUDICIAIS === 'undefined' || !ACOES_JUDICIAIS) return;
+    if (typeof ACOES_JUDICIAIS === 'undefined' || !ACOES_JUDICIAIS) window.ACOES_JUDICIAIS = {};
     const teses = Array.isArray(dados.teses) ? dados.teses : [];
     ACOES_JUDICIAIS[id] = teses.map(tese => ({
       titulo: tese.titulo,
@@ -167,6 +167,11 @@
   async function iniciar() {
     const lista = qs('#acoes-conteudo-lista');
     if (!lista) return;
+
+    /* Aguarda os datasets do portal para o loader não sobrescrever ACOES_JUDICIAIS depois. */
+    if (window.DADOS_PORTAL_PROMESSA) { try { await window.DADOS_PORTAL_PROMESSA; } catch (e) { /* segue */ } }
+    /* Aguarda os cards estáticos para manter a ordem e evitar duplicidade. */
+    if (window.CARDS_ESTATICOS_PROMESSA) { try { await window.CARDS_ESTATICOS_PROMESSA; } catch (e) { /* segue */ } }
 
     const mapa = await buscarDados();
     if (!mapa) return;

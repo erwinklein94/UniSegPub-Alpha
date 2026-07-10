@@ -228,6 +228,9 @@
 
   window.inicializarBaseLegal = inicializarBaseLegal;
 
+  /* Dados do portal chegam do Supabase após o primeiro render: refaz categorias e resultados. */
+  document.addEventListener('dados-portal:pronto', inicializarBaseLegal);
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', inicializarBaseLegal, { once: true });
   } else {

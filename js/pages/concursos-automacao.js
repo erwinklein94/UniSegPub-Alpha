@@ -549,6 +549,10 @@
 
   async function carregarTudo() {
     try {
+      /* Aguarda os datasets do portal para não sobrescreverem CONCURSOS depois. */
+      if (window.DADOS_PORTAL_PROMESSA) { try { await window.DADOS_PORTAL_PROMESSA; } catch (e) { /* segue */ } }
+      /* Aguarda os cards vindos do Supabase para não criar cards duplicados. */
+      if (window.CARDS_ESTATICOS_PROMESSA) { try { await window.CARDS_ESTATICOS_PROMESSA; } catch (e) { /* segue */ } }
       const config = await carregarConfig();
       if (!Array.isArray(config)) throw new Error('Configuração inválida.');
       reorganizarSeletorInstituicoes(config);

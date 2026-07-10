@@ -1,6 +1,6 @@
 /* ============================================================
    UniSegPub — Renderização da vitrine de produtos
-   Cria os cards da aba Produtos a partir de js/data/produtos-data.js.
+   Cria os cards da aba Produtos a partir do dataset UNISEGPUB_PRODUTOS (Supabase).
    Também controla o filtro próprio da aba Produtos por instituição/UF.
    ============================================================ */
 (function () {
@@ -441,4 +441,7 @@
   } else {
     iniciarProdutos();
   }
+
+  /* Dados do portal chegam do Supabase após o primeiro render: refaz a vitrine. */
+  document.addEventListener('dados-portal:pronto', iniciarProdutos);
 })();
