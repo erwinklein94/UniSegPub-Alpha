@@ -24,7 +24,7 @@
       --eixo: #c3c2b7;
       --borda: rgba(11, 11, 11, 0.10);
       --serie-1: #2a78d6;
-      --serie-1-suave: #cde2fb;
+      --serie-2: #1baf7a;
       --critico: #d03b3b;
     }
     :root[data-theme="dark"] {
@@ -37,7 +37,7 @@
       --eixo: #383835;
       --borda: rgba(255, 255, 255, 0.10);
       --serie-1: #3987e5;
-      --serie-1-suave: #104281;
+      --serie-2: #199e70;
       --critico: #e66767;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -72,38 +72,49 @@
     .login-erro { color: var(--critico); font-size: 0.85rem; margin-bottom: 12px; min-height: 1.2em; }
 
     /* ---------- Painel ---------- */
-    .painel { max-width: 1040px; margin: 0 auto; padding: 24px 20px 60px; }
+    .painel { max-width: 1080px; margin: 0 auto; padding: 24px 20px 60px; }
     .painel-topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
     .painel-topo h1 { font-size: 1.25rem; }
     .painel-topo small { display: block; color: var(--tinta-2); font-weight: 400; font-size: 0.8rem; }
-    .painel-topo .acoes { display: flex; gap: 8px; align-items: center; }
+    .painel-topo .acoes { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
     .btn-suave {
       padding: 7px 14px; border: 1px solid var(--eixo); border-radius: 8px; background: var(--superficie);
       color: var(--tinta-1); font-size: 0.85rem; cursor: pointer;
     }
     .btn-suave[aria-pressed="true"] { background: var(--serie-1); border-color: var(--serie-1); color: #fff; font-weight: 600; }
 
-    .blocos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .blocos { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 20px; }
     .bloco {
-      background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px; padding: 16px 18px;
+      background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px; padding: 14px 16px;
     }
-    .bloco span { display: block; font-size: 0.78rem; color: var(--tinta-2); margin-bottom: 4px; }
-    .bloco strong { font-size: 1.7rem; font-weight: 700; }
+    .bloco span { display: block; font-size: 0.74rem; color: var(--tinta-2); margin-bottom: 4px; }
+    .bloco strong { font-size: 1.45rem; font-weight: 700; }
+    .bloco small { display: block; font-size: 0.72rem; color: var(--tinta-3); }
 
     .grafico-cartao {
       background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
       padding: 20px; margin-bottom: 20px;
     }
     .grafico-cartao h2 { font-size: 0.95rem; margin-bottom: 2px; }
-    .grafico-cartao .subtitulo { font-size: 0.78rem; color: var(--tinta-2); margin-bottom: 14px; }
+    .grafico-cartao .subtitulo { font-size: 0.78rem; color: var(--tinta-2); margin-bottom: 10px; }
     .grafico-envelope { position: relative; }
     .grafico-envelope svg { display: block; width: 100%; height: auto; }
     .sem-dados { color: var(--tinta-3); font-size: 0.85rem; padding: 30px 0; text-align: center; }
 
+    .grade-dupla { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 820px) { .grade-dupla { grid-template-columns: 1fr; } }
+    .grade-dupla .grafico-cartao { margin-bottom: 20px; }
+
+    .legenda { display: flex; gap: 16px; align-items: center; margin-bottom: 10px; font-size: 0.78rem; color: var(--tinta-2); }
+    .legenda span { display: inline-flex; align-items: center; gap: 6px; }
+    .legenda i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+    .legenda .chip-barras { background: var(--serie-1); }
+    .legenda .chip-linha { background: var(--serie-2); border-radius: 50%; width: 10px; height: 10px; }
+
     .dica {
       position: absolute; pointer-events: none; background: var(--tinta-1); color: var(--plano);
       font-size: 0.75rem; padding: 5px 9px; border-radius: 6px; white-space: nowrap;
-      transform: translate(-50%, calc(-100% - 8px)); opacity: 0; transition: opacity 0.08s;
+      transform: translate(-50%, calc(-100% - 8px)); opacity: 0; transition: opacity 0.08s; z-index: 5;
     }
     .dica strong { font-variant-numeric: tabular-nums; }
 
@@ -150,13 +161,21 @@
     <div class="blocos">
       <div class="bloco"><span>Acessos (total)</span><strong id="tile-total">—</strong></div>
       <div class="bloco"><span>Visitantes únicos (sessões)</span><strong id="tile-visitantes">—</strong></div>
-      <div class="bloco"><span>Acessos hoje</span><strong id="tile-hoje">—</strong></div>
+      <div class="bloco"><span>Acessos hoje</span><strong id="tile-hoje">—</strong><small id="tile-hoje-sessoes"></small></div>
+      <div class="bloco"><span>Páginas por sessão</span><strong id="tile-profundidade">—</strong></div>
+      <div class="bloco"><span>Média diária no período</span><strong id="tile-media">—</strong></div>
+      <div class="bloco"><span>Pico diário</span><strong id="tile-pico">—</strong><small id="tile-pico-dia"></small></div>
+      <div class="bloco"><span>Origem principal</span><strong id="tile-origem" style="font-size:1.05rem">—</strong><small id="tile-origem-detalhe"></small></div>
       <div class="bloco"><span>Páginas acessadas</span><strong id="tile-paginas">—</strong></div>
     </div>
 
     <section class="grafico-cartao">
-      <h2>Acessos por dia</h2>
-      <p class="subtitulo" id="subtitulo-dias">Total de carregamentos de página por dia — últimos 30 dias</p>
+      <h2>Acessos e sessões por dia</h2>
+      <p class="subtitulo" id="subtitulo-dias">Carregamentos de página (barras) e sessões únicas (linha) — últimos 30 dias</p>
+      <div class="legenda" aria-hidden="true">
+        <span><i class="chip-barras"></i>Acessos</span>
+        <span><i class="chip-linha"></i>Sessões</span>
+      </div>
       <div class="grafico-envelope" id="grafico-dias"></div>
       <details class="tabela-dados">
         <summary>Ver dados em tabela</summary>
@@ -164,9 +183,41 @@
       </details>
     </section>
 
+    <div class="grade-dupla">
+      <section class="grafico-cartao">
+        <h2>Acessos por hora do dia</h2>
+        <p class="subtitulo">Distribuição por horário de Brasília — desde o início</p>
+        <div class="grafico-envelope" id="grafico-horas"></div>
+        <details class="tabela-dados">
+          <summary>Ver dados em tabela</summary>
+          <table><thead><tr><th>Hora</th><th>Acessos</th></tr></thead><tbody id="tabela-horas"></tbody></table>
+        </details>
+      </section>
+
+      <section class="grafico-cartao">
+        <h2>Acessos por dia da semana</h2>
+        <p class="subtitulo">Soma por dia da semana — desde o início</p>
+        <div class="grafico-envelope" id="grafico-semana"></div>
+        <details class="tabela-dados">
+          <summary>Ver dados em tabela</summary>
+          <table><thead><tr><th>Dia</th><th>Acessos</th></tr></thead><tbody id="tabela-semana"></tbody></table>
+        </details>
+      </section>
+    </div>
+
+    <section class="grafico-cartao">
+      <h2>Origem das sessões</h2>
+      <p class="subtitulo">De onde os visitantes chegaram (primeira página de cada sessão) — desde o início</p>
+      <div class="grafico-envelope" id="grafico-origens"></div>
+      <details class="tabela-dados">
+        <summary>Ver dados em tabela</summary>
+        <table><thead><tr><th>Origem</th><th>Sessões</th></tr></thead><tbody id="tabela-origens"></tbody></table>
+      </details>
+    </section>
+
     <section class="grafico-cartao">
       <h2>Páginas mais acessadas</h2>
-      <p class="subtitulo">Top 10 páginas por total de acessos — desde o início do registro</p>
+      <p class="subtitulo">Top 10 páginas por total de acessos — desde o início</p>
       <div class="grafico-envelope" id="grafico-paginas"></div>
       <details class="tabela-dados">
         <summary>Ver dados em tabela</summary>
@@ -185,6 +236,7 @@
     const CHAVE = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
     const ADMIN_EMAIL = 'erwinklein1994@gmail.com';
     const SESSAO_KEY = 'usp_admin_sessao';
+    const DIAS_SEMANA = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
 
     let cacheDias = [];
     let periodoAtual = 30;
@@ -192,6 +244,7 @@
     /* ---------- utilidades ---------- */
     const $ = s => document.querySelector(s);
     const fmt = n => Number(n || 0).toLocaleString('pt-BR');
+    const fmtDia = iso => String(iso || '').split('-').reverse().join('/');
 
     function hojeSP() {
       return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
@@ -257,62 +310,29 @@
 
     $('#botao-sair').addEventListener('click', sair);
 
-    /* ---------- gráfico de barras diário ---------- */
+    /* ---------- primitivas de gráfico ---------- */
     function caminhoBarra(x, y, largura, altura, raio) {
       const r = Math.min(raio, largura / 2, altura);
       if (altura <= 0) return '';
       return `M${x},${y + altura} v${-(altura - r)} q0,${-r} ${r},${-r} h${largura - 2 * r} q${r},0 ${r},${r} v${altura - r} z`;
     }
 
-    function desenharDias(linhas) {
-      const alvo = $('#grafico-dias');
-      const corpo = $('#tabela-dias');
-      corpo.innerHTML = linhas.slice().reverse().map(l =>
-        `<tr><td>${l.dia.split('-').reverse().join('/')}</td><td>${fmt(l.visitantes)}</td><td>${fmt(l.total)}</td></tr>`).join('');
-
-      if (!linhas.length) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados no período.</p>'; return; }
-
-      const L = 940, A = 260, mE = 44, mD = 8, mT = 14, mB = 26;
-      const larguraUtil = L - mE - mD, alturaUtil = A - mT - mB;
-      const maximo = Math.max(...linhas.map(l => Number(l.total)), 1);
-      const teto = Math.ceil(maximo / 4) * 4;
-      const n = linhas.length;
-      const passo = larguraUtil / n;
-      const larguraBarra = Math.max(3, Math.min(38, passo - 2));
-
-      let svg = `<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="Gráfico de barras: acessos por dia">`;
-      for (let g = 0; g <= 4; g++) {
-        const valor = (teto / 4) * g;
+    function grade(svgPartes, mE, mT, larguraUtil, alturaUtil, teto, passos) {
+      for (let g = 0; g <= passos; g++) {
+        const valor = (teto / passos) * g;
         const y = mT + alturaUtil - (valor / teto) * alturaUtil;
-        svg += `<line x1="${mE}" x2="${L - mD}" y1="${y}" y2="${y}" stroke="var(--grade)" stroke-width="1"/>`;
-        svg += `<text x="${mE - 6}" y="${y + 3}" text-anchor="end" font-size="10" fill="var(--tinta-3)" style="font-variant-numeric:tabular-nums">${fmt(valor)}</text>`;
+        svgPartes.push(`<line x1="${mE}" x2="${mE + larguraUtil}" y1="${y}" y2="${y}" stroke="var(--grade)" stroke-width="1"/>`);
+        svgPartes.push(`<text x="${mE - 6}" y="${y + 3}" text-anchor="end" font-size="10" fill="var(--tinta-3)" style="font-variant-numeric:tabular-nums">${fmt(Math.round(valor))}</text>`);
       }
-      svg += `<line x1="${mE}" x2="${L - mD}" y1="${mT + alturaUtil}" y2="${mT + alturaUtil}" stroke="var(--eixo)" stroke-width="1"/>`;
+      svgPartes.push(`<line x1="${mE}" x2="${mE + larguraUtil}" y1="${mT + alturaUtil}" y2="${mT + alturaUtil}" stroke="var(--eixo)" stroke-width="1"/>`);
+    }
 
-      const passoRotulo = Math.ceil(n / 10);
-      linhas.forEach((l, i) => {
-        const altura = (Number(l.total) / teto) * alturaUtil;
-        const x = mE + i * passo + (passo - larguraBarra) / 2;
-        const y = mT + alturaUtil - altura;
-        svg += `<path d="${caminhoBarra(x, y, larguraBarra, altura, 4)}" fill="var(--serie-1)"/>`;
-        if (Number(l.total) === maximo) {
-          svg += `<text x="${x + larguraBarra / 2}" y="${y - 5}" text-anchor="middle" font-size="10" font-weight="600" fill="var(--tinta-2)" style="font-variant-numeric:tabular-nums">${fmt(l.total)}</text>`;
-        }
-        if (i % passoRotulo === 0 || i === n - 1) {
-          const partes = l.dia.split('-');
-          svg += `<text x="${x + larguraBarra / 2}" y="${A - 8}" text-anchor="middle" font-size="10" fill="var(--tinta-3)">${partes[2]}/${partes[1]}</text>`;
-        }
-        svg += `<rect data-indice="${i}" x="${mE + i * passo}" y="${mT}" width="${passo}" height="${alturaUtil}" fill="transparent"/>`;
-      });
-      svg += '</svg><div class="dica" id="dica-dias"></div>';
-      alvo.innerHTML = svg;
-
-      const dica = $('#dica-dias');
-      alvo.querySelectorAll('rect[data-indice]').forEach(hit => {
+    function ligarDica(envelope, dicaId, seletorHit, montarTexto) {
+      const dica = envelope.querySelector('#' + dicaId);
+      envelope.querySelectorAll(seletorHit).forEach(hit => {
         hit.addEventListener('mousemove', evento => {
-          const l = linhas[Number(hit.dataset.indice)];
-          const caixa = alvo.getBoundingClientRect();
-          dica.innerHTML = `${l.dia.split('-').reverse().join('/')} — <strong>${fmt(l.total)}</strong> acessos · ${fmt(l.visitantes)} sessões`;
+          const caixa = envelope.getBoundingClientRect();
+          dica.innerHTML = montarTexto(Number(hit.dataset.indice));
           dica.style.left = (evento.clientX - caixa.left) + 'px';
           dica.style.top = (evento.clientY - caixa.top) + 'px';
           dica.style.opacity = '1';
@@ -321,47 +341,120 @@
       });
     }
 
-    /* ---------- gráfico de barras horizontais por página ---------- */
-    function desenharPaginas(linhas) {
-      const alvo = $('#grafico-paginas');
-      const corpo = $('#tabela-paginas');
-      corpo.innerHTML = linhas.map(l =>
-        `<tr><td>${l.pagina}</td><td>${fmt(l.visitantes)}</td><td>${fmt(l.total)}</td></tr>`).join('');
+    /* Barras verticais simples (horas / dias da semana) */
+    function barrasVerticais(alvoId, dicaId, rotulos, valores, ariaLabel) {
+      const alvo = $(alvoId);
+      if (!valores.some(v => v > 0)) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados ainda.</p>'; return; }
 
-      const top = linhas.slice(0, 10);
-      if (!top.length) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados ainda.</p>'; return; }
+      const L = 460, A = 210, mE = 38, mD = 6, mT = 12, mB = 24;
+      const larguraUtil = L - mE - mD, alturaUtil = A - mT - mB;
+      const maximo = Math.max(...valores, 1);
+      const teto = Math.max(4, Math.ceil(maximo / 4) * 4);
+      const n = valores.length;
+      const passo = larguraUtil / n;
+      const larguraBarra = Math.max(3, Math.min(30, passo - 2));
+
+      const partes = [`<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="${ariaLabel}">`];
+      grade(partes, mE, mT, larguraUtil, alturaUtil, teto, 4);
+      const passoRotulo = Math.ceil(n / 12);
+      valores.forEach((valor, i) => {
+        const altura = (valor / teto) * alturaUtil;
+        const x = mE + i * passo + (passo - larguraBarra) / 2;
+        const y = mT + alturaUtil - altura;
+        partes.push(`<path d="${caminhoBarra(x, y, larguraBarra, altura, 3)}" fill="var(--serie-1)"/>`);
+        if (valor === maximo && valor > 0) {
+          partes.push(`<text x="${x + larguraBarra / 2}" y="${y - 4}" text-anchor="middle" font-size="9" font-weight="600" fill="var(--tinta-2)" style="font-variant-numeric:tabular-nums">${fmt(valor)}</text>`);
+        }
+        if (i % passoRotulo === 0 || i === n - 1) {
+          partes.push(`<text x="${x + larguraBarra / 2}" y="${A - 7}" text-anchor="middle" font-size="9" fill="var(--tinta-3)">${rotulos[i]}</text>`);
+        }
+        partes.push(`<rect data-indice="${i}" x="${mE + i * passo}" y="${mT}" width="${passo}" height="${alturaUtil}" fill="transparent"/>`);
+      });
+      partes.push(`</svg><div class="dica" id="${dicaId}"></div>`);
+      alvo.innerHTML = partes.join('');
+      ligarDica(alvo, dicaId, 'rect[data-indice]', i => `${rotulos[i]} — <strong>${fmt(valores[i])}</strong> acessos`);
+    }
+
+    /* ---------- gráfico diário: barras (acessos) + linha (sessões) ---------- */
+    function desenharDias(linhas) {
+      const alvo = $('#grafico-dias');
+      $('#tabela-dias').innerHTML = linhas.slice().reverse().map(l =>
+        `<tr><td>${fmtDia(l.dia)}</td><td>${fmt(l.visitantes)}</td><td>${fmt(l.total)}</td></tr>`).join('');
+
+      if (!linhas.length) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados no período.</p>'; return; }
+
+      const L = 940, A = 270, mE = 44, mD = 8, mT = 16, mB = 26;
+      const larguraUtil = L - mE - mD, alturaUtil = A - mT - mB;
+      const maximo = Math.max(...linhas.map(l => Number(l.total)), 1);
+      const teto = Math.max(4, Math.ceil(maximo / 4) * 4);
+      const n = linhas.length;
+      const passo = larguraUtil / n;
+      const larguraBarra = Math.max(3, Math.min(38, passo - 2));
+
+      const partes = [`<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="Gráfico de barras e linha: acessos e sessões por dia">`];
+      grade(partes, mE, mT, larguraUtil, alturaUtil, teto, 4);
+
+      const passoRotulo = Math.ceil(n / 10);
+      const pontosLinha = [];
+      linhas.forEach((l, i) => {
+        const altura = (Number(l.total) / teto) * alturaUtil;
+        const x = mE + i * passo + (passo - larguraBarra) / 2;
+        const y = mT + alturaUtil - altura;
+        partes.push(`<path d="${caminhoBarra(x, y, larguraBarra, altura, 4)}" fill="var(--serie-1)"/>`);
+        if (Number(l.total) === maximo) {
+          partes.push(`<text x="${x + larguraBarra / 2}" y="${y - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="var(--tinta-2)" style="font-variant-numeric:tabular-nums">${fmt(l.total)}</text>`);
+        }
+        if (i % passoRotulo === 0 || i === n - 1) {
+          const partesDia = l.dia.split('-');
+          partes.push(`<text x="${x + larguraBarra / 2}" y="${A - 8}" text-anchor="middle" font-size="10" fill="var(--tinta-3)">${partesDia[2]}/${partesDia[1]}</text>`);
+        }
+        const cx = mE + i * passo + passo / 2;
+        const cy = mT + alturaUtil - (Number(l.visitantes) / teto) * alturaUtil;
+        pontosLinha.push([cx, cy]);
+      });
+
+      if (pontosLinha.length > 1) {
+        partes.push(`<polyline points="${pontosLinha.map(p => p.join(',')).join(' ')}" fill="none" stroke="var(--serie-2)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`);
+      }
+      pontosLinha.forEach(p => {
+        partes.push(`<circle cx="${p[0]}" cy="${p[1]}" r="3.5" fill="var(--serie-2)" stroke="var(--superficie)" stroke-width="2"/>`);
+      });
+
+      linhas.forEach((l, i) => {
+        partes.push(`<rect data-indice="${i}" x="${mE + i * passo}" y="${mT}" width="${passo}" height="${alturaUtil}" fill="transparent"/>`);
+      });
+      partes.push('</svg><div class="dica" id="dica-dias"></div>');
+      alvo.innerHTML = partes.join('');
+      ligarDica(alvo, 'dica-dias', 'rect[data-indice]', i => {
+        const l = linhas[i];
+        return `${fmtDia(l.dia)} — <strong>${fmt(l.total)}</strong> acessos · <strong>${fmt(l.visitantes)}</strong> sessões`;
+      });
+    }
+
+    /* ---------- barras horizontais (origens / páginas) ---------- */
+    function barrasHorizontais(alvoId, dicaId, itens, ariaLabel, montarDica) {
+      const alvo = $(alvoId);
+      if (!itens.length) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados ainda.</p>'; return; }
 
       const L = 940, alturaLinha = 30, mT = 6;
-      const A = mT + top.length * alturaLinha + 6;
+      const A = mT + itens.length * alturaLinha + 6;
       const mE = 230, mD = 70;
       const larguraUtil = L - mE - mD;
-      const maximo = Math.max(...top.map(l => Number(l.total)), 1);
+      const maximo = Math.max(...itens.map(i => i.valor), 1);
 
-      let svg = `<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="Gráfico de barras: páginas mais acessadas">`;
-      top.forEach((l, i) => {
+      const partes = [`<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="${ariaLabel}">`];
+      itens.forEach((item, i) => {
         const y = mT + i * alturaLinha;
-        const largura = Math.max(3, (Number(l.total) / maximo) * larguraUtil);
-        const nome = l.pagina.length > 34 ? l.pagina.slice(0, 32) + '…' : l.pagina;
-        svg += `<text x="${mE - 10}" y="${y + 19}" text-anchor="end" font-size="12" fill="var(--tinta-2)">${nome}</text>`;
-        svg += `<path d="M${mE},${y + 6} h${largura - 4} q4,0 4,4 v6 q0,4 -4,4 h${-(largura - 4)} z" fill="var(--serie-1)" data-indice="${i}"/>`;
-        svg += `<text x="${mE + largura + 8}" y="${y + 19}" font-size="12" font-weight="600" fill="var(--tinta-1)" style="font-variant-numeric:tabular-nums">${fmt(l.total)}</text>`;
+        const largura = Math.max(3, (item.valor / maximo) * larguraUtil);
+        const nome = item.rotulo.length > 34 ? item.rotulo.slice(0, 32) + '…' : item.rotulo;
+        partes.push(`<text x="${mE - 10}" y="${y + 19}" text-anchor="end" font-size="12" fill="var(--tinta-2)">${nome}</text>`);
+        partes.push(`<path d="M${mE},${y + 6} h${largura - 4} q4,0 4,4 v6 q0,4 -4,4 h${-(largura - 4)} z" fill="var(--serie-1)" data-indice="${i}"/>`);
+        partes.push(`<text x="${mE + largura + 8}" y="${y + 19}" font-size="12" font-weight="600" fill="var(--tinta-1)" style="font-variant-numeric:tabular-nums">${fmt(item.valor)}</text>`);
       });
-      svg += `<line x1="${mE}" x2="${mE}" y1="${mT}" y2="${A - 6}" stroke="var(--eixo)" stroke-width="1"/>`;
-      svg += '</svg><div class="dica" id="dica-paginas"></div>';
-      alvo.innerHTML = svg;
-
-      const dica = $('#dica-paginas');
-      alvo.querySelectorAll('path[data-indice]').forEach(barra => {
-        barra.addEventListener('mousemove', evento => {
-          const l = top[Number(barra.dataset.indice)];
-          const caixa = alvo.getBoundingClientRect();
-          dica.innerHTML = `${l.pagina} — <strong>${fmt(l.total)}</strong> acessos · ${fmt(l.visitantes)} sessões`;
-          dica.style.left = (evento.clientX - caixa.left) + 'px';
-          dica.style.top = (evento.clientY - caixa.top) + 'px';
-          dica.style.opacity = '1';
-        });
-        barra.addEventListener('mouseleave', () => { dica.style.opacity = '0'; });
-      });
+      partes.push(`<line x1="${mE}" x2="${mE}" y1="${mT}" y2="${A - 6}" stroke="var(--eixo)" stroke-width="1"/>`);
+      partes.push(`</svg><div class="dica" id="${dicaId}"></div>`);
+      alvo.innerHTML = partes.join('');
+      ligarDica(alvo, dicaId, 'path[data-indice]', montarDica);
     }
 
     /* ---------- montagem ---------- */
@@ -370,8 +463,17 @@
       corte.setDate(corte.getDate() - periodoAtual + 1);
       const corteISO = corte.toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
       const filtradas = cacheDias.filter(l => l.dia >= corteISO);
-      $('#subtitulo-dias').textContent = `Total de carregamentos de página por dia — últimos ${periodoAtual} dias`;
+      $('#subtitulo-dias').textContent = `Carregamentos de página (barras) e sessões únicas (linha) — últimos ${periodoAtual} dias`;
       desenharDias(filtradas);
+
+      const totalPeriodo = filtradas.reduce((soma, l) => soma + Number(l.total), 0);
+      const diasComDado = filtradas.length || 1;
+      $('#tile-media').textContent = fmt(Math.round(totalPeriodo / diasComDado));
+
+      let pico = null;
+      filtradas.forEach(l => { if (!pico || Number(l.total) > Number(pico.total)) pico = l; });
+      $('#tile-pico').textContent = pico ? fmt(pico.total) : '—';
+      $('#tile-pico-dia').textContent = pico ? fmtDia(pico.dia) : '';
     }
 
     document.querySelectorAll('[data-periodo]').forEach(botao => {
@@ -382,28 +484,75 @@
       });
     });
 
+    function desenharSemana(linhasDias) {
+      const somas = [0, 0, 0, 0, 0, 0, 0];
+      linhasDias.forEach(l => {
+        const d = new Date(l.dia + 'T12:00:00');
+        somas[d.getDay()] += Number(l.total);
+      });
+      const ordem = [1, 2, 3, 4, 5, 6, 0];
+      const rotulos = ordem.map(i => DIAS_SEMANA[i].slice(0, 3));
+      const valores = ordem.map(i => somas[i]);
+      barrasVerticais('#grafico-semana', 'dica-semana', rotulos, valores, 'Gráfico de barras: acessos por dia da semana');
+      $('#tabela-semana').innerHTML = ordem.map(i => `<tr><td>${DIAS_SEMANA[i]}</td><td>${fmt(somas[i])}</td></tr>`).join('');
+    }
+
     async function abrirPainel() {
       $('#tela-login').style.display = 'none';
       $('#tela-dashboard').hidden = false;
       $('#painel-subtitulo').textContent = 'Conectado como ' + (sessaoSalva() || {}).email;
 
-      const [resumo, dias, paginas] = await Promise.all([
+      const [resumo, dias, paginas, horas, origens] = await Promise.all([
         api('acessos_resumo?select=*'),
         api('acessos_por_dia?select=*&order=dia.asc&limit=400'),
-        api('acessos_por_pagina?select=*&order=total.desc&limit=200')
+        api('acessos_por_pagina?select=*&order=total.desc&limit=200'),
+        api('acessos_por_hora?select=*&order=hora.asc'),
+        api('acessos_origem_sessao?select=*&order=sessoes.desc&limit=15')
       ]);
 
       const r = (resumo && resumo[0]) || {};
       $('#tile-total').textContent = fmt(r.total);
       $('#tile-visitantes').textContent = fmt(r.visitantes);
       $('#tile-paginas').textContent = fmt(r.paginas);
+      const profundidade = Number(r.visitantes) > 0 ? (Number(r.total) / Number(r.visitantes)) : 0;
+      $('#tile-profundidade').textContent = profundidade ? profundidade.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) : '—';
 
       cacheDias = Array.isArray(dias) ? dias : [];
       const hoje = cacheDias.find(l => l.dia === hojeSP());
       $('#tile-hoje').textContent = fmt(hoje ? hoje.total : 0);
+      $('#tile-hoje-sessoes').textContent = hoje ? fmt(hoje.visitantes) + ' sessões' : '';
+
+      const listaOrigens = Array.isArray(origens) ? origens : [];
+      if (listaOrigens.length) {
+        const top = listaOrigens[0];
+        const somaSessoes = listaOrigens.reduce((soma, o) => soma + Number(o.sessoes), 0) || 1;
+        $('#tile-origem').textContent = top.origem;
+        $('#tile-origem-detalhe').textContent = Math.round(100 * Number(top.sessoes) / somaSessoes) + '% das sessões';
+      }
 
       aplicarPeriodo();
-      desenharPaginas(Array.isArray(paginas) ? paginas : []);
+
+      /* Horas 0–23 (preenche horas sem registro) */
+      const porHora = new Array(24).fill(0);
+      (Array.isArray(horas) ? horas : []).forEach(h => { porHora[Number(h.hora)] = Number(h.total); });
+      barrasVerticais('#grafico-horas', 'dica-horas', porHora.map((_, i) => i + 'h'), porHora, 'Gráfico de barras: acessos por hora do dia');
+      $('#tabela-horas').innerHTML = porHora.map((v, i) => `<tr><td>${String(i).padStart(2, '0')}:00</td><td>${fmt(v)}</td></tr>`).join('');
+
+      desenharSemana(cacheDias);
+
+      barrasHorizontais('#grafico-origens', 'dica-origens',
+        listaOrigens.map(o => ({ rotulo: o.origem, valor: Number(o.sessoes) })),
+        'Gráfico de barras: origem das sessões',
+        i => `${listaOrigens[i].origem} — <strong>${fmt(listaOrigens[i].sessoes)}</strong> sessões`);
+      $('#tabela-origens').innerHTML = listaOrigens.map(o => `<tr><td>${o.origem}</td><td>${fmt(o.sessoes)}</td></tr>`).join('');
+
+      const listaPaginas = (Array.isArray(paginas) ? paginas : []);
+      barrasHorizontais('#grafico-paginas', 'dica-paginas',
+        listaPaginas.slice(0, 10).map(p => ({ rotulo: p.pagina, valor: Number(p.total) })),
+        'Gráfico de barras: páginas mais acessadas',
+        i => `${listaPaginas[i].pagina} — <strong>${fmt(listaPaginas[i].total)}</strong> acessos · ${fmt(listaPaginas[i].visitantes)} sessões`);
+      $('#tabela-paginas').innerHTML = listaPaginas.map(p =>
+        `<tr><td>${p.pagina}</td><td>${fmt(p.visitantes)}</td><td>${fmt(p.total)}</td></tr>`).join('');
     }
 
     /* ---------- inicialização ---------- */
