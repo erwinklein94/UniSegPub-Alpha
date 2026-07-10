@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Painel do Administrador — Universo Segurança Pública</title>
+  <script>
+    (function () {
+      var tema = 'light';
+      try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') tema = t; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', tema);
+      document.documentElement.style.colorScheme = tema;
+    })();
+  </script>
+  <style>
+    :root {
+      --superficie: #fcfcfb;
+      --plano: #f9f9f7;
+      --tinta-1: #0b0b0b;
+      --tinta-2: #52514e;
+      --tinta-3: #898781;
+      --grade: #e1e0d9;
+      --eixo: #c3c2b7;
+      --borda: rgba(11, 11, 11, 0.10);
+      --serie-1: #2a78d6;
+      --serie-1-suave: #cde2fb;
+      --critico: #d03b3b;
+    }
+    :root[data-theme="dark"] {
+      --superficie: #1a1a19;
+      --plano: #0d0d0d;
+      --tinta-1: #ffffff;
+      --tinta-2: #c3c2b7;
+      --tinta-3: #898781;
+      --grade: #2c2c2a;
+      --eixo: #383835;
+      --borda: rgba(255, 255, 255, 0.10);
+      --serie-1: #3987e5;
+      --serie-1-suave: #104281;
+      --critico: #e66767;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--plano);
+      color: var(--tinta-1);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    a { color: var(--serie-1); }
+
+    /* ---------- Login ---------- */
+    .login-envelope { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .login-cartao {
+      background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+      padding: 32px; width: 100%; max-width: 380px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .login-cartao h1 { font-size: 1.15rem; margin-bottom: 4px; }
+    .login-cartao > p { color: var(--tinta-2); font-size: 0.85rem; margin-bottom: 20px; }
+    .login-cartao label { display: block; font-size: 0.8rem; color: var(--tinta-2); margin-bottom: 4px; }
+    .login-cartao input {
+      width: 100%; padding: 10px 12px; margin-bottom: 14px; border: 1px solid var(--eixo);
+      border-radius: 8px; background: var(--plano); color: var(--tinta-1); font-size: 0.95rem;
+    }
+    .login-cartao input:focus { outline: 2px solid var(--serie-1); outline-offset: 1px; border-color: transparent; }
+    .login-cartao button {
+      width: 100%; padding: 11px; border: 0; border-radius: 8px; background: var(--serie-1);
+      color: #fff; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    }
+    .login-cartao button:disabled { opacity: 0.6; cursor: wait; }
+    .login-erro { color: var(--critico); font-size: 0.85rem; margin-bottom: 12px; min-height: 1.2em; }
+
+    /* ---------- Painel ---------- */
+    .painel { max-width: 1040px; margin: 0 auto; padding: 24px 20px 60px; }
+    .painel-topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .painel-topo h1 { font-size: 1.25rem; }
+    .painel-topo small { display: block; color: var(--tinta-2); font-weight: 400; font-size: 0.8rem; }
+    .painel-topo .acoes { display: flex; gap: 8px; align-items: center; }
+    .btn-suave {
+      padding: 7px 14px; border: 1px solid var(--eixo); border-radius: 8px; background: var(--superficie);
+      color: var(--tinta-1); font-size: 0.85rem; cursor: pointer;
+    }
+    .btn-suave[aria-pressed="true"] { background: var(--serie-1); border-color: var(--serie-1); color: #fff; font-weight: 600; }
+
+    .blocos { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .bloco {
+      background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px; padding: 16px 18px;
+    }
+    .bloco span { display: block; font-size: 0.78rem; color: var(--tinta-2); margin-bottom: 4px; }
+    .bloco strong { font-size: 1.7rem; font-weight: 700; }
+
+    .grafico-cartao {
+      background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+      padding: 20px; margin-bottom: 20px;
+    }
+    .grafico-cartao h2 { font-size: 0.95rem; margin-bottom: 2px; }
+    .grafico-cartao .subtitulo { font-size: 0.78rem; color: var(--tinta-2); margin-bottom: 14px; }
+    .grafico-envelope { position: relative; }
+    .grafico-envelope svg { display: block; width: 100%; height: auto; }
+    .sem-dados { color: var(--tinta-3); font-size: 0.85rem; padding: 30px 0; text-align: center; }
+
+    .dica {
+      position: absolute; pointer-events: none; background: var(--tinta-1); color: var(--plano);
+      font-size: 0.75rem; padding: 5px 9px; border-radius: 6px; white-space: nowrap;
+      transform: translate(-50%, calc(-100% - 8px)); opacity: 0; transition: opacity 0.08s;
+    }
+    .dica strong { font-variant-numeric: tabular-nums; }
+
+    details.tabela-dados { margin-top: 12px; }
+    details.tabela-dados summary { font-size: 0.8rem; color: var(--tinta-2); cursor: pointer; }
+    details.tabela-dados table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.82rem; }
+    details.tabela-dados th { text-align: left; color: var(--tinta-2); font-weight: 600; padding: 5px 8px; border-bottom: 1px solid var(--grade); }
+    details.tabela-dados td { padding: 5px 8px; border-bottom: 1px solid var(--grade); font-variant-numeric: tabular-nums; }
+    details.tabela-dados td:last-child, details.tabela-dados th:last-child { text-align: right; }
+
+    .rodape-admin { color: var(--tinta-3); font-size: 0.75rem; text-align: center; margin-top: 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- ================= LOGIN ================= -->
+  <div class="login-envelope" id="tela-login">
+    <form class="login-cartao" id="form-login">
+      <h1>Painel do Administrador</h1>
+      <p>Universo Segurança Pública — acesso restrito.</p>
+      <label for="login-email">E-mail</label>
+      <input id="login-email" type="email" autocomplete="username" required />
+      <label for="login-senha">Senha</label>
+      <input id="login-senha" type="password" autocomplete="current-password" required />
+      <p class="login-erro" id="login-erro" role="alert"></p>
+      <button type="submit" id="login-botao">Entrar</button>
+    </form>
+  </div>
+
+  <!-- ================= DASHBOARD ================= -->
+  <main class="painel" id="tela-dashboard" hidden>
+    <div class="painel-topo">
+      <h1>Acessos do portal
+        <small id="painel-subtitulo">Universo Segurança Pública</small>
+      </h1>
+      <div class="acoes" role="group" aria-label="Período do gráfico diário">
+        <button class="btn-suave" data-periodo="7" type="button">7 dias</button>
+        <button class="btn-suave" data-periodo="30" type="button" aria-pressed="true">30 dias</button>
+        <button class="btn-suave" data-periodo="90" type="button">90 dias</button>
+        <button class="btn-suave" id="botao-sair" type="button">Sair</button>
+      </div>
+    </div>
+
+    <div class="blocos">
+      <div class="bloco"><span>Acessos (total)</span><strong id="tile-total">—</strong></div>
+      <div class="bloco"><span>Visitantes únicos (sessões)</span><strong id="tile-visitantes">—</strong></div>
+      <div class="bloco"><span>Acessos hoje</span><strong id="tile-hoje">—</strong></div>
+      <div class="bloco"><span>Páginas acessadas</span><strong id="tile-paginas">—</strong></div>
+    </div>
+
+    <section class="grafico-cartao">
+      <h2>Acessos por dia</h2>
+      <p class="subtitulo" id="subtitulo-dias">Total de carregamentos de página por dia — últimos 30 dias</p>
+      <div class="grafico-envelope" id="grafico-dias"></div>
+      <details class="tabela-dados">
+        <summary>Ver dados em tabela</summary>
+        <table><thead><tr><th>Dia</th><th>Sessões</th><th>Acessos</th></tr></thead><tbody id="tabela-dias"></tbody></table>
+      </details>
+    </section>
+
+    <section class="grafico-cartao">
+      <h2>Páginas mais acessadas</h2>
+      <p class="subtitulo">Top 10 páginas por total de acessos — desde o início do registro</p>
+      <div class="grafico-envelope" id="grafico-paginas"></div>
+      <details class="tabela-dados">
+        <summary>Ver dados em tabela</summary>
+        <table><thead><tr><th>Página</th><th>Sessões</th><th>Acessos</th></tr></thead><tbody id="tabela-paginas"></tbody></table>
+      </details>
+    </section>
+
+    <p class="rodape-admin">Contagem própria do portal (tabela <code>acessos</code> no Supabase). Sem coleta de dados pessoais.</p>
+  </main>
+
+  <script>
+  (function () {
+    'use strict';
+
+    const SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
+    const CHAVE = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+    const ADMIN_EMAIL = 'erwinklein1994@gmail.com';
+    const SESSAO_KEY = 'usp_admin_sessao';
+
+    let cacheDias = [];
+    let periodoAtual = 30;
+
+    /* ---------- utilidades ---------- */
+    const $ = s => document.querySelector(s);
+    const fmt = n => Number(n || 0).toLocaleString('pt-BR');
+
+    function hojeSP() {
+      return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
+    }
+
+    function sessaoSalva() {
+      try {
+        const bruto = sessionStorage.getItem(SESSAO_KEY);
+        if (!bruto) return null;
+        const s = JSON.parse(bruto);
+        if (!s.token || !s.expira || Date.now() > s.expira - 30000) return null;
+        return s;
+      } catch (e) { return null; }
+    }
+
+    function salvarSessao(token, expiraEmSeg, email) {
+      sessionStorage.setItem(SESSAO_KEY, JSON.stringify({ token, expira: Date.now() + expiraEmSeg * 1000, email }));
+    }
+
+    function sair() {
+      sessionStorage.removeItem(SESSAO_KEY);
+      $('#tela-dashboard').hidden = true;
+      $('#tela-login').style.display = '';
+      $('#login-senha').value = '';
+    }
+
+    async function api(caminho) {
+      const s = sessaoSalva();
+      if (!s) { sair(); throw new Error('Sessão expirada'); }
+      const resposta = await fetch(SUPABASE_URL + '/rest/v1/' + caminho, {
+        headers: { apikey: CHAVE, Authorization: 'Bearer ' + s.token, Accept: 'application/json' }
+      });
+      if (resposta.status === 401) { sair(); throw new Error('Sessão expirada'); }
+      if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+      return resposta.json();
+    }
+
+    /* ---------- login ---------- */
+    $('#form-login').addEventListener('submit', async function (evento) {
+      evento.preventDefault();
+      const erro = $('#login-erro');
+      const botao = $('#login-botao');
+      erro.textContent = '';
+      botao.disabled = true;
+      try {
+        const resposta = await fetch(SUPABASE_URL + '/auth/v1/token?grant_type=password', {
+          method: 'POST',
+          headers: { apikey: CHAVE, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: $('#login-email').value.trim(), password: $('#login-senha').value })
+        });
+        const dados = await resposta.json();
+        if (!resposta.ok) throw new Error(dados.error_description || dados.msg || 'E-mail ou senha inválidos.');
+        const email = dados.user && dados.user.email;
+        if (email !== ADMIN_EMAIL) throw new Error('Acesso restrito ao administrador.');
+        salvarSessao(dados.access_token, dados.expires_in || 3600, email);
+        await abrirPainel();
+      } catch (e) {
+        erro.textContent = e.message || 'Não foi possível entrar.';
+      } finally {
+        botao.disabled = false;
+      }
+    });
+
+    $('#botao-sair').addEventListener('click', sair);
+
+    /* ---------- gráfico de barras diário ---------- */
+    function caminhoBarra(x, y, largura, altura, raio) {
+      const r = Math.min(raio, largura / 2, altura);
+      if (altura <= 0) return '';
+      return `M${x},${y + altura} v${-(altura - r)} q0,${-r} ${r},${-r} h${largura - 2 * r} q${r},0 ${r},${r} v${altura - r} z`;
+    }
+
+    function desenharDias(linhas) {
+      const alvo = $('#grafico-dias');
+      const corpo = $('#tabela-dias');
+      corpo.innerHTML = linhas.slice().reverse().map(l =>
+        `<tr><td>${l.dia.split('-').reverse().join('/')}</td><td>${fmt(l.visitantes)}</td><td>${fmt(l.total)}</td></tr>`).join('');
+
+      if (!linhas.length) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados no período.</p>'; return; }
+
+      const L = 940, A = 260, mE = 44, mD = 8, mT = 14, mB = 26;
+      const larguraUtil = L - mE - mD, alturaUtil = A - mT - mB;
+      const maximo = Math.max(...linhas.map(l => Number(l.total)), 1);
+      const teto = Math.ceil(maximo / 4) * 4;
+      const n = linhas.length;
+      const passo = larguraUtil / n;
+      const larguraBarra = Math.max(3, Math.min(38, passo - 2));
+
+      let svg = `<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="Gráfico de barras: acessos por dia">`;
+      for (let g = 0; g <= 4; g++) {
+        const valor = (teto / 4) * g;
+        const y = mT + alturaUtil - (valor / teto) * alturaUtil;
+        svg += `<line x1="${mE}" x2="${L - mD}" y1="${y}" y2="${y}" stroke="var(--grade)" stroke-width="1"/>`;
+        svg += `<text x="${mE - 6}" y="${y + 3}" text-anchor="end" font-size="10" fill="var(--tinta-3)" style="font-variant-numeric:tabular-nums">${fmt(valor)}</text>`;
+      }
+      svg += `<line x1="${mE}" x2="${L - mD}" y1="${mT + alturaUtil}" y2="${mT + alturaUtil}" stroke="var(--eixo)" stroke-width="1"/>`;
+
+      const passoRotulo = Math.ceil(n / 10);
+      linhas.forEach((l, i) => {
+        const altura = (Number(l.total) / teto) * alturaUtil;
+        const x = mE + i * passo + (passo - larguraBarra) / 2;
+        const y = mT + alturaUtil - altura;
+        svg += `<path d="${caminhoBarra(x, y, larguraBarra, altura, 4)}" fill="var(--serie-1)"/>`;
+        if (Number(l.total) === maximo) {
+          svg += `<text x="${x + larguraBarra / 2}" y="${y - 5}" text-anchor="middle" font-size="10" font-weight="600" fill="var(--tinta-2)" style="font-variant-numeric:tabular-nums">${fmt(l.total)}</text>`;
+        }
+        if (i % passoRotulo === 0 || i === n - 1) {
+          const partes = l.dia.split('-');
+          svg += `<text x="${x + larguraBarra / 2}" y="${A - 8}" text-anchor="middle" font-size="10" fill="var(--tinta-3)">${partes[2]}/${partes[1]}</text>`;
+        }
+        svg += `<rect data-indice="${i}" x="${mE + i * passo}" y="${mT}" width="${passo}" height="${alturaUtil}" fill="transparent"/>`;
+      });
+      svg += '</svg><div class="dica" id="dica-dias"></div>';
+      alvo.innerHTML = svg;
+
+      const dica = $('#dica-dias');
+      alvo.querySelectorAll('rect[data-indice]').forEach(hit => {
+        hit.addEventListener('mousemove', evento => {
+          const l = linhas[Number(hit.dataset.indice)];
+          const caixa = alvo.getBoundingClientRect();
+          dica.innerHTML = `${l.dia.split('-').reverse().join('/')} — <strong>${fmt(l.total)}</strong> acessos · ${fmt(l.visitantes)} sessões`;
+          dica.style.left = (evento.clientX - caixa.left) + 'px';
+          dica.style.top = (evento.clientY - caixa.top) + 'px';
+          dica.style.opacity = '1';
+        });
+        hit.addEventListener('mouseleave', () => { dica.style.opacity = '0'; });
+      });
+    }
+
+    /* ---------- gráfico de barras horizontais por página ---------- */
+    function desenharPaginas(linhas) {
+      const alvo = $('#grafico-paginas');
+      const corpo = $('#tabela-paginas');
+      corpo.innerHTML = linhas.map(l =>
+        `<tr><td>${l.pagina}</td><td>${fmt(l.visitantes)}</td><td>${fmt(l.total)}</td></tr>`).join('');
+
+      const top = linhas.slice(0, 10);
+      if (!top.length) { alvo.innerHTML = '<p class="sem-dados">Sem acessos registrados ainda.</p>'; return; }
+
+      const L = 940, alturaLinha = 30, mT = 6;
+      const A = mT + top.length * alturaLinha + 6;
+      const mE = 230, mD = 70;
+      const larguraUtil = L - mE - mD;
+      const maximo = Math.max(...top.map(l => Number(l.total)), 1);
+
+      let svg = `<svg viewBox="0 0 ${L} ${A}" role="img" aria-label="Gráfico de barras: páginas mais acessadas">`;
+      top.forEach((l, i) => {
+        const y = mT + i * alturaLinha;
+        const largura = Math.max(3, (Number(l.total) / maximo) * larguraUtil);
+        const nome = l.pagina.length > 34 ? l.pagina.slice(0, 32) + '…' : l.pagina;
+        svg += `<text x="${mE - 10}" y="${y + 19}" text-anchor="end" font-size="12" fill="var(--tinta-2)">${nome}</text>`;
+        svg += `<path d="M${mE},${y + 6} h${largura - 4} q4,0 4,4 v6 q0,4 -4,4 h${-(largura - 4)} z" fill="var(--serie-1)" data-indice="${i}"/>`;
+        svg += `<text x="${mE + largura + 8}" y="${y + 19}" font-size="12" font-weight="600" fill="var(--tinta-1)" style="font-variant-numeric:tabular-nums">${fmt(l.total)}</text>`;
+      });
+      svg += `<line x1="${mE}" x2="${mE}" y1="${mT}" y2="${A - 6}" stroke="var(--eixo)" stroke-width="1"/>`;
+      svg += '</svg><div class="dica" id="dica-paginas"></div>';
+      alvo.innerHTML = svg;
+
+      const dica = $('#dica-paginas');
+      alvo.querySelectorAll('path[data-indice]').forEach(barra => {
+        barra.addEventListener('mousemove', evento => {
+          const l = top[Number(barra.dataset.indice)];
+          const caixa = alvo.getBoundingClientRect();
+          dica.innerHTML = `${l.pagina} — <strong>${fmt(l.total)}</strong> acessos · ${fmt(l.visitantes)} sessões`;
+          dica.style.left = (evento.clientX - caixa.left) + 'px';
+          dica.style.top = (evento.clientY - caixa.top) + 'px';
+          dica.style.opacity = '1';
+        });
+        barra.addEventListener('mouseleave', () => { dica.style.opacity = '0'; });
+      });
+    }
+
+    /* ---------- montagem ---------- */
+    function aplicarPeriodo() {
+      const corte = new Date();
+      corte.setDate(corte.getDate() - periodoAtual + 1);
+      const corteISO = corte.toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
+      const filtradas = cacheDias.filter(l => l.dia >= corteISO);
+      $('#subtitulo-dias').textContent = `Total de carregamentos de página por dia — últimos ${periodoAtual} dias`;
+      desenharDias(filtradas);
+    }
+
+    document.querySelectorAll('[data-periodo]').forEach(botao => {
+      botao.addEventListener('click', () => {
+        periodoAtual = Number(botao.dataset.periodo);
+        document.querySelectorAll('[data-periodo]').forEach(b => b.setAttribute('aria-pressed', b === botao ? 'true' : 'false'));
+        aplicarPeriodo();
+      });
+    });
+
+    async function abrirPainel() {
+      $('#tela-login').style.display = 'none';
+      $('#tela-dashboard').hidden = false;
+      $('#painel-subtitulo').textContent = 'Conectado como ' + (sessaoSalva() || {}).email;
+
+      const [resumo, dias, paginas] = await Promise.all([
+        api('acessos_resumo?select=*'),
+        api('acessos_por_dia?select=*&order=dia.asc&limit=400'),
+        api('acessos_por_pagina?select=*&order=total.desc&limit=200')
+      ]);
+
+      const r = (resumo && resumo[0]) || {};
+      $('#tile-total').textContent = fmt(r.total);
+      $('#tile-visitantes').textContent = fmt(r.visitantes);
+      $('#tile-paginas').textContent = fmt(r.paginas);
+
+      cacheDias = Array.isArray(dias) ? dias : [];
+      const hoje = cacheDias.find(l => l.dia === hojeSP());
+      $('#tile-hoje').textContent = fmt(hoje ? hoje.total : 0);
+
+      aplicarPeriodo();
+      desenharPaginas(Array.isArray(paginas) ? paginas : []);
+    }
+
+    /* ---------- inicialização ---------- */
+    if (sessaoSalva()) {
+      abrirPainel().catch(() => sair());
+    }
+  })();
+  </script>
+</body>
+</html>

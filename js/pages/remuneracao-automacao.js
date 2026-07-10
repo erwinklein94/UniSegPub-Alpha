@@ -106,6 +106,17 @@
   }
 
   async function carregarConfigInstituicoes() {
+    if (window.SUPABASE_API) {
+      try {
+        const config = await window.SUPABASE_API.configInstituicoes('config_remuneracao');
+        if (config) {
+          reconstruirSeletorInstituicoes(config);
+          return;
+        }
+      } catch (erro) {
+        console.warn('Remuneração: Supabase indisponível para config. Usando JSON local.', erro);
+      }
+    }
     try {
       const resposta = await fetch(`${CONFIG_URL}?v=${Date.now()}`, { cache: 'no-store' });
       if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
@@ -191,12 +202,29 @@
     return [];
   };
 
+  function carregarJsonLocal(id) {
+    return fetch(`${DATA_DIR}/${id}.json?v=${Date.now()}`, { cache: 'no-store' })
+      .then(resposta => resposta.ok ? resposta.json() : null)
+      .catch(() => null);
+  }
+
+  async function buscarDados(id) {
+    if (window.SUPABASE_API) {
+      try {
+        const dados = await window.SUPABASE_API.rawPorInstituicao('remuneracoes', id);
+        if (dados) return dados;
+      } catch (erro) {
+        console.warn('Remuneração: Supabase indisponível para ' + id + '. Usando JSON local.', erro);
+      }
+    }
+    return carregarJsonLocal(id);
+  }
+
   async function carregar(id) {
     id = texto(id).toLowerCase();
     if (!id) return false;
     if (CACHE[id]) return CACHE[id];
-    CACHE[id] = fetch(`${DATA_DIR}/${id}.json?v=${Date.now()}`, { cache: 'no-store' })
-      .then(resposta => resposta.ok ? resposta.json() : null)
+    CACHE[id] = buscarDados(id)
       .then(dados => dados ? registrarDados(dados) : false)
       .catch(() => false);
     return CACHE[id];

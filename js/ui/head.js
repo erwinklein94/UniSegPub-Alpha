@@ -23,6 +23,42 @@ try {
 document.documentElement.setAttribute('data-theme', savedTheme);
 document.documentElement.style.colorScheme = savedTheme;
 
+/* Registro de acesso no Supabase (contagem própria do portal, sem dados pessoais). */
+(function () {
+  try {
+    const SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+
+    const pagina = (location.pathname.replace(/^\//, '') || 'index.html').slice(0, 200);
+    if (pagina.indexOf('admin') === 0) return;
+
+    let sessao = '';
+    try {
+      sessao = sessionStorage.getItem('usp_sessao') || '';
+      if (!sessao) {
+        sessao = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2));
+        sessionStorage.setItem('usp_sessao', sessao);
+      }
+    } catch (e) { sessao = ''; }
+
+    fetch(SUPABASE_URL + '/rest/v1/acessos', {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_PUBLISHABLE_KEY,
+        Authorization: 'Bearer ' + SUPABASE_PUBLISHABLE_KEY,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal'
+      },
+      body: JSON.stringify({
+        pagina: pagina,
+        sessao: sessao.slice(0, 64),
+        referencia: document.referrer ? String(document.referrer).slice(0, 300) : null
+      }),
+      keepalive: true
+    }).catch(function () {});
+  } catch (e) { /* nunca interfere na página */ }
+})();
+
 function carregarImagemProduto(img) {
   if (!img) return;
 

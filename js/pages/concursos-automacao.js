@@ -512,15 +512,48 @@
     }
   }
 
+  async function carregarConfig() {
+    if (window.SUPABASE_API) {
+      try {
+        const config = await window.SUPABASE_API.configInstituicoes('config_concursos');
+        if (config) return config;
+      } catch (erro) {
+        console.warn('Automação concursos: Supabase indisponível para config. Usando JSON local.', erro);
+      }
+    }
+    const resposta = await fetch(CONFIG_URL + '?v=' + Date.now(), { cache: 'no-store' });
+    if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+    return resposta.json();
+  }
+
+  async function carregarDadosInstituicoes(config) {
+    if (window.SUPABASE_API) {
+      try {
+        const mapa = await window.SUPABASE_API.rawTodos('concursos');
+        if (mapa) {
+          const pendentes = [];
+          config.forEach(function (itemConfig) {
+            const instId = texto(itemConfig.id).toLowerCase();
+            if (mapa[instId]) aplicarDados(itemConfig, mapa[instId]);
+            else pendentes.push(itemConfig);
+          });
+          await Promise.all(pendentes.map(carregarJsonInstituicao));
+          return;
+        }
+      } catch (erro) {
+        console.warn('Automação concursos: Supabase indisponível para dados. Usando JSONs locais.', erro);
+      }
+    }
+    await Promise.all(config.map(carregarJsonInstituicao));
+  }
+
   async function carregarTudo() {
     try {
-      const resposta = await fetch(CONFIG_URL + '?v=' + Date.now(), { cache: 'no-store' });
-      if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
-      const config = await resposta.json();
+      const config = await carregarConfig();
       if (!Array.isArray(config)) throw new Error('Configuração inválida.');
       reorganizarSeletorInstituicoes(config);
       atualizarIndicadoresTotais(config);
-      await Promise.all(config.map(carregarJsonInstituicao));
+      await carregarDadosInstituicoes(config);
       reorganizarSeletorInstituicoes(config);
       atualizarIndicadoresTotais(config);
       dispararAtualizacaoFiltros();
