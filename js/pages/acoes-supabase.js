@@ -56,6 +56,8 @@
   }
 
   function cardHtml(id, dados) {
+    /* Cards editoriais migrados guardam o HTML completo em htmlCard. */
+    if (dados.htmlCard) return dados.htmlCard;
     const teses = Array.isArray(dados.teses) ? dados.teses : [];
     const esferaLabel = dados.esfera === 'federal' ? 'Federal' : 'Estadual';
     const kicker = `${esferaLabel} • ${dados.sigla} · ${dados.ramo} · ${dados.esfera === 'federal' ? 'União' : dados.estado}`;
@@ -90,7 +92,7 @@
 
   function inserirOpcaoSeletor(id, dados) {
     const seletor = qs('#acoes-filtro-instituicao');
-    if (!seletor) return;
+    if (!seletor || !dados.sigla) return;
     if (Array.from(seletor.options).some(opt => opt.value === id)) return;
 
     const label = dados.esfera === 'federal' ? 'União' : `${dados.estado} (${dados.uf})`;
@@ -112,10 +114,11 @@
   }
 
   function registrarDetalhe(id, dados) {
-    /* Sobrescreve com segurança: só processamos instituições sem card estático,
-       cujas entradas em ACOES_JUDICIAIS são preenchimento genérico de runtime. */
+    /* Sobrescreve com segurança: entradas geradas em runtime são preenchimento genérico.
+       Cards editoriais (htmlCard) não trazem teses estruturadas — mantêm o detalhe existente. */
     if (typeof ACOES_JUDICIAIS === 'undefined' || !ACOES_JUDICIAIS) window.ACOES_JUDICIAIS = {};
     const teses = Array.isArray(dados.teses) ? dados.teses : [];
+    if (!teses.length) return;
     ACOES_JUDICIAIS[id] = teses.map(tese => ({
       titulo: tese.titulo,
       status: tese.status,
@@ -176,18 +179,22 @@
     const mapa = await buscarDados();
     if (!mapa) return;
 
-    const idsNovos = Object.keys(mapa).filter(id => mapa[id] && Array.isArray(mapa[id].teses) && !cardExiste(id)).sort();
-    if (!idsNovos.length) return;
+    const entradas = Object.keys(mapa)
+      .filter(id => mapa[id] && (mapa[id].htmlCard || Array.isArray(mapa[id].teses)) && !cardExiste(id))
+      .map(id => ({ id, dados: mapa[id] }))
+      .sort((a, b) => {
+        const ordemA = typeof a.dados.ordem === 'number' ? a.dados.ordem : 9999;
+        const ordemB = typeof b.dados.ordem === 'number' ? b.dados.ordem : 9999;
+        return (ordemA - ordemB) || a.id.localeCompare(b.id);
+      });
+    if (!entradas.length) return;
 
-    const cartoes = Array.from(lista.querySelectorAll('[data-acoes-card]'));
-    const ancora = cartoes.length ? cartoes[cartoes.length - 1] : null;
-    const html = idsNovos.map(id => cardHtml(id, mapa[id])).join('');
-    if (ancora) ancora.insertAdjacentHTML('afterend', html);
-    else lista.insertAdjacentHTML('beforeend', html);
+    const html = entradas.map(entrada => cardHtml(entrada.id, entrada.dados)).join('\n');
+    lista.insertAdjacentHTML('afterbegin', html);
 
-    idsNovos.forEach(id => {
-      inserirOpcaoSeletor(id, mapa[id]);
-      registrarDetalhe(id, mapa[id]);
+    entradas.forEach(entrada => {
+      inserirOpcaoSeletor(entrada.id, entrada.dados);
+      registrarDetalhe(entrada.id, entrada.dados);
     });
 
     const seletorEsfera = qs('#acoes-filtro-esfera');

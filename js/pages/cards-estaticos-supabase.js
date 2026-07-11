@@ -7,8 +7,8 @@
   var SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
   var SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
 
+  /* Ações Judiciais não usa esta tabela: os cards vivem em acoes_judiciais (js/pages/acoes-supabase.js). */
   var PAGINAS = [
-    { pagina: 'acoes-judiciais', containerId: 'acoes-conteudo-lista', esferaId: 'acoes-filtro-esfera' },
     { pagina: 'associacoes-sindicatos', containerId: 'associacoes-conteudo-lista', esferaId: 'associacoes-filtro-esfera' },
     { pagina: 'brasoes', containerId: 'brasoes-conteudo-lista', esferaId: 'brasoes-filtro-esfera' },
     { pagina: 'direitos', containerId: 'direitos-conteudo-lista', esferaId: 'direitos-filtro-esfera' },
