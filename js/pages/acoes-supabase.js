@@ -155,6 +155,13 @@
     }
   }
 
+  function atualizarTotalInstituicoes() {
+    const alvo = qs('#acoes-total-instituicoes');
+    if (!alvo) return;
+    const total = document.querySelectorAll('[data-acoes-card][data-inst]').length;
+    if (total > 0) alvo.textContent = String(total);
+  }
+
   function selecionarDaUrlSePendente() {
     try {
       const params = new URLSearchParams(window.location.search || '');
@@ -200,7 +207,8 @@
     const seletorEsfera = qs('#acoes-filtro-esfera');
     if (seletorEsfera) seletorEsfera.dispatchEvent(new Event('change', { bubbles: true }));
 
-    document.dispatchEvent(new CustomEvent('acoes:complemento-carregado', { detail: { total: idsNovos.length } }));
+    atualizarTotalInstituicoes();
+    document.dispatchEvent(new CustomEvent('acoes:complemento-carregado', { detail: { total: entradas.length } }));
     selecionarDaUrlSePendente();
   }
 
