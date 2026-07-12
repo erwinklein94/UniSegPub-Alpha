@@ -2093,12 +2093,3 @@ body.usp-home .usp-noticia-card__header {
 .current-flag-frame img {
   cursor: zoom-in !important;
 }
-
-/* Imagens dos cards de notícia da home (adicionadas em 10/07/2026) */
-.usp-news-image {
-  display: block;
-  width: 100%;
-  height: 216px;
-  object-fit: cover;
-  background: #e8edf3;
-}
