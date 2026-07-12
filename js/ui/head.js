@@ -32,6 +32,10 @@ document.documentElement.style.colorScheme = savedTheme;
     const pagina = (location.pathname.replace(/^\//, '') || 'index.html').slice(0, 200);
     if (pagina.indexOf('admin') === 0) return;
 
+    /* Não conta ambiente local (testes) nem o navegador do administrador. */
+    if (/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) return;
+    try { if (localStorage.getItem('usp_nao_contar') === '1') return; } catch (e) { /* segue */ }
+
     let sessao = '';
     try {
       sessao = sessionStorage.getItem('usp_sessao') || '';

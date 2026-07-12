@@ -262,6 +262,8 @@
 
     function salvarSessao(token, expiraEmSeg, email) {
       sessionStorage.setItem(SESSAO_KEY, JSON.stringify({ token, expira: Date.now() + expiraEmSeg * 1000, email }));
+      /* Marca este navegador para nunca ser contado nas estatísticas de acesso. */
+      try { localStorage.setItem('usp_nao_contar', '1'); } catch (e) { /* segue */ }
     }
 
     function sair() {
