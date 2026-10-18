@@ -1,0 +1,6 @@
+project_id = "UniSegPub-Alpha"
+
+# Hotmart não envia JWT Supabase. O webhook valida Hottok; rotas de admin
+# validam o token no Auth e a lista privada de administradores, no servidor.
+[functions.hotmart-integration]
+verify_jwt = false

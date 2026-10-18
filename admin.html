@@ -13,7 +13,7 @@
       document.documentElement.style.colorScheme = tema;
     })();
   </script>
-  <link rel="stylesheet" href="css/pages/admin.css?v=20261018adsense1" />
+  <link rel="stylesheet" href="css/pages/admin.css?v=20261018hotmart1" />
 </head>
 <body>
   <div class="login-envelope" id="tela-login">
@@ -49,6 +49,16 @@
       </section>
       <div class="estado-painel" id="estado-painel" role="status" aria-live="polite">Carregando os dados do período…</div>
       <div class="aviso-erro" id="erro-painel" role="alert" hidden><div><strong>Não foi possível carregar os dados.</strong><p id="erro-detalhe"></p></div><button class="btn-suave" id="botao-tentar" type="button">Tentar novamente</button></div>
+      <section class="cartao hotmart-cartao" aria-labelledby="hotmart-titulo">
+        <div class="cartao-topo"><div><p class="sobretitulo">VENDAS E COMISSÕES REAIS</p><h2 id="hotmart-titulo">Hotmart</h2><p class="subtitulo" id="hotmart-status" role="status" aria-live="polite">Conexão pendente</p></div><button type="button" class="btn-suave" id="hotmart-atualizar">Conferir conexão</button></div>
+        <p class="subtitulo">Eventos recebidos após a ativação do Webhook. As datas seguem o filtro do painel. Comissão de afiliado é diferente do preço do produto e do saldo disponível para saque.</p>
+        <div class="hotmart-metricas"><div><span>Vendas aprovadas / completas</span><strong id="hotmart-vendas">—</strong></div><div><span>Comissões informadas por moeda</span><strong id="hotmart-comissao">—</strong></div><div><span>Reembolsos / contestações</span><strong id="hotmart-estornos">—</strong></div></div>
+        <p class="subtitulo" id="hotmart-nota" role="status"></p>
+        <details class="tabela-dados"><summary>Transações recebidas no período (até 100)</summary><div class="tabela-scroll"><table><thead><tr><th>Produto</th><th>Situação atual observada</th><th>Comissão informada no evento</th><th>Último evento</th></tr></thead><tbody id="hotmart-linhas"></tbody></table></div></details>
+        <p class="simulador-nota">O período usa a data de aprovação quando conhecida; nos demais casos, usa a data do evento. O estado mais recente observado é aplicado, incluindo reembolsos posteriores. Comissões de vendas parcialmente reembolsadas não entram no total. Moedas não são somadas entre si. O histórico anterior à ativação não é importado automaticamente. Não representa todas as vendas da Hotmart nem identifica sozinho quais vieram deste site.</p>
+        <div class="hotmart-acoes"><button type="button" id="hotmart-api" class="btn-suave" disabled>Consultar comissões pela API</button><button type="button" id="hotmart-api-mais" class="btn-suave" hidden>Próxima página da API</button></div><p class="hotmart-api-resultado subtitulo" id="hotmart-api-resultado" role="status"></p>
+        <details class="tabela-dados"><summary>Configuração da integração</summary><p class="subtitulo">Endereço reservado para o Webhook v2. Cadastre na Hotmart somente depois de a função estar publicada, o Hottok estar configurado no servidor e o teste de envio ser aprovado.</p><code class="hotmart-endpoint">https://yilpmghvcvfceowwuopc.supabase.co/functions/v1/hotmart-integration/webhook</code><div class="hotmart-acoes"><button type="button" class="btn-suave" id="hotmart-copiar">Copiar endereço</button><a class="btn-suave" href="https://developers.hotmart.com/docs/pt-BR/2.0.0/webhook/purchase-webhook/" target="_blank" rel="noopener noreferrer">Documentação oficial ↗</a></div><p id="hotmart-copia-status" class="subtitulo" role="status"></p><p class="simulador-nota">Credenciais e Hottok ficam nos Secrets do Supabase. Não devem ser colocados nesta página, no GitHub ou em mensagens. A API é opcional e depende das permissões da sua conta.</p></details>
+      </section>
       <div id="conteudo-painel" aria-busy="true" hidden>
         <div class="cabecalho-secao"><h2>O período em números</h2><span id="comparacao-legenda"></span></div>
         <section class="indicadores" aria-label="Indicadores principais">
@@ -101,6 +111,6 @@
       <footer class="rodape-admin"><span>Universo Segurança Pública <span aria-hidden="true">/</span> Inteligência de audiência</span><span id="ultima-atualizacao"></span></footer>
     </main>
   </div>
-  <script type="module" src="js/pages/admin.js?v=20261018adsense1"></script>
+  <script type="module" src="js/pages/admin.js?v=20261018hotmart1"></script>
 </body>
 </html>

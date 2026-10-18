@@ -10,7 +10,8 @@
     "test:home": "node --test scripts/test-inicio.mjs && node scripts/build-home.mjs --check",
     "import:supabase": "node scripts/import-json-to-supabase.mjs",
     "build:concursos": "node scripts/build-concursos.mjs",
-    "test:concursos": "node --test scripts/test-concursos-onepage.mjs && node scripts/build-concursos.mjs --check"
+    "test:concursos": "node --test scripts/test-concursos-onepage.mjs && node scripts/build-concursos.mjs --check",
+    "test:hotmart": "node --test scripts/test-hotmart.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1"

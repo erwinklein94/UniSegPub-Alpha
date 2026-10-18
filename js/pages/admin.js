@@ -1,3 +1,4 @@
+import { criarPainelHotmart } from './admin-hotmart.js';
 import { FUSO, DIAS_SEMANA, diaSP, somarDias, criarPeriodo, agregarAcessos, carregarRegistros, tituloPagina, escapar, gerarCSV } from './admin-analytics.js';
 import { simularAdSense } from './admin-adsense.js';
 
@@ -21,7 +22,10 @@ function sessaoSalva() {
   } catch { return null; }
 }
 
+const painelHotmart = criarPainelHotmart(sessaoSalva);
+
 function sair(mensagem = '') {
+  painelHotmart.limpar();
   controle?.abort();
   versao++;
   sessionStorage.removeItem(SESSAO_KEY);
@@ -106,6 +110,7 @@ async function atualizar() {
   const { signal } = controle;
   const minhaVersao = ++versao;
   const selecionado = { ...periodo };
+  painelHotmart.atualizar(selecionado);
   dadosAtuais = dadosAnteriores = null;
   $('#conteudo-painel').hidden = true;
   $('#conteudo-painel').setAttribute('aria-busy', 'true');
