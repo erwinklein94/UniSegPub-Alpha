@@ -9,7 +9,7 @@ window.gtag = window.gtag || function gtag(){
 };
 
 window.gtag('js', new Date());
-window.gtag('config', 'G-XHR4TCCF9D');
+window.gtag('config', 'G-M2ZJSB081C');
 window.gtag('config', 'AW-18121830612');
 window.gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThlMFD'});
 
