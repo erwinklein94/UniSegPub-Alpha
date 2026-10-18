@@ -6,6 +6,8 @@
     "test:remuneracao": "node --test scripts/test-remuneracao-revisao.mjs",
     "test:admin": "node --test scripts/test-admin-analytics.mjs scripts/test-admin-adsense.mjs",
     "test:produtos": "node --test scripts/test-produtos-disponibilidade.mjs",
+    "build:home": "node scripts/build-home.mjs",
+    "test:home": "node --test scripts/test-inicio.mjs && node scripts/build-home.mjs --check",
     "import:supabase": "node scripts/import-json-to-supabase.mjs"
   },
   "dependencies": {

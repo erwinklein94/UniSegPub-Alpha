@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="usp-desktop-home" lang="pt-BR">
+<html class="usp-desktop-home usp-inicio-2026" lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +15,8 @@
   <link rel="preconnect" href="https://www.googletagmanager.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
   <link href="css/home-desktop-redesign.css?v=20260516-lightbox3" rel="stylesheet" />
+
+  <link href="css/pages/inicio.css?v=20261018home1" rel="stylesheet" />
 
   <link href="https://universosegpub.com.br/" rel="canonical" />
   <meta property="og:type" content="website" />
@@ -72,9 +74,9 @@
         <a href="associacoes-sindicatos.html">Associações e Sindicatos</a>
       </nav>
 
-      <form class="usp-search" action="guia-instituicoes.html" method="get" role="search">
+      <form class="usp-search" action="#institutions-title" method="get" role="search">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <input id="site-search" name="q" type="search" placeholder="Buscar instituição, cargo, notícia..." autocomplete="off" />
+        <input id="site-search" name="q" type="search" placeholder="Buscar instituição ou sigla…" aria-label="Buscar instituição ou sigla" autocomplete="off" />
       </form>
     </div>
   </header>
@@ -83,58 +85,96 @@
     <section class="usp-hero" aria-labelledby="hero-title">
       <div class="usp-container usp-hero__grid">
         <div class="usp-hero__copy">
-          <p class="usp-eyebrow"><span></span>Edição 2026 — 1,2 milhão+ de profissionais cobertos</p>
-          <h1 id="hero-title">Consulte remuneração, direitos e concursos das forças de segurança pública em poucos <mark>cliques.</mark></h1>
-          <p class="usp-hero__lead">Portal informativo independente que organiza dados públicos, carreiras, editais e legislação de 111 instituições brasileiras — com rigor estatístico e apresentação clara.</p>
+          <p class="usp-eyebrow"><span></span>Consulta gratuita · Fontes públicas</p>
+          <h1 id="hero-title">Salários e concursos da segurança pública, em um só <mark>lugar.</mark></h1>
+          <p class="usp-hero__lead">Consulte remuneração por cargo, acompanhe editais e explore as carreiras. Informação organizada, com fontes e contexto para o seu próximo passo.</p>
           <div class="usp-hero__actions" aria-label="Ações principais">
             <a class="usp-btn usp-btn--dark" href="remuneracao.html">Consultar remuneração <span>→</span></a>
-            <a class="usp-btn" href="concursos.html">Ver concursos abertos</a>
-            <a class="usp-btn" href="comparar-carreiras.html">Comparar carreiras</a>
+            <a class="usp-btn" href="#news-title">Concursos em destaque <span>↓</span></a>
           </div>
           <p class="usp-note"><strong>Aviso de independência:</strong> portal informativo, sem vínculo governamental. Confirme atos oficiais nos canais da respectiva instituição.</p>
         </div>
 
-        <aside class="usp-quick-card" aria-label="Acesso rápido">
-          <div class="usp-quick-card__head">
-            <span>Acesso rápido</span>
-            <strong>3 passos</strong>
-          </div>
-          <h2>Escolha uma instituição</h2>
-          <div class="usp-form-grid">
-            <label>
-              <span>Tipo de instituição</span>
-              <select id="quick-type">
-                <option value="">Tipo de instituição</option>
-                <option value="federais">Federais</option>
-                <option value="pm">Polícia Militar</option>
-                <option value="pc">Polícia Civil</option>
-                <option value="pp">Polícia Penal</option>
-                <option value="bm">Bombeiros</option>
-              </select>
-            </label>
-            <label>
-              <span>Estado / UF</span>
-              <select id="quick-uf">
-                <option value="">Estado / UF</option>
-                <option>SP</option><option>RJ</option><option>MG</option><option>BA</option><option>PR</option><option>RS</option><option>SC</option><option>ES</option><option>MS</option><option>MT</option><option>GO</option><option>DF</option><option>CE</option><option>PE</option><option>PA</option><option>AM</option><option>MA</option><option>RN</option><option>PB</option><option>AL</option><option>SE</option><option>PI</option><option>TO</option><option>RO</option><option>AC</option><option>RR</option><option>AP</option>
-              </select>
-            </label>
-          </div>
-          <button class="usp-btn usp-btn--gold" id="quick-load" type="button">Carregar dados da instituição <span>→</span></button>
-          <div class="usp-quick-card__foot">
-            <span>Última atualização <strong>16 mai 2026</strong></span>
-            <span><strong>111</strong> instituições</span>
-          </div>
+        <aside class="usp-quick-card" aria-label="Acesso rápido à remuneração">
+          <div class="usp-quick-card__head"><span>Sua consulta começa aqui</span><strong>POR INSTITUIÇÃO</strong></div>
+          <h2>Qual carreira você quer conhecer?</h2><p class="inicio-quick-lead">Abra a tabela da instituição escolhida.</p>
+          <form id="inicio-consulta" novalidate>
+            <div class="usp-form-grid"><label><span>Instituição / carreira</span><select id="quick-type" required><option value="">Selecione a carreira</option><optgroup label="Federais"><option value="pf">Polícia Federal</option><option value="prf">Polícia Rodoviária Federal</option></optgroup><optgroup label="Estaduais"><option value="pm">Polícia Militar</option><option value="pc">Polícia Civil</option><option value="pp">Polícia Penal</option><option value="bm">Bombeiros</option></optgroup></select></label><label><span>Estado / UF</span><select id="quick-uf" disabled><option value="">Selecione o estado</option><option value="AC">AC · Acre</option><option value="AL">AL · Alagoas</option><option value="AP">AP · Amapá</option><option value="AM">AM · Amazonas</option><option value="BA">BA · Bahia</option><option value="CE">CE · Ceará</option><option value="DF">DF · Distrito Federal</option><option value="ES">ES · Espírito Santo</option><option value="GO">GO · Goiás</option><option value="MA">MA · Maranhão</option><option value="MT">MT · Mato Grosso</option><option value="MS">MS · Mato Grosso do Sul</option><option value="MG">MG · Minas Gerais</option><option value="PA">PA · Pará</option><option value="PB">PB · Paraíba</option><option value="PR">PR · Paraná</option><option value="PE">PE · Pernambuco</option><option value="PI">PI · Piauí</option><option value="RJ">RJ · Rio de Janeiro</option><option value="RN">RN · Rio Grande do Norte</option><option value="RS">RS · Rio Grande do Sul</option><option value="RO">RO · Rondônia</option><option value="RR">RR · Roraima</option><option value="SC">SC · Santa Catarina</option><option value="SP">SP · São Paulo</option><option value="SE">SE · Sergipe</option><option value="TO">TO · Tocantins</option></select></label></div>
+            <p class="inicio-form-status" id="quick-status" role="status">Selecione a carreira e, quando necessário, a UF.</p>
+            <button class="usp-btn usp-btn--gold" id="quick-load" type="submit" disabled>Consultar remuneração <span>→</span></button>
+          </form>
+          <div class="usp-quick-card__foot"><span>Federal e estadual</span><span><strong>110</strong> instituições na base</span></div>
+          <noscript><p><a href="remuneracao.html">Abrir a consulta completa de remuneração →</a></p></noscript>
         </aside>
       </div>
     </section>
 
-    <section class="usp-stats" aria-label="Resumo de cobertura">
-      <div class="usp-stat"><strong>111</strong><span>Instituições cobertas</span></div>
-      <div class="usp-stat"><strong>27 <em>UFs</em></strong><span>Abrangência nacional</span></div>
-      <div class="usp-stat"><strong>1,2 <em>mi+</em></strong><span>Profissionais ativos</span></div>
-      <div class="usp-stat"><strong>563 <em>mil+</em></strong><span>Reserva e inativos</span></div>
-      <div class="usp-stat"><strong>213 <em>mi</em></strong><span>População abrangida</span></div>
+    <section class="usp-stats" aria-label="Consultas e destaques do portal">
+      <div class="usp-stat"><strong>110</strong><span>Instituições na base</span></div><div class="usp-stat"><strong>27 <em>UFs</em></strong><span>Consultas em todo o Brasil</span></div><div class="usp-stat"><strong data-inicio-abertas>3</strong><span>Editais com inscrições em destaque</span></div><div class="usp-stat"><strong>5</strong><span>Atualizações selecionadas</span></div>
+    </section>
+
+    <nav class="inicio-onepage usp-container" aria-label="Seções da página inicial"><a href="#news-title">Destaques</a><a href="#contests-title">Prazos</a><a href="#consultas-title">Consultas</a><a href="#institutions-title">Instituições</a><a href="#compare-title">Carreira</a><a href="#shop-title">Produtos</a></nav>
+
+    <section class="usp-section usp-news inicio-editorial" aria-labelledby="news-title">
+      <div class="usp-container">
+        <div class="usp-section__head"><div><p class="usp-eyebrow"><span></span>No radar da sua carreira</p><h2 id="news-title">Concursos para acompanhar de perto.</h2><p>Editais publicados, inscrições e preparação de novas seleções. Cada chamada leva à fonte oficial.</p></div><a class="usp-inline-link" href="concursos.html">Explorar concursos →</a></div>
+        <div class="inicio-noticias-barra"><p>Checagem editorial: <time datetime="2026-10-18">18 out 2026</time> <span>· acompanhe retificações na banca</span></p><div class="inicio-filtros" role="group" aria-label="Filtrar destaques de concursos"><button type="button" data-inicio-filtro="todos" aria-pressed="true">Todos</button><button type="button" data-inicio-filtro="abertas" aria-pressed="false">Inscrições</button><button type="button" data-inicio-filtro="preparacao" aria-pressed="false">Em preparação</button><button type="button" data-inicio-filtro="andamento" aria-pressed="false">Em andamento</button></div></div>
+        <p class="inicio-aviso-atualizacao" id="inicio-revisao-aviso" hidden>Esta seleção precisa de nova conferência. Confira as datas e eventuais retificações diretamente nas fontes oficiais.</p>
+        <div class="inicio-noticias-grid" id="inicio-noticias">
+          <!-- INICIO_NOTICIAS:INICIO -->
+          <article class="inicio-noticia inicio-noticia--principal" data-inicio-item="pcpe-2026" data-situacao="inscricoes" data-inicio="2026-10-15T00:00:00-03:00" data-fim="2026-12-16T18:00:00-03:00" data-revisado-em="2026-10-18">
+            <a class="inicio-noticia-link" href="https://www.cebraspe.org.br/concursos/pc_pe_26" target="_blank" rel="noopener noreferrer">
+              <div class="inicio-noticia-imagem inicio-capa--civil"><span class="inicio-capa-texto"><small>SEGURANÇA PÚBLICA</small><strong>PCPE</strong><em>PE · CONCURSOS</em></span><img src="img/CIVIL/pcpe.webp" alt="Brasão da Polícia Civil de Pernambuco em capa editorial ilustrativa" width="200" height="200" loading="lazy" decoding="async" /><span class="inicio-capa-legenda">Capa editorial · brasão institucional</span></div>
+              <div class="inicio-noticia-conteudo"><div class="inicio-noticia-meta"><span class="inicio-status inicio-status--aberto" data-inicio-status>Inscrições abertas</span><span>PE</span></div><h3>Polícia Civil de Pernambuco abre concurso com 1.315 vagas</h3><p>O edital reúne oportunidades para agente, escrivão e delegado. As inscrições são feitas pelo Cebraspe, com prazo até 16 de dezembro, às 18h de Brasília.</p><span class="inicio-noticia-cta">Ver edital e inscrições <span aria-hidden="true">↗</span></span></div>
+            </a>
+            <div class="inicio-noticia-fonte"><span>Fonte: Cebraspe · página do concurso</span><time datetime="2026-10-02">Documento: 02/10/2026</time><span data-inicio-prazo>Até 16/12/2026, às 18h</span></div>
+          </article>
+          <article class="inicio-noticia" data-inicio-item="pmpe-2026" data-situacao="inscricoes" data-inicio="2026-10-05T09:00:00-03:00" data-fim="2026-11-23T14:00:00-03:00" data-revisado-em="2026-10-18">
+            <a class="inicio-noticia-link" href="https://www.institutoaocp.org.br/concursos/714" target="_blank" rel="noopener noreferrer">
+              <div class="inicio-noticia-imagem inicio-capa--militar"><span class="inicio-capa-texto"><small>SEGURANÇA PÚBLICA</small><strong>PMPE</strong><em>PE · CONCURSOS</em></span><img src="img/MILITAR/pmpe.webp" alt="Brasão da Polícia Militar de Pernambuco em capa editorial ilustrativa" width="200" height="200" loading="lazy" decoding="async" /><span class="inicio-capa-legenda">Capa editorial · brasão institucional</span></div>
+              <div class="inicio-noticia-conteudo"><div class="inicio-noticia-meta"><span class="inicio-status inicio-status--aberto" data-inicio-status>Inscrições abertas</span><span>PE</span></div><h3>PMPE: edital oferece 1.320 vagas para soldados e oficiais</h3><p>São 1.250 vagas para soldado e 70 para oficiais. A banca informa prorrogação das inscrições até 23 de novembro, às 14h. Confira as retificações antes de se inscrever.</p><span class="inicio-noticia-cta">Consultar concurso na banca <span aria-hidden="true">↗</span></span></div>
+            </a>
+            <div class="inicio-noticia-fonte"><span>Fonte: Instituto AOCP · concurso PMPE</span><time datetime="2026-09-30">Documento: 30/09/2026</time><span data-inicio-prazo>Prorrogação: 23/11/2026, às 14h</span><a href="https://noticias.institutoaocp.org.br/blog/pm-e-bombeiros-de-pernambuco-tem-prazo-de-inscricao-estendido/" target="_blank" rel="noopener noreferrer">Ver prorrogação divulgada pela banca ↗</a></div>
+          </article>
+          <article class="inicio-noticia" data-inicio-item="cbmpe-2026" data-situacao="inscricoes" data-inicio="2026-10-05T09:00:00-03:00" data-fim="2026-11-23T14:00:00-03:00" data-revisado-em="2026-10-18">
+            <a class="inicio-noticia-link" href="https://www.institutoaocp.org.br/concursos/715" target="_blank" rel="noopener noreferrer">
+              <div class="inicio-noticia-imagem inicio-capa--bombeiros"><span class="inicio-capa-texto"><small>SEGURANÇA PÚBLICA</small><strong>CBMPE</strong><em>PE · CONCURSOS</em></span><img src="img/BOMBEIRO/bmpe.webp" alt="Brasão do Corpo de Bombeiros Militar de Pernambuco em capa editorial ilustrativa" width="200" height="200" loading="lazy" decoding="async" /><span class="inicio-capa-legenda">Capa editorial · brasão institucional</span></div>
+              <div class="inicio-noticia-conteudo"><div class="inicio-noticia-meta"><span class="inicio-status inicio-status--aberto" data-inicio-status>Inscrições abertas</span><span>PE</span></div><h3>Bombeiros de Pernambuco têm 570 vagas em concurso</h3><p>O concurso prevê 510 vagas para soldado e 60 para oficial combatente. A prorrogação divulgada pela banca leva o prazo a 23 de novembro, às 14h.</p><span class="inicio-noticia-cta">Consultar concurso na banca <span aria-hidden="true">↗</span></span></div>
+            </a>
+            <div class="inicio-noticia-fonte"><span>Fonte: Instituto AOCP · concurso CBMPE</span><time datetime="2026-09-30">Documento: 30/09/2026</time><span data-inicio-prazo>Prorrogação: 23/11/2026, às 14h</span><a href="https://noticias.institutoaocp.org.br/blog/pm-e-bombeiros-de-pernambuco-tem-prazo-de-inscricao-estendido/" target="_blank" rel="noopener noreferrer">Ver prorrogação divulgada pela banca ↗</a></div>
+          </article>
+          <article class="inicio-noticia" data-inicio-item="pmerj-preparacao" data-situacao="preparacao" data-inicio="" data-fim="" data-revisado-em="2026-10-18">
+            <a class="inicio-noticia-link" href="https://sepm.rj.gov.br/2026/04/comunicado/" target="_blank" rel="noopener noreferrer">
+              <div class="inicio-noticia-imagem inicio-capa--previsao"><span class="inicio-capa-texto"><small>SEGURANÇA PÚBLICA</small><strong>PMERJ</strong><em>RJ · CONCURSOS</em></span><img src="img/MILITAR/pmerj.webp" alt="Brasão da Polícia Militar do Rio de Janeiro em capa editorial ilustrativa" width="200" height="200" loading="lazy" decoding="async" /><span class="inicio-capa-legenda">Capa editorial · brasão institucional</span></div>
+              <div class="inicio-noticia-conteudo"><div class="inicio-noticia-meta"><span class="inicio-status inicio-status--previsto" data-inicio-status>Preparação · comunicado oficial</span><span>RJ</span></div><h3>PMERJ: comunicado oficial informa preparação de novo concurso</h3><p>A SEPM informou tramitação do processo entre a corporação e o governo. O comunicado é de abril: acompanhe novos atos no Diário Oficial, sem confundir preparação com inscrições abertas.</p><span class="inicio-noticia-cta">Ler comunicado oficial <span aria-hidden="true">↗</span></span></div>
+            </a>
+            <div class="inicio-noticia-fonte"><span>Fonte: SEPM/RJ · comunicado de 06/04/2026</span><time datetime="2026-04-06">Documento: 06/04/2026</time></div>
+          </article>
+          <article class="inicio-noticia" data-inicio-item="pcpr-andamento" data-situacao="andamento" data-inicio="" data-fim="" data-revisado-em="2026-10-18">
+            <a class="inicio-noticia-link" href="https://www.policiacivil.pr.gov.br/Noticia/PCPR-realiza-concurso-para-mais-de-46-mil-candidatos-em-Curitiba-Londrina-e-Cascavel" target="_blank" rel="noopener noreferrer">
+              <div class="inicio-noticia-imagem inicio-capa--civil"><span class="inicio-capa-texto"><small>SEGURANÇA PÚBLICA</small><strong>PCPR</strong><em>PR · CONCURSOS</em></span><img src="img/CIVIL/pcpr.webp" alt="Brasão da Polícia Civil do Paraná em capa editorial ilustrativa" width="200" height="200" loading="lazy" decoding="async" /><span class="inicio-capa-legenda">Capa editorial · brasão institucional</span></div>
+              <div class="inicio-noticia-conteudo"><div class="inicio-noticia-meta"><span class="inicio-status inicio-status--andamento" data-inicio-status>Em andamento</span><span>PR</span></div><h3>PCPR aplica provas do concurso e divulga gabarito preliminar</h3><p>A Polícia Civil informou aplicação das provas em 11 de outubro e divulgação do gabarito no dia 13. A seleção forma cadastro de reserva e segue para as próximas etapas.</p><span class="inicio-noticia-cta">Acompanhar informação oficial <span aria-hidden="true">↗</span></span></div>
+            </a>
+            <div class="inicio-noticia-fonte"><span>Fonte: PCPR · notícia de 13/10/2026</span><time datetime="2026-10-13">Documento: 13/10/2026</time></div>
+          </article>
+          <!-- INICIO_NOTICIAS:FIM -->
+        </div>
+        <p class="inicio-filtro-resumo" id="inicio-filtro-resumo" role="status">5 atualizações selecionadas.</p>
+      </div>
+    </section>
+
+    <section class="usp-section usp-contests inicio-radar" aria-labelledby="contests-title">
+      <div class="usp-container"><div class="usp-section__head"><div><p class="usp-eyebrow"><span></span>Planeje seu próximo passo</p><h2 id="contests-title">Prazos e situação, sem confundir as etapas.</h2><p>Resumo dos mesmos concursos destacados acima. Preparação não significa inscrição aberta.</p></div><a class="usp-inline-link" href="#news-title">Voltar aos destaques ↑</a></div>
+        <div class="usp-table-wrap" role="region" aria-label="Prazos dos concursos em destaque" tabindex="0"><table class="usp-table"><thead><tr><th scope="col">Situação</th><th scope="col">Concurso</th><th scope="col">Vagas</th><th scope="col">Prazo / andamento</th><th scope="col">Conferir</th></tr></thead><tbody>
+          <!-- INICIO_CONCURSOS:INICIO -->
+              <tr data-inicio-item="pcpe-2026" data-situacao="inscricoes" data-inicio="2026-10-15T00:00:00-03:00" data-fim="2026-12-16T18:00:00-03:00" data-revisado-em="2026-10-18"><td><span class="inicio-status inicio-status--aberto" data-inicio-status>Inscrições abertas</span></td><td><strong>PCPE · PE</strong><small>Agente, escrivão e delegado</small></td><td>1.315</td><td><span data-inicio-prazo>Até 16/12/2026, às 18h</span><small>Cebraspe</small></td><td><a class="inicio-fonte-link" href="https://www.cebraspe.org.br/concursos/pc_pe_26" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a></td></tr>
+              <tr data-inicio-item="pmpe-2026" data-situacao="inscricoes" data-inicio="2026-10-05T09:00:00-03:00" data-fim="2026-11-23T14:00:00-03:00" data-revisado-em="2026-10-18"><td><span class="inicio-status inicio-status--aberto" data-inicio-status>Inscrições abertas</span></td><td><strong>PMPE · PE</strong><small>Soldado e oficiais</small></td><td>1.320</td><td><span data-inicio-prazo>Prorrogação: 23/11/2026, às 14h</span><small>Instituto AOCP</small></td><td><a class="inicio-fonte-link" href="https://www.institutoaocp.org.br/concursos/714" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a></td></tr>
+              <tr data-inicio-item="cbmpe-2026" data-situacao="inscricoes" data-inicio="2026-10-05T09:00:00-03:00" data-fim="2026-11-23T14:00:00-03:00" data-revisado-em="2026-10-18"><td><span class="inicio-status inicio-status--aberto" data-inicio-status>Inscrições abertas</span></td><td><strong>CBMPE · PE</strong><small>Soldado e oficial combatente</small></td><td>570</td><td><span data-inicio-prazo>Prorrogação: 23/11/2026, às 14h</span><small>Instituto AOCP</small></td><td><a class="inicio-fonte-link" href="https://www.institutoaocp.org.br/concursos/715" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a></td></tr>
+              <tr data-inicio-item="pmerj-preparacao" data-situacao="preparacao" data-inicio="" data-fim="" data-revisado-em="2026-10-18"><td><span class="inicio-status inicio-status--previsto" data-inicio-status>Preparação · comunicado oficial</span></td><td><strong>PMERJ · RJ</strong><small>Soldado · preparação do processo</small></td><td>Não confirmadas neste comunicado</td><td><span data-inicio-prazo>Acompanhar publicação do edital</span><small>Não informada na fonte</small></td><td><a class="inicio-fonte-link" href="https://sepm.rj.gov.br/2026/04/comunicado/" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a></td></tr>
+              <tr data-inicio-item="pcpr-andamento" data-situacao="andamento" data-inicio="" data-fim="" data-revisado-em="2026-10-18"><td><span class="inicio-status inicio-status--andamento" data-inicio-status>Em andamento</span></td><td><strong>PCPR · PR</strong><small>Carreiras da Polícia Civil</small></td><td>Cadastro de reserva</td><td><span data-inicio-prazo>Provas aplicadas · próximas etapas</span><small>FGV / Fundaseg</small></td><td><a class="inicio-fonte-link" href="https://www.policiacivil.pr.gov.br/Noticia/PCPR-realiza-concurso-para-mais-de-46-mil-candidatos-em-Curitiba-Londrina-e-Cascavel" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a></td></tr>
+          <!-- INICIO_CONCURSOS:FIM -->
+        </tbody></table></div><p class="inicio-nota-radar">Horários de Brasília. Os prazos de PMPE e CBMPE seguem a prorrogação divulgada pela AOCP; acompanhe os comunicados na banca antes de se inscrever. <a href="https://noticias.institutoaocp.org.br/blog/pm-e-bombeiros-de-pernambuco-tem-prazo-de-inscricao-estendido/" target="_blank" rel="noopener noreferrer">Ler a prorrogação ↗</a></p>
+      </div>
     </section>
 
     <section class="usp-section usp-consultas" aria-labelledby="consultas-title">
@@ -167,101 +207,35 @@
           <div>
             <p class="usp-eyebrow"><span></span>Cobertura nacional</p>
             <h2 id="institutions-title">Selecione sua instituição</h2>
-            <p>Federais, estaduais e municipais. Escolha o tipo e a UF — carregamos remuneração, direitos, brasão, história e concursos vinculados.</p>
+            <p>Escolha uma carreira e abra diretamente a tabela de remuneração da instituição. Use a busca do cabeçalho para localizar uma sigla ou um estado.</p>
           </div>
           <a class="usp-inline-link" href="guia-instituicoes.html">Guia das instituições →</a>
         </div>
 
         <div class="usp-institution-panel">
-          <div class="usp-tabs" role="tablist" aria-label="Tipos de instituições">
-            <button class="is-active" type="button" data-tab="federais">Federais <span>4</span></button>
-            <button type="button" data-tab="pm">Polícia Militar <span>27</span></button>
-            <button type="button" data-tab="pc">Polícia Civil <span>27</span></button>
-            <button type="button" data-tab="pp">Polícia Penal <span>27</span></button>
-            <button type="button" data-tab="bm">Bombeiros <span>27</span></button>
-            <button type="button" data-tab="gm">Guardas Municipais <span>—</span></button>
+          <div class="usp-tabs" role="group" aria-label="Tipos de instituições">
+            <button class="is-active" type="button" data-tab="federais" aria-pressed="true">Federais <span>2</span></button>
+            <button type="button" data-tab="pm" aria-pressed="false">Polícia Militar <span>27</span></button>
+            <button type="button" data-tab="pc" aria-pressed="false">Polícia Civil <span>27</span></button>
+            <button type="button" data-tab="pp" aria-pressed="false">Polícia Penal <span>27</span></button>
+            <button type="button" data-tab="bm" aria-pressed="false">Bombeiros <span>27</span></button>
           </div>
-          <div class="usp-uf-grid" id="uf-grid" aria-live="polite"></div>
+          <p class="inicio-filtro-resumo" id="institutions-resumo" role="status">2 instituições federais.</p><div class="usp-uf-grid" id="uf-grid"><a class="usp-uf-card" href="remuneracao.html?inst=pf"><strong>PF</strong><span>Polícia Federal</span></a><a class="usp-uf-card" href="remuneracao.html?inst=prf"><strong>PRF</strong><span>Polícia Rodoviária Federal</span></a></div>
         </div>
       </div>
     </section>
 
-    <section class="usp-section usp-news" aria-labelledby="news-title">
-      <div class="usp-container">
-        <div class="usp-section__head">
-          <div>
-            <p class="usp-eyebrow"><span></span>Notícias e atualizações</p>
-            <h2 id="news-title">Editais, reajustes e decisões — em tempo real</h2>
-            <p>Acompanhamento sem sensacionalismo: fatos, fontes e tabelas cruas.</p>
-          </div>
-          <a class="usp-inline-link" href="noticias.html">Ver todas as notícias →</a>
-        </div>
 
-        <div class="usp-news-grid">
-          <article class="usp-news-card usp-news-card--featured">
-            <a href="noticias.html" aria-label="Ler notícia sobre PM de São Paulo">
-              <div class="usp-img-placeholder"><span>Edital · imagem</span></div>
-              <p class="usp-kicker">Edital · PMESP</p>
-              <h3>PM de São Paulo publica edital com 2.700 vagas para soldado de 2ª classe</h3>
-              <p>Inscrições abrem em 20 de maio; banca oficial confirmada e cronograma com prova prevista para agosto.</p>
-              <small>15 mai 2026 <span>Leitura 3 min</span></small>
-            </a>
-          </article>
-          <div class="usp-news-list">
-            <article class="usp-news-card"><a href="noticias.html"><div class="usp-img-placeholder"><span>Imagem</span></div><p class="usp-kicker">Reajuste · Polícia Federal</p><h3>Câmara aprova reajuste linear de 9% para PF e PRF a partir de julho</h3><small>14 mai 2026 <span>Leitura 2 min</span></small></a></article>
-            <article class="usp-news-card"><a href="noticias.html"><div class="usp-img-placeholder"><span>Imagem</span></div><p class="usp-kicker">Convocação · PCDF</p><h3>PC-DF convoca 480 aprovados para curso de formação na ANP</h3><small>12 mai 2026 <span>Leitura 2 min</span></small></a></article>
-            <article class="usp-news-card"><a href="noticias.html"><div class="usp-img-placeholder"><span>Imagem</span></div><p class="usp-kicker">Decisão · STF</p><h3>STF mantém aposentadoria especial integral para policiais civis e federais</h3><small>11 mai 2026 <span>Leitura 2 min</span></small></a></article>
-            <article class="usp-news-card"><a href="noticias.html"><div class="usp-img-placeholder"><span>Imagem</span></div><p class="usp-kicker">Edital · Bombeiros RJ</p><h3>CBMERJ publica edital com 1.450 vagas para soldado e oficial</h3><small>10 mai 2026 <span>Leitura 2 min</span></small></a></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="usp-section usp-contests" aria-labelledby="contests-title">
-      <div class="usp-container">
-        <div class="usp-section__head">
-          <div>
-            <p class="usp-eyebrow"><span></span>Concursos & editais</p>
-            <h2 id="contests-title">Oportunidades abertas e previstas para 2026</h2>
-            <p>Vagas, remuneração inicial, banca e prazos compilados a partir dos editais oficiais.</p>
-          </div>
-          <a class="usp-inline-link" href="concursos.html">Ver todos os editais →</a>
-        </div>
-
-        <div class="usp-table-wrap" role="region" aria-label="Tabela de concursos" tabindex="0">
-          <table class="usp-table">
-            <thead><tr><th>Status</th><th>Instituição</th><th>Vagas</th><th>Remuneração inicial</th><th>Banca</th><th>Inscrições</th></tr></thead>
-            <tbody>
-              <tr><td><span class="usp-status open">Inscrições abertas</span></td><td><strong>Polícia Militar SP</strong><small>Soldado 2ª Classe</small></td><td><strong>2.700</strong><small>vagas</small></td><td><strong>R$ 4.281</strong><small>mensal bruto</small></td><td>VUNESP</td><td><span class="usp-deadline">30 jun</span></td></tr>
-              <tr><td><span class="usp-status open">Inscrições abertas</span></td><td><strong>Polícia Federal</strong><small>Agente / Escrivão</small></td><td><strong>1.200</strong><small>vagas</small></td><td><strong>R$ 23.692</strong><small>mensal bruto</small></td><td>CESPE</td><td><span class="usp-deadline">22 jun</span></td></tr>
-              <tr><td><span class="usp-status forecast">Previsto</span></td><td><strong>PRF</strong><small>Policial Rodoviário</small></td><td><strong>1.500</strong><small>vagas</small></td><td><strong>R$ 23.692</strong><small>mensal bruto</small></td><td>—</td><td><span class="usp-deadline">jul/26</span></td></tr>
-              <tr><td><span class="usp-status open">Inscrições abertas</span></td><td><strong>CBMERJ</strong><small>Soldado / Oficial</small></td><td><strong>1.450</strong><small>vagas</small></td><td><strong>R$ 5.890</strong><small>mensal bruto</small></td><td>FGV</td><td><span class="usp-deadline">18 jun</span></td></tr>
-              <tr><td><span class="usp-status forecast">Previsto</span></td><td><strong>PC Bahia</strong><small>Investigador</small></td><td><strong>1.000</strong><small>vagas</small></td><td><strong>R$ 5.120</strong><small>mensal bruto</small></td><td>—</td><td><span class="usp-deadline">ago/26</span></td></tr>
-              <tr><td><span class="usp-status closed">Encerrado</span></td><td><strong>PMMG</strong><small>Soldado</small></td><td><strong>2.900</strong><small>vagas</small></td><td><strong>R$ 4.620</strong><small>mensal bruto</small></td><td>FUMARC</td><td><span class="usp-deadline">encerrado</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
 
     <section class="usp-compare" aria-labelledby="compare-title">
       <div class="usp-container usp-compare__grid">
         <div>
           <p class="usp-eyebrow usp-eyebrow--gold"><span></span>Comparador de carreiras</p>
-          <h2 id="compare-title">Dois cargos, lado a lado.<br />Decisão sem ruído.</h2>
-          <p>Compare salários iniciais, jornada, requisitos, vantagens e benefícios entre cargos de qualquer instituição coberta pelo portal.</p>
-          <a class="usp-btn usp-btn--gold" href="comparar-carreiras.html">Abrir comparador <span>→</span></a>
+          <h2 id="compare-title">Mais contexto para escolher sua carreira.</h2>
+          <p>Antes de comparar valores, confira o cargo, a classe, a vigência e as parcelas incluídas. A tabela de remuneração reúne as referências e os avisos de verificação.</p>
+          <a class="usp-btn usp-btn--gold" href="remuneracao.html">Explorar remuneração <span>→</span></a>
         </div>
-        <div class="usp-compare-box" aria-label="Exemplo de comparação salarial">
-          <div class="usp-compare-row usp-compare-row--head"><span>Cargo · Instituição</span><span>Remuneração inicial</span><span>Faixa</span></div>
-          <div class="usp-compare-row"><span>Polícia Federal</span><strong>R$ 23.692</strong><i style="--w:100%"></i></div>
-          <div class="usp-compare-row"><span>Polícia Rodoviária Federal</span><strong>R$ 23.692</strong><i style="--w:100%"></i></div>
-          <div class="usp-compare-row"><span>Polícia Civil DF — Delegado</span><strong>R$ 28.847</strong><i style="--w:100%"></i></div>
-          <div class="usp-compare-row"><span>Polícia Militar SP — Capitão</span><strong>R$ 18.430</strong><i style="--w:78%"></i></div>
-          <div class="usp-compare-row"><span>Polícia Penal Federal</span><strong>R$ 17.700</strong><i style="--w:74%"></i></div>
-          <div class="usp-compare-row"><span>Bombeiro Militar RJ — Oficial</span><strong>R$ 12.580</strong><i style="--w:53%"></i></div>
-          <div class="usp-compare-row"><span>Polícia Militar — Soldado (média BR)</span><strong>R$ 4.620</strong><i style="--w:20%"></i></div>
-        </div>
+        <div class="inicio-criterios" aria-label="Como ler uma tabela salarial"><div><span>01</span><h3>Cargo e classe</h3><p>Formação, ingresso e progressão podem ter valores diferentes.</p></div><div><span>02</span><h3>Fonte e vigência</h3><p>Veja o ato de referência e se a vigência já foi confirmada.</p></div><div><span>03</span><h3>Composição do valor</h3><p>Distinga subsídio, vencimento e parcelas condicionais.</p></div></div>
       </div>
     </section>
 
@@ -277,10 +251,10 @@
         </div>
         <div class="usp-product-grid">
 
-          <article class="usp-product"><a href="https://s.shopee.com.br/8V5RQXr16n" target="_blank" rel="noopener noreferrer"><div class="usp-product__image"><img src="img/SHOPEE/mochilacoban.webp" alt="Mochila Coban Tática Militar Reforçada 24L" loading="lazy" /></div><h3>Mochila Coban Tática Militar Reforçada 24L</h3><small>Shopee</small><strong>Ver na loja →</strong></a></article>
-          <article class="usp-product"><a href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="noopener noreferrer"><div class="usp-product__image"><span>PM-SP</span><img src="img/SHOPEE/botaacero.webp" alt="Bota Acero Couro Colt" loading="lazy" /></div><h3>Bota Acero Couro Colt — Padrão PM-SP</h3><small>Shopee</small><strong>Ver na loja →</strong></a></article>
+          <article class="usp-product"><a href="https://s.shopee.com.br/8V5RQXr16n" target="_blank" rel="sponsored noopener noreferrer"><div class="usp-product__image"><img src="img/SHOPEE/mochilacoban.webp" alt="Mochila Coban Tática Militar Reforçada 24L" loading="lazy" /></div><h3>Mochila Coban Tática Militar Reforçada 24L</h3><small>Shopee</small><strong>Ver na loja →</strong></a></article>
+          <article class="usp-product"><a href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="sponsored noopener noreferrer"><div class="usp-product__image"><span>PM-SP</span><img src="img/SHOPEE/botaacero.webp" alt="Bota Acero Couro Colt" loading="lazy" /></div><h3>Bota Acero Couro Colt — Padrão PM-SP</h3><small>Shopee</small><strong>Ver na loja →</strong></a></article>
 
-          <article class="usp-product"><a href="https://s.shopee.com.br/9Uy1hagpxm" target="_blank" rel="noopener noreferrer"><div class="usp-product__image"><img src="img/SHOPEE/lanterna.webp" alt="Lanterna LED Militar 3 em 1" loading="lazy" /></div><h3>Lanterna LED Militar 3 em 1 T9 Recarregável</h3><small>Shopee</small><strong>Ver na loja →</strong></a></article>
+          <article class="usp-product"><a href="https://s.shopee.com.br/9Uy1hagpxm" target="_blank" rel="sponsored noopener noreferrer"><div class="usp-product__image"><img src="img/SHOPEE/lanterna.webp" alt="Lanterna LED Militar 3 em 1" loading="lazy" /></div><h3>Lanterna LED Militar 3 em 1 T9 Recarregável</h3><small>Shopee</small><strong>Ver na loja →</strong></a></article>
         </div>
         <p class="usp-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</p>
       </div>
@@ -308,54 +282,7 @@
     <div class="usp-container usp-footer__bottom"><span>© 2026 Universo Seg Pub. Todos os direitos reservados.</span><nav><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="cookies.html">Cookies</a></nav></div>
   </footer>
 
-  <script>
-    (function () {
-      const ufs = [
-        ['SP','São Paulo'], ['RJ','Rio de Janeiro'], ['MG','Minas Gerais'], ['BA','Bahia'], ['PR','Paraná'], ['RS','Rio Grande do Sul'], ['SC','Santa Catarina'], ['ES','Espírito Santo'], ['MS','Mato Grosso do Sul'],
-        ['MT','Mato Grosso'], ['GO','Goiás'], ['DF','Distrito Federal'], ['CE','Ceará'], ['PE','Pernambuco'], ['PA','Pará'], ['AM','Amazonas'], ['MA','Maranhão'], ['RN','Rio Grande do Norte'],
-        ['PB','Paraíba'], ['AL','Alagoas'], ['SE','Sergipe'], ['PI','Piauí'], ['TO','Tocantins'], ['RO','Rondônia'], ['AC','Acre'], ['RR','Roraima'], ['AP','Amapá']
-      ];
-      const federais = [['PF','Polícia Federal'], ['PRF','Polícia Rodoviária Federal'], ['PPF','Polícia Penal Federal'], ['SENASP','Secretaria Nacional de Segurança Pública']];
-      const links = { federais: 'remuneracao.html', pm: 'remuneracao.html', pc: 'remuneracao.html', pp: 'remuneracao.html', bm: 'remuneracao.html', gm: 'guia-instituicoes.html' };
-      const grid = document.getElementById('uf-grid');
-      const buttons = Array.from(document.querySelectorAll('.usp-tabs button'));
-
-      function render(tab) {
-        const list = tab === 'federais' ? federais : ufs;
-        grid.innerHTML = list.map(function (item) {
-          const sigla = item[0];
-          const nome = item[1];
-          const href = links[tab] || 'guia-instituicoes.html';
-          return '<a class="usp-uf-card" href="' + href + '"><strong>' + sigla + '</strong><span>' + nome + '</span></a>';
-        }).join('');
-      }
-      buttons.forEach(function (button) {
-        button.addEventListener('click', function () {
-          buttons.forEach(function (btn) { btn.classList.remove('is-active'); });
-          button.classList.add('is-active');
-          render(button.dataset.tab);
-        });
-      });
-      render('federais');
-
-      const quickLoad = document.getElementById('quick-load');
-      quickLoad?.addEventListener('click', function () {
-        const type = document.getElementById('quick-type')?.value || '';
-        const uf = document.getElementById('quick-uf')?.value || '';
-        const target = type === 'federais' || type === '' ? 'remuneracao.html' : 'remuneracao.html?tipo=' + encodeURIComponent(type) + '&uf=' + encodeURIComponent(uf);
-        window.location.href = target;
-      });
-
-      const search = document.getElementById('site-search');
-      document.addEventListener('keydown', function (event) {
-        const key = event.key.toLowerCase();
-        if ((event.metaKey || event.ctrlKey) && key === 'k') {
-          event.preventDefault();
-          search?.focus();
-        }
-      });
-    })();
-  </script>
+  <script type="module" src="js/pages/inicio.js?v=20261018home1"></script>
   <script defer src="js/brasao-lightbox.js?v=20260516lightbox3"></script>
   <script defer src="js/ui/cookie-consent.js?v=20260509adsense1"></script>
   <script defer src="js/ui/theme-toggle.js?v=20260517"></script>
