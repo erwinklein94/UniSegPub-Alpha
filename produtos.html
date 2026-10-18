@@ -38,6 +38,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663" crossorigin="anonymous"></script>
   <link href="css/components/sugerir-correcao.css?v=20260517" rel="stylesheet" />
   <link href="css/components/theme-toggle.css?v=20260517" rel="stylesheet" />
+  <link href="css/pages/vitrine.css?v=20261018" rel="stylesheet" />
 </head>
 <body class="usp-home usp-produtos" data-page="produtos">
   <div class="usp-topline">
@@ -75,7 +76,7 @@
         <a href="associacoes-sindicatos.html">Associações e Sindicatos</a>
       </nav>
 
-      <form class="usp-search" action="guia-instituicoes.html" method="get" role="search">
+      <form class="usp-search" action="produtos.html" method="get" role="search">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         <input id="site-search" name="q" type="search" placeholder="Buscar instituição, cargo, produto..." autocomplete="off" />
       </form>
@@ -93,41 +94,21 @@
       <div class="usp-container usp-produtos-hero__grid">
         <div class="usp-hero__copy">
           <p class="usp-eyebrow"><span></span>Vitrine · produtos selecionados</p>
-          <h1 id="produtos-title">Equipamentos, cursos e materiais para estudo, preparo e rotina operacional.</h1>
-          <p class="usp-hero__lead">Uma vitrine separada das consultas do portal, com itens táticos, cursos preparatórios, livros e materiais digitais. O foco é leitura clara, escolha rápida e conferência direta na página do produto.</p>
+          <h1 id="produtos-title">Escolhas para estudar melhor.<br><mark>E seguir mais preparado.</mark></h1>
+          <p class="usp-hero__lead">Explore equipamentos, cursos e leituras para cada etapa da sua jornada. Encontre o que combina com seus estudos e com a sua rotina.</p>
           <div class="usp-hero__actions" aria-label="Ações rápidas da loja">
             <a class="usp-btn usp-btn--dark" href="#produtos-fisicos">Ver produtos físicos <span>→</span></a>
             <a class="usp-btn" href="#cursos">Cursos e materiais</a>
             <a class="usp-btn" href="#livros">Livros e e-books</a>
           </div>
-          <p class="usp-note"><strong>Aviso comercial:</strong> alguns links podem ser comerciais ou afiliados. Antes de comprar, confira preço, prazo, avaliações, garantia, reembolso e descrição atualizada diretamente na loja.</p>
+          <p class="usp-note"><strong>Aviso comercial:</strong> esta vitrine contém links de afiliados. Podemos receber comissão pelas compras realizadas por eles. Antes de comprar, confira preço, prazo, avaliações, garantia, reembolso e descrição atualizada diretamente na loja.</p>
         </div>
 
-        <aside class="usp-quick-card usp-produtos-filter-card" aria-label="Filtro da vitrine">
-          <div class="usp-quick-card__head">
-            <span>Filtro da vitrine</span>
-            <strong>Por instituição</strong>
-          </div>
-          <h2>Produtos compatíveis com sua instituição</h2>
-          <p>Escolha uma instituição para manter os itens gerais e destacar produtos ligados à UF ou à corporação selecionada.</p>
-          <label class="usp-produtos-select-label" for="produtos_instituicao">
-            <span>Filtrar por instituição</span>
-            <select aria-label="Filtrar produtos por instituição" id="produtos_instituicao">
-              <option selected value="">Todos os produtos</option>
-            </select>
-          </label>
-          <small id="produtos-filtro-status">Mostrando todos os produtos da vitrine.</small>
-        </aside>
+        <aside class="vitrine-editorial" aria-label="Explore as categorias da vitrine"><div class="vitrine-editorial-top"><span>ESTUDO · PREPARO · ROTINA</span><strong>Seu próximo passo,<br>com mais recursos.</strong></div><div class="vitrine-editorial-itens"><a href="#produtos-fisicos" class="vitrine-editorial-fisico"><img src="img/SHOPEE/mochilacoban.webp" alt="Mochila tática da vitrine" width="230" height="230" decoding="async" /><span>Para a rotina <b aria-hidden="true">↗</b></span></a><a href="#cursos" class="vitrine-editorial-curso"><img src="img/HOTMART/pfagenteadmdiretoaoponto.webp" alt="Curso para Agente Administrativo da Polícia Federal" width="130" height="130" decoding="async" /><span>Para estudar <b aria-hidden="true">↗</b></span></a><a href="#livros" class="vitrine-editorial-livro"><img src="img/HOTMART/otimizando.webp" alt="Livro digital Otimizando o Cérebro para Concursos Públicos" width="130" height="130" decoding="async" /><span>Para ir além <b aria-hidden="true">↗</b></span></a></div></aside>
       </div>
     </section>
 
-    <section class="usp-stats usp-produtos-stats" aria-label="Resumo da vitrine">
-      <div class="usp-stat"><strong>Físicos</strong><span>Mochilas, botas, lanternas e acessórios</span></div>
-      <div class="usp-stat"><strong>Cursos</strong><span>Preparação e materiais online</span></div>
-      <div class="usp-stat"><strong>PM-SP</strong><span>Itens e cursos específicos</span></div>
-      <div class="usp-stat"><strong>PC-SP</strong><span>Materiais com foco VUNESP</span></div>
-      <div class="usp-stat"><strong>Livros</strong><span>Desenvolvimento e estudo</span></div>
-    </section>
+    <section class="usp-container vitrine-explorar" id="explorar" aria-labelledby="vitrine-explorar-title"><div class="vitrine-explorar-head"><div><p class="usp-eyebrow"><span></span>Explore a seleção</p><h2 id="vitrine-explorar-title">O que acompanha sua jornada?</h2></div><p>Escolha uma categoria ou encontre um item pelo nome.</p></div><div class="vitrine-categorias" role="group" aria-label="Categoria da vitrine"><button type="button" class="is-active" data-vitrine-categoria="" aria-pressed="true">Toda a vitrine</button><button type="button" data-vitrine-categoria="produtosFisicos" aria-pressed="false">Equipamentos</button><button type="button" data-vitrine-categoria="cursos" aria-pressed="false">Cursos e preparação</button><button type="button" data-vitrine-categoria="livrosEbooks" aria-pressed="false">Livros e digitais</button></div><div class="vitrine-toolbar"><label class="vitrine-busca"><span>Buscar na vitrine</span><input id="vitrine-busca" type="search" placeholder="Ex.: mochila, informática, Polícia Federal…" autocomplete="off" /></label><label class="usp-produtos-select-label" for="produtos_instituicao"><span>Instituição de interesse</span><select id="produtos_instituicao"><option value="">Todos os produtos</option></select></label><button type="button" id="vitrine-limpar">Limpar filtros ↺</button></div><p id="produtos-filtro-status" role="status" aria-live="polite">Carregando a seleção de produtos…</p><div id="vitrine-vazia" hidden><strong>Nenhum item encontrado nesta seleção.</strong><p>Tente outro termo ou limpe os filtros para explorar a vitrine completa.</p></div></section>
 
     <section class="usp-section usp-produtos-section" id="produtos-fisicos" data-produtos-section aria-labelledby="produtos-fisicos-title">
       <div class="usp-container">
@@ -237,7 +218,7 @@
       <nav aria-label="Concursos">
         <strong>Concursos</strong>
         <a href="concursos.html#oportunidades">Editais abertos</a>
-        <a href="concursos.html#lista-instituicoes">Editais previstos</a>
+        <a href="concursos.html#preparacao">Editais previstos</a>
         <a href="noticias.html">Notícias</a>
       </nav>
       <nav aria-label="Institucional">
@@ -261,7 +242,7 @@
   <script defer src="js/services/supabase-api.js?v=20260710dados1"></script>
   <script defer src="js/services/dados-portal.js?v=20260710dados1"></script>
   <script defer src="js/services/produtos-disponibilidade.js?v=20261018links1"></script>
-<script defer src="js/pages/produtos-render.js?v=20261018links1"></script>
+<script defer src="js/pages/produtos-render.js?v=20261018vitrine2"></script>
   <script>
     (function () {
       document.addEventListener('DOMContentLoaded', function () {
@@ -284,6 +265,7 @@
       });
     })();
   </script>
+  <script defer src="js/pages/vitrine-visual.js?v=20261018"></script>
   <script defer src="js/brasao-lightbox.js?v=20260516lightbox3"></script>
   <script defer src="js/ui/cookie-consent.js?v=20260509adsense1"></script>
   <script defer src="js/ui/theme-toggle.js?v=20260517"></script>

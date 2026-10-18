@@ -1,37 +1,111 @@
-<main class="page-section active" id="page-produtos" role="main">
-<div class="card">
-<h2>Produtos<span id="txt-inst-produtos" hidden></span></h2>
-<div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-<strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
-    </div>
-<div class="curso-section-title">Produtos físicos</div>
-<div aria-label="Produtos físicos com link de compra" class="curso-grid produtos-vitrine" data-produtos-categoria="produtosFisicos">
-<script defer="" src="js/services/supabase-api.js?v=20260710dados1"></script>
-<script defer="" src="js/services/dados-portal.js?v=20260710dados1"></script>
-<noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
-</div>
-<div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
-<div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
-      Confira cursos preparatórios, mentorias e materiais de estudo disponíveis para candidatos e profissionais da segurança pública.
-    </div>
-<div aria-label="Cursos preparatórios e materiais de estudo com link de compra" class="curso-grid produtos-vitrine cursos-preparatorios-geral" data-produtos-categoria="cursosGerais">
-<noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
-</div>
-<div class="curso-grid produtos-vitrine curso-pmesp-only" data-produtos-categoria="cursosPmesp">
-<noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
-</div>
-<div class="curso-grid produtos-vitrine curso-pcsp-only" data-produtos-categoria="cursosPcsp">
-<noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
-</div>
-<div class="curso-section-title">Livros e e-books</div>
-<div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
-      Livros, e-books e materiais de desenvolvimento para estudo, carreira, disciplina, produtividade e transição profissional.
-    </div>
-<div aria-label="Livros e e-books com link de compra" class="curso-grid produtos-vitrine" data-produtos-categoria="livrosEbooks">
-<noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
-</div>
-<p class="produto-aviso-compra">
-      Antes de comprar, confira preço, prazo, avaliações, garantia, política de reembolso e descrição atualizada diretamente na página do produto.
-    </p>
-</div>
-</main>
+
+  <main>
+    <nav class="usp-breadcrumb" aria-label="Caminho da página">
+      <div class="usp-container">
+        <a href="index.html">Início</a><span>/</span><strong>Produtos</strong>
+      </div>
+    </nav>
+
+    <section class="usp-hero usp-produtos-hero" aria-labelledby="produtos-title">
+      <div class="usp-container usp-produtos-hero__grid">
+        <div class="usp-hero__copy">
+          <p class="usp-eyebrow"><span></span>Vitrine · produtos selecionados</p>
+          <h1 id="produtos-title">Escolhas para estudar melhor.<br><mark>E seguir mais preparado.</mark></h1>
+          <p class="usp-hero__lead">Explore equipamentos, cursos e leituras para cada etapa da sua jornada. Encontre o que combina com seus estudos e com a sua rotina.</p>
+          <div class="usp-hero__actions" aria-label="Ações rápidas da loja">
+            <a class="usp-btn usp-btn--dark" href="#produtos-fisicos">Ver produtos físicos <span>→</span></a>
+            <a class="usp-btn" href="#cursos">Cursos e materiais</a>
+            <a class="usp-btn" href="#livros">Livros e e-books</a>
+          </div>
+          <p class="usp-note"><strong>Aviso comercial:</strong> esta vitrine contém links de afiliados. Podemos receber comissão pelas compras realizadas por eles. Antes de comprar, confira preço, prazo, avaliações, garantia, reembolso e descrição atualizada diretamente na loja.</p>
+        </div>
+
+        <aside class="vitrine-editorial" aria-label="Explore as categorias da vitrine"><div class="vitrine-editorial-top"><span>ESTUDO · PREPARO · ROTINA</span><strong>Seu próximo passo,<br>com mais recursos.</strong></div><div class="vitrine-editorial-itens"><a href="#produtos-fisicos" class="vitrine-editorial-fisico"><img src="img/SHOPEE/mochilacoban.webp" alt="Mochila tática da vitrine" width="230" height="230" decoding="async" /><span>Para a rotina <b aria-hidden="true">↗</b></span></a><a href="#cursos" class="vitrine-editorial-curso"><img src="img/HOTMART/pfagenteadmdiretoaoponto.webp" alt="Curso para Agente Administrativo da Polícia Federal" width="130" height="130" decoding="async" /><span>Para estudar <b aria-hidden="true">↗</b></span></a><a href="#livros" class="vitrine-editorial-livro"><img src="img/HOTMART/otimizando.webp" alt="Livro digital Otimizando o Cérebro para Concursos Públicos" width="130" height="130" decoding="async" /><span>Para ir além <b aria-hidden="true">↗</b></span></a></div></aside>
+      </div>
+    </section>
+
+    <section class="usp-container vitrine-explorar" id="explorar" aria-labelledby="vitrine-explorar-title"><div class="vitrine-explorar-head"><div><p class="usp-eyebrow"><span></span>Explore a seleção</p><h2 id="vitrine-explorar-title">O que acompanha sua jornada?</h2></div><p>Escolha uma categoria ou encontre um item pelo nome.</p></div><div class="vitrine-categorias" role="group" aria-label="Categoria da vitrine"><button type="button" class="is-active" data-vitrine-categoria="" aria-pressed="true">Toda a vitrine</button><button type="button" data-vitrine-categoria="produtosFisicos" aria-pressed="false">Equipamentos</button><button type="button" data-vitrine-categoria="cursos" aria-pressed="false">Cursos e preparação</button><button type="button" data-vitrine-categoria="livrosEbooks" aria-pressed="false">Livros e digitais</button></div><div class="vitrine-toolbar"><label class="vitrine-busca"><span>Buscar na vitrine</span><input id="vitrine-busca" type="search" placeholder="Ex.: mochila, informática, Polícia Federal…" autocomplete="off" /></label><label class="usp-produtos-select-label" for="produtos_instituicao"><span>Instituição de interesse</span><select id="produtos_instituicao"><option value="">Todos os produtos</option></select></label><button type="button" id="vitrine-limpar">Limpar filtros ↺</button></div><p id="produtos-filtro-status" role="status" aria-live="polite">Carregando a seleção de produtos…</p><div id="vitrine-vazia" hidden><strong>Nenhum item encontrado nesta seleção.</strong><p>Tente outro termo ou limpe os filtros para explorar a vitrine completa.</p></div></section>
+
+    <section class="usp-section usp-produtos-section" id="produtos-fisicos" data-produtos-section aria-labelledby="produtos-fisicos-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Equipamentos e acessórios</p>
+            <h2 id="produtos-fisicos-title">Produtos físicos</h2>
+            <p>Itens úteis para deslocamento, organização, treino, estudo e rotina profissional.</p>
+          </div>
+          <a class="usp-inline-link" href="#aviso-compra">Conferir aviso de compra →</a>
+        </div>
+        <div aria-label="Produtos físicos com link de compra" class="usp-produtos-grid produtos-vitrine" data-produtos-categoria="produtosFisicos">
+          <noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="usp-section usp-produtos-section usp-produtos-section--soft" id="cursos" data-produtos-section aria-labelledby="cursos-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Estudo e preparação</p>
+            <h2 id="cursos-title">Cursos preparatórios e materiais gerais</h2>
+            <p>Materiais digitais, cursos e conteúdos de apoio para candidatos e profissionais da segurança pública.</p>
+          </div>
+        </div>
+        <div aria-label="Cursos preparatórios e materiais de estudo" class="usp-produtos-grid produtos-vitrine cursos-preparatorios-geral" data-produtos-categoria="cursosGerais">
+          <noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="usp-section usp-produtos-section" id="cursos-pmesp" data-produtos-section aria-labelledby="cursos-pmesp-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Instituição em destaque</p>
+            <h2 id="cursos-pmesp-title">Cursos e materiais específicos para PM-SP</h2>
+            <p>Conteúdos voltados ao candidato que acompanha editais, etapas e preparação para a Polícia Militar de São Paulo.</p>
+          </div>
+        </div>
+        <div aria-label="Cursos e materiais para PMESP" class="usp-produtos-grid produtos-vitrine curso-pmesp-only" data-produtos-categoria="cursosPmesp">
+          <noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="usp-section usp-produtos-section usp-produtos-section--soft" id="cursos-pcsp" data-produtos-section aria-labelledby="cursos-pcsp-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Instituição em destaque</p>
+            <h2 id="cursos-pcsp-title">Cursos e materiais específicos para PC-SP</h2>
+            <p>Materiais com foco em disciplinas recorrentes, banca VUNESP e preparação para cargos da Polícia Civil paulista.</p>
+          </div>
+        </div>
+        <div aria-label="Cursos e materiais para PCSP" class="usp-produtos-grid produtos-vitrine curso-pcsp-only" data-produtos-categoria="cursosPcsp">
+          <noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="usp-section usp-produtos-section" id="livros" data-produtos-section aria-labelledby="livros-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Leitura e desenvolvimento</p>
+            <h2 id="livros-title">Livros, e-books e materiais digitais</h2>
+            <p>Conteúdos para estudo, disciplina, produtividade, carreira, transição profissional e desenvolvimento pessoal.</p>
+          </div>
+        </div>
+        <div aria-label="Livros e e-books com link de compra" class="usp-produtos-grid produtos-vitrine" data-produtos-categoria="livrosEbooks">
+          <noscript>Ative o JavaScript para visualizar a vitrine de produtos.</noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="usp-remu-warning usp-produtos-warning" id="aviso-compra" aria-label="Aviso de compra e transparência">
+      <div class="usp-container">
+        <p class="usp-eyebrow usp-eyebrow--gold"><span></span>Aviso de transparência</p>
+        <p>Esta vitrine tem caráter informativo e comercial. Links podem ser afiliados, patrocinados ou externos. O Universo Segurança Pública não controla estoque, preço, entrega, suporte, reembolso, garantia ou alterações feitas pelas lojas e plataformas de venda. Confirme todos os detalhes antes de comprar.</p>
+      </div>
+    </section>
+  </main>

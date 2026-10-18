@@ -78,6 +78,8 @@
   ];
 
   let filtroProdutosAtual = '';
+  let buscaVitrine = '';
+  let categoriaVitrine = '';
 
   function setAttr(element, name, value) {
     if (value === undefined || value === null || value === '') return;
@@ -200,7 +202,8 @@
 
   function getProdutosFiltrados(produtos) {
     return produtos.filter(produto => window.UNISEGPUB_LINKS_PRODUTOS?.permitido(produto.href)
-      && produtoCombinaComFiltro(produto, filtroProdutosAtual));
+      && produtoCombinaComFiltro(produto, filtroProdutosAtual)
+      && normalizarTexto(buscaVitrine).split(' ').filter(Boolean).every(termo => getTextoProduto(produto).includes(termo)));
   }
 
   function createProductCard(produto) {
@@ -211,7 +214,7 @@
 
     setAttr(card, 'href', produto.href);
     setAttr(card, 'aria-label', produto.ariaLabel || `Ver na loja: ${produto.titulo || 'produto'}`);
-    setAttr(card, 'rel', produto.rel || 'noopener noreferrer');
+    setAttr(card, 'rel', [...new Set((produto.rel || 'noopener noreferrer').split(/\s+/).concat(['sponsored', 'noopener', 'noreferrer']))].join(' '));
     setAttr(card, 'target', produto.target || '_blank');
     applyAttributes(card, produto.dataAttrs);
 
@@ -233,17 +236,23 @@
     imagemWrap.appendChild(imagem);
     card.appendChild(imagemWrap);
 
+    const corpo = createElement('div', 'vitrine-card-body');
+    card.appendChild(corpo);
+    const plataforma = new URL(produto.href).hostname;
+    const loja = /shopee/i.test(plataforma) ? 'Shopee' : /hotmart/i.test(plataforma) ? 'Hotmart' : 'Loja parceira';
+    corpo.appendChild(createElement('span', 'vitrine-loja', loja + ' · link de afiliado'));
+
     if (produto.adLabel) {
-      card.appendChild(createElement('span', 'ad-label', produto.adLabel));
+      corpo.appendChild(createElement('span', 'ad-label', produto.adLabel));
     }
 
     if (Array.isArray(produto.badges)) {
       produto.badges.forEach(badge => {
-        if (badge) card.appendChild(createElement('span', 'curso-badge', badge));
+        if (badge) corpo.appendChild(createElement('span', 'curso-badge', badge));
       });
     }
 
-    card.appendChild(createElement('h3', '', produto.titulo || 'Produto'));
+    corpo.appendChild(createElement('h3', '', produto.titulo || 'Produto'));
 
     const descricao = document.createElement('p');
     descricao.appendChild(document.createTextNode(produto.descricao || ''));
@@ -252,7 +261,7 @@
       descricao.appendChild(document.createTextNode(' '));
       descricao.appendChild(createElement('span', 'descricao-afiliado', avisoAfiliado));
     }
-    card.appendChild(descricao);
+    corpo.appendChild(descricao);
 
     if (Array.isArray(produto.meta) && produto.meta.length) {
       const meta = createElement('div', 'curso-meta');
@@ -260,10 +269,10 @@
       produto.meta.forEach(item => {
         if (item) meta.appendChild(createElement('span', '', item));
       });
-      card.appendChild(meta);
+      corpo.appendChild(meta);
     }
 
-    card.appendChild(createElement('span', 'curso-cta', produto.cta || 'Ver na loja'));
+    corpo.appendChild(createElement('span', 'curso-cta', produto.cta || 'Ver na loja'));
     return card;
   }
 
@@ -348,7 +357,7 @@
     if (!status) return;
 
     if (!filtroProdutosAtual) {
-      status.textContent = `Mostrando todos os produtos da vitrine (${totalVisivel}).`;
+      status.textContent = `${totalVisivel} itens nesta seleção. Consulte preços e condições diretamente na loja.`;
       return;
     }
 
@@ -356,7 +365,7 @@
     const uf = getUfInstituicao(filtroProdutosAtual);
     const criterio = uf === 'br'
       ? 'produtos gerais e produtos específicos dessa instituição federal'
-      : `produtos gerais e produtos compatíveis com ${uf ? uf.toUpperCase() : 'a instituição selecionada'}`;
+      : `produtos gerais e produtos relacionados a ${uf ? uf.toUpperCase() : 'a instituição selecionada'}`;
 
     status.textContent = `Filtro ativo: ${label}. Exibindo ${totalVisivel} item(ns): ${criterio}.`;
   }
@@ -372,13 +381,19 @@
       const produtos = base[categoria];
       if (!Array.isArray(produtos)) return;
 
-      const produtosFiltrados = getProdutosFiltrados(produtos);
+      const categoriaAtiva = !categoriaVitrine || categoriaVitrine === categoria || (categoriaVitrine === 'cursos' && categoria.startsWith('cursos'));
+      const produtosFiltrados = categoriaAtiva ? getProdutosFiltrados(produtos) : [];
       totalVisivel += produtosFiltrados.length;
-      container.hidden = !!filtroProdutosAtual && produtosFiltrados.length === 0;
+      container.hidden = produtosFiltrados.length === 0;
+      const secao = container.closest('[data-produtos-section]');
+      if (secao) secao.hidden = container.hidden;
       container.replaceChildren(...produtosFiltrados.map(createProductCard));
     });
 
     atualizarStatusFiltro(totalVisivel);
+    const vazio = document.getElementById('vitrine-vazia');
+    if (vazio) vazio.hidden = totalVisivel > 0;
+    document.dispatchEvent(new Event('vitrine:renderizada'));
   }
 
   function montarSelectFiltroProdutos() {
@@ -427,7 +442,28 @@
     });
   }
 
+  function iniciarBuscaVitrine() {
+    const input = document.getElementById('vitrine-busca');
+    if (!input || input.dataset.inicializado) return;
+    input.dataset.inicializado = 'true';
+    input.value = new URLSearchParams(location.search).get('q') || '';
+    buscaVitrine = input.value;
+    input.addEventListener('input', () => { buscaVitrine = input.value; renderProdutos(); });
+    document.querySelectorAll('[data-vitrine-categoria]').forEach(btn => btn.addEventListener('click', () => {
+      categoriaVitrine = btn.dataset.vitrineCategoria;
+      document.querySelectorAll('[data-vitrine-categoria]').forEach(item => { item.classList.toggle('is-active', item === btn); item.setAttribute('aria-pressed', String(item === btn)); });
+      renderProdutos();
+    }));
+    document.getElementById('vitrine-limpar')?.addEventListener('click', () => {
+      input.value = ''; buscaVitrine = ''; filtroProdutosAtual = ''; categoriaVitrine = '';
+      document.getElementById(FILTRO_PRODUTOS_SELECT_ID).value = '';
+      document.querySelectorAll('[data-vitrine-categoria]').forEach(btn => { const active = btn.dataset.vitrineCategoria === ''; btn.classList.toggle('is-active', active); btn.setAttribute('aria-pressed', String(active)); });
+      renderProdutos();
+    });
+  }
+
   function iniciarProdutos() {
+    iniciarBuscaVitrine();
     montarSelectFiltroProdutos();
     aplicarFallbackCategoriasJson();
     renderProdutos();
