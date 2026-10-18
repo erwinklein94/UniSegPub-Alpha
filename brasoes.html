@@ -38,6 +38,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663" crossorigin="anonymous"></script>
   <link href="css/components/sugerir-correcao.css?v=20260517" rel="stylesheet" />
   <link href="css/components/theme-toggle.css?v=20260517" rel="stylesheet" />
+  <link href="css/pages/brasoes-onepage.css?v=20261018" rel="stylesheet" />
 </head>
 <body class="usp-home usp-brasoes" data-page="brasoes">
   <div class="usp-topline">
@@ -75,7 +76,7 @@
         <a href="associacoes-sindicatos.html">Associações e Sindicatos</a>
       </nav>
 
-      <form class="usp-search" action="guia-instituicoes.html" method="get" role="search">
+      <form class="usp-search" action="brasoes.html" method="get" role="search">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
         <input id="site-search" name="q" type="search" placeholder="Buscar instituição, brasão, história..." autocomplete="off" />
       </form>
@@ -93,8 +94,9 @@
       <div class="usp-container usp-brasoes-hero__grid">
         <div class="usp-hero__copy">
           <p class="usp-eyebrow"><span></span>Identidade institucional · acervo visual</p>
-          <h1 id="brasoes-titulo-principal">Brasões, símbolos e histórias das forças de segurança pública.</h1>
+          <h1 id="brasoes-titulo-principal">Símbolos que contam<br><mark>histórias de serviço.</mark></h1>
           <p class="usp-hero__lead">Entenda a identidade visual, a origem e os marcos institucionais de cada corporação coberta pelo portal.</p>
+          <div class="brasoes-hero-acervo" aria-label="Alguns símbolos do acervo"><div><img src="img/FEDERAL/pf.webp" alt="Brasão da Polícia Federal" width="80" height="80" /><span>Polícia Federal</span></div><div><img src="img/MILITAR/pmesp.webp" alt="Brasão da Polícia Militar de São Paulo" width="80" height="80" /><span>Polícia Militar</span></div><div><img src="img/CIVIL/pcsp.webp" alt="Brasão da Polícia Civil de São Paulo" width="80" height="80" /><span>Polícia Civil</span></div></div>
           <div class="usp-hero__actions" aria-label="Ações rápidas de brasões">
             <a class="usp-btn usp-btn--dark" href="#acervo-brasoes">Ver acervo <span>→</span></a>
             <a class="usp-btn" href="#como-ler-brasao">Como interpretar</a>
@@ -106,10 +108,11 @@
         <aside class="usp-quick-card usp-brasoes-filter-card" aria-label="Filtro de brasões e histórias">
           <div class="usp-quick-card__head">
             <span>Consulta rápida</span>
-            <strong>2 filtros</strong>
+            <strong>Explore o acervo</strong>
           </div>
           <h2>Escolha uma instituição</h2>
           <p>Filtre por esfera ou selecione uma corporação específica para abrir a ficha detalhada de brasão e história.</p>
+          <label class="brasoes-busca-label" for="brasoes-busca"><span>Buscar por nome ou sigla</span><input id="brasoes-busca" type="search" placeholder="Ex.: Polícia Civil, PF, PMESP…" autocomplete="off" /></label>
           <div class="usp-form-grid usp-brasoes-form-grid">
             <label for="brasoes-filtro-esfera">
               <span>Tipo de instituição</span>
@@ -220,18 +223,44 @@
           </div>
           <div class="usp-brasoes-filter-actions">
             <button class="usp-btn usp-btn--gold" data-brasoes-limpar type="button">Ver todas</button>
-            <span id="brasoes-contador-cards">56 instituições encontradas</span>
+            <span id="brasoes-contador-cards" role="status" aria-live="polite">Carregando acervo…</span>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="usp-stats usp-brasoes-stats" aria-label="Resumo do acervo de brasões">
-      <div class="usp-stat"><strong>56</strong><span>Instituições no acervo visual</span></div>
-      <div class="usp-stat"><strong>27 <em>UFs</em></strong><span>Cobertura nacional</span></div>
-      <div class="usp-stat"><strong>4</strong><span>Ramos estaduais principais</span></div>
-      <div class="usp-stat"><strong>3</strong><span>Instituições federais destacadas</span></div>
-      <div class="usp-stat"><strong>2026</strong><span>Conteúdo em revisão contínua</span></div>
+    <nav class="brasoes-onepage usp-container" aria-label="Nesta página"><a href="#acervo-brasoes">Explorar acervo</a><a href="#detalhe-brasao" id="brasoes-nav-detalhe" hidden>Ficha selecionada</a><a href="#como-ler-brasao">Como interpretar</a><a href="#transparencia-brasoes">Transparência</a></nav>
+    <section class="usp-stats usp-brasoes-stats" aria-label="Resumo do acervo carregado"><div class="usp-stat"><strong id="brasoes-total-acervo">—</strong><span>Instituições no acervo</span></div><div class="usp-stat"><strong id="brasoes-total-federal">—</strong><span>Instituições federais</span></div><div class="usp-stat"><strong id="brasoes-total-estadual">—</strong><span>Instituições estaduais</span></div></section>
+
+    <section class="usp-section usp-brasoes-list-section" id="acervo-brasoes" aria-labelledby="acervo-brasoes-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Acervo institucional</p>
+            <h2 id="acervo-brasoes-title">Explore as identidades da segurança pública</h2>
+            <p>Use os filtros do topo para reduzir a lista. Ao clicar em “Consultar história detalhada”, a ficha completa abre logo abaixo dos cards.</p>
+          </div>
+          <a class="usp-inline-link" href="#como-ler-brasao">Entenda as fichas →</a>
+        </div>
+
+        <section aria-label="Resumos de brasões e histórias por instituição" class="brasoes-conteudo-lista" id="brasoes-conteudo-lista">
+          <p id="brasoes-carregando">Carregando as instituições do acervo…</p>
+</section>
+        <p id="brasoes-vazio" hidden>Nenhuma instituição encontrada. Tente outro nome ou use “Ver todas” para limpar os filtros.</p>
+        <noscript><p>Habilite JavaScript para consultar o acervo e abrir as fichas institucionais.</p></noscript>
+        <nav aria-label="Paginação dos resumos de brasões e histórias" class="brasoes-paginacao" id="brasoes-paginacao"></nav>
+      </div>
+    </section>
+
+    <section class="usp-section usp-brasoes-detail-section" id="detalhe-brasao" hidden aria-labelledby="brasoes-detalhe-titulo">
+      <div class="usp-container">
+        <section class="usp-brasoes-detail brasoes-detalhe-card" hidden id="consulta-brasoes-detalhado">
+          <p class="usp-eyebrow"><span></span>História detalhada</p>
+          <h2 id="brasoes-detalhe-titulo">Ficha institucional de <mark id="txt-inst-brasoes">—</mark></h2>
+          <p class="usp-brasoes-detail-intro">A ficha reúne em destaque o brasão, a identificação, o contexto histórico e as referências cadastradas no acervo para a instituição selecionada.</p>
+          <div class="brasoes-historia-resultado" id="brasoes_historia_resultado"></div>
+        </section>
+      </div>
     </section>
 
     <section class="usp-section usp-brasoes-intro" id="como-ler-brasao" aria-labelledby="como-ler-brasao-title">
@@ -239,9 +268,10 @@
         <div class="usp-section__head">
           <div>
             <p class="usp-eyebrow"><span></span>Leitura dos símbolos</p>
+            <h2 id="como-ler-brasao-title">Mais que uma imagem, uma identidade.</h2>
             <p>Cada ficha separa natureza do órgão, abrangência, ramo de atuação, histórico resumido e pontos de atenção para conferência. A intenção é facilitar leitura, comparação e navegação entre corporações.</p>
           </div>
-          <a class="usp-inline-link" href="#detalhe-brasao">Abrir detalhe ao selecionar →</a>
+          <a class="usp-inline-link" href="#acervo-brasoes">Escolher uma instituição →</a>
         </div>
         <div class="usp-brasoes-method-grid" aria-label="Como a página organiza os brasões">
           <article><span>01</span><h3>Símbolo</h3><p>Imagem, emblema ou marca institucional exibida com proporção confortável e fundo neutro.</p></article>
@@ -252,35 +282,7 @@
       </div>
     </section>
 
-    <section class="usp-section usp-brasoes-list-section" id="acervo-brasoes" aria-labelledby="acervo-brasoes-title">
-      <div class="usp-container">
-        <div class="usp-section__head">
-          <div>
-            <p class="usp-eyebrow"><span></span>Acervo institucional</p>
-            <h2 id="acervo-brasoes-title">Cards de brasões e histórias por instituição</h2>
-            <p>Use os filtros do topo para reduzir a lista. Ao clicar em “Consultar história detalhada”, a ficha completa abre logo abaixo dos cards.</p>
-          </div>
-          <a class="usp-inline-link" href="remuneracao.html">Comparar com remuneração →</a>
-        </div>
-
-        <section aria-label="Resumos de brasões e histórias por instituição" class="brasoes-conteudo-lista" id="brasoes-conteudo-lista">
-</section>
-        <nav aria-label="Paginação dos resumos de brasões e histórias" class="brasoes-paginacao" id="brasoes-paginacao"></nav>
-      </div>
-    </section>
-
-    <section class="usp-section usp-brasoes-detail-section" id="detalhe-brasao" aria-labelledby="brasoes-detalhe-titulo">
-      <div class="usp-container">
-        <section class="usp-brasoes-detail brasoes-detalhe-card" hidden id="consulta-brasoes-detalhado">
-          <p class="usp-eyebrow"><span></span>História detalhada</p>
-          <h2 id="brasoes-detalhe-titulo">Ficha institucional de <mark id="txt-inst-brasoes">—</mark></h2>
-          <p class="usp-brasoes-detail-intro">A área abaixo reúne a imagem em destaque, identificação institucional, resumo, origem, marcos históricos, fontes e observações da instituição selecionada.</p>
-          <div class="brasoes-historia-resultado" id="brasoes_historia_resultado"></div>
-        </section>
-      </div>
-    </section>
-
-    <section class="usp-remu-warning usp-brasoes-warning" aria-label="Aviso de transparência sobre brasões e história">
+    <section class="usp-remu-warning usp-brasoes-warning" id="transparencia-brasoes" aria-label="Aviso de transparência sobre brasões e história">
       <div class="usp-container">
         <p class="usp-eyebrow usp-eyebrow--gold"><span></span>Aviso de transparência</p>
         <p>O conteúdo desta página é informativo, independente e não oficial. Brasões, símbolos, nomes de órgãos, chefias, efetivos, datas e estruturas administrativas podem ser alterados por legislação, decreto, regulamento, ato interno ou atualização visual. Para uso formal, confirme sempre em diário oficial, site institucional ou portal de transparência.</p>
@@ -312,7 +314,7 @@
       <nav aria-label="Concursos">
         <strong>Concursos</strong>
         <a href="concursos.html#oportunidades">Editais abertos</a>
-        <a href="concursos.html#lista-instituicoes">Editais previstos</a>
+        <a href="concursos.html#preparacao">Editais previstos</a>
         <a href="noticias.html">Notícias</a>
       </nav>
       <nav aria-label="Institucional">
@@ -345,11 +347,8 @@
   <script defer src="js/services/supabase-api.js?v=20260710dados1"></script>
   <script defer src="js/services/dados-portal.js?v=20260710dados1"></script>
   <script defer src="js/pages/cards-estaticos-supabase.js?v=20260710cards1"></script>
-  <script defer src="js/data/portal-config.js?v=20260506bmba1"></script>
-  <script defer src="js/data/bases-conteudo.js"></script>
-  <script defer src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
-  <script defer src="js/ui/header-estados.js?v=20260516pcdf2"></script>
-  <script defer src="js/pages/brasoes-conteudo-estatico.js?v=20260516brasoesdesktop1"></script>
+  <script defer src="js/pages/brasoes-conteudo-estatico.js?v=20261018onepage"></script>
+  <script defer src="js/pages/brasoes-onepage.js?v=20261018"></script>
   <script defer src="js/brasao-lightbox.js?v=20260516lightbox3"></script>
   <script>
     (function () {

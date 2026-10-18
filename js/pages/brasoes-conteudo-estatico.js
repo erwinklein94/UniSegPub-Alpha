@@ -1,10 +1,10 @@
 /* Brasões e Histórias — filtro e paginação visual sobre conteúdo já escrito no HTML. */
 (function () {
-  const CARDS_POR_PAGINA = 4;
+  const CARDS_POR_PAGINA = 8;
 
   function qs(selector, root) { return (root || document).querySelector(selector); }
   function qsa(selector, root) { return Array.from((root || document).querySelectorAll(selector)); }
-  function normalizar(valor) { return String(valor || '').trim().toLowerCase(); }
+  function normalizar(valor) { return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLowerCase(); }
 
   function cards() {
     return qsa('[data-brasoes-card][data-inst]');
@@ -21,11 +21,15 @@
   function esconderDetalhe() {
     const bloco = detalhe();
     if (bloco) bloco.hidden = true;
+    const secao = qs('#detalhe-brasao'); if (secao) secao.hidden = true;
+    const link = qs('#brasoes-nav-detalhe'); if (link) link.hidden = true;
   }
 
   function mostrarDetalhe() {
     const bloco = detalhe();
     if (bloco) bloco.hidden = false;
+    const secao = qs('#detalhe-brasao'); if (secao) secao.hidden = false;
+    const link = qs('#brasoes-nav-detalhe'); if (link) link.hidden = false;
   }
 
   function atualizarOpcoesInstituicao(seletorEsfera, seletorInstituicao) {
@@ -48,6 +52,9 @@
     return cards().filter(card => {
       if (esfera && card.dataset.esfera !== esfera) return false;
       if (inst && card.dataset.inst !== inst) return false;
+      const busca = normalizar(qs('#brasoes-busca')?.value);
+      const texto = normalizar(card.querySelector('.brasoes-card-copy')?.textContent || card.textContent);
+      if (busca && !busca.split(/\s+/).every(termo => texto.includes(termo))) return false;
       return true;
     });
   }
@@ -63,7 +70,9 @@
     paginacao.hidden = false;
     const botoes = [];
     botoes.push(`<button type="button" data-brasoes-page="prev" ${paginaAtual === 1 ? 'disabled' : ''}>Anterior</button>`);
-    for (let i = 1; i <= totalPaginas; i += 1) {
+    const paginas = [...new Set([1,paginaAtual-1,paginaAtual,paginaAtual+1,totalPaginas])].filter(i=>i>=1&&i<=totalPaginas).sort((a,b)=>a-b);
+    for (const [indice,i] of paginas.entries()) {
+      if (indice && i > paginas[indice-1]+1) botoes.push('<span aria-hidden="true">…</span>');
       botoes.push(`<button type="button" data-brasoes-page="${i}" ${i === paginaAtual ? 'aria-current="page"' : ''}>${i}</button>`);
     }
     botoes.push(`<button type="button" data-brasoes-page="next" ${paginaAtual === totalPaginas ? 'disabled' : ''}>Próxima</button>`);
@@ -93,25 +102,46 @@
       return;
     }
 
+    const card = cardDaInstituicao(inst);
+    if (!card || !cont) return;
     mostrarDetalhe();
     atualizarTituloDetalhe(inst);
-      try {
-      if (typeof mudarInstituicao === 'function') mudarInstituicao(inst);
-    } catch (erro) {
-      console.warn('Falha ao atualizar cabeçalho institucional em Brasões:', erro);
+    // A ficha reutiliza o mesmo conteúdo editorial do acervo, sem depender
+    // de inicializadores de remuneração ou do cabeçalho de outras páginas.
+    const hero = document.createElement('div');
+    hero.className = 'brasoes-hero';
+    const imagem = card.querySelector('.brasoes-card-imgbox')?.cloneNode(true);
+    if (imagem) {
+      imagem.className = 'brasoes-imagem-wrap';
+      const img = imagem.querySelector('img');
+      if (img) { img.className = 'brasoes-imagem'; img.loading = 'eager'; }
+      hero.append(imagem);
     }
-
-    try {
-      if (typeof renderizarBrasoesHistoria === 'function') renderizarBrasoesHistoria();
-    } catch (erro) {
-      console.warn('Falha ao carregar brasão e história:', erro);
+    const copy = card.querySelector('.brasoes-card-copy')?.cloneNode(true);
+    if (copy) {
+      copy.className = 'brasoes-hero-copy';
+      const titulo = copy.querySelector('h2');
+      if (titulo) { const h3 = document.createElement('h3'); h3.textContent = titulo.textContent; titulo.replaceWith(h3); }
+      hero.append(copy);
     }
-
-    atualizarTituloDetalhe(inst);
+    const partes = [hero];
+    const indicadores = card.querySelector('.brasoes-card-indicadores')?.cloneNode(true);
+    if (indicadores) {
+      indicadores.className = 'brasoes-resumo-grid';
+      [...indicadores.children].forEach(item => item.className = 'brasoes-resumo-item');
+      partes.push(indicadores);
+    }
+    card.querySelectorAll('.brasoes-card-corpo > *, .brasoes-card-rodape > p').forEach(node => {
+      const bloco = document.createElement('article');
+      bloco.className = 'brasoes-historia-card';
+      bloco.append(node.cloneNode(true));
+      partes.push(bloco);
+    });
+    cont.replaceChildren(...partes);
 
     if (rolar) {
       const destino = detalhe();
-      if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (destino) destino.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     }
   }
 
@@ -146,6 +176,8 @@
       }
 
       renderizarPaginacao(paginacao, paginaAtual, totalPaginas);
+      const vazio = qs('#brasoes-vazio'); if (vazio) vazio.hidden = filtrados.length > 0 || cards().length === 0;
+      document.dispatchEvent(new Event('brasoes:renderizada'));
     }
 
     seletorEsfera.addEventListener('change', () => {
@@ -162,6 +194,7 @@
 
     if (btnLimpar) {
       btnLimpar.addEventListener('click', () => {
+        const busca = qs('#brasoes-busca'); if (busca) busca.value = '';
         seletorEsfera.value = '';
         seletorInstituicao.value = '';
         paginaAtual = 1;
@@ -185,7 +218,7 @@
       if (paginaAtual > totalPaginas) paginaAtual = totalPaginas;
       renderizar();
       const lista = qs('#brasoes-conteudo-lista');
-      if (lista) lista.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (lista) lista.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     });
 
     function instInicialDaUrl() {
@@ -210,7 +243,7 @@
       paginaAtual = 1;
       renderizar();
       selecionarInstituicao(inst, false);
-      window.setTimeout(() => (document.getElementById(window.location.hash.replace(/^#/, '')) || card).scrollIntoView({ behavior: 'smooth', block: 'start' }), 0);
+      window.setTimeout(() => (document.getElementById(window.location.hash.replace(/^#/, '')) || card).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }), 0);
       return true;
     }
 
@@ -229,6 +262,10 @@
       selecionarInstituicao(inst, true);
     });
 
+    const busca = qs('#brasoes-busca');
+    if (busca) { busca.value = new URLSearchParams(location.search).get('q') || ''; busca.addEventListener('input', () => { paginaAtual = 1; renderizar(); }); }
+    document.addEventListener('cards-estaticos:pronto', event => { if (event.detail?.pagina !== 'brasoes') return; qs('#brasoes-carregando')?.remove(); if (!aplicarInstInicialDaUrl()) renderizar(); });
+    document.addEventListener('cards-estaticos:erro', () => { const aviso=qs('#brasoes-carregando'); if(aviso) aviso.textContent='Não foi possível carregar o acervo. Recarregue a página para tentar novamente.'; });
     esconderDetalhe();
     if (!aplicarInstInicialDaUrl()) renderizar();
   });

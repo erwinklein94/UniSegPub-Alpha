@@ -1,10 +1,207 @@
-<main class="page-section active" id="page-brasoes" role="main">
-<div class="card">
-<h2>Brasões e história (<span id="txt-inst-brasoes">—</span>)</h2>
-<div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Escolha a esfera e a instituição nesta aba para visualizar o brasão em destaque, um resumo institucional mais completo e uma breve história com criação, origem, marcos históricos e dados de efetivo quando disponíveis.
-    </div>
-<!-- Seletor de instituição inserido automaticamente pelo JavaScript nesta aba. -->
-<div class="brasoes-historia-resultado" id="brasoes_historia_resultado"></div>
-</div>
-</main>
+
+  <main class="page-section active" id="page-brasoes" role="main">
+    <nav class="usp-breadcrumb" aria-label="Caminho da página">
+      <div class="usp-container">
+        <a href="index.html">Início</a><span>/</span><strong>Brasões e História</strong>
+      </div>
+    </nav>
+
+    <section class="usp-hero usp-brasoes-hero" aria-labelledby="brasoes-titulo-principal">
+      <div class="usp-container usp-brasoes-hero__grid">
+        <div class="usp-hero__copy">
+          <p class="usp-eyebrow"><span></span>Identidade institucional · acervo visual</p>
+          <h1 id="brasoes-titulo-principal">Símbolos que contam<br><mark>histórias de serviço.</mark></h1>
+          <p class="usp-hero__lead">Entenda a identidade visual, a origem e os marcos institucionais de cada corporação coberta pelo portal.</p>
+          <div class="brasoes-hero-acervo" aria-label="Alguns símbolos do acervo"><div><img src="img/FEDERAL/pf.webp" alt="Brasão da Polícia Federal" width="80" height="80" /><span>Polícia Federal</span></div><div><img src="img/MILITAR/pmesp.webp" alt="Brasão da Polícia Militar de São Paulo" width="80" height="80" /><span>Polícia Militar</span></div><div><img src="img/CIVIL/pcsp.webp" alt="Brasão da Polícia Civil de São Paulo" width="80" height="80" /><span>Polícia Civil</span></div></div>
+          <div class="usp-hero__actions" aria-label="Ações rápidas de brasões">
+            <a class="usp-btn usp-btn--dark" href="#acervo-brasoes">Ver acervo <span>→</span></a>
+            <a class="usp-btn" href="#como-ler-brasao">Como interpretar</a>
+            <a class="usp-btn" href="guia-instituicoes.html">Guia das instituições</a>
+          </div>
+          <p class="usp-note"><strong>Aviso:</strong> brasões, denominações, chefias e dados institucionais podem mudar por ato oficial. Use esta página como referência inicial e confirme informações formais nos canais oficiais.</p>
+        </div>
+
+        <aside class="usp-quick-card usp-brasoes-filter-card" aria-label="Filtro de brasões e histórias">
+          <div class="usp-quick-card__head">
+            <span>Consulta rápida</span>
+            <strong>Explore o acervo</strong>
+          </div>
+          <h2>Escolha uma instituição</h2>
+          <p>Filtre por esfera ou selecione uma corporação específica para abrir a ficha detalhada de brasão e história.</p>
+          <label class="brasoes-busca-label" for="brasoes-busca"><span>Buscar por nome ou sigla</span><input id="brasoes-busca" type="search" placeholder="Ex.: Polícia Civil, PF, PMESP…" autocomplete="off" /></label>
+          <div class="usp-form-grid usp-brasoes-form-grid">
+            <label for="brasoes-filtro-esfera">
+              <span>Tipo de instituição</span>
+              <select aria-label="Filtrar por tipo de instituição" id="brasoes-filtro-esfera">
+                <option selected value="">Todas</option>
+                <option value="federal">Federal</option>
+                <option value="estadual">Estadual</option>
+              </select>
+            </label>
+            <label for="brasoes-filtro-instituicao">
+              <span>Instituição</span>
+              <select aria-label="Filtrar por instituição" id="brasoes-filtro-instituicao">
+
+<option selected="" value="">Todas as instituições</option>
+<optgroup label="União">
+<option data-esfera="federal" value="pf">PF — Polícia Federal</option>
+<option data-esfera="federal" value="prf">PRF — Polícia Rodoviária Federal</option>
+</optgroup>
+<optgroup label="Distrito Federal (DF)">
+<option data-esfera="estadual" value="pcdf">PCDF — Polícia Civil do Distrito Federal</option>
+</optgroup>
+<optgroup label="Acre (AC)">
+<option data-esfera="estadual" value="pmac">PMAC — Polícia Militar</option>
+<option data-esfera="estadual" value="bmac">BMAC — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcac">PCAC — Polícia Civil</option>
+<option data-esfera="estadual" value="ppac">PPAC — Polícia Penal</option>
+</optgroup>
+<optgroup label="Alagoas (AL)">
+<option data-esfera="estadual" value="pmal">PMAL — Polícia Militar</option>
+<option data-esfera="estadual" value="bmal">BMAL — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcal">PCAL — Polícia Civil</option>
+</optgroup>
+<optgroup label="Amapá (AP)">
+<option data-esfera="estadual" value="pmap">PMAP — Polícia Militar</option>
+<option data-esfera="estadual" value="bmap">BMAP — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcap">PCAP — Polícia Civil</option>
+</optgroup>
+<optgroup label="Amazonas (AM)">
+<option data-esfera="estadual" value="pmam">PMAM — Polícia Militar</option>
+<option data-esfera="estadual" value="bmam">BMAM — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcam">PCAM — Polícia Civil</option>
+</optgroup>
+<optgroup label="Bahia (BA)">
+<option data-esfera="estadual" value="pmba">PMBA — Polícia Militar</option>
+<option data-esfera="estadual" value="bmba">BMBA — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcba">PCBA — Polícia Civil</option>
+<option data-esfera="estadual" value="ppba">PPBA — Polícia Penal</option>
+</optgroup>
+<optgroup label="Ceará (CE)">
+<option data-esfera="estadual" value="pcce">PCCE — Polícia Civil</option>
+</optgroup>
+<optgroup label="Espírito Santo (ES)">
+<option data-esfera="estadual" value="pmes">PMES — Polícia Militar</option>
+<option data-esfera="estadual" value="bmes">CBMES — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pces">PCES — Polícia Civil</option>
+<option data-esfera="estadual" value="ppes">PPES — Polícia Penal</option>
+</optgroup>
+<optgroup label="Mato Grosso (MT)">
+<option data-esfera="estadual" value="pmmt">PMMT — Polícia Militar</option>
+<option data-esfera="estadual" value="bmmt">CBMMT — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcmt">PCMT — Polícia Civil</option>
+<option data-esfera="estadual" value="ppmt">PPMT — Polícia Penal</option>
+</optgroup>
+<optgroup label="Mato Grosso do Sul (MS)">
+<option data-esfera="estadual" value="pmms">PMMS — Polícia Militar</option>
+<option data-esfera="estadual" value="bmms">CBMMS — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcms">PCMS — Polícia Civil</option>
+<option data-esfera="estadual" value="ppms">PPMS — Polícia Penal</option>
+</optgroup>
+<optgroup label="Minas Gerais (MG)">
+<option data-esfera="estadual" value="pmmg">PMMG — Polícia Militar</option>
+<option data-esfera="estadual" value="bmmg">CBMMG — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcmg">PCMG — Polícia Civil</option>
+<option data-esfera="estadual" value="ppmg">PPMG — Polícia Penal</option>
+</optgroup>
+<optgroup label="Paraná (PR)">
+<option data-esfera="estadual" value="pmpr">PMPR — Polícia Militar</option>
+<option data-esfera="estadual" value="bmpr">CBMPR — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcpr">PCPR — Polícia Civil</option>
+<option data-esfera="estadual" value="pppr">PPPR — Polícia Penal</option>
+</optgroup>
+<optgroup label="Rio Grande do Sul (RS)">
+<option data-esfera="estadual" value="pmrs">PMRS — Brigada Militar / Polícia Militar</option>
+<option data-esfera="estadual" value="pcrs">PCRS — Polícia Civil</option>
+<option data-esfera="estadual" value="pprs">PPRS — Polícia Penal</option>
+</optgroup>
+<optgroup label="Rio de Janeiro (RJ)">
+<option data-esfera="estadual" value="pmerj">PMERJ — Polícia Militar</option>
+<option data-esfera="estadual" value="bmrj">CBMERJ — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcerj">PCERJ — Polícia Civil</option>
+<option data-esfera="estadual" value="pprj">PPRJ — Polícia Penal</option>
+</optgroup>
+<optgroup label="Santa Catarina (SC)">
+<option data-esfera="estadual" value="pmsc">PMSC — Polícia Militar</option>
+<option data-esfera="estadual" value="bmsc">BMSC — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcsc">PCSC — Polícia Civil</option>
+<option data-esfera="estadual" value="ppsc">PPSC — Polícia Penal</option>
+</optgroup>
+<optgroup label="São Paulo (SP)">
+<option data-esfera="estadual" value="pmesp">PMESP — Polícia Militar</option>
+<option data-esfera="estadual" value="bmsp">CBPMESP — Bombeiro Militar</option>
+<option data-esfera="estadual" value="pcsp">PCSP — Polícia Civil</option>
+<option data-esfera="estadual" value="ppsp">PPSP — Polícia Penal</option>
+</optgroup>
+
+              </select>
+            </label>
+          </div>
+          <div class="usp-brasoes-filter-actions">
+            <button class="usp-btn usp-btn--gold" data-brasoes-limpar type="button">Ver todas</button>
+            <span id="brasoes-contador-cards" role="status" aria-live="polite">Carregando acervo…</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="brasoes-onepage usp-container" aria-label="Nesta página"><a href="#acervo-brasoes">Explorar acervo</a><a href="#detalhe-brasao" id="brasoes-nav-detalhe" hidden>Ficha selecionada</a><a href="#como-ler-brasao">Como interpretar</a><a href="#transparencia-brasoes">Transparência</a></nav>
+    <section class="usp-stats usp-brasoes-stats" aria-label="Resumo do acervo carregado"><div class="usp-stat"><strong id="brasoes-total-acervo">—</strong><span>Instituições no acervo</span></div><div class="usp-stat"><strong id="brasoes-total-federal">—</strong><span>Instituições federais</span></div><div class="usp-stat"><strong id="brasoes-total-estadual">—</strong><span>Instituições estaduais</span></div></section>
+
+    <section class="usp-section usp-brasoes-list-section" id="acervo-brasoes" aria-labelledby="acervo-brasoes-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Acervo institucional</p>
+            <h2 id="acervo-brasoes-title">Explore as identidades da segurança pública</h2>
+            <p>Use os filtros do topo para reduzir a lista. Ao clicar em “Consultar história detalhada”, a ficha completa abre logo abaixo dos cards.</p>
+          </div>
+          <a class="usp-inline-link" href="#como-ler-brasao">Entenda as fichas →</a>
+        </div>
+
+        <section aria-label="Resumos de brasões e histórias por instituição" class="brasoes-conteudo-lista" id="brasoes-conteudo-lista">
+          <p id="brasoes-carregando">Carregando as instituições do acervo…</p>
+</section>
+        <p id="brasoes-vazio" hidden>Nenhuma instituição encontrada. Tente outro nome ou use “Ver todas” para limpar os filtros.</p>
+        <noscript><p>Habilite JavaScript para consultar o acervo e abrir as fichas institucionais.</p></noscript>
+        <nav aria-label="Paginação dos resumos de brasões e histórias" class="brasoes-paginacao" id="brasoes-paginacao"></nav>
+      </div>
+    </section>
+
+    <section class="usp-section usp-brasoes-detail-section" id="detalhe-brasao" hidden aria-labelledby="brasoes-detalhe-titulo">
+      <div class="usp-container">
+        <section class="usp-brasoes-detail brasoes-detalhe-card" hidden id="consulta-brasoes-detalhado">
+          <p class="usp-eyebrow"><span></span>História detalhada</p>
+          <h2 id="brasoes-detalhe-titulo">Ficha institucional de <mark id="txt-inst-brasoes">—</mark></h2>
+          <p class="usp-brasoes-detail-intro">A ficha reúne em destaque o brasão, a identificação, o contexto histórico e as referências cadastradas no acervo para a instituição selecionada.</p>
+          <div class="brasoes-historia-resultado" id="brasoes_historia_resultado"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="usp-section usp-brasoes-intro" id="como-ler-brasao" aria-labelledby="como-ler-brasao-title">
+      <div class="usp-container">
+        <div class="usp-section__head">
+          <div>
+            <p class="usp-eyebrow"><span></span>Leitura dos símbolos</p>
+            <h2 id="como-ler-brasao-title">Mais que uma imagem, uma identidade.</h2>
+            <p>Cada ficha separa natureza do órgão, abrangência, ramo de atuação, histórico resumido e pontos de atenção para conferência. A intenção é facilitar leitura, comparação e navegação entre corporações.</p>
+          </div>
+          <a class="usp-inline-link" href="#acervo-brasoes">Escolher uma instituição →</a>
+        </div>
+        <div class="usp-brasoes-method-grid" aria-label="Como a página organiza os brasões">
+          <article><span>01</span><h3>Símbolo</h3><p>Imagem, emblema ou marca institucional exibida com proporção confortável e fundo neutro.</p></article>
+          <article><span>02</span><h3>Contexto</h3><p>Natureza da corporação, UF, esfera e papel institucional dentro da segurança pública.</p></article>
+          <article><span>03</span><h3>História</h3><p>Resumo da origem, evolução administrativa, marcos e observações de atualização.</p></article>
+          <article><span>04</span><h3>Conferência</h3><p>Alerta para validar brasões, nomes oficiais, datas e dados sensíveis em fontes oficiais.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="usp-remu-warning usp-brasoes-warning" id="transparencia-brasoes" aria-label="Aviso de transparência sobre brasões e história">
+      <div class="usp-container">
+        <p class="usp-eyebrow usp-eyebrow--gold"><span></span>Aviso de transparência</p>
+        <p>O conteúdo desta página é informativo, independente e não oficial. Brasões, símbolos, nomes de órgãos, chefias, efetivos, datas e estruturas administrativas podem ser alterados por legislação, decreto, regulamento, ato interno ou atualização visual. Para uso formal, confirme sempre em diário oficial, site institucional ou portal de transparência.</p>
+      </div>
+    </section>
+  </main>
