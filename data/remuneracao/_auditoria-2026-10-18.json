@@ -1,0 +1,3493 @@
+{
+  "resumo": {
+    "data": "2026-10-18",
+    "total": 110,
+    "conferidas": 50,
+    "a_confirmar": 60,
+    "linhas_antes": 1394,
+    "linhas_depois": 2350,
+    "fontes_consultadas": 340
+  },
+  "instituicoes": [
+    {
+      "instituicao_id": "prf",
+      "sigla": "PRF",
+      "uf": "BR",
+      "situacao": "conferida",
+      "linhas_antes": 18,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.gov.br/prf/pt-br/concurso-2021",
+          "status": null,
+          "erro": "HTTP Error 404: "
+        }
+      ],
+      "nota": "Os 18 padrões foram confrontados com a coluna de maio/2026 do Anexo XXVII. Auxílios não incluídos.",
+      "fonte_conferida": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "referencia": "2026-05-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcdf",
+      "sigla": "PCDF",
+      "uf": "DF",
+      "situacao": "conferida",
+      "linhas_antes": 20,
+      "linhas_depois": 20,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://legis.senado.leg.br/norma/43090723/publicacao/43091066",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legis.senado.leg.br/norma/43090723",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.cebraspe.org.br/policia-civil-do-distrito-federal-abre-vagas-para-delegado/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios conferidos nos anexos III e IV, na coluna com efeitos a partir de janeiro/2026. Não inclui vantagens e indenizações.",
+      "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "referencia": "2026-01-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pmesp",
+      "sigla": "PMESP",
+      "uf": "SP",
+      "situacao": "conferida",
+      "linhas_antes": 19,
+      "linhas_depois": 19,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2026/lei.complementar-18441-02.04.2026.html",
+          "status": null,
+          "erro": "HTTP Error 404: 404"
+        }
+      ],
+      "nota": "Salário inicial da tabela de abril/2026, com salário-base, RETP e representação onde indicada. Não inclui insalubridade nem vantagens pessoais. O CBPMESP integra a carreira da PMESP.",
+      "fonte_conferida": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+      "referencia": "2026-04-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "bmsp",
+      "sigla": "CBPMESP",
+      "uf": "SP",
+      "situacao": "conferida",
+      "linhas_antes": 14,
+      "linhas_depois": 19,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
+          "status": null,
+          "erro": "HTTP Error 404: 404"
+        },
+        {
+          "url": "https://concursos.policiamilitar.sp.gov.br/ingresso-como-soldado-pm-de-2a-classe/",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Salário inicial da tabela de abril/2026, com salário-base, RETP e representação onde indicada. Não inclui insalubridade nem vantagens pessoais. O CBPMESP integra a carreira da PMESP.",
+      "fonte_conferida": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+      "referencia": "2026-04-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pcsp",
+      "sigla": "PCSP",
+      "uf": "SP",
+      "situacao": "a_confirmar",
+      "linhas_antes": 56,
+      "linhas_depois": 56,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
+          "status": null,
+          "erro": "HTTP Error 404: 404"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/spl/2025/05/Acessorio/1000607773_1000750112_Acessorio.pdf",
+          "status": null,
+          "erro": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2011/lei.complementar-1152-25.10.2011.html",
+          "status": null,
+          "erro": "HTTP Error 404: 404"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppsp",
+      "sigla": "PPSP",
+      "uf": "SP",
+      "situacao": "a_confirmar",
+      "linhas_antes": 20,
+      "linhas_depois": 20,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/original-lei.complementar-1416-26.09.2024.html",
+          "status": null,
+          "erro": "HTTP Error 404: 404"
+        },
+        {
+          "url": "https://www.al.sp.gov.br/spl/2024/09/Acessorio/1000560162_1000700324_Acessorio.pdf",
+          "status": null,
+          "erro": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "url": "https://sap.sp.gov.br/sec_adm_penitenciaria/unidades_administrativas_e_fundacoes/policia_penal",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.institutoaocp.org.br/concursos/664",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmal",
+      "sigla": "PMAL",
+      "uf": "AL",
+      "situacao": "a_confirmar",
+      "linhas_antes": 27,
+      "linhas_depois": 27,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://cdn.cebraspe.org.br/concursos/pm_al_26/arquivos/4F19563019D5F3C31114556A83C09443AAEA573037B5F7D401F8A4EFD4069911.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.al.leg.br/norma/216",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcal",
+      "sigla": "PCAL",
+      "uf": "AL",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://gestaointegrada.seplag.al.gov.br/relatorio-tabela-remuneratoria",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.al.gov.br/pessoal/legislacao/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.al.gov.br/media/legislacao/2023/Lei%20reestruturando%20Carreira%20da%20PC%2C%20de%2007-11-2023.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppal",
+      "sigla": "PPAL",
+      "uf": "AL",
+      "situacao": "a_confirmar",
+      "linhas_antes": 28,
+      "linhas_depois": 28,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2022/2243/lei_no_8.650_de_31_de_marco_de_2022_.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2022/2243/lei_no_8_de_31_de_marco_de_2022_.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://transparencia.al.gov.br/media/legislacao/2018/Lei%20n%C2%BA%207.993%2C%20de%2015-02-2018%20-%20SERIS.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2022/2373/lei_complementar_no_58_de_8_de_novembro_de_2022.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmmg",
+      "sigla": "CBMMG",
+      "uf": "MG",
+      "situacao": "conferida",
+      "linhas_antes": 3,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2010%20de%202026_CFSD__2027.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.mg.gov.br/storage/files/303/EDITAL%2009%20DE%202026_CFO_2027.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/25804/2026/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.almg.gov.br/atividade-parlamentar/leis/legislacao-mineira/lei/texto/print.html?ano=2005&comp=&cons=1&num=15962&tipo=LEI",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.mg.gov.br/concursos",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela oficial de 2026, após a revisão de 5,4%, sem reaplicar o reajuste sobre valores já atualizados. As linhas de aluno são remunerações de formação.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "ppmg",
+      "sigla": "PPMG",
+      "uf": "MG",
+      "situacao": "conferida",
+      "linhas_antes": 1,
+      "linhas_depois": 30,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/25804/2026/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.seguranca.mg.gov.br/index.php/noticias/policia-penal-de-minas-gerais-abre-o-maior-concurso-de-sua-historia-com-1-178-vagas",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.almg.gov.br/legislacao-mineira/LEI/14695/2003/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/24959/2024/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Vencimento básico de 2026, por nível e grau, jornada de 40h. Inicial corrigido para R$ 5.620,59; não é soma de auxílios.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "vencimento_base"
+    },
+    {
+      "instituicao_id": "pmmg",
+      "sigla": "PMMG",
+      "uf": "MG",
+      "situacao": "conferida",
+      "linhas_antes": 2,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.almg.gov.br/legislacao-mineira/texto/LEI/25804/2026/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3161539",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3720960",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://www.policiamilitar.mg.gov.br",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela oficial de 2026, após a revisão de 5,4%, sem reaplicar o reajuste sobre valores já atualizados. As linhas de aluno são remunerações de formação.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pcmg",
+      "sigla": "PCMG",
+      "uf": "MG",
+      "situacao": "conferida",
+      "linhas_antes": 5,
+      "linhas_depois": 86,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.policiacivil.mg.gov.br/site-pc/noticia/exibir?=PCMG-abre-concurso-com-255-vagas-para-carreiras-policiais&PCMG-abre-concurso-com-255-vagas-para-carreiras-policiais=&id=4039904",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://cdn.cebraspe.org.br/concursos/pc_mg_25_tpag/arquivos/50DD137B23BF474B1B8ED6608D0772F9EEA7CF6F5D3F64A483D9A99F36208796.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.agenciaminas.mg.gov.br/noticia/governo-de-minas-sanciona-projeto-de-lei-sobre-recomposicao-salarial-de-5-4-para-o-funcionalismo-publico",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Vencimentos básicos por cargo, nível e grau, na tabela de 2026. Carreiras policiais e de apoio identificadas separadamente.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "vencimento_base"
+    },
+    {
+      "instituicao_id": "bmpr",
+      "sigla": "CBMPR",
+      "uf": "PR",
+      "situacao": "conferida",
+      "linhas_antes": 18,
+      "linhas_depois": 60,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.pr.gov.br/sites/bombeiros/arquivos_restritos/files/documento/2025-09/edital_de_abertura_-_concurso_publico_no_01-2025_-_cadete_cbmpr_-_retificado.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.pr.gov.br/Pagina/Formas-de-Ingresso",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios por posto/graduação e classe, implantados em outubro/2026. Substitui a etapa de outubro/2025. Valores de formação não foram extrapolados, pois dependem também das regras de reajuste das bolsas.",
+      "fonte_conferida": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=abrirAnexo&codArquivoAnexado=73961",
+      "referencia": "2026-10-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pmpr",
+      "sigla": "PMPR",
+      "uf": "PR",
+      "situacao": "conferida",
+      "linhas_antes": 30,
+      "linhas_depois": 60,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2025-11/tabelas_de_remuneracoes_vigentes_em_2025_outubro.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pmpr.pr.gov.br/Noticia/PMPR-divulga-como-sera-distribuicao-dos-25-mil-novos-policiais-militares-nas-regioes-do",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pmpr.pr.gov.br/Noticia/Policia-Militar-do-Parana-abre-concurso-publico-com-2000-vagas",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios por posto/graduação e classe, implantados em outubro/2026. Substitui a etapa de outubro/2025. Valores de formação não foram extrapolados, pois dependem também das regras de reajuste das bolsas.",
+      "fonte_conferida": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=abrirAnexo&codArquivoAnexado=73961",
+      "referencia": "2026-10-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcpr",
+      "sigla": "PCPR",
+      "uf": "PR",
+      "situacao": "a_confirmar",
+      "linhas_antes": 8,
+      "linhas_depois": 8,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-01/tabelas_de_remuneracoes_vigentes_em_janeiro_2026-1.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmam",
+      "sigla": "PMAM",
+      "uf": "AM",
+      "situacao": "conferida",
+      "linhas_antes": 3,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://pm.am.gov.br/portal/document/download/edital_pmam_2021.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2012/3/2382",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2022/1/6753?o=1",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.am.gov.br/portal/legislacao?category=2&topic=2",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.aleam.gov.br/delegado-pericles-articula-aprovacao-de-reajuste-salarial-para-as-policias-civil-militar-e-bombeiros/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela implantada em dezembro/2025, aplicável a outubro/2026. A Lei 8.442/2026 prevê nova etapa apenas em 01/11/2026, ainda não aplicada. Retroativos parcelados não são salário mensal recorrente.",
+      "fonte_conferida": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf",
+      "referencia": "2025-12-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pcam",
+      "sigla": "PCAM",
+      "uf": "AM",
+      "situacao": "a_confirmar",
+      "linhas_antes": 6,
+      "linhas_depois": 6,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.aleam.gov.br/delegado-pericles-articula-aprovacao-de-reajuste-salarial-para-as-policias-civil-militar-e-bombeiros/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_01_pc_am.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital_02_pc_am.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.aleam.gov.br/roberto-cidade-comanda-votacao-que-aprovou-reajuste-salarial-a-servidores-da-assembleia-legislativa-e-profissionais-das-forcas-de-seguranca/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmerj",
+      "sigla": "PMERJ",
+      "uf": "RJ",
+      "situacao": "conferida",
+      "linhas_antes": 12,
+      "linhas_depois": 24,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sepm.rj.gov.br/servidores/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Substituída a coluna incorreta por composições da tabela SEPM de janeiro/2026. Postos com GHP de 80% e 110% aparecem separados. Os totais de referência dependem de habilitação.",
+      "fonte_conferida": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "bmrj",
+      "sigla": "CBMERJ",
+      "uf": "RJ",
+      "situacao": "a_confirmar",
+      "linhas_antes": 4,
+      "linhas_depois": 4,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/Edital-CFO-2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.rj.gov.br/gesperj/Caderno_de_Remunera%C3%A7%C3%A3o_",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno_de_RH-Jan2026.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcerj",
+      "sigla": "PCERJ",
+      "uf": "RJ",
+      "situacao": "conferida",
+      "linhas_antes": 22,
+      "linhas_depois": 22,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.rj.gov.br/gesperj/Caderno_de_Remunera%C3%A7%C3%A3o_",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www3.alerj.rj.gov.br/lotus_notes/default.asp?URL=L3NjcHJvMjMyNy5uc2YvMGM1YmY1Y2RlOTU2MDFmOTAzMjU2Y2FhMDAyMzEzMWIvYjEyMjQ0NmQ4MzU0MjYwMjAzMjU4Y2VhMDA0YTUxZjM%2FT3BlbkRvY3VtZW50JkhpZ2hsaWdodD0wLDIwMjUwMzA2MDI3&id=161",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.policiacivil.rj.gov.br/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "As 22 referências foram conferidas no caderno oficial de janeiro/2026. Os totais incluem GHP máximo: a coluna não representa automaticamente a remuneração inicial sem essa habilitação.",
+      "fonte_conferida": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pmba",
+      "sigla": "PMBA",
+      "uf": "BA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 10,
+      "linhas_depois": 10,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ba.gov.br/ssp/2025/04/25/governo-do-estado-propoe-ganhos-de-1476-ate-2026-para-oficiais-e-pracas-da-pm-e-corpo-de-bombeiros",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcba",
+      "sigla": "PCBA",
+      "uf": "BA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.ba.gov.br/policiacivil/sites/site-pcba/files/migracao_2024/arquivos/File/EDITALDEABERTURA2022/EDITALDEABERTURADEINSCRICOESSAEBNr022022.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25762-2025",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ba.gov.br/administracao/noticias/2025-04/8497/governador-encaminha-projeto-de-lei-que-altera-estrutura-remuneratoria-das",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ba.gov.br/comunicacao/index.php/noticias/2025-05/368394/audio-governador-sanciona-leis-que-concedem-reajuste-para-carreiras-da",
+          "status": null,
+          "erro": "HTTP Error 500: Internal Server Error"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmrs",
+      "sigla": "PMRS",
+      "uf": "RS",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/21083233-edital-da-dresa-n-01-2025-soldado-de-primeira-classe.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/31113326-edital-da-dresa-n-cspm-01-2025-edital-de-abertura-cspm.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202504/03111726-edital-da-dresa-n-cbos-01-2025-edital-de-abertura-cbos.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcrs",
+      "sigla": "PCRS",
+      "uf": "RS",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.pc.rs.gov.br/upload/arquivos/202510/24083812-edital-de-abertura-agentes-admin-correto.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.rs.gov.br/upload/arquivos/202510/13082837-edital-de-abertura-04-2025-admin-f.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.rs.gov.br/publicado-edital-de-abertura-de-concurso-publico-de-ingresso-nas-carreiras-de-escrivao-de-policia-e-de-inspetor-de-policia",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.rs.gov.br/concurso-publico-para-delegado-de-policia-2025",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmsc",
+      "sigla": "PMSC",
+      "uf": "SC",
+      "situacao": "conferida",
+      "linhas_antes": 19,
+      "linhas_depois": 19,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://leis.alesc.sc.gov.br/ato-normativo/18701",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.sc.gov.br/concursos",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.sc.gov.br/noticias/pmsc-publica-edital-com-1000-vagas-para-soldado",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídio do regime remuneratório especial, com as etapas até abril/2026. Os 21,5% incidem sobre a base de abril/2025, sem capitalizar as três parcelas. Alunos oficiais recebem o subsídio de Aspirante, conforme art. 3º, parágrafo único, da LC 776/2021. Auxílio-alimentação não somado.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "bmsc",
+      "sigla": "CBMSC",
+      "uf": "SC",
+      "situacao": "conferida",
+      "linhas_antes": 4,
+      "linhas_depois": 19,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://cdn.direcaoconcursos.com.br/uploads/2026/01/diarioOficial-2-40-57.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://dhg1h5j42swfq.cloudfront.net/2026/01/27182630/edital-cbm-sc-2026-oficial.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://ssp.sc.gov.br/com-salarios-de-ate-r-21-mil-corpo-de-bombeiros-militar-de-sc-abre-inscricoes-para-concurso-nesta-quarta/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.lexml.gov.br/urn/urn:lex:br;santa.catarina:estadual:lei:2023-12-20;18796",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://concurso.idib.org.br/Concurso.aspx?ID=336",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídio do regime remuneratório especial, com as etapas até abril/2026. Os 21,5% incidem sobre a base de abril/2025, sem capitalizar as três parcelas. Alunos oficiais recebem o subsídio de Aspirante, conforme art. 3º, parágrafo único, da LC 776/2021. Auxílio-alimentação não somado.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcsc",
+      "sigla": "PCSC",
+      "uf": "SC",
+      "situacao": "conferida",
+      "linhas_antes": 4,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://portal.doe.sea.sc.gov.br/repositorio/2023/20231016/Jornal/22124.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://portal.doe.sea.sc.gov.br/repositorio/2025/20251212/Jornal/22660.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://pc.sc.gov.br/?p=35166",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://conhecimento.fgv.br/concursos/pcsc23",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios de abril/2026 por entrância de Delegado e pelas oito classes do subgrupo Agente da Autoridade Policial. O enquadramento inicial por cargo depende da carreira. Alimentação e outras indenizações excluídas.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pmes",
+      "sigla": "PMES",
+      "uf": "ES",
+      "situacao": "a_confirmar",
+      "linhas_antes": 8,
+      "linhas_depois": 8,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://dhg1h5j42swfq.cloudfront.net/2024/08/14014326/policia-militar-subsidio.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sesp.es.gov.br/Media/Sesp/UECI/Conv%C3%AAnio%20de%20Cess%C3%A3o%20n%C2%BA%20002.2025%20-%20Cess%C3%A3o%20de%20Militar%20da%20Ativa%20para%20o%20Munic%C3%ADpio%20de%20Vila%20Velha.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://pm.es.gov.br/legislacao",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://seger.es.gov.br/Media/seger/Adm%20Indireta%20-%20Lei%20Carreiras/PM_lc%20n%20420-2007%20-%20modalidade%20de%20remunerao%20por%20subsidio.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmes",
+      "sigla": "CBMES",
+      "uf": "ES",
+      "situacao": "a_confirmar",
+      "linhas_antes": 4,
+      "linhas_depois": 4,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://cb.es.gov.br/Media/CBMES/RH/CFO_2025/EDITAL_DE_ABERTURA/EDITAL%20CONSOLIDADO%20EM%2009%20DE%20MAR%C3%87O%20DE%202026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www3.al.es.gov.br/Arquivo/Documents/legislacao/html/LEI119852023.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www3.al.es.gov.br/legislacao/norma.aspx?ano=2023&id=82588&temas=18",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pces",
+      "sigla": "PCES",
+      "uf": "ES",
+      "situacao": "a_confirmar",
+      "linhas_antes": 4,
+      "linhas_depois": 4,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PC_lc%20n%20748_2013%20-%20altera%20estrutura%20referencias%20e%20tabela%20de%20subsidio.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PC_lc%20n%20740_2013%20-%20altera%20tabela%20de%20subsdio%20delegados.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PC_lc%20n%20531_2009%20-%20modalidade%20de%20remunerao%20por%20subsdio%20para%20os%20cargos%20de%20investigad.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://seger.es.gov.br/Media/Seger/Adm%20Indireta%20-%20Lei%20Carreiras/PM_lc%20n%20412_2007%20-%20modalidade%20de%20remunerao%20por%20subsdio%20para%20a%20carreira%20de%20delegados.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://pc.es.gov.br/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmms",
+      "sigla": "PMMS",
+      "uf": "MS",
+      "situacao": "a_confirmar",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/03/30/DO12113_30_03_2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2026/02/19/DO12079_19_02_2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2025/12/19/DO12030_19_12_2025.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmms",
+      "sigla": "CBMMS",
+      "uf": "MS",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.spdo.ms.gov.br/diariodoe/Index/Download/42491",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://arquivos.qconcursos.com/regulamento/arquivo/15775/cbm_ms_2019_soldado-edital.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2025/05/30/DO11843_30_05_2025.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.concursos.ms.gov.br/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcms",
+      "sigla": "PCMS",
+      "uf": "MS",
+      "situacao": "a_confirmar",
+      "linhas_antes": 6,
+      "linhas_depois": 6,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.pc.ms.gov.br/wp-content/uploads/2025/07/Edital-Concurso.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.ms.gov.br/wp-content/uploads/2021/10/136264301_DP-PCMS.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.ms.gov.br/concurso-com-vagas-para-perito-medico-e-criminal-agente-de-policia-cientifica-e-papiloscopista-soma-206-vagas/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.ms.gov.br/wp-content/uploads/2015/09/DECRETO-N%C2%BA-14.635-DE-29-DE-DEZEMBRO-DE-2016..pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.ms.gov.br/policia-civil-da-inicio-a-curso-de-formacao-para-cargos-e-escrivao-e-investigador-de-policia-judiciaria/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pc.ms.gov.br/wp-content/uploads/2025/03/LEI-COMPLEMENTAR-No-114-DE-19_12_2005-ATUALIZADA-1.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppms",
+      "sigla": "PPMS",
+      "uf": "MS",
+      "situacao": "conferida",
+      "linhas_antes": 9,
+      "linhas_depois": 64,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.agepen.ms.gov.br/wp-content/uploads/2025/12/Tabela-Subsidio-AGEPEN-2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://aacpdappls.net.ms.gov.br/appls/legislacao/secoge/govato.nsf/448b683bce4ca84704256c0b00651e9d/3c9db586eb6424e504258816004ca6ce",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.agepen.ms.gov.br/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios de 2026, após reajuste de 3,81%, por classe e pelos oito níveis. O diretório da URL tem data de 2025, mas o documento é a tabela revisada de 2026.",
+      "fonte_conferida": "https://www.agepen.ms.gov.br/wp-content/uploads/2025/12/Tabela-Subsidio-AGEPEN-2026.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pmmt",
+      "sigla": "PMMT",
+      "uf": "MT",
+      "situacao": "a_confirmar",
+      "linhas_antes": 18,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.mt.gov.br/web/mt/w/21577758-pacote-do-governo-de-mt-para-servidores-da-seguranca-publica-e-aprovado-na-al",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.mt.gov.br/documents/d/bombeiros/lc-555-atualizada-16-04-2025-pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmmt",
+      "sigla": "CBMMT",
+      "uf": "MT",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-divulga-resultado-preliminar-das-inscri%C3%A7%C3%B5es-do-processo-seletivo",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://iomat.mt.gov.br/portal/edicoes/download/16645",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcmt",
+      "sigla": "PCMT",
+      "uf": "MT",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.novaconcursos.com.br/portal/wp-content/uploads/2017/03/edital-delgado-mt-2017.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.midianews.com.br/storage/webdisco/2022/01/06/outros/9e43c1a5744eb8c5f01a312140848f52.pdf",
+          "status": 200,
+          "erro": "Stream has ended unexpectedly"
+        },
+        {
+          "url": "https://www.al.mt.gov.br/norma-juridica/urn%3Alex%3Abr%3Bmato.grosso%3Aestadual%3Alei.complementar%3A2015-05-13%3B565/ficha-tecnica",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pjc.mt.gov.br/en/w/governo-de-mt-nomeia-235-aprovados-no-concurso-da-pol%C3%ADcia-civil",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppmt",
+      "sigla": "PPMT",
+      "uf": "MT",
+      "situacao": "a_confirmar",
+      "linhas_antes": 8,
+      "linhas_depois": 8,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pge.mt.gov.br/web/sesp/perguntas-frequentes",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmac",
+      "sigla": "PMAC",
+      "uf": "AC",
+      "situacao": "a_confirmar",
+      "linhas_antes": 17,
+      "linhas_depois": 17,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ac.gov.br/conteudo/remuneracoes-e-dados-funcionais",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://transparencia.ac.gov.br/servidores",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://conhecimento.fgv.br/concursos/pmac23",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcac",
+      "sigla": "PCAC",
+      "uf": "AC",
+      "situacao": "a_confirmar",
+      "linhas_antes": 35,
+      "linhas_depois": 35,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://estado.ac.gov.br/tabelas-salariais/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/5734/pdf-texto?alteracaoId=",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/",
+          "status": null,
+          "erro": "HTTP Error 503: Service Unavailable"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppac",
+      "sigla": "PPAC",
+      "uf": "AC",
+      "situacao": "a_confirmar",
+      "linhas_antes": 1,
+      "linhas_depois": 1,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://sead.ac.gov.br/wp-content/uploads/2025/05/Edital-no-001-IAPEN-Edital-de-Abertura-19-06-2023.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.legis.ac.gov.br/detalhar_imprimir/5038",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmap",
+      "sigla": "PMAP",
+      "uf": "AP",
+      "situacao": "conferida",
+      "linhas_antes": 8,
+      "linhas_depois": 154,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://amprev.ap.gov.br/noticia/governo-do-amapa-assegura-reajuste-remuneratorio-dos-militares-inativos-e-pensionistas-com-paridade-com-base-na-lei-complementar-no-0173-2025",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela de setembro/2026, com nível base e dez níveis de progressão horizontal. Valores de 2027 não utilizados. Auxílios e vantagens individuais excluídos.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+      "referencia": "2026-09-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcap",
+      "sigla": "PCAP",
+      "uf": "AP",
+      "situacao": "conferida",
+      "linhas_antes": 22,
+      "linhas_depois": 22,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.ap.gov.br/informacoes/tabelaremuneracao",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Conferidos os 18 níveis de Oficial Investigador e quatro classes de Delegado na coluna de setembro/2026. A data da pesquisa antiga antecedia a vigência: agora a etapa está em vigor.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
+      "referencia": "2026-09-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "bmap",
+      "sigla": "CBMAP",
+      "uf": "AP",
+      "situacao": "conferida",
+      "linhas_antes": 14,
+      "linhas_depois": 154,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://bombeiros.portal.ap.gov.br/",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Tabela de setembro/2026, com nível base e dez níveis de progressão horizontal. Valores de 2027 não utilizados. Auxílios e vantagens individuais excluídos.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+      "referencia": "2026-09-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcce",
+      "sigla": "PCCE",
+      "uf": "CE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 5,
+      "linhas_depois": 5,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.ceara.gov.br/wp-content/uploads/2025/04/Edital-Policia-Civil-2025-38-54-2.pdf",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/SERVIDORES%20P%C3%9ABLICOS%20E%20MILITARES",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ce.gov.br/2026/02/26/governo-do-ceara-anuncia-reajuste-salarial-e-do-auxilio-alimentacao-para-servidores-estaduais/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pf",
+      "sigla": "PF",
+      "uf": "BR",
+      "situacao": "conferida",
+      "linhas_antes": 10,
+      "linhas_depois": 20,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/edital/carreira-policial-2025",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://cdn.cebraspe.org.br/concursos/PF_25/arquivos/Ed_1_PF_25_Abertura.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela de subsídio de maio/2026, com todas as quatro classes/categorias. Auxílios não incluídos.",
+      "fonte_conferida": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "referencia": "2026-05-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "ppam",
+      "sigla": "PPAM",
+      "uf": "AM",
+      "situacao": "conferida",
+      "linhas_antes": 12,
+      "linhas_depois": 20,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://diario.imprensaoficial.am.gov.br/portal/edicoes/download/17976",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/11/18154?modo=lista",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Remuneração de referência do Anexo IV, com as dez referências A–J de Policial Penal NS e do quadro transposto NM. Vencimento e GAP já incluídos, sem somar auxílios.",
+      "fonte_conferida": "https://diario.imprensaoficial.am.gov.br/portal/edicoes/download/17976",
+      "referencia": "2025-11-27",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "ppap",
+      "sigla": "PPAP",
+      "uf": "AP",
+      "situacao": "conferida",
+      "linhas_antes": 18,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.transparencia.ap.gov.br/informacoes/tabelaremuneracao",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/2491/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Atualizada para a coluna de outubro/2026. O valor de ingresso passou de R$ 5.911,14 para R$ 6.025,92. Valores de abril e outubro/2027 não antecipados.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/2491/",
+      "referencia": "2026-10-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pmce",
+      "sigla": "PMCE",
+      "uf": "CE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/04/Edital-PMCE-2025.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/08/Edital-DOE-PM-Oficiais-.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.aesp.ce.gov.br/2022/11/01/governo-do-ceara-anuncia-concurso-com-113-vagas-para-2o-tenente-da-policia-militar/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppce",
+      "sigla": "PPCE",
+      "uf": "CE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 2,
+      "linhas_depois": 2,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.ceara.gov.br/wp-content/uploads/2024/04/edital-sap.pdf",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/defesa-social/item/7168-lei-n-17-388-26-02-2021-d-o-26-02-21",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/orcamento-financas-e-tributacao/item/10973-lei-n-19-183-de-12-03-25-d-o-12-03-25?print=1&tmpl=component",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ceara.gov.br/2026/02/26/governo-do-ceara-anuncia-reajuste-salarial-e-do-auxilio-alimentacao-para-servidores-estaduais/",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmdf",
+      "sigla": "PMDF",
+      "uf": "DF",
+      "situacao": "conferida",
+      "linhas_antes": 14,
+      "linhas_depois": 16,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Norma/78e88ccfb582401783e97fe6661d532f/Decreto_47520_01_08_2025.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Norma/46100/Decreto_25507_14_01_2005.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Diario/640fb511-3f8e-3aa4-9bdb-a4729fcc17a1/DODF%20056%2024-03-2025%20INTEGRA.pdf",
+          "status": 200,
+          "erro": "Stream has ended unexpectedly"
+        },
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Norma/42357/Decreto_23390_26_11_2002.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Norma/42358/Decreto_23391_26_11_2002.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Norma/7484da483b7644549c2c4c5908dd6caf/Decreto_45873_05_06_2024.html",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Correção da coluna de soldo: os valores anteriores não correspondiam ao Anexo I. O soldo está separado de VPE, gratificações e auxílio-moradia; não deve ser comparado com remuneração total.",
+      "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "referencia": "2026-01-01",
+      "tipo_valor": "soldo"
+    },
+    {
+      "instituicao_id": "ppdf",
+      "sigla": "PPDF",
+      "uf": "DF",
+      "situacao": "a_confirmar",
+      "linhas_antes": 20,
+      "linhas_depois": 20,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://economia.df.gov.br/documents/d/seec/policia-penal-4-pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sinj.df.gov.br/sinj/Norma/a131bcf43f134c15a950c6b3a50fda01/Lei_7481_2024.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.seape.df.gov.br",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmgo",
+      "sigla": "PMGO",
+      "uf": "GO",
+      "situacao": "conferida",
+      "linhas_antes": 14,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://admin.legisla.casacivil.go.gov.br/pesquisa_legislacao/88934/lei-17091",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://goias.gov.br/administracao/planos-de-cargos-e-carreiras/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://goias.gov.br/policiamilitar/postos-e-graduacoes-2/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios da tabela legal com efeitos em julho/2026. Coronel nível II depende de progressão e sofre os limites remuneratórios aplicáveis; não é remuneração de ingresso.",
+      "fonte_conferida": "https://legisla.casacivil.go.gov.br/pesquisa_legislacao/115998/lei-24402",
+      "referencia": "2026-07-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcgo",
+      "sigla": "PCGO",
+      "uf": "GO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 28,
+      "linhas_depois": 28,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://transparencia.go.gov.br/wp-content/uploads/sites/2/joomla/admin/uploaded/pessoal/Anexo_I_Tabelas_das_Estruturas_Remuneratorias_Efetivos.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://espc.policiacivil.go.gov.br/noticias/concurso-da-policia-civil-do-estado-de-goias.shtml",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/91012/pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88932/pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppgo",
+      "sigla": "PPGO",
+      "uf": "GO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 10,
+      "linhas_depois": 10,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/81800/pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmma",
+      "sigla": "PMMA",
+      "uf": "MA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7620",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://www.transparencia.ma.gov.br/wp/tabeladecargosefuncoes",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7275",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcma",
+      "sigla": "PCMA",
+      "uf": "MA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 14,
+      "linhas_depois": 14,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://app.stc.ma.gov.br/public_legisla/files/demanda_publicacao_anexo/anexo_14-06-2024_1718381741.pdf",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/6362",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://www.policiacivil.ma.gov.br/wp-content/uploads/2020/11/Lei-n%C2%BA-8.592-de-27-de-abril-de-2007.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppma",
+      "sigla": "PPMA",
+      "uf": "MA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 1,
+      "linhas_depois": 1,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.transparencia.ma.gov.br/wp/tabeladecargosefuncoes",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7127",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://seap.ma.gov.br/noticias/governador-sanciona-lei-que-institui-a-policia-penal-no-sistema-penitenciario-do-maranhao",
+          "status": null,
+          "erro": "HTTP Error 500: Internal Server Error"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmpa",
+      "sigla": "PMPA",
+      "uf": "PA",
+      "situacao": "conferida",
+      "linhas_antes": 9,
+      "linhas_depois": 16,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.pge.pa.gov.br/sites/default/files/alerta-legislativo/LO9954.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.pa.gov.br/images/PM1/LEI_DE_REMUNERA%C3%87%C3%83O_DA_PMPA_-_20.12.2023.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.alepa.pa.gov.br/Comunicacao/Noticia/8943/alepa-aprova-projeto-de-lei-sobre-aumento-salarial-de-policiais-militares-e-corpo-de-bombeiros",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Remuneração total de referência da tabela oficial de ativos. Substitui valores isolados de soldo e editais antigos. Não equivale ao soldo nem garante a mesma composição individual.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pcpa",
+      "sigla": "PCPA",
+      "uf": "PA",
+      "situacao": "conferida",
+      "linhas_antes": 20,
+      "linhas_depois": 20,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.ioepa.com.br/pages/2026/2026.04.01.EXTRA.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.policiacivil.pa.gov.br",
+          "status": null,
+          "erro": "<urlopen error [Errno 11001] getaddrinfo failed>"
+        }
+      ],
+      "nota": "Totais do grupo Polícia Civil ativo, jornada de 30h, conferidos na tabela de abril/2026. Há quadro em extinção com composição própria, não misturado aqui.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pppa",
+      "sigla": "PPPA",
+      "uf": "PA",
+      "situacao": "conferida",
+      "linhas_antes": 3,
+      "linhas_depois": 1,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.ioepa.com.br/pages/2021/2021.06.30.DOE.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://seplad.pa.gov.br/wp-content/uploads/2025/01/Demonstrativo-de-Remuneracao-de-Pessoal-Dezembro-de-2024-Parte-2-V-1.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://segup.pa.gov.br/noticias/governo-anuncia-publica%C3%A7%C3%A3o-do-edital-para-o-concurso-da-pol%C3%ADcia-penal-com-1646-vagas",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Total da referência ativa do cargo, com a composição do anexo oficial. Substitui o vencimento básico isolado que era exibido como remuneração.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pmpb",
+      "sigla": "PMPB",
+      "uf": "PB",
+      "situacao": "conferida",
+      "linhas_antes": 13,
+      "linhas_depois": 13,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-03-02-2026-portal.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.pb.gov.br/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.pb.gov.br/portal/2025/12/05/inscricoes-abertas-cfo-da-policia-militar-oferece-30-vagas/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.pb.gov.br/portal/2023/07/28/governo-do-estado-publica-edital-com-1-100-vagas-para-soldado-da-policia-militar-e-corpo-de-bombeiros/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Composição de referência publicada pelo Governo: soldo, habilitação, anuênio de referência e auxílio-alimentação. O total não representa um subsídio puro nem o mesmo anuênio de todos os militares.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pcpb",
+      "sigla": "PCPB",
+      "uf": "PB",
+      "situacao": "conferida",
+      "linhas_antes": 7,
+      "linhas_depois": 300,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://transparencia.pb.gov.br/pessoal/arquivos/TABELACOMOPADROREMUNERATRIODASCATEGORIASFUNCIONAIS2025.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://static.paraiba.pb.gov.br/diariooficial_old/diariooficial06032010.pdf",
+          "status": null,
+          "erro": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.policiacivil.pb.gov.br/noticias/joao-azevedo-nomeia-mais-214-aprovados-da-segunda-turma-do-concurso-da-policia-civil",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Classes e níveis de 2026. Delegados possuem tabelas distintas de subsídio (Anexo V) e remuneração composta (Anexo VIII), identificadas nas linhas. A composição do Anexo VIII já inclui alimentação.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pppb",
+      "sigla": "PPPB",
+      "uf": "PB",
+      "situacao": "conferida",
+      "linhas_antes": 35,
+      "linhas_depois": 35,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://auniao.pb.gov.br/servicos/doe/2026/abril/diario-oficial-24-04-2026-portal.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela completa da Polícia Penal de 2026: cinco classes, sete níveis. Total oficial de referência já inclui alimentação, risco e representação.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "pmpe",
+      "sigla": "PMPE",
+      "uf": "PE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.alepe.pe.gov.br/proposicao-texto-completo/?docid=3193&tipoprop=s",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.pe.gov.br/recursos-humanos/padrao-remuneratorio-dos-cargos-funcoes-e-cargos-comissionados/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pm.pe.gov.br/gratificacoes/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://portaldeprefeitura.com.br/pernambuco/soldado-da-pmpe-passara-a-receber-salario-r-561792/612858/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcpe",
+      "sigla": "PCPE",
+      "uf": "PE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://legis.policiacivil.pe.gov.br/b/api/files/2d4df4f3687177426a0a8bde209da84a.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.alepe.pe.gov.br/proposicao-texto-completo/?docid=13799&tipoprop=p",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://dados.pe.gov.br/dataset/7bbfeed7-3019-4c6a-bee7-e1b7411f616b/resource/44cffde2-0f21-4eb5-bec7-7a2ab888e879/download/2026_2_remuneracao_ativos.csv",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sds.pe.gov.br/noticias/12117-juntos-pela-seguranca-estado-autoriza-convocacao-dos-aprovados-no-concurso-da-policia-civil-para-curso-de-formacao-profissional",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pppe",
+      "sigla": "PPPE",
+      "uf": "PE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 8,
+      "linhas_depois": 8,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.sds.pe.gov.br/images/media/1727531659_183%20BGSDS%20DE%2027SET2024.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmpi",
+      "sigla": "PMPI",
+      "uf": "PI",
+      "situacao": "conferida",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.diario.pi.gov.br/doe/files/diarios/anexo/b51fd226-a75a-461c-8a49-b62061976060/DOEPI_61_2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pi.gov.br/governo-do-piaui-autoriza-reajuste-de-56-para-servidores-publicos-estaduais/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Conferidos os 12 subsídios da tabela de abril/2026, comum a policiais e bombeiros militares. Não se reaplicou o reajuste geral de 5,6% sobre a tabela específica.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcpi",
+      "sigla": "PCPI",
+      "uf": "PI",
+      "situacao": "conferida",
+      "linhas_antes": 17,
+      "linhas_depois": 25,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.diario.pi.gov.br/doe/files/diarios/anexo/833e3be6-220d-4f98-a722-a9660152d71e/DOEPI_128_2025.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pi.gov.br/wp-content/uploads/2025/09/edital_de_abertura_pcpi_peritos_e_investigador_-_versao_final_-18.09_assinado-ok.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pi.gov.br/publicada-lei-estadual-que-unifica-cargos-dentro-da-estrutura-da-policia-civil-do-piaui/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios atualizados em abril/2026, nas cinco classes de Delegado, Perito Criminal/Médico-Legista/Odontolegista e Oficial Investigador. Substitui a tabela de julho/2025.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pppi",
+      "sigla": "PPPI",
+      "uf": "PI",
+      "situacao": "conferida",
+      "linhas_antes": 5,
+      "linhas_depois": 5,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.diario.pi.gov.br/doe/files/diarios/anexo/b51fd226-a75a-461c-8a49-b62061976060/DOEPI_61_2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.pi.gov.br/area-da-transparencia/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Conferidos os cinco subsídios das classes da Polícia Penal, de abril/2026, incluindo Especial 1.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pmrn",
+      "sigla": "PMRN",
+      "uf": "RN",
+      "situacao": "a_confirmar",
+      "linhas_antes": 13,
+      "linhas_depois": 13,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://cdn.direcaoconcursos.com.br/uploads/2023/01/edital-pm-rn.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.rn.gov.br/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcrn",
+      "sigla": "PCRN",
+      "uf": "RN",
+      "situacao": "a_confirmar",
+      "linhas_antes": 21,
+      "linhas_depois": 21,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://webdisk.diariooficial.rn.gov.br/Jornal/12024-12-10.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pprn",
+      "sigla": "PPRN",
+      "uf": "RN",
+      "situacao": "a_confirmar",
+      "linhas_antes": 21,
+      "linhas_depois": 21,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://webdisk.diariooficial.rn.gov.br/Jornal/12024-12-10.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://diariooficial.rn.gov.br/dei/dorn3/documentos/00000001/20220330/762670.htm",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'diariooficial.rn.gov.br'. (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmro",
+      "sigla": "PMRO",
+      "uf": "RO",
+      "situacao": "conferida",
+      "linhas_antes": 13,
+      "linhas_depois": 13,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.ro.leg.br/norma/11882",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ro.gov.br/pessoal/estruturaderemuneracoes",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Soldo da coluna janeiro/2026, comum à PM e ao CBM. O adicional de formação foi incorporado: não se deve somá-lo novamente. Compensação orgânica e outras parcelas não incluídas.",
+      "fonte_conferida": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "soldo"
+    },
+    {
+      "instituicao_id": "pcro",
+      "sigla": "PCRO",
+      "uf": "RO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 52,
+      "linhas_depois": 52,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://transparencia.ro.gov.br/pessoal/estruturaderemuneracoes",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://diof.ro.gov.br/data/uploads/2023/12/DOE-SUPLEMENTAR-18-12-2023.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppro",
+      "sigla": "PPRO",
+      "uf": "RO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 4,
+      "linhas_depois": 4,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ro.gov.br/pessoal/EstruturaDeRemuneracoes",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://rondonia.ro.gov.br/wp-content/uploads/2023/03/LEI-COMPLEMENTAR-No-1.102-DE-26-DE-OUTUBRO-DE-2021..pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmrr",
+      "sigla": "PMRR",
+      "uf": "RR",
+      "situacao": "conferida",
+      "linhas_antes": 14,
+      "linhas_depois": 15,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://portal.rr.gov.br/valorizacao-governo-de-roraima-ira-pagar-auxilio-fardamento-para-policia-militar-e-corpo-de-bombeiros/",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://cbm.rr.gov.br/down/DPL/public/LC_224_de_08.01.2014___Sistema_Remuneratorio_dos_Militares_Estaduais_de_RR__atualizada_ate_02.08.2017_.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://portal.rr.gov.br/governo-promove-maior-valorizacao-das-carreiras-militares-de-roraima-dos-ultimos-30-anos/",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.mpc.rr.gov.br/uploads/2013/09/09092013125135823_6.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios dos militares estaduais, publicados na tabela de abril/2026. Removida a estimativa que usava auxílio-fardamento como base salarial. IRV e outras indenizações não foram somadas.",
+      "fonte_conferida": "https://api.transparencia.rr.gov.br/storage/legislacoes/6df35931-6cf5-413e-95d9-cfb7cff60301.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcrr",
+      "sigla": "PCRR",
+      "uf": "RR",
+      "situacao": "a_confirmar",
+      "linhas_antes": 9,
+      "linhas_depois": 9,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
+          "status": null,
+          "erro": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2015/09/doe-20150904.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://api.transparencia.rr.gov.br/storage/competencias/667b1936-3be0-4580-8600-b48c7d602c33.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pprr",
+      "sigla": "PPRR",
+      "uf": "RR",
+      "situacao": "a_confirmar",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2017/04/doe-20170426.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2017/07/doe-20170725.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://portal.rr.gov.br/governo-reforca-sistema-prisional-com-posse-de-92-novos-policiais-penais/",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://portal.rr.gov.br/governador-assina-projeto-de-lei-que-autoriza-recomposicao-de-462-nos-salarios-dos-servidores/",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pmse",
+      "sigla": "PMSE",
+      "uf": "SE",
+      "situacao": "conferida",
+      "linhas_antes": 17,
+      "linhas_depois": 15,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://pm.se.gov.br/transparencia/efetivo/quadro-remuneratorio/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://pm.se.gov.br/storage/2019/07/lei_278_2016.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sead.se.gov.br/wp-content/uploads/2024/12/2.-Edital-Soldado-2024-consolidado-com-a-retificacao-02-18_12.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios de abril/2026. A ajuda por convocação do Anexo II não é salário mensal e não foi adicionada.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36429/LC-453-2026.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "pcse",
+      "sigla": "PCSE",
+      "uf": "SE",
+      "situacao": "conferida",
+      "linhas_antes": 10,
+      "linhas_depois": 10,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://api.legislacao.se.gov.br/uploads/atos/36442/LO-9936-2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sead.se.gov.br/tabelas-de-remuneracao/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sead.se.gov.br/delegados-legislacao-e-tabelas/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios de abril/2026 de Oficiais Investigadores e Delegados, por classe. A parcela de periculosidade e a alimentação têm regras próprias e não integram os valores desta coluna.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "ppse",
+      "sigla": "PPSE",
+      "uf": "SE",
+      "situacao": "conferida",
+      "linhas_antes": 6,
+      "linhas_depois": 6,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://sead.se.gov.br/wp-content/uploads/2024/07/5-LC-no-423.ALTERA-3424072024-PLC-23-%E2%80%93-2024-policia-penal.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.se.gov.br/Pessoal/VencimentoCargo.xhtml?orgao=SEJUC",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.sead.se.gov.br/wp-content/uploads/2022/06/Lei-no-366-2022.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        }
+      ],
+      "nota": "Vencimento básico corrigido com o reajuste legal de 7% em abril/2026. Não representa a remuneração completa. Auxílios e gratificações condicionadas não foram incorporados.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36428/LC-452-2026.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "vencimento_base"
+    },
+    {
+      "instituicao_id": "pmto",
+      "sigla": "PMTO",
+      "uf": "TO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 17,
+      "linhas_depois": 17,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://central.to.gov.br/download/116583",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://central.to.gov.br/download/164654",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://central.to.gov.br/download/164655",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://central.to.gov.br/download/423385",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pcto",
+      "sigla": "PCTO",
+      "uf": "TO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 10,
+      "linhas_depois": 10,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://doe.to.gov.br/diario/5435/download",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://doe.to.gov.br/diario/5418/download",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://doe.to.gov.br/diario/5661/download",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppto",
+      "sigla": "PPTO",
+      "uf": "TO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 5,
+      "linhas_depois": 5,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.to.leg.br/arquivos/lei_3879-2022_57507.PDF",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.al.to.leg.br/arquivos/lei_3894-2022_58464.PDF",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://al.to.leg.br/noticia/16502/aprovada-mp-que-beneficia-servidores-dos-sistemas-penal-e-socioeducativo",
+          "status": null,
+          "erro": "HTTP Error 404: "
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmac",
+      "sigla": "BMAC",
+      "uf": "AC",
+      "situacao": "a_confirmar",
+      "linhas_antes": 19,
+      "linhas_depois": 19,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.legis.ac.gov.br/detalhar/3338",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://legis.ac.gov.br/detalhar/5145",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmal",
+      "sigla": "BMAL",
+      "uf": "AL",
+      "situacao": "a_confirmar",
+      "linhas_antes": 31,
+      "linhas_depois": 31,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2019/1664/lei_no_8.151_de_17_de_setembro_de_2019.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.al.gov.br/paginas/legislacao",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://diario.imprensaoficial.al.gov.br/apinova/api/editions/viewPdf/37764",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmam",
+      "sigla": "BMAM",
+      "uf": "AM",
+      "situacao": "conferida",
+      "linhas_antes": 11,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/4/15715?modo=lista",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.am.gov.br/wp-content/uploads/2023/08/Tabela-Remuneratoria-PMAM-e-CBMAM.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.cbm.am.gov.br/cbmam/transparencias/index/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Tabela implantada em dezembro/2025, aplicável a outubro/2026. A Lei 8.442/2026 prevê nova etapa apenas em 01/11/2026, ainda não aplicada. Retroativos parcelados não são salário mensal recorrente.",
+      "fonte_conferida": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf",
+      "referencia": "2025-12-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "bmba",
+      "sigla": "BMBA",
+      "uf": "BA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 13,
+      "linhas_depois": 13,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ba.gov.br/comunicacao/noticias/2025-04/367939/governo-do-estado-propoe-ganhos-de-1476-ate-2026-para-oficiais-e-pracas-da",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ba.gov.br/pge/sites/site-pge/files/2025-09/DESPACHO%20DE%20QUALIFICACAO%20PA-037-2025%20-%20Completo.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.cbm.ba.gov.br",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmce",
+      "sigla": "BMCE",
+      "uf": "CE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 17,
+      "linhas_depois": 17,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www2.al.ce.gov.br/legislativo/legislacao5/leis2021/17871",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ce.gov.br/2026/02/25/governador-elmano-encaminha-projeto-de-lei-a-alece-que-iguala-valor-do-auxilio-alimentacao-dos-militares-aos-demais-servidores/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmdf",
+      "sigla": "BMDF",
+      "uf": "DF",
+      "situacao": "conferida",
+      "linhas_antes": 16,
+      "linhas_depois": 16,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.economia.df.gov.br/documents/d/seec/bombeiro-militar-pdf-2",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.cbm.df.gov.br/lai/servidores/remuneracao-dos-servidores-cbmdf/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Correção da coluna de soldo: os valores anteriores não correspondiam ao Anexo I. O soldo está separado de VPE, gratificações e auxílio-moradia; não deve ser comparado com remuneração total.",
+      "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "referencia": "2026-01-01",
+      "tipo_valor": "soldo"
+    },
+    {
+      "instituicao_id": "bmgo",
+      "sigla": "BMGO",
+      "uf": "GO",
+      "situacao": "conferida",
+      "linhas_antes": 16,
+      "linhas_depois": 18,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://admin.legisla.casacivil.go.gov.br/pesquisa_legislacao/88934/lei-17091",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://goias.gov.br/escoladegoverno/wp-content/uploads/sites/28/2022/07/130123-Ed00422-Retificado-69a.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.go.gov.br/legislacao/funcoes-remuneracaosubsidios-gratificacoes-diarias-ajuda-de-custo-e-folha-de-pagamento.html",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios da tabela legal com efeitos em julho/2026. Coronel nível II depende de progressão e sofre os limites remuneratórios aplicáveis; não é remuneração de ingresso.",
+      "fonte_conferida": "https://legisla.casacivil.go.gov.br/pesquisa_legislacao/115998/lei-24402",
+      "referencia": "2026-07-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "bmma",
+      "sigla": "BMMA",
+      "uf": "MA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 14,
+      "linhas_depois": 14,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.ma.leg.br/sitealema/wp-content/uploads/2025/09/DIARIO_148_29.08.2025-2.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://transparencia.ma.gov.br/wp/tabeladecargosefuncoes",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/6966",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        },
+        {
+          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/1929",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmpa",
+      "sigla": "BMPA",
+      "uf": "PA",
+      "situacao": "conferida",
+      "linhas_antes": 7,
+      "linhas_depois": 16,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.bombeiros.pa.gov.br/wp-content/uploads/2022/04/EDITAL-CFP-2022-BOMBEIRO-MILITAR-PARA.pdf",
+          "status": null,
+          "erro": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.cge.pa.gov.br/sites/default/files/2023-06/Reajuste_sal_2022.EXTRA_.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.pa.gov.br/remuneracao-e-diarias/",
+          "status": null,
+          "erro": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "nota": "Remuneração total de referência da tabela oficial de ativos. Substitui valores isolados de soldo e editais antigos. Não equivale ao soldo nem garante a mesma composição individual.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "bmpb",
+      "sigla": "BMPB",
+      "uf": "PB",
+      "situacao": "conferida",
+      "linhas_antes": 13,
+      "linhas_depois": 13,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://auniao.pb.gov.br/servicos/doe/2025-1/dezembro/diario-oficial-19-12-2025-portal.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://bombeiros.pb.gov.br/2023/07/28/governo-do-estado-publica-edital-com-1-100-vagas-para-soldado-da-policia-militar-e-corpo-de-bombeiros/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Composição de referência publicada pelo Governo: soldo, habilitação, anuênio de referência e auxílio-alimentação. O total não representa um subsídio puro nem o mesmo anuênio de todos os militares.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "remuneracao"
+    },
+    {
+      "instituicao_id": "bmpe",
+      "sigla": "BMPE",
+      "uf": "PE",
+      "situacao": "a_confirmar",
+      "linhas_antes": 48,
+      "linhas_depois": 48,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://legislacao-sad.pe.gov.br/Legislacao/html/lei_complementar_482___30_03_2.htm",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sds.pe.gov.br/images/media/1699750414_211%20BGSDS%20DE%2011NOV2023.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.sds.pe.gov.br/images/media/1750454119_111%20BGSDS%20DE%2020JUN2025.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmpi",
+      "sigla": "BMPI",
+      "uf": "PI",
+      "situacao": "conferida",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.pi.gov.br/governo-do-piaui-autoriza-reajuste-de-56-para-servidores-publicos-estaduais/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Conferidos os 12 subsídios da tabela de abril/2026, comum a policiais e bombeiros militares. Não se reaplicou o reajuste geral de 5,6% sobre a tabela específica.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "bmrn",
+      "sigla": "BMRN",
+      "uf": "RN",
+      "situacao": "a_confirmar",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://al.rn.leg.br/storage/legislacao/2022/xp991sst7k8ry36ooafnrw4754t3yr.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://diariooficial.rn.gov.br/dei/dorn3/documentos/00000001/20221025/791639.htm",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'diariooficial.rn.gov.br'. (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmro",
+      "sigla": "BMRO",
+      "uf": "RO",
+      "situacao": "conferida",
+      "linhas_antes": 13,
+      "linhas_depois": 13,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://rondonia.ro.gov.br/wp-content/uploads/2021/07/Lei-5074-Reajuste-Seguranca-Publica.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.cbm.ro.gov.br/?page_id=694",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://rondonia.ro.gov.br/governo-de-rondonia-sanciona-lei-que-estabelece-a-valorizacao-salarial-para-profissionais-da-seguranca-publica-a-partir-de-2022/",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L1063%20-%20COMPILADA.pdf",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Soldo da coluna janeiro/2026, comum à PM e ao CBM. O adicional de formação foi incorporado: não se deve somá-lo novamente. Compensação orgânica e outras parcelas não incluídas.",
+      "fonte_conferida": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+      "referencia": "2026-01-01",
+      "tipo_valor": "soldo"
+    },
+    {
+      "instituicao_id": "bmrr",
+      "sigla": "BMRR",
+      "uf": "RR",
+      "situacao": "conferida",
+      "linhas_antes": 15,
+      "linhas_depois": 15,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.imprensaoficial.rr.gov.br/app/_edicoes/2015/07/doe-20150707.pdf",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://cbm.rr.gov.br/portal/arquivosdpl.php",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://cbm.rr.gov.br/legislacoes",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios dos militares estaduais, publicados na tabela de abril/2026. Removida a estimativa que usava auxílio-fardamento como base salarial. IRV e outras indenizações não foram somadas.",
+      "fonte_conferida": "https://api.transparencia.rr.gov.br/storage/legislacoes/6df35931-6cf5-413e-95d9-cfb7cff60301.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "bmrs",
+      "sigla": "BMRS",
+      "uf": "RS",
+      "situacao": "a_confirmar",
+      "linhas_antes": 15,
+      "linhas_depois": 15,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://estado.rs.gov.br/upload/arquivos/lc15454.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://ssp.rs.gov.br/corpo-de-bombeiros-militar-divulga-edital-para-concurso-de-soldado",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.bombeiros.rs.gov.br/corpo-de-bombeiros-militar-do-rs-abre-inscricoes-para-544-vagas-de-soldado-temporario",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://gestaodepessoas.rs.gov.br/wp-content/uploads/2024/08/Lei-16165.pdf",
+          "status": null,
+          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "bmse",
+      "sigla": "BMSE",
+      "uf": "SE",
+      "situacao": "conferida",
+      "linhas_antes": 15,
+      "linhas_depois": 15,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.cbm.se.gov.br/transparencia/wp-content/uploads/2019/02/LC-N%C2%BA-278-SUBSIDIO-ATUALIZADA.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.transparencia.se.gov.br/Pessoal/VencimentoCargo.xhtml?orgao=CBM%2FSE",
+          "status": null,
+          "erro": "HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://cbm.se.gov.br/legislacoes/",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios de abril/2026. A ajuda por convocação do Anexo II não é salário mensal e não foi adicionada.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36429/LC-453-2026.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "bmto",
+      "sigla": "BMTO",
+      "uf": "TO",
+      "situacao": "a_confirmar",
+      "linhas_antes": 17,
+      "linhas_depois": 17,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://central.to.gov.br/download/116626",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://central.to.gov.br/download/116581",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pprj",
+      "sigla": "PPRJ",
+      "uf": "RJ",
+      "situacao": "a_confirmar",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www3.alerj.rj.gov.br/lotus_notes/default.asp?URL=L2NvbnRsZWkubnNmL2M4YWEwOTAwMDI1ZmVlZjYwMzI1NjRlYzAwNjBkZmZmLzQwNWEwNzU2OTVkZDYxNGI4MzI1NzUyMDAwNWNkYTRlP09wZW5Eb2N1bWVudA%3D%3D",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.alerj.rj.gov.br/Visualizar/Noticia/82052",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "ppba",
+      "sigla": "PPBA",
+      "uf": "BA",
+      "situacao": "a_confirmar",
+      "linhas_antes": 1,
+      "linhas_depois": 1,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.ba.gov.br/administracao/sites/site-saeb/files/migracao_2024/arquivos/File/edital_abertura_saeb003.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.ba.gov.br/comunicacao/noticias/2025-05/368394/audio-governador-sanciona-leis-que-concedem-reajuste-para-carreiras-da",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-24430-2021",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pppr",
+      "sigla": "PPPR",
+      "uf": "PR",
+      "situacao": "a_confirmar",
+      "linhas_antes": 12,
+      "linhas_depois": 12,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=262521&dt=14.5.2022.8.19.56.179&indice=1&totalRegistros=1",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.seguranca.pr.gov.br/Noticia/Lei-que-melhora-carreira-da-Policia-Penal-do-Parana-e-sancionada",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=255251&codItemAto=1604331",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    },
+    {
+      "instituicao_id": "pprs",
+      "sigla": "PPRS",
+      "uf": "RS",
+      "situacao": "conferida",
+      "linhas_antes": 3,
+      "linhas_depois": 3,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://estado.rs.gov.br/governo-do-estado-publica-edital-de-concurso-da-policia-penal-nesta-terca-feira-12",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Subsídios de ingresso confirmados no edital retificado. Foram retirados valores de outras carreiras copiados da relação do Tesouro e atribuídos indevidamente à Polícia Penal.",
+      "fonte_conferida": "https://concursos-publicacoes.s3.amazonaws.com/1092/publico/1092_Edital-02-2026_RetificaAAodoEditaldeAberturaREQUISITOePROGRAMAS_Rev2_6a063b5d7c0d1.pdf?idpub=507759",
+      "referencia": "2026-05-14",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "ppsc",
+      "sigla": "PPSC",
+      "uf": "SC",
+      "situacao": "conferida",
+      "linhas_antes": 8,
+      "linhas_depois": 8,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://leis.alesc.sc.gov.br/html/2025/872_2025_lei_complementar.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://portalelegis.alesc.sc.gov.br/proposicoes/NxEb7/tramitacoes",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Conferidas as oito classes da Polícia Penal após as três etapas do reajuste de 21,5%, integralmente aplicável desde abril/2026. Não se aplicou reajuste em duplicidade.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
+    },
+    {
+      "instituicao_id": "ppes",
+      "sigla": "PPES",
+      "uf": "ES",
+      "situacao": "a_confirmar",
+      "linhas_antes": 1,
+      "linhas_depois": 1,
+      "inconsistencias_aritmeticas_antes": 0,
+      "consultas": [
+        {
+          "url": "https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www3.al.es.gov.br/Arquivo/Documents/legislacao/html/LEC10592023.html",
+          "status": 200,
+          "erro": null
+        },
+        {
+          "url": "https://www3.al.es.gov.br/legislacao/norma.aspx?id=104312",
+          "status": 200,
+          "erro": null
+        }
+      ],
+      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "referencia": null,
+      "tipo_valor": null
+    }
+  ]
+}

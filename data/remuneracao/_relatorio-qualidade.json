@@ -1,40 +1,14 @@
 {
-  "gerado_em": "2026-05-18",
+  "gerado_em": "2026-10-18",
   "resumo": {
     "total": 110,
     "pendentes": 0,
-    "fracas": 28,
-    "fortes": 82
+    "fracas": 22,
+    "fortes": 88,
+    "conferidas": 50,
+    "vigencia_a_confirmar": 60
   },
   "fila_acoes": [
-    {
-      "id": "pmmg",
-      "sigla": "PMMG",
-      "nome": "Polícia Militar de Minas Gerais",
-      "uf": "MG",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 2,
-      "fontes": 4,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pmmg",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
     {
       "id": "ppac",
       "sigla": "PPAC",
@@ -47,15 +21,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "ppac",
@@ -75,15 +44,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "ppba",
@@ -103,15 +67,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "ppce",
@@ -131,15 +90,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "ppes",
@@ -159,15 +113,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "ppma",
@@ -176,29 +125,24 @@
       }
     },
     {
-      "id": "ppmg",
-      "sigla": "PPMG",
-      "nome": "Polícia Penal de Minas Gerais",
-      "uf": "MG",
+      "id": "pppa",
+      "sigla": "PPPA",
+      "nome": "Polícia Penal de Pará",
+      "uf": "PA",
       "acao": "fracas",
       "classe": "fraca",
       "score": 65,
       "linhas_com_valor": 1,
-      "fontes": 4,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Total da referência ativa do cargo, com a composição do anexo oficial. Substitui o vencimento básico isolado que era exibido como remuneração.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
-        "instituicao": "ppmg",
+        "instituicao": "pppa",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -215,46 +159,13 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "bmes",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "bmmg",
-      "sigla": "CBMMG",
-      "nome": "Corpo de Bombeiros Militar de Minas Gerais",
-      "uf": "MG",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 82,
-      "linhas_com_valor": 3,
-      "fontes": 5,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "bmmg",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -271,15 +182,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "bmms",
@@ -299,15 +205,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "bmmt",
@@ -327,46 +228,13 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "bmrj",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "bmsc",
-      "sigla": "CBMSC",
-      "nome": "Corpo de Bombeiros Militar de Santa Catarina",
-      "uf": "SC",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 82,
-      "linhas_com_valor": 4,
-      "fontes": 5,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "bmsc",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -383,15 +251,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pcal",
@@ -411,15 +274,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pcba",
@@ -439,15 +297,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -462,44 +315,16 @@
       "fontes": 6,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pces",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
-    },
-    {
-      "id": "pcmg",
-      "sigla": "PCMG",
-      "nome": "Polícia Civil de Minas Gerais",
-      "uf": "MG",
-      "acao": "fortes",
-      "classe": "forte",
-      "score": 82,
-      "linhas_com_valor": 5,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 82
-        }
-      },
-      "workflow_sugerido": null
     },
     {
       "id": "pcmt",
@@ -513,15 +338,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pcmt",
@@ -541,15 +361,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pcpe",
@@ -569,74 +384,13 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pcrs",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pcsc",
-      "sigla": "PCSC",
-      "nome": "Polícia Civil de Santa Catarina",
-      "uf": "SC",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 82,
-      "linhas_com_valor": 4,
-      "fontes": 4,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pcsc",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pmam",
-      "sigla": "PMAM",
-      "nome": "Polícia Militar do Estado do Amazonas",
-      "uf": "AM",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 82,
-      "linhas_com_valor": 3,
-      "fontes": 5,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pmam",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -653,15 +407,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pmce",
@@ -681,15 +430,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pmma",
@@ -709,46 +453,13 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pmrs",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pppa",
-      "sigla": "PPPA",
-      "nome": "Polícia Penal de Pará",
-      "uf": "PA",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 82,
-      "linhas_com_valor": 3,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pppa",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -762,18 +473,13 @@
       "classe": "forte",
       "score": 82,
       "linhas_com_valor": 5,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 82
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Conferidos os cinco subsídios das classes da Polícia Penal, de abril/2026, incluindo Especial 1.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -788,15 +494,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pprj",
@@ -816,15 +517,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "ppro",
@@ -841,18 +537,13 @@
       "classe": "fraca",
       "score": 82,
       "linhas_com_valor": 3,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 82
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios de ingresso confirmados no edital retificado. Foram retirados valores de outras carreiras copiados da relação do Tesouro e atribuídos indevidamente à Polícia Penal.",
+      "fonte_conferida": "https://concursos-publicacoes.s3.amazonaws.com/1092/publico/1092_Edital-02-2026_RetificaAAodoEditaldeAberturaREQUISITOePROGRAMAS_Rev2_6a063b5d7c0d1.pdf?idpub=507759",
+      "monitor": null,
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pprs",
@@ -872,15 +563,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 82
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -895,15 +581,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -918,15 +599,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -937,19 +613,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 11,
-      "fontes": 3,
+      "linhas_com_valor": 18,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela implantada em dezembro/2025, aplicável a outubro/2026. A Lei 8.442/2026 prevê nova etapa apenas em 01/11/2026, ainda não aplicada. Retroativos parcelados não são salário mensal recorrente.",
+      "fonte_conferida": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -960,19 +631,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 14,
-      "fontes": 2,
+      "linhas_com_valor": 154,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela de setembro/2026, com nível base e dez níveis de progressão horizontal. Valores de 2027 não utilizados. Auxílios e vantagens individuais excluídos.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -987,15 +653,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1010,15 +671,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1030,18 +686,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 16,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Correção da coluna de soldo: os valores anteriores não correspondiam ao Anexo I. O soldo está separado de VPE, gratificações e auxílio-moradia; não deve ser comparado com remuneração total.",
+      "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1052,19 +703,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 16,
-      "fontes": 3,
+      "linhas_com_valor": 18,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios da tabela legal com efeitos em julho/2026. Coronel nível II depende de progressão e sofre os limites remuneratórios aplicáveis; não é remuneração de ingresso.",
+      "fonte_conferida": "https://legisla.casacivil.go.gov.br/pesquisa_legislacao/115998/lei-24402",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1079,15 +725,28 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmmg",
+      "sigla": "CBMMG",
+      "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+      "uf": "MG",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela oficial de 2026, após a revisão de 5,4%, sem reaplicar o reajuste sobre valores já atualizados. As linhas de aluno são remunerações de formação.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1098,19 +757,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 7,
-      "fontes": 3,
+      "linhas_com_valor": 16,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Remuneração total de referência da tabela oficial de ativos. Substitui valores isolados de soldo e editais antigos. Não equivale ao soldo nem garante a mesma composição individual.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1122,18 +776,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 13,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Composição de referência publicada pelo Governo: soldo, habilitação, anuênio de referência e auxílio-alimentação. O total não representa um subsídio puro nem o mesmo anuênio de todos os militares.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1148,15 +797,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1168,18 +812,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 12,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Conferidos os 12 subsídios da tabela de abril/2026, comum a policiais e bombeiros militares. Não se reaplicou o reajuste geral de 5,6% sobre a tabela específica.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1190,19 +829,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 18,
-      "fontes": 3,
+      "linhas_com_valor": 60,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios por posto/graduação e classe, implantados em outubro/2026. Substitui a etapa de outubro/2025. Valores de formação não foram extrapolados, pois dependem também das regras de reajuste das bolsas.",
+      "fonte_conferida": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=abrirAnexo&codArquivoAnexado=73961",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1217,15 +851,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1237,18 +866,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 13,
-      "fontes": 4,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Soldo da coluna janeiro/2026, comum à PM e ao CBM. O adicional de formação foi incorporado: não se deve somá-lo novamente. Compensação orgânica e outras parcelas não incluídas.",
+      "fonte_conferida": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1260,18 +884,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 15,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios dos militares estaduais, publicados na tabela de abril/2026. Removida a estimativa que usava auxílio-fardamento como base salarial. IRV e outras indenizações não foram somadas.",
+      "fonte_conferida": "https://api.transparencia.rr.gov.br/storage/legislacoes/6df35931-6cf5-413e-95d9-cfb7cff60301.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1286,15 +905,28 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmsc",
+      "sigla": "CBMSC",
+      "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+      "uf": "SC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 19,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídio do regime remuneratório especial, com as etapas até abril/2026. Os 21,5% incidem sobre a base de abril/2025, sem capitalizar as três parcelas. Alunos oficiais recebem o subsídio de Aspirante, conforme art. 3º, parágrafo único, da LC 776/2021. Auxílio-alimentação não somado.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1306,18 +938,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 15,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios de abril/2026. A ajuda por convocação do Anexo II não é salário mensal e não foi adicionada.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36429/LC-453-2026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1328,19 +955,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 14,
-      "fontes": 2,
+      "linhas_com_valor": 19,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Salário inicial da tabela de abril/2026, com salário-base, RETP e representação onde indicada. Não inclui insalubridade nem vantagens pessoais. O CBPMESP integra a carreira da PMESP.",
+      "fonte_conferida": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1355,15 +977,10 @@
       "fontes": 2,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1378,15 +995,10 @@
       "fontes": 5,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1401,15 +1013,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1421,18 +1028,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 22,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Conferidos os 18 níveis de Oficial Investigador e quatro classes de Delegado na coluna de setembro/2026. A data da pesquisa antiga antecedia a vigência: agora a etapa está em vigor.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1444,18 +1046,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 20,
-      "fontes": 4,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios conferidos nos anexos III e IV, na coluna com efeitos a partir de janeiro/2026. Não inclui vantagens e indenizações.",
+      "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1467,18 +1064,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 22,
-      "fontes": 4,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "As 22 referências foram conferidas no caderno oficial de janeiro/2026. Os totais incluem GHP máximo: a coluna não representa automaticamente a remuneração inicial sem essa habilitação.",
+      "fonte_conferida": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1493,15 +1085,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1516,15 +1103,28 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcmg",
+      "sigla": "PCMG",
+      "nome": "Polícia Civil de Minas Gerais",
+      "uf": "MG",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 86,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Vencimentos básicos por cargo, nível e grau, na tabela de 2026. Carreiras policiais e de apoio identificadas separadamente.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1539,15 +1139,10 @@
       "fontes": 6,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1559,18 +1154,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 20,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Totais do grupo Polícia Civil ativo, jornada de 30h, conferidos na tabela de abril/2026. Há quadro em extinção com composição própria, não misturado aqui.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1581,19 +1171,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 7,
-      "fontes": 3,
+      "linhas_com_valor": 300,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Classes e níveis de 2026. Delegados possuem tabelas distintas de subsídio (Anexo V) e remuneração composta (Anexo VIII), identificadas nas linhas. A composição do Anexo VIII já inclui alimentação.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1604,19 +1189,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 17,
-      "fontes": 3,
+      "linhas_com_valor": 25,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios atualizados em abril/2026, nas cinco classes de Delegado, Perito Criminal/Médico-Legista/Odontolegista e Oficial Investigador. Substitui a tabela de julho/2025.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1631,15 +1211,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1654,15 +1229,10 @@
       "fontes": 1,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1677,15 +1247,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1700,15 +1265,28 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcsc",
+      "sigla": "PCSC",
+      "nome": "Polícia Civil de Santa Catarina",
+      "uf": "SC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios de abril/2026 por entrância de Delegado e pelas oito classes do subgrupo Agente da Autoridade Policial. O enquadramento inicial por cargo depende da carreira. Alimentação e outras indenizações excluídas.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1720,18 +1298,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 10,
-      "fontes": 4,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios de abril/2026 de Oficiais Investigadores e Delegados, por classe. A parcela de periculosidade e a alimentação têm regras próprias e não integram os valores desta coluna.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1746,15 +1319,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1769,15 +1337,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1788,19 +1351,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 10,
-      "fontes": 4,
+      "linhas_com_valor": 20,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela de subsídio de maio/2026, com todas as quatro classes/categorias. Auxílios não incluídos.",
+      "fonte_conferida": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1815,15 +1373,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1838,15 +1391,28 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmam",
+      "sigla": "PMAM",
+      "nome": "Polícia Militar do Estado do Amazonas",
+      "uf": "AM",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela implantada em dezembro/2025, aplicável a outubro/2026. A Lei 8.442/2026 prevê nova etapa apenas em 01/11/2026, ainda não aplicada. Retroativos parcelados não são salário mensal recorrente.",
+      "fonte_conferida": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1857,19 +1423,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 8,
-      "fontes": 3,
+      "linhas_com_valor": 154,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela de setembro/2026, com nível base e dez níveis de progressão horizontal. Valores de 2027 não utilizados. Auxílios e vantagens individuais excluídos.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1884,15 +1445,10 @@
       "fontes": 2,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1903,19 +1459,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 14,
-      "fontes": 5,
+      "linhas_com_valor": 16,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Correção da coluna de soldo: os valores anteriores não correspondiam ao Anexo I. O soldo está separado de VPE, gratificações e auxílio-moradia; não deve ser comparado com remuneração total.",
+      "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1926,19 +1477,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 12,
-      "fontes": 2,
+      "linhas_com_valor": 24,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Substituída a coluna incorreta por composições da tabela SEPM de janeiro/2026. Postos com GHP de 80% e 110% aparecem separados. Os totais de referência dependem de habilitação.",
+      "fonte_conferida": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1953,15 +1499,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -1973,9 +1514,12 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 19,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-17",
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Salário inicial da tabela de abril/2026, com salário-base, RETP e representação onde indicada. Não inclui insalubridade nem vantagens pessoais. O CBPMESP integra a carreira da PMESP.",
+      "fonte_conferida": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
       "monitor": null,
       "workflow_sugerido": null
     },
@@ -1987,19 +1531,32 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 14,
-      "fontes": 3,
+      "linhas_com_valor": 18,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios da tabela legal com efeitos em julho/2026. Coronel nível II depende de progressão e sofre os limites remuneratórios aplicáveis; não é remuneração de ingresso.",
+      "fonte_conferida": "https://legisla.casacivil.go.gov.br/pesquisa_legislacao/115998/lei-24402",
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmmg",
+      "sigla": "PMMG",
+      "nome": "Polícia Militar de Minas Gerais",
+      "uf": "MG",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela oficial de 2026, após a revisão de 5,4%, sem reaplicar o reajuste sobre valores já atualizados. As linhas de aluno são remunerações de formação.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2014,15 +1571,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2037,15 +1589,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2056,19 +1603,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 9,
-      "fontes": 3,
+      "linhas_com_valor": 16,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Remuneração total de referência da tabela oficial de ativos. Substitui valores isolados de soldo e editais antigos. Não equivale ao soldo nem garante a mesma composição individual.",
+      "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2080,18 +1622,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 13,
-      "fontes": 5,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Composição de referência publicada pelo Governo: soldo, habilitação, anuênio de referência e auxílio-alimentação. O total não representa um subsídio puro nem o mesmo anuênio de todos os militares.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2106,15 +1643,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2126,18 +1658,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 12,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Conferidos os 12 subsídios da tabela de abril/2026, comum a policiais e bombeiros militares. Não se reaplicou o reajuste geral de 5,6% sobre a tabela específica.",
+      "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2148,19 +1675,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 30,
-      "fontes": 4,
+      "linhas_com_valor": 60,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios por posto/graduação e classe, implantados em outubro/2026. Substitui a etapa de outubro/2025. Valores de formação não foram extrapolados, pois dependem também das regras de reajuste das bolsas.",
+      "fonte_conferida": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=abrirAnexo&codArquivoAnexado=73961",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2175,15 +1697,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2195,18 +1712,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 13,
-      "fontes": 4,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Soldo da coluna janeiro/2026, comum à PM e ao CBM. O adicional de formação foi incorporado: não se deve somá-lo novamente. Compensação orgânica e outras parcelas não incluídas.",
+      "fonte_conferida": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2217,19 +1729,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 14,
-      "fontes": 4,
+      "linhas_com_valor": 15,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios dos militares estaduais, publicados na tabela de abril/2026. Removida a estimativa que usava auxílio-fardamento como base salarial. IRV e outras indenizações não foram somadas.",
+      "fonte_conferida": "https://api.transparencia.rr.gov.br/storage/legislacoes/6df35931-6cf5-413e-95d9-cfb7cff60301.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2241,18 +1748,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 19,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídio do regime remuneratório especial, com as etapas até abril/2026. Os 21,5% incidem sobre a base de abril/2025, sem capitalizar as três parcelas. Alunos oficiais recebem o subsídio de Aspirante, conforme art. 3º, parágrafo único, da LC 776/2021. Auxílio-alimentação não somado.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2263,19 +1765,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 17,
-      "fontes": 3,
+      "linhas_com_valor": 15,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios de abril/2026. A ajuda por convocação do Anexo II não é salário mensal e não foi adicionada.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36429/LC-453-2026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2290,15 +1787,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2313,15 +1805,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2332,19 +1819,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 12,
-      "fontes": 2,
+      "linhas_com_valor": 20,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Remuneração de referência do Anexo IV, com as dez referências A–J de Policial Penal NS e do quadro transposto NM. Vencimento e GAP já incluídos, sem somar auxílios.",
+      "fonte_conferida": "https://diario.imprensaoficial.am.gov.br/portal/edicoes/download/17976",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2356,18 +1838,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 18,
-      "fontes": 2,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Atualizada para a coluna de outubro/2026. O valor de ingresso passou de R$ 5.911,14 para R$ 6.025,92. Valores de abril e outubro/2027 não antecipados.",
+      "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/2491/",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2382,15 +1859,10 @@
       "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2405,15 +1877,28 @@
       "fontes": 2,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "ppmg",
+      "sigla": "PPMG",
+      "nome": "Polícia Penal de Minas Gerais",
+      "uf": "MG",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 30,
+      "fontes": 1,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Vencimento básico de 2026, por nível e grau, jornada de 40h. Inicial corrigido para R$ 5.620,59; não é soma de auxílios.",
+      "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2424,19 +1909,14 @@
       "acao": "fortes",
       "classe": "forte",
       "score": 100,
-      "linhas_com_valor": 9,
-      "fontes": 3,
+      "linhas_com_valor": 64,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Subsídios de 2026, após reajuste de 3,81%, por classe e pelos oito níveis. O diretório da URL tem data de 2025, mas o documento é a tabela revisada de 2026.",
+      "fonte_conferida": "https://www.agepen.ms.gov.br/wp-content/uploads/2025/12/Tabela-Subsidio-AGEPEN-2026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2451,15 +1931,10 @@
       "fontes": 2,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2473,16 +1948,11 @@
       "linhas_com_valor": 35,
       "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Tabela completa da Polícia Penal de 2026: cinco classes, sete níveis. Total oficial de referência já inclui alimentação, risco e representação.",
+      "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2497,15 +1967,10 @@
       "fontes": 1,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2520,15 +1985,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2543,15 +2003,10 @@
       "fontes": 2,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2566,15 +2021,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2586,18 +2036,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 8,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Conferidas as oito classes da Polícia Penal após as três etapas do reajuste de 21,5%, integralmente aplicável desde abril/2026. Não se aplicou reajuste em duplicidade.",
+      "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2609,18 +2054,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 6,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Vencimento básico corrigido com o reajuste legal de 7% em abril/2026. Não representa a remuneração completa. Auxílios e gratificações condicionadas não foram incorporados.",
+      "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36428/LC-452-2026.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2635,15 +2075,10 @@
       "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "conferencia": "a_confirmar",
+      "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+      "fonte_conferida": null,
+      "monitor": null,
       "workflow_sugerido": null
     },
     {
@@ -2655,18 +2090,13 @@
       "classe": "forte",
       "score": 100,
       "linhas_com_valor": 18,
-      "fontes": 3,
+      "fontes": 1,
       "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "forte",
-          "score": 100
-        }
-      },
+      "ultima_pesquisa": "2026-10-18",
+      "conferencia": "conferida",
+      "nota_conferencia": "Os 18 padrões foram confrontados com a coluna de maio/2026 do Anexo XXVII. Auxílios não incluídos.",
+      "fonte_conferida": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+      "monitor": null,
       "workflow_sugerido": null
     }
   ],
@@ -2685,130 +2115,13 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pcal",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "bmmg",
-        "sigla": "CBMMG",
-        "nome": "Corpo de Bombeiros Militar de Minas Gerais",
-        "uf": "MG",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 82,
-        "linhas_com_valor": 3,
-        "fontes": 5,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "bmmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "ppmg",
-        "sigla": "PPMG",
-        "nome": "Polícia Penal de Minas Gerais",
-        "uf": "MG",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 1,
-        "fontes": 4,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "ppmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "pmmg",
-        "sigla": "PMMG",
-        "nome": "Polícia Militar de Minas Gerais",
-        "uf": "MG",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 2,
-        "fontes": 4,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "pmmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "pmam",
-        "sigla": "PMAM",
-        "nome": "Polícia Militar do Estado do Amazonas",
-        "uf": "AM",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 82,
-        "linhas_com_valor": 3,
-        "fontes": 5,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "pmam",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -2825,15 +2138,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmrj",
@@ -2853,15 +2161,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pcba",
@@ -2881,15 +2184,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pmrs",
@@ -2909,74 +2207,13 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pcrs",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "bmsc",
-        "sigla": "CBMSC",
-        "nome": "Corpo de Bombeiros Militar de Santa Catarina",
-        "uf": "SC",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 82,
-        "linhas_com_valor": 4,
-        "fontes": 5,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "bmsc",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "pcsc",
-        "sigla": "PCSC",
-        "nome": "Polícia Civil de Santa Catarina",
-        "uf": "SC",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 82,
-        "linhas_com_valor": 4,
-        "fontes": 4,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "pcsc",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -2993,15 +2230,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmes",
@@ -3021,15 +2253,10 @@
         "fontes": 6,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pces",
@@ -3049,15 +2276,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmms",
@@ -3077,15 +2299,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmmt",
@@ -3105,15 +2322,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pcmt",
@@ -3133,15 +2345,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppac",
@@ -3161,15 +2368,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pmce",
@@ -3189,15 +2391,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppce",
@@ -3217,15 +2414,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pmma",
@@ -3245,15 +2437,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppma",
@@ -3268,20 +2455,15 @@
         "uf": "PA",
         "acao": "fracas",
         "classe": "fraca",
-        "score": 82,
-        "linhas_com_valor": 3,
-        "fontes": 3,
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Total da referência ativa do cargo, com a composição do anexo oficial. Substitui o vencimento básico isolado que era exibido como remuneração.",
+        "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pppa",
@@ -3301,15 +2483,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pcpe",
@@ -3329,15 +2506,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppro",
@@ -3357,15 +2529,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pprj",
@@ -3385,15 +2552,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppba",
@@ -3410,18 +2572,13 @@
         "classe": "fraca",
         "score": 82,
         "linhas_com_valor": 3,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 82
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios de ingresso confirmados no edital retificado. Foram retirados valores de outras carreiras copiados da relação do Tesouro e atribuídos indevidamente à Polícia Penal.",
+        "fonte_conferida": "https://concursos-publicacoes.s3.amazonaws.com/1092/publico/1092_Edital-02-2026_RetificaAAodoEditaldeAberturaREQUISITOePROGRAMAS_Rev2_6a063b5d7c0d1.pdf?idpub=507759",
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "pprs",
@@ -3441,15 +2598,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppes",
@@ -3468,18 +2620,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 18,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Os 18 padrões foram confrontados com a coluna de maio/2026 do Anexo XXVII. Auxílios não incluídos.",
+        "fonte_conferida": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3491,18 +2638,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 20,
-        "fontes": 4,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios conferidos nos anexos III e IV, na coluna com efeitos a partir de janeiro/2026. Não inclui vantagens e indenizações.",
+        "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3514,9 +2656,12 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 19,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-17",
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Salário inicial da tabela de abril/2026, com salário-base, RETP e representação onde indicada. Não inclui insalubridade nem vantagens pessoais. O CBPMESP integra a carreira da PMESP.",
+        "fonte_conferida": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
         "monitor": null,
         "workflow_sugerido": null
       },
@@ -3528,19 +2673,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 14,
-        "fontes": 2,
+        "linhas_com_valor": 19,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Salário inicial da tabela de abril/2026, com salário-base, RETP e representação onde indicada. Não inclui insalubridade nem vantagens pessoais. O CBPMESP integra a carreira da PMESP.",
+        "fonte_conferida": "https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3555,15 +2695,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3578,15 +2713,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3601,15 +2731,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3624,15 +2749,64 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmmg",
+        "sigla": "CBMMG",
+        "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+        "uf": "MG",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela oficial de 2026, após a revisão de 5,4%, sem reaplicar o reajuste sobre valores já atualizados. As linhas de aluno são remunerações de formação.",
+        "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "ppmg",
+        "sigla": "PPMG",
+        "nome": "Polícia Penal de Minas Gerais",
+        "uf": "MG",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 30,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Vencimento básico de 2026, por nível e grau, jornada de 40h. Inicial corrigido para R$ 5.620,59; não é soma de auxílios.",
+        "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmmg",
+        "sigla": "PMMG",
+        "nome": "Polícia Militar de Minas Gerais",
+        "uf": "MG",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela oficial de 2026, após a revisão de 5,4%, sem reaplicar o reajuste sobre valores já atualizados. As linhas de aluno são remunerações de formação.",
+        "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3642,20 +2816,15 @@
         "uf": "MG",
         "acao": "fortes",
         "classe": "forte",
-        "score": 82,
-        "linhas_com_valor": 5,
-        "fontes": 3,
+        "score": 100,
+        "linhas_com_valor": 86,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 82
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Vencimentos básicos por cargo, nível e grau, na tabela de 2026. Carreiras policiais e de apoio identificadas separadamente.",
+        "fonte_conferida": "https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026_3.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3666,19 +2835,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 18,
-        "fontes": 3,
+        "linhas_com_valor": 60,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios por posto/graduação e classe, implantados em outubro/2026. Substitui a etapa de outubro/2025. Valores de formação não foram extrapolados, pois dependem também das regras de reajuste das bolsas.",
+        "fonte_conferida": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=abrirAnexo&codArquivoAnexado=73961",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3689,19 +2853,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 30,
-        "fontes": 4,
+        "linhas_com_valor": 60,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios por posto/graduação e classe, implantados em outubro/2026. Substitui a etapa de outubro/2025. Valores de formação não foram extrapolados, pois dependem também das regras de reajuste das bolsas.",
+        "fonte_conferida": "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=abrirAnexo&codArquivoAnexado=73961",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3716,15 +2875,28 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmam",
+        "sigla": "PMAM",
+        "nome": "Polícia Militar do Estado do Amazonas",
+        "uf": "AM",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela implantada em dezembro/2025, aplicável a outubro/2026. A Lei 8.442/2026 prevê nova etapa apenas em 01/11/2026, ainda não aplicada. Retroativos parcelados não são salário mensal recorrente.",
+        "fonte_conferida": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3739,15 +2911,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3758,19 +2925,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 12,
-        "fontes": 2,
+        "linhas_com_valor": 24,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Substituída a coluna incorreta por composições da tabela SEPM de janeiro/2026. Postos com GHP de 80% e 110% aparecem separados. Os totais de referência dependem de habilitação.",
+        "fonte_conferida": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3782,18 +2944,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 22,
-        "fontes": 4,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "As 22 referências foram conferidas no caderno oficial de janeiro/2026. Os totais incluem GHP máximo: a coluna não representa automaticamente a remuneração inicial sem essa habilitação.",
+        "fonte_conferida": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3808,15 +2965,10 @@
         "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3828,18 +2980,49 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 19,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídio do regime remuneratório especial, com as etapas até abril/2026. Os 21,5% incidem sobre a base de abril/2025, sem capitalizar as três parcelas. Alunos oficiais recebem o subsídio de Aspirante, conforme art. 3º, parágrafo único, da LC 776/2021. Auxílio-alimentação não somado.",
+        "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmsc",
+        "sigla": "CBMSC",
+        "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+        "uf": "SC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 19,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídio do regime remuneratório especial, com as etapas até abril/2026. Os 21,5% incidem sobre a base de abril/2025, sem capitalizar as três parcelas. Alunos oficiais recebem o subsídio de Aspirante, conforme art. 3º, parágrafo único, da LC 776/2021. Auxílio-alimentação não somado.",
+        "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+        "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcsc",
+        "sigla": "PCSC",
+        "nome": "Polícia Civil de Santa Catarina",
+        "uf": "SC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 1,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios de abril/2026 por entrância de Delegado e pelas oito classes do subgrupo Agente da Autoridade Policial. O enquadramento inicial por cargo depende da carreira. Alimentação e outras indenizações excluídas.",
+        "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3854,15 +3037,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3877,15 +3055,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3900,15 +3073,10 @@
         "fontes": 6,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3919,19 +3087,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 9,
-        "fontes": 3,
+        "linhas_com_valor": 64,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios de 2026, após reajuste de 3,81%, por classe e pelos oito níveis. O diretório da URL tem data de 2025, mas o documento é a tabela revisada de 2026.",
+        "fonte_conferida": "https://www.agepen.ms.gov.br/wp-content/uploads/2025/12/Tabela-Subsidio-AGEPEN-2026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3946,15 +3109,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3969,15 +3127,10 @@
         "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -3992,15 +3145,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4015,15 +3163,10 @@
         "fontes": 5,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4034,19 +3177,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 8,
-        "fontes": 3,
+        "linhas_com_valor": 154,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela de setembro/2026, com nível base e dez níveis de progressão horizontal. Valores de 2027 não utilizados. Auxílios e vantagens individuais excluídos.",
+        "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4058,18 +3196,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 22,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Conferidos os 18 níveis de Oficial Investigador e quatro classes de Delegado na coluna de setembro/2026. A data da pesquisa antiga antecedia a vigência: agora a etapa está em vigor.",
+        "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4080,19 +3213,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 14,
-        "fontes": 2,
+        "linhas_com_valor": 154,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela de setembro/2026, com nível base e dez níveis de progressão horizontal. Valores de 2027 não utilizados. Auxílios e vantagens individuais excluídos.",
+        "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2464",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4107,15 +3235,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4126,19 +3249,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 10,
-        "fontes": 4,
+        "linhas_com_valor": 20,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela de subsídio de maio/2026, com todas as quatro classes/categorias. Auxílios não incluídos.",
+        "fonte_conferida": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4149,19 +3267,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 12,
-        "fontes": 2,
+        "linhas_com_valor": 20,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Remuneração de referência do Anexo IV, com as dez referências A–J de Policial Penal NS e do quadro transposto NM. Vencimento e GAP já incluídos, sem somar auxílios.",
+        "fonte_conferida": "https://diario.imprensaoficial.am.gov.br/portal/edicoes/download/17976",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4173,18 +3286,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 18,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Atualizada para a coluna de outubro/2026. O valor de ingresso passou de R$ 5.911,14 para R$ 6.025,92. Valores de abril e outubro/2027 não antecipados.",
+        "fonte_conferida": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/2491/",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4195,19 +3303,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 14,
-        "fontes": 5,
+        "linhas_com_valor": 16,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Correção da coluna de soldo: os valores anteriores não correspondiam ao Anexo I. O soldo está separado de VPE, gratificações e auxílio-moradia; não deve ser comparado com remuneração total.",
+        "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4222,15 +3325,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4241,19 +3339,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 14,
-        "fontes": 3,
+        "linhas_com_valor": 18,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios da tabela legal com efeitos em julho/2026. Coronel nível II depende de progressão e sofre os limites remuneratórios aplicáveis; não é remuneração de ingresso.",
+        "fonte_conferida": "https://legisla.casacivil.go.gov.br/pesquisa_legislacao/115998/lei-24402",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4268,15 +3361,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4291,15 +3379,10 @@
         "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4314,15 +3397,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4333,19 +3411,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 9,
-        "fontes": 3,
+        "linhas_com_valor": 16,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Remuneração total de referência da tabela oficial de ativos. Substitui valores isolados de soldo e editais antigos. Não equivale ao soldo nem garante a mesma composição individual.",
+        "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4357,18 +3430,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 20,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Totais do grupo Polícia Civil ativo, jornada de 30h, conferidos na tabela de abril/2026. Há quadro em extinção com composição própria, não misturado aqui.",
+        "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4380,18 +3448,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 13,
-        "fontes": 5,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Composição de referência publicada pelo Governo: soldo, habilitação, anuênio de referência e auxílio-alimentação. O total não representa um subsídio puro nem o mesmo anuênio de todos os militares.",
+        "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4402,19 +3465,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 7,
-        "fontes": 3,
+        "linhas_com_valor": 300,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Classes e níveis de 2026. Delegados possuem tabelas distintas de subsídio (Anexo V) e remuneração composta (Anexo VIII), identificadas nas linhas. A composição do Anexo VIII já inclui alimentação.",
+        "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4428,16 +3486,11 @@
         "linhas_com_valor": 35,
         "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela completa da Polícia Penal de 2026: cinco classes, sete níveis. Total oficial de referência já inclui alimentação, risco e representação.",
+        "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4452,15 +3505,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4475,15 +3523,10 @@
         "fontes": 1,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4495,18 +3538,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 12,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Conferidos os 12 subsídios da tabela de abril/2026, comum a policiais e bombeiros militares. Não se reaplicou o reajuste geral de 5,6% sobre a tabela específica.",
+        "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4517,19 +3555,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 17,
-        "fontes": 3,
+        "linhas_com_valor": 25,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios atualizados em abril/2026, nas cinco classes de Delegado, Perito Criminal/Médico-Legista/Odontolegista e Oficial Investigador. Substitui a tabela de julho/2025.",
+        "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4541,18 +3574,13 @@
         "classe": "forte",
         "score": 82,
         "linhas_com_valor": 5,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 82
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Conferidos os cinco subsídios das classes da Polícia Penal, de abril/2026, incluindo Especial 1.",
+        "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4567,15 +3595,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4590,15 +3613,10 @@
         "fontes": 1,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4613,15 +3631,10 @@
         "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4633,18 +3646,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 13,
-        "fontes": 4,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Soldo da coluna janeiro/2026, comum à PM e ao CBM. O adicional de formação foi incorporado: não se deve somá-lo novamente. Compensação orgânica e outras parcelas não incluídas.",
+        "fonte_conferida": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4659,15 +3667,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4678,19 +3681,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 14,
-        "fontes": 4,
+        "linhas_com_valor": 15,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios dos militares estaduais, publicados na tabela de abril/2026. Removida a estimativa que usava auxílio-fardamento como base salarial. IRV e outras indenizações não foram somadas.",
+        "fonte_conferida": "https://api.transparencia.rr.gov.br/storage/legislacoes/6df35931-6cf5-413e-95d9-cfb7cff60301.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4705,15 +3703,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4728,15 +3721,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4747,19 +3735,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 17,
-        "fontes": 3,
+        "linhas_com_valor": 15,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios de abril/2026. A ajuda por convocação do Anexo II não é salário mensal e não foi adicionada.",
+        "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36429/LC-453-2026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4771,18 +3754,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 10,
-        "fontes": 4,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios de abril/2026 de Oficiais Investigadores e Delegados, por classe. A parcela de periculosidade e a alimentação têm regras próprias e não integram os valores desta coluna.",
+        "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36439/LO-9933-2026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4794,18 +3772,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 6,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Vencimento básico corrigido com o reajuste legal de 7% em abril/2026. Não representa a remuneração completa. Auxílios e gratificações condicionadas não foram incorporados.",
+        "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36428/LC-452-2026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4820,15 +3793,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4843,15 +3811,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4866,15 +3829,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 82
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4889,15 +3847,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4912,15 +3865,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4931,19 +3879,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 11,
-        "fontes": 3,
+        "linhas_com_valor": 18,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Tabela implantada em dezembro/2025, aplicável a outubro/2026. A Lei 8.442/2026 prevê nova etapa apenas em 01/11/2026, ainda não aplicada. Retroativos parcelados não são salário mensal recorrente.",
+        "fonte_conferida": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4958,15 +3901,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -4981,15 +3919,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5001,18 +3934,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 16,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Correção da coluna de soldo: os valores anteriores não correspondiam ao Anexo I. O soldo está separado de VPE, gratificações e auxílio-moradia; não deve ser comparado com remuneração total.",
+        "fonte_conferida": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5023,19 +3951,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 16,
-        "fontes": 3,
+        "linhas_com_valor": 18,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios da tabela legal com efeitos em julho/2026. Coronel nível II depende de progressão e sofre os limites remuneratórios aplicáveis; não é remuneração de ingresso.",
+        "fonte_conferida": "https://legisla.casacivil.go.gov.br/pesquisa_legislacao/115998/lei-24402",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5050,15 +3973,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5069,19 +3987,14 @@
         "acao": "fortes",
         "classe": "forte",
         "score": 100,
-        "linhas_com_valor": 7,
-        "fontes": 3,
+        "linhas_com_valor": 16,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Remuneração total de referência da tabela oficial de ativos. Substitui valores isolados de soldo e editais antigos. Não equivale ao soldo nem garante a mesma composição individual.",
+        "fonte_conferida": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5093,18 +4006,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 13,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Composição de referência publicada pelo Governo: soldo, habilitação, anuênio de referência e auxílio-alimentação. O total não representa um subsídio puro nem o mesmo anuênio de todos os militares.",
+        "fonte_conferida": "https://auniao.pb.gov.br/servicos/doe/2026/fevereiro/diario-oficial-20-02-2026-portal.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5119,15 +4027,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5139,18 +4042,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 12,
-        "fontes": 2,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Conferidos os 12 subsídios da tabela de abril/2026, comum a policiais e bombeiros militares. Não se reaplicou o reajuste geral de 5,6% sobre a tabela específica.",
+        "fonte_conferida": "https://sapl.al.pi.leg.br/media/sapl/public/normajuridica/2026/6950/sei_0023241319_lei_8941.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5165,15 +4063,10 @@
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5185,18 +4078,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 13,
-        "fontes": 4,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Soldo da coluna janeiro/2026, comum à PM e ao CBM. O adicional de formação foi incorporado: não se deve somá-lo novamente. Compensação orgânica e outras parcelas não incluídas.",
+        "fonte_conferida": "https://ditel.casacivil.ro.gov.br/COTEL/Livros/Files/L5695%20-%20COMPILADO.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5208,18 +4096,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 15,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios dos militares estaduais, publicados na tabela de abril/2026. Removida a estimativa que usava auxílio-fardamento como base salarial. IRV e outras indenizações não foram somadas.",
+        "fonte_conferida": "https://api.transparencia.rr.gov.br/storage/legislacoes/6df35931-6cf5-413e-95d9-cfb7cff60301.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5234,15 +4117,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5254,18 +4132,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 15,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Subsídios de abril/2026. A ajuda por convocação do Anexo II não é salário mensal e não foi adicionada.",
+        "fonte_conferida": "https://api.legislacao.se.gov.br/uploads/atos/36429/LC-453-2026.pdf",
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5280,15 +4153,10 @@
         "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5303,15 +4171,10 @@
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "conferencia": "a_confirmar",
+        "nota_conferencia": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+        "fonte_conferida": null,
+        "monitor": null,
         "workflow_sugerido": null
       },
       {
@@ -5323,18 +4186,13 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 8,
-        "fontes": 3,
+        "fontes": 1,
         "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "forte",
-            "score": 100
-          }
-        },
+        "ultima_pesquisa": "2026-10-18",
+        "conferencia": "conferida",
+        "nota_conferencia": "Conferidas as oito classes da Polícia Penal após as três etapas do reajuste de 21,5%, integralmente aplicável desde abril/2026. Não se aplicou reajuste em duplicidade.",
+        "fonte_conferida": "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+        "monitor": null,
         "workflow_sugerido": null
       }
     ]

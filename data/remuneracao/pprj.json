@@ -4,9 +4,9 @@
   "sigla": "PPRJ",
   "uf": "RJ",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Penal do Rio de Janeiro",
-  "resumo": "Tabela com remuneração bruta mensal por classe da carreira de Policial Penal do Rio de Janeiro, com base no Caderno de Remuneração do Estado do Rio de Janeiro de janeiro de 2026. Os valores abaixo somam vencimento-base e GVP de 20%, sem incluir triênio, auxílio-alimentação, auxílio-transporte, insalubridade provisória, RAS, PEOP ou outros adicionais eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Policial Penal 3ª classe",
@@ -20,7 +20,8 @@
       "fonteKey": "pprj",
       "fonteNome": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
       "fonteUrl": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal 2ª classe",
@@ -34,7 +35,8 @@
       "fonteKey": "pprj",
       "fonteNome": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
       "fonteUrl": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal 1ª classe",
@@ -48,7 +50,8 @@
       "fonteKey": "pprj",
       "fonteNome": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
       "fonteUrl": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
@@ -73,8 +76,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 82,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -83,5 +85,10 @@
     "Os valores publicados para Policial Penal incluem vencimento-base e GVP de 20%.",
     "Não foram somados triênio, auxílio-alimentação, auxílio-transporte, insalubridade provisória de R$ 100,00, RAS, PEOP ou outras verbas variáveis.",
     "Classificação automática: Atualização fraca (82/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

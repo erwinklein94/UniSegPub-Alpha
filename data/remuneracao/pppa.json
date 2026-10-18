@@ -4,84 +4,47 @@
   "sigla": "PPPA",
   "uf": "PA",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Valores conferidos em fonte oficial",
   "titulo": "Remuneração bruta mensal da Polícia Penal do Pará",
-  "resumo": "A tabela útil encontrada para a carreira traz o cargo de Policial Penal com remuneração inicial de R$ 2.810,00 no concurso estadual. Para referência de remuneração praticada no Executivo estadual, o demonstrativo de pessoal de 2024 mostra valores brutos mensais de Policial Penal em faixas superiores, variando entre cerca de R$ 4 mil e R$ 6,1 mil em registros sem função comissionada.",
+  "resumo": "Total da referência ativa do cargo, com a composição do anexo oficial. Substitui o vencimento básico isolado que era exibido como remuneração.",
   "linhas": [
     {
-      "cargo": "Policial Penal",
-      "badge": "INICIAL",
-      "remuneracao": 2810,
+      "cargo": "Policial Penal — ativo",
+      "remuneracao": 4057.84,
+      "classe": "Quadro ativo",
+      "criterio": "Total da linha de Policial Penal da tabela de ativos, abril/2026.",
+      "benefDesc": "Inclui risco de vida, tempo integral e abono de R$ 280,00 indicados na tabela. Plantões e parcelas pessoais não somados.",
+      "badge": "PPPA",
       "beneficios": 0,
-      "total": 2810,
-      "classe": "Carreira policial penal",
-      "criterio": "Remuneração bruta mensal inicial do cargo",
-      "benefDesc": "Não somados auxílio-alimentação, diárias, plantões, adicionais pessoais e funções.",
+      "total": 4057.84,
       "fonteKey": "pppa",
-      "fonteNome": "Diário Oficial do Estado do Pará - Edital do concurso de Policial Penal",
-      "fonteUrl": "https://www.ioepa.com.br/pages/2021/2021.06.30.DOE.pdf",
-      "valorPendente": false
-    },
-    {
-      "cargo": "Policial Penal",
-      "badge": "FAIXA ATUAL",
-      "remuneracao": 4022.2,
-      "beneficios": 0,
-      "total": 4022.2,
-      "classe": "Carreira policial penal",
-      "criterio": "Menor bruto mensal identificado no demonstrativo de pessoal",
-      "benefDesc": "Não somados auxílio-alimentação, diárias, adicionais eventuais e funções.",
-      "fonteKey": "pppa",
-      "fonteNome": "Demonstrativo de Remuneração de Pessoal do Poder Executivo do Pará",
-      "fonteUrl": "https://seplad.pa.gov.br/wp-content/uploads/2025/01/Demonstrativo-de-Remuneracao-de-Pessoal-Dezembro-de-2024-Parte-2-V-1.pdf",
-      "valorPendente": false
-    },
-    {
-      "cargo": "Policial Penal",
-      "badge": "FAIXA ATUAL",
-      "remuneracao": 6133.32,
-      "beneficios": 0,
-      "total": 6133.32,
-      "classe": "Carreira policial penal",
-      "criterio": "Maior bruto mensal identificado sem função comissionada no demonstrativo de pessoal",
-      "benefDesc": "Não somados auxílio-alimentação, diárias, adicionais eventuais e funções.",
-      "fonteKey": "pppa",
-      "fonteNome": "Demonstrativo de Remuneração de Pessoal do Poder Executivo do Pará",
-      "fonteUrl": "https://seplad.pa.gov.br/wp-content/uploads/2025/01/Demonstrativo-de-Remuneracao-de-Pessoal-Dezembro-de-2024-Parte-2-V-1.pdf",
-      "valorPendente": false
+      "fonteNome": "Lei PA 11.358/2026 — Anexo Único — DOE 36.582, p. 22",
+      "fonteUrl": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "valorPendente": false,
+      "tipo_valor": "remuneracao",
+      "vigencia_inicio": "2026-04-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     }
   ],
-  "fonte_principal": "https://www.ioepa.com.br/pages/2021/2021.06.30.DOE.pdf",
+  "fonte_principal": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
   "fontes": [
     {
-      "titulo": "Diário Oficial do Estado do Pará - Edital do concurso de Policial Penal",
-      "url": "https://www.ioepa.com.br/pages/2021/2021.06.30.DOE.pdf",
-      "tipo": "edital oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Demonstrativo de Remuneração de Pessoal do Poder Executivo do Pará",
-      "url": "https://seplad.pa.gov.br/wp-content/uploads/2025/01/Demonstrativo-de-Remuneracao-de-Pessoal-Dezembro-de-2024-Parte-2-V-1.pdf",
-      "tipo": "portal oficial de remuneração",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Governo anuncia publicação do edital para o concurso da polícia penal com 1646 vagas",
-      "url": "https://segup.pa.gov.br/noticias/governo-anuncia-publica%C3%A7%C3%A3o-do-edital-para-o-concurso-da-pol%C3%ADcia-penal-com-1646-vagas",
-      "tipo": "página governamental",
-      "data_consulta": "2026-05-18"
+      "titulo": "Lei PA 11.358/2026 — Anexo Único — DOE 36.582, p. 22",
+      "url": "https://sistemas.semas.pa.gov.br/legislacao/files/anexos/907897_anexo.pdf",
+      "tipo": "fonte primária conferida",
+      "data_consulta": "2026-10-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 82,
-  "modelo_openai": "gpt-5.4",
-  "atualizado_pela_openai": true,
-  "precisa_revisao_humana": true,
-  "alertas": [
-    "A pesquisa localizou valor inicial oficial do cargo e faixa bruta praticada em demonstrativo nominal, mas não encontrou tabela oficial consolidada por classe ou referência da carreira.",
-    "Os valores de demonstrativo de pessoal refletem remuneração bruta observada em servidores e podem variar por tempo de serviço e parcelas permanentes não detalhadas na mesma linha.",
-    "Funções comissionadas foram desconsideradas na faixa principal para evitar inflar a remuneração do cargo efetivo.",
-    "Classificação automática: Atualização fraca (82/100)."
-  ]
+  "ultima_pesquisa": "2026-10-18",
+  "classe_atualizacao": "conferida",
+  "atualizado_pela_openai": false,
+  "precisa_revisao_humana": false,
+  "alertas": [],
+  "revisao_metodo": "Conferência editorial de tabelas e datas em fontes primárias; sem extrapolar reajustes.",
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "conferida",
+    "nota": "Total da referência ativa do cargo, com a composição do anexo oficial. Substitui o vencimento básico isolado que era exibido como remuneração."
+  }
 }

@@ -4,9 +4,9 @@
   "sigla": "CBMERJ",
   "uf": "RJ",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do CBMERJ",
-  "resumo": "Tabela com valores brutos mensais identificados em fontes oficiais recentes do CBMERJ para cargos de ingresso e progressão imediata informada em edital oficial.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado BM",
@@ -20,7 +20,8 @@
       "fonteKey": "bmrj",
       "fonteNome": "Edital CBMERJ 001/2023",
       "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento BM",
@@ -34,7 +35,8 @@
       "fonteKey": "bmrj",
       "fonteNome": "Edital CBMERJ 001/2023",
       "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete BM 1º CFO",
@@ -48,7 +50,8 @@
       "fonteKey": "bmrj",
       "fonteNome": "Concurso Público ABMDPII - CBMERJ / 2026",
       "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/Edital-CFO-2026.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante a Oficial BM",
@@ -62,7 +65,8 @@
       "fonteKey": "bmrj",
       "fonteNome": "Concurso Público ABMDPII - CBMERJ / 2026",
       "fonteUrl": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/Edital-CFO-2026.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2023/08/0_EDITAL__FINAL_17_1_1674149795.pdf",
@@ -93,8 +97,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 82,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -102,5 +105,10 @@
     "Não foi localizada, em fonte oficial aberta com tabela consolidada por posto e graduação do CBMERJ, uma grade completa recente de remuneração bruta mensal para toda a carreira.",
     "Os valores publicados em editais oficiais são úteis e objetivos, mas não substituem uma tabela remuneratória integral por posto e graduação.",
     "Classificação automática: Atualização fraca (82/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

@@ -4,9 +4,9 @@
   "sigla": "PMBA",
   "uf": "BA",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da PMBA",
-  "resumo": "Foram localizados em lei publicada no Diário Oficial da Bahia os valores oficiais de soldo a partir de maio de 2026 e da GAPM a partir de junho de 2026 para postos e graduações da Polícia Militar da Bahia. A tabela abaixo apresenta a remuneração bruta mensal por posto/graduação na referência inicial, somando soldo de maio de 2026 com GAPM referência I de junho de 2026, sem incluir auxílio-fardamento nem outras verbas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado",
@@ -15,12 +15,14 @@
       "beneficios": 0,
       "total": 3134.44,
       "classe": "Praças",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Cabo",
@@ -29,12 +31,14 @@
       "beneficios": 0,
       "total": 3367.11,
       "classe": "Praças",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Sargento",
@@ -43,12 +47,14 @@
       "beneficios": 0,
       "total": 3631.45,
       "classe": "Praças",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Subtenente",
@@ -57,12 +63,14 @@
       "beneficios": 0,
       "total": 3952.78,
       "classe": "Praças",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Aspirante a Oficial",
@@ -71,12 +79,14 @@
       "beneficios": 0,
       "total": 4061.54,
       "classe": "Oficiais",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Tenente",
@@ -85,12 +95,14 @@
       "beneficios": 0,
       "total": 6131.35,
       "classe": "Oficiais",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Capitão",
@@ -99,12 +111,14 @@
       "beneficios": 0,
       "total": 8468.12,
       "classe": "Oficiais",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Major",
@@ -113,12 +127,14 @@
       "beneficios": 0,
       "total": 9326.98,
       "classe": "Oficiais",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Tenente-Coronel",
@@ -127,12 +143,14 @@
       "beneficios": 0,
       "total": 10218.87,
       "classe": "Oficiais",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Coronel",
@@ -141,12 +159,14 @@
       "beneficios": 0,
       "total": 11190.5,
       "classe": "Oficiais",
-      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026",
+      "criterio": "Soldo de maio/2026 + GAPM ref. I de jun/2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento, adicionais, abonos nem verbas eventuais",
       "fonteKey": "pmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     }
   ],
   "fonte_principal": "https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146",
@@ -165,15 +185,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Os valores da tabela somam soldo vigente a partir de 1º de maio de 2026 com GAPM referência I vigente a partir de 1º de junho de 2026.",
     "Não foram somados auxílio-fardamento, adicionais por tempo de serviço, gratificações específicas, abonos, indenizações ou verbas eventuais.",
     "A lei localiza praças e oficiais por posto/graduação, mas a GAPM varia por referência de I a V; a tabela apresenta a referência inicial para manter comparabilidade.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

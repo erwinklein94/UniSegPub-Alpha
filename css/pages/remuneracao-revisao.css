@@ -1,0 +1,25 @@
+.remu-aviso-dados {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto 18px;
+  padding: 16px 20px;
+  border: 1px solid #d6b56b;
+  border-left: 4px solid #a46e15;
+  border-radius: 10px;
+  background: #fff8e8;
+  color: #654811;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.remu-aviso-dados[hidden] { display: none; }
+.remu-aviso-dados[data-situacao="conferida"] {
+  border-color: #8ac4b3;
+  background: #edf8f3;
+  color: #205c48;
+}
+.usp-remu-chips .usp-remu-chip { white-space: normal; line-height: 1.6; }
+.usp-remu-value small { max-width: 230px; line-height: 1.6; }
+.usp-remu-source a { overflow-wrap: anywhere; }
+@media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] .remu-aviso-dados { background: #302919; color: #f1d398; }
+  html[data-theme="dark"] .remu-aviso-dados[data-situacao="conferida"] { background: #17342b; color: #b6e2d2; }
+}

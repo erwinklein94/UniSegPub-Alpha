@@ -4,13 +4,13 @@
   "sigla": "PCDF",
   "uf": "DF",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Valores conferidos em fonte oficial",
   "titulo": "Remuneração bruta mensal da PCDF",
-  "resumo": "Tabela com subsídio bruto mensal vigente em 2026 para os principais cargos da Polícia Civil do Distrito Federal, com valores por classe/categoria. Benefícios e verbas eventuais não foram somados.",
+  "resumo": "Subsídios conferidos nos anexos III e IV, na coluna com efeitos a partir de janeiro/2026. Não inclui vantagens e indenizações.",
   "linhas": [
     {
       "cargo": "Delegado de Polícia - Terceira Classe",
-      "badge": "DEL 3ª",
+      "badge": "PCDF",
       "remuneracao": 26690.15,
       "beneficios": 0,
       "total": 26690.15,
@@ -18,13 +18,17 @@
       "criterio": "Subsídio bruto mensal da classe inicial",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo III",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43091066",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - Segunda Classe",
-      "badge": "DEL 2ª",
+      "badge": "PCDF",
       "remuneracao": 27703.52,
       "beneficios": 0,
       "total": 27703.52,
@@ -32,13 +36,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo III",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43091066",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - Primeira Classe",
-      "badge": "DEL 1ª",
+      "badge": "PCDF",
       "remuneracao": 32382.34,
       "beneficios": 0,
       "total": 32382.34,
@@ -46,13 +54,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo III",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43091066",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - Classe Especial",
-      "badge": "DEL ESP",
+      "badge": "PCDF",
       "remuneracao": 38872.66,
       "beneficios": 0,
       "total": 38872.66,
@@ -60,13 +72,17 @@
       "criterio": "Subsídio bruto mensal do topo da carreira",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo III",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43091066",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Criminal - Terceira Classe",
-      "badge": "PER CR 3",
+      "badge": "PCDF",
       "remuneracao": 26690.15,
       "beneficios": 0,
       "total": 26690.15,
@@ -74,13 +90,17 @@
       "criterio": "Subsídio bruto mensal da classe inicial",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Criminal - Segunda Classe",
-      "badge": "PER CR 2",
+      "badge": "PCDF",
       "remuneracao": 27703.52,
       "beneficios": 0,
       "total": 27703.52,
@@ -88,13 +108,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Criminal - Primeira Classe",
-      "badge": "PER CR 1",
+      "badge": "PCDF",
       "remuneracao": 32382.34,
       "beneficios": 0,
       "total": 32382.34,
@@ -102,13 +126,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Criminal - Classe Especial",
-      "badge": "PER ESP",
+      "badge": "PCDF",
       "remuneracao": 38872.66,
       "beneficios": 0,
       "total": 38872.66,
@@ -116,13 +144,17 @@
       "criterio": "Subsídio bruto mensal do topo da carreira",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Médico-Legista - Terceira Classe",
-      "badge": "PML 3ª",
+      "badge": "PCDF",
       "remuneracao": 26690.15,
       "beneficios": 0,
       "total": 26690.15,
@@ -130,13 +162,17 @@
       "criterio": "Subsídio bruto mensal da classe inicial",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Médico-Legista - Segunda Classe",
-      "badge": "PML 2ª",
+      "badge": "PCDF",
       "remuneracao": 27703.52,
       "beneficios": 0,
       "total": 27703.52,
@@ -144,13 +180,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Médico-Legista - Primeira Classe",
-      "badge": "PML 1ª",
+      "badge": "PCDF",
       "remuneracao": 32382.34,
       "beneficios": 0,
       "total": 32382.34,
@@ -158,13 +198,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Perito Médico-Legista - Classe Especial",
-      "badge": "PML ESP",
+      "badge": "PCDF",
       "remuneracao": 38872.66,
       "beneficios": 0,
       "total": 38872.66,
@@ -172,13 +216,17 @@
       "criterio": "Subsídio bruto mensal do topo da carreira",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - Terceira Classe",
-      "badge": "OIP 3ª",
+      "badge": "PCDF",
       "remuneracao": 13794.41,
       "beneficios": 0,
       "total": 13794.41,
@@ -186,13 +234,17 @@
       "criterio": "Subsídio bruto mensal da classe inicial",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - Segunda Classe",
-      "badge": "OIP 2ª",
+      "badge": "PCDF",
       "remuneracao": 14593.7,
       "beneficios": 0,
       "total": 14593.7,
@@ -200,13 +252,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - Primeira Classe",
-      "badge": "OIP 1ª",
+      "badge": "PCDF",
       "remuneracao": 17523.06,
       "beneficios": 0,
       "total": 17523.06,
@@ -214,13 +270,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - Classe Especial",
-      "badge": "OIP ESP",
+      "badge": "PCDF",
       "remuneracao": 23440.38,
       "beneficios": 0,
       "total": 23440.38,
@@ -228,13 +288,17 @@
       "criterio": "Subsídio bruto mensal do topo da carreira",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Papiloscopista Policial - Terceira Classe",
-      "badge": "PAP 3ª",
+      "badge": "PCDF",
       "remuneracao": 13794.41,
       "beneficios": 0,
       "total": 13794.41,
@@ -242,13 +306,17 @@
       "criterio": "Subsídio bruto mensal da classe inicial",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Papiloscopista Policial - Segunda Classe",
-      "badge": "PAP 2ª",
+      "badge": "PCDF",
       "remuneracao": 14593.7,
       "beneficios": 0,
       "total": 14593.7,
@@ -256,13 +324,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Papiloscopista Policial - Primeira Classe",
-      "badge": "PAP 1ª",
+      "badge": "PCDF",
       "remuneracao": 17523.06,
       "beneficios": 0,
       "total": 17523.06,
@@ -270,13 +342,17 @@
       "criterio": "Subsídio bruto mensal",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Papiloscopista Policial - Classe Especial",
-      "badge": "PAP ESP",
+      "badge": "PCDF",
       "remuneracao": 23440.38,
       "beneficios": 0,
       "total": 23440.38,
@@ -284,47 +360,33 @@
       "criterio": "Subsídio bruto mensal do topo da carreira",
       "benefDesc": "Sem auxílio-alimentação, adicionais, abonos e verbas eventuais",
       "fonteKey": "pcdf",
-      "fonteNome": "Lei nº 15.395/2026 - Anexo IV",
-      "fonteUrl": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "valorPendente": false
+      "fonteNome": "Lei federal 15.395/2026, Anexos III e IV",
+      "fonteUrl": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-01-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     }
   ],
-  "fonte_principal": "https://legis.senado.leg.br/norma/43090723",
+  "fonte_principal": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
   "fontes": [
     {
-      "titulo": "Lei nº 15.395 de 27/04/2026 - detalhes e anexos",
-      "url": "https://legis.senado.leg.br/norma/43090723",
-      "tipo": "lei federal",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Lei nº 15.395/2026 - Anexo III - Tabela de subsídios para Delegado de Polícia do Distrito Federal",
-      "url": "https://legis.senado.leg.br/norma/43090723/publicacao/43091066",
-      "tipo": "anexo legal",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Lei nº 15.395/2026 - Anexo IV - Tabela de subsídios para a carreira de Polícia Civil do Distrito Federal",
-      "url": "https://legis.senado.leg.br/norma/43090723/publicacao/43090272",
-      "tipo": "anexo legal",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "PCDF abre vagas para Delegado - Cebraspe",
-      "url": "https://www.cebraspe.org.br/policia-civil-do-distrito-federal-abre-vagas-para-delegado/",
-      "tipo": "página de concurso",
-      "data_consulta": "2026-05-18"
+      "titulo": "Lei federal 15.395/2026, Anexos III e IV",
+      "url": "https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm",
+      "tipo": "fonte primária conferida",
+      "data_consulta": "2026-10-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
-  "modelo_openai": "gpt-5.4",
-  "atualizado_pela_openai": true,
+  "ultima_pesquisa": "2026-10-18",
+  "classe_atualizacao": "conferida",
+  "atualizado_pela_openai": false,
   "precisa_revisao_humana": false,
-  "alertas": [
-    "A tabela legal de 2026 consultada traz a nomenclatura 'Oficial Investigador de Polícia' para o cargo investigativo, em vez da denominação antiga separada por agente e escrivão.",
-    "Os valores informados são de subsídio bruto mensal e não incluem benefícios, serviço voluntário gratificado, indenizações, horas extras ou verbas eventuais.",
-    "Classificação automática: Atualização forte (100/100)."
-  ]
+  "alertas": [],
+  "revisao_metodo": "Conferência editorial de tabelas e datas em fontes primárias; sem extrapolar reajustes.",
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "conferida",
+    "nota": "Subsídios conferidos nos anexos III e IV, na coluna com efeitos a partir de janeiro/2026. Não inclui vantagens e indenizações."
+  }
 }

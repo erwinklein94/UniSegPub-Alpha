@@ -4,9 +4,9 @@
   "sigla": "PCSP",
   "uf": "SP",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da PCSP",
-  "resumo": "Tabela com vencimentos brutos mensais por cargo e classe da Polícia Civil do Estado de São Paulo, com valores atualizados pela reclassificação que produz efeitos a partir de 1º de abril de 2026.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Delegado de Polícia de 3ª Classe",
@@ -20,7 +20,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo I",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Delegado de Polícia de 2ª Classe",
@@ -34,7 +36,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo I",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Delegado de Polícia de 1ª Classe",
@@ -48,7 +52,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo I",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Delegado de Polícia de Classe Especial",
@@ -62,7 +68,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo I",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Médico Legista de 3ª Classe",
@@ -76,7 +84,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Médico Legista de 2ª Classe",
@@ -90,7 +100,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Médico Legista de 1ª Classe",
@@ -104,7 +116,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Médico Legista de Classe Especial",
@@ -118,7 +132,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Perito Criminal de 3ª Classe",
@@ -132,7 +148,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Perito Criminal de 2ª Classe",
@@ -146,7 +164,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Perito Criminal de 1ª Classe",
@@ -160,7 +180,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Perito Criminal de Classe Especial",
@@ -174,7 +196,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Escrivão de Polícia de 3ª Classe",
@@ -188,7 +212,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Escrivão de Polícia de 2ª Classe",
@@ -202,7 +228,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Escrivão de Polícia de 1ª Classe",
@@ -216,7 +244,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Escrivão de Polícia de Classe Especial",
@@ -230,7 +260,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Investigador de Polícia de 3ª Classe",
@@ -244,7 +276,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Investigador de Polícia de 2ª Classe",
@@ -258,7 +292,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Investigador de Polícia de 1ª Classe",
@@ -272,7 +308,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Investigador de Polícia de Classe Especial",
@@ -286,7 +324,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Fotógrafo Técnico-Pericial de 3ª Classe",
@@ -300,7 +340,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Fotógrafo Técnico-Pericial de 2ª Classe",
@@ -314,7 +356,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Fotógrafo Técnico-Pericial de 1ª Classe",
@@ -328,7 +372,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Fotógrafo Técnico-Pericial de Classe Especial",
@@ -342,7 +388,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente de Telecomunicações Policial de 3ª Classe",
@@ -356,7 +404,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente de Telecomunicações Policial de 2ª Classe",
@@ -370,7 +420,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente de Telecomunicações Policial de 1ª Classe",
@@ -384,7 +436,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente de Telecomunicações Policial de Classe Especial",
@@ -398,7 +452,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar de Necropsia de 3ª Classe",
@@ -412,7 +468,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar de Necropsia de 2ª Classe",
@@ -426,7 +484,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar de Necropsia de 1ª Classe",
@@ -440,7 +500,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar de Necropsia de Classe Especial",
@@ -454,7 +516,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Desenhista Técnico-Pericial de 3ª Classe",
@@ -468,7 +532,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Desenhista Técnico-Pericial de 2ª Classe",
@@ -482,7 +548,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Desenhista Técnico-Pericial de 1ª Classe",
@@ -496,7 +564,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Desenhista Técnico-Pericial de Classe Especial",
@@ -510,7 +580,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Papiloscopista Policial de 3ª Classe",
@@ -524,7 +596,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Papiloscopista Policial de 2ª Classe",
@@ -538,7 +612,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Papiloscopista Policial de 1ª Classe",
@@ -552,7 +628,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Papiloscopista Policial de Classe Especial",
@@ -566,7 +644,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Atendente de Necrotério Policial de 3ª Classe",
@@ -580,7 +660,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Atendente de Necrotério Policial de 2ª Classe",
@@ -594,7 +676,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Atendente de Necrotério Policial de 1ª Classe",
@@ -608,7 +692,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Atendente de Necrotério Policial de Classe Especial",
@@ -622,7 +708,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar Papiloscopista Policial de 3ª Classe",
@@ -636,7 +724,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar Papiloscopista Policial de 2ª Classe",
@@ -650,7 +740,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar Papiloscopista Policial de 1ª Classe",
@@ -664,7 +756,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Auxiliar Papiloscopista Policial de Classe Especial",
@@ -678,7 +772,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Carcereiro de 3ª Classe",
@@ -692,7 +788,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Carcereiro de 2ª Classe",
@@ -706,7 +804,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Carcereiro de 1ª Classe",
@@ -720,7 +820,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Carcereiro de Classe Especial",
@@ -734,7 +836,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente Policial de 3ª Classe",
@@ -748,7 +852,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente Policial de 2ª Classe",
@@ -762,7 +868,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente Policial de 1ª Classe",
@@ -776,7 +884,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     },
     {
       "cargo": "Agente Policial de Classe Especial",
@@ -790,7 +900,9 @@
       "fonteKey": "pcsp",
       "fonteNome": "Lei nº 18.441/2026 - Anexo II",
       "fonteUrl": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "vencimento_base"
     }
   ],
   "fonte_principal": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
@@ -815,15 +927,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Valores apresentados como vencimento bruto mensal por cargo e classe, com efeitos a partir de 1º de abril de 2026.",
     "Benefícios, auxílios, DEJEC, diárias, gratificações e adicionais pessoais não foram somados ao total.",
     "Para o Anexo II de 2026, os valores foram confirmados a partir do anexo legislativo oficial que embasou a lei e pela reclassificação de 10% aplicada em 2026.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

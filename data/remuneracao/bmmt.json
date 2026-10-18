@@ -4,9 +4,9 @@
   "sigla": "CBMMT",
   "uf": "MT",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do CBMMT",
-  "resumo": "Foram localizados valores oficiais e recentes para cargos temporários do CBMMT em publicações institucionais e legislação estadual. Para a carreira militar efetiva, a lei localizada confirma que a remuneração dos temporários toma por base o subsídio dos cargos de carreira, mas a tabela completa de subsídio por posto/graduação não foi recuperada de forma legível na pesquisa.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado BM de Segunda Classe Temporário",
@@ -20,7 +20,8 @@
       "fonteKey": "bmmt",
       "fonteNome": "CBMMT - processo seletivo para soldado BM temporário de segunda classe",
       "fonteUrl": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-divulga-resultado-preliminar-das-inscri%C3%A7%C3%B5es-do-processo-seletivo",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado BM de Saúde de Segunda Classe Temporário",
@@ -34,7 +35,8 @@
       "fonteKey": "bmmt",
       "fonteNome": "CBMMT - seletivo para técnicos de enfermagem e enfermeiros",
       "fonteUrl": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado BM de Saúde Temporário",
@@ -48,7 +50,8 @@
       "fonteKey": "bmmt",
       "fonteNome": "CBMMT - seletivo para técnicos de enfermagem e enfermeiros",
       "fonteUrl": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.transparencia.mt.gov.br/web/bombeiros/w/corpo-de-bombeiros-lan%C3%A7a-seletivo-para-contrata%C3%A7%C3%A3o-de-t%C3%A9cnicos-de-enfermagem-e-enfermeiros",
@@ -79,8 +82,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 82,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -89,5 +91,10 @@
     "A lei localizada confirma que temporários usam como base o subsídio dos militares de carreira, porém sem a planilha completa de postos e graduações não foi possível montar uma tabela ampla da carreira efetiva.",
     "Benefícios como auxílio-alimentação, adicional de férias, gratificação natalina, diárias e ajuda-fardamento não foram somados aos totais.",
     "Classificação automática: Atualização fraca (82/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

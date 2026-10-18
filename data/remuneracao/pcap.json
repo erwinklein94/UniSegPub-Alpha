@@ -4,13 +4,13 @@
   "sigla": "PCAP",
   "uf": "AP",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Valores conferidos em fonte oficial",
   "titulo": "Remuneração bruta mensal da Polícia Civil do Estado do Amapá",
-  "resumo": "Tabela com subsídio bruto mensal por cargo e classe/nível da Polícia Civil do Amapá, com base na Lei nº 3.384, de 4 de dezembro de 2025, que fixou valores escalonados para 1º de setembro de 2026. Para delegado, o auxílio de disponibilidade integral de 12% não foi somado, pois a própria lei prevê implementação escalonada e em 2026 ainda está em 8% a partir de 1º de abril.",
+  "resumo": "Conferidos os 18 níveis de Oficial Investigador e quatro classes de Delegado na coluna de setembro/2026. A data da pesquisa antiga antecedia a vigência: agora a etapa está em vigor.",
   "linhas": [
     {
       "cargo": "Oficial Investigador de Polícia - PCS01",
-      "badge": "OIP PCS01",
+      "badge": "PCAP",
       "remuneracao": 7327.04,
       "beneficios": 0,
       "total": 7327.04,
@@ -18,13 +18,17 @@
       "criterio": "Subsídio bruto mensal do nível inicial",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS02",
-      "badge": "OIP PCS02",
+      "badge": "PCAP",
       "remuneracao": 8426.09,
       "beneficios": 0,
       "total": 8426.09,
@@ -32,13 +36,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS03",
-      "badge": "OIP PCS03",
+      "badge": "PCAP",
       "remuneracao": 8852.66,
       "beneficios": 0,
       "total": 8852.66,
@@ -46,13 +54,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS04",
-      "badge": "OIP PCS04",
+      "badge": "PCAP",
       "remuneracao": 9073.98,
       "beneficios": 0,
       "total": 9073.98,
@@ -60,13 +72,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS05",
-      "badge": "OIP PCS05",
+      "badge": "PCAP",
       "remuneracao": 9533.35,
       "beneficios": 0,
       "total": 9533.35,
@@ -74,13 +90,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS06",
-      "badge": "OIP PCS06",
+      "badge": "PCAP",
       "remuneracao": 11930.14,
       "beneficios": 0,
       "total": 11930.14,
@@ -88,13 +108,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS07",
-      "badge": "OIP PCS07",
+      "badge": "PCAP",
       "remuneracao": 12228.39,
       "beneficios": 0,
       "total": 12228.39,
@@ -102,13 +126,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS08",
-      "badge": "OIP PCS08",
+      "badge": "PCAP",
       "remuneracao": 12534.11,
       "beneficios": 0,
       "total": 12534.11,
@@ -116,13 +144,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS09",
-      "badge": "OIP PCS09",
+      "badge": "PCAP",
       "remuneracao": 12847.45,
       "beneficios": 0,
       "total": 12847.45,
@@ -130,13 +162,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS10",
-      "badge": "OIP PCS10",
+      "badge": "PCAP",
       "remuneracao": 13168.68,
       "beneficios": 0,
       "total": 13168.68,
@@ -144,13 +180,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS11",
-      "badge": "OIP PCS11",
+      "badge": "PCAP",
       "remuneracao": 13497.84,
       "beneficios": 0,
       "total": 13497.84,
@@ -158,13 +198,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS12",
-      "badge": "OIP PCS12",
+      "badge": "PCAP",
       "remuneracao": 22961.44,
       "beneficios": 0,
       "total": 22961.44,
@@ -172,13 +216,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS13",
-      "badge": "OIP PCS13",
+      "badge": "PCAP",
       "remuneracao": 23535.48,
       "beneficios": 0,
       "total": 23535.48,
@@ -186,13 +234,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS14",
-      "badge": "OIP PCS14",
+      "badge": "PCAP",
       "remuneracao": 24123.86,
       "beneficios": 0,
       "total": 24123.86,
@@ -200,13 +252,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS15",
-      "badge": "OIP PCS15",
+      "badge": "PCAP",
       "remuneracao": 24726.95,
       "beneficios": 0,
       "total": 24726.95,
@@ -214,13 +270,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS16",
-      "badge": "OIP PCS16",
+      "badge": "PCAP",
       "remuneracao": 25345.12,
       "beneficios": 0,
       "total": 25345.12,
@@ -228,13 +288,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS17",
-      "badge": "OIP PCS17",
+      "badge": "PCAP",
       "remuneracao": 25978.76,
       "beneficios": 0,
       "total": 25978.76,
@@ -242,13 +306,17 @@
       "criterio": "Subsídio bruto mensal do nível",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Oficial Investigador de Polícia - PCS18",
-      "badge": "OIP PCS18",
+      "badge": "PCAP",
       "remuneracao": 26494.09,
       "beneficios": 0,
       "total": 26494.09,
@@ -256,13 +324,17 @@
       "criterio": "Subsídio bruto mensal do nível final",
       "benefDesc": "Sem auxílio, adicional, plantão ou gratificação.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo III",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - Substituto",
-      "badge": "DEL SUBST",
+      "badge": "PCAP",
       "remuneracao": 31439.06,
       "beneficios": 0,
       "total": 31439.06,
@@ -270,13 +342,17 @@
       "criterio": "Subsídio bruto mensal da classe",
       "benefDesc": "Não somado auxílio de disponibilidade integral nem outras verbas.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo II",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - 2ª Classe",
-      "badge": "DEL 2CL",
+      "badge": "PCAP",
       "remuneracao": 34582.27,
       "beneficios": 0,
       "total": 34582.27,
@@ -284,13 +360,17 @@
       "criterio": "Subsídio bruto mensal da classe",
       "benefDesc": "Não somado auxílio de disponibilidade integral nem outras verbas.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo II",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - 1ª Classe",
-      "badge": "DEL 1CL",
+      "badge": "PCAP",
       "remuneracao": 38041.27,
       "beneficios": 0,
       "total": 38041.27,
@@ -298,13 +378,17 @@
       "criterio": "Subsídio bruto mensal da classe",
       "benefDesc": "Não somado auxílio de disponibilidade integral nem outras verbas.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo II",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     },
     {
       "cargo": "Delegado de Polícia - Classe Especial",
-      "badge": "DEL ESP",
+      "badge": "PCAP",
       "remuneracao": 41845.4,
       "beneficios": 0,
       "total": 41845.4,
@@ -312,42 +396,33 @@
       "criterio": "Subsídio bruto mensal da classe final",
       "benefDesc": "Não somado auxílio de disponibilidade integral nem outras verbas.",
       "fonteKey": "pcap",
-      "fonteNome": "Lei nº 3.384/2025 - Anexo II",
+      "fonteNome": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "fonteUrl": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "valorPendente": false
+      "valorPendente": false,
+      "tipo_valor": "subsidio",
+      "vigencia_inicio": "2026-09-01",
+      "referencia_data": "",
+      "verificacao": "fonte_oficial"
     }
   ],
   "fonte_principal": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
   "fontes": [
     {
-      "titulo": "Lei nº 3.384, de 04 de dezembro de 2025 - Diário Oficial do Estado do Amapá",
+      "titulo": "DOE AP 8.549, de 04/12/2025 — anexos da carreira policial civil",
       "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9770",
-      "tipo": "lei estadual",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Tabela Remuneratória do Poder Executivo - Portal da Transparência do Estado do Amapá",
-      "url": "https://www.transparencia.ap.gov.br/informacoes/tabelaremuneracao",
-      "tipo": "portal da transparência",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Página de concursos vigentes da SEAD com referência à Polícia Civil do Amapá",
-      "url": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
-      "tipo": "página governamental",
-      "data_consulta": "2026-05-18"
+      "tipo": "fonte primária conferida",
+      "data_consulta": "2026-10-18"
     }
   ],
-  "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
-  "modelo_openai": "gpt-5.4",
-  "atualizado_pela_openai": true,
+  "ultima_pesquisa": "2026-10-18",
+  "classe_atualizacao": "conferida",
+  "atualizado_pela_openai": false,
   "precisa_revisao_humana": false,
-  "alertas": [
-    "A carreira policial civil do Amapá foi reestruturada em 2025: cargos de Agente de Polícia e Oficial de Polícia passaram a ser denominados Oficial Investigador de Polícia.",
-    "Os valores listados usam a coluna com vigência a partir de 1º de setembro de 2026, já prevista em lei.",
-    "Para delegado, a lei criou auxílio de disponibilidade integral, mas ele não foi somado na tabela para evitar inflar o total bruto mensal do cargo.",
-    "Classificação automática: Atualização forte (100/100)."
-  ]
+  "alertas": [],
+  "revisao_metodo": "Conferência editorial de tabelas e datas em fontes primárias; sem extrapolar reajustes.",
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "conferida",
+    "nota": "Conferidos os 18 níveis de Oficial Investigador e quatro classes de Delegado na coluna de setembro/2026. A data da pesquisa antiga antecedia a vigência: agora a etapa está em vigor."
+  }
 }

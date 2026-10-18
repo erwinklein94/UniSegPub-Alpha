@@ -4,9 +4,9 @@
   "sigla": "PPES",
   "uf": "ES",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Penal do Espírito Santo",
-  "resumo": "A carreira pesquisada é a de Policial Penal. O valor inicial confirmado mais recente encontrado em fonte oficial foi o subsídio de R$ 5.631,16, divulgado na página oficial do concurso PPES nº 01/2025. O auxílio-alimentação de R$ 800,00 aparece separado e não foi somado ao total.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Policial Penal",
@@ -20,7 +20,8 @@
       "fonteKey": "ppes",
       "fonteNome": "SEGER - Concurso PPES - Edital nº 01/2025 - Policial Penal",
       "fonteUrl": "https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal",
@@ -45,8 +46,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 65,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -55,5 +55,10 @@
     "Não foi localizada, em formato acessível na pesquisa, a tabela completa com todas as referências atualizadas da carreira para extração segura dos demais níveis.",
     "O total informado considera somente subsídio bruto mensal, sem somar auxílio-alimentação nem adicionais eventuais.",
     "Classificação automática: Atualização fraca (65/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

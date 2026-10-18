@@ -4,9 +4,9 @@
   "sigla": "PCTO",
   "uf": "TO",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Civil do Tocantins",
-  "resumo": "Tabela com subsídio bruto mensal de entrada e topo de carreira dos principais cargos da Polícia Civil do Tocantins, com base em lei estadual publicada em 2025 que atualizou os anexos remuneratórios das carreiras policiais civis.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Agente de Polícia - Classe I, Referência A",
@@ -20,7 +20,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - Classe I, Referência A",
@@ -34,7 +35,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Papiloscopista - Classe I, Referência A",
@@ -48,7 +50,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Necrotomia - Classe I, Referência A",
@@ -62,7 +65,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Polícia - Classe III, Referência L",
@@ -76,7 +80,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - Classe III, Referência L",
@@ -90,7 +95,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Papiloscopista - Classe III, Referência L",
@@ -104,7 +110,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Necrotomia - Classe III, Referência L",
@@ -118,7 +125,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XVIII",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Oficial - 1ª Classe, Referência A",
@@ -132,7 +140,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XIX",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Oficial - Classe Especial, Referência L",
@@ -146,7 +155,8 @@
       "fonteKey": "pcto",
       "fonteNome": "Lei Estadual nº 4.671/2025 - Anexo XIX",
       "fonteUrl": "https://doe.to.gov.br/diario/5435/download",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://doe.to.gov.br/diario/5435/download",
@@ -171,14 +181,18 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Não foi localizada, na pesquisa realizada, tabela oficial aberta e clara para o cargo de Delegado de Polícia no mesmo pacote de anexos consultados; por isso o cargo foi omitido para evitar publicar valor sem confirmação direta.",
     "Os valores publicados são de subsídio bruto mensal e não incluem adicionais variáveis, plantões, sobreaviso, cumulação de responsabilidade, indenizações ou auxílios.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

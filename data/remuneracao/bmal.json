@@ -4,9 +4,9 @@
   "sigla": "BMAL",
   "uf": "AL",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar de Alagoas",
-  "resumo": "Tabela com subsídios brutos mensais dos militares estaduais aplicáveis ao CBMAL, tomando como base a tabela oficial da Lei nº 7.580/2014 e as revisões gerais anuais confirmadas nas leis de 2019 e 2022. Os valores abaixo não somam auxílio-alimentação, diárias, serviço voluntário remunerado, indenizações ou outras verbas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado Aluno",
@@ -20,7 +20,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado",
@@ -34,7 +35,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo",
@@ -48,7 +50,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento - Nível I",
@@ -62,7 +65,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento - Nível II",
@@ -76,7 +80,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Sargento - Nível I",
@@ -90,7 +95,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Sargento - Nível II",
@@ -104,7 +110,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Sargento - Nível I",
@@ -118,7 +125,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Sargento - Nível II",
@@ -132,7 +140,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente - Nível I",
@@ -146,7 +155,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente - Nível II",
@@ -160,7 +170,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante a Oficial - Nível I",
@@ -174,7 +185,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019, Lei nº 8.238/2020 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante a Oficial - Nível II",
@@ -188,7 +200,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019, Lei nº 8.238/2020 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete 1º ano - Nível I",
@@ -202,7 +215,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete 1º ano - Nível II",
@@ -216,7 +230,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete 2º ano - Nível I",
@@ -230,7 +245,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete 2º ano - Nível II",
@@ -244,7 +260,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete 3º ano - Nível I",
@@ -258,7 +275,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete 3º ano - Nível II",
@@ -272,7 +290,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Tenente - Nível I",
@@ -286,7 +305,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019, Lei nº 8.238/2020 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Tenente - Nível II",
@@ -300,7 +320,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019, Lei nº 8.238/2020 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Tenente - Nível I",
@@ -314,7 +335,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Tenente - Nível II",
@@ -328,7 +350,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão - Nível I",
@@ -342,7 +365,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão - Nível II",
@@ -356,7 +380,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major - Nível I",
@@ -370,7 +395,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major - Nível II",
@@ -384,7 +410,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel - Nível I",
@@ -398,7 +425,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel - Nível II",
@@ -412,7 +440,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Coronel - Nível I",
@@ -426,7 +455,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Coronel - Nível II",
@@ -440,7 +470,8 @@
       "fonteKey": "bmal",
       "fonteNome": "Lei nº 7.580/2014 c/c Lei nº 8.151/2019 e Lei nº 8.649/2022",
       "fonteUrl": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://sapl.al.al.leg.br/media/sapl/public/normajuridica/2014/216/216_texto_integral.pdf",
@@ -471,16 +502,20 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela útil montada com base legal oficial e revisões confirmadas até 2022.",
     "A Lei nº 8.947/2023 foi localizada em fonte oficial, mas o percentual numérico da revisão não ficou legível na coleta aberta utilizada; por isso os valores não incorporam essa revisão.",
     "Os valores representam subsídio bruto mensal sem somar diárias, indenizações, auxílio-fardamento, serviço voluntário remunerado ou outras parcelas eventuais.",
     "Revisão humana recomendada para validação final dos valores pós-2023 em fonte oficial integralmente acessível.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

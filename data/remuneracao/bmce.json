@@ -4,9 +4,9 @@
   "sigla": "BMCE",
   "uf": "CE",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar do Ceará",
-  "resumo": "Tabela com remuneração bruta mensal por posto e graduação do Corpo de Bombeiros Militar do Ceará, com base na estrutura remuneratória dos militares estaduais vigente a partir de 1º de março de 2022. Os valores abaixo não somam auxílio-alimentação de 2026 nem verbas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Coronel",
@@ -20,7 +20,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel",
@@ -34,7 +35,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major",
@@ -48,7 +50,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão",
@@ -62,7 +65,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Primeiro-Tenente",
@@ -76,7 +80,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Segundo-Tenente",
@@ -90,7 +95,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante-a-Oficial",
@@ -104,7 +110,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente",
@@ -118,7 +125,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Primeiro-Sargento",
@@ -132,7 +140,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Segundo-Sargento",
@@ -146,7 +155,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Terceiro-Sargento",
@@ -160,7 +170,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo",
@@ -174,7 +185,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado",
@@ -188,7 +200,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno CFO 3º Ano",
@@ -202,7 +215,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno CFO 2º Ano",
@@ -216,7 +230,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno CFO 1º Ano",
@@ -230,7 +245,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno CFSDF",
@@ -244,7 +260,8 @@
       "fonteKey": "bmce",
       "fonteNome": "Lei Estadual nº 17.183/2020",
       "fonteUrl": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://legislacao.camaraguaiuba.ce.gov.br/detalhe/32280/",
@@ -269,15 +286,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela oficial localizada com valores expressos até 1º de março de 2022.",
     "Há notícia oficial de mudança no auxílio-alimentação em 2026, mas o valor final vigente não foi somado aos totais desta tabela.",
     "Não foi localizada, na pesquisa realizada, tabela oficial mais nova com todos os postos e graduações já consolidada após 2022.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

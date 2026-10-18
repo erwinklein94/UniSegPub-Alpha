@@ -106,6 +106,12 @@
   }
 
   async function carregarConfigInstituicoes() {
+    try {
+      const resposta = await fetch(`${CONFIG_URL}?v=${Date.now()}`, { cache: 'no-store' });
+      if (resposta.ok && reconstruirSeletorInstituicoes(await resposta.json())) return;
+    } catch (erro) {
+      console.warn('Remuneração: configuração local indisponível.', erro);
+    }
     if (window.SUPABASE_API) {
       try {
         const config = await window.SUPABASE_API.configInstituicoes('config_remuneracao');
@@ -176,14 +182,17 @@
       fonteKey: dados.instituicao_id,
       fonteNome: limpar(linha.fonteNome || fonte.nome),
       fonteUrl: /^https?:\/\//i.test(texto(linha.fonteUrl)) ? texto(linha.fonteUrl) : fonte.url,
-      valorPendente: false
+      valorPendente: Boolean(linha.valorPendente),
+      tipo_valor: linha.tipo_valor || '',
+      vigencia_inicio: linha.vigencia_inicio || '',
+      referencia_data: linha.referencia_data || '',
+      verificacao: linha.verificacao || ''
     };
   }
   function registrarDados(dados) {
     if (!dados || !dados.instituicao_id || !Array.isArray(dados.linhas)) return false;
     const id = texto(dados.instituicao_id).toLowerCase();
     const linhas = dados.linhas.filter(linhaPublicavel).map(l => linhaParaSite(l, dados));
-    if (!linhas.length) return false;
     window.REMUNERACAO_AUTOMATIZADA[id] = { dados, linhas };
 
     const fonte = fontePrincipal(dados);
@@ -209,15 +218,17 @@
   }
 
   async function buscarDados(id) {
+    // Os arquivos versionados recebem as correções editoriais publicadas no GitHub.
+    // O banco é fallback, para não substituir uma revisão por uma cópia antiga.
+    const local = await carregarJsonLocal(id);
+    if (local && local.instituicao_id === id && Array.isArray(local.linhas)) return local;
     if (window.SUPABASE_API) {
       try {
         const dados = await window.SUPABASE_API.rawPorInstituicao('remuneracoes', id);
-        if (dados) return dados;
-      } catch (erro) {
-        console.warn('Remuneração: Supabase indisponível para ' + id + '. Usando JSON local.', erro);
-      }
+        if (dados && dados.instituicao_id === id && Array.isArray(dados.linhas)) return dados;
+      } catch (erro) { console.warn('Remuneração indisponível para ' + id, erro); }
     }
-    return carregarJsonLocal(id);
+    return null;
   }
 
   async function carregar(id) {
@@ -226,9 +237,14 @@
     if (CACHE[id]) return CACHE[id];
     CACHE[id] = buscarDados(id)
       .then(dados => dados ? registrarDados(dados) : false)
-      .catch(() => false);
+      .catch(() => false)
+      .then(sucesso => {
+        if (!sucesso) delete CACHE[id];
+        return sucesso;
+      });
     return CACHE[id];
   }
+  window.carregarRemuneracaoInstituicao = carregar;
 
   function instituicaoSelecionada() {
     const select = document.getElementById('remu-filtro-instituicao');

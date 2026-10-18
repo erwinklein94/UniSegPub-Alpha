@@ -4,9 +4,9 @@
   "sigla": "PPRO",
   "uf": "RO",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Penal de Rondônia",
-  "resumo": "Tabela com vencimentos brutos mensais identificados na estrutura oficial de remunerações do Poder Executivo de Rondônia para a carreira da Polícia Penal. Os valores abaixo representam vencimento básico por classe, sem somar auxílio-alimentação, auxílio-saúde, auxílio-transporte, plantões, adicionais de qualificação ou outras parcelas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Policial Penal - Classe 1",
@@ -20,7 +20,8 @@
       "fonteKey": "ppro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia - Polícia Penal",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe 2",
@@ -34,7 +35,8 @@
       "fonteKey": "ppro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia - Polícia Penal",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe 3",
@@ -48,7 +50,8 @@
       "fonteKey": "ppro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia - Polícia Penal",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe Especial",
@@ -62,7 +65,8 @@
       "fonteKey": "ppro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia - Polícia Penal",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://transparencia.ro.gov.br/pessoal/EstruturaDeRemuneracoes",
@@ -87,8 +91,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 82,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -97,5 +100,10 @@
     "Benefícios e parcelas variáveis não foram somados ao total para evitar inflar a remuneração.",
     "A página oficial de estrutura de remunerações informa vigência para o exercício atual de 2026.",
     "Classificação automática: Atualização fraca (82/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

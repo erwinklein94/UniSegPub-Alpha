@@ -4,9 +4,9 @@
   "sigla": "PMMT",
   "uf": "MT",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da PMMT",
-  "resumo": "Tabela com subsídio bruto mensal por posto e graduação da Polícia Militar de Mato Grosso. Os valores encontrados em fonte oficial disponível correspondem à estrutura remuneratória da LC 541/2014, ainda usada como referência de carreira. Benefícios eventuais, auxílio-alimentação, auxílio-fardamento, jornada extraordinária e verbas indenizatórias não foram somados.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Coronel",
@@ -20,7 +20,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel",
@@ -34,7 +35,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major",
@@ -48,7 +50,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão",
@@ -62,7 +65,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Primeiro-Tenente",
@@ -76,7 +80,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Segundo-Tenente",
@@ -90,7 +95,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante a Oficial",
@@ -104,7 +110,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente PM",
@@ -118,7 +125,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Primeiro-Sargento PM",
@@ -132,7 +140,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Segundo-Sargento PM",
@@ -146,7 +155,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Terceiro-Sargento PM",
@@ -160,7 +170,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo PM Classe C",
@@ -174,7 +185,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo PM Classe B",
@@ -188,7 +200,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo PM Classe A",
@@ -202,7 +215,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado PM Classe D",
@@ -216,7 +230,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado PM Classe C",
@@ -230,7 +245,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado PM Classe B",
@@ -244,7 +260,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado PM Classe A",
@@ -258,7 +275,8 @@
       "fonteKey": "pmmt",
       "fonteNome": "Lei Complementar nº 433/2011",
       "fonteUrl": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.indea.mt.gov.br/documents/2459523/4959710/LEI%2BCOMPLEMENTAR%2BN%C2%BA%2B433%2C%2BDE%2B02%2BDE%2BSETEMBRO%2BDE%2B2011..pdf/1484b530-b044-4f65-807c-551b18898223?t=1499263429894",
@@ -283,16 +301,20 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Não foi localizada, em fonte oficial aberta e facilmente extraível, uma tabela consolidada mais recente com todos os postos e graduações da PMMT já reajustada para 2026.",
     "A lei encontrada com valores nominais é a LC 433/2011, mas o próprio texto informa revogação a partir de 1º/10/2014 pela LC 541/2014.",
     "Foram encontrados indícios oficiais de reajustes e benefícios posteriores, porém sem tabela completa nominal por posto e graduação acessível na pesquisa realizada.",
     "Tabela publicada como referência histórica oficial de subsídio e útil ao usuário final, mas recomenda revisão humana para substituição por tabela nominal mais recente, se localizada.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

@@ -4,9 +4,9 @@
   "sigla": "PPGO",
   "uf": "GO",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da carreira de Policial Penal de Goiás",
-  "resumo": "Tabela oficial de subsídios da carreira de Policial Penal de Goiás, com valores brutos mensais por classe e padrão, conforme lei estadual vigente com efeitos a partir de 1º de janeiro de 2025. O ingresso na carreira ocorre na 3ª Classe, padrão I.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Policial Penal - 3ª Classe I",
@@ -20,7 +20,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 3ª Classe II",
@@ -34,7 +35,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 3ª Classe III",
@@ -48,7 +50,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 2ª Classe I",
@@ -62,7 +65,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 2ª Classe II",
@@ -76,7 +80,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 2ª Classe III",
@@ -90,7 +95,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 1ª Classe I",
@@ -104,7 +110,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 1ª Classe II",
@@ -118,7 +125,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - 1ª Classe III",
@@ -132,7 +140,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe Especial",
@@ -146,7 +155,8 @@
       "fonteKey": "ppgo",
       "fonteNome": "Lei Estadual nº 17.090/2010 - Anexo III, redação dada pela Lei nº 23.235/2025",
       "fonteUrl": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/88933/pdf",
@@ -165,14 +175,18 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "O ingresso na carreira ocorre na 3ª Classe, padrão I.",
     "Os valores são de subsídio bruto mensal e não incluem verbas eventuais ou indenizatórias.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

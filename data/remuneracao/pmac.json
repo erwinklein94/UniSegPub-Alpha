@@ -4,9 +4,9 @@
   "sigla": "PMAC",
   "uf": "AC",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Militar do Acre",
-  "resumo": "Foram localizados valores oficiais de soldo por posto e graduação na legislação estadual da carreira militar. A tabela abaixo traz o soldo bruto mensal por posto/graduação, sem somar gratificações, etapa de alimentação, função, comando, especialização ou outras parcelas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Coronel PM",
@@ -15,12 +15,14 @@
       "beneficios": 0,
       "total": 5376,
       "classe": "Oficiais Superiores",
-      "criterio": "Soldo bruto mensal do posto.",
+      "criterio": "Soldo mensal isolado do posto. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Tenente-Coronel PM",
@@ -29,12 +31,14 @@
       "beneficios": 0,
       "total": 4886.37,
       "classe": "Oficiais Superiores",
-      "criterio": "Soldo bruto mensal do posto.",
+      "criterio": "Soldo mensal isolado do posto. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Major PM",
@@ -43,12 +47,14 @@
       "beneficios": 0,
       "total": 4735.06,
       "classe": "Oficiais Superiores",
-      "criterio": "Soldo bruto mensal do posto.",
+      "criterio": "Soldo mensal isolado do posto. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Capitão PM",
@@ -57,12 +63,14 @@
       "beneficios": 0,
       "total": 3789.36,
       "classe": "Oficiais Intermediários",
-      "criterio": "Soldo bruto mensal do posto.",
+      "criterio": "Soldo mensal isolado do posto. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Tenente PM",
@@ -71,12 +79,14 @@
       "beneficios": 0,
       "total": 3079.65,
       "classe": "Oficiais Subalternos",
-      "criterio": "Soldo bruto mensal do posto.",
+      "criterio": "Soldo mensal isolado do posto. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "2º Tenente PM",
@@ -85,12 +95,14 @@
       "beneficios": 0,
       "total": 2875.8,
       "classe": "Oficiais Subalternos",
-      "criterio": "Soldo bruto mensal do posto.",
+      "criterio": "Soldo mensal isolado do posto. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Aspirante a Oficial PM",
@@ -99,12 +111,14 @@
       "beneficios": 0,
       "total": 2376.19,
       "classe": "Praças Especiais",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Aluno Oficial PM",
@@ -113,12 +127,14 @@
       "beneficios": 0,
       "total": 1505.28,
       "classe": "Praças Especiais",
-      "criterio": "Soldo bruto mensal da condição de aluno.",
+      "criterio": "Soldo mensal isolado da condição de aluno. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Subtenente PM",
@@ -127,12 +143,14 @@
       "beneficios": 0,
       "total": 2295.55,
       "classe": "Praças Graduadas",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Sargento PM",
@@ -141,12 +159,14 @@
       "beneficios": 0,
       "total": 2015.99,
       "classe": "Praças Graduadas",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "2º Sargento PM",
@@ -155,12 +175,14 @@
       "beneficios": 0,
       "total": 1575.17,
       "classe": "Praças Graduadas",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "3º Sargento PM",
@@ -169,12 +191,14 @@
       "beneficios": 0,
       "total": 1473.02,
       "classe": "Praças Graduadas",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Cabo PM",
@@ -183,12 +207,14 @@
       "beneficios": 0,
       "total": 1225.73,
       "classe": "Praças Graduadas",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Soldado PM",
@@ -197,12 +223,14 @@
       "beneficios": 0,
       "total": 1145.09,
       "classe": "Demais Praças",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "2º Soldado PM",
@@ -211,12 +239,14 @@
       "beneficios": 0,
       "total": 1069.82,
       "classe": "Demais Praças",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "3º Soldado PM",
@@ -225,12 +255,14 @@
       "beneficios": 0,
       "total": 1000,
       "classe": "Demais Praças",
-      "criterio": "Soldo bruto mensal da graduação.",
+      "criterio": "Soldo mensal isolado da graduação. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Aluno Soldado PM",
@@ -239,12 +271,14 @@
       "beneficios": 0,
       "total": 806.45,
       "classe": "Demais Praças",
-      "criterio": "Soldo bruto mensal da condição de aluno.",
+      "criterio": "Soldo mensal isolado da condição de aluno. Não representa a remuneração completa.",
       "benefDesc": "Não soma gratificações, alimentação, função ou adicionais.",
       "fonteKey": "pmac",
       "fonteNome": "Lei Complementar Estadual nº 94/2001",
       "fonteUrl": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     }
   ],
   "fonte_principal": "https://app.al.ac.leg.br/legisla-e/legislacao/visualizar/6608/pdf-texto?alteracaoId=1548",
@@ -275,15 +309,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela montada com base em soldo legal por posto e graduação, sem confirmação de reajuste nominal mais recente em anexo salarial específico de 2025 ou 2026.",
     "Os valores refletem soldo bruto básico da carreira militar e podem ficar abaixo da remuneração mensal efetivamente paga no contracheque por causa de gratificações e outras parcelas.",
     "O Portal da Transparência foi localizado, mas a pesquisa automatizada não retornou tabela consolidada por posto para extração direta dos valores mensais atuais da PMAC.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

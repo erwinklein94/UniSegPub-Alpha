@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { destinoPesquisaRemuneracao } from './lib/remuneracao-publicacao.mjs';
 
 const CONFIG_PATH = process.env.CONFIG_PATH || 'config/remuneracao-instituicoes.json';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
@@ -278,11 +279,14 @@ async function processar({ item, atual, avaliacao }) {
   let gerado;
   try { gerado = JSON.parse(texto); } catch { throw new Error(`Resposta da OpenAI não é JSON válido para ${item.id}: ${texto.slice(0,500)}`); }
   const final = normalizarResposta(gerado, item, atual);
-  await fs.mkdir(path.dirname(item.arquivo_saida), { recursive:true });
-  await fs.writeFile(item.arquivo_saida, JSON.stringify(final, null, 2)+'\n', 'utf8');
+  const destino = destinoPesquisaRemuneracao(item, atual, DATA_DIR);
+  final.precisa_revisao_humana = true;
+  final.revisao_dados = { data: HOJE, situacao: 'a_confirmar', nota: 'Pesquisa automática candidata; valores e vigência aguardam conferência editorial em fonte primária.' };
+  await fs.mkdir(path.dirname(destino), { recursive:true });
+  await fs.writeFile(destino, JSON.stringify(final, null, 2)+'\n', 'utf8');
   const avDepois = avaliar(final);
   await fs.writeFile(item.arquivo_monitoramento || path.join(DATA_DIR, `${item.id}-monitor.json`), JSON.stringify({ atualizado_em:HOJE, instituicao_id:item.id, grupo_atualizacao:GRUPO_ATUALIZACAO, modelo:MODELO_OPENAI, usou_openai:true, usou_web_search_openai:true, antes:{classe:avaliacao.classe, score:avaliacao.score}, depois:{classe:avDepois.classe, score:avDepois.score}, linhas:avDepois.linhasComValor, usage:payload.usage || null }, null, 2)+'\n', 'utf8');
-  console.log(`✅ ${item.sigla}: salvo como ${avDepois.classe} (${avDepois.score}/100), ${avDepois.linhasComValor} linhas úteis.`);
+  console.log(`${item.sigla}: pesquisa salva em ${destino}; ${avDepois.linhasComValor} linhas aguardando conferência editorial.`);
 }
 
 const config = await carregarConfig();

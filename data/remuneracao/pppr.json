@@ -4,9 +4,9 @@
   "sigla": "PPPR",
   "uf": "PR",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Penal do Paraná",
-  "resumo": "A carreira da Polícia Penal do Paraná é remunerada por subsídio em parcela única. A tabela oficial localizada para o cargo de Policial Penal traz 12 classes, da Classe XII à Classe I. Não foram somados auxílio-alimentação, diárias, plantões, gratificações eventuais ou verbas indenizatórias.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Policial Penal - Classe XII",
@@ -20,7 +20,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe XI",
@@ -34,7 +35,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe X",
@@ -48,7 +50,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe IX",
@@ -62,7 +65,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe VIII",
@@ -76,7 +80,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe VII",
@@ -90,7 +95,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe VI",
@@ -104,7 +110,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe V",
@@ -118,7 +125,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe IV",
@@ -132,7 +140,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe III",
@@ -146,7 +155,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe II",
@@ -160,7 +170,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe I",
@@ -174,7 +185,8 @@
       "fonteKey": "pppr",
       "fonteNome": "Lei Complementar nº 245/2022 - Anexo II",
       "fonteUrl": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2022-08/ARQUIVO%20%C3%9ANICO_TABELAS%20DE%20VENCIMENTO_SUBS%C3%8DDIO_10_08_2022.pdf",
@@ -205,15 +217,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela oficial de subsídio encontrada com vigência original em 2022 e carreira confirmada por legislação compilada em 2025.",
     "Foi localizada alteração de carreira em 2025, mas sem nova tabela nominal de subsídio publicada nas fontes abertas consultadas.",
     "Valores apresentados são os da tabela oficial encontrada para o cargo de Policial Penal e podem depender de atualização remuneratória posterior não localizada em fonte oficial aberta na pesquisa.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

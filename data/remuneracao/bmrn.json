@@ -4,9 +4,9 @@
   "sigla": "BMRN",
   "uf": "RN",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar do Rio Grande do Norte",
-  "resumo": "Tabela de subsídio bruto mensal dos militares estaduais aplicável ao CBMRN, com valores vigentes a partir de janeiro de 2025 e reajuste legal de 5,5% em janeiro de 2026. Para uso prático, foram selecionados os valores da classe inicial e do topo da carreira por posto/graduação.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado - nível inicial",
@@ -20,7 +20,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo - nível inicial",
@@ -34,7 +35,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento - nível inicial",
@@ -48,7 +50,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Sargento - nível inicial",
@@ -62,7 +65,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Sargento - nível inicial",
@@ -76,7 +80,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente - nível inicial",
@@ -90,7 +95,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Tenente - nível inicial",
@@ -104,7 +110,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Tenente - nível inicial",
@@ -118,7 +125,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão - nível inicial",
@@ -132,7 +140,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major - nível inicial",
@@ -146,7 +155,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel - nível inicial",
@@ -160,7 +170,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Coronel - topo da carreira",
@@ -174,7 +185,8 @@
       "fonteKey": "bmrn",
       "fonteNome": "Lei Complementar Estadual nº 771/2024",
       "fonteUrl": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.al.rn.leg.br/storage/legislacao/2024/2fd04d0xhu7pr07felc2be8fbqknc3.pdf",
@@ -199,15 +211,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "A tabela legal localizada traz valores de janeiro de 2025 e prevê reajuste de 5,5% em janeiro de 2026, mas o anexo consolidado de 2026 não foi encontrado em fonte oficial aberta durante a pesquisa.",
     "Os valores informados são de subsídio bruto mensal e não incluem 13º, adicional de férias, diárias, ajuda de custo, diária operacional ou verbas pessoais.",
     "A linha de Coronel foi publicada como topo da carreira; para os demais postos e graduações foram priorizados os valores iniciais de cada faixa para manter a tabela útil e direta ao usuário final.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

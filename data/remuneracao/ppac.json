@@ -4,9 +4,9 @@
   "sigla": "PPAC",
   "uf": "AC",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Penal do Acre",
-  "resumo": "Tabela com remuneração bruta mensal identificada em fontes oficiais do Estado do Acre para o cargo de Agente de Polícia Penal. O valor abaixo reflete a remuneração inicial bruta mensal publicada em edital oficial recente do concurso da Polícia Penal do Acre.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Agente de Polícia Penal",
@@ -20,7 +20,8 @@
       "fonteKey": "ppac",
       "fonteNome": "Edital nº 001 SEAD/IAPEN, de 19 de junho de 2023",
       "fonteUrl": "https://sead.ac.gov.br/wp-content/uploads/2025/05/Edital-no-001-IAPEN-Edital-de-Abertura-19-06-2023.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://sead.ac.gov.br/wp-content/uploads/2025/05/Edital-no-001-IAPEN-Edital-de-Abertura-19-06-2023.pdf",
@@ -45,8 +46,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 65,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -54,5 +54,10 @@
     "Foi localizado valor oficial claro para o cargo de Agente de Polícia Penal, mas não foi possível extrair de forma confiável a tabela completa por classe e referência da carreira na legislação consultada.",
     "O valor publicado em edital oficial recente foi priorizado por ser objetivo e diretamente utilizável pelo leitor leigo.",
     "Classificação automática: Atualização fraca (65/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

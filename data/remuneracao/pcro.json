@@ -4,9 +4,9 @@
   "sigla": "PCRO",
   "uf": "RO",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Civil de Rondônia",
-  "resumo": "Tabela com valores brutos mensais por cargo e classe da Polícia Civil de Rondônia, com base na estrutura remuneratória vigente do Poder Executivo estadual e nas leis estaduais que compõem a carreira policial civil. Os totais abaixo não somam auxílios, indenizações, diárias, ensino, bolsa de estudo, auxílio-saúde ou outras parcelas variáveis.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Delegado de Polícia - 1ª Classe",
@@ -20,7 +20,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia - 2ª Classe",
@@ -34,7 +35,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia - 3ª Classe",
@@ -48,7 +50,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia - Classe Especial",
@@ -62,7 +65,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - 1ª Classe",
@@ -76,7 +80,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - 2ª Classe",
@@ -90,7 +95,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - 3ª Classe",
@@ -104,7 +110,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - Classe Especial",
@@ -118,7 +125,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Médico Legista - 1ª Classe",
@@ -132,7 +140,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Médico Legista - 2ª Classe",
@@ -146,7 +155,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Médico Legista - 3ª Classe",
@@ -160,7 +170,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Médico Legista - Classe Especial",
@@ -174,7 +185,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Odontólogo Legal - 1ª Classe",
@@ -188,7 +200,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Odontólogo Legal - 2ª Classe",
@@ -202,7 +215,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Odontólogo Legal - 3ª Classe",
@@ -216,7 +230,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Odontólogo Legal - Classe Especial",
@@ -230,7 +245,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Psiquiatra Legal - 1ª Classe",
@@ -244,7 +260,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Psiquiatra Legal - 2ª Classe",
@@ -258,7 +275,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Psiquiatra Legal - 3ª Classe",
@@ -272,7 +290,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Psiquiatra Legal - Classe Especial",
@@ -286,7 +305,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Polícia - 1ª Classe",
@@ -300,7 +320,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Polícia - 2ª Classe",
@@ -314,7 +335,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Polícia - 3ª Classe",
@@ -328,7 +350,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Polícia - Classe Especial",
@@ -342,7 +365,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - 1ª Classe",
@@ -356,7 +380,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - 2ª Classe",
@@ -370,7 +395,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - 3ª Classe",
@@ -384,7 +410,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - Classe Especial",
@@ -398,7 +425,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Datiloscopista Policial - 1ª Classe",
@@ -412,7 +440,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Datiloscopista Policial - 2ª Classe",
@@ -426,7 +455,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Datiloscopista Policial - 3ª Classe",
@@ -440,7 +470,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Datiloscopista Policial - Classe Especial",
@@ -454,7 +485,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Telecomunicações - 1ª Classe",
@@ -468,7 +500,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Telecomunicações - 2ª Classe",
@@ -482,7 +515,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Telecomunicações - 3ª Classe",
@@ -496,7 +530,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Telecomunicações - Classe Especial",
@@ -510,7 +545,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Tecnologia da Informação - 1ª Classe",
@@ -524,7 +560,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Tecnologia da Informação - 2ª Classe",
@@ -538,7 +575,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Tecnologia da Informação - 3ª Classe",
@@ -552,7 +590,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Tecnologia da Informação - Classe Especial",
@@ -566,7 +605,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Criminalística - 1ª Classe",
@@ -580,7 +620,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Criminalística - 2ª Classe",
@@ -594,7 +635,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Criminalística - 3ª Classe",
@@ -608,7 +650,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Criminalística - Classe Especial",
@@ -622,7 +665,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Técnico em Laboratório - 1ª Classe",
@@ -636,7 +680,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Técnico em Laboratório - 2ª Classe",
@@ -650,7 +695,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Técnico em Laboratório - 3ª Classe",
@@ -664,7 +710,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Técnico em Laboratório - Classe Especial",
@@ -678,7 +725,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar Operacional de Perito Criminal - 1ª Classe",
@@ -692,7 +740,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar Operacional de Perito Criminal - 2ª Classe",
@@ -706,7 +755,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar Operacional de Perito Criminal - 3ª Classe",
@@ -720,7 +770,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar Operacional de Perito Criminal - Classe Especial",
@@ -734,7 +785,8 @@
       "fonteKey": "pcro",
       "fonteNome": "Estrutura de Remunerações do Poder Executivo de Rondônia",
       "fonteUrl": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://transparencia.ro.gov.br/anexo/visualizar/aa7e9a64-861e-41e8-a55b-9e48d957cb5d",
@@ -759,14 +811,18 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Os valores listados são brutos de tabela e não incluem auxílios, diárias, indenizações de ensino, bolsa de estudo, adicional noturno, férias, décimo terceiro ou outras parcelas variáveis.",
     "Na tabela oficial consultada, parte dos cargos da PCRO aparece como cargo em transformação ou cargo em extinção; ainda assim os valores constam de forma expressa na estrutura remuneratória vigente do Executivo estadual.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

@@ -4,9 +4,9 @@
   "sigla": "BMTO",
   "uf": "TO",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do BMTO",
-  "resumo": "Tabela de subsídio bruto mensal dos bombeiros militares do Tocantins, com valores por posto e graduação. Foram usados os valores da carreira previstos na Lei Estadual nº 2.822/2013, com a tabela de vigência a partir de 1º de janeiro de 2016. Benefícios eventuais, verbas indenizatórias e adicionais não foram somados.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Coronel",
@@ -20,7 +20,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel",
@@ -34,7 +35,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major",
@@ -48,7 +50,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão",
@@ -62,7 +65,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Primeiro-Tenente",
@@ -76,7 +80,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Segundo-Tenente",
@@ -90,7 +95,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante a Oficial",
@@ -104,7 +110,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente",
@@ -118,7 +125,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Primeiro-Sargento",
@@ -132,7 +140,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Segundo-Sargento",
@@ -146,7 +155,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Terceiro-Sargento",
@@ -160,7 +170,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo",
@@ -174,7 +185,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado",
@@ -188,7 +200,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete III",
@@ -202,7 +215,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete II",
@@ -216,7 +230,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cadete I",
@@ -230,7 +245,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno-Soldado",
@@ -244,7 +260,8 @@
       "fonteKey": "bmto",
       "fonteNome": "Lei Estadual nº 2.822/2013 - Anexo IV",
       "fonteUrl": "https://central.to.gov.br/download/116626",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://central.to.gov.br/download/116626",
@@ -263,15 +280,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela oficial encontrada em lei estadual com vigência expressa a partir de 1º de janeiro de 2016.",
     "Não foi localizada, na pesquisa atual, tabela oficial posterior específica do subsídio do BMTO em fonte aberta indexada com valores mais recentes.",
     "Os valores representam subsídio bruto mensal da carreira e não somam verbas eventuais ou indenizatórias.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

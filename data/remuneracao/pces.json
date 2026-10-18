@@ -4,9 +4,9 @@
   "sigla": "PCES",
   "uf": "ES",
   "tema": "remuneracao",
-  "status": "Atualização fraca",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da PCES",
-  "resumo": "Tabela com valores brutos mensais por cargo e topo ou entrada de carreira localizados em normas oficiais do Espírito Santo. Os valores abaixo são de subsídio e não somam auxílio-alimentação, adicional noturno, serviço extraordinário, funções gratificadas ou verbas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Oficial Investigador de Polícia - 3ª categoria, referência 1",
@@ -20,7 +20,8 @@
       "fonteKey": "pces",
       "fonteNome": "Lei Complementar 1.093/2024 - Anexo VII",
       "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Oficial Investigador de Polícia - especial, referência 15",
@@ -34,7 +35,8 @@
       "fonteKey": "pces",
       "fonteNome": "Lei Complementar 1.093/2024 - Anexo VII",
       "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia - substituto, referência 1",
@@ -48,7 +50,8 @@
       "fonteKey": "pces",
       "fonteNome": "Lei Complementar 1.093/2024 - Anexo V",
       "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia - especial, referência 15",
@@ -62,7 +65,8 @@
       "fonteKey": "pces",
       "fonteNome": "Lei Complementar 1.093/2024 - Anexo V",
       "fonteUrl": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://ioes.dio.es.gov.br/portal/edicoes/download/9583",
@@ -105,8 +109,7 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "fraca",
-  "score_publicacao": 82,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
@@ -117,5 +120,10 @@
     "Tabela final publicada apenas com valores oficiais confirmados com segurança.",
     "Classificação automática: Atualização parcial (82/100).",
     "Classificação automática: Atualização fraca (82/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

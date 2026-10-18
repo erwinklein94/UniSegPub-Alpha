@@ -35,6 +35,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663" crossorigin="anonymous"></script>
   <link href="css/components/sugerir-correcao.css?v=20260517" rel="stylesheet" />
   <link href="css/components/theme-toggle.css?v=20260517" rel="stylesheet" />
+  <link href="css/pages/remuneracao-revisao.css?v=20261018" rel="stylesheet" />
 </head>
 <body class="usp-home usp-remuneracao" data-page="remuneracao">
   <div class="usp-topline">
@@ -93,7 +94,7 @@
         <div class="usp-hero__copy">
           <p class="usp-eyebrow"><span></span>Consulta gratuita · edição 2026</p>
           <h1 id="remuneracao-title">Remuneração bruta por cargo da <mark id="remu-title-inst">Polícia Militar de São Paulo</mark></h1>
-          <p class="usp-hero__lead" id="remu-title-desc">Valores brutos mensais organizados a partir de fontes públicas e oficiais. Sem descontos, sem somar adicionais variáveis automaticamente.</p>
+          <p class="usp-hero__lead" id="remu-title-desc">Subsídios, soldos e composições mensais por cargo, com fonte, data de referência e situação da conferência. Consulte o tipo de valor antes de comparar.</p>
         </div>
 
         <aside class="usp-quick-card usp-remu-selected" aria-label="Instituição selecionada">
@@ -218,11 +219,12 @@
       </div>
     </section>
 
+    <p id="remu-aviso-dados" class="remu-aviso-dados" role="status" hidden></p>
     <section class="usp-stats usp-remu-stats" aria-label="Resumo da tabela de remuneração">
-      <div class="usp-stat"><span>Cargos listados</span><strong id="remu-total-cargos">—</strong><small id="remu-total-desc">carregando</small></div>
-      <div class="usp-stat"><span>Remuneração mínima</span><strong id="remu-menor-total">—</strong><small id="remu-menor-cargo">—</small></div>
-      <div class="usp-stat"><span>Remuneração máxima</span><strong id="remu-maior-total">—</strong><small id="remu-maior-cargo">—</small></div>
-      <div class="usp-stat"><span>Última atualização</span><strong id="remu-atualizacao">16 mai 2026</strong><small id="remu-criterio-resumo">Tabela vigente</small></div>
+      <div class="usp-stat"><span>Referências listadas</span><strong id="remu-total-cargos">—</strong><small id="remu-total-desc">carregando</small></div>
+      <div class="usp-stat"><span>Menor valor no filtro</span><strong id="remu-menor-total">—</strong><small id="remu-menor-cargo">—</small></div>
+      <div class="usp-stat"><span>Maior valor no filtro</span><strong id="remu-maior-total">—</strong><small id="remu-maior-cargo">—</small></div>
+      <div class="usp-stat"><span>Revisão das fontes</span><strong id="remu-atualizacao">Aguardando dados</strong><small id="remu-criterio-resumo">Vigência por fonte</small></div>
     </section>
 
     <section class="usp-section usp-remu-table-section" aria-labelledby="tabela-remuneracao-title">
@@ -254,7 +256,7 @@
             <thead>
               <tr>
                 <th scope="col">Cargo / Classe</th>
-                <th scope="col">Remuneração bruta</th>
+                <th scope="col">Valor mensal de referência</th>
                 <th scope="col">Adicionais e auxílios informativos</th>
                 <th scope="col">Critério / fonte</th>
               </tr>
@@ -325,12 +327,10 @@
   <script defer src="js/data/portal-config.js?v=20260516remudesktop1"></script>
   <script defer src="js/data/bases-conteudo.js?v=20260516remudesktop1"></script>
   <script defer src="js/ui/navegacao-ui.js?v=20260516remudesktop1"></script>
-  <script defer src="js/services/remuneracao.js?v=20260516remudesktop1"></script>
   <script defer src="js/services/supabase-api.js?v=20260709supabase1"></script>
-  <script defer src="js/pages/remuneracao-automacao.js?v=20260517remu110select1"></script>
+  <script defer src="js/pages/remuneracao-automacao.js?v=20261018revisao1"></script>
   <script defer src="js/data/header-brasoes-config.js?v=20260516remudesktop1"></script>
-  <script defer src="js/ui/header-estados.js?v=20260516remudesktop1"></script>
-  <script defer src="js/pages/remuneracao-desktop.js?v=20260517remu110select1"></script>
+  <script defer src="js/pages/remuneracao-desktop.js?v=20261018revisao1"></script>
   <script defer src="js/brasao-lightbox.js?v=20260516lightbox3"></script>
   <script defer src="js/ui/theme-toggle.js?v=20260517"></script>
 </body>

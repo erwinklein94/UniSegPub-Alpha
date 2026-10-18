@@ -4,9 +4,9 @@
   "sigla": "PPMT",
   "uf": "MT",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Penal de Mato Grosso",
-  "resumo": "Tabela com subsídio bruto mensal do cargo da carreira policial penal em Mato Grosso, com referência da classe inicial e da classe final previstas na tabela oficial estadual.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Policial Penal - Classe A, nível 1",
@@ -20,7 +20,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe B, nível 1",
@@ -34,7 +35,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe C, nível 1",
@@ -48,7 +50,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe D, nível 1",
@@ -62,7 +65,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe A, nível 12",
@@ -76,7 +80,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe B, nível 12",
@@ -90,7 +95,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe C, nível 12",
@@ -104,7 +110,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Policial Penal - Classe D, nível 12",
@@ -118,7 +125,8 @@
       "fonteKey": "ppmt",
       "fonteNome": "Lei Estadual nº 11.718/2022 - Anexo I",
       "fonteUrl": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://iomat.mt.gov.br/portal/edicoes/download/16762",
@@ -137,14 +145,18 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "A tabela oficial localizada usa a nomenclatura histórica 'Agente do Sistema Penitenciário', hoje vinculada à carreira da Polícia Penal em Mato Grosso.",
     "Não foram somados benefícios, horas extras, adicional noturno, insalubridade, plantões ou verbas indenizatórias.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

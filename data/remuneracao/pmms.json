@@ -4,9 +4,9 @@
   "sigla": "PMMS",
   "uf": "MS",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da PMMS",
-  "resumo": "Tabela com subsídio bruto mensal da carreira da Polícia Militar de Mato Grosso do Sul, usando a tabela de subsídio da Lei Complementar nº 127/2008 atualizada pela Lei Complementar nº 256/2018 e reajustada pela revisão geral anual de 3,81% concedida pela Lei nº 6.562/2026. Valores sem adicionais, indenizações, diárias, auxílio-alimentação, serviço extrajornada, hora-aula ou outras verbas eventuais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado PM",
@@ -20,7 +20,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo PM",
@@ -34,7 +35,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento PM",
@@ -48,7 +50,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Sargento PM",
@@ -62,7 +65,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Sargento PM",
@@ -76,7 +80,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente PM",
@@ -90,7 +95,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Tenente PM",
@@ -104,7 +110,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Tenente PM",
@@ -118,7 +125,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão PM",
@@ -132,7 +140,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major PM",
@@ -146,7 +155,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel PM",
@@ -160,7 +170,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Coronel PM",
@@ -174,7 +185,8 @@
       "fonteKey": "pmms",
       "fonteNome": "Lei Complementar nº 256/2018 e Lei nº 6.562/2026",
       "fonteUrl": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://assets.imprensaoficial.ms.gov.br/public/prd/Diario%20Oficial/2018/12/19/DO9804_19_12_2018.pdf",
@@ -205,15 +217,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Os valores publicados são de subsídio bruto mensal e não incluem adicionais pessoais, função, serviço extrajornada, hora-aula, diárias, indenizações e outras verbas eventuais.",
     "A carreira possui progressão por níveis; a tabela acima prioriza o nível inicial de cada posto ou graduação para entregar referência direta ao usuário leigo.",
     "A Lei Complementar nº 127/2008 mantém duas tabelas históricas de subsídio; foi usada a Tabela II, que é a referência geral mais aplicável aos militares ativos.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

@@ -4,9 +4,9 @@
   "sigla": "BMBA",
   "uf": "BA",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar da Bahia",
-  "resumo": "Tabela com valores brutos mensais de referência para a carreira militar estadual do BMBA, com base na Lei estadual nº 14.890/2025, que reajustou soldos e GAPM em etapas até 2026. Os valores abaixo usam soldo + GAPM da referência/classe inicial indicada em cada linha, sem somar auxílio-fardamento e sem adicionais pessoais.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Soldado",
@@ -15,12 +15,14 @@
       "beneficios": 0,
       "total": 3134.44,
       "classe": "Praças",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Cabo",
@@ -29,12 +31,14 @@
       "beneficios": 0,
       "total": 3460.58,
       "classe": "Praças",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "3º Sargento",
@@ -43,12 +47,14 @@
       "beneficios": 0,
       "total": 4030.36,
       "classe": "Praças",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "2º Sargento",
@@ -57,12 +63,14 @@
       "beneficios": 0,
       "total": 4574.86,
       "classe": "Praças",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Sargento",
@@ -71,12 +79,14 @@
       "beneficios": 0,
       "total": 5035.7,
       "classe": "Praças",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Subtenente",
@@ -85,12 +95,14 @@
       "beneficios": 0,
       "total": 5888.64,
       "classe": "Praças",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Aspirante a Oficial",
@@ -99,12 +111,14 @@
       "beneficios": 0,
       "total": 7238.73,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "2º Tenente",
@@ -113,12 +127,14 @@
       "beneficios": 0,
       "total": 8325.93,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "1º Tenente",
@@ -127,12 +143,14 @@
       "beneficios": 0,
       "total": 9341.09,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Capitão",
@@ -141,12 +159,14 @@
       "beneficios": 0,
       "total": 11337.37,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Major",
@@ -155,12 +175,14 @@
       "beneficios": 0,
       "total": 13653.42,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Tenente-Coronel",
@@ -169,12 +191,14 @@
       "beneficios": 0,
       "total": 15970.71,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     },
     {
       "cargo": "Coronel",
@@ -183,12 +207,14 @@
       "beneficios": 0,
       "total": 18312.39,
       "classe": "Oficiais",
-      "criterio": "Soldo + GAPM I a partir de 2026",
+      "criterio": "Soldo + GAPM I a partir de 2026 Não representa a remuneração completa.",
       "benefDesc": "Não soma auxílio-fardamento nem adicionais pessoais.",
       "fonteKey": "bmba",
       "fonteNome": "Lei nº 14.890/2025",
       "fonteUrl": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar",
+      "tipo_valor": "soldo"
     }
   ],
   "fonte_principal": "https://www.al.ba.gov.br/atividade-legislativa-nova/proposicao/PL.-25761-2025",
@@ -219,15 +245,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela montada com base na Lei nº 14.890/2025 e valores de soldo + GAPM inicial de 2026; o anexo oficial completo com todas as referências não foi extraído diretamente no navegador durante a consulta.",
     "Os valores não incluem auxílio-fardamento, que a própria Lei nº 14.890/2025 fixou separadamente em R$ 256,18 a partir de maio de 2026.",
     "Podem existir adicionais por função, tempo de serviço, local de exercício e outras vantagens pessoais não somadas nesta tabela.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

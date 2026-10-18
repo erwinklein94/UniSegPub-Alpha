@@ -35,13 +35,16 @@ const fila = [];
 for (const item of config) {
   const arquivo = item.arquivo_saida || path.join(DATA_DIR, `${item.id}.json`);
   const dados = await lerJson(arquivo);
-  const monitor = await lerJson(item.arquivo_monitoramento || path.join(DATA_DIR, `${item.id}-monitor.json`));
+  const monitor = dados?.revisao_dados ? null : await lerJson(item.arquivo_monitoramento || path.join(DATA_DIR, `${item.id}-monitor.json`));
   const av = avaliar(dados);
   const acao = av.classe === 'pendente' ? 'pendentes' : av.classe === 'fraca' ? 'fracas' : 'fortes';
   fila.push({
     id:item.id, sigla:item.sigla, nome:item.nome, uf:item.uf, acao, classe:av.classe, score:av.score,
     linhas_com_valor:av.linhasComValor, fontes:av.fontes, linhas_genericas:av.genericas,
     ultima_pesquisa:dados?.ultima_pesquisa || null,
+    conferencia: dados?.revisao_dados?.situacao || 'a_confirmar',
+    nota_conferencia: dados?.revisao_dados?.nota || 'Vigência não conferida.',
+    fonte_conferida: dados?.revisao_dados?.situacao === 'conferida' ? dados.fonte_principal : null,
     monitor: monitor ? { atualizado_em:monitor.atualizado_em, modelo:monitor.modelo, usou_openai:monitor.usou_openai, depois:monitor.depois } : null,
     workflow_sugerido: av.classe === 'forte' ? null : { grupo_atualizacao:acao, instituicao:item.id, quantidade:'1', modelo_openai: av.classe === 'pendente' ? 'gpt-5.4-mini' : 'gpt-5.4' }
   });
@@ -53,7 +56,7 @@ const grupos = {
 };
 const relatorio = {
   gerado_em: HOJE,
-  resumo: { total:fila.length, pendentes:grupos.pendentes.length, fracas:grupos.fracas.length, fortes:grupos.fortes.length },
+  resumo: { total:fila.length, pendentes:grupos.pendentes.length, fracas:grupos.fracas.length, fortes:grupos.fortes.length, conferidas: fila.filter(x => x.conferencia === 'conferida').length, vigencia_a_confirmar: fila.filter(x => x.conferencia !== 'conferida').length },
   fila_acoes: fila.sort((a,b) => a.score - b.score || a.id.localeCompare(b.id)),
   grupos
 };
@@ -63,14 +66,17 @@ await fs.mkdir('docs', { recursive:true });
 const linhas = [
   '# Relatório de Qualidade — Remuneração', '',
   `Gerado em: ${HOJE}`, '',
+  '**O score mede estrutura e preenchimento; não comprova valor correto nem vigência.** Uma tabela classificada como forte pode conter valores históricos. A conferência editorial abaixo é independente desse score.', '',
   `- Total: ${relatorio.resumo.total}`,
+  `- Conferidas documentalmente: ${relatorio.resumo.conferidas}`,
+  `- Vigência a confirmar: ${relatorio.resumo.vigencia_a_confirmar}`,
   `- Pendentes: ${relatorio.resumo.pendentes}`,
   `- Fracas: ${relatorio.resumo.fracas}`,
   `- Fortes: ${relatorio.resumo.fortes}`,
   '',
-  '| Ação | ID | Sigla | Score | Linhas úteis | Observação |',
+  '| Fila estrutural | ID | Sigla | Score estrutural | Linhas | Conferência editorial |',
   '|---|---|---:|---:|---:|---|',
-  ...relatorio.fila_acoes.map(x => `| ${x.acao} | ${x.id} | ${x.sigla} | ${x.score} | ${x.linhas_com_valor} | ${x.acao === 'fortes' ? 'OK' : 'Rodar atualização de remuneração'} |`)
+  ...relatorio.fila_acoes.map(x => `| ${x.acao} | ${x.id} | ${x.sigla} | ${x.score} | ${x.linhas_com_valor} | ${x.conferencia === 'conferida' ? 'Conferida em fonte primária' : 'Vigência a confirmar'} |`)
 ];
 await fs.writeFile('docs/RELATORIO-REMUNERACAO.md', linhas.join('\n')+'\n', 'utf8');
 console.log(`Relatório de remuneração gerado: ${relatorio.resumo.total} instituições.`);

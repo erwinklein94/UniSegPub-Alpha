@@ -4,9 +4,9 @@
   "sigla": "BMAC",
   "uf": "AC",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar do Acre",
-  "resumo": "Tabela com valores brutos mensais por posto e graduação do Corpo de Bombeiros Militar do Acre, com base em tabela salarial oficial estadual aplicável à Polícia Militar e ao Corpo de Bombeiros. Os valores abaixo usam a vigência mais recente identificada na fonte oficial encontrada, com referência de julho de 2018.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Coronel BM",
@@ -20,7 +20,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Tenente-Coronel BM",
@@ -34,7 +35,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Major BM",
@@ -48,7 +50,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Capitão BM",
@@ -62,7 +65,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Tenente BM",
@@ -76,7 +80,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Tenente BM",
@@ -90,7 +95,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aspirante a Oficial BM",
@@ -104,7 +110,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno Oficial BM",
@@ -118,7 +125,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Subtenente BM",
@@ -132,7 +140,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "1º Sargento BM",
@@ -146,7 +155,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "2º Sargento BM",
@@ -160,7 +170,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento BM Nível II",
@@ -174,7 +185,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "3º Sargento BM Nível I",
@@ -188,7 +200,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno Sargento BM",
@@ -202,7 +215,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Cabo BM",
@@ -216,7 +230,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno Cabo BM",
@@ -230,7 +245,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado BM Nível II",
@@ -244,7 +260,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Soldado BM Nível I",
@@ -258,7 +275,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Aluno Soldado BM",
@@ -272,7 +290,8 @@
       "fonteKey": "bmac",
       "fonteNome": "Tabela salarial oficial estadual - Polícia Militar e Bombeiro",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-164-Policia-Militar-e-Bombeiro.pdf",
@@ -297,15 +316,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Fonte oficial encontrada traz tabela salarial consolidada com vigência identificada até julho de 2018.",
     "Não foi localizada, na pesquisa atual, tabela oficial mais recente com valores nominais por posto específica do BMAC para 2025 ou 2026.",
     "Os valores representam remuneração bruta mensal de tabela e não incluem parcelas eventuais ou indenizatórias variáveis.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

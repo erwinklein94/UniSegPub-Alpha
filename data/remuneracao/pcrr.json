@@ -4,9 +4,9 @@
   "sigla": "PCRR",
   "uf": "RR",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Civil de Roraima",
-  "resumo": "Tabela com valores brutos mensais por cargo da Polícia Civil de Roraima, priorizando subsídio da classe inicial identificado em edital público recente. Benefícios não foram somados ao total.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Delegado de Polícia Civil",
@@ -20,7 +20,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Concurso PC-RR 2022 Delegado",
       "fonteUrl": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Médico Legista de Polícia Civil",
@@ -34,7 +35,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Odonto-Legista de Polícia Civil",
@@ -48,7 +50,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal de Polícia Civil",
@@ -62,7 +65,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia Civil",
@@ -76,7 +80,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente de Polícia Civil",
@@ -90,7 +95,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Papiloscopista de Polícia Civil",
@@ -104,7 +110,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Perito Criminal de Polícia Civil",
@@ -118,7 +125,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Necrópsia de Polícia Civil",
@@ -132,7 +140,8 @@
       "fonteKey": "pcrr",
       "fonteNome": "Edital nº 2 PCRR SEGAD 2022",
       "fonteUrl": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
@@ -163,15 +172,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Tabela oficial de subsídios mais recente localizada no Diário Oficial é antiga e diverge dos valores iniciais divulgados nos editais de 2022.",
     "Os valores publicados priorizam a classe inicial dos editais de concurso por serem mais úteis ao usuário final e mais recentes do que a tabela antiga localizada.",
     "Benefícios e bolsas de formação não foram somados para evitar inflar a remuneração mensal do cargo efetivo.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

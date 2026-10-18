@@ -4,9 +4,9 @@
   "sigla": "PCAC",
   "uf": "AC",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da Polícia Civil do Acre",
-  "resumo": "Tabela com valores brutos mensais por cargo e classe da Polícia Civil do Acre, priorizando tabelas salariais oficiais do Estado. Para agente, escrivão, perito papiloscopista e auxiliar de necropsia, os valores reproduzem a tabela mais recente localizada no portal estadual para a Lei 3.228. Para delegado, perito criminal e perito médico-legista, foram usados os valores oficiais disponibilizados na tabela estadual vinculada às Leis Complementares 303 e 3.107.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Agente de Polícia Civil - Classe I",
@@ -20,7 +20,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente Oficial de Polícia - Classe II",
@@ -34,7 +35,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente Inspetor de Polícia - Classe III",
@@ -48,7 +50,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente Inspetor Especial de Polícia - Classe IV",
@@ -62,7 +65,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Agente Comissário de Polícia - Classe V",
@@ -76,7 +80,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão de Polícia - Classe I",
@@ -90,7 +95,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão Oficial de Polícia - Classe II",
@@ -104,7 +110,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão Inspetor de Polícia - Classe III",
@@ -118,7 +125,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão Inspetor Especial de Polícia - Classe IV",
@@ -132,7 +140,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Escrivão Comissário de Polícia - Classe V",
@@ -146,7 +155,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Papiloscopista - Classe I",
@@ -160,7 +170,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Papiloscopista Oficial de Polícia - Classe II",
@@ -174,7 +185,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Papiloscopista Inspetor de Polícia - Classe III",
@@ -188,7 +200,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Papiloscopista Inspetor Especial de Polícia - Classe IV",
@@ -202,7 +215,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Papiloscopista Comissário de Polícia - Classe V",
@@ -216,7 +230,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Necropsia - Classe I",
@@ -230,7 +245,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Necropsia Oficial de Polícia - Classe II",
@@ -244,7 +260,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Necropsia Inspetor de Polícia - Classe III",
@@ -258,7 +275,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Necropsia Inspetor Especial de Polícia - Classe IV",
@@ -272,7 +290,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Auxiliar de Necropsia Comissário de Polícia - Classe V",
@@ -286,7 +305,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei 2.250 e 3.228 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-2.250-e-3.228-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - Classe I",
@@ -300,7 +320,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - Classe II",
@@ -314,7 +335,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - Classe III",
@@ -328,7 +350,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - Classe IV",
@@ -342,7 +365,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - Classe Especial",
@@ -356,7 +380,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - Classe I",
@@ -370,7 +395,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - Classe II",
@@ -384,7 +410,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - Classe III",
@@ -398,7 +425,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - Classe IV",
@@ -412,7 +440,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Criminal - Classe Especial",
@@ -426,7 +455,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Médico-Legista - Classe I",
@@ -440,7 +470,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Médico-Legista - Classe II",
@@ -454,7 +485,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Médico-Legista - Classe III",
@@ -468,7 +500,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Médico-Legista - Classe IV",
@@ -482,7 +515,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Perito Médico-Legista - Classe Especial",
@@ -496,7 +530,8 @@
       "fonteKey": "pcac",
       "fonteNome": "Tabela Salarial do Estado do Acre - Lei Complementar 303 e Lei 3.107 Polícia Civil",
       "fonteUrl": "https://estado.ac.gov.br/wp-content/uploads/2020/03/Portal-Acesso-Informacao-Lei-Complementar-303-e-Lei-3.107-Pol%C3%ADcia-Civil.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://estado.ac.gov.br/tabelas-salariais/",
@@ -533,16 +568,20 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 100,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "As tabelas salariais oficiais localizadas no portal estadual estavam com última atualização da página em 31/10/2023 e alguns PDFs trazem vigências históricas; os valores foram extraídos da tabela oficial mais recente encontrada para cada carreira dentro do portal do Estado.",
     "Não foi localizada, na pesquisa feita, uma tabela oficial mais nova que substitua expressamente esses valores para todas as carreiras da PCAC em 2026.",
     "Para agente, escrivão, perito papiloscopista e auxiliar de necropsia, a tabela oficial encontrada traz classes I a V com valores idênticos entre os cargos na Lei 3.228.",
     "Para delegado, a tabela oficial encontrada apresenta vigência de janeiro de 2016; para perito criminal e perito médico-legista, a mesma fonte apresenta evolução até julho de 2018, sem tabela mais nova identificada na pesquisa.",
     "Classificação automática: Atualização forte (100/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

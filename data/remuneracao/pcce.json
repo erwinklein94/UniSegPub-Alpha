@@ -4,9 +4,9 @@
   "sigla": "PCCE",
   "uf": "CE",
   "tema": "remuneracao",
-  "status": "Atualização forte",
+  "status": "Referência histórica — vigência a confirmar",
   "titulo": "Remuneração bruta mensal da PCCE",
-  "resumo": "Tabela com valores brutos mensais por cargo da Polícia Civil do Estado do Ceará, priorizando subsídio legal e remuneração inicial de concurso recente. Para Oficial Investigador, foi usado o valor inicial do edital mais recente com revisão geral de 5% de 2026. Para Delegado, foram usados os subsídios por classe da lei da carreira, atualizados pela revisão geral de 5% de 2026.",
+  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
   "linhas": [
     {
       "cargo": "Oficial Investigador de Polícia",
@@ -20,7 +20,8 @@
       "fonteKey": "pcce",
       "fonteNome": "Edital do concurso para Oficial Investigador da PCCE e revisão geral de 2026",
       "fonteUrl": "https://www.ceara.gov.br/wp-content/uploads/2025/04/Edital-Policia-Civil-2025-38-54-2.pdf",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - 1ª Classe",
@@ -34,7 +35,8 @@
       "fonteKey": "pcce",
       "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
       "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - 2ª Classe",
@@ -48,7 +50,8 @@
       "fonteKey": "pcce",
       "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
       "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - 3ª Classe",
@@ -62,7 +65,8 @@
       "fonteKey": "pcce",
       "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
       "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     },
     {
       "cargo": "Delegado de Polícia Civil - Classe Especial",
@@ -76,7 +80,8 @@
       "fonteKey": "pcce",
       "fonteNome": "Lei do subsídio de Delegado da Polícia Civil e revisão geral de 2026",
       "fonteUrl": "https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/item/7169-lei-n-17-389-26-02-2021-d-o-26-02-21",
-      "valorPendente": false
+      "valorPendente": false,
+      "verificacao": "vigencia_a_confirmar"
     }
   ],
   "fonte_principal": "https://www.ceara.gov.br/wp-content/uploads/2025/04/Edital-Policia-Civil-2025-38-54-2.pdf",
@@ -107,15 +112,19 @@
     }
   ],
   "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "forte",
-  "score_publicacao": 82,
+  "classe_atualizacao": "a_confirmar",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true,
-  "precisa_revisao_humana": false,
+  "precisa_revisao_humana": true,
   "alertas": [
     "Não localizei, com confirmação oficial clara e atual em 2026, uma tabela completa de subsídio por classe para Oficial Investigador além da remuneração inicial do concurso.",
     "Os cargos antigos de Inspetor e Escrivão foram unificados em Oficial Investigador de Polícia, o que pode exigir consolidação editorial da página.",
     "A revisão geral de 5% de 2026 foi aplicada aos valores-base identificados para estimar o bruto mensal vigente.",
     "Classificação automática: Atualização forte (82/100)."
-  ]
+  ],
+  "revisao_dados": {
+    "data": "2026-10-18",
+    "situacao": "a_confirmar",
+    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+  }
 }

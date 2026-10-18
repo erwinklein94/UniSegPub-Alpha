@@ -4,37 +4,6 @@
   const PAGE_SIZE = 14;
   const DEFAULT_INST = 'pmesp';
 
-  const pmespRows2026 = [
-    ['S2', 'Soldado 2ª Classe', 4281, 'PRAÇA • CARREIRA DE EXECUÇÃO', 'Aux. fardamento; Aux. alimentação; Adic. policial', 'Lei Compl. 1.262/15'],
-    ['S1', 'Soldado 1ª Classe', 4620, 'PRAÇA • CARREIRA DE EXECUÇÃO', 'Aux. fardamento; Aux. alimentação; Adic. policial', 'Lei Compl. 1.262/15'],
-    ['CB', 'Cabo', 5180, 'PRAÇA • CARREIRA DE EXECUÇÃO', 'Aux. fardamento; Adic. policial', 'Lei Compl. 1.262/15'],
-    ['3S', '3º Sargento', 6470, 'GRADUADO • SUBTENENTES E SARGENTOS', 'Aux. fardamento; Adic. policial; Adic. tempo', 'Lei Compl. 1.262/15'],
-    ['2S', '2º Sargento', 7220, 'GRADUADO • SUBTENENTES E SARGENTOS', 'Aux. fardamento; Adic. policial; Adic. tempo', 'Lei Compl. 1.262/15'],
-    ['1S', '1º Sargento', 8120, 'GRADUADO • SUBTENENTES E SARGENTOS', 'Aux. fardamento; Adic. policial; Adic. tempo', 'Lei Compl. 1.262/15'],
-    ['ST', 'Subtenente', 9180, 'GRADUADO • SUBTENENTES E SARGENTOS', 'Aux. fardamento; Adic. policial; Adic. tempo; Comissionado', 'Lei Compl. 1.262/15'],
-    ['AO', 'Aspirante a Oficial', 9840, 'OFICIAL INTERMEDIÁRIO • CFO 2º ANO', 'Aux. fardamento; Adic. oficial; Aux. moradia', 'Lei Compl. 1.262/15'],
-    ['2T', '2º Tenente', 11420, 'OFICIAL SUBALTERNO', 'Aux. fardamento; Adic. oficial; Aux. moradia', 'Lei Compl. 1.262/15'],
-    ['1T', '1º Tenente', 13290, 'OFICIAL SUBALTERNO', 'Aux. fardamento; Adic. oficial; Aux. moradia', 'Lei Compl. 1.262/15'],
-    ['CAP', 'Capitão', 18430, 'OFICIAL INTERMEDIÁRIO', 'Adic. oficial; Aux. moradia; Aux. educação', 'Lei Compl. 1.262/15'],
-    ['MAJ', 'Major', 21080, 'OFICIAL SUPERIOR', 'Adic. oficial; Adic. comando; Aux. moradia', 'Lei Compl. 1.262/15'],
-    ['TC', 'Tenente-Coronel', 23770, 'OFICIAL SUPERIOR', 'Adic. oficial; Adic. comando; Aux. moradia', 'Lei Compl. 1.262/15'],
-    ['CEL', 'Coronel', 26918, 'OFICIAL SUPERIOR • COMANDO', 'Adic. oficial; Adic. comando; Verba representação', 'Lei Compl. 1.262/15']
-  ].map(([badge, cargo, remuneracao, classe, benefDesc, criterio]) => ({
-    badge,
-    cargo,
-    remuneracao,
-    beneficios: 0,
-    total: remuneracao,
-    classe,
-    benefDesc,
-    criterio,
-    fonteKey: 'pmesp',
-    fonteNome: 'Tabela vigente 2026',
-    fonteUrl: '#',
-    valorPendente: false,
-    visual2026: true
-  }));
-
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -153,16 +122,7 @@
 
   function chips(row) {
     const source = String(row.benefDesc || row.adicionais || row.criterio || '').replace(/\s+/g, ' ').trim();
-    const pieces = source.split(/[.;]/).map(p => p.trim()).filter(Boolean).slice(0, 4);
-    if (!pieces.length) return ['Sem adicionais fixos somados'];
-    return pieces.map(piece => {
-      const cleaned = piece
-        .replace(/^Benefícios e indenizações não somados ao subsídio:?\s*/i, '')
-        .replace(/^Benefícios não somados:?\s*/i, '')
-        .replace(/^Auxílio-/i, 'Aux. ')
-        .trim();
-      return cleaned.length > 42 ? cleaned.slice(0, 39).trim() + '...' : cleaned;
-    });
+    return [source || 'Sem adicionais fixos somados'];
   }
 
   function sourceFor(row) {
@@ -180,15 +140,6 @@
     if (window.REMUNERACAO_AUTOMATIZADA && window.REMUNERACAO_AUTOMATIZADA[inst]) {
       return window.REMUNERACAO_AUTOMATIZADA[inst].linhas.slice();
     }
-    if (typeof window.gerarRemuneracaoTabelada === 'function') {
-      try {
-        const linhas = window.gerarRemuneracaoTabelada(inst) || [];
-        if (linhas.length) return linhas;
-      } catch (err) {
-        console.warn('Não foi possível carregar remuneração automática:', err);
-      }
-    }
-    if (inst === 'pmesp') return pmespRows2026.slice();
     return [];
   }
 
@@ -204,21 +155,39 @@
     $('#remu-selected-name').textContent = name;
     $('#remu-selected-state').textContent = uf;
     $('#remu-selected-sigla').innerHTML = esc(sig).replace(/\s+/, '<br>');
-    $('#remu-selected-meta').textContent = `${esfera} · tabela bruta · fonte oficial`;
+    $('#remu-selected-meta').textContent = `${esfera} · valores e composição por fonte`;
     $('#remu-breadcrumb-current').textContent = `Remuneração Tabelada — ${sig.replace(/\s+/g, '-')}`;
   }
 
   function updateStats() {
-    const rows = state.rows.filter(row => Number(row.remuneracao) > 0);
+    const visiveis = filteredRows(false);
+    const rows = visiveis.filter(row => !row.valorPendente && Number(row.remuneracao) > 0);
     const min = rows.reduce((acc, row) => !acc || row.remuneracao < acc.remuneracao ? row : acc, null);
     const max = rows.reduce((acc, row) => !acc || row.remuneracao > acc.remuneracao ? row : acc, null);
-    $('#remu-total-cargos').textContent = String(state.rows.length || 0);
-    $('#remu-total-desc').textContent = state.rows.length === 1 ? 'cargo listado' : 'cargos listados';
+    $('#remu-total-cargos').textContent = String(visiveis.length);
+    $('#remu-total-desc').textContent = visiveis.length === 1 ? 'referência no filtro' : 'referências no filtro';
     $('#remu-menor-total').textContent = min ? money(min.remuneracao) : '—';
     $('#remu-menor-cargo').textContent = min ? min.cargo.replace(/\s?[—-].+$/, '') : '—';
     $('#remu-maior-total').textContent = max ? money(max.remuneracao) : '—';
     $('#remu-maior-cargo').textContent = max ? max.cargo.replace(/\s?[—-].+$/, '') : '—';
-    $('#remu-criterio-resumo').textContent = state.inst === 'pmesp' ? 'Reajuste de 5,8% aplicado' : 'Valores brutos informativos';
+    const dados = window.REMUNERACAO_AUTOMATIZADA?.[state.inst]?.dados;
+    const revisao = dados?.revisao_dados;
+    const data = revisao?.data || dados?.ultima_pesquisa;
+    $('#remu-atualizacao').textContent = data ? new Date(data + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC' }) : 'Aguardando dados';
+    $('#remu-criterio-resumo').textContent = revisao?.situacao === 'conferida' ? 'Valores conferidos em fonte oficial' : 'Vigência ainda não confirmada';
+    const aviso = $('#remu-aviso-dados');
+    if (aviso) {
+      aviso.hidden = !dados;
+      aviso.textContent = revisao?.nota || 'Dados de referência cadastrados anteriormente. A vigência atual ainda não foi confirmada.';
+      aviso.dataset.situacao = revisao?.situacao || 'a_confirmar';
+    }
+  }
+
+  function valueLabel(row) {
+    const tipo = { soldo: 'Somente soldo', vencimento_base: 'Vencimento básico', subsidio: 'Subsídio', remuneracao: 'Composição de referência' }[row.tipo_valor] || 'Valor de referência';
+    const data = row.vigencia_inicio || row.referencia_data;
+    const periodo = data ? `${row.vigencia_inicio ? 'Desde' : 'Referência'} ${new Date(data + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC' })}` : '';
+    return [tipo, row.verificacao === 'fonte_oficial' ? periodo : 'Vigência a confirmar'].filter(Boolean).join(' · ');
   }
 
   function filteredRows(noSearch) {
@@ -257,9 +226,9 @@
           <div><strong>${esc(row.cargo)}</strong><small>${esc(categoryLabel(row))}</small></div>
         </div>
       </td>
-      <td class="usp-remu-value"><strong>${row.valorPendente ? 'Dados em breve' : money(row.remuneracao)}</strong>${(row.visual2026 || (index > 0 && /2026|reajuste|Lei/i.test(row.criterio || ''))) ? '<small>+5,8% vs 2025</small>' : ''}</td>
+      <td class="usp-remu-value"><strong>${row.valorPendente ? 'Valor não confirmado' : money(row.remuneracao)}</strong><small>${esc(valueLabel(row))}</small></td>
       <td><div class="usp-remu-chips">${chipHtml}</div></td>
-      <td class="usp-remu-source"><a href="${esc(safeUrl(fonte.url))}" target="_blank" rel="noopener noreferrer">${esc((row.criterio || fonte.nome || 'Fonte oficial').split(/[.;]/)[0].slice(0, 55))}</a><small>${esc(fonte.nome || 'Tabela vigente')}</small></td>
+      <td class="usp-remu-source"><a href="${esc(safeUrl(fonte.url))}" target="_blank" rel="noopener noreferrer">${esc(row.criterio || fonte.nome || 'Fonte da linha')}</a><small>${esc(fonte.nome || 'Fonte de referência')}</small></td>
     </tr>`;
   }
 
@@ -273,7 +242,11 @@
     host.hidden = false;
     const buttons = [];
     buttons.push(`<button type="button" data-remu-page="prev" ${state.page === 1 ? 'disabled' : ''}>←</button>`);
-    for (let p = 1; p <= pages; p += 1) buttons.push(`<button type="button" data-remu-page="${p}" ${p === state.page ? 'aria-current="page"' : ''}>${p}</button>`);
+    const numeros = [...new Set([1, state.page - 1, state.page, state.page + 1, pages])].filter(p => p >= 1 && p <= pages).sort((a, b) => a - b);
+    numeros.forEach((p, i) => {
+      if (i && p > numeros[i - 1] + 1) buttons.push('<span aria-hidden="true">…</span>');
+      buttons.push(`<button type="button" data-remu-page="${p}" aria-label="Página ${p}" ${p === state.page ? 'aria-current="page"' : ''}>${p}</button>`);
+    });
     buttons.push(`<button type="button" data-remu-page="next" ${state.page === pages ? 'disabled' : ''}>→</button>`);
     host.innerHTML = buttons.join('');
   }
@@ -282,11 +255,13 @@
     const tbody = $('#lista-remuneracao');
     if (!tbody) return;
     const rows = filteredRows(false);
+    updateStats();
     const pages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
     if (state.page > pages) state.page = pages;
     const slice = rows.slice((state.page - 1) * PAGE_SIZE, state.page * PAGE_SIZE);
     if (!slice.length) {
-      tbody.innerHTML = `<tr><td class="usp-remu-empty" colspan="4">Nenhum cargo encontrado para o filtro aplicado.</td></tr>`;
+      const carregado = window.REMUNERACAO_AUTOMATIZADA?.[state.inst];
+      tbody.innerHTML = `<tr><td class="usp-remu-empty" colspan="4">${carregado ? 'Nenhum cargo encontrado para o filtro aplicado.' : 'Aguardando a tabela da instituição. Se o carregamento falhar, tente novamente.'}</td></tr>`;
     } else {
       tbody.innerHTML = slice.map(rowHtml).join('');
     }
@@ -324,6 +299,7 @@
     updateStats();
     updateFilterCounts();
     renderTable();
+    window.carregarRemuneracaoInstituicao?.(valid);
   }
 
   function init() {
