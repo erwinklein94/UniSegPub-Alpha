@@ -9,7 +9,16 @@
     'https://s.shopee.com.br/9KebjbAPje',
     'https://s.shopee.com.br/9Uy1w73uSI',
     'https://s.shopee.com.br/qg3cYrOLn',
-    'https://s.shopee.com.br/9pasLS6Sfs'
+    'https://s.shopee.com.br/9pasLS6Sfs',
+    // Vendas suspensas confirmadas no painel de afiliações em 18/10/2026.
+    'https://go.hotmart.com/Y105563100L',
+    'https://go.hotmart.com/E105806080J',
+    'https://go.hotmart.com/D105805984A',
+    'https://go.hotmart.com/A105560326I',
+    'https://go.hotmart.com/E105806281W',
+    'https://go.hotmart.com/A105672755T',
+    // O Hotlink do guia de matemática redirecionou para Página não encontrada.
+    'https://go.hotmart.com/R105806688Q'
   ]);
 
   function permitido(href) {

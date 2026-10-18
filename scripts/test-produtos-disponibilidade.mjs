@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 const audit=JSON.parse(fs.readFileSync('data/produtos/auditoria-links-2026-10-18.json','utf8'));
+const hotmart=JSON.parse(fs.readFileSync('data/produtos/auditoria-hotmart-2026-10-18.json','utf8'));
+const indisponiveis=new Set(hotmart.links.map(l=>l.url));
 const window={};
 vm.runInNewContext(fs.readFileSync('js/services/produtos-disponibilidade.js','utf8'),{window,URL});
 const {permitido}=window.UNISEGPUB_LINKS_PRODUTOS;
@@ -20,7 +22,10 @@ test('destinos acessíveis e verificações inconclusivas continuam disponíveis
   const preservados=audit.links.filter(l=>l.situacao!=='removido_do_site');
   assert.equal(preservados.length,63);
   assert.equal(preservados.filter(l=>l.situacao==='inconclusivo_preservado').length,5);
-  for(const l of preservados)assert.equal(permitido(l.url_afiliado),true,l.produto);
+  for(const l of preservados)assert.equal(permitido(l.url_afiliado),!indisponiveis.has(l.url_afiliado.split('?')[0]),l.produto);
+});
+test('vendas suspensas e destino inexistente são bloqueados com ou sem campanha',()=>{
+  for(const l of hotmart.links){assert.equal(permitido(l.url),false);assert.equal(permitido(l.url+'?dp=1&src=usp%7Cvitr%7Cout'),false);}
 });
 test('links vazios, exemplos de afiliado e protocolos executáveis não viram anúncio',()=>{
   for(const href of ['',null,'#','javascript:alert(1)','data:text/html,x','https://go.hotmart.com/SEU_LINK_AFILIADO_AQUI'])assert.equal(permitido(href),false);
@@ -34,7 +39,7 @@ test('blocos publicados sem link real foram retirados do guia e dos nove artigos
 });
 test('o filtro é carregado antes dos renderizadores em todas as vitrines dinâmicas',()=>{
   for(const file of ['produtos.html','base-legal.html','poderes-deveres.html','partials/pages/produtos/post-main.html']){
-    const src=fs.readFileSync(file,'utf8');
+    const src=(file.startsWith('partials/')?fs.readFileSync('partials/pages/produtos/head.html','utf8'):'')+fs.readFileSync(file,'utf8');
     assert.ok(src.indexOf('js/services/produtos-disponibilidade.js')>=0,file);
     assert.ok(src.indexOf('js/services/produtos-disponibilidade.js')<src.search(/js\/pages\/produtos-(render|laterais)\.js/),file);
   }
