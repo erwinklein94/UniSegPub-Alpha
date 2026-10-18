@@ -20,9 +20,24 @@
   root.UNISEGPUB_ANUNCIOS=Object.freeze({selecionar});
   if(!root.document)return;
   let assinatura='';
+  function atualizarVitrineInicio(base){
+    const grid=document.querySelector('.usp-product-grid');if(!grid)return;
+    const produtos=(base.produtosFisicos||[]).filter(p=>p.ativo!==false&&p.imagem?.src&&root.UNISEGPUB_LINKS_PRODUTOS?.permitido(p.href)).slice(0,3);
+    grid.replaceChildren(...produtos.map(p=>{
+      const card=document.createElement('article');card.className='usp-product';
+      const link=document.createElement('a');link.href=p.href;link.target='_blank';link.rel='sponsored noopener noreferrer';
+      const quadro=document.createElement('div');quadro.className='usp-product__image';
+      const img=document.createElement('img');img.src=p.imagem.src;img.alt=p.imagem.alt||p.titulo;img.loading='lazy';quadro.append(img);
+      const nome=document.createElement('h3');nome.textContent=p.titulo;
+      const rotulo=document.createElement('small');rotulo.textContent='Link de afiliado';
+      const cta=document.createElement('strong');cta.textContent=p.cta||'Conhecer o produto →';
+      link.append(quadro,nome,rotulo,cta);card.append(link);return card;
+    }));
+  }
   function renderizar(){
     const main=document.querySelector('main');if(!main)return;
     const base=root.UNISEGPUB_PRODUTOS;if(!base)return;
+    atualizarVitrineInicio(base);
     const produtos=selecionar(base,root.location.pathname,href=>root.UNISEGPUB_LINKS_PRODUTOS?.permitido(href));
     const nova=JSON.stringify(produtos);if(nova===assinatura)return;assinatura=nova;
     document.querySelectorAll('[data-anuncios-catalogo]').forEach(e=>e.remove());
