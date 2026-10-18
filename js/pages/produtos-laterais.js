@@ -207,7 +207,7 @@
   }
 
   function produtoValido(produto) {
-    return produto && produto.titulo && produto.href && produto.imagem && produto.imagem.src
+    return produto && produto.ativo !== false && produto.titulo && produto.href && produto.imagem && produto.imagem.src
       && window.UNISEGPUB_LINKS_PRODUTOS?.permitido(produto.href);
   }
 
@@ -230,13 +230,13 @@
       .flat()
       .filter(produtoValido);
 
-    return produtos.length ? deduplicarProdutos(produtos) : PRODUTOS_FALLBACK;
+    return produtos.length ? deduplicarProdutos(produtos) : Object.keys(base).length ? [] : PRODUTOS_FALLBACK;
   }
 
   function getProdutosRelacionados(inst) {
     const todos = coletarProdutos();
     const instNormalizada = normalizarInst(inst);
-    if (!instNormalizada) return todos;
+    if (!instNormalizada) return todos.sort((a,b) => Number(!!b.destaque)-Number(!!a.destaque)).slice(0,6);
 
     const avaliados = todos
       .map((produto, index) => ({ produto, index, score: scoreProduto(produto, instNormalizada) }))
@@ -247,7 +247,7 @@
       })
       .map(item => item.produto);
 
-    return avaliados.length ? avaliados : todos;
+    return (avaliados.length ? avaliados : todos).slice(0,6);
   }
 
   function getInfoInstituicao(inst) {
@@ -697,6 +697,7 @@
   }
 
   function iniciarProdutosRelacionados() {
+    document.addEventListener('dados-portal:pronto', agendarRender);
     const contextoInicial = getContextoSelects() || getContextoBody() || lerContextoSalvo() || getContextoCurrInst();
     if (contextoInicial) setContextoInstituicao(contextoInicial);
 

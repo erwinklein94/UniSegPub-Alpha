@@ -201,7 +201,7 @@
   }
 
   function getProdutosFiltrados(produtos) {
-    return produtos.filter(produto => window.UNISEGPUB_LINKS_PRODUTOS?.permitido(produto.href)
+    return produtos.filter(produto => produto.ativo !== false && window.UNISEGPUB_LINKS_PRODUTOS?.permitido(produto.href)
       && produtoCombinaComFiltro(produto, filtroProdutosAtual)
       && normalizarTexto(buscaVitrine).split(' ').filter(Boolean).every(termo => getTextoProduto(produto).includes(termo)));
   }
@@ -300,6 +300,7 @@
     if (!base || typeof fetch !== 'function') return;
 
     await Promise.all(Object.entries(CATEGORIAS_PRODUTOS_JSON).map(async ([categoria, url]) => {
+        if (Array.isArray(base[categoria])) return; // Edições do admin têm prioridade sobre o fallback local.
       try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);

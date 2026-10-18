@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Produtos · Admin · Universo Segurança Pública</title>
+  <script>
+    (function () {
+      var tema = 'light';
+      try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') tema = t; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', tema);
+      document.documentElement.style.colorScheme = tema;
+    })();
+  </script>
+  <link rel="stylesheet" href="css/pages/admin.css?v=20261018hotmart1" />
+  <link rel="stylesheet" href="css/pages/admin-produtos.css?v=20261018p1" />
+  <script defer src="js/services/produtos-disponibilidade.js?v=20261018hotmart2"></script>
+</head>
+<body>
+  <div class="login-envelope" id="tela-login">
+    <form class="login-cartao" id="form-login">
+      <a class="marca" href="index.html"><img src="img/LOGO/logoleao.webp" alt="" width="42" height="42" /><span>UNIVERSO<span>SEGURANÇA PÚBLICA</span></span></a>
+      <p class="sobretitulo">ÁREA RESTRITA</p><h1>Seu portal em perspectiva.</h1>
+      <p class="login-descricao">Entre com seu login de administrador para gerenciar os anúncios e as comissões.</p>
+      <label for="login-email">E-mail</label><input id="login-email" type="email" autocomplete="username" required />
+      <label for="login-senha">Senha</label><input id="login-senha" type="password" autocomplete="current-password" required />
+      <p class="login-erro" id="login-erro" role="alert"></p>
+      <button class="btn-primario" type="submit" id="login-botao">Entrar no painel <span aria-hidden="true">→</span></button>
+      <a class="voltar" href="index.html">← Voltar ao portal</a>
+    </form>
+  </div>
+  <div id="tela-dashboard" hidden>
+    <header class="barra-topo">
+      <a class="marca" href="index.html"><img src="img/LOGO/logoleao.webp" alt="" width="36" height="36" /><span>UNIVERSO<span>SEGURANÇA PÚBLICA</span></span></a>
+      <span class="selo-admin">Administração</span>
+      <nav aria-label="Ações do administrador"><a class="link-portal" href="admin.html">Audiência</a><a class="link-portal" href="index.html">Abrir portal ↗</a><button class="btn-icone" id="botao-tema" type="button" aria-label="Alternar tema">◐</button><button class="btn-suave" id="botao-sair" type="button">Sair</button></nav>
+    </header>
+    <main class="painel">
+<nav class="admin-abas" aria-label="Administração"><a href="admin.html">Audiência e vendas</a><a href="admin-produtos.html" aria-current="page">Produtos e comissões</a></nav>
+<div class="painel-topo"><div><p class="sobretitulo">CATÁLOGO E POTENCIAL DE GANHO</p><h1>Produtos anunciados<span class="ponto">.</span></h1><p class="descricao">Controle o que aparece no portal e quanto cada venda pode render.</p></div><div class="acoes"><button class="btn-suave" type="button" id="atualizar-produtos">↻ Atualizar</button><button class="btn-primario" type="button" id="novo-produto" disabled>+ Novo anúncio</button></div></div>
+<div class="hotmart-metricas"><div><span>Produtos publicados</span><strong id="total-produtos">—</strong></div><div><span>Comissão informada</span><strong id="com-comissao">—</strong></div><div><span>Comissão a conferir</span><strong id="sem-comissao">—</strong></div></div>
+<p class="subtitulo">Comissões e anotações são privadas. Valores previstos dependem das regras da plataforma, descontos, taxas e eventuais estornos. Veja as vendas recebidas no painel de audiência e vendas.</p>
+<p id="estado-produtos" role="status" aria-live="polite"></p>
+<section id="editor-produto" class="cartao" aria-labelledby="editor-titulo" hidden>
+<h2 id="editor-titulo">Editar anúncio</h2>
+<form id="form-produto" class="editor-produtos">
+<div><label for="categoria-produto">Categoria</label><select id="categoria-produto"><option value="produtosFisicos">Equipamentos</option><option value="cursosGerais">Cursos gerais</option><option value="cursosPmesp">Cursos PMESP</option><option value="cursosPcsp">Cursos PCSP</option><option value="livrosEbooks">Livros e digitais</option></select></div>
+<div><label for="titulo-produto">Nome do produto</label><input id="titulo-produto" maxlength="200" required /></div>
+<div class="campo-largo"><label for="descricao-produto">Descrição pública</label><textarea id="descricao-produto" maxlength="2000" rows="3"></textarea></div>
+<div class="campo-largo"><label for="href-produto">Link de afiliação (HTTPS)</label><input id="href-produto" type="url" maxlength="2048" required /></div>
+<div class="campo-largo"><label for="imagem-produto">Imagem (URL HTTPS ou caminho img/)</label><input id="imagem-produto" maxlength="2048" required /></div>
+<div class="opcoes-produto"><label><input id="ativo-produto" type="checkbox" checked /> Publicado no site</label><label><input id="destaque-produto" type="checkbox" /> Priorizar nos anúncios pelo site</label></div>
+<p class="campo-largo subtitulo">Desmarque “Publicado” para pausar sem perder o cadastro. Um link já confirmado como indisponível continua bloqueado. Novos produtos são gerais; os filtros institucionais dos existentes são preservados.</p>
+<div><label for="preco-produto">Preço de referência (R$)</label><input id="preco-produto" type="number" min="0" max="9999999999.99" step="0.01" /></div>
+<div><label for="percentual-produto">Comissão anunciada (%)</label><input id="percentual-produto" type="number" min="0" max="100" step="0.01" /></div>
+<div><label for="comissao-produto">Ganho por venda informado (R$)</label><input id="comissao-produto" type="number" min="0" max="9999999999.99" step="0.01" /></div>
+<div><label for="tipo-comissao">Natureza do valor</label><select id="tipo-comissao"><option value="maxima">Máximo anunciado (até)</option><option value="estimada">Estimativa</option><option value="fixa">Fixo segundo a plataforma</option></select></div>
+<p class="campo-largo subtitulo">O ganho em reais tem prioridade sobre o percentual. Sem ele, preço × percentual é apenas uma estimativa. Deixe em branco o que não souber: zero significa comissão de R$ 0.</p>
+<div><label for="data-comissao">Data da conferência</label><input id="data-comissao" type="date" /></div>
+<div><label for="fonte-comissao">Fonte da informação</label><input id="fonte-comissao" maxlength="1000" placeholder="Ex.: painel Hotmart, produto 1098241" /></div>
+<div class="campo-largo"><label for="notas-comissao">Observações privadas</label><textarea id="notas-comissao" maxlength="2000" rows="3"></textarea></div>
+<p id="erro-editor" class="login-erro campo-largo" role="alert"></p>
+<div class="acoes campo-largo"><button id="salvar-produto" class="btn-primario" type="submit">Salvar anúncio e comissão</button><button id="cancelar-produto" class="btn-suave" type="button">Fechar sem salvar</button></div>
+</form></section>
+<section class="cartao" aria-labelledby="catalogo-titulo"><h2 id="catalogo-titulo">Todos os anúncios</h2>
+<div class="filtros-produtos"><div><label for="busca-produto">Buscar nome ou link</label><input id="busca-produto" type="search" /></div><div><label for="categoria-filtro">Categoria</label><select id="categoria-filtro"><option value="">Todas</option><option value="produtosFisicos">Equipamentos</option><option value="cursosGerais">Cursos gerais</option><option value="cursosPmesp">Cursos PMESP</option><option value="cursosPcsp">Cursos PCSP</option><option value="livrosEbooks">Livros e digitais</option></select></div><div><label for="status-filtro">Situação</label><select id="status-filtro"><option value="">Todas</option><option>Publicado</option><option>Pausado</option><option>Link indisponível</option></select></div><div><label for="quantidade-vendas">Simular vendas por produto</label><input id="quantidade-vendas" type="number" min="1" max="100000" step="1" value="10" /></div></div>
+<p id="resultado-produtos" role="status"></p><p class="subtitulo">A projeção considera a quantidade acima para cada produto separadamente. Não é receita realizada. Valores não informados não são tratados como zero.</p>
+<div class="tabela-scroll"><table><caption class="sr-only">Catálogo, links de afiliado e comissões previstas em reais</caption><thead><tr><th scope="col">Produto</th><th scope="col">Categoria</th><th scope="col">Situação</th><th scope="col">Link de afiliação</th><th scope="col">Preço de referência</th><th scope="col">Comissão %</th><th scope="col">Ganho por venda</th><th scope="col">Projeção</th><th scope="col">Conferido em</th><th scope="col">Ação</th></tr></thead><tbody id="linhas-produtos"></tbody></table></div><p id="vazio-produtos" hidden>Nenhum anúncio encontrado com esses filtros.</p></section>
+</main></div><script type="module" src="js/pages/admin-produtos.js?v=20261018p1"></script></body></html>

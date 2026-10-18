@@ -35,7 +35,7 @@
 
   async function buscar() {
     var doCache = lerCache();
-    if (doCache) { aplicar(doCache); return; }
+    if (doCache) aplicar(doCache); // Revalida no servidor em cada visita para receber edições do admin.
 
     try {
       var resposta = await fetch(SUPABASE_URL + '/rest/v1/datasets?select=chave,conteudo&limit=300', {
