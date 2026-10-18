@@ -67,3 +67,25 @@ filtros. Vendas sem comissão conhecida são contadas e explicitamente excluída
 do total financeiro. Quantidades inválidas não entram na soma. Há aplicação
 em lote aos resultados filtrados e botão para zerar. As quantidades ficam na
 sessão do navegador; não criam vendas reais nem alteram dados da Hotmart.
+
+## Conferência comercial de 18/10/2026
+
+Os 71 cadastros foram conferidos. Gravados no banco privado: 53 preços e
+comissões em reais (20 Hotmart e 33 Shopee), além dos percentuais disponíveis.
+Dezessete anúncios não têm oferta vigente: dez cursos Hotmart suspensos e
+sete itens Shopee anteriormente retirados. Uma bota Acero Colt permanece sem
+preço/comissão no painel específico da Shopee, que retorna campos vazios;
+o link foi preservado por não haver confirmação suficiente de remoção.
+
+Na Hotmart, os preços e ganhos são máximos anunciados no Mercado de Afiliação;
+foram evitados cálculos brutos de preço × percentual que superestimariam o
+ganho. Na Shopee, usados os valores estimados da linha Redes sociais, incluindo
+comissão da loja quando exibida e preservando o arredondamento da plataforma.
+Nenhum valor de Lives/Vídeo foi aplicado ao site. Fonte, data e observações
+ficam em cada registro privado. Campos já preenchidos no admin foram preservados.
+Os valores financeiros completos e o SQL de importação não foram publicados no
+repositório. Atualização verificada por consulta no banco e leitura do admin.
+
+As estatísticas de comissão referem-se aos anúncios publicados: 54 publicados,
+53 com ganho conhecido e um sem comissão vigente. A tabela mantém os 71
+cadastros, incluindo os fora da exibição.

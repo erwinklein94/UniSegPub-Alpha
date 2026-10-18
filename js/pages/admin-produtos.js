@@ -35,8 +35,8 @@ function renderizar(){
   const itens=todos.filter(i=>(!$('#categoria-filtro').value||i.categoria===$('#categoria-filtro').value)&&`${i.produto.titulo} ${i.produto.href}`.toLocaleLowerCase('pt-BR').includes(busca)&&(!$('#status-filtro').value||situacao(i.produto)===$('#status-filtro').value));
   resultadosVisiveis=itens;
   $('#total-produtos').textContent=todos.filter(i=>situacao(i.produto)==='Publicado').length;
-  $('#com-comissao').textContent=todos.filter(i=>ganho(i.comissao)!=null).length;
-  $('#sem-comissao').textContent=todos.filter(i=>ganho(i.comissao)==null).length;
+  $('#com-comissao').textContent=todos.filter(i=>situacao(i.produto)==='Publicado'&&ganho(i.comissao)!=null).length;
+  $('#sem-comissao').textContent=todos.filter(i=>situacao(i.produto)==='Publicado'&&ganho(i.comissao)==null).length;
   const corpo=$('#linhas-produtos');corpo.replaceChildren();
   for(const item of itens){const {produto:p,comissao:c}=item;const tr=document.createElement('tr');
     celula(tr,p.titulo);celula(tr,categorias[item.categoria]);celula(tr,situacao(p));

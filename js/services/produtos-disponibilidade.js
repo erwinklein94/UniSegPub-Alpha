@@ -22,7 +22,8 @@
     // Novas suspensões confirmadas no painel Hotmart em 18/10/2026.
     'https://go.hotmart.com/F105805837A',
     'https://go.hotmart.com/J105560541A',
-    'https://go.hotmart.com/K105562484Y'
+    'https://go.hotmart.com/K105562484Y',
+    'https://go.hotmart.com/W105806928K'
   ]);
 
   function permitido(href) {

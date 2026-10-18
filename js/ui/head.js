@@ -97,6 +97,13 @@ function carregarImagemProduto(img) {
   const card = img.closest('.produto-card, .taf-produto-card');
   if (card) card.classList.add('img-indisponivel');
 }
+(function(){
+  const arquivo=document.currentScript?.src;
+  if(!arquivo)return;
+  const script=document.createElement('script');
+  script.src=new URL('scroll-reveal.js?v=20261018geral1',arquivo).href;
+  script.defer=true;document.head.append(script);
+})();
 /* Notícias temporariamente fora da navegação pública. Conteúdo preservado. */
 (function(){
   const estilo=document.createElement('style');

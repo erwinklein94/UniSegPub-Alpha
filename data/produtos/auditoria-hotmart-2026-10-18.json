@@ -71,6 +71,13 @@
       "url": "https://go.hotmart.com/F105805837A",
       "motivo": "vendas_suspensas",
       "estava_no_catalogo": true
+    },
+    {
+      "produto": "Delegado - Polícia Civil do Distrito Federal",
+      "produto_id": "1078954",
+      "url": "https://go.hotmart.com/W105806928K",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
     }
   ]
 }
