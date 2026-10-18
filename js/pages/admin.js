@@ -1,4 +1,5 @@
 import { FUSO, DIAS_SEMANA, diaSP, somarDias, criarPeriodo, agregarAcessos, carregarRegistros, tituloPagina, escapar, gerarCSV } from './admin-analytics.js';
+import { simularAdSense } from './admin-adsense.js';
 
 const SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
 const CHAVE = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
@@ -184,6 +185,7 @@ function renderizar() {
   desenharOrigens(d);
   paginaRanking = 0;
   renderizarPaginas();
+  renderizarSimulador();
 }
 
 /* SVG sem dependências, com acesso por mouse, toque e teclado. */
@@ -266,6 +268,44 @@ function renderizarPaginas() {
   $('#paginas-anterior').disabled = paginaRanking === 0;
   $('#paginas-proxima').disabled = paginaRanking + 1 >= totalPaginas;
 }
+
+const moeda = n => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+function renderizarSimulador() {
+  if (!dadosAtuais) return;
+  $('#adsense-base').textContent = `${fmt(dadosAtuais.total)} acessos registrados · ${fmtDia(periodo.inicio)} a ${fmtDia(periodo.fim)} · ${periodo.dias} ${periodo.dias === 1 ? 'dia' : 'dias'}`;
+  const parametros = {
+    acessos: dadosAtuais.total, dias: periodo.dias,
+    rpm: $('#adsense-rpm').valueAsNumber,
+    percentualMonetizado: $('#adsense-percentual').valueAsNumber,
+    ctr: $('#adsense-ctr').valueAsNumber
+  };
+  try {
+    const s = simularAdSense(parametros);
+    $('#adsense-receita').textContent = moeda(s.receita);
+    $('#adsense-diaria').textContent = moeda(s.diaria);
+    $('#adsense-projecao').textContent = moeda(s.projecao30);
+    $('#adsense-paginas').textContent = decimal(s.paginas);
+    $('#adsense-cliques').textContent = decimal(s.cliques);
+    $('#adsense-formula').textContent = `${decimal(s.paginas)} páginas × ${moeda(parametros.rpm)} ÷ 1.000`;
+    $('#adsense-cenarios').innerHTML = [2, 5, 10].map(rpm => {
+      const cenario = simularAdSense({ ...parametros, rpm });
+      return `<tr><td>${moeda(rpm)}</td><td>${moeda(cenario.receita)}</td><td>${moeda(cenario.projecao30)}</td></tr>`;
+    }).join('');
+    $('#adsense-erro').hidden = true;
+  } catch (e) {
+    for (const id of ['receita', 'diaria', 'projecao', 'paginas', 'cliques']) $('#adsense-' + id).textContent = '—';
+    $('#adsense-formula').textContent = '';
+    $('#adsense-cenarios').replaceChildren();
+    $('#adsense-erro').textContent = e.message;
+    $('#adsense-erro').hidden = false;
+  }
+  for (const input of $('#form-adsense').querySelectorAll('input')) {
+    input.setAttribute('aria-invalid', String(!input.validity.valid));
+  }
+}
+$('#form-adsense').addEventListener('input', renderizarSimulador);
+$('#form-adsense').addEventListener('submit', evento => { evento.preventDefault(); renderizarSimulador(); });
 $('#busca-pagina').addEventListener('input', () => { paginaRanking = 0; renderizarPaginas(); });
 $('#ordenar-acessos').addEventListener('click', () => {
   ordemCrescente = !ordemCrescente;

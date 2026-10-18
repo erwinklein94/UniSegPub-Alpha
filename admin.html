@@ -13,7 +13,7 @@
       document.documentElement.style.colorScheme = tema;
     })();
   </script>
-  <link rel="stylesheet" href="css/pages/admin.css" />
+  <link rel="stylesheet" href="css/pages/admin.css?v=20261018adsense1" />
 </head>
 <body>
   <div class="login-envelope" id="tela-login">
@@ -63,6 +63,24 @@
           <div><span>Origem principal</span><strong id="tile-origem">—</strong><small id="tile-origem-detalhe"></small></div>
           <div><span>Horário de destaque</span><strong id="tile-hora">—</strong><small id="tile-hora-detalhe"></small></div>
         </section>
+        <section class="cartao simulador-adsense" aria-labelledby="adsense-titulo">
+          <div class="cartao-topo"><div><p class="sobretitulo">SEU TRÁFEGO, OUTRAS POSSIBILIDADES</p><h2 id="adsense-titulo">Simulador de AdSense</h2><p class="subtitulo" id="adsense-base"></p></div><span class="etiqueta">Estimativa · não é receita real</span></div>
+          <p class="simulador-intro">Quanto esse movimento poderia render? Ajuste as hipóteses abaixo. Os acessos vêm do período selecionado; os valores de RPM e CTR são apenas exemplos, não taxas fornecidas pelo Google.</p>
+          <form id="form-adsense" class="simulador-campos" novalidate>
+            <div><label for="adsense-rpm">RPM de página (R$)</label><input id="adsense-rpm" type="number" min="0" step="any" inputmode="decimal" value="5" required aria-describedby="adsense-rpm-ajuda" /><small id="adsense-rpm-ajuda">Receita hipotética por mil páginas com publicidade.</small></div>
+            <div><label for="adsense-percentual">Páginas com publicidade (%)</label><input id="adsense-percentual" type="number" min="0" max="100" step="any" inputmode="decimal" value="100" required aria-describedby="adsense-percentual-ajuda" /><small id="adsense-percentual-ajuda">Hipótese de quantos acessos poderiam ser monetizados.</small></div>
+            <div><label for="adsense-ctr">CTR de página hipotético (%)</label><input id="adsense-ctr" type="number" min="0" max="100" step="any" inputmode="decimal" value="1" required aria-describedby="adsense-ctr-ajuda" /><small id="adsense-ctr-ajuda">Simula cliques em anúncios. Não altera a receita por RPM.</small></div>
+          </form>
+          <p id="adsense-erro" class="erro-filtro" role="alert" hidden></p>
+          <div class="simulador-resultados" aria-live="polite" aria-atomic="true">
+            <div class="simulador-valor"><span>Estimativa no período</span><strong id="adsense-receita">—</strong><small id="adsense-formula"></small></div>
+            <div><span>Média diária estimada</span><strong id="adsense-diaria">—</strong><small>Inclui os dias sem acessos.</small></div>
+            <div><span>Projeção para 30 dias</span><strong id="adsense-projecao">—</strong><small>Se a média diária do período se mantivesse.</small></div>
+          </div>
+          <div class="simulador-base"><p>Páginas consideradas <strong id="adsense-paginas">—</strong></p><p>Cliques hipotéticos <strong id="adsense-cliques">—</strong><small>Estimativa, não cliques observados.</small></p></div>
+          <details class="tabela-dados"><summary>Comparar três RPMs de exemplo</summary><p class="subtitulo">Mesmo tráfego e percentual de páginas com publicidade. Exemplos livres, sem referência de mercado.</p><div class="tabela-scroll"><table><thead><tr><th scope="col">RPM hipotético</th><th scope="col">No período</th><th scope="col">Em 30 dias</th></tr></thead><tbody id="adsense-cenarios"></tbody></table></div></details>
+          <p class="simulador-nota">O AdSense não está conectado. Cliques em menus ou produtos não são cliques em anúncios do Google. Os acessos registrados pelo portal podem diferir das páginas monetizadas validadas pelo AdSense; bloqueadores, disponibilidade de anúncios e tráfego inválido influenciam o resultado. O RPM já representa a receita total por mil páginas: não somamos um ganho extra por clique. Se o período inclui hoje, a média ainda pode estar parcial. <a href="https://support.google.com/adsense/answer/112030?hl=pt-BR" target="_blank" rel="noopener noreferrer">Entenda o RPM de página ↗</a></p>
+        </section>
         <section class="cartao evolucao">
           <div class="cartao-topo"><div><p class="sobretitulo">EVOLUÇÃO DA AUDIÊNCIA</p><h2>Acessos ao longo do tempo</h2><p class="subtitulo" id="subtitulo-dias"></p></div><div class="legenda"><span><i class="chip-barras"></i>Acessos</span><span><i class="chip-linha"></i>Sessões diárias</span></div></div>
           <div class="grafico-envelope" id="grafico-dias"></div>
@@ -83,6 +101,6 @@
       <footer class="rodape-admin"><span>Universo Segurança Pública <span aria-hidden="true">/</span> Inteligência de audiência</span><span id="ultima-atualizacao"></span></footer>
     </main>
   </div>
-  <script type="module" src="js/pages/admin.js"></script>
+  <script type="module" src="js/pages/admin.js?v=20261018adsense1"></script>
 </body>
 </html>
