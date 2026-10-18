@@ -8,7 +8,7 @@
 
   var SUPABASE_URL = 'https://luggjibketdxztvsgzgo.supabase.co';
   var SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
-  var CACHE_KEY = 'usp_datasets_luggjibketdxztvsgzgo_v1';
+  var CACHE_KEY = 'usp_datasets_luggjibketdxztvsgzgo_v2';
   var CACHE_TTL = 6 * 60 * 60 * 1000;
 
   function aplicar(mapa) {

@@ -1,0 +1,53 @@
+{
+  "verificadoEm": "2026-10-18",
+  "produtoHotmart": 1098241,
+  "produtor": "Hackers do Estudo / Matheus G.",
+  "paginaPublica": "https://hotmart.com/pt-br/marketplace/produtos/hde/R42289491M",
+  "precoAnunciadoBRL": 298,
+  "comissaoMaximaAnunciadaBRL": 134,
+  "taxaAfiliacaoPercentual": 50,
+  "atribuicao": "Último clique",
+  "cookieDias": 60,
+  "avaliacao": {
+    "nota": 5,
+    "quantidade": 16
+  },
+  "observacao": "Comissão máxima anunciada, sem garantia de R$ 100 por venda. Descontos e condições podem reduzir o valor. Afiliação e termos confirmados pelo proprietário.",
+  "categoria": "cursosGerais",
+  "produto": {
+    "id": "hotmart-1098241",
+    "titulo": "Hiper-Estudo & Hiper-Inteligência",
+    "descricao": "Curso sobre técnicas de estudo, foco, anotações e revisões. Consulte o programa e as condições com o produtor.",
+    "href": "https://go.hotmart.com/Q108086691J?dp=1",
+    "cta": "Conhecer o curso",
+    "target": "_blank",
+    "rel": "sponsored noopener noreferrer",
+    "classes": [
+      "curso-card",
+      "produto-card"
+    ],
+    "ariaLabel": "Conhecer Hiper-Estudo & Hiper-Inteligência na Hotmart",
+    "badges": [
+      "Estudos e organização"
+    ],
+    "meta": [
+      "Curso online",
+      "Técnicas de estudo e revisão",
+      "Consulte preço e condições na Hotmart"
+    ],
+    "metaAriaLabel": "Destaques do curso",
+    "avisoAfiliado": "Link de afiliado: podemos receber comissão pela compra.",
+    "filtro": {
+      "geral": true
+    },
+    "imagem": {
+      "src": "https://static-media.hotmart.com/JINxP0kofcAwGrk4SxPJnGfZxj4=/140x140/smart/filters:format(webp):background_color(white)/hotmart/product_contents/54bb96c3-e735-4d63-9e93-6d3b39b57ee0/vintageillustrationofabrain.jpg?w=920",
+      "alt": "Capa do curso Hiper-Estudo & Hiper-Inteligência",
+      "loading": "lazy",
+      "decoding": "async",
+      "wrapClasses": [
+        "produto-imagem"
+      ]
+    }
+  }
+}

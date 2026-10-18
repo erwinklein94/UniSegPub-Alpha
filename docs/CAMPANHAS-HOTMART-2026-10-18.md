@@ -59,3 +59,22 @@ O pacote Viva Sem Procrastinar tem página acessível e uma avaliação 4/5;
 continua no catálogo, sem novo endosso de alegações sobre saúde mental.
 O Método DMA tem página acessível, mas contém texto de modelo no FAQ;
 não foi indicado como destaque. Isso não equivale a link inválido.
+
+## Produto aprovado e publicado
+
+Hiper-Estudo & Hiper-Inteligência (1098241), de Hackers do Estudo / Matheus G.,
+selecionado pelo proprietário e com afiliação concluída após confirmação dos
+termos e compartilhamento de contato. Primeiro item de cursosGerais, com escopo
+geral, capa oficial e Hotlink Q108086691J?dp=1. Recebe SRC por página/posição.
+
+Em 18/10/2026: preço anunciado R$ 298, comissão de até R$ 134, nota 5/5 em
+16 avaliações (incluem avaliações antigas). Regras de afiliação: 50%, último
+clique e cookie de 60 dias. Descontos e condições podem reduzir a comissão;
+não há garantia de R$ 100 por venda. A vitrine não promete aprovação ou ganhos
+cognitivos e orienta consultar preço/condições na Hotmart. Registro público em
+data/produtos/selecionados-2026-10-18.json. Cache do portal renovado para que
+visitantes recebam o catálogo atualizado.
+
+Estudante Produtivo e Curso Sapiens foram descartados por página inexistente
+ou domínio indisponível. Método Volts apontou para hospedagem estacionada.
+Nenhuma afiliação foi solicitada para essas opções.

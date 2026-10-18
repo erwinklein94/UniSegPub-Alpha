@@ -1,0 +1,937 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+
+<head>	
+	<title>Sistema Legisla&ccedil;&atilde;o</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+
+	<link href="css/screen.css;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" rel="stylesheet" type="text/css" />	
+	<link href="css/default.css;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" rel="stylesheet" type="text/css" />
+	<link href="css/print.css;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" rel="stylesheet" type="text/css" media="print"/>
+	
+	
+<!--	-->
+	
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/data.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/hora.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/util.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/fone.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/windowopen.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/funcoes.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/email.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/validacao/verificador.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+	<script language="JavaScript" type="text/JavaScript" src="js/generic/numero.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>	
+	<script language="JavaScript" type="text/JavaScript" src="js/scriptaculous/prototype.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+</head>
+
+<body>
+<div id="info" style="msg_sucesso"></div>
+<div id="overlay" style="display: none;"></div>
+<div id="aguarde" style="display: none;">
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="cabecalho">
+	<table cellspacing="0" cellpadding="0" width="100%">
+		<tr>
+			<td><img src="images/logo_sistema.jpg" width="230" height="58"></td>
+			<td align="right"><img src="images/back_cabecalho_imagem.jpg" width="384" height="58"></td>
+		</tr>
+	</table>
+</div>
+<!-- <div id="logo_gov"><img src="images/logo_gov.jpg" width="51"/></div> -->
+
+
+
+
+	
+
+
+
+
+
+
+<div id="menu">
+ 
+	<SCRIPT language="JavaScript1.2" type="text/javascript" src="js/menu/coolmenus4.js"></SCRIPT>
+	<SCRIPT language="JavaScript1.2" type="text/javascript" src="js/menu/config_menu.js"></SCRIPT>	
+
+	
+
+</div>
+	
+
+
+
+
+
+
+
+<div id="barra_icones">
+
+</div>
+
+
+<script type="text/javascript" >
+	/** 
+	 * Tratamento para mensagens de erro (AJAX e Framework).
+ 	 */
+	var globalMsgError     = '';
+	var globalAjaxMsgError = '';
+	var globalAjaxDivName  = '';
+</script>
+
+
+<script language="javascript" type="text/javascript">
+	function exibirAjuda()
+	{
+		window.open("help/index.jsp", "Ajuda", "scrollbars=yes,resizable=yes,width=600,height=500");
+	}
+</script>
+<div id="barra_acao_top">
+	<div id="barra_localizacao"></div>
+	<table align="right" cellspacing="0">
+		<tr>
+			<td><i>&nbsp; |</i></td>
+			<td>&nbsp; </td>
+			<td><a href='javascript:history.back()'>voltar</a></td><td><a href='javascript:history.back()'>
+			<img src="/legislacao/images/icon_voltar.png;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" border='0'></a>
+			</td>
+			<td>&nbsp;</td>
+			<!-- <td><a href="#" onClick="javascript:exibirAjuda()">ajuda</a></td> -->
+			<td><a href="/legislacao/DownloadFile?FileName=manual_sistema_legislacao.pdf">ajuda</a></td>
+			<td><a href="/legislacao/DownloadFile?FileName=manual_sistema_legislacao.pdf"><img src="/legislacao/images/icon_ajuda.png;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" border='0'></a></td>
+		</tr>
+		<tr>
+		</tr>
+	</table>
+</div>
+
+
+
+
+<div id="conteudo">
+	<div align="center">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Avisos -->
+
+
+<!-- Erros -->
+
+
+<!-- Sucesso -->
+
+
+<!-- Struts Validator -->
+
+
+<!-- Mensagens em Alert -->
+
+
+<div id="msg" style="display: none;" ></div>
+
+<script type="text/javascript">
+	if( (typeof globalMsgError) != "undefined" && globalMsgError != '' ) {
+		var divmsg = document.getElementById('msg');
+		divmsg.innerHTML = globalMsgError;
+		divmsg.style.display = 'block';
+	}
+</script>
+
+<!-- Mensagens do Verificador.js -->
+<div id="__msgVerificador"></div>
+<div id="__divTopoDirMsgFlutua" class="flutua"></div>
+
+		
+
+
+
+
+
+
+
+
+<script language="JavaScript" type="text/JavaScript" src="js/tooltip/wz_tooltip.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+<script language="JavaScript" type="text/JavaScript" src="js/generic/util.js;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940"></script>
+
+<div id="conteudo">
+<div align="center">
+<h1>Exibir Ato</h1>
+<div id="conteudo_corpo">
+	<span style="position: absolute; right: 8%">
+		
+			
+			
+				
+				
+					
+						<a href="javascript:exibir(2);">Alterado</a> &nbsp;
+						<b>Compilado</b> &nbsp;
+						<a href="javascript:exibir(3);">Original</a> &nbsp;
+					
+					
+					
+				
+				<img src="/legislacao/images/icon_info.png;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" onMouseOver="Tip('- Alterado: Mostra o texto juntamente com todas as altera&ccedil;&otilde;es que foram feitas. <br>- Compilado: Mostra o texto apenas com a &uacute;ltima altera&ccedil;&atilde;o publicada.<br>- Original: Mostra o texto em sua forma original - conforme a primeira publica&ccedil;&atilde;o.');" onMouseOut="UnTip();">
+			
+		
+	</span>
+
+	<form name="exibirAtoForm" id="exibirAtoForm" method="post" action="/legislacao/exibirAto.do;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940?action=iniciarProcesso">
+		
+		<!-- tem em todos: -->
+		<input type="hidden" name="pesquisou" value="">
+		<input type="hidden" name="codAto" value="344946">
+		<input type="hidden" name="codTipoAto" value="1">
+		<input type="hidden" name="dataAto" value="13/11/2024">
+		<input type="hidden" name="dataPublicacao" value="13/11/2024">
+		<input type="hidden" name="nroAto" value="22187">
+			
+		<h3>Lei 22.187 - 13 de Novembro de 2024</h3>
+		<br>
+		Publicado no <a href='pesquisarAto.do?action=downloadDioe&idEdicao=15366&numero=11788'>Di&aacute;rio Oficial n&ordm;. 11788</a> de 13 de Novembro de 2024
+		<br><br>
+		
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Súmula:</b>						
+						<a id='2177230'>Disp&otilde;e sobre a reestrutura&ccedil;&atilde;o da carreira militar estadual, altera as leis que especifica, e d&aacute; outras provid&ecirc;ncias.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177231'>A Assembleia Legislativa do Estado do Paran&aacute; decretou e eu sanciono a seguinte lei:</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177232'><div style="text-align: center;">CAP&Iacute;TULO I<br />DA REESTRUTURA&Ccedil;&Atilde;O DA CARREIRA MILITAR ESTADUAL</div></a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 1º</b>						
+						<a id='2177234'>O Anexo I da Lei n&ordm; 17.169, de 24 de maio de 2012, passa a vigorar conforme o Anexo I desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Parágrafo único.</b>						
+						<a id='2177235'>Os efeitos financeiros e funcionais decorrentes dos enquadramentos previstos no Anexo II desta Lei dever&atilde;o ocorrer a partir de 1&ordm; de novembro de 2024.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 2º</b>						
+						<a id='2177236'>O enquadramento dos militares ativos e inativos ocorrer&aacute; no mesmo posto ou gradua&ccedil;&atilde;o, nas respectivas classes de subs&iacute;dios, de acordo com a Tabela de Enquadramento constante no Anexo II desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 3º</b>						
+						<a id='2177237'>Compete &agrave; Secretaria de Estado da Administra&ccedil;&atilde;o e da Previd&ecirc;ncia - SEAP, mediante a edi&ccedil;&atilde;o de ato conjunto com a Secretaria de Estado da Seguran&ccedil;a P&uacute;blica - SESP, o enquadramento dos militares na ativa, de acordo com a Tabela de Enquadramento constante no Anexo II desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Parágrafo único.</b>						
+						<a id='2177238'>Compete &agrave; Secretaria de Estado da Seguran&ccedil;a P&uacute;blica - SESP a proposi&ccedil;&atilde;o do ato de que trata o caput deste artigo.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 4º</b>						
+						<a id='2177242'>Compete &agrave; PARANAPREVID&Ecirc;NCIA o enquadramento dos militares inativos e geradores de pens&atilde;o de acordo com a Tabela de Enquadramento constante no Anexo II desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 5º</b>						
+						<a id='2177244'>Nenhuma redu&ccedil;&atilde;o remunerat&oacute;ria de proventos ou pens&atilde;o poder&aacute; advir em consequ&ecirc;ncia desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 6º</b>						
+						<a id='2177246'>O ingresso na carreira de Pra&ccedil;a dos militares estaduais ser&aacute; na gradua&ccedil;&atilde;o de Aluno-Soldado 3&ordf; Classe, condi&ccedil;&atilde;o em que dever&aacute; ser realizado curso de forma&ccedil;&atilde;o.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">§ 1º</b>						
+						<a id='2177248'>O Aluno-Soldado 3&ordf; Classe que concluir, com o devido aproveitamento, o curso de forma&ccedil;&atilde;o previsto no caput deste artigo, ser&aacute; enquadrado na gradua&ccedil;&atilde;o de Aluno-Soldado Operacional 2&ordf; Classe, conforme disponibilidade or&ccedil;ament&aacute;ria e financeira.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">§ 2º</b>						
+						<a id='2177250'>O Aluno-Soldado Operacional 2&ordf; Classe ser&aacute; enquadrado na gradua&ccedil;&atilde;o de Soldado 1&ordf; Classe ap&oacute;s a perman&ecirc;ncia de, no m&iacute;nimo, um ano na condi&ccedil;&atilde;o de 2&ordf; Classe, conforme disponibilidade or&ccedil;ament&aacute;ria e financeira.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">§ 3º</b>						
+						<a id='2177252'>O disposto neste artigo n&atilde;o se aplica aos cursos de forma&ccedil;&atilde;o e concursos p&uacute;blicos de ingresso na Pol&iacute;cia Militar do Paran&aacute; - PMPR e no Corpo de Bombeiros Militar do Paran&aacute; - CBMPR j&aacute; iniciados.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">§ 4º</b>						
+						<a id='2177255'>A gradua&ccedil;&atilde;o de Aluno-Soldado, enquanto pendente conclus&atilde;o de curso de forma&ccedil;&atilde;o e treinamento operacional, denominada, respectivamente, 3&ordf; e 2&ordf; Classes, enseja o pagamento de bolsa-aux&iacute;lio.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">§ 5º</b>						
+						<a id='2177259'>Compete aos Comandantes-Gerais da Pol&iacute;cia Militar do Paran&aacute; - PMPR e do Corpo de Bombeiros Militar do Paran&aacute; - CBMPR regulamentar o curso de forma&ccedil;&atilde;o e o treinamento operacional previstos neste artigo.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 7º</b>						
+						<a id='2177261'><a id="2177261"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507034#2212007'>O art. 6&ordm; da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 6&ordm; As carreiras da Pol&iacute;cia Militar e do Corpo de Bombeiros Militar s&atilde;o organizadas em n&iacute;veis hier&aacute;rquicos e estruturadas em cinco classes para cada posto ou gradua&ccedil;&atilde;o.(NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 8º</b>						
+						<a id='2177264'><a id="2177264"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507035#2212011'>O caput do art. 7&ordm; da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 7&ordm; O desenvolvimento na carreira da Pol&iacute;cia Militar e do Corpo de Bombeiros Militar ocorrer&aacute; por meio da promo&ccedil;&atilde;o, podendo ocorrer de um posto ou gradua&ccedil;&atilde;o para outro, imediatamente superior, ou por classe, para a classe imediatamente superior, dentro de um mesmo posto ou gradua&ccedil;&atilde;o.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 9º</b>						
+						<a id='2177269'><a id="2177269"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507038#2212015'>O &sect; 2&ordm; do art. 7&ordm; da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />&sect; 2&ordm; Quando da promo&ccedil;&atilde;o de um posto ou gradua&ccedil;&atilde;o para outro imediatamente superior, o militar ocupar&aacute; a mesma classe no novo posto ou gradua&ccedil;&atilde;o, conforme a Tabela constante no Anexo I desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 10.</b>						
+						<a id='2177278'><a id="2177278"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507042#2212017'>O &sect; 4&ordm; do art. 7&ordm; da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />&sect; 4&ordm; A promo&ccedil;&atilde;o por classe &eacute; a passagem de uma classe de subs&iacute;dio para outra imediatamente superior, dentro do mesmo posto ou gradua&ccedil;&atilde;o, a cada sete anos de efetivo exerc&iacute;cio prestado ao Estado do Paran&aacute;, observado o estabelecido no Anexo III desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 11.</b>						
+						<a id='2177279'>O Anexo III da Lei n&ordm; 17.169, de 2012, passa a vigorar conforme o Anexo III desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 12.</b>						
+						<a id='2177280'><a id="2177280"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=1772899#2212018'>O &sect; 6&ordm; do art. 7&ordm; da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />&sect; 6&ordm; N&atilde;o haver&aacute; promo&ccedil;&atilde;o por classe de militares da reserva remunerada, reformados e geradores de pens&atilde;o, exceto se o preenchimento do requisito temporal da promo&ccedil;&atilde;o por classe tiver ocorrido na atividade e o militar estadual venha a ser inativado durante o tr&acirc;mite do processo de efetiva&ccedil;&atilde;o da concess&atilde;o da promo&ccedil;&atilde;o por classe, vedada a atribui&ccedil;&atilde;o de efeitos retroativos.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 13.</b>						
+						<a id='2177284'><a id="2177284"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507112#2212020'>O art. 12 da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 12. A remunera&ccedil;&atilde;o do Aluno-Soldado 3&ordf; Classe e do Aluno-Soldado Operacional 2&ordf; Classe ser&aacute; efetivada por meio de bolsa-aux&iacute;lio no valor constante no Anexo I desta Lei.(NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 14.</b>						
+						<a id='2177289'>Os valores dos subs&iacute;dios dos militares estaduais ser&atilde;o os previstos nas Tabelas I, II e III constantes no Anexo I desta Lei, sendo que:</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">I -</b>						
+						<a id='2177292'>a Tabela I ser&aacute; implantada em 1&ordm; de novembro de 2024;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">II -</b>						
+						<a id='2177295'>a Tabela II ser&aacute; implantada em 1&ordm; de outubro de 2025;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">III -</b>						
+						<a id='2177296'>a Tabela III ser&aacute; implantada em 1&ordm; de outubro de 2026.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 15.</b>						
+						<a id='2177298'>A aquisi&ccedil;&atilde;o do direito ao pagamento de que trata esta Lei fica condicionada &agrave; exist&ecirc;ncia de disponibilidade or&ccedil;ament&aacute;ria e financeira e ao cumprimento das normas sobre finan&ccedil;as p&uacute;blicas estabelecidas na Constitui&ccedil;&atilde;o Federal, na Lei Complementar Federal n&ordm; 101, de 4 de maio de 2000, e na Lei Complementar n&ordm; 231, de 17 de dezembro de 2020.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Parágrafo único.</b>						
+						<a id='2177299'>Com a implanta&ccedil;&atilde;o da Tabela I, fica adquirido o direito &agrave; aplica&ccedil;&atilde;o das Tabelas II e III, todas do Anexo I desta Lei, observadas as datas previstas no art. 14 tamb&eacute;m desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 16.</b>						
+						<a id='2177301'>Somente a partir do exerc&iacute;cio de 2027, o subs&iacute;dio dos militares estaduais poder&aacute; ser objeto de revis&atilde;o geral anual.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Parágrafo único.</b>						
+						<a id='2177312'>Excetua-se da regra prevista no caput deste artigo, podendo ser objeto de revis&atilde;o geral anual, o subs&iacute;dio e a bolsa-aux&iacute;lio dos militares na condi&ccedil;&atilde;o de:</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">I -</b>						
+						<a id='2177313'>Aspirante a Oficial;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">II -</b>						
+						<a id='2177314'>Cadete de 3&ordm; Ano;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">III -</b>						
+						<a id='2177316'>Cadete de 2&ordm; Ano;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">IV -</b>						
+						<a id='2177319'>Cadete de 1&ordm; Ano;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">V -</b>						
+						<a id='2177322'>Aluno-Soldado 3&ordf; Classe;</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">VI -</b>						
+						<a id='2177325'>Aluno-Soldado Operacional 2&ordf; Classe.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177329'><div style="text-align: center;">CAP&Iacute;TULO II<br />DA PRIVATIVIDADE DE POSTOS E/OU GRADUA&Ccedil;&Otilde;ES</div></a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 17.</b>						
+						<a id='2177330'><a id="2177330"></a><a id="2177330"></a><a id="2177330"></a><a id="2177330"></a><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=52415&amp;codItemAto=406226#2214184">O art. 118 da Lei n&ordm; 1.943, de 23 de junho de 1954</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=52415&amp;codItemAto=406227#406227"><a href='exibirAto.do?action=iniciarProcesso&codAto=52415&codItemAto=406228#406228'>Art. 118.</a></a> Todas as atribui&ccedil;&otilde;es n&atilde;o previstas em lei como privativas de determinado posto ou gradua&ccedil;&atilde;o s&atilde;o compat&iacute;veis e podem ser desempenhadas por qualquer militar, independentemente do seu posto e/ou gradua&ccedil;&atilde;o, sem que isso gere direito ao pagamento de diferen&ccedil;as remunerat&oacute;rias e observadas as regras de organiza&ccedil;&atilde;o interna e hierarquia.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=52415&amp;codItemAto=2214184#2214187">Par&aacute;grafo &uacute;nico.</a> Aos Comandantes-Gerais da Pol&iacute;cia Militar e do Corpo de Bombeiros Militar compete o zelo pelo respeito &agrave; hierarquia e consequente designa&ccedil;&atilde;o de militares estaduais, de acordo com a patente adequada &agrave; complexidade do posto e/ou gradua&ccedil;&atilde;o.(NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 18.</b>						
+						<a id='2177333'><a id="2177333"></a><a id="2177333"></a><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=56275&amp;codItemAto=436701#2214051">Acrescenta os &sect;&sect; 1&ordm; e 2&ordm; ao art. 57 da Lei n&ordm; 16.575, de 28 de setembro de 2010</a>, com as seguintes reda&ccedil;&otilde;es:<br />&sect; 1&ordm; As fun&ccedil;&otilde;es previstas nos Quadros de Organiza&ccedil;&atilde;o da Pol&iacute;cia Militar e do Bombeiro Militar ser&atilde;o preferencialmente ocupadas conforme postos e gradua&ccedil;&otilde;es neles indicados, n&atilde;o gerando direito ao pagamento de diferen&ccedil;as remunerat&oacute;rias o exerc&iacute;cio de fun&ccedil;&atilde;o de posto ou gradua&ccedil;&atilde;o diversa da ocupada, em vista da necessidade p&uacute;blica a ser atendida e do efetivo existente para a atividade militar estadual.<br /><a href='exibirAto.do?action=iniciarProcesso&codAto=56275&codItemAto=2214051#2214103'>&sect; 2&ordm;</a> Todas as atribui&ccedil;&otilde;es n&atilde;o previstas em lei como privativas de determinado posto ou gradua&ccedil;&atilde;o podem ser desempenhadas por qualquer militar, independentemente do seu posto ou gradua&ccedil;&atilde;o, observadas as regras de organiza&ccedil;&atilde;o interna e hierarquia. (NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 19.</b>						
+						<a id='2177334'>Os militares estaduais que atuem em unidades policiais especializadas ou em sistema de colabora&ccedil;&atilde;o com outros &oacute;rg&atilde;os ou entes e que, entre suas atividades, possam praticar atos tamb&eacute;m atribu&iacute;dos a outros cargos, em vista de um sistema colaborativo para atendimento do interesse p&uacute;blico, n&atilde;o ter&atilde;o direito ao recebimento de gratifica&ccedil;&atilde;o espec&iacute;fica ou qualquer valor remunerat&oacute;rio referente ao outro cargo.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Parágrafo único.</b>						
+						<a id='2177336'>A veda&ccedil;&atilde;o prevista no caput deste artigo n&atilde;o se aplica &agrave;s hip&oacute;teses de nomea&ccedil;&atilde;o para cargo comissionado ou fun&ccedil;&atilde;o de confian&ccedil;a na Administra&ccedil;&atilde;o P&uacute;blica, ou em outros Poderes e &oacute;rg&atilde;os, bem como para os casos de gratifica&ccedil;&atilde;o que prevejam, no ato de sua cria&ccedil;&atilde;o, o acr&eacute;scimo remunerat&oacute;rio aos militares estaduais.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177337'><div style="text-align: center;">CAP&Iacute;TULO III<br />DA INDENIZA&Ccedil;&Atilde;O POR REMO&Ccedil;&Atilde;O</div></a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 20.</b>						
+						<a id='2177339'><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a id="2177339"></a><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=507014#2214104">O art. 4&ordm; da Lei n&ordm; 17.169, de 2012</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 4&ordm; Ser&aacute; concedida indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o para a compensa&ccedil;&atilde;o das despesas do militar estadual que, em virtude de remo&ccedil;&atilde;o, por interesse da Administra&ccedil;&atilde;o P&uacute;blica ou a pedido, mude de resid&ecirc;ncia habitual para exercer as suas atribui&ccedil;&otilde;es profissionais em car&aacute;ter permanente em outro munic&iacute;pio. <br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=507016#2214105">&sect; 1&ordm;</a> A indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o compreende as despesas do militar estadual e de sua fam&iacute;lia com combust&iacute;vel ou passagem e com o transporte de bagagens e de bens pessoais no valor de uma remunera&ccedil;&atilde;o mensal percebida pelo militar na ocasi&atilde;o do ato administrativo, sendo dispensada a apresenta&ccedil;&atilde;o de comprovante de gastos.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=507018#2214106">&sect; 2&ordm;</a> O pagamento ser&aacute; devido ap&oacute;s a apresenta&ccedil;&atilde;o, por meio de protocolo formalizado via sistema digital integrado de documentos, de comprovantes que demonstrem a efetiva mudan&ccedil;a de resid&ecirc;ncia para a sede do munic&iacute;pio para o qual foi designado, devendo ser processado de acordo com a disponibilidade or&ccedil;ament&aacute;ria e financeira, que deve ser aferida previamente ao ato de remo&ccedil;&atilde;o, sob pena de responsabilidade do gestor da unidade. <br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=507021#2214107">&sect; 3&ordm;</a> A indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o ser&aacute; paga uma &uacute;nica vez a cada intervalo m&iacute;nimo de dois anos, salvo nos casos de remo&ccedil;&atilde;o por interesse da Administra&ccedil;&atilde;o P&uacute;blica, desde que devidamente justificada a necessidade pelo Comandante-Geral da respectiva Corpora&ccedil;&atilde;o ou por outra autoridade por ele delegada regularmente, sob pena de responsabilidade.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=507023#2214108">&sect; 4&ordm;</a> A indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o n&atilde;o ser&aacute; paga quando o militar estadual n&atilde;o residir na cidade de origem, bem como nos casos em que n&atilde;o houver necessidade de residir no local de destino.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=507024#2214109">&sect; 5&ordm;</a> Na remo&ccedil;&atilde;o para acompanhar c&ocirc;njuge ou companheiro, a indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o ser&aacute; paga ao militar estadual apenas ap&oacute;s comprova&ccedil;&atilde;o de que o c&ocirc;njuge ou companheiro n&atilde;o recebeu verba com a mesma natureza ou finalidade, independentemente do nome ou designa&ccedil;&atilde;o dada, por qualquer dos Poderes da Uni&atilde;o, dos Estados, do Distrito Federal e dos munic&iacute;pios a que este estiver vinculado.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=2214109#2214110">&sect; 6&ordm;</a> O militar estadual ficar&aacute; obrigado a restituir integralmente a indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o recebida, no prazo de dez dias &uacute;teis, quando, injustificadamente, n&atilde;o se apresentar na nova sede ou, ainda, pedir exonera&ccedil;&atilde;o antes de completar noventa dias de exerc&iacute;cio na nova sede.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=2214110#2214111">&sect; 7&ordm;</a> A indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o n&atilde;o ser&aacute; paga ao militar estadual que, ap&oacute;s concluir o curso de forma&ccedil;&atilde;o, for designado para ter exerc&iacute;cio em local diferente daquele que reside.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=68411&amp;codItemAto=2214111#2214112">&sect; 8&ordm;</a> N&atilde;o ser&aacute; devida a indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o na hip&oacute;tese de os comprovantes de endere&ccedil;o apresentados para requerimento da verba indenizat&oacute;ria estejam fora da &aacute;rea de abrang&ecirc;ncia da unidade de lota&ccedil;&atilde;o de origem e de destino do militar estadual removido, devendo ser verificada a efetiva resid&ecirc;ncia nos munic&iacute;pios.<br /><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=2214112#2214113'>&sect; 9&ordm;</a> Compreende-se resid&ecirc;ncia, para fins de recebimento da indeniza&ccedil;&atilde;o por remo&ccedil;&atilde;o, o local onde o militar estadual permanece ap&oacute;s o cumprimento de sua jornada regular de trabalho, correspondendo ao munic&iacute;pio no qual estabelece a habitual moradia.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177343'><div style="text-align: center;">CAP&Iacute;TULO IV<br />DA CONTAGEM DE PONTOS</div></a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 21.</b>						
+						<a id='2177346'><a id="2177346"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=10187&codItemAto=1257613#2214114'>O art. 35 da Lei n&ordm; 5.940, de 8 de maio de 1969</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 35. Contagem de pontos &eacute; o processo atrav&eacute;s do qual a Comiss&atilde;o afere as qualidades morais, profissionais, intelectuais e outros fatores que a conduza a estabelecer graus justos e equilibrados, com refer&ecirc;ncia ao merecimento ou n&atilde;o da Pra&ccedil;a, observada a normatiza&ccedil;&atilde;o interna da Corpora&ccedil;&atilde;o.<br />Par&aacute;grafo &uacute;nico. A normatiza&ccedil;&atilde;o a que se refere o caput deste artigo ser&aacute; regulamentada, estabelecida e atualizada pelo Comandante-Geral quando se fizer necess&aacute;rio.(NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 22.</b>						
+						<a id='2177348'><a id="2177348"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=10187&codItemAto=1257681#2214115'>O caput do inciso V do art. 36 da Lei n&ordm; 5.940, de 1969</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />V - cursos de especializa&ccedil;&atilde;o, de interesse policial ou militar, observados os limites, crit&eacute;rios e condi&ccedil;&otilde;es previstos na normatiza&ccedil;&atilde;o interna da Corpora&ccedil;&atilde;o, regulamentada pelo Comandante-Geral:</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 23.</b>						
+						<a id='2177350'><a id="2177350"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=10187&codItemAto=1662092#2214116'>O &sect; 3&ordm; do art. 36 da Lei n&ordm; 5.940, de 1969</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />&sect; 3&ordm; T&ecirc;m direito &agrave; pontua&ccedil;&atilde;o referida no caput deste artigo, as Pra&ccedil;as que realizarem cursos de especializa&ccedil;&atilde;o em institui&ccedil;&atilde;o militar ou policial, sendo previamente indicadas pelo Comandante-Geral, ap&oacute;s processo seletivo regulado segundo normatiza&ccedil;&atilde;o interna da Corpora&ccedil;&atilde;o, por ato do Comandante-Geral.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 24.</b>						
+						<a id='2177353'><a id="2177353"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=10187&codItemAto=2214116#2214117'>Acrescenta o &sect; 4&ordm; ao art. 36 da Lei n&ordm; 5.940, de 1969</a>, com a seguinte reda&ccedil;&atilde;o:<br />&sect; 4&ordm; A verifica&ccedil;&atilde;o do merecimento e contagem de pontos para fins de promo&ccedil;&atilde;o &eacute; feita no momento de cada processo de promo&ccedil;&atilde;o espec&iacute;fico.(NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177444'><div style="text-align: center;">CAP&Iacute;TULO V<br />DAS DISPOSI&Ccedil;&Otilde;ES FINAIS</div></a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 25.</b>						
+						<a id='2177446'><a id="2177446"></a><a id="2177446"></a><a id="2177446"></a><a id="2177446"></a><a id="2177446"></a><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300295&amp;codItemAto=1903636#2214118">O art. 91 da Lei Complementar n&ordm; 258, de 14 de julho de 2023</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 91. Os valores dos subs&iacute;dios dos policiais cient&iacute;ficos disciplinados nesta Lei Complementar, relativos aos anos de 2023, 2024, 2025 e 2026:<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300295&amp;codItemAto=1903637#2214126">I -</a> da carreira de Perito Oficial de Natureza Criminal, s&atilde;o aqueles previstos nas Tabelas do Anexo II desta Lei Complementar;<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300295&amp;codItemAto=1903638#2214130">II -</a> da carreira de T&eacute;cnico de Per&iacute;cia Oficial de Natureza Criminal, s&atilde;o aqueles previstos na Tabela do Anexo III desta Lei Complementar.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300295&amp;codItemAto=1903639#2214133">&sect; 1&ordm;</a> Nos anos de 2023 a 2026, os valores de subs&iacute;dio constantes nas Tabelas dos Anexos II e III desta Lei Complementar ser&atilde;o implementados no dia 1&ordm; de agosto dos respectivos anos.<br /><a href='exibirAto.do?action=iniciarProcesso&codAto=300295&codItemAto=2214133#2214134'>&sect; 2&ordm;</a> Com a implanta&ccedil;&atilde;o da tabela prevista para o ano de 2024 dos Anexos II e III desta Lei Complementar, fica adquirido o direito &agrave; aplica&ccedil;&atilde;o referente aos anos subsequentes, observadas as datas previstas.(NR)</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 26.</b>						
+						<a id='2177468'><a id="2177468"></a><a id="2177468"></a><a id="2177468"></a><a id="2177468"></a><a id="2177468"></a><a id="2177468"></a><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300584&amp;codItemAto=1903286#2214136">O art. 81 da Lei Complementar n&ordm; 259, de 21 de julho de 2023</a>, passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />Art. 81. Os valores dos subs&iacute;dios dos policiais civis disciplinados nesta Lei Complementar, respectivamente para os anos de 2023, 2024, 2025 e 2026 s&atilde;o: <br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300584&amp;codItemAto=1903287#2214138">I -</a> da carreira de Delegado de Pol&iacute;cia, aqueles previstos nas Tabelas do Anexo II desta Lei Complementar;<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300584&amp;codItemAto=1903288#2214139">II -</a> da carreira de Agente de Pol&iacute;cia Judici&aacute;ria e Papiloscopista Policial, aqueles previstos nas Tabelas do Anexo III desta Lei Complementar;<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300584&amp;codItemAto=1903289#2214142">III -</a> da carreira em extin&ccedil;&atilde;o de Agente de Opera&ccedil;&otilde;es Policiais, aqueles previstos nas Tabelas do Anexo III desta Lei Complementar.<br /><a href="exibirAto.do?action=iniciarProcesso&amp;codAto=300584&amp;codItemAto=1903291#2214148">&sect; 1&ordm;</a> Nos anos de 2023 a 2026, os valores de subs&iacute;dio constantes nas Tabelas dos Anexos II e III desta Lei Complementar ser&atilde;o implementados no dia 1&ordm; de agosto dos respectivos anos.<br /><a href='exibirAto.do?action=iniciarProcesso&codAto=300584&codItemAto=2214148#2214150'>&sect; 2&ordm;</a> Com a implanta&ccedil;&atilde;o da tabela prevista para o ano de 2024 dos Anexos II e III desta Lei Complementar, fica adquirido o direito &agrave; aplica&ccedil;&atilde;o referente aos anos subsequentes, observadas as datas previstas.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 27.</b>						
+						<a id='2177470'><a id="2177470"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=10187&codItemAto=1265355#2214155'>O &sect; 1&ordm; do art. 25 da Lei n&ordm; 5.940, de 1969,</a> passa a vigorar com a seguinte reda&ccedil;&atilde;o:<br />&sect; 1&ordm; O interst&iacute;cio exigido para as promo&ccedil;&otilde;es &agrave;s gradua&ccedil;&otilde;es de Cabo, 3&ordm; Sargento, 2&ordm; Sargento e 1&ordm; Sargento poder&aacute; ser reduzido, por ato do Comandante-Geral, at&eacute; metade do respectivo tempo.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 28.</b>						
+						<a id='2177472'>Autoriza o Chefe do Poder Executivo a realizar as movimenta&ccedil;&otilde;es or&ccedil;ament&aacute;rias e financeiras que se fizerem necess&aacute;rias em raz&atilde;o da aplica&ccedil;&atilde;o desta Lei.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 29.</b>						
+						<a id='2177473'>As promo&ccedil;&otilde;es, em todos os casos, depender&atilde;o de comprova&ccedil;&atilde;o da disponibilidade or&ccedil;ament&aacute;ria e financeira e ser&atilde;o devidas ap&oacute;s a publica&ccedil;&atilde;o do ato de concess&atilde;o em Di&aacute;rio Oficial.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 30.</b>						
+						<a id='2177475'>Esta Lei entra em vigor na data de sua publica&ccedil;&atilde;o, com efeitos funcionais e financeiros a partir de 1&ordm; de novembro de 2024.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto">Art. 31.</b>						
+						<a id='2177479'><a id="2177479"></a><a href='exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507043#507043'>Revoga o &sect; 5&ordm; do art. 7&ordm; da Lei n&ordm; 17.169, de 24 de maio de 2012</a>.</a>
+					</p>
+				
+			
+		
+			
+				
+				
+					<p>
+						<b class="labelAto"></b>						
+						<a id='2177482'>Pal&aacute;cio do Governo, em 13 de novembro de 2024.</a>
+					</p>
+				
+			
+		
+	
+		<p>&nbsp;</p>
+		
+			
+				<p><i>Carlos Massa Ratinho Junior
+				<br/>Governador do Estado</i></p>
+			
+				<p><i>João Carlos Ortega
+				<br/>Chefe da Casa Civil</i></p>
+			
+		
+		
+		
+		<p>&nbsp;</p>
+		<p></p>
+		
+		
+ 		<hr/>
+		<p style="color:red; font-style:italic">Este texto n&atilde;o substitui o publicado no Di&aacute;rio Oficial do Estado</p>
+		
+		   
+			ANEXOS:
+			<table id="list_tabela" cellspacing="0" width="100%"class="list_tabela" >
+	<tr >
+		<th align="center" width="30">Exibir</th><th width="20%">Label do Arquivo</th><th>Observa&ccedil;&otilde;es</th><th width="17%">Nome do Arquivo</th>
+	</tr>
+	<tr class="list_cor_sim" onMouseOver="this.className = 'list_cor_hover'" onMouseOut="this.className = 'list_cor_sim'" >
+<td align="center" width="30" ><a href="javascript:exibirAnexo(73961);"><img border="0" src="/legislacao/images/icon_exibir.png;jsessionid=n6tYepirmcycVh39TDiY4rR-6bNQhrZKjHlgqdPL.sparana00940" /> </a></td>
+<td  width="20%"><div id="73961_labelArquivoAnexadoHtml"><a id='73961'>Anexos</a></div></td>
+<td ><div id="73961_observacao">&nbsp;</div></td>
+<td  width="17%"><div id="73961_nomeArquivoAnexado">anexo344946_73961.pdf</div></td>
+	</tr>
+</table>
+
+		
+		
+		<!-- 
+		<div align="center">
+			<input type="submit" name="" value="Voltar" onclick="javascript:voltar();" class="form_botao">
+		</div>
+		-->
+	</form>
+</div>
+</div>
+</div>
+
+
+<script language="JavaScript" type="text/JavaScript">
+	function exibirAnexo(codAnexo) {
+		form.action = "exibirAto.do?action=abrirAnexo&codArquivoAnexado=" + codAnexo;
+		form.submit();
+	}
+	
+	function exibir(opt) {
+		if (eval(opt==1)) {
+			form.action = "exibirAto.do?action=localizarAto&codTipoAto="+form.codTipoAto.value+"&nroAto="+form.nroAto.value+"&dataAto="+form.dataAto.value+"&dataPublicacao="+form.dataPublicacao.value+"&tipoVisualizacao=compilado";
+			form.submit();
+		} else if (eval(opt==2)) {
+			form.action = "exibirAto.do?action=localizarAto&codTipoAto="+form.codTipoAto.value+"&nroAto="+form.nroAto.value+"&dataAto="+form.dataAto.value+"&dataPublicacao="+form.dataPublicacao.value+"&tipoVisualizacao=alterado"; 
+			form.submit();
+		} else {
+			form.action = "exibirAto.do?action=localizarAto&codTipoAto="+form.codTipoAto.value+"&nroAto="+form.nroAto.value+"&dataAto="+form.dataAto.value+"&dataPublicacao="+form.dataPublicacao.value+"&tipoVisualizacao=original"; 
+			form.submit();
+		}
+	}
+</script>
+		<script language="JavaScript" type="text/JavaScript">
+			var form = document.forms[0];
+		</script>
+		
+	</div>
+</div>
+
+<div id='barra_acao_bottom'>
+<table align='right' cellspacing='0' cellpadding='0'>
+	<tr>
+		<td><img src="/legislacao/images/back_barra_acao_bot_esq.png"></td>
+		<td><a href='javascript: window.scrollTo(0, 0); void 0'>topo</a></td>
+		<td><a href='javascript: window.scrollTo(0, 0); void 0'><img src='/legislacao/images/icon_topo.png' border='0'></a></td>
+		<td><img src="/legislacao/images/back_barra_acao_bot_dir.png"></td>
+	</tr>
+</table>
+</div>
+		<script language="JavaScript" type="text/JavaScript">
+				verificador.verificar();
+				verificador.setarEventos();
+				var _formularioZero = document.forms[0];
+				if(_formularioZero) focoNoPrimeiroCampo(_formularioZero);
+		</script>
+</body>
+
+<script type="text/javascript">
+	document.getElementById('overlay').className = 'escondido';
+	document.getElementById('aguarde').className = 'escondido';
+</script>
+
+</html>
