@@ -26,7 +26,8 @@ Foi ajustada a sequência dos identificadores de linhas salariais para o maior I
 - Admin existente e confirmado no novo Auth: `erwinklein1994@gmail.com`.
   A senha desse usuário não foi lida, recuperada nem alterada. O login usa a
   senha cadastrada pelo proprietário nesse projeto; igualdade com a senha antiga
-  depende do cadastro que ele realizou e ainda exige teste pelo próprio usuário.
+  depende do cadastro que ele realizou. A sessão autenticada no admin do novo
+  projeto foi conferida no navegador e consultou a integração com sucesso.
 - Todas as dez tabelas têm RLS. Conteúdo público permite leitura; alterações
   dependem do servidor. `acessos` permite inserir visitas, mas somente o UUID
   autorizado em `hotmart_admins` pode consultar os dados de audiência.
@@ -42,8 +43,9 @@ O histórico privado de acessos e as sessões do projeto antigo não foram
 migrados: não há acesso administrativo à origem. O projeto antigo não foi
 excluído. A contagem do destino começa depois da publicação do site atualizado.
 
-As tabelas Hotmart e a autorização do admin estão preparadas; função, segredos
-e cadastro de webhook ainda precisam da ativação descrita em INTEGRACAO-HOTMART.md.
+A integração Hotmart foi ativada após a migração: função publicada, webhook
+ativo, sete testes oficiais com HTTP 200 e consulta de comissões pela API
+validada no admin. Detalhes em INTEGRACAO-HOTMART.md.
 
 As migrações foram executadas pelo SQL Editor do navegador, com confirmação
 do proprietário. Isso não registra automaticamente o histórico da CLI. Antes

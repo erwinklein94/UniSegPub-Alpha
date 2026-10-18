@@ -27,10 +27,14 @@ export function normalizarEvento(payload, agora = Date.now()) {
     ocorrido_em: new Date(payload.creation_date).toISOString(), aprovado_em: aprovado,
     produto_id: String(data.product?.id || '').slice(0,80),
     produto: String(data.product?.name || 'Produto não identificado').slice(0,240),
-    status: EVENTOS[payload.event], ...comissaoAfiliado(data.commissions, data.affiliates || [])
+    status: EVENTOS[payload.event],
+    // Marcadores combinados do teste oficial observado na ativação, sem inferir pelo nome isolado.
+    teste: p.transaction === 'HP16015479281022' && Number(data.product?.id) === 0 && data.product?.name === 'Produto test postback2',
+    ...comissaoAfiliado(data.commissions, data.affiliates || [])
   };
 }
 export function resumirVendas(eventos, inicio, fim) {
+  eventos = eventos.filter(e => e.teste !== true);
   const ultimas = new Map();
   for (const e of eventos) {
     const anterior = ultimas.get(e.transacao);

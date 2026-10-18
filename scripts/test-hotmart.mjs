@@ -21,6 +21,15 @@ test('comissão ausente, inválida ou ambígua fica desconhecida; moedas permane
   for(const value of [-1,NaN,Infinity,'50'])assert.equal(comissaoAfiliado([{source:'AFFILIATE',value,currency_value:'BRL'}]).comissao,null);
   assert.equal(comissaoAfiliado([{source:'AFFILIATE',value:50,currency_value:'BRL'}],[{},{}]).comissao,null);
 });
+test('teste oficial é preservado para auditoria e excluído dos indicadores reais',()=>{
+  const payload=evento();payload.data.product={id:0,name:'Produto test postback2'};
+  payload.data.purchase.transaction='HP16015479281022';
+  const e=normalizarEvento(payload);assert.equal(e.teste,true);
+  const dia=new Intl.DateTimeFormat('sv-SE',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(agora));
+  const resumo=resumirVendas([e],dia,dia);assert.equal(resumo.transacoes,0);assert.equal(resumo.aprovadas,0);assert.deepEqual(resumo.comissoes,{});
+  payload.data.product.id=123;assert.equal(normalizarEvento(payload).teste,false);
+  payload.data.product.id=0;payload.data.purchase.transaction='HPREAL';assert.equal(normalizarEvento(payload).teste,false);
+});
 test('estado mais recente evita duplicações e reembolsos posteriores cancelam a comissão no período de aprovação',()=>{
   const aprovado={transacao:'HP1',produto:'Curso',ocorrido_em:'2026-10-01T12:00:00Z',aprovado_em:'2026-10-01T12:00:00Z',comissao:40,moeda:'BRL',status:'APPROVED'};
   const reembolso={...aprovado,status:'REFUNDED',aprovado_em:null,ocorrido_em:'2026-11-01T12:00:00Z'};

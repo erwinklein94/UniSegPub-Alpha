@@ -61,7 +61,7 @@ export function criarHandler({env,fetch:request}) {
         // Considerar o estado mais recente de cada transação antes de filtrar
         // a aprovação: um reembolso posterior não conserva comissão aprovada.
         const rows=[];let offset=0;
-        while(true){const result=await chamar(base+'/rest/v1/hotmart_eventos?select=evento_id,transacao,produto,produto_id,status,ocorrido_em,aprovado_em,comissao,moeda&order=ocorrido_em.asc,evento_id.asc&limit=1000&offset='+offset,{headers:serviceHeaders});if(!result.ok)return responder({erro:'Falha ao ler eventos.'},503);const batch=await result.json();rows.push(...batch);if(batch.length<1000)break;offset+=1000;if(offset>=50000)return responder({erro:'Volume exige consolidação no servidor; resumo não exibido para evitar totais incompletos.'},422);}
+        while(true){const result=await chamar(base+'/rest/v1/hotmart_eventos?teste=eq.false&select=teste,evento_id,transacao,produto,produto_id,status,ocorrido_em,aprovado_em,comissao,moeda&order=ocorrido_em.asc,evento_id.asc&limit=1000&offset='+offset,{headers:serviceHeaders});if(!result.ok)return responder({erro:'Falha ao ler eventos.'},503);const batch=await result.json();rows.push(...batch);if(batch.length<1000)break;offset+=1000;if(offset>=50000)return responder({erro:'Volume exige consolidação no servidor; resumo não exibido para evitar totais incompletos.'},422);}
         const resumo=resumirVendas(rows,inicio,fim);
         return responder({...resumo,linhas:resumo.linhas.slice(0,100),origem:'webhook',historicoCompleto:false});
       }
