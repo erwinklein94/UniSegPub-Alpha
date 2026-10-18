@@ -2,7 +2,7 @@
 
 Este pacote inicia a migração dos JSONs do site para Supabase.
 
-**Projeto Supabase:** `https://yilpmghvcvfceowwuopc.supabase.co`
+**Projeto Supabase:** `https://luggjibketdxztvsgzgo.supabase.co`
 Chave publishable (somente leitura, usada no navegador): `sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa`
 
 ## Estado da migração (2026-07-09)

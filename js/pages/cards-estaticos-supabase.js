@@ -4,8 +4,8 @@
 (function () {
   'use strict';
 
-  var SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
-  var SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+  var SUPABASE_URL = 'https://luggjibketdxztvsgzgo.supabase.co';
+  var SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 
   /* Ações Judiciais não usa esta tabela: os cards vivem em acoes_judiciais (js/pages/acoes-supabase.js). */
   var PAGINAS = [

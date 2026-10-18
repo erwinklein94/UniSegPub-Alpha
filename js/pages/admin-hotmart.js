@@ -1,6 +1,6 @@
 import { escapar } from './admin-analytics.js';
-const ENDPOINT='https://yilpmghvcvfceowwuopc.supabase.co/functions/v1/hotmart-integration';
-const CHAVE='sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+const ENDPOINT='https://luggjibketdxztvsgzgo.supabase.co/functions/v1/hotmart-integration';
+const CHAVE='sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 const dinheiro=(valor,moeda)=>Number(valor).toLocaleString('pt-BR',{style:'currency',currency:moeda});
 export function criarPainelHotmart(obterSessao) {
   const $=id=>document.getElementById(id);

@@ -26,8 +26,8 @@ document.documentElement.style.colorScheme = savedTheme;
 /* Registro de acesso no Supabase (contagem própria do portal, sem dados pessoais). */
 (function () {
   try {
-    const SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
-    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+    const SUPABASE_URL = 'https://luggjibketdxztvsgzgo.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 
     const pagina = (location.pathname.replace(/^\//, '') || 'index.html').slice(0, 200);
     if (pagina.indexOf('admin') === 0) return;

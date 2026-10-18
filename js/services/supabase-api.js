@@ -3,8 +3,8 @@
 (function () {
   'use strict';
 
-  const SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
-  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+  const SUPABASE_URL = 'https://luggjibketdxztvsgzgo.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 
   async function rest(caminho) {
     const resposta = await fetch(SUPABASE_URL + '/rest/v1/' + caminho, {

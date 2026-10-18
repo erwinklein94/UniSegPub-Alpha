@@ -1,11 +1,11 @@
-import { criarPainelHotmart } from './admin-hotmart.js';
+import { criarPainelHotmart } from './admin-hotmart.js?v=20261018backend2';
 import { FUSO, DIAS_SEMANA, diaSP, somarDias, criarPeriodo, agregarAcessos, carregarRegistros, tituloPagina, escapar, gerarCSV } from './admin-analytics.js';
 import { simularAdSense } from './admin-adsense.js';
 
-const SUPABASE_URL = 'https://yilpmghvcvfceowwuopc.supabase.co';
-const CHAVE = 'sb_publishable_2Yj2IfqpQugBSDJr9ByV7w_5KNCPeKa';
+const SUPABASE_URL = 'https://luggjibketdxztvsgzgo.supabase.co';
+const CHAVE = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 const ADMIN_EMAIL = 'erwinklein1994@gmail.com';
-const SESSAO_KEY = 'usp_admin_sessao';
+const SESSAO_KEY = 'usp_admin_sessao_luggjibketdxztvsgzgo';
 const $ = seletor => document.querySelector(seletor);
 const fmt = n => Number(n || 0).toLocaleString('pt-BR');
 const decimal = n => Number(n || 0).toLocaleString('pt-BR', { maximumFractionDigits: 1 });

@@ -2,9 +2,9 @@
 
 ## Estado real
 
-Código e painel preparados; ativação em produção pendente de acesso ao projeto **yilpmghvcvfceowwuopc**, usado pelo site. Nenhum webhook/credencial foi criado na Hotmart e nenhum segredo foi gravado no repositório. O painel apresenta conexão pendente enquanto a função não existe; não transforma falta de conexão em receita zero.
+Projeto do site migrado por solicitação do proprietário para **luggjibketdxztvsgzgo**, na conta sites.erwin.3@gmail.com. As tabelas Hotmart e a autorização do administrador já existem. A Edge Function e os segredos Hotmart ainda precisam ser publicados/configurados; nenhum webhook foi registrado. O painel mantém conexão pendente, sem transformar ausência de integração em receita zero.
 
-A conta visualmente confirmada no Supabase foi **erwinklein1994@gmail.com / erwinklein94**. O e-mail também é o administrador do site, mas isso não comprova propriedade do projeto. O acesso local à CLI mostrou apenas `controle-dormentes-teste` (kqtvtjgvscjbxrfsbjfg) e `Guia do Inspetor Padrão` (lslgnbknrgwuxgcvfdml); as outras conexões disponíveis também não mostraram o projeto do site. Não implantar em um desses projetos como substituição.
+O projeto novo está acessível pelo navegador. As conexões MCP/CLI anteriores ainda pertencem a outras contas e não devem ser usadas para implantar em outro projeto. O admin do site continua sendo erwinklein1994@gmail.com, já cadastrado e confirmado no Auth do projeto novo.
 
 ## Arquitetura
 
@@ -19,12 +19,12 @@ A conta visualmente confirmada no Supabase foi **erwinklein1994@gmail.com / erwi
 
 ## Ativação — somente após confirmar a conta correta
 
-1. Acessar https://supabase.com/dashboard/project/yilpmghvcvfceowwuopc com a conta proprietária ou membro autorizado. Confirmar nome e referência do projeto. Não criar projeto novo nem substituir a URL pública do site.
-2. Revisar/aplicar `supabase/migrations/20261018172428_hotmart_integracao.sql`. Arquivo foi gerado pela CLI oficial 2.121.0 (`migration new`). Executar advisors e conferir que o UUID do administrador correto consta em `hotmart_admins`. O usuário precisa existir e ter email confirmado antes da migração; se não existir, cadastrar a autorização no servidor depois, nunca abrir políticas públicas.
+1. Acessar https://supabase.com/dashboard/project/luggjibketdxztvsgzgo com a conta proprietária ou membro autorizado. Confirmar nome e referência do projeto. A troca de projeto foi autorizada pelo proprietário em 18/10/2026.
+2. Já aplicada `supabase/migrations/20261018172428_hotmart_integracao.sql`. Arquivo foi gerado pela CLI oficial 2.121.0 (`migration new`). Executar advisors e conferir que o UUID do administrador correto consta em `hotmart_admins`. O usuário precisa existir e ter email confirmado antes da migração; se não existir, cadastrar a autorização no servidor depois, nunca abrir políticas públicas.
 3. Publicar apenas esta função, após revisar o alvo:
 
 ```powershell
-supabase functions deploy hotmart-integration --project-ref yilpmghvcvfceowwuopc --use-api
+supabase functions deploy hotmart-integration --project-ref luggjibketdxztvsgzgo --use-api
 ```
 
 4. Obter o Hottok da conta Hotmart e configurá-lo exclusivamente nos Secrets do projeto como HOTMART_HOTTOK. Opcionalmente cadastrar HOTMART_CLIENT_ID, HOTMART_CLIENT_SECRET e HOTMART_BASIC. Não enviar segredos pelo chat, não imprimir em logs, não inseri-los no código público. `.env` e arquivos locais equivalentes estão no .gitignore; `.env.example` contém somente nomes vazios.
@@ -33,7 +33,7 @@ supabase functions deploy hotmart-integration --project-ref yilpmghvcvfceowwuopc
 7. Cadastrar Webhook v2 com nome `Universo Seg Pub — vendas e comissões`, somente para produtos escolhidos/afiliados disponíveis na conta. URL:
 
 ```
-https://yilpmghvcvfceowwuopc.supabase.co/functions/v1/hotmart-integration/webhook
+https://luggjibketdxztvsgzgo.supabase.co/functions/v1/hotmart-integration/webhook
 ```
 
 8. Selecionar eventos suportados aplicáveis: compra aprovada/completa, boleto impresso, cancelamento, expiração, atraso, reembolso e chargeback; conferir rótulos oferecidos na conta. Não selecionar todos os produtos automaticamente. Se a Hotmart oferecer teste com dados sintéticos, verificar recebimento e remover apenas a transação de teste antes de usar o painel para análise real, sem excluir transações reais.
