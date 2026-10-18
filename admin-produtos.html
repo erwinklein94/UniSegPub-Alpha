@@ -14,8 +14,8 @@
     })();
   </script>
   <link rel="stylesheet" href="css/pages/admin.css?v=20261018hotmart1" />
-  <link rel="stylesheet" href="css/pages/admin-produtos.css?v=20261018p1" />
-  <script defer src="js/services/produtos-disponibilidade.js?v=20261018hotmart2"></script>
+  <link rel="stylesheet" href="css/pages/admin-produtos.css?v=20261018soma1" />
+  <script defer src="js/services/produtos-disponibilidade.js?v=20261018susp3"></script>
 </head>
 <body>
   <div class="login-envelope" id="tela-login">
@@ -42,6 +42,7 @@
 <div class="hotmart-metricas"><div><span>Produtos publicados</span><strong id="total-produtos">—</strong></div><div><span>Comissão informada</span><strong id="com-comissao">—</strong></div><div><span>Comissão a conferir</span><strong id="sem-comissao">—</strong></div></div>
 <p class="subtitulo">Comissões e anotações são privadas. Valores previstos dependem das regras da plataforma, descontos, taxas e eventuais estornos. Veja as vendas recebidas no painel de audiência e vendas.</p>
 <p id="estado-produtos" role="status" aria-live="polite"></p>
+<section class="cartao" aria-labelledby="simulacao-mensal-titulo"><p class="sobretitulo">PLANEJAMENTO · NÃO É RECEITA REAL</p><h2 id="simulacao-mensal-titulo">Ganho mensal simulado</h2><strong id="simulacao-total" class="simulacao-total">R$ 0,00</strong><p id="simulacao-resumo" aria-live="polite"></p><p class="subtitulo">Soma de comissão × vendas mensais de cada produto, inclusive os ocultos pelos filtros da tabela. Valores máximos e estimativas podem variar; não representam saldo ou receita recebida. As quantidades ficam nesta sessão do navegador.</p><button class="btn-suave" type="button" id="zerar-simulacao">Zerar simulação</button></section>
 <section id="editor-produto" class="cartao" aria-labelledby="editor-titulo" hidden>
 <h2 id="editor-titulo">Editar anúncio</h2>
 <form id="form-produto" class="editor-produtos">
@@ -64,7 +65,7 @@
 <div class="acoes campo-largo"><button id="salvar-produto" class="btn-primario" type="submit">Salvar anúncio e comissão</button><button id="cancelar-produto" class="btn-suave" type="button">Fechar sem salvar</button></div>
 </form></section>
 <section class="cartao" aria-labelledby="catalogo-titulo"><h2 id="catalogo-titulo">Todos os anúncios</h2>
-<div class="filtros-produtos"><div><label for="busca-produto">Buscar nome ou link</label><input id="busca-produto" type="search" /></div><div><label for="categoria-filtro">Categoria</label><select id="categoria-filtro"><option value="">Todas</option><option value="produtosFisicos">Equipamentos</option><option value="cursosGerais">Cursos gerais</option><option value="cursosPmesp">Cursos PMESP</option><option value="cursosPcsp">Cursos PCSP</option><option value="livrosEbooks">Livros e digitais</option></select></div><div><label for="status-filtro">Situação</label><select id="status-filtro"><option value="">Todas</option><option>Publicado</option><option>Pausado</option><option>Link indisponível</option></select></div><div><label for="quantidade-vendas">Simular vendas por produto</label><input id="quantidade-vendas" type="number" min="1" max="100000" step="1" value="10" /></div></div>
-<p id="resultado-produtos" role="status"></p><p class="subtitulo">A projeção considera a quantidade acima para cada produto separadamente. Não é receita realizada. Valores não informados não são tratados como zero.</p>
-<div class="tabela-scroll"><table><caption class="sr-only">Catálogo, links de afiliado e comissões previstas em reais</caption><thead><tr><th scope="col">Produto</th><th scope="col">Categoria</th><th scope="col">Situação</th><th scope="col">Link de afiliação</th><th scope="col">Preço de referência</th><th scope="col">Comissão %</th><th scope="col">Ganho por venda</th><th scope="col">Projeção</th><th scope="col">Conferido em</th><th scope="col">Ação</th></tr></thead><tbody id="linhas-produtos"></tbody></table></div><p id="vazio-produtos" hidden>Nenhum anúncio encontrado com esses filtros.</p></section>
-</main></div><script type="module" src="js/pages/admin-produtos.js?v=20261018p2"></script></body></html>
+<div class="filtros-produtos"><div><label for="busca-produto">Buscar nome ou link</label><input id="busca-produto" type="search" /></div><div><label for="categoria-filtro">Categoria</label><select id="categoria-filtro"><option value="">Todas</option><option value="produtosFisicos">Equipamentos</option><option value="cursosGerais">Cursos gerais</option><option value="cursosPmesp">Cursos PMESP</option><option value="cursosPcsp">Cursos PCSP</option><option value="livrosEbooks">Livros e digitais</option></select></div><div><label for="status-filtro">Situação</label><select id="status-filtro"><option value="">Todas</option><option>Publicado</option><option>Pausado</option><option>Link indisponível</option></select></div><div><label for="quantidade-vendas">Aplicar vendas/mês aos resultados</label><input id="quantidade-vendas" type="number" min="0" max="100000" step="1" value="1" /></div></div>
+<button id="aplicar-vendas" type="button" class="btn-suave">Aplicar quantidade aos produtos filtrados</button><p id="resultado-produtos" role="status"></p><p class="subtitulo">Informe as vendas mensais na linha de cada produto ou aplique uma quantidade aos resultados filtrados. A soma no topo inclui toda a simulação. Comissões não informadas ficam fora da soma.</p>
+<div class="tabela-scroll"><table><caption class="sr-only">Catálogo, links de afiliado e comissões previstas em reais</caption><thead><tr><th scope="col">Produto</th><th scope="col">Categoria</th><th scope="col">Situação</th><th scope="col">Link de afiliação</th><th scope="col">Preço de referência</th><th scope="col">Comissão %</th><th scope="col">Ganho por venda</th><th scope="col">Vendas/mês</th><th scope="col">Ganho mensal previsto</th><th scope="col">Conferido em</th><th scope="col">Ação</th></tr></thead><tbody id="linhas-produtos"></tbody></table></div><p id="vazio-produtos" hidden>Nenhum anúncio encontrado com esses filtros.</p></section>
+</main></div><script type="module" src="js/pages/admin-produtos.js?v=20261018soma1"></script></body></html>

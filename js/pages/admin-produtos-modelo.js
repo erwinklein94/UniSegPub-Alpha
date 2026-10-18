@@ -18,3 +18,16 @@ export function linkSeguro(valor,imagem=false) {
   if(imagem && /^img\/[\w./ -]+$/.test(valor) && !valor.includes('..')) return true;
   try {const u=new URL(valor);return u.protocol==='https:' && !u.username && !u.password;} catch{return false;}
 }
+export const chaveSimulacao = item => JSON.stringify([item.categoria,item.produto.href]);
+export function somarSimulacao(itens,quantidades) {
+  let centavos=0,vendas=0,semComissao=0,produtos=0;
+  for(const item of itens){
+    const q=Number(quantidades[chaveSimulacao(item)]||0);
+    if(!Number.isInteger(q)||q<1||q>100000)continue;
+    vendas+=q;produtos++;
+    const valor=ganho(item.comissao);
+    if(valor==null)semComissao+=q;
+    else centavos+=Math.round(valor*100)*q;
+  }
+  return {total:centavos/100,vendas,semComissao,produtos};
+}

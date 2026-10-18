@@ -2,12 +2,75 @@
   "data": "2026-10-18",
   "criterio": "Vendas suspensas no painel de afiliações ou destino explicitamente inexistente; falhas inconclusivas não autorizam remoção.",
   "links": [
-    {"produto": "Além da Farda", "produto_id": "7015044", "url": "https://go.hotmart.com/Y105563100L", "motivo": "vendas_suspensas", "estava_no_catalogo": true},
-    {"produto": "Combo Agente PF — Reta Final", "produto_id": "5049455", "url": "https://go.hotmart.com/E105806080J", "motivo": "vendas_suspensas", "estava_no_catalogo": true},
-    {"produto": "Combo Escrivão PF — Reta Final", "produto_id": "5049518", "url": "https://go.hotmart.com/D105805984A", "motivo": "vendas_suspensas", "estava_no_catalogo": true},
-    {"produto": "Curso preparatório PMESP Completo", "produto_id": "476733", "url": "https://go.hotmart.com/A105560326I", "motivo": "vendas_suspensas", "estava_no_catalogo": true},
-    {"produto": "Grupo de Estudos Prova Oral Delegado PF", "produto_id": "6280735", "url": "https://go.hotmart.com/E105806281W", "motivo": "vendas_suspensas", "estava_no_catalogo": true},
-    {"produto": "Na Rota PRF", "produto_id": "2581141", "url": "https://go.hotmart.com/A105672755T", "motivo": "vendas_suspensas", "estava_no_catalogo": true},
-    {"produto": "Guia definitivo de Matemática para PCs e PMs", "produto_id": "593386", "url": "https://go.hotmart.com/R105806688Q", "motivo": "pagina_nao_encontrada", "estava_no_catalogo": false}
+    {
+      "produto": "Além da Farda",
+      "produto_id": "7015044",
+      "url": "https://go.hotmart.com/Y105563100L",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Combo Agente PF — Reta Final",
+      "produto_id": "5049455",
+      "url": "https://go.hotmart.com/E105806080J",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Combo Escrivão PF — Reta Final",
+      "produto_id": "5049518",
+      "url": "https://go.hotmart.com/D105805984A",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Curso preparatório PMESP Completo",
+      "produto_id": "476733",
+      "url": "https://go.hotmart.com/A105560326I",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Grupo de Estudos Prova Oral Delegado PF",
+      "produto_id": "6280735",
+      "url": "https://go.hotmart.com/E105806281W",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Na Rota PRF",
+      "produto_id": "2581141",
+      "url": "https://go.hotmart.com/A105672755T",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Guia definitivo de Matemática para PCs e PMs",
+      "produto_id": "593386",
+      "url": "https://go.hotmart.com/R105806688Q",
+      "motivo": "pagina_nao_encontrada",
+      "estava_no_catalogo": false
+    },
+    {
+      "produto": "Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)",
+      "produto_id": "1767104",
+      "url": "https://go.hotmart.com/K105562484Y",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Preparatório para o psicotécnico das carreiras policiais",
+      "produto_id": "1622011",
+      "url": "https://go.hotmart.com/J105560541A",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    },
+    {
+      "produto": "Polícia Federal - Agente Administrativo - Direto ao Ponto",
+      "produto_id": "5425703",
+      "url": "https://go.hotmart.com/F105805837A",
+      "motivo": "vendas_suspensas",
+      "estava_no_catalogo": true
+    }
   ]
 }

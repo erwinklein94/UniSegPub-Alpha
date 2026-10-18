@@ -18,7 +18,11 @@
     'https://go.hotmart.com/E105806281W',
     'https://go.hotmart.com/A105672755T',
     // O Hotlink do guia de matemática redirecionou para Página não encontrada.
-    'https://go.hotmart.com/R105806688Q'
+    'https://go.hotmart.com/R105806688Q',
+    // Novas suspensões confirmadas no painel Hotmart em 18/10/2026.
+    'https://go.hotmart.com/F105805837A',
+    'https://go.hotmart.com/J105560541A',
+    'https://go.hotmart.com/K105562484Y'
   ]);
 
   function permitido(href) {

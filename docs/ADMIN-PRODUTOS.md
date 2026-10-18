@@ -58,3 +58,12 @@ Interface testada em Chrome local com catálogo real e gravações simuladas;
 
 Referência de funções e permissões:
 https://supabase.com/docs/guides/database/functions
+
+## Simulação mensal
+
+Cada produto tem uma quantidade independente de vendas/mês, iniciada em zero.
+O total mensal soma todas as linhas simuladas, inclusive as escondidas pelos
+filtros. Vendas sem comissão conhecida são contadas e explicitamente excluídas
+do total financeiro. Quantidades inválidas não entram na soma. Há aplicação
+em lote aos resultados filtrados e botão para zerar. As quantidades ficam na
+sessão do navegador; não criam vendas reais nem alteram dados da Hotmart.

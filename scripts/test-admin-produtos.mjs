@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
-import {ganho,legendaGanho,listar,linkSeguro} from '../js/pages/admin-produtos-modelo.js';
+import {ganho,legendaGanho,listar,linkSeguro,chaveSimulacao,somarSimulacao} from '../js/pages/admin-produtos-modelo.js';
 test('comissão desconhecida não vira zero; comissão em reais tem prioridade sobre percentual',()=>{
   assert.equal(ganho(),null);assert.equal(ganho({preco:298}),null);
   assert.equal(ganho({comissao:0}),0);
@@ -27,4 +27,14 @@ test('publicidade mistura categorias, prioriza destaque e exclui pausados, bloqu
   assert.equal(new Set(selecionados.map(p=>p.href)).size,3);
   assert.deepEqual([...selecionados.map(p=>p.href)],['hiper','livro','mochila']);
   assert.equal(contexto.UNISEGPUB_ANUNCIOS.selecionar({cursosGerais:[p('a',{ativo:false})]},'/',()=>true).length,0);
+});
+test('soma mensal combina quantidades individuais e avisa vendas sem comissão, sem erro de centavos',()=>{
+  const itens=[{categoria:'cursosGerais',produto:{href:'a'},comissao:{comissao:134}},
+    {categoria:'produtosFisicos',produto:{href:'b'},comissao:{comissao:33.89}},
+    {categoria:'cursosGerais',produto:{href:'c'}}];
+  const quantidades={[chaveSimulacao(itens[0])]:2,[chaveSimulacao(itens[1])]:3,[chaveSimulacao(itens[2])]:5};
+  assert.deepEqual(somarSimulacao(itens,quantidades),{total:369.67,vendas:10,semComissao:5,produtos:3});
+  assert.equal(somarSimulacao(itens,{}).total,0);
+  quantidades[chaveSimulacao(itens[0])]=-1;quantidades[chaveSimulacao(itens[1])]=1.5;
+  assert.equal(somarSimulacao(itens,quantidades).total,0);
 });

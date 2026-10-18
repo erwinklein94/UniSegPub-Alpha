@@ -43,12 +43,6 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://universosegpub.com.br/noticias.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
     <loc>https://universosegpub.com.br/artigos/</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>

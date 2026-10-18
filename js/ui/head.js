@@ -97,3 +97,13 @@ function carregarImagemProduto(img) {
   const card = img.closest('.produto-card, .taf-produto-card');
   if (card) card.classList.add('img-indisponivel');
 }
+/* Notícias temporariamente fora da navegação pública. Conteúdo preservado. */
+(function(){
+  const estilo=document.createElement('style');
+  estilo.textContent='a[href="noticias.html"],a[href="/noticias"],a[href="/noticias.html"],a[href="https://universosegpub.com.br/noticias.html"]{display:none!important}';
+  document.head.append(estilo);
+  function ocultarNoticias(){document.querySelectorAll('a[href]').forEach(a=>{
+    try{const u=new URL(a.href,location.href);if(u.origin===location.origin&&/^\/noticias(?:\.html)?\/?$/.test(u.pathname))a.remove();}catch{}
+  });}
+  document.addEventListener('DOMContentLoaded',()=>{ocultarNoticias();new MutationObserver(ocultarar=>{if(ocultarar.some(m=>m.addedNodes.length))ocultarNoticias();}).observe(document.body,{childList:true,subtree:true});},{once:true});
+})();

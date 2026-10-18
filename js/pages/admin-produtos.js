@@ -1,8 +1,13 @@
-import {categorias,dinheiro,ganho,legendaGanho,listar,linkSeguro} from './admin-produtos-modelo.js';
+import {categorias,dinheiro,ganho,legendaGanho,listar,linkSeguro,chaveSimulacao,somarSimulacao} from './admin-produtos-modelo.js?v=20261018soma1';
 const URL_BASE='https://luggjibketdxztvsgzgo.supabase.co';
 const CHAVE='sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 const SESSAO='usp_admin_sessao_luggjibketdxztvsgzgo';
 const $=s=>document.querySelector(s);
+let simulacao={};
+try{simulacao=JSON.parse(sessionStorage.getItem('usp_simulacao_mensal')||'{}');if(!simulacao||typeof simulacao!=='object')simulacao={};}catch{}
+let resultadosVisiveis=[];
+function guardarSimulacao(){try{sessionStorage.setItem('usp_simulacao_mensal',JSON.stringify(simulacao));}catch{}}
+function atualizarSoma(){const t=somarSimulacao(listar(catalogo,comissoes),simulacao);$('#simulacao-total').textContent=dinheiro(t.total);$('#simulacao-resumo').textContent=t.vendas+' vendas/mês simuladas em '+t.produtos+' produtos. '+(t.semComissao?t.semComissao+' venda(s) sem comissão conhecida ficaram fora do total.':'Todos os ganhos simulados têm comissão informada.');}
 let catalogo={},comissoes=[],versao=null,selecionado=null,carregando=false;
 function sessao(){try{const s=JSON.parse(sessionStorage.getItem(SESSAO));return s?.token&&s.email==='erwinklein1994@gmail.com'&&Date.now()<s.expira-30000?s:null;}catch{return null;}}
 function mensagem(texto,erro=false){$('#estado-produtos').textContent=texto;$('#estado-produtos').classList.toggle('login-erro',erro);}
@@ -28,18 +33,22 @@ function celula(tr,texto){const td=document.createElement('td');td.textContent=t
 function renderizar(){
   const todos=listar(catalogo,comissoes);const busca=$('#busca-produto').value.toLocaleLowerCase('pt-BR');
   const itens=todos.filter(i=>(!$('#categoria-filtro').value||i.categoria===$('#categoria-filtro').value)&&`${i.produto.titulo} ${i.produto.href}`.toLocaleLowerCase('pt-BR').includes(busca)&&(!$('#status-filtro').value||situacao(i.produto)===$('#status-filtro').value));
+  resultadosVisiveis=itens;
   $('#total-produtos').textContent=todos.filter(i=>situacao(i.produto)==='Publicado').length;
   $('#com-comissao').textContent=todos.filter(i=>ganho(i.comissao)!=null).length;
   $('#sem-comissao').textContent=todos.filter(i=>ganho(i.comissao)==null).length;
-  const corpo=$('#linhas-produtos');corpo.replaceChildren();const quantidade=Number($('#quantidade-vendas').value);const quantidadeValida=Number.isInteger(quantidade)&&quantidade>=1&&quantidade<=100000;
+  const corpo=$('#linhas-produtos');corpo.replaceChildren();
   for(const item of itens){const {produto:p,comissao:c}=item;const tr=document.createElement('tr');
     celula(tr,p.titulo);celula(tr,categorias[item.categoria]);celula(tr,situacao(p));
     const td=celula(tr,'');if(linkSeguro(p.href)){const a=document.createElement('a');a.href=p.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=p.href;td.append(a);}else td.textContent=p.href||'Sem link';
     celula(tr,dinheiro(c?.preco));celula(tr,c?.percentual==null?'—':Number(c.percentual)+'%');celula(tr,legendaGanho(c));
-    celula(tr,!quantidadeValida?'Informe de 1 a 100.000 vendas':ganho(c)==null?'Não informado':`${c.comissao==null||c.tipo==='estimada'?'Estimativa: ':c.tipo==='maxima'?'Até ':''}${dinheiro(ganho(c)*quantidade)}`);
+    const quantidade=Number(simulacao[chaveSimulacao(item)]||0);const qtdTd=celula(tr,'');const input=document.createElement('input');input.type='number';input.min='0';input.max='100000';input.step='1';input.value=quantidade;input.className='vendas-mensais';input.setAttribute('aria-label','Vendas mensais de '+p.titulo);qtdTd.append(input);
+    const projecao=celula(tr,ganho(c)==null?'Não informado':dinheiro(ganho(c)*quantidade));
+    input.addEventListener('input',()=>{const q=Number(input.value);if(input.value===''||!Number.isInteger(q)||q<0||q>100000){input.setCustomValidity('Informe um inteiro de 0 a 100.000.');input.setAttribute('aria-invalid','true');delete simulacao[chaveSimulacao(item)];guardarSimulacao();atualizarSoma();projecao.textContent='Quantidade inválida';return;}input.setCustomValidity('');input.removeAttribute('aria-invalid');simulacao[chaveSimulacao(item)]=q;guardarSimulacao();projecao.textContent=ganho(c)==null?'Não informado':dinheiro(ganho(c)*q);atualizarSoma();});
     celula(tr,c?.conferido_em?c.conferido_em.split('-').reverse().join('/'):'Não conferido');
     const acao=celula(tr,'');const b=document.createElement('button');b.type='button';b.className='btn-suave';b.textContent='Editar';b.setAttribute('aria-label','Editar '+p.titulo);b.onclick=()=>editar(item);acao.append(b);corpo.append(tr);
   }
+  atualizarSoma();
   $('#resultado-produtos').textContent=itens.length+' anúncio(s) encontrado(s).';$('#vazio-produtos').hidden=itens.length>0;
 }
 function editar(item=null){
@@ -71,5 +80,7 @@ $('#botao-sair').onclick=sair;
 $('#botao-tema').onclick=()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('theme',t);}catch{}};
 $('#atualizar-produtos').onclick=()=>{if(!$('#editor-produto').hidden){mensagem('Feche o editor antes de atualizar, para preservar as alterações em andamento.',true);return;}carregar();};
 $('#novo-produto').onclick=()=>editar();$('#cancelar-produto').onclick=()=>{$('#editor-produto').hidden=true;selecionado=null;};
-for(const id of ['busca-produto','categoria-filtro','status-filtro','quantidade-vendas'])$('#'+id).addEventListener('input',renderizar);
+$('#aplicar-vendas').onclick=()=>{const q=Number($('#quantidade-vendas').value);if(!$('#quantidade-vendas').reportValidity()||!Number.isInteger(q))return;for(const item of resultadosVisiveis)simulacao[chaveSimulacao(item)]=q;guardarSimulacao();renderizar();};
+$('#zerar-simulacao').onclick=()=>{simulacao={};guardarSimulacao();renderizar();};
+for(const id of ['busca-produto','categoria-filtro','status-filtro'])$('#'+id).addEventListener('input',renderizar);
 if(sessao())abrir();
