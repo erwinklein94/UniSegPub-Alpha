@@ -376,6 +376,12 @@
       "url": "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Lei/Anexo/L14875-24-anexos.pdf",
       "tipo": "fonte primária conferida",
       "data_consulta": "2026-10-18"
+    },
+    {
+      "titulo": "Lei 11.358/2006 — texto atualizado, anexos II e III (Câmara dos Deputados)",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2006/lei-11358-19-outubro-2006-545905-normaatualizada-pl.html",
+      "tipo": "fonte primária de reconferência",
+      "data_consulta": "2026-10-18"
     }
   ],
   "ultima_pesquisa": "2026-10-18",
@@ -387,6 +393,6 @@
   "revisao_dados": {
     "data": "2026-10-18",
     "situacao": "conferida",
-    "nota": "Tabela de subsídio de maio/2026, com todas as quatro classes/categorias. Auxílios não incluídos."
+    "nota": "Tabela de subsídio de maio/2026, com todas as quatro classes/categorias. Auxílios não incluídos. Reconfirmada no texto atualizado da Lei 11.358/2006 disponibilizado pela Câmara dos Deputados; revisão editorial não significa novo reajuste."
   }
 }

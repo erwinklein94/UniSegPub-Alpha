@@ -95,6 +95,7 @@
   }
 
   function groupOf(row) {
+    if (/^(pc|pp)/.test(state.inst) || ['pf', 'prf'].includes(state.inst)) return 'oficiais';
     const n = normalize(row.cargo);
     if (/comandante|delegado geral|diretor geral|classe especial/.test(n) || /^coronel\b/.test(n)) return 'comando';
     if (/soldado|cabo|sargento|subtenente|sub tenente|aluno|cadete|praca/.test(n)) return 'pracas';
@@ -113,6 +114,7 @@
 
   function categoryLabel(row) {
     if (row.classe) return row.classe;
+    if (/^(pc|pp)/.test(state.inst) || ['pf', 'prf'].includes(state.inst)) return 'Carreira civil';
     const g = groupOf(row);
     if (g === 'pracas') return 'Praça · carreira de execução';
     if (g === 'oficiais') return 'Oficial / carreira superior';
@@ -201,6 +203,11 @@
   }
 
   function updateFilterCounts() {
+    const civil = /^(pc|pp)/.test(state.inst) || ['pf', 'prf'].includes(state.inst);
+    $$('[data-remu-filter]').forEach(btn => {
+      btn.hidden = civil && ['pracas', 'comando'].includes(btn.dataset.remuFilter);
+      if (btn.dataset.remuFilter === 'oficiais') btn.firstChild.textContent = civil ? 'Carreiras civis ' : 'Oficiais ';
+    });
     const rows = state.rows.slice();
     const counts = {
       todos: rows.length,
@@ -266,6 +273,7 @@
       tbody.innerHTML = slice.map(rowHtml).join('');
     }
     renderPagination(rows.length);
+    document.dispatchEvent(new Event('remuneracao:renderizada'));
   }
 
   function updateInstitutionOptions() {
@@ -293,6 +301,10 @@
     const esferaSelect = $('#remu-filtro-esfera');
     if (esferaSelect) esferaSelect.value = esfera;
     updateInstitutionOptions();
+    if (/^(pc|pp)/.test(valid) || ['pf', 'prf'].includes(valid)) {
+      state.filter = 'todos';
+      $$('[data-remu-filter]').forEach(btn => btn.classList.toggle('is-active', btn.dataset.remuFilter === 'todos'));
+    }
     state.rows = loadRows(valid);
     state.page = 1;
     updateInstitutionUi();
@@ -375,7 +387,7 @@
         else state.page = Number(value) || 1;
         state.page = Math.max(1, Math.min(pages, state.page));
         renderTable();
-        $('.usp-remu-table-wrap')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        $('.usp-remu-table-wrap')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
       }
     });
   }

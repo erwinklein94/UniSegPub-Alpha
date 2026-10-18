@@ -23,3 +23,60 @@
   html[data-theme="dark"] .remu-aviso-dados { background: #302919; color: #f1d398; }
   html[data-theme="dark"] .remu-aviso-dados[data-situacao="conferida"] { background: #17342b; color: #b6e2d2; }
 }
+/* Refinamento restrito à consulta de remuneração. */
+.usp-desktop-remuneracao { scroll-padding-top: 28px; }
+.usp-remuneracao .usp-remu-hero { padding: 58px 0 36px; }
+.usp-remuneracao .usp-remu-hero__grid { gap: 56px; align-items: center; }
+.usp-remuneracao .usp-remu-hero h1 { font-size: clamp(34px, 3.5vw, 49px); line-height: 1.12; letter-spacing: -.045em; }
+.usp-remuneracao .usp-remu-selected { border-radius: 16px; box-shadow: 0 18px 48px #06101f0a; }
+.remu-atalhos { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 8px; padding-bottom: 30px; }
+.remu-atalhos a { padding: 10px 15px; border: 1px solid var(--usp-line); border-radius: 999px; color: var(--usp-ink); font-size: 12px; font-weight: 600; }
+.remu-atalhos a:hover, .remu-atalhos a:focus-visible { border-color: var(--usp-gold); background: #d8b45518; }
+.usp-remuneracao .usp-remu-stats { width: min(1240px, calc(100% - 40px)); border: 1px solid var(--usp-line); border-radius: 14px; overflow: hidden; margin: 0 auto; }
+.usp-remuneracao .usp-remu-stats .usp-stat { min-width: 0; padding: 23px; }
+.usp-remuneracao .usp-remu-stats strong { font-size: clamp(19px, 2vw, 25px); overflow-wrap: anywhere; }
+.usp-remuneracao .usp-remu-table-section, .usp-remuneracao .remu-guia { padding: 64px 0; scroll-margin-top: 24px; }
+.remu-section-head { display: flex; gap: 28px; align-items: end; justify-content: space-between; margin-bottom: 28px; }
+.remu-section-head h2 { margin: 10px 0 0; font-size: clamp(25px, 3vw, 34px); letter-spacing: -.035em; line-height: 1.15; color: var(--usp-ink); }
+.remu-section-head > p { max-width: 360px; margin: 0; font-size: 14px; line-height: 1.7; color: var(--usp-muted); }
+.usp-remuneracao .usp-remu-toolbar { padding: 18px; border: 1px solid var(--usp-line); border-radius: 14px; margin-bottom: 20px; }
+.usp-remuneracao .usp-remu-chip-group button[hidden] { display: none; }
+.usp-remuneracao .usp-remu-chip-group button, .usp-remuneracao .usp-remu-sort button, .usp-remuneracao .usp-remu-pagination button { border-radius: 8px; }
+.usp-remuneracao .usp-remu-table-wrap { border-radius: 14px; }
+.usp-remuneracao .usp-remu-table th { font-size: 11px; letter-spacing: .03em; }
+.usp-remuneracao .usp-remu-table tbody tr:hover { background: #c8aa4b0b; }
+.usp-remuneracao .usp-remu-cargo strong { line-height: 1.5; }
+.usp-remuneracao .usp-remu-value small { letter-spacing: .025em; }
+.remu-guia { border-top: 1px solid var(--usp-line); }
+.remu-guia-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.remu-guia-card { padding: 28px; border: 1px solid var(--usp-line); border-radius: 14px; background: var(--usp-bg); }
+.remu-card-num { color: var(--usp-gold-dark); font-family: var(--usp-mono); font-size: 10px; letter-spacing: .1em; }
+.remu-guia-card h3 { color: var(--usp-ink); font-size: 20px; margin: 20px 0 12px; letter-spacing: -.025em; }
+.remu-guia-card p, .remu-fonte-nota p { color: var(--usp-muted); font-size: 14px; line-height: 1.8; margin: 0; }
+.remu-fonte-nota { margin-top: 24px; padding: 24px 28px; border-left: 3px solid var(--usp-gold); background: #c7a33b0b; border-radius: 0 12px 12px 0; }
+.remu-fonte-nota strong { display: block; color: var(--usp-ink); margin-bottom: 8px; }
+.remu-fonte-nota a { display: inline-block; margin-top: 14px; color: var(--usp-ink); text-decoration: underline; text-underline-offset: 4px; font-size: 13px; }
+html[data-theme="dark"] .remu-aviso-dados { background: #302919; color: #f1d398; }
+html[data-theme="dark"] .remu-aviso-dados[data-situacao="conferida"] { background: #17342b; color: #b6e2d2; }
+.remu-revelar { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.65,.25,1); }
+.remu-revelado, .remu-revelar:focus-within { opacity: 1; transform: none; }
+.remu-revelar:focus-within { transition: none; }
+.remu-progresso { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--usp-gold); transform: scaleX(0); transform-origin: left; z-index: 1000; pointer-events: none; }
+@media (max-width: 900px) { .remu-section-head { display: block; } .remu-section-head > p { margin-top: 16px; max-width: 600px; } .remu-guia-grid { grid-template-columns: 1fr; } .usp-remuneracao .usp-remu-stats { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) {
+  .usp-remuneracao .usp-remu-hero { padding-top: 32px; }
+  .usp-remuneracao .usp-remu-hero__grid { gap: 28px; grid-template-columns: minmax(0,1fr); }
+  .usp-remuneracao .usp-remu-stats { width: calc(100% - 32px); }
+  .usp-remuneracao .usp-remu-stats .usp-stat { padding: 17px; }
+  .usp-remuneracao .usp-remu-table-section, .usp-remuneracao .remu-guia { padding: 40px 0; }
+  .remu-atalhos { gap: 8px; } .remu-atalhos a { font-size: 11px; padding: 9px 12px; }
+  .usp-remuneracao .usp-remu-table, .usp-remuneracao .usp-remu-table tbody, .usp-remuneracao .usp-remu-table tr, .usp-remuneracao .usp-remu-table td { display: block; width: 100%; min-width: 0; }
+  .usp-remuneracao .usp-remu-table thead { display: none; }
+  .usp-remuneracao .usp-remu-table td { padding: 10px 18px; border: 0; }
+  .usp-remuneracao .usp-remu-table tr { padding: 16px 0; border-bottom: 1px solid var(--usp-line); }
+  .usp-remuneracao .usp-remu-table td:nth-child(3)::before { content: 'Adicionais e auxílios'; display: block; font-size: 11px; color: var(--usp-muted); margin-bottom: 8px; }
+  .usp-remuneracao .usp-remu-table td:nth-child(4)::before { content: 'Critério / fonte'; display: block; font-size: 11px; color: var(--usp-muted); margin-bottom: 8px; }
+  .usp-remuneracao .usp-remu-value small, .usp-remuneracao .usp-remu-source small { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) { html.usp-desktop-remuneracao { scroll-behavior: auto !important; } .remu-revelar { opacity: 1; transform: none; transition: none; } }
+@media print { .remu-revelar { opacity: 1; transform: none; } .remu-progresso, .remu-atalhos { display: none; } }

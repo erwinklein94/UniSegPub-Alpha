@@ -35,7 +35,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663" crossorigin="anonymous"></script>
   <link href="css/components/sugerir-correcao.css?v=20260517" rel="stylesheet" />
   <link href="css/components/theme-toggle.css?v=20260517" rel="stylesheet" />
-  <link href="css/pages/remuneracao-revisao.css?v=20261018" rel="stylesheet" />
+  <link href="css/pages/remuneracao-revisao.css?v=20261018visual2" rel="stylesheet" />
 </head>
 <body class="usp-home usp-remuneracao" data-page="remuneracao">
   <div class="usp-topline">
@@ -89,11 +89,11 @@
       </div>
     </nav>
 
-    <section class="usp-hero usp-remu-hero" aria-labelledby="remuneracao-title">
+    <section id="consulta" class="usp-hero usp-remu-hero" aria-labelledby="remuneracao-title">
       <div class="usp-container usp-hero__grid usp-remu-hero__grid">
         <div class="usp-hero__copy">
           <p class="usp-eyebrow"><span></span>Consulta gratuita · edição 2026</p>
-          <h1 id="remuneracao-title">Remuneração bruta por cargo da <mark id="remu-title-inst">Polícia Militar de São Paulo</mark></h1>
+          <h1 id="remuneracao-title">Explore a remuneração da <mark id="remu-title-inst">Polícia Militar de São Paulo</mark></h1>
           <p class="usp-hero__lead" id="remu-title-desc">Subsídios, soldos e composições mensais por cargo, com fonte, data de referência e situação da conferência. Consulte o tipo de valor antes de comparar.</p>
         </div>
 
@@ -219,6 +219,8 @@
       </div>
     </section>
 
+    <nav class="remu-atalhos usp-container" aria-label="Nesta página"><a href="#consulta">Escolher instituição</a><a href="#tabela">Consultar valores <span aria-hidden="true">↓</span></a><a href="#como-ler">Como ler a tabela</a><a href="#transparencia">Transparência</a></nav>
+
     <p id="remu-aviso-dados" class="remu-aviso-dados" role="status" hidden></p>
     <section class="usp-stats usp-remu-stats" aria-label="Resumo da tabela de remuneração">
       <div class="usp-stat"><span>Referências listadas</span><strong id="remu-total-cargos">—</strong><small id="remu-total-desc">carregando</small></div>
@@ -227,8 +229,9 @@
       <div class="usp-stat"><span>Revisão das fontes</span><strong id="remu-atualizacao">Aguardando dados</strong><small id="remu-criterio-resumo">Vigência por fonte</small></div>
     </section>
 
-    <section class="usp-section usp-remu-table-section" aria-labelledby="tabela-remuneracao-title">
+    <section id="tabela" class="usp-section usp-remu-table-section" aria-labelledby="tabela-remuneracao-title">
       <div class="usp-container">
+        <div class="remu-section-head"><div><p class="usp-eyebrow usp-eyebrow--gold"><span></span>Consulta por carreira</p><h2 id="tabela-remuneracao-title">Valores, composição e fontes</h2></div><p>Encontre o cargo e confira a vigência ao lado de cada valor. Os indicadores acompanham seus filtros.</p></div>
         <div class="usp-remu-toolbar" aria-label="Filtros da tabela">
           <label class="usp-remu-search">
             <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -271,10 +274,22 @@
       </div>
     </section>
 
-    <section class="usp-remu-warning" aria-label="Aviso de transparência">
+    <section id="como-ler" class="usp-section remu-guia" aria-labelledby="remu-guia-title">
+      <div class="usp-container">
+        <div class="remu-section-head"><div><p class="usp-eyebrow usp-eyebrow--gold"><span></span>Entenda os números</p><h2 id="remu-guia-title">Compare com o mesmo critério</h2></div><p>O valor da tabela depende da parcela publicada pela instituição.</p></div>
+        <div class="remu-guia-grid">
+          <article class="remu-guia-card"><span class="remu-card-num">01 / COMPOSIÇÃO</span><h3>Base não é o total</h3><p>Soldo e vencimento básico representam parcelas da remuneração. Subsídio é uma forma de remuneração em parcela única. Confira o tipo indicado antes de comparar carreiras.</p></article>
+          <article class="remu-guia-card"><span class="remu-card-num">02 / VIGÊNCIA</span><h3>Revisão não é reajuste</h3><p>A data de revisão informa quando consultamos a fonte. A vigência ao lado do valor indica desde quando aquela tabela produz efeitos. Referências ainda pendentes são sinalizadas.</p></article>
+          <article class="remu-guia-card"><span class="remu-card-num">03 / VALOR BRUTO</span><h3>O líquido é individual</h3><p>Descontos e benefícios dependem das regras e da situação de cada servidor. Auxílios e parcelas variáveis não são acrescentados automaticamente ao valor de referência.</p></article>
+        </div>
+        <aside class="remu-fonte-nota"><strong>Conferência federal · 18/10/2026</strong><p>PF: agente, escrivão e papiloscopista na 3ª classe, subsídio de R$ 14.710,10. PRF: 3ª classe, padrão I, R$ 12.253,84. Efeitos financeiros desde 01/05/2026, sem auxílios incluídos.</p><a href="https://www2.camara.leg.br/legin/fed/lei/2006/lei-11358-19-outubro-2006-545905-normaatualizada-pl.html" target="_blank" rel="noopener noreferrer">Consultar os anexos II e III na Câmara dos Deputados ↗</a></aside>
+      </div>
+    </section>
+
+    <section id="transparencia" class="usp-remu-warning" aria-label="Aviso de transparência">
       <div class="usp-container">
         <p class="usp-eyebrow usp-eyebrow--gold"><span></span>Aviso de transparência</p>
-        <p>Valores brutos consultados de portal informativo independente. Benefícios condicionados, indenizações variáveis ou verbas que dependem de escala, local, classificação, habilitação, tempo de serviço ou situação individual não são somados automaticamente para não inflar o total. Não inclui IRRF, previdência, pensão, empréstimos, plantões, extras, férias, 13º ou verbas eventuais.</p>
+        <p>Este é um portal informativo independente. Os valores de referência são brutos; a fonte e a situação da conferência acompanham cada tabela. Benefícios condicionados, indenizações variáveis ou verbas que dependem de escala, local, classificação, habilitação, tempo de serviço ou situação individual não são somados automaticamente para não inflar o total. Não inclui IRRF, previdência, pensão, empréstimos, plantões, extras, férias, 13º ou verbas eventuais.</p>
       </div>
     </section>
   </main>
@@ -330,7 +345,8 @@
   <script defer src="js/services/supabase-api.js?v=20260709supabase1"></script>
   <script defer src="js/pages/remuneracao-automacao.js?v=20261018revisao1"></script>
   <script defer src="js/data/header-brasoes-config.js?v=20260516remudesktop1"></script>
-  <script defer src="js/pages/remuneracao-desktop.js?v=20261018revisao1"></script>
+  <script defer src="js/pages/remuneracao-desktop.js?v=20261018visual2"></script>
+  <script defer src="js/pages/remuneracao-visual.js?v=20261018visual2"></script>
   <script defer src="js/brasao-lightbox.js?v=20260516lightbox3"></script>
   <script defer src="js/ui/theme-toggle.js?v=20260517"></script>
 </body>
