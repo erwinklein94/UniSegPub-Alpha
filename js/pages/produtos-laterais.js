@@ -65,11 +65,6 @@
 
   const PRODUTOS_FALLBACK = [
     {
-      titulo: 'Mochila Militar Tática Impermeável 50 L',
-      href: 'https://s.shopee.com.br/901i8h9IK5',
-      imagem: { src: 'img/SHOPEE/mochilaimpermeavel50l.webp', alt: 'Mochila Militar Tática Impermeável 50 L' }
-    },
-    {
       titulo: 'Mochila Coban Tática Militar 24 L',
       href: 'https://s.shopee.com.br/8V5RQXr16n',
       imagem: { src: 'img/SHOPEE/mochilacoban.webp', alt: 'Mochila Coban Tática Militar 24 L' }
@@ -212,7 +207,8 @@
   }
 
   function produtoValido(produto) {
-    return produto && produto.titulo && produto.href && produto.imagem && produto.imagem.src;
+    return produto && produto.titulo && produto.href && produto.imagem && produto.imagem.src
+      && window.UNISEGPUB_LINKS_PRODUTOS?.permitido(produto.href);
   }
 
   function deduplicarProdutos(produtos) {

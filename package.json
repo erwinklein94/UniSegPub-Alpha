@@ -5,6 +5,7 @@
   "scripts": {
     "test:remuneracao": "node --test scripts/test-remuneracao-revisao.mjs",
     "test:admin": "node --test scripts/test-admin-analytics.mjs",
+    "test:produtos": "node --test scripts/test-produtos-disponibilidade.mjs",
     "import:supabase": "node scripts/import-json-to-supabase.mjs"
   },
   "dependencies": {

@@ -1,0 +1,1032 @@
+{
+  "consultado_em": "2026-10-18",
+  "resumo": {
+    "urls_distintas": 71,
+    "produtos_catalogo": 70,
+    "produtos_retirados": 7,
+    "botoes_sem_link_retirados": 10,
+    "destinos_acessiveis": 58,
+    "inconclusivos_preservados": 5
+  },
+  "criterio": "Não excluir por HTTP 200/403 isolado. Produtos removidos exigiram mensagem explícita no destino e reconfirmação em sessão nova. Links com verificação de segurança foram preservados.",
+  "links": [
+    {
+      "produto": "Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)",
+      "url_afiliado": "https://go.hotmart.com/K105562484Y?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/raciocinio-logico-para-policia-civil-de-sao-paulo-pcsp/W62162681F",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosPcsp"
+      ]
+    },
+    {
+      "produto": "PCSP - Curso de Informática - Edital Completo",
+      "url_afiliado": "https://go.hotmart.com/K105562579S?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/dpcsp-curso-de-informatica-edital-completo/P67317385X",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosPcsp"
+      ]
+    },
+    {
+      "produto": "Curso Preparatório - SARGENTO PMESP",
+      "url_afiliado": "https://go.hotmart.com/Q105560013F?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/curso-preparatorio-sargento-pmesp/D50805919I",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosPmesp"
+      ]
+    },
+    {
+      "produto": "Curso Preparatório PMESP Completo",
+      "url_afiliado": "https://go.hotmart.com/A105560326I?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/curso-preparatorio-pmesp/H16741138I",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosPmesp"
+      ]
+    },
+    {
+      "produto": "Preparatório para o psicotécnico das carreiras policiais",
+      "url_afiliado": "https://go.hotmart.com/J105560541A?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/preparatorio-para-o-psicotecnico-das-carreiras-policiais/L58124889L",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosPmesp"
+      ]
+    },
+    {
+      "produto": "Polícia Federal - Agente Administrativo - Direto ao Ponto",
+      "url_afiliado": "https://go.hotmart.com/F105805837A?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/policia-federal-agente-administrativo-direto-ao-ponto/L99418460L",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Combo Escrivão PF - Polícia Federal (Reta Final)",
+      "url_afiliado": "https://go.hotmart.com/D105805984A?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/combo-escrivao-pf-policia-federal-pre-edital/P97915135M",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Cartões Inteligentes p/ Concurso da PF (Escrivão) - Pós-Edital",
+      "url_afiliado": "https://go.hotmart.com/K105806028D?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/cartoes-inteligentes-p-concurso-da-pf-escrivao/R45545295P",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Combo Agente PF - Polícia Federal (Reta Final)",
+      "url_afiliado": "https://go.hotmart.com/E105806080J?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/combo-agente-pf-policia-federal-pre-edital/L97914897U",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Cartões Inteligentes p/ Concurso da PF (Agente) - Pós-Edital",
+      "url_afiliado": "https://go.hotmart.com/U105806117I?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/cartoes-inteligentes-p-concurso-da-pf-agente-pre-edital/R45502841T",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Grupo de Estudos para a Prova Oral Delegado de Polícia Federal",
+      "url_afiliado": "https://go.hotmart.com/E105806281W?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/grupo-de-estudos-para-a-prova-oral-delegado-de-policia-federal/J101984919R",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "PF (Polícia Federal) - Papiloscopista",
+      "url_afiliado": "https://go.hotmart.com/S105806340X?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/policia-federal-pf-papiloscopista/G71678718C",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Combo PRF - Polícia Rodoviária Federal",
+      "url_afiliado": "https://go.hotmart.com/K105806438N?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/combo-prf-policia-rodoviaria-federal/O104474792E",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Cartões Inteligentes p/ Concurso da PRF (Policial Rodoviário Federal) - Pós-Edital",
+      "url_afiliado": "https://go.hotmart.com/S105806487W?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/cartoes-inteligentes-p-concurso-da-prf-policial-rodoviario-federal-pre-edital/E45603518G",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "PM RJ (Polícia Militar do Rio de Janeiro) - Soldado",
+      "url_afiliado": "https://go.hotmart.com/A105806523R?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/policia-militar-do-rio-de-janeiro/R55119825O",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "CBM RJ (Corpo de Bombeiros Militar do Rio de Janeiro) - Soldado",
+      "url_afiliado": "https://go.hotmart.com/R105806577I?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/bombeiros-rj/N55124294A",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "PC AL (Polícia Civil de Alagoas) - Agente/Escrivão",
+      "url_afiliado": "https://go.hotmart.com/A105806621R?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/policia-civil-de-alagoas-agente-e-escrivao/A55121944T",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "PC MG (Polícia Civil de Minas Gerais) - Investigador",
+      "url_afiliado": "https://go.hotmart.com/K105806643Y?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/pcmg-investigador/R59019563T",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Preparatório Completo POLÍCIA PENAL do Distrito Federal PPDF - Instituto Óliver",
+      "url_afiliado": "https://go.hotmart.com/P105806761U?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/preparatorio-on-line-completo-policia-penal-df/L51393652V",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "PC DF (Polícia Civil do Distrito Federal) - Analista de Apoio às Atividades Policiais - Agente Administrativo",
+      "url_afiliado": "https://go.hotmart.com/P105806831O?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/pc-df-analista-de-apoio-as-atividades-policiais/W68668670M",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "PC DF (Polícia Civil do Distrito Federal) - Agente Policial de Custódia",
+      "url_afiliado": "https://go.hotmart.com/A105806871Q?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/pc-df-agente-policial-de-custodia/U69917219F",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Delegado - Polícia Civil do Distrito Federal",
+      "url_afiliado": "https://go.hotmart.com/W105806928K?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/agente-pc-df/L41785096X",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins",
+      "url_afiliado": "https://go.hotmart.com/P105668763H?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/mapa-pmto-metodo-de-aprovacao-policial-acelerado-na-policia-militar-de-tocantins/R96157329O",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Na Rota PRF",
+      "url_afiliado": "https://go.hotmart.com/A105672755T?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/na-rota-prf/U78466359O",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:cursosGerais"
+      ]
+    },
+    {
+      "produto": "Pacote - Viva Sem Procrastinar",
+      "url_afiliado": "https://go.hotmart.com/C105562969M?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/viva-sem-procrastinar-o-que-fazer-para-realmente-acabar-com-a-procrastinacao/A88154292P",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:livrosEbooks",
+        "js/data/produtos-livros-ebooks.json"
+      ]
+    },
+    {
+      "produto": "Otimizando o Cérebro para Concursos Públicos",
+      "url_afiliado": "https://go.hotmart.com/U105563061C?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/otimizando-o-cerebro-para-concursos/U95600749V",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:livrosEbooks",
+        "js/data/produtos-livros-ebooks.json"
+      ]
+    },
+    {
+      "produto": "Além da Farda: O Código da Travessia",
+      "url_afiliado": "https://go.hotmart.com/Y105563100L?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/alem-da-farda-o-codigo-da-travessia/I103932901D",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:livrosEbooks",
+        "js/data/produtos-livros-ebooks.json"
+      ]
+    },
+    {
+      "produto": "Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos",
+      "url_afiliado": "https://go.hotmart.com/V105563143D",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://pedromatos700.kpages.online/pagina-de-vendas-87f6cd5e-4cec-45fb-972b-e0042149cc9b",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:livrosEbooks",
+        "js/data/produtos-livros-ebooks.json"
+      ]
+    },
+    {
+      "produto": "Táticas de Liderança Militar Aplicadas ao Dia a Dia",
+      "url_afiliado": "https://go.hotmart.com/M105563187S?dp=1",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://hotmart.com/pt-br/marketplace/produtos/taticas-de-lideranca-militar/O96767418P",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "Supabase:livrosEbooks",
+        "js/data/produtos-livros-ebooks.json"
+      ]
+    },
+    {
+      "produto": "Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA",
+      "url_afiliado": "https://s.shopee.com.br/901i8h9IK5",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1527421224/51758965913",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "index.html",
+        "js/pages/concursos-comparador.js",
+        "js/pages/produtos-laterais.js",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Mochila Coban Tática Militar Reforçada 24 L",
+      "url_afiliado": "https://s.shopee.com.br/8V5RQXr16n",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/608547411/21499379790",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "index.html",
+        "js/pages/produtos-laterais.js",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Barra fixa para porta",
+      "url_afiliado": "https://s.shopee.com.br/9fHIyi0uae",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1345857560/22298207282",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "js/pages/concursos-comparador.js",
+        "js/pages/produtos-laterais.js",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP",
+      "url_afiliado": "https://s.shopee.com.br/1qYSZj5bki",
+      "situacao": "inconclusivo_preservado",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/verify/traffic/error",
+      "evidencia": "Verificação de segurança da Shopee; sem evidência suficiente para excluir.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "index.html",
+        "js/pages/produtos-laterais.js",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Power Rack Funcional com paralelas",
+      "url_afiliado": "https://s.shopee.com.br/9fHJ0X4HVl",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/502403271/20799592674",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "js/pages/concursos-comparador.js",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Colete à Prova d'Água Unissex para Peito - Bolsa para Corrida Esportiva ao Ar Livre (Preto)",
+      "url_afiliado": "https://s.shopee.com.br/8V5UTFtI4n",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1006215031/44650917100",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Calças De Carga De Alta Qualidade Novos Homens Táticas À Prova D'água Do Exército Usuários Fora De Esportes Long Hiking",
+      "url_afiliado": "https://s.shopee.com.br/9fHRseGBA0",
+      "situacao": "inconclusivo_preservado",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/verify/traffic/error",
+      "evidencia": "Verificação de segurança da Shopee; sem evidência suficiente para excluir.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Boné De Beisebol Masculino Camuflado Com Caveira, Chapéu Tático Para Pesca E Caminhada Ao Ar Livre O Verão",
+      "url_afiliado": "https://s.shopee.com.br/8Km4Irus3i",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/230709939/42209401107",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Lanterna Led Militar 3 Em 1 T9 Tática Potente Forte Longo Alcance USB Recarregável Pesca Camping",
+      "url_afiliado": "https://s.shopee.com.br/9Uy1hagpxm",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/286633693/23693597164",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "index.html",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Cinto Premium com Fivela de Liga Metálica - Cinto Militar Largo em Nylon com Fivela Unissex de Engate Rápido Resistente",
+      "url_afiliado": "https://s.shopee.com.br/2qR7lnxjWo",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1651083163/22899142180",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos",
+        "base-legal.html",
+        "index.html",
+        "partials/pages/acoes-judiciais/pre-main.html",
+        "partials/pages/associacoes-sindicatos/pre-main.html",
+        "partials/pages/base-legal/pre-main.html",
+        "partials/pages/brasoes/pre-main.html",
+        "partials/pages/comparar-carreiras/pre-main.html",
+        "partials/pages/concursos/pre-main.html",
+        "partials/pages/direitos/pre-main.html",
+        "partials/pages/index/pre-main.html",
+        "partials/pages/poderes-deveres/pre-main.html",
+        "partials/pages/produtos/pre-main.html",
+        "partials/pages/remuneracao/pre-main.html",
+        "partials/pilot/anuncie/sidebar-parceiros.html",
+        "poderes-deveres.html"
+      ]
+    },
+    {
+      "produto": "Presilha Cinto Tático Preto Nylon Belt Keeper Coldre PM Polícia Militar Segurança",
+      "url_afiliado": "https://s.shopee.com.br/gMdCBBSkJ",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/741636280/14471885672",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Cinto Modular Tático Modular Militar Coyote Original Unistar",
+      "url_afiliado": "https://s.shopee.com.br/7ppnjfBlrP",
+      "situacao": "inconclusivo_preservado",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/verify/traffic/error",
+      "evidencia": "Verificação de segurança da Shopee; sem evidência suficiente para excluir.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Bota Coturno Acero Militar Tático Zíper Moto Resistente Couro",
+      "url_afiliado": "https://s.shopee.com.br/70GgkOPSbh",
+      "situacao": "inconclusivo_preservado",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/verify/traffic/error",
+      "evidencia": "Verificação de segurança da Shopee; sem evidência suficiente para excluir.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Tênis Masculino e Feminino Militar Tático Acero Botas Ripstop Ponto .40",
+      "url_afiliado": "https://s.shopee.com.br/4LFvZrdWL3",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/319854681/23897355908",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Organizador de Armário Porta Objetos Organizador Militar",
+      "url_afiliado": "https://s.shopee.com.br/9ALBL0RrAD",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/479629587/20427319370",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Cantil + Porta Cantil Original – Resistência 950 ML",
+      "url_afiliado": "https://s.shopee.com.br/8piKxfAxmV",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/518136178/23898851578",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Relógio Masculino Digital Esportivo Cronômetro Militar – Esportivo, LED e Super Resistente!",
+      "url_afiliado": "https://s.shopee.com.br/3LNOPp1rnC",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1528805307/23198456192",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "PRF 1.001 Questões Comentadas - AlfaCon - Concursos Carreiras Policiais",
+      "url_afiliado": "https://s.shopee.com.br/1BItze7fTw",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/334200663/21198670609",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila Polícia Federal (PF) - Delegado de Polícia Federal",
+      "url_afiliado": "https://s.shopee.com.br/10zTo819rd",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/495595002/23198517515",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila Polícia Federal (PF) 2026 - Escrivão de Polícia Federal",
+      "url_afiliado": "https://s.shopee.com.br/9KebjbAPje",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1458412607/22294042288",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila Polícia Federal (PF) 2026 - Papiloscopista Policial Federal",
+      "url_afiliado": "https://s.shopee.com.br/9Uy1w73uSI",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1458412607/22598541605",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila Completa PRF - Agente Administrativo da Polícia Rodoviária Federal",
+      "url_afiliado": "https://s.shopee.com.br/9pasKuSzle",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1458412607/23593736947",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila Polícia Federal (PF) 2026 - Perito Criminal Federal - Medicina Legal",
+      "url_afiliado": "https://s.shopee.com.br/qg3cYrOLn",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1458412607/22698528943",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila impressa concurso da Polícia Federal PF 2025 - Agente Administrativo da Polícia Federal",
+      "url_afiliado": "https://s.shopee.com.br/9KebkNcBTH",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/797185261/23798456651",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Apostila PRF - Polícia Rodoviária Federal - Policial Rodoviário Federal",
+      "url_afiliado": "https://s.shopee.com.br/9pasLS6Sfs",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1458412607/58256244296",
+      "evidencia": "O produto não existe",
+      "metodo": "Chrome em duas sessões independentes",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Fiel Retrátil Bélica - Estrela - Preto",
+      "url_afiliado": "https://s.shopee.com.br/8fP6903lIb",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/473686693/9170821304",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Kit com 5 pares de meia militar Cano longo",
+      "url_afiliado": "https://s.shopee.com.br/1VvvcEu90Z",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/257306792/58203454374",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Boonie Chapéu Balaclava Terno Dobrável Macio Proteção Solar",
+      "url_afiliado": "https://s.shopee.com.br/6L1BNNI9PF",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1006215031/29777745435",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Bermuda Elásticas Multi-Táticas Rip Stop Impermeável",
+      "url_afiliado": "https://s.shopee.com.br/3qJqP60kht",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1523178181/23698844183",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Calção De Bolso Masculinos Elásticas Multi-Táticas",
+      "url_afiliado": "https://s.shopee.com.br/7fWYyH6ACj",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1355196989/21499496925",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Calça Tática 6 Bolsos Feminina Militar Leve Fina C Elástico",
+      "url_afiliado": "https://s.shopee.com.br/8KmFlmRYZx",
+      "situacao": "inconclusivo_preservado",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/verify/traffic/error",
+      "evidencia": "Verificação de segurança da Shopee; sem evidência suficiente para excluir.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Kit Torniquete Tático Militar Primeiros Socorros + Tesoura Aph Ponta Romba Socorrista",
+      "url_afiliado": "https://s.shopee.com.br/W3ORZciDO",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1311907050/20499572155",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Sapato Scarpin Social Feminino Estilo Sapato Militar Feminino Ideal p/ Escritório ou Escola Militar",
+      "url_afiliado": "https://s.shopee.com.br/8V5fyPVQKt",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/1319579675/58253216254",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Patch Bandeira Emborrachada 3d Patch C/ Velcro Militar Tático Brasil Caveira Estados Unidos USA Para Mochila Tática",
+      "url_afiliado": "https://s.shopee.com.br/2BBcR400pI",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/674630138/22298336386",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Palmilha Gel Conforto Laranja Macia Altura Anatômica Acero",
+      "url_afiliado": "https://s.shopee.com.br/901wZlJADp",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/319854681/5057576234",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Bota Motociclista Acero Cano Alto Couro Proteção Marcha Bico",
+      "url_afiliado": "https://s.shopee.com.br/2VoSq5R4c8",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/319854681/5757578191",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Bota Militar Acero Apache 100% Impermeável Couro Leve",
+      "url_afiliado": "https://s.shopee.com.br/3B49dgO2nF",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/319854681/7057614580",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "BOTA COTURNO MILITAR ACERO RIPSTOP MID CORES LEVE CONFORTÁVEL",
+      "url_afiliado": "https://s.shopee.com.br/6AhlDNzax2",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/opaanlp/319854681/22102001530",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Bota Coturno Militar Acero One Mid Resistente Extra Leve Confortável Cano Baixo",
+      "url_afiliado": "https://s.shopee.com.br/4fsxQnWgNv",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/319854681/11200853972",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Bota Tática Impermeável Acero Pro MAX Couro Legítimo DRYSHIELD Waterproof Solado 320°C",
+      "url_afiliado": "https://s.shopee.com.br/5ApE1wkVIY",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/319854681/22699253645",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "HUAWEI WATCH FIT 5 | Smartwatch Relogio | AMOLED de 182\" Design Leve | Mini Treino | 64 GB | GPS",
+      "url_afiliado": "https://s.shopee.com.br/LjyHJSC0i",
+      "situacao": "pagina_de_destino_acessivel",
+      "http_redirecionador": 200,
+      "pagina_destino": "https://shopee.com.br/product/1494995608/56559188991",
+      "evidencia": "Página de venda acessível; disponibilidade de estoque, qualidade e atribuição de comissão não certificadas.",
+      "metodo": "Chrome com JavaScript",
+      "origens": [
+        "Supabase:produtosFisicos"
+      ]
+    },
+    {
+      "produto": "Botão de afiliado sem configuração",
+      "url_afiliado": "https://go.hotmart.com/SEU_LINK_AFILIADO_AQUI",
+      "situacao": "removido_do_site",
+      "http_redirecionador": 400,
+      "pagina_destino": "https://go.hotmart.com/SEU_LINK_AFILIADO_AQUI",
+      "evidencia": "HTTP 400: link de exemplo não configurado; encontrado em 10 chamadas publicadas.",
+      "metodo": "GET seguindo redirecionamentos",
+      "origens": [
+        "artigos/salario-cbmerj-2026.html",
+        "artigos/salario-pcdf-2026.html",
+        "artigos/salario-pcerj-2026-tabela-completa.html",
+        "artigos/salario-pcmg-2026-tabela-completa.html",
+        "artigos/salario-pf-2026-tabela-completa.html",
+        "artigos/salario-pmerj-2026-tabela-completa.html",
+        "artigos/salario-pmmg-2026-tabela-completa.html",
+        "artigos/salario-pprj-2026-tabela-completa.html",
+        "artigos/salario-prf-2026-tabela-completa.html",
+        "guia-instituicoes.html"
+      ]
+    }
+  ]
+}

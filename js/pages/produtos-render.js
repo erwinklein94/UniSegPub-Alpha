@@ -199,7 +199,8 @@
   }
 
   function getProdutosFiltrados(produtos) {
-    return produtos.filter(produto => produtoCombinaComFiltro(produto, filtroProdutosAtual));
+    return produtos.filter(produto => window.UNISEGPUB_LINKS_PRODUTOS?.permitido(produto.href)
+      && produtoCombinaComFiltro(produto, filtroProdutosAtual));
   }
 
   function createProductCard(produto) {
