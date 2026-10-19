@@ -4,9 +4,17 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const codigo = fs.readFileSync(new URL('../js/ui/analytics.js', import.meta.url), 'utf8');
-function ambiente(hostname = 'universosegpub.com.br', pathname = '/produtos.html') {
+function ambiente(hostname = 'universosegpub.com.br', pathname = '/produtos.html', consentimento = true) {
   const eventos = {}, scripts = [];
-  const window = { location: { hostname, pathname }, document: {
+  const autorizacao = { analytics: consentimento };
+  const requisicoes = [];
+  const window = { location: { hostname, pathname, origin: 'https://' + hostname },
+    USPConsent: { get: () => autorizacao },
+    addEventListener: (nome, callback) => { eventos[nome] = callback; },
+    localStorage: { getItem: () => null }, sessionStorage: { getItem: () => null, setItem: () => {} },
+    crypto: { randomUUID: () => 'sessao-de-teste' },
+    fetch: (...args) => { requisicoes.push(args); return Promise.resolve(); }, document: {
+    referrer: 'https://origem.example/pagina?email=nao-transmitir#segredo',
     querySelector: () => null, createElement: () => ({}), head: { append: s => scripts.push(s) },
     addEventListener: (nome, callback) => { eventos[nome] = callback; }
   } };
@@ -18,8 +26,27 @@ function ambiente(hostname = 'universosegpub.com.br', pathname = '/produtos.html
     const link = { href, closest: seletor => seletor === '.produto-card' || seletor.includes(',') ? card : null };
     eventos[tipo]?.({ type: tipo, button, target: { closest: () => link } });
   }
-  return { window, context, scripts, eventos, dados, clicar };
+  return { window, context, scripts, eventos, dados, clicar, autorizacao, requisicoes };
 }
+
+test('sem consentimento não carrega GA4, não registra acessos e não mede cliques', () => {
+  const a = ambiente('universosegpub.com.br', '/produtos.html', false);
+  a.clicar('https://go.hotmart.com/ABC123');
+  assert.equal(a.scripts.length, 0);
+  assert.equal(a.requisicoes.length, 0);
+  assert.equal(a.dados().filter(e => e[0] === 'event' || e[0] === 'config').length, 0);
+  a.autorizacao.analytics = true;
+  a.eventos['usp:consent-change']();
+  a.eventos['usp:consent-change']();
+  assert.equal(a.scripts.length, 1);
+  assert.equal(a.requisicoes.length, 1);
+  assert.equal(JSON.stringify(a.dados()).includes('nao-transmitir'), false);
+  const registro = JSON.parse(a.requisicoes[0][1].body);
+  assert.equal(registro.referencia, 'https://origem.example');
+  a.autorizacao.analytics = false;
+  a.clicar('https://go.hotmart.com/ABC123');
+  assert.equal(a.dados().filter(e => e[0] === 'event').length, 0);
+});
 test('inicia uma única coleta e não registra conversões de venda na abertura', () => {
   const a = ambiente();
   vm.runInContext(codigo, a.context);

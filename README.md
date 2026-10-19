@@ -1,5 +1,7 @@
 # UniSegPub + Supabase — starter kit
 
+Integração e pendências do Google AdSense: [relatório de 19/10/2026](docs/ADSENSE-2026-10-19.md). Validação: `npm run test:adsense`.
+
 Este pacote inicia a migração dos JSONs do site para Supabase.
 
 **Projeto Supabase:** `https://luggjibketdxztvsgzgo.supabase.co`

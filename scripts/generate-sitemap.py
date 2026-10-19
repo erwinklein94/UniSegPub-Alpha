@@ -32,7 +32,7 @@ SITEMAP_PATH = ROOT / "sitemap.xml"
 SITEMAP_NS = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 PUBLIC_DIRS = {".", "artigos", "novidades"}
-EXCLUDED_FILES = {"404.html"}
+EXCLUDED_FILES = {"404.html", "relatorio-concursos.html"}
 
 PRIORITY_BY_PATH = {
     "index.html": "1.0",
@@ -110,7 +110,8 @@ class HeadMetaParser(HTMLParser):
         if tag.lower() == "link" and data.get("rel", "").lower() == "canonical":
             self.canonical = data.get("href") or None
         if tag.lower() == "meta" and data.get("name", "").lower() == "robots":
-            self.robots = data.get("content") or None
+            # Havendo mais de uma declaração, noindex não pode ser sobrescrito.
+            self.robots = ", ".join(filter(None, [self.robots, data.get("content")])) or None
 
     def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.handle_starttag(tag, attrs)

@@ -1,16 +1,7 @@
 /* =======================================================
    JavaScript de inicialização extraído do index.html
-   Inclui analytics, tema inicial e funções necessárias antes do carregamento das imagens.
+   Tema inicial e funções necessárias antes do carregamento das imagens.
    ======================================================= */
-
-window.dataLayer = window.dataLayer || [];
-window.gtag = window.gtag || function gtag(){
-  window.dataLayer.push(arguments);
-};
-
-window.gtag('js', new Date());
-window.__uspGoogleIniciado = true;
-window.gtag('config', 'AW-18121830612');
 
 let savedTheme = 'light';
 try {
@@ -21,46 +12,6 @@ try {
 }
 document.documentElement.setAttribute('data-theme', savedTheme);
 document.documentElement.style.colorScheme = savedTheme;
-
-/* Registro de acesso no Supabase (contagem própria do portal, sem dados pessoais). */
-(function () {
-  try {
-    const SUPABASE_URL = 'https://luggjibketdxztvsgzgo.supabase.co';
-    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
-
-    const pagina = (location.pathname.replace(/^\//, '') || 'index.html').slice(0, 200);
-    if (pagina.indexOf('admin') === 0) return;
-
-    /* Não conta ambiente local (testes) nem o navegador do administrador. */
-    if (/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname)) return;
-    try { if (localStorage.getItem('usp_nao_contar') === '1') return; } catch (e) { /* segue */ }
-
-    let sessao = '';
-    try {
-      sessao = sessionStorage.getItem('usp_sessao') || '';
-      if (!sessao) {
-        sessao = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now().toString(36) + Math.random().toString(36).slice(2));
-        sessionStorage.setItem('usp_sessao', sessao);
-      }
-    } catch (e) { sessao = ''; }
-
-    fetch(SUPABASE_URL + '/rest/v1/acessos', {
-      method: 'POST',
-      headers: {
-        apikey: SUPABASE_PUBLISHABLE_KEY,
-        Authorization: 'Bearer ' + SUPABASE_PUBLISHABLE_KEY,
-        'Content-Type': 'application/json',
-        Prefer: 'return=minimal'
-      },
-      body: JSON.stringify({
-        pagina: pagina,
-        sessao: sessao.slice(0, 64),
-        referencia: document.referrer ? String(document.referrer).slice(0, 300) : null
-      }),
-      keepalive: true
-    }).catch(function () {});
-  } catch (e) { /* nunca interfere na página */ }
-})();
 
 function carregarImagemProduto(img) {
   if (!img) return;
@@ -99,9 +50,6 @@ function carregarImagemProduto(img) {
 (function(){
   const arquivo=document.currentScript?.src;
   if(!arquivo)return;
-  const analytics=document.createElement('script');
-  analytics.src=new URL('analytics.js?v=20261018medicao1',arquivo).href;
-  analytics.defer=true;document.head.append(analytics);
   const script=document.createElement('script');
   script.src=new URL('scroll-reveal.js?v=20261018geral1',arquivo).href;
   script.defer=true;document.head.append(script);

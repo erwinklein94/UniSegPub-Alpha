@@ -11,13 +11,45 @@
     root.gtag('js', new Date());
     root.__uspGoogleIniciado = true;
   }
-  root.gtag('config', destino);
-  if (!doc.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]')) {
-    const script = doc.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + destino;
-    doc.head.append(script);
+  let iniciado = false;
+  function iniciar() {
+    if (iniciado || !root.USPConsent?.get().analytics) return;
+    iniciado = true;
+    // Não envia parâmetros de consulta ou fragmentos que possam conter dados pessoais.
+    root.gtag('config', destino, {
+      page_location: root.location.origin + root.location.pathname,
+      page_referrer: referencia(), allow_google_signals: false, allow_ad_personalization_signals: false
+    });
+    if (!doc.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]')) {
+      const script = doc.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + destino;
+      doc.head.append(script);
+    }
+    registrarAcesso();
   }
+  function referencia() {
+    try { return new URL(doc.referrer).origin; } catch { return ''; }
+  }
+  function registrarAcesso() {
+    try {
+      if (root.localStorage.getItem('usp_nao_contar') === '1') return;
+      let sessao = root.sessionStorage.getItem('usp_sessao');
+      if (!sessao) {
+        sessao = root.crypto.randomUUID();
+        root.sessionStorage.setItem('usp_sessao', sessao);
+      }
+      const chave = 'sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
+      root.fetch('https://luggjibketdxztvsgzgo.supabase.co/rest/v1/acessos', {
+        method: 'POST', headers: { apikey: chave, Authorization: 'Bearer ' + chave,
+          'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify({ pagina: (root.location.pathname.replace(/^\//, '') || 'index.html').slice(0, 200),
+          sessao: String(sessao).slice(0, 64), referencia: referencia() || null }), keepalive: true
+      }).catch(function () {});
+    } catch { /* A coleta opcional nunca interfere na página. */ }
+  }
+  root.addEventListener('usp:consent-change', iniciar);
+  iniciar();
   function identidade(href) {
     try {
       const url = new URL(href);
@@ -27,6 +59,7 @@
     } catch { return null; }
   }
   function selecionar(event) {
+    if (!root.USPConsent?.get().analytics) return;
     if ((event.type === 'click' && event.button !== 0) || (event.type === 'auxclick' && event.button !== 1)) return;
     try {
       const link = event.target?.closest?.('a[href]');

@@ -1,0 +1,18 @@
+.usp-consent { position:fixed; z-index:2147483646; bottom:16px; left:16px; width:min(560px,calc(100% - 32px)); max-height:75dvh; overflow:auto; box-sizing:border-box; padding:22px; background:#fff; color:#172033; border:1px solid #c5ccd6; border-radius:16px; box-shadow:0 12px 48px #10182740; font:14px/1.55 Inter,system-ui,sans-serif; }
+.usp-consent *, .usp-consent *::before, .usp-consent *::after { box-sizing:border-box; }
+.usp-consent h2 { margin:0 0 8px; font-size:19px; color:#101827; }
+.usp-consent p { margin:8px 0; }
+.usp-consent a { color:#174e91; text-decoration:underline; }
+.usp-consent summary { cursor:pointer; padding:8px 0; font-weight:700; }
+.usp-consent__options { display:grid; gap:12px; padding:12px 0; }
+.usp-consent label { display:flex; gap:10px; align-items:flex-start; cursor:pointer; }
+.usp-consent input { margin-top:4px; flex-shrink:0; width:18px; height:18px; accent-color:#174e91; }
+.usp-consent__actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.usp-consent button { flex:1; min-height:44px; padding:10px 14px; border:1px solid #435775; border-radius:8px; background:#172b4d; color:#fff; cursor:pointer; font:600 14px/1.4 Inter,system-ui,sans-serif; }
+.usp-consent button:hover { background:#244774; }
+.usp-consent :focus-visible, .usp-cookie-preferences:focus-visible { outline:3px solid #b88212; outline-offset:3px; }
+.usp-cookie-preferences { display:inline-block; margin:8px; border:0; background:transparent; color:inherit; text-decoration:underline; cursor:pointer; font:inherit; font-size:13px; padding:8px; min-height:44px; }
+.usp-policy-footer { padding:28px 20px; margin-top:36px; background:#111d32; color:#fff; text-align:center; font:14px/1.7 Inter,system-ui,sans-serif; }
+.usp-policy-footer nav { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.usp-policy-footer a { color:#fff; text-decoration:underline; }
+@media(max-width:480px) { .usp-consent { bottom:8px; left:8px; width:calc(100% - 16px); padding:16px; font-size:13px; } .usp-consent__actions { flex-direction:column; } }
