@@ -9,9 +9,8 @@ window.gtag = window.gtag || function gtag(){
 };
 
 window.gtag('js', new Date());
-window.gtag('config', 'G-M2ZJSB081C');
+window.__uspGoogleIniciado = true;
 window.gtag('config', 'AW-18121830612');
-window.gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThlMFD'});
 
 let savedTheme = 'light';
 try {
@@ -100,6 +99,9 @@ function carregarImagemProduto(img) {
 (function(){
   const arquivo=document.currentScript?.src;
   if(!arquivo)return;
+  const analytics=document.createElement('script');
+  analytics.src=new URL('analytics.js?v=20261018medicao1',arquivo).href;
+  analytics.defer=true;document.head.append(analytics);
   const script=document.createElement('script');
   script.src=new URL('scroll-reveal.js?v=20261018geral1',arquivo).href;
   script.defer=true;document.head.append(script);
