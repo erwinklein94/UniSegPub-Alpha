@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:editorial": "node scripts/build-comparador.mjs && node scripts/build-editorial.mjs",
+    "test:editorial": "node --test scripts/test-comparador.mjs && node scripts/build-comparador.mjs --check && node scripts/build-editorial.mjs --check",
     "test:adsense": "node --test scripts/test-adsense-consent.mjs scripts/test-analytics.mjs",
     "test:remuneracao": "node --test scripts/test-remuneracao-revisao.mjs",
     "test:admin": "node --test scripts/test-admin-analytics.mjs scripts/test-admin-adsense.mjs",

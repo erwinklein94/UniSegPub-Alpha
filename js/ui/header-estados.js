@@ -4282,14 +4282,6 @@ function aplicarRevisaoResumosInstitucionais() {
   });
 }
 
-aplicarEstruturaEstadosFaltantesDados();
-aplicarDadosEspecificosPmal();
-aplicarDadosEspecificosPmap();
-aplicarDadosEspecificosPcal();
-aplicarEstruturaBombeirosMilitaresDados();
-aplicarDadosEspecificosBmac();
-aplicarDadosEspecificosBmal();
-aplicarDadosEspecificosBmam();
 
 
 
@@ -4813,15 +4805,6 @@ function aplicarDadosEspecificosBmba() {
   ];
 }
 
-aplicarDadosEspecificosBmap();
-aplicarDadosEspecificosPmap();
-aplicarDadosEspecificosBmmg();
-aplicarDadosEspecificosBmms();
-aplicarDadosEspecificosBmpr();
-aplicarDadosEspecificosBmrj();
-aplicarDadosEspecificosBmba();
-aplicarEstruturaFederaisDados();
-aplicarRevisaoResumosInstitucionais();
 
 /* ============================================================ */
 /* === REVISÃO DA ABA CONCURSOS ================================ */
@@ -4924,7 +4907,6 @@ function aplicarRevisaoConcursosInstituicoes() {
   });
 }
 
-aplicarRevisaoConcursosInstituicoes();
 
 
 /* ============================================================ */
@@ -5019,7 +5001,6 @@ function aplicarPadraoDadosEmBreveGlobal() {
   ].forEach(base => normalizarObjetoSemFonteSegura(base));
 }
 
-aplicarPadraoDadosEmBreveGlobal();
 
 /* ============================================================ */
 /* === INDICADOR DE ATUALIZAÇÃO DO PORTAL ====================== */
@@ -5488,6 +5469,8 @@ function atualizarHeaderResumo(inst) {
 }
 
 function getEstadoDaInstituicao(inst) {
+  if (inst === 'pcdf' || inst === 'pmdf' || inst === 'bmdf' || inst === 'ppdf') return 'df';
+  if (inst === 'pf' || inst === 'prf') return 'br';
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
     return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
@@ -6638,8 +6621,34 @@ function renderizarBrasoesHistoria() {
 /* ============================================================ */
 
 // Reaplica BMBA após as rotinas globais de normalização para preservar os campos estimados e a remuneração detalhada recém-cadastrados.
-if (typeof aplicarDadosEspecificosBmba === 'function') aplicarDadosEspecificosBmba();
-if (typeof aplicarDadosEspecificosBmmg === 'function') aplicarDadosEspecificosBmmg();
-if (typeof aplicarDadosEspecificosBmms === 'function') aplicarDadosEspecificosBmms();
-if (typeof aplicarDadosEspecificosBmpr === 'function') aplicarDadosEspecificosBmpr();
-if (typeof aplicarDadosEspecificosBmrj === 'function') aplicarDadosEspecificosBmrj();
+
+/* Os datasets chegam de forma assíncrona: inicializar apenas depois deles. */
+function prepararBasesHeader() {
+  aplicarEstruturaEstadosFaltantesDados();
+  aplicarDadosEspecificosPmal();
+  aplicarDadosEspecificosPmap();
+  aplicarDadosEspecificosPcal();
+  aplicarEstruturaBombeirosMilitaresDados();
+  aplicarDadosEspecificosBmac();
+  aplicarDadosEspecificosBmal();
+  aplicarDadosEspecificosBmam();
+  aplicarDadosEspecificosBmap();
+  aplicarDadosEspecificosBmmg();
+  aplicarDadosEspecificosBmms();
+  aplicarDadosEspecificosBmpr();
+  aplicarDadosEspecificosBmrj();
+  aplicarDadosEspecificosBmba();
+  aplicarEstruturaFederaisDados();
+  aplicarRevisaoResumosInstitucionais();
+  aplicarRevisaoConcursosInstituicoes();
+  aplicarPadraoDadosEmBreveGlobal();
+  // Preserva as reaplicações finais existentes após a normalização dos resumos.
+  aplicarDadosEspecificosBmba();
+  aplicarDadosEspecificosBmmg();
+  aplicarDadosEspecificosBmms();
+  aplicarDadosEspecificosBmpr();
+  aplicarDadosEspecificosBmrj();
+  document.dispatchEvent(new CustomEvent('portal:legado-pronto'));
+}
+document.addEventListener('dados-portal:pronto', prepararBasesHeader);
+if (window.DADOS_PORTAL_PRONTO) prepararBasesHeader();

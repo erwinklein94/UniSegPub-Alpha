@@ -109,9 +109,13 @@
     fillAdContactFormFromUrl();
   }
 
+  document.addEventListener('portal:legado-pronto', () => {
+    if (document.readyState !== 'loading') initPageSpecificContent(getCurrentPage());
+  });
+
   document.addEventListener('DOMContentLoaded', () => {
     const page = getCurrentPage();
     setActivePage(page);
-    initPageSpecificContent(page);
+    if (!window.DADOS_PORTAL_PROMESSA || window.DADOS_PORTAL_PRONTO) initPageSpecificContent(page);
   });
 })();

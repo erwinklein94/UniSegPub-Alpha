@@ -421,7 +421,9 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 
-const REMUNERACAO_SP_OFICIAL = {
+let REMUNERACAO_SP_OFICIAL = {}, REMUNERACAO_MG_OFICIAL = {};
+function prepararBasesRemuneracao() {
+REMUNERACAO_SP_OFICIAL = {
   pmesp: [
     linhaRemuneracaoOficial('CMT G — Comandante Geral PM', 22587.35, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade e contribuição CBPM/Cruz Azul variam conforme classificação, vínculo e regra vigente.', 'pmesp'),
     linhaRemuneracaoOficial('CEL — Coronel PM', 18082.57, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade e contribuição CBPM/Cruz Azul variam conforme classificação, vínculo e regra vigente.', 'pmesp'),
@@ -658,7 +660,7 @@ REMUNERACAO_SP_OFICIAL.bmrj = [
   linhaRemuneracaoOficial('ALUNO ESFO BM — Aluno EsFO CBMERJ', 4127.16, 0, 'Total bruto oficial: soldo R$ 1.141,48 + GRET 122,5% + GRAM 62,5%; GHP não aplicada nesta linha. Referência: janeiro/2026.', 'Benefícios e rubricas pessoais não somados; conferir edital, curso de formação e contracheque.', 'bmrj', 'SEDEC jan/2026')
 ];
 
-const REMUNERACAO_MG_OFICIAL = {
+REMUNERACAO_MG_OFICIAL = {
   pmmg: [
     ['CORONEL PMMG', 21635.64], ['TENENTE CORONEL PMMG', 19515.61], ['MAJOR PMMG', 17394.91], ['CAPITÃO PMMG', 16101.58],
     ['1º TENENTE PMMG', 14324.95], ['2º TENENTE PMMG', 12170.60], ['ASPIRANTE A OFICIAL PMMG', 10932.55],
@@ -718,7 +720,12 @@ REMUNERACAO_MG_OFICIAL.bmmg = [
   badge
 ));
 
+}
+document.addEventListener('dados-portal:pronto', prepararBasesRemuneracao);
+if (window.DADOS_PORTAL_PRONTO) prepararBasesRemuneracao();
+
 function getTabelaCargosRemuneracao(inst) {
+  if (!window.DADOS_PORTAL_PRONTO) return [];
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
     pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pcdf: CARGOS_PCDF,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,

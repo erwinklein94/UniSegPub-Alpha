@@ -163,7 +163,8 @@
 
   function updateStats() {
     const visiveis = filteredRows(false);
-    const rows = visiveis.filter(row => !row.valorPendente && Number(row.remuneracao) > 0);
+    const dados = window.REMUNERACAO_AUTOMATIZADA?.[state.inst]?.dados;
+    const rows = visiveis.filter(row => dados?.revisao_dados?.situacao === 'conferida' && row.verificacao === 'fonte_oficial' && !row.valorPendente && Number(row.remuneracao) > 0);
     const min = rows.reduce((acc, row) => !acc || row.remuneracao < acc.remuneracao ? row : acc, null);
     const max = rows.reduce((acc, row) => !acc || row.remuneracao > acc.remuneracao ? row : acc, null);
     $('#remu-total-cargos').textContent = String(visiveis.length);
@@ -172,7 +173,6 @@
     $('#remu-menor-cargo').textContent = min ? min.cargo.replace(/\s?[—-].+$/, '') : '—';
     $('#remu-maior-total').textContent = max ? money(max.remuneracao) : '—';
     $('#remu-maior-cargo').textContent = max ? max.cargo.replace(/\s?[—-].+$/, '') : '—';
-    const dados = window.REMUNERACAO_AUTOMATIZADA?.[state.inst]?.dados;
     const revisao = dados?.revisao_dados;
     const data = revisao?.data || dados?.ultima_pesquisa;
     $('#remu-atualizacao').textContent = data ? new Date(data + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC' }) : 'Aguardando dados';

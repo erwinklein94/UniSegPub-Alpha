@@ -2,6 +2,8 @@
 
 Integração e pendências do Google AdSense: [relatório de 19/10/2026](docs/ADSENSE-2026-10-19.md). Validação: `npm run test:adsense`.
 
+Comparador, guias e transparência das fontes: [adequação editorial de 19/10/2026](docs/ADEQUACAO-EDITORIAL-ADSENSE-2026-10-19.md). Gerar: `npm run build:editorial`. Validar: `npm run test:editorial`.
+
 Este pacote inicia a migração dos JSONs do site para Supabase.
 
 **Projeto Supabase:** `https://luggjibketdxztvsgzgo.supabase.co`
