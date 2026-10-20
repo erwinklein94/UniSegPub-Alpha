@@ -1,5 +1,17 @@
 # Acesso à API de Afiliados Shopee
 
+## Atualização em 20/10/2026
+
+A conta continua sem acesso à Open API: AppID e senha `--`, botão Aplicar desabilitado. Não foi encontrado plugin Shopee no diretório consultado. A integração automática da API não está ativa.
+
+Foi acrescentado ao admin de produtos um fluxo assistido: atalhos para ofertas e geração oficial de links, importação de até 20 produtos por seleção e abertura no editor para revisão. Links de afiliado são preservados; importações abrem com publicação desmarcada e campos desconhecidos ficam vazios. Links já cadastrados abrem o anúncio existente, sem sobrescrever seus dados.
+
+O assistente pode consultar os dados visíveis da conta pelo navegador, gerar o link com a ferramenta oficial e preparar um JSON com `titulo`, `href`, `imagem`, `fonte`, `conferido_em`, `categoria` e, quando conhecidos, `descricao`, `preco`, `percentual`, `comissao`. Valores numéricos usam ponto decimal. Categorias aceitas: `produtosFisicos` e `livrosEbooks`. A comissão para o site deve vir do canal externo/Redes sociais, não de Live/Vídeo. A seleção não deve conter cookies, credenciais, dados fiscais ou de pagamento. Nenhuma seleção é salva automaticamente.
+
+O usuário autorizou pedir a liberação da API. Formulário oficial encontrado na Central de Ajuda do Afiliado: responder Sim, escolher outras dúvidas, tema cadastro/conta e cenário **Quero ativar a API**. O titular preencheu os dados necessários diretamente na Shopee. A página confirmou **Enviado com sucesso — A sua solicitação foi enviada com sucesso** em 20/10/2026. Nenhum protocolo apareceu nessa confirmação. O formulário informa prazo de até 3 dias úteis para retorno. A aprovação da API permanece pendente. Não registrar telefone ou ID no Git.
+
+Validação: testes de importação e segurança, fluxo visual com dados de teste e geração real de link no portal oficial. A geração de link não publica anúncios no site.
+
 Verificação em 18/10/2026, na conta de afiliados já aberta no navegador.
 O painel oficial `/open_api` informa que a conta ainda não possui acesso,
 mostra AppID e senha como `--` e mantém “Aplicar” desabilitado. Nenhuma

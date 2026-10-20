@@ -1,4 +1,5 @@
 import {categorias,dinheiro,ganho,legendaGanho,listar,linkSeguro,chaveSimulacao,somarSimulacao} from './admin-produtos-modelo.js?v=20261018soma1';
+import { montarSelecaoShopee } from './admin-shopee.js?v=20261020s1';
 const URL_BASE='https://luggjibketdxztvsgzgo.supabase.co';
 const CHAVE='sb_publishable_onaOo8uMyySc3KWf6D6Jfg_OMT6wqcX';
 const SESSAO='usp_admin_sessao_luggjibketdxztvsgzgo';
@@ -11,7 +12,7 @@ function atualizarSoma(){const t=somarSimulacao(listar(catalogo,comissoes),simul
 let catalogo={},comissoes=[],versao=null,selecionado=null,carregando=false;
 function sessao(){try{const s=JSON.parse(sessionStorage.getItem(SESSAO));return s?.token&&s.email==='erwinklein1994@gmail.com'&&Date.now()<s.expira-30000?s:null;}catch{return null;}}
 function mensagem(texto,erro=false){$('#estado-produtos').textContent=texto;$('#estado-produtos').classList.toggle('login-erro',erro);}
-function sair(){sessionStorage.removeItem(SESSAO);catalogo={};comissoes=[];$('#linhas-produtos').replaceChildren();$('#editor-produto').hidden=true;$('#tela-dashboard').hidden=true;$('#tela-login').hidden=false;}
+function sair(){sessionStorage.removeItem(SESSAO);catalogo={};comissoes=[];$('#linhas-produtos').replaceChildren();$('#shopee-lista').replaceChildren();$('#shopee-selecao').value='';$('#shopee-estado').textContent='';$('#editor-produto').hidden=true;$('#tela-dashboard').hidden=true;$('#tela-login').hidden=false;}
 async function api(caminho,opcoes={}){
   const s=sessao();if(!s){sair();throw Error('Sua sessão expirou. Entre novamente.');}
   const r=await fetch(URL_BASE+'/rest/v1/'+caminho,{...opcoes,cache:'no-store',headers:{apikey:CHAVE,Authorization:'Bearer '+s.token,'Content-Type':'application/json',...opcoes.headers}});
@@ -59,6 +60,21 @@ function editar(item=null){
   $('#ativo-produto').checked=p.ativo!==false;$('#destaque-produto').checked=!!p.destaque;
   $('#erro-editor').textContent='';$('#editor-produto').hidden=false;$('#editor-produto').scrollIntoView({behavior:'smooth',block:'start'});$('#titulo-produto').focus({preventScroll:true});
 }
+function conferirEditorShopee() {
+  if (!sessao()) throw Error('Entre novamente no admin.');
+  if (carregando || !versao) throw Error('Aguarde o carregamento do catálogo antes de preparar o anúncio.');
+  if (!$('#editor-produto').hidden) throw Error('Feche ou salve o editor atual antes de abrir outra seleção.');
+}
+montarSelecaoShopee({ listarAtuais: () => listar(catalogo, comissoes),
+  revisar: item => { conferirEditorShopee(); editar(item); },
+  preparar: item => {
+    conferirEditorShopee(); editar();
+    for (const [campo, id] of Object.entries({ categoria: 'categoria-produto', titulo: 'titulo-produto', descricao: 'descricao-produto', href: 'href-produto', imagem: 'imagem-produto', preco: 'preco-produto', percentual: 'percentual-produto', comissao: 'comissao-produto', tipo: 'tipo-comissao', conferido_em: 'data-comissao', fonte: 'fonte-comissao' })) $('#' + id).value = item[campo] ?? '';
+    $('#ativo-produto').checked = false; $('#destaque-produto').checked = false;
+    $('#notas-comissao').value = 'Seleção assistida Shopee. Referência para canal externo/Redes sociais; conferir vigência e condições antes de publicar.';
+    $('#editor-titulo').textContent = 'Revisar anúncio Shopee';
+  }
+});
 $('#form-produto').addEventListener('submit',async e=>{
   e.preventDefault();if(!$('#form-produto').reportValidity())return;
   const p={titulo:$('#titulo-produto').value.trim(),descricao:$('#descricao-produto').value.trim(),href:$('#href-produto').value.trim(),imagem:$('#imagem-produto').value.trim(),ativo:$('#ativo-produto').checked,destaque:$('#destaque-produto').checked};
