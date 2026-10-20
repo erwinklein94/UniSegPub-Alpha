@@ -62,7 +62,8 @@ $('#form-login').addEventListener('submit', async evento => {
     sessionStorage.setItem(SESSAO_KEY, JSON.stringify({ token: dados.access_token, expira: Date.now() + (dados.expires_in || 3600) * 1000, email: dados.user.email }));
     try { localStorage.setItem('usp_nao_contar', '1'); } catch { /* Armazenamento opcional. */ }
     $('#login-senha').value = '';
-    abrirPainel();
+    if (new URLSearchParams(location.search).get('retorno') === 'analytics') location.assign('admin-google-analytics.html');
+    else abrirPainel();
   } catch (e) {
     $('#login-erro').textContent = e.message || 'Não foi possível conectar. Tente novamente.';
   } finally { $('#login-botao').disabled = false; }
@@ -338,4 +339,7 @@ function abrirPainel() {
   sincronizarFiltro(30);
   atualizar();
 }
-if (sessaoSalva()) abrirPainel();
+if (sessaoSalva()) {
+  if (new URLSearchParams(location.search).get('retorno') === 'analytics') location.assign('admin-google-analytics.html');
+  else abrirPainel();
+}

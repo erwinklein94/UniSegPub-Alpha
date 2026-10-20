@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Google Analytics · Administração</title>
+  <link rel="stylesheet" href="css/pages/admin.css?v=20261018hotmart1" />
+  <link rel="stylesheet" href="css/pages/admin-produtos.css?v=20261018p1" />
+  <link rel="stylesheet" href="css/pages/admin-google-analytics.css?v=20261020ga1" />
+</head>
+<body>
+  <section id="ga-login" class="cartao ga-login" hidden><p class="sobretitulo">ÁREA RESTRITA</p><h1>Google Analytics</h1><p>Entre com sua conta de administrador para consultar os relatórios.</p><a class="btn-primario" href="admin.html?retorno=analytics">Entrar no admin →</a></section>
+  <div id="ga-dashboard" hidden>
+    <header class="barra-topo"><a class="marca" href="index.html"><img src="img/LOGO/logoleao.webp" alt="" width="36" height="36" /><span>UNIVERSO<span>SEGURANÇA PÚBLICA</span></span></a><span class="selo-admin">Administração</span><nav aria-label="Ações do administrador"><a class="link-portal" href="index.html">Abrir portal ↗</a><button class="btn-icone" id="ga-tema" type="button" aria-label="Alternar tema">◐</button><button class="btn-suave" id="ga-sair" type="button">Sair</button></nav></header>
+    <main class="painel">
+      <nav class="admin-abas" aria-label="Administração"><a href="admin.html">Audiência e vendas</a><a href="admin-google-analytics.html" aria-current="page">Google Analytics</a><a href="admin-produtos.html">Produtos e comissões</a></nav>
+      <div class="painel-topo"><div><p class="sobretitulo">GOOGLE ANALYTICS 4</p><h1>Seu público, em detalhes<span class="ponto">.</span></h1><p class="descricao">Consulte os dados do Google Analytics e explore o desempenho do portal.</p></div><button type="submit" form="ga-form" class="btn-primario" id="ga-atualizar">↻ Atualizar dados</button></div>
+      <form id="ga-form" class="filtros" aria-label="Filtros do Google Analytics">
+        <div class="filtros-linha"><div class="periodos" role="group" aria-label="Períodos rápidos"><button data-ga-dias="1" type="button" aria-pressed="false">Hoje</button><button data-ga-dias="7" type="button" aria-pressed="false">7 dias</button><button data-ga-dias="30" type="button" aria-pressed="true">30 dias</button><button data-ga-dias="90" type="button" aria-pressed="false">90 dias</button></div><div class="datas ga-datas"><label>De<input id="ga-inicio" type="date" required /></label><label>Até<input id="ga-fim" type="date" required /></label></div></div>
+        <div class="ga-filtros"><label>Dispositivo<select id="ga-dispositivo"><option value="">Todos os dispositivos</option value="desktop">Computador</option><option value="mobile">Celular</option><option value="tablet">Tablet</option><option value="smart tv">Smart TV</option></select></label><label>País<input id="ga-pais" maxlength="150" placeholder="Todos · ex.: Brazil" /></label><label>Canal<select id="ga-canal"><option value="">Todos os canais</option><option>Organic Search</option><option>Direct</option><option>Referral</option><option>Organic Social</option><option>Paid Search</option><option>Paid Social</option><option>Email</option><option>Unassigned</option></select></label><label>Página contém<input id="ga-pagina" maxlength="150" placeholder="Todas · ex.: /remuneracao" /></label></div>
+        <div class="contexto-periodo"><span>Escolha os filtros e clique em Atualizar dados.</span><button class="btn-suave" id="ga-limpar" type="button">Limpar filtros</button></div>
+      </form>
+      <div id="ga-status" class="ga-estado" role="status" aria-live="polite">Clique em Atualizar dados para consultar o Google Analytics.</div>
+      <section id="ga-config" class="cartao ga-config" hidden><h2>Conectar a leitura do Analytics</h2><p class="subtitulo">A medição do site já existe. Para este painel consultar os relatórios, é necessário configurar o acesso da API no servidor.</p><ol><li>Habilite a Google Analytics Data API no projeto Google Cloud.</li><li>Cadastre uma conta de serviço como Leitor na propriedade <strong>534532275</strong>.</li><li>Configure no Supabase os Secrets <code>GOOGLE_SERVICE_ACCOUNT_JSON</code> e <code>GA4_PROPERTY_ID</code>. A credencial fica apenas no servidor.</li></ol><p>Depois, clique em Atualizar dados.</p></section>
+      <div id="ga-resultados" hidden>
+        <p id="ga-contexto" class="ga-resumo"></p>
+        <section class="indicadores ga-indicadores" aria-label="Indicadores do período"><article class="indicador destaque"><div class="indicador-topo"><h3>Usuários ativos</h3></div><strong id="ga-usuarios">—</strong><p>Usuários ativos no período</p></article><article class="indicador"><div class="indicador-topo"><h3>Sessões</h3></div><strong id="ga-sessoes">—</strong><p>Visitas registradas pelo GA4</p></article><article class="indicador"><div class="indicador-topo"><h3>Visualizações</h3></div><strong id="ga-views">—</strong><p>Páginas visualizadas</p></article><article class="indicador"><div class="indicador-topo"><h3>Eventos</h3></div><strong id="ga-eventos">—</strong><p>Eventos medidos pelo GA4</p></article><article class="indicador"><div class="indicador-topo"><h3>Engajamento</h3></div><strong id="ga-engajamento">—</strong><p>Percentual de sessões engajadas</p></article></section>
+        <section class="cartao"><div class="cartao-topo"><div><p class="sobretitulo">AO LONGO DO TEMPO</p><h2>Evolução diária</h2></div><label><span class="sr-only">Indicador do gráfico</span><select class="ga-chart-select" id="ga-metrica"><option value="screenPageViews">Visualizações</option><option value="activeUsers">Usuários ativos</option><option value="sessions">Sessões</option></select></label></div><div class="ga-grafico" id="ga-diario"></div><details class="tabela-dados"><summary>Consultar valores por dia</summary><div class="tabela-scroll"><table><thead><tr><th>Dia</th><th>Usuários ativos</th><th>Sessões</th><th>Visualizações</th></tr></thead><tbody id="ga-dias-linhas"></tbody></table></div></details></section>
+        <div class="grade-dupla"><section class="cartao"><div class="cartao-topo"><div><p class="sobretitulo">AQUISIÇÃO</p><h2>Canais de acesso</h2><p class="subtitulo">Sessões por canal · até 20 canais</p></div></div><div id="ga-canais" class="ga-barras"></div></section><section class="cartao"><div class="cartao-topo"><div><p class="sobretitulo">LOCALIZAÇÃO</p><h2>Países</h2><p class="subtitulo">Usuários ativos · 20 primeiros países</p></div></div><div id="ga-paises" class="ga-barras"></div></section></div>
+        <section class="cartao"><div class="cartao-topo"><div><p class="sobretitulo">CONTEÚDO</p><h2>Páginas mais vistas</h2><p class="subtitulo" id="ga-paginas-nota">Até 50 páginas, ordenadas por visualizações.</p></div></div><div class="tabela-scroll"><table class="ga-paginas"><thead><tr><th>Página</th><th>Visualizações</th><th>Usuários ativos</th></tr></thead><tbody id="ga-paginas-linhas"></tbody></table></div></section>
+        <aside class="nota-metodologia"><strong>Como ler estes dados</strong><p>Cada atualização consulta os relatórios disponíveis no Google naquele momento. O processamento do GA4 pode ter atraso e o dia atual pode estar incompleto. O período usa o fuso configurado na propriedade. Usuários ativos não devem ser somados entre dias, páginas ou países. Filtros de país e canal usam os nomes retornados pelo Google; o país deve corresponder exatamente (ex.: Brazil). O filtro de página se aplica a todos os relatórios.</p><p id="ga-qualidade"></p></aside>
+      </div>
+      <footer class="rodape-admin"><span>Fonte: Google Analytics Data API</span><span id="ga-ultima">Nenhuma consulta realizada</span></footer>
+    </main>
+  </div>
+  <script type="module" src="js/pages/admin-google-analytics.js?v=20261020ga1"></script>
+</body>
+</html>

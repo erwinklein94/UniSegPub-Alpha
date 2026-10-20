@@ -4,3 +4,7 @@ project_id = "UniSegPub-Alpha"
 # validam o token no Auth e a lista privada de administradores, no servidor.
 [functions.hotmart-integration]
 verify_jwt = false
+
+# O handler valida a sessão no Auth e a lista privada de administradores.
+[functions.google-analytics]
+verify_jwt = false
