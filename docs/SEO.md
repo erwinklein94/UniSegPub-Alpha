@@ -34,6 +34,8 @@ O relatório de indexação é atrasado em relação ao site. URLs alternativas 
 
 A solicitação foi enviada nesta etapa e a interface confirmou “Validação iniciado — Início: 20/10/2026”. O resultado final permanece em processamento pelo Google.
 
+O sitemap sem `www` foi enviado e a interface confirmou **Processado**, com 31 páginas encontradas e leitura em 20/10/2026. Isso confirma o recebimento das URLs, não a indexação de todas elas. A inspeção individual do artigo da PCMG confirmou que essa URL já está no Google.
+
 ## Como avaliar o resultado
 
 Comparar períodos de 28 dias completos no Search Console, por página e consulta: cliques, impressões, CTR e posição média. Priorizar os guias que já recebem impressões, lendo também a intenção das pesquisas. No Analytics, acompanhar sessões vindas de pesquisa orgânica, navegação para outras páginas e cliques em produtos. Solicitação de indexação e envio de sitemap não confirmam, por si só, indexação ou melhoria de posição.
