@@ -2,13 +2,13 @@
   "resumo": {
     "data": "2026-10-20",
     "total": 110,
-    "conferidas": 103,
-    "a_confirmar": 7,
+    "conferidas": 110,
+    "a_confirmar": 0,
     "linhas_antes": 2350,
-    "linhas_depois": 5253,
-    "fontes_consultadas": 234,
-    "novas_tabelas_conferidas": 53,
-    "escopo": "Pesquisa em andamento: 53 das 60 tabelas antes pendentes conferidas documentalmente, com recortes e datas explícitos. Sete instituições permanecem a confirmar. PMTO e BMTO corrigidas pela tabela posterior de maio/2026."
+    "linhas_depois": 5414,
+    "fontes_consultadas": 224,
+    "novas_tabelas_conferidas": 60,
+    "escopo": "Pesquisa documental das 60 tabelas antes pendentes concluída nos recortes descritos por instituição. Referências históricas e tabelas limitadas a ingresso estão explicitadas; não equivale a confirmar remuneração integral atual de todas as classes. PMTO/BMTO atualizadas pela matriz de maio/2026."
   },
   "instituicoes": [
     {
@@ -732,71 +732,73 @@
       "instituicao_id": "pmrs",
       "sigla": "PMRS",
       "uf": "RS",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 3,
-      "linhas_depois": 3,
+      "linhas_depois": 11,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
-          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/21083233-edital-da-dresa-n-01-2025-soldado-de-primeira-classe.pdf",
+          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202412/03181023-guia-pratico-df-svs-2024-2025.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "696034e0a49750a8cd4c3e2203793d1609dcd5a726cfb595acafd0d936a5bbc8",
+          "consultado_em": "2026-10-20T12:04:01.454583+00:00"
         },
         {
-          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202503/31113326-edital-da-dresa-n-cspm-01-2025-edital-de-abertura-cspm.pdf",
+          "url": "https://gestaodepessoas.rs.gov.br/wp-content/uploads/2024/08/Lei-16165.pdf",
           "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202504/03111726-edital-da-dresa-n-cbos-01-2025-edital-de-abertura-cbos.pdf",
-          "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
-          "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "084efd9a66118ef8c4228b80e1c68d0259684dd7380a2d369e84695d8f6bb498",
+          "consultado_em": "2026-10-20"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidas 11 referências de carreira/formação do guia oficial, com três parcelas de 4% previstas no art. 127 da Lei 16.165/2024. Nível III de soldado não usado como ingresso; os níveis I/II do guia estão identificados como referências de enquadramento. Não inclui temporários nem aplica o total de 12,49% novamente após as parcelas.",
+      "fonte_conferida": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202412/03181023-guia-pratico-df-svs-2024-2025.pdf",
+      "referencia": "2026-10-01",
+      "tipo_valor": "subsidio"
     },
     {
       "instituicao_id": "pcrs",
       "sigla": "PCRS",
       "uf": "RS",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 3,
-      "linhas_depois": 3,
+      "linhas_depois": 8,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
+          "url": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "9971b4d002e92ec0fca3520d94fc8d59fad0fabfc64e6e54b232281e2280da02",
+          "consultado_em": "2026-10-20T12:26:17.5856861Z"
+        },
+        {
           "url": "https://www.pc.rs.gov.br/upload/arquivos/202510/24083812-edital-de-abertura-agentes-admin-correto.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "3394f9c0c63dfaff2f138bb8332f1966d1a0a3b64c968e0634ba0a6703595f26",
+          "consultado_em": "2026-10-20T12:17:26.4279634Z"
         },
         {
           "url": "https://www.pc.rs.gov.br/upload/arquivos/202510/13082837-edital-de-abertura-04-2025-admin-f.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "7224f82b54af856487e5d659a80f65058c61bd5c4c532ce787222caf4d53d3f0",
+          "consultado_em": "2026-10-20T12:17:36.8697471Z"
         },
         {
-          "url": "https://www.pc.rs.gov.br/publicado-edital-de-abertura-de-concurso-publico-de-ingresso-nas-carreiras-de-escrivao-de-policia-e-de-inspetor-de-policia",
+          "url": "https://gestaodepessoas.rs.gov.br/wp-content/uploads/2024/08/Lei-16165.pdf",
           "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://www.pc.rs.gov.br/concurso-publico-para-delegado-de-policia-2025",
-          "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "084efd9a66118ef8c4228b80e1c68d0259684dd7380a2d369e84695d8f6bb498",
+          "consultado_em": "2026-10-20"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidas oito referências inicial/final/única de cinco cargos na relação nominal do Tesouro, com a parcela posterior de 4% de outubro/2026. Recorte de faixas por cargo; não constitui matriz das classes intermediárias. Diferença de R$ 0,38 na base inicial de delegado em relação ao edital explicitada no critério; usa a publicação de competência posterior. Não reaplica parcelas de 2025.",
+      "fonte_conferida": "https://tesouro.fazenda.rs.gov.br/upload/arquivos/202602/13181432-cargos-venc-gov3032-012026.pdf",
+      "referencia": "2026-10-01",
+      "tipo_valor": "remuneracao"
     },
     {
       "instituicao_id": "pmsc",
@@ -2112,71 +2114,52 @@
       "instituicao_id": "pcma",
       "sigla": "PCMA",
       "uf": "MA",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 14,
-      "linhas_depois": 14,
+      "linhas_depois": 136,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
-          "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
+          "url": "https://agemaranhao.wordpress.com/wp-content/uploads/2023/11/lei_12.121_21.11.2023.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "c5138b1804fdae2ec687826c6f5bd42509cbaa7f54d121517fbd93ddc48d4e38",
+          "consultado_em": "2026-10-20T12:06:11.2517534Z"
         },
         {
-          "url": "https://app.stc.ma.gov.br/public_legisla/files/demanda_publicacao_anexo/anexo_14-06-2024_1718381741.pdf",
-          "status": null,
-          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
-        },
-        {
-          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/6362",
-          "status": null,
-          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
-        },
-        {
-          "url": "https://www.policiacivil.ma.gov.br/wp-content/uploads/2020/11/Lei-n%C2%BA-8.592-de-27-de-abril-de-2007.pdf",
+          "url": "https://www.al.ma.leg.br/sitealema/wp-content/uploads/2025/02/LEGISLACOES-POR-TEMAS-DO-ESTADO-DO-MARANHAO-1.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "75d044ee9ef241f81c1b1bbe6420395cfde0d48e727fd638fad7ef541e9f4af9",
+          "consultado_em": "2026-10-20T11:50:49.7772321Z"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidos 136 subsídios nominais da coluna julho/2026 nos quadros c.1/c.2. A íntegra foi lida em reprodução do Diário Oficial hospedada pela Associação dos Gestores, com origem da cópia explicitada; o índice oficial da Assembleia confirma número, data e objeto da lei. Cargos periciais e em extinção identificam o recorte legal, não uma afirmação de lotação administrativa atual. Funções especiais, cumulações e auxílios não somados.",
+      "fonte_conferida": "https://agemaranhao.wordpress.com/wp-content/uploads/2023/11/lei_12.121_21.11.2023.pdf",
+      "referencia": "2026-07-01",
+      "tipo_valor": "subsidio"
     },
     {
       "instituicao_id": "ppma",
       "sigla": "PPMA",
       "uf": "MA",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 1,
-      "linhas_depois": 1,
+      "linhas_depois": 11,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
-          "url": "https://www.transparencia.ma.gov.br/wp/tabeladecargosefuncoes",
+          "url": "https://www.al.ma.leg.br/sitealema/wp-content/uploads/2024/05/DIARIO-097_28.05.2024-1.pdf",
           "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://transparencia.ma.gov.br/app/v2/pessoal/remuneracao",
-          "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/7127",
-          "status": null,
-          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
-        },
-        {
-          "url": "https://seap.ma.gov.br/noticias/governador-sanciona-lei-que-institui-a-policia-penal-no-sistema-penitenciario-do-maranhao",
-          "status": null,
-          "erro": "HTTP Error 500: Internal Server Error"
+          "erro": null,
+          "sha256": "141d23af64fcbca39d297084314e32ed2f434ed3aac0b6cc997a57aff0b8bfdc",
+          "consultado_em": "2026-10-20T12:05:18.8114342Z"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidos os 11 subsídios por classe e referência da coluna de julho/2026 do anexo sancionado. A tabela substitui o quadro c.3 da Lei 12.121/2023; os reajustes anteriores não foram somados novamente. Auxílios, funções especiais e vantagens pessoais excluídos.",
+      "fonte_conferida": "https://www.al.ma.leg.br/sitealema/wp-content/uploads/2024/05/DIARIO-097_28.05.2024-1.pdf",
+      "referencia": "2026-07-01",
+      "tipo_valor": "subsidio"
     },
     {
       "instituicao_id": "pmpa",
@@ -2704,71 +2687,136 @@
       "instituicao_id": "pcrr",
       "sigla": "PCRR",
       "uf": "RR",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 9,
-      "linhas_depois": 9,
+      "linhas_depois": 29,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
-          "url": "https://www.qconcursos.com/questoes-de-concursos/concursos/pc-rr-2022-delegado-edital-n-1",
-          "status": null,
-          "erro": "HTTP Error 403: Forbidden"
-        },
-        {
-          "url": "https://arquivos.qconcursos.com/regulamento/arquivo/77644/pc_rr_2022_edital_n_2-edital.pdf",
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2022/3934/lei_complementar_no_312_de_31_de_marco_de_2022.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "caeaa68a20c3112c2f94c93a36b60b0cfd6261c01bfab7c4c9511d4fd8ed9860",
+          "consultado_em": "2026-10-20T12:17:23.6595301Z"
         },
         {
-          "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2015/09/doe-20150904.pdf",
-          "status": null,
-          "erro": "HTTP Error 404: Not Found"
-        },
-        {
-          "url": "https://api.transparencia.rr.gov.br/storage/competencias/667b1936-3be0-4580-8600-b48c7d602c33.pdf",
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2020/1933/lei_complementar_no_287_de_07_de_janeiro_de_2020.pdf",
           "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "17a6fe6804086944a3a94d7dc8170830ca0288709f2a936f1f2d6fd1a78f6140",
+          "consultado_em": "2026-10-20T12:20:35.9449745Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2026/5411/lei_complementar_no_378_de_2_de_julho_de_2026.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "f9a482be12348ced02f5a486914cf9184a0d6c826372ce50c8f774f2a7df02ef",
+          "consultado_em": "2026-10-20T12:16:55.1883241Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2022/3919/lei_no_1651_de_22_de_fevereiro_de_2022.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "102bec2d8b450ec3c67909aeb5ffeaeb1b56c490748f158d694fdb8a0ed11aed",
+          "consultado_em": "2026-10-20T12:17:03.0503962Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2023/4363/lei_no_1843_de_12_de_julho_de_2023.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "2858150032762115c05701c3058372ef1f63fa548726b718684b9573ae75898e",
+          "consultado_em": "2026-10-20T12:17:04.3672797Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2024/4710/lei_no_2058_de_26_de_setembro_de_2024.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "35f15ace98e518f6e24074d962fd4b929bb0ba3f43f1cb3109fbe9baa894c331",
+          "consultado_em": "2026-10-20T12:17:08.9250583Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2025/5033/lei_no_2248_de_5_de_setembro_de_2025.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "2e8cff8c0f9a0da7aea9a1305ad0d7523a8b5747159cecc757ecaa2f334238ce",
+          "consultado_em": "2026-10-20T12:17:10.8012652Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2026/5326/lei_no_2362_de_1o_de_abril_de_2026.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "6cfd9e763e0677bd6f5b4fc63635c0a30c3fea293ec1d393a4ff14448f650fdc",
+          "consultado_em": "2026-10-20T12:07:19.0778139Z"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidas 29 referências: cinco classes dos três grupos remuneratórios (incluindo especialidades periciais), e quatro classes de delegado. Preserva diferença entre OIP e OIP por transformação de auxiliares na LC 378/2026; não os remunera como se fossem o mesmo enquadramento. Revisões de 2023 a 2026 sobre a matriz de 2022, sem repetir 11%; delegado calculado conforme diferença legal de 22% da classe inicial.",
+      "fonte_conferida": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2022/3934/lei_complementar_no_312_de_31_de_marco_de_2022.pdf",
+      "referencia": "2026-07-02",
+      "tipo_valor": "subsidio"
     },
     {
       "instituicao_id": "pprr",
       "sigla": "PPRR",
       "uf": "RR",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 12,
       "linhas_depois": 12,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
-          "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2017/04/doe-20170426.pdf",
-          "status": null,
-          "erro": "HTTP Error 404: Not Found"
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2017/1951/lei_complementar_no_259_de_24_de_julho_de_2017_com_veto_digitalizada.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "deae0f94893ffd576d2f044ecc26b22f6f7103b6c170f8cb8c422bd044de3d1c",
+          "consultado_em": "2026-10-20T12:17:17.6594695Z"
         },
         {
-          "url": "https://imprensaoficial.rr.gov.br/app/_edicoes/2017/07/doe-20170725.pdf",
-          "status": null,
-          "erro": "HTTP Error 404: Not Found"
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2022/3919/lei_no_1651_de_22_de_fevereiro_de_2022.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "102bec2d8b450ec3c67909aeb5ffeaeb1b56c490748f158d694fdb8a0ed11aed",
+          "consultado_em": "2026-10-20T12:17:03.0503962Z"
         },
         {
-          "url": "https://portal.rr.gov.br/governo-reforca-sistema-prisional-com-posse-de-92-novos-policiais-penais/",
-          "status": null,
-          "erro": "HTTP Error 404: Not Found"
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2023/4363/lei_no_1843_de_12_de_julho_de_2023.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "2858150032762115c05701c3058372ef1f63fa548726b718684b9573ae75898e",
+          "consultado_em": "2026-10-20T12:17:04.3672797Z"
         },
         {
-          "url": "https://portal.rr.gov.br/governador-assina-projeto-de-lei-que-autoriza-recomposicao-de-462-nos-salarios-dos-servidores/",
-          "status": null,
-          "erro": "HTTP Error 404: Not Found"
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2024/4710/lei_no_2058_de_26_de_setembro_de_2024.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "35f15ace98e518f6e24074d962fd4b929bb0ba3f43f1cb3109fbe9baa894c331",
+          "consultado_em": "2026-10-20T12:17:08.9250583Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2025/5033/lei_no_2248_de_5_de_setembro_de_2025.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "2e8cff8c0f9a0da7aea9a1305ad0d7523a8b5747159cecc757ecaa2f334238ce",
+          "consultado_em": "2026-10-20T12:17:10.8012652Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2026/5326/lei_no_2362_de_1o_de_abril_de_2026.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "6cfd9e763e0677bd6f5b4fc63635c0a30c3fea293ec1d393a4ff14448f650fdc",
+          "consultado_em": "2026-10-20T12:07:19.0778139Z"
+        },
+        {
+          "url": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2026/5255/lei_complementar_no_369_de_14_de_janeiro_de_2026.pdf",
+          "status": 200,
+          "erro": null,
+          "sha256": "9bf3f00743af1f069d75bfb97dbf51eafa3290e1cf9092ea2b737f1165a92062",
+          "consultado_em": "2026-10-20T12:17:13.9458205Z"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidas visualmente as 12 células da Tabela II na lei sancionada, substituindo o anexo de projeto usado antes. Revisões gerais de 2022 a 2026 explicitadas por etapa. A indenização de risco de vida criada pela LC 369/2026 não integra subsídio e não foi somada.",
+      "fonte_conferida": "https://sapl.al.rr.leg.br/media/sapl/public/normajuridica/2017/1951/lei_complementar_no_259_de_24_de_julho_de_2017_com_veto_digitalizada.pdf",
+      "referencia": "2026-04-01",
+      "tipo_valor": "subsidio"
     },
     {
       "instituicao_id": "pmse",
@@ -3352,36 +3400,30 @@
       "instituicao_id": "bmrs",
       "sigla": "BMRS",
       "uf": "RS",
-      "situacao": "a_confirmar",
+      "situacao": "conferida",
       "linhas_antes": 15,
-      "linhas_depois": 15,
+      "linhas_depois": 11,
       "inconsistencias_aritmeticas_antes": 0,
       "consultas": [
         {
-          "url": "https://estado.rs.gov.br/upload/arquivos/lc15454.pdf",
+          "url": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202412/03181023-guia-pratico-df-svs-2024-2025.pdf",
           "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://ssp.rs.gov.br/corpo-de-bombeiros-militar-divulga-edital-para-concurso-de-soldado",
-          "status": 200,
-          "erro": null
-        },
-        {
-          "url": "https://www.bombeiros.rs.gov.br/corpo-de-bombeiros-militar-do-rs-abre-inscricoes-para-544-vagas-de-soldado-temporario",
-          "status": 200,
-          "erro": null
+          "erro": null,
+          "sha256": "696034e0a49750a8cd4c3e2203793d1609dcd5a726cfb595acafd0d936a5bbc8",
+          "consultado_em": "2026-10-20T12:04:01.454583+00:00"
         },
         {
           "url": "https://gestaodepessoas.rs.gov.br/wp-content/uploads/2024/08/Lei-16165.pdf",
-          "status": null,
-          "erro": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+          "status": 200,
+          "erro": null,
+          "sha256": "084efd9a66118ef8c4228b80e1c68d0259684dd7380a2d369e84695d8f6bb498",
+          "consultado_em": "2026-10-20"
         }
       ],
-      "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
-      "fonte_conferida": null,
-      "referencia": null,
-      "tipo_valor": null
+      "nota": "Conferidas 11 referências de carreira/formação do guia oficial, com três parcelas de 4% previstas no art. 127 da Lei 16.165/2024. Nível III de soldado não usado como ingresso; os níveis I/II do guia estão identificados como referências de enquadramento. Não inclui temporários nem aplica o total de 12,49% novamente após as parcelas.",
+      "fonte_conferida": "https://www.brigadamilitar.rs.gov.br/upload/arquivos/202412/03181023-guia-pratico-df-svs-2024-2025.pdf",
+      "referencia": "2026-10-01",
+      "tipo_valor": "subsidio"
     },
     {
       "instituicao_id": "bmse",

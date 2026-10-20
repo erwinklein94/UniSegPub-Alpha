@@ -57,9 +57,9 @@ test('valores críticos e etapas de 2026 permanecem vinculados à referência co
 
 test('primeiro lote de 30 preserva composição, colunas e referências oficiais', () => {
   const valor=(id,cargo)=>dados[id].linhas.find(l=>l.cargo===cargo)?.remuneracao;
-  assert.equal(audit.resumo.novas_tabelas_conferidas,53);
-  assert.equal(audit.resumo.conferidas,103);
-  assert.equal(audit.resumo.a_confirmar,7);
+  assert.equal(audit.resumo.novas_tabelas_conferidas,60);
+  assert.equal(audit.resumo.conferidas,110);
+  assert.equal(audit.resumo.a_confirmar,0);
   assert.equal(valor('pcsp','Escrivão de Polícia de 3ª Classe'),3395.52);
   assert.equal(valor('pcpr','Delegado de Polícia — nível I'),26000);
   assert.equal(valor('pppr','Policial Penal — classe XII'),4776.42);
@@ -81,7 +81,7 @@ test('primeiro lote de 30 preserva composição, colunas e referências oficiais
 });
 
 test('complemento preserva matrizes completas, enquadramentos e etapas históricas', () => {
-  for (const [id, quantidade] of Object.entries({ppal:28,pcam:31,pmba:50,bmba:50,pcba:28,ppba:21,pmms:154,bmms:154,pcms:378,ppto:63,pcto:362,pmac:22,bmac:22,pcac:30,ppac:30,pmes:199,bmes:199,ppes:60,pces:120,pmmt:38,bmmt:38,pcmt:85,ppmt:48})) {
+  for (const [id, quantidade] of Object.entries({ppal:28,pcam:31,pmba:50,bmba:50,pcba:28,ppba:21,pmms:154,bmms:154,pcms:378,ppto:63,pcto:362,pmac:22,bmac:22,pcac:30,ppac:30,pmes:199,bmes:199,ppes:60,pces:120,pmmt:38,bmmt:38,pcmt:85,ppmt:48,pmrs:11,bmrs:11,pcrs:8,ppma:11,pcma:136,pprr:12,pcrr:29})) {
     assert.equal(dados[id].linhas.length, quantidade, id);
     assert.equal(new Set(dados[id].linhas.map(l=>l.cargo)).size, quantidade, id);
   }
@@ -93,6 +93,15 @@ test('complemento preserva matrizes completas, enquadramentos e etapas históric
   for (const id of ['pmac','bmac','pcac','ppac']) assert.ok(dados[id].linhas.every(l=>l.referencia_data==='2022-04-01'&&!l.vigencia_inicio),id);
   assert.equal(dados.pcms.linhas.filter(l=>l.cargo.startsWith('Delegado')).length,35);
   assert.ok(dados.pcms.linhas.every(l=>!l.cargo.includes('DAP')));
+  assert.equal(dados.pmrs.linhas.find(l=>l.cargo.startsWith('Soldado de Primeira Classe')).remuneracao,6429.95);
+  assert.equal(dados.pcrs.linhas.find(l=>l.cargo==='Delegado de Polícia — referência inicial da relação RHE').remuneracao,24268.20);
+  assert.match(dados.pcrs.revisao_dados.nota,/não constitui matriz das classes intermediárias/);
+  assert.equal(dados.ppma.linhas.find(l=>l.classe==='A-1').remuneracao,8638.77);
+  assert.equal(dados.pcma.linhas.find(l=>l.cargo==='Delegado de Polícia — classe 3ª').remuneracao,22820.23);
+  assert.match(dados.pcma.fontes[0].tipo,/reprodução de diário oficial/);
+  assert.equal(dados.pprr.linhas.find(l=>l.classe==='A-1').remuneracao,6073.71);
+  assert.ok(dados.pcrr.linhas.every(l=>!l.cargo.startsWith('Escrivão')));
+  assert.equal(dados.pcrr.linhas.filter(l=>l.cargo.startsWith('Oficial Investigador')).length,10);
 });
 
 test('nova pesquisa automática preserva dados publicados e segue para candidata', () => {
