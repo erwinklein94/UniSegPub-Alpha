@@ -2,6 +2,8 @@
 
 ## Atualização em 20/10/2026
 
+Critério de seleção solicitado pelo responsável: priorizar produtos ligados ao tema do portal (segurança pública, concursos, trabalho/plantão, equipamentos e preparação física) ou ofertas com volume de vendas muito alto comprovado no painel Shopee. Conferir a pertinência, avaliação, preço, comissão do canal externo e disponibilidade antes de incluir. Distinguir vendas mensais da busca de vendas acumuladas da página de detalhes. Não prometer vendas futuras. Conferir o catálogo antes de criar anúncios para evitar produtos repetidos com links diferentes.
+
 A conta continua sem acesso à Open API: AppID e senha `--`, botão Aplicar desabilitado. Não foi encontrado plugin Shopee no diretório consultado. A integração automática da API não está ativa.
 
 Foi acrescentado ao admin de produtos um fluxo assistido: atalhos para ofertas e geração oficial de links, importação de até 20 produtos por seleção e abertura no editor para revisão. Links de afiliado são preservados; importações abrem com publicação desmarcada e campos desconhecidos ficam vazios. Links já cadastrados abrem o anúncio existente, sem sobrescrever seus dados.
