@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
+# As páginas administrativas declaram noindex no HTML. O Google precisa
+# conseguir lê-lo para retirar essas URLs dos resultados de pesquisa.
 
 Sitemap: https://universosegpub.com.br/sitemap.xml

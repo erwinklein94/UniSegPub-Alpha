@@ -5,6 +5,7 @@ Regras conservadoras:
 - inclui apenas HTMLs públicos da raiz, /artigos e /novidades;
 - ignora 404, partials, templates, páginas noindex e páginas com canonical para outra URL;
 - usa / para a home em vez de /index.html;
+- usa o histórico Git para lastmod, sem renovar datas ao copiar o checkout;
 - evita URLs duplicadas.
 
 Executar na raiz do projeto:
@@ -19,9 +20,10 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import subprocess
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -184,9 +186,29 @@ def page_sort_key(page: PageInfo) -> tuple[int, str]:
     return (300, page.rel_path)
 
 
-def last_modified_date(rel_path: str) -> str:
-    timestamp = (ROOT / rel_path).stat().st_mtime
-    return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
+def last_modified_date(rel_path: str) -> str | None:
+    # mtime muda em clones, extrações e builds sem que o conteúdo tenha mudado.
+    # As páginas dinâmicas também dependem dos dados versionados da consulta.
+    salary_data = [p.relative_to(ROOT).as_posix() for p in sorted((ROOT / "data/remuneracao").glob("*.json")) if not p.stem.endswith("-monitor")]
+    dependencies = {
+        "index.html": ["data/inicio/concursos.json"],
+        "remuneracao.html": [*salary_data, "config/remuneracao-instituicoes.json"],
+        "concursos.html": ["data/concursos/destaques.json", "config/concursos-instituicoes.json"],
+        "comparar-carreiras.html": [*salary_data, "config/remuneracao-instituicoes.json"],
+    }
+    paths = [rel_path, *dependencies.get(rel_path, [])]
+    try:
+        changed = subprocess.run(["git", "diff", "--name-only", "HEAD", "--", *paths], cwd=ROOT, capture_output=True, text=True, check=True, timeout=10)
+        if changed.stdout.strip():
+            return datetime.now(timezone.utc).date().isoformat()
+        history = subprocess.run(["git", "log", "-1", "--format=%cs", "--", *paths], cwd=ROOT, capture_output=True, text=True, check=True, timeout=10)
+        value = history.stdout.strip()
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+            return value
+    except (OSError, subprocess.SubprocessError):
+        pass
+    # Sem histórico verificável, é melhor omitir a data do que inventá-la.
+    return None
 
 
 def changefreq_for(rel_path: str) -> str:
@@ -227,7 +249,9 @@ def build_sitemap_xml(pages: list[PageInfo]) -> str:
     for page in pages:
         url = ET.SubElement(urlset, f"{{{SITEMAP_NS}}}url")
         ET.SubElement(url, f"{{{SITEMAP_NS}}}loc").text = url_for(page.rel_path)
-        ET.SubElement(url, f"{{{SITEMAP_NS}}}lastmod").text = last_modified_date(page.rel_path)
+        modified = last_modified_date(page.rel_path)
+        if modified:
+            ET.SubElement(url, f"{{{SITEMAP_NS}}}lastmod").text = modified
         ET.SubElement(url, f"{{{SITEMAP_NS}}}changefreq").text = changefreq_for(page.rel_path)
         ET.SubElement(url, f"{{{SITEMAP_NS}}}priority").text = priority_for(page.rel_path)
 

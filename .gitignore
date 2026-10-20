@@ -5,3 +5,5 @@ supabase/.temp/
 supabase/functions/.env
 supabase/functions/.env.*
 !supabase/functions/.env.example
+__pycache__/
+*.pyc
