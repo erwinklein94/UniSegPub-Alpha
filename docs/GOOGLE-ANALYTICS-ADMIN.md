@@ -1,8 +1,10 @@
 # Painel Google Analytics do admin
 
-Estado em 20/10/2026: função `google-analytics` publicada no Supabase (versão 1); Google Analytics Data API habilitada no projeto `river-key-395310`; conta de serviço `unisegpub-analytics@river-key-395310.iam.gserviceaccount.com` criada. O acesso de Leitor à propriedade e os Secrets ainda precisam ser confirmados. A conta indicada pelo responsável para entrar no Supabase é `sites.erwin.3@gmail.com`. A chave privada não faz parte deste repositório.
+Estado em 20/10/2026: integração ativada em produção. Função `google-analytics` publicada no Supabase (versão 1); Google Analytics Data API habilitada no projeto `river-key-395310`; conta de serviço `unisegpub-analytics@river-key-395310.iam.gserviceaccount.com` com papel Leitor na propriedade `534532275`; Secrets `GOOGLE_SERVICE_ACCOUNT_JSON` e `GA4_PROPERTY_ID` salvos no servidor. A consulta pelo botão Atualizar dados do painel publicado retornou dados reais em 20/10/2026 às 17:10 (Brasília): 106 usuários ativos, 118 sessões e 171 visualizações para 21/09 a 20/10. A conta indicada pelo responsável para entrar no Supabase é `sites.erwin.3@gmail.com`. A chave privada não faz parte deste repositório.
 
 A página `admin-google-analytics.html` usa a sessão existente do admin e consulta a função `google-analytics` somente ao clicar em **Atualizar dados**. Não armazena relatórios no navegador nem substitui os dados por exemplos quando a consulta falha.
+
+Verificação em produção: o recorte de 14 a 20/10/2026 com dispositivo `mobile`, país `Brazil`, canal `Organic Search` e página contendo `/artigos/` retornou 49 usuários ativos às 17:10:56 (Brasília). Uma nova atualização restaurou a visão geral de 30 dias. A função sem Bearer token retorna HTTP 401.
 
 ## Ativação
 
