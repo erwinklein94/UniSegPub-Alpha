@@ -4,91 +4,82 @@
   "sigla": "PPRJ",
   "uf": "RJ",
   "tema": "remuneracao",
-  "status": "Referência histórica — vigência a confirmar",
-  "titulo": "Remuneração bruta mensal da Polícia Penal do Rio de Janeiro",
-  "resumo": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada.",
+  "status": "Referência conferida documentalmente",
+  "titulo": "Referências remuneratórias da PPRJ",
+  "resumo": "Conferidas as três classes na página 76 do caderno de janeiro/2026. A composição soma vencimento e GVP de 20%, sem triênio, insalubridade ou auxílios.",
   "linhas": [
     {
-      "cargo": "Policial Penal 3ª classe",
-      "badge": "PPRJ",
+      "cargo": "Policial Penal — 3ª classe",
+      "badge": "3ª classe",
       "remuneracao": 7461.95,
       "beneficios": 0,
       "total": 7461.95,
-      "classe": "Policial Penal",
-      "criterio": "Remuneração bruta mensal da classe inicial",
-      "benefDesc": "Não soma triênio, auxílio-alimentação, auxílio-transporte, insalubridade provisória nem adicionais eventuais",
+      "classe": "3ª classe",
+      "criterio": "Vencimento R$ 6.218,29 + GVP de R$ 1.243,66.",
+      "benefDesc": "Auxílios, descontos, vantagens pessoais e parcelas eventuais não somados.",
       "fonteKey": "pprj",
-      "fonteNome": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
+      "fonteNome": "GESPERJ — Caderno de Remuneração, janeiro/2026, p. 76",
       "fonteUrl": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
       "valorPendente": false,
-      "verificacao": "vigencia_a_confirmar"
+      "verificacao": "fonte_oficial",
+      "tipo_valor": "remuneracao",
+      "referencia_data": "2026-01-01"
     },
     {
-      "cargo": "Policial Penal 2ª classe",
-      "badge": "PPRJ",
+      "cargo": "Policial Penal — 2ª classe",
+      "badge": "2ª classe",
       "remuneracao": 8291.06,
       "beneficios": 0,
       "total": 8291.06,
-      "classe": "Policial Penal",
-      "criterio": "Remuneração bruta mensal da classe intermediária",
-      "benefDesc": "Não soma triênio, auxílio-alimentação, auxílio-transporte, insalubridade provisória nem adicionais eventuais",
+      "classe": "2ª classe",
+      "criterio": "Vencimento R$ 6.909,22 + GVP de R$ 1.381,84.",
+      "benefDesc": "Auxílios, descontos, vantagens pessoais e parcelas eventuais não somados.",
       "fonteKey": "pprj",
-      "fonteNome": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
+      "fonteNome": "GESPERJ — Caderno de Remuneração, janeiro/2026, p. 76",
       "fonteUrl": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
       "valorPendente": false,
-      "verificacao": "vigencia_a_confirmar"
+      "verificacao": "fonte_oficial",
+      "tipo_valor": "remuneracao",
+      "referencia_data": "2026-01-01"
     },
     {
-      "cargo": "Policial Penal 1ª classe",
-      "badge": "PPRJ",
+      "cargo": "Policial Penal — 1ª classe",
+      "badge": "1ª classe",
       "remuneracao": 9212.29,
       "beneficios": 0,
       "total": 9212.29,
-      "classe": "Policial Penal",
-      "criterio": "Remuneração bruta mensal da classe superior",
-      "benefDesc": "Não soma triênio, auxílio-alimentação, auxílio-transporte, insalubridade provisória nem adicionais eventuais",
+      "classe": "1ª classe",
+      "criterio": "Vencimento R$ 7.676,91 + GVP de R$ 1.535,38.",
+      "benefDesc": "Auxílios, descontos, vantagens pessoais e parcelas eventuais não somados.",
       "fonteKey": "pprj",
-      "fonteNome": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
+      "fonteNome": "GESPERJ — Caderno de Remuneração, janeiro/2026, p. 76",
       "fonteUrl": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
       "valorPendente": false,
-      "verificacao": "vigencia_a_confirmar"
+      "verificacao": "fonte_oficial",
+      "tipo_valor": "remuneracao",
+      "referencia_data": "2026-01-01"
     }
   ],
   "fonte_principal": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
   "fontes": [
     {
-      "titulo": "Caderno de Remuneração do Estado do Rio de Janeiro - janeiro de 2026",
+      "titulo": "GESPERJ — Caderno de Remuneração, janeiro/2026, p. 76",
       "url": "https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf",
-      "tipo": "tabela salarial oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Lei nº 11.080, de 29 de dezembro de 2025",
-      "url": "https://www3.alerj.rj.gov.br/lotus_notes/default.asp?URL=L2NvbnRsZWkubnNmL2M4YWEwOTAwMDI1ZmVlZjYwMzI1NjRlYzAwNjBkZmZmLzQwNWEwNzU2OTVkZDYxNGI4MzI1NzUyMDAwNWNkYTRlP09wZW5Eb2N1bWVudA%3D%3D",
-      "tipo": "lei estadual",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Notícia institucional da Alerj sobre a GVP dos inspetores de Polícia Penal",
-      "url": "https://www.alerj.rj.gov.br/Visualizar/Noticia/82052",
-      "tipo": "página governamental",
-      "data_consulta": "2026-05-18"
+      "tipo": "documento oficial",
+      "data_consulta": "2026-10-19",
+      "sha256": "6dad8170ced4d3fd5f2fcf7be11aedf3c2f9086b92c04c27231d8d00baa613e0"
     }
   ],
-  "ultima_pesquisa": "2026-05-18",
-  "classe_atualizacao": "a_confirmar",
-  "modelo_openai": "gpt-5.4",
-  "atualizado_pela_openai": true,
-  "precisa_revisao_humana": true,
+  "ultima_pesquisa": "2026-10-20",
+  "classe_atualizacao": "conferida",
+  "precisa_revisao_humana": false,
   "alertas": [
-    "A carreira foi localizada com 3 classes remuneratórias oficiais no Caderno de Remuneração de janeiro de 2026.",
-    "Os valores publicados para Policial Penal incluem vencimento-base e GVP de 20%.",
-    "Não foram somados triênio, auxílio-alimentação, auxílio-transporte, insalubridade provisória de R$ 100,00, RAS, PEOP ou outras verbas variáveis.",
-    "Classificação automática: Atualização fraca (82/100)."
+    "Conferidas as três classes na página 76 do caderno de janeiro/2026. A composição soma vencimento e GVP de 20%, sem triênio, insalubridade ou auxílios.",
+    "Valores brutos de referência no recorte descrito. Consulte o tipo de valor, a data e as exclusões; a tabela não representa pagamento líquido individual."
   ],
   "revisao_dados": {
-    "data": "2026-10-18",
-    "situacao": "a_confirmar",
-    "nota": "Valores de referência da pesquisa de 18/05/2026. A vigência de toda esta tabela em outubro/2026 ainda não foi confirmada; os valores não devem ser tratados como uma tabela atual validada."
+    "data": "2026-10-20",
+    "situacao": "conferida",
+    "nota": "Conferidas as três classes na página 76 do caderno de janeiro/2026. A composição soma vencimento e GVP de 20%, sem triênio, insalubridade ou auxílios."
   }
 }

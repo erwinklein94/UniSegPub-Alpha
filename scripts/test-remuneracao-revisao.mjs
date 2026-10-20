@@ -7,7 +7,7 @@ import { destinoPesquisaRemuneracao } from './lib/remuneracao-publicacao.mjs';
 const ler = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const config = ler('config/remuneracao-instituicoes.json');
 const dados = Object.fromEntries(config.map(i => [i.id, ler(i.arquivo_saida)]));
-const audit = ler('data/remuneracao/_auditoria-2026-10-18.json');
+const audit = ler('data/remuneracao/_auditoria-2026-10-20.json');
 
 test('todas as instituições têm revisão, fonte e somas consistentes', () => {
   assert.equal(config.length, 110);
@@ -53,6 +53,31 @@ test('valores críticos e etapas de 2026 permanecem vinculados à referência co
   assert.ok(dados.pmdf.linhas.every(l => l.tipo_valor === 'soldo'));
   assert.equal(dados.pcap.linhas.length, 22);
   assert.equal(dados.pcdf.linhas.length, 20);
+});
+
+test('primeiro lote de 30 preserva composição, colunas e referências oficiais', () => {
+  const valor=(id,cargo)=>dados[id].linhas.find(l=>l.cargo===cargo)?.remuneracao;
+  assert.equal(audit.resumo.novas_tabelas_conferidas,30);
+  assert.equal(audit.resumo.conferidas,80);
+  assert.equal(audit.resumo.a_confirmar,30);
+  assert.equal(valor('pcsp','Escrivão de Polícia de 3ª Classe'),3395.52);
+  assert.equal(valor('pcpr','Delegado de Polícia — nível I'),26000);
+  assert.equal(valor('pppr','Policial Penal — classe XII'),4776.42);
+  assert.equal(valor('pmce','Soldado'),6187.96);
+  assert.equal(valor('ppce','Policial Penal — referência 1'),3615.03);
+  assert.ok(dados.ppce.linhas.every(l=>l.tipo_valor==='vencimento_base'));
+  assert.equal(valor('pmto','SOLDADO — referência A'),7215.91);
+  assert.equal(valor('pcro','Delegado de Polícia — Especial'),39000);
+  assert.equal(valor('ppro','Policial Penal — Agente'),3105);
+  assert.equal(valor('pmma','Soldado'),6149.08); // antecipação: não reaplicar julho/2026
+  assert.equal(valor('pcgo','Delegado de Polícia — Especial — padrão II'),49442.66);
+  assert.equal(valor('pmpe','SOLDADO'),5617.92);
+  assert.equal(dados.pppe.linhas.length,80);
+  assert.equal(dados.pcpe.linhas.length,161);
+  assert.equal(dados.pmrn.linhas.find(l=>l.cargo==='SOLDADO — nível I').remuneracao,4695.49);
+  assert.ok(dados.pcrn.linhas.every(l=>l.referencia_data==='2026-04-01'&&!l.vigencia_inicio));
+  assert.ok(dados.bmrj.linhas.every(l=>l.tipo_valor==='soldo'&&l.beneficios===0));
+  for(const id of ['pcpr','pcgo','pcal'])assert.ok(new Set(dados[id].linhas.map(l=>l.fonteUrl)).size>=2,id);
 });
 
 test('nova pesquisa automática preserva dados publicados e segue para candidata', () => {

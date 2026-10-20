@@ -25,7 +25,8 @@ test('comparação exige cargo explícito, fonte, vigência e conferência; pend
  const pf=dados('pf'),r=referenciaLinha(pf,pf.linhas[0],'2026-10-19');
  assert.equal(r.valor,pf.linhas[0].remuneracao);assert.equal(r.confirmada,true);
  assert.equal(referenciaLinha(pf,null).valor,null);
- for(const id of ['bmrj','pprj']){const d=dados(id);assert.equal(referenciaLinha(d,d.linhas[0]).valor,null);}
+ for(const id of ['pcam','ppal']){const d=dados(id);assert.equal(referenciaLinha(d,d.linhas[0]).valor,null);}
+ for(const id of ['bmrj','pprj']){const d=dados(id);assert.equal(referenciaLinha(d,d.linhas[0],'2026-10-20').valor,d.linhas[0].remuneracao);}
  for(const patch of [{valorPendente:true},{verificacao:'vigencia_a_confirmar'},{vigencia_inicio:'2099-01-01'},
   {vigencia_inicio:''},{remuneracao:NaN},{remuneracao:-1},{fonteUrl:'javascript:alert(1)'}])assert.equal(referenciaLinha(pf,{...pf.linhas[0],...patch},'2026-10-19').valor,null);
 });
@@ -52,5 +53,7 @@ test('guias e diretório são estáticos, vinculados às referências e honestos
   assert.match(html,/metodologia\.html/);assert.doesNotMatch(html,/FAQPage/);
  }
  const bmrj=fs.readFileSync('artigos/salario-cbmerj-2026.html','utf8');
- assert.match(bmrj,/<details><summary>Ver os 4 registros com vigência a confirmar/);
+ assert.doesNotMatch(bmrj,/<details><summary>Ver os \d+ registros com vigência a confirmar/);
+ assert.equal((bmrj.match(/data-linha-referencia/g)||[]).length,15);
+ assert.match(bmrj,/somente soldo/);
 });
