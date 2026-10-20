@@ -1,6 +1,6 @@
 /* Seleções do portal oficial: não acessa cookies nem APIs privadas da Shopee. */
 export function chaveShopee(href) {
-  try { const u = new URL(href); if (u.protocol !== 'https:' || u.hostname !== 's.shopee.com.br' || u.username || u.password || !/^\/[a-zA-Z0-9]+\/?$/.test(u.pathname) || u.hash) return null; return u.origin + u.pathname.replace(/\/$/, ''); } catch { return null; }
+  try { const u = new URL(href); if (u.protocol !== 'https:' || !['s.shopee.com.br', 'shope.ee'].includes(u.hostname) || u.port || u.username || u.password || !/^\/[a-zA-Z0-9]+\/?$/.test(u.pathname) || u.hash) return null; return u.origin + u.pathname.replace(/\/$/, ''); } catch { return null; }
 }
 const texto = (v, max, nome, obrigatorio = false) => {
   if (v == null && !obrigatorio) return '';
@@ -22,7 +22,7 @@ export function lerSelecaoShopee(conteudo, hoje) {
     if (!item || typeof item !== 'object' || Array.isArray(item)) throw Error('Produto ' + (i + 1) + ' inválido.');
     const titulo = texto(item.titulo, 200, 'nome', true), href = texto(item.href, 2048, 'link de afiliado', true);
     const chave = chaveShopee(href);
-    if (!chave) throw Error('Use um link de afiliado HTTPS gerado pela Shopee em s.shopee.com.br. Um endereço comum de produto não comprova afiliação.');
+    if (!chave) throw Error('Use um link de afiliado HTTPS gerado pela Shopee em s.shopee.com.br ou shope.ee. Um endereço comum de produto não comprova afiliação.');
     if (vistos.has(chave)) throw Error('Há links repetidos na seleção. Mantenha cada produto apenas uma vez.');
     vistos.add(chave);
     const imagem = texto(item.imagem, 2048, 'imagem', true);

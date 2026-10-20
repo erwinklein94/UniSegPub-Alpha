@@ -53,7 +53,7 @@
   function identidade(href) {
     try {
       const url = new URL(href);
-      const plataforma = { 'go.hotmart.com': 'Hotmart', 's.shopee.com.br': 'Shopee' }[url.hostname];
+      const plataforma = { 'go.hotmart.com': 'Hotmart', 's.shopee.com.br': 'Shopee', 'shope.ee': 'Shopee' }[url.hostname];
       if (!plataforma || url.protocol !== 'https:' || url.username || url.password || !/^\/[a-zA-Z0-9]+\/?$/.test(url.pathname)) return null;
       return { id: plataforma.toLowerCase() + ':' + url.pathname.replace(/\//g, ''), plataforma };
     } catch { return null; }

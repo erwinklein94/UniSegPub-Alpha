@@ -77,6 +77,11 @@ test('aceita botão do meio, ignora clique direito e domínios falsos', () => {
   assert.equal(a.dados().filter(e => e[0] === 'event').length, 0);
   a.clicar('https://s.shopee.com.br/ABC', 'auxclick', 1);
   assert.equal(a.dados().filter(e => e[1] === 'select_item').length, 1);
+  a.clicar('https://shope.ee/LinkAPI?sub_id=nao-transmitir');
+  const ultimo = a.dados().filter(e => e[1] === 'select_item').at(-1);
+  assert.equal(ultimo[2].items[0].affiliation, 'Shopee');
+  assert.equal(ultimo[2].items[0].item_id, 'shopee:LinkAPI');
+  assert.equal(JSON.stringify(ultimo).includes('nao-transmitir'), false);
 });
 test('ignora catálogo pausado, admin e ambientes de teste', () => {
   const a = ambiente();

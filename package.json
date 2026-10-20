@@ -7,7 +7,7 @@
     "test:editorial": "node --test scripts/test-comparador.mjs && node scripts/build-comparador.mjs --check && node scripts/build-editorial.mjs --check",
     "test:adsense": "node --test scripts/test-adsense-consent.mjs scripts/test-analytics.mjs",
     "test:remuneracao": "node --test scripts/test-remuneracao-revisao.mjs",
-    "test:admin": "node --test scripts/test-admin-analytics.mjs scripts/test-admin-adsense.mjs scripts/test-google-analytics.mjs scripts/test-admin-shopee.mjs",
+    "test:admin": "node --test scripts/test-admin-analytics.mjs scripts/test-admin-adsense.mjs scripts/test-google-analytics.mjs scripts/test-admin-shopee.mjs scripts/test-shopee-integration.mjs",
     "test:produtos": "node --test scripts/test-produtos-disponibilidade.mjs",
     "build:home": "node scripts/build-home.mjs",
     "test:home": "node --test scripts/test-inicio.mjs && node scripts/build-home.mjs --check",

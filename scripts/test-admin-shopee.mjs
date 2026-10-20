@@ -7,6 +7,7 @@ test('preserva afiliação e prepara sem publicar nem inventar comissão', () =>
   const [p] = ler({ ...item, ativo: true, destaque: true, tipo: 'fixa' });
   assert.equal(p.href, item.href); assert.equal(p.ativo, false); assert.equal(p.destaque, false);
   assert.equal(p.tipo, 'estimada'); assert.equal(p.comissao, null); assert.equal(p.categoria, 'produtosFisicos');
+  assert.equal(ler({ ...item, href: 'https://shope.ee/Abc123' })[0].href, 'https://shope.ee/Abc123');
 });
 test('bloqueia produto sem afiliação, domínios falsos, credenciais e protocolos executáveis', () => {
   for (const href of ['https://shopee.com.br/product/1/2', 'https://s.shopee.com.br.evil.test/Ab123xyz', 'https://x@s.shopee.com.br/Ab123xyz', 'http://s.shopee.com.br/Ab123xyz', 'javascript:alert(1)', 'https://s.shopee.com.br/Ab123xyz#token']) assert.throws(() => ler({ ...item, href }));

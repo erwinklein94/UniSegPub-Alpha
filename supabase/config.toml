@@ -8,3 +8,7 @@ verify_jwt = false
 # O handler valida a sessão no Auth e a lista privada de administradores.
 [functions.google-analytics]
 verify_jwt = false
+
+# Todas as rotas validam o token no Auth e a lista privada hotmart_admins.
+[functions.shopee-integration]
+verify_jwt = false
