@@ -57,16 +57,16 @@ test('valores críticos e etapas de 2026 permanecem vinculados à referência co
 
 test('primeiro lote de 30 preserva composição, colunas e referências oficiais', () => {
   const valor=(id,cargo)=>dados[id].linhas.find(l=>l.cargo===cargo)?.remuneracao;
-  assert.equal(audit.resumo.novas_tabelas_conferidas,30);
-  assert.equal(audit.resumo.conferidas,80);
-  assert.equal(audit.resumo.a_confirmar,30);
+  assert.equal(audit.resumo.novas_tabelas_conferidas,53);
+  assert.equal(audit.resumo.conferidas,103);
+  assert.equal(audit.resumo.a_confirmar,7);
   assert.equal(valor('pcsp','Escrivão de Polícia de 3ª Classe'),3395.52);
   assert.equal(valor('pcpr','Delegado de Polícia — nível I'),26000);
   assert.equal(valor('pppr','Policial Penal — classe XII'),4776.42);
   assert.equal(valor('pmce','Soldado'),6187.96);
   assert.equal(valor('ppce','Policial Penal — referência 1'),3615.03);
   assert.ok(dados.ppce.linhas.every(l=>l.tipo_valor==='vencimento_base'));
-  assert.equal(valor('pmto','SOLDADO — referência A'),7215.91);
+  assert.equal(valor('pmto','SOLDADO — referência A'),7497.33); // matriz posterior de maio/2026
   assert.equal(valor('pcro','Delegado de Polícia — Especial'),39000);
   assert.equal(valor('ppro','Policial Penal — Agente'),3105);
   assert.equal(valor('pmma','Soldado'),6149.08); // antecipação: não reaplicar julho/2026
@@ -78,6 +78,21 @@ test('primeiro lote de 30 preserva composição, colunas e referências oficiais
   assert.ok(dados.pcrn.linhas.every(l=>l.referencia_data==='2026-04-01'&&!l.vigencia_inicio));
   assert.ok(dados.bmrj.linhas.every(l=>l.tipo_valor==='soldo'&&l.beneficios===0));
   for(const id of ['pcpr','pcgo','pcal'])assert.ok(new Set(dados[id].linhas.map(l=>l.fonteUrl)).size>=2,id);
+});
+
+test('complemento preserva matrizes completas, enquadramentos e etapas históricas', () => {
+  for (const [id, quantidade] of Object.entries({ppal:28,pcam:31,pmba:50,bmba:50,pcba:28,ppba:21,pmms:154,bmms:154,pcms:378,ppto:63,pcto:362,pmac:22,bmac:22,pcac:30,ppac:30,pmes:199,bmes:199,ppes:60,pces:120,pmmt:38,bmmt:38,pcmt:85,ppmt:48})) {
+    assert.equal(dados[id].linhas.length, quantidade, id);
+    assert.equal(new Set(dados[id].linhas.map(l=>l.cargo)).size, quantidade, id);
+  }
+  assert.equal(dados.ppto.linhas.find(l=>l.classe==='3ª-A').remuneracao,5734.75);
+  assert.equal(dados.pmmt.linhas.find(l=>l.cargo.startsWith('SOLDADO LC')&&l.classe==='N-001').remuneracao,6327.91);
+  assert.equal(dados.ppmt.linhas.find(l=>l.classe==='A-001').remuneracao,5155.94);
+  assert.equal(dados.pces.linhas.find(l=>l.cargo==='Delegado de Polícia — 3ª, referência 1').remuneracao,18202.42);
+  assert.ok(dados.pcam.linhas.every(l=>l.vigencia_inicio==='2025-12-01'));
+  for (const id of ['pmac','bmac','pcac','ppac']) assert.ok(dados[id].linhas.every(l=>l.referencia_data==='2022-04-01'&&!l.vigencia_inicio),id);
+  assert.equal(dados.pcms.linhas.filter(l=>l.cargo.startsWith('Delegado')).length,35);
+  assert.ok(dados.pcms.linhas.every(l=>!l.cargo.includes('DAP')));
 });
 
 test('nova pesquisa automática preserva dados publicados e segue para candidata', () => {
