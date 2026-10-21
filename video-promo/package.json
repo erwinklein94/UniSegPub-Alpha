@@ -1,0 +1,32 @@
+{
+  "name": "unisegpub-video-promo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vídeo publicitário do Universo Segurança Pública (Remotion)",
+  "scripts": {
+    "dev": "remotion studio",
+    "sfx": "node scripts/gerar-sfx.mjs",
+    "stills": "node scripts/render-stills.mjs",
+    "render:vertical": "remotion render Promo-Vertical out/unisegpub-vertical-30s.mp4",
+    "render:horizontal": "remotion render Promo-Horizontal out/unisegpub-horizontal-30s.mp4",
+    "render:bumper": "remotion render Promo-Bumper out/unisegpub-bumper-6s.mp4",
+    "render": "npm run render:vertical && npm run render:horizontal && npm run render:bumper",
+    "render:sem-musica": "remotion render Promo-Vertical out/unisegpub-vertical-30s-sem-musica.mp4 --props=props/sem-musica.json && remotion render Promo-Horizontal out/unisegpub-horizontal-30s-sem-musica.mp4 --props=props/sem-musica.json && remotion render Promo-Bumper out/unisegpub-bumper-6s-sem-musica.mp4 --props=props/sem-musica.json",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.537",
+    "@remotion/fonts": "4.0.537",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.537"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "@remotion/bundler": "4.0.537",
+    "@remotion/renderer": "4.0.537",
+    "@types/react": "19.1.0",
+    "typescript": "^5.8.3"
+  }
+}
