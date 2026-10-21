@@ -1,0 +1,108 @@
+{
+  "nome": "USP | Página inicial | Pesquisa | R$100",
+  "status": "Rascunho no Google Ads; confirmação de identidade exigida para salvar o anúncio. Ainda não publicada.",
+  "inicioPlanejado": "2026-10-21",
+  "fimPlanejado": "2026-10-27",
+  "tipoOrcamentoPlanejado": "Orçamento total da campanha",
+  "pendencias": [
+    "Confirmar a identidade na conta Google e repetir o salvamento que foi bloqueado",
+    "Informar e conferir R$100 no orçamento total da campanha",
+    "Concluir e conferir os dois grupos, anúncios e palavras negativas",
+    "Revisar e publicar a campanha",
+    "Concluir a verificação do anunciante exigida pelo Google para permitir exibição"
+  ],
+  "destino": "https://universosegpub.com.br/",
+  "orcamentoTotalBRL": 100,
+  "duracaoPlanejadaDias": 7,
+  "tipo": "Pesquisa",
+  "objetivo": "Visitas à página inicial",
+  "lances": "Maximizar cliques",
+  "limiteCPCPlanejadoBRL": 1,
+  "local": "Brasil — pessoas presentes no Brasil",
+  "idioma": "Português",
+  "redes": "Somente Pesquisa Google; sem parceiros de pesquisa e sem Display",
+  "campanhaAnalytics": "usp_home_100_202610",
+  "grupos": [
+    {
+      "nome": "Salários e carreiras",
+      "utmContent": "salarios",
+      "palavras": [
+        "\"salário polícia militar\"",
+        "\"salário polícia civil\"",
+        "\"salário pmmg\"",
+        "\"salário pcmg\"",
+        "\"tabela salarial pmerj\"",
+        "\"quanto ganha policial\"",
+        "[salário pmmg 2026]",
+        "[salário pcmg]",
+        "[tabela salarial pmerj 2026]"
+      ],
+      "titulos": [
+        "Salários da Segurança Pública",
+        "Consulte Salários por Cargo",
+        "Polícias, Bombeiros e PRF",
+        "Tabelas e Fontes de Referência",
+        "Compare Cargos e Carreiras",
+        "Consulta Gratuita no Portal",
+        "Universo Segurança Pública",
+        "Remuneração por Estado",
+        "Entenda a Composição Salarial",
+        "Portal Independente"
+      ],
+      "descricoes": [
+        "Consulte remuneração por cargo e estado. Veja fontes e contexto na página inicial.",
+        "Explore carreiras policiais e de bombeiros. Consulta gratuita em portal independente.",
+        "Compare referências brutas e confira a composição e a vigência informadas nas fontes.",
+        "Salários, concursos e informações de carreira organizados em um só portal. Acesse."
+      ]
+    },
+    {
+      "nome": "Concursos e instituições",
+      "utmContent": "concursos",
+      "palavras": [
+        "\"concursos policiais\"",
+        "\"concurso polícia militar\"",
+        "\"concurso polícia civil\"",
+        "\"concurso bombeiros\"",
+        "\"concursos segurança pública\"",
+        "\"requisitos concurso policial\"",
+        "[concursos policiais 2026]",
+        "[concursos segurança pública]"
+      ],
+      "titulos": [
+        "Concursos da Segurança Pública",
+        "Explore Concursos Policiais",
+        "Editais, Prazos e Requisitos",
+        "Conheça as Carreiras Policiais",
+        "Polícias e Bombeiros no Portal",
+        "Fontes para Sua Consulta",
+        "Salários e Concursos em Um Só",
+        "Universo Segurança Pública",
+        "Planeje Seu Próximo Passo",
+        "Portal Independente"
+      ],
+      "descricoes": [
+        "Explore concursos, requisitos e fontes para consulta. Comece pela página inicial.",
+        "Conheça carreiras policiais e de bombeiros, remuneração e referências de editais.",
+        "Acompanhe informações e confira cada edital na fonte oficial. Portal independente.",
+        "Encontre consultas de salários, concursos e instituições da segurança pública. Acesse."
+      ]
+    }
+  ],
+  "negativasFrase": [
+    "boletim de ocorrência",
+    "telefone polícia",
+    "denúncia",
+    "emergência",
+    "190",
+    "notícias policiais hoje",
+    "ocorrências policiais",
+    "filme",
+    "jogo",
+    "torrent",
+    "download pdf",
+    "segunda via boleto",
+    "login",
+    "comprar arma"
+  ]
+}

@@ -15,9 +15,10 @@
   function iniciar() {
     if (iniciado || !root.USPConsent?.get().analytics) return;
     iniciado = true;
-    // Não envia parâmetros de consulta ou fragmentos que possam conter dados pessoais.
+    // A URL permanece limpa; a campanha conhecida usa somente rótulos controlados.
     root.gtag('config', destino, {
       page_location: root.location.origin + root.location.pathname,
+      ...campanha(),
       page_referrer: referencia(), allow_google_signals: false, allow_ad_personalization_signals: false
     });
     if (!doc.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]')) {
@@ -27,6 +28,16 @@
       doc.head.append(script);
     }
     registrarAcesso();
+  }
+  function campanha() {
+    try {
+      const parametros = new URL(root.location.origin + root.location.pathname + (root.location.search || '')).searchParams;
+      if (parametros.get('utm_source') !== 'google' || parametros.get('utm_medium') !== 'cpc' || parametros.get('utm_campaign') !== 'usp_home_100_202610') return {};
+      const dados = { campaign_source: 'google', campaign_medium: 'cpc', campaign_name: 'usp_home_100_202610' };
+      const grupo = parametros.get('utm_content');
+      if (['salarios', 'concursos', 'portal'].includes(grupo)) dados.campaign_content = grupo;
+      return dados;
+    } catch { return {}; }
   }
   function referencia() {
     try { return new URL(doc.referrer).origin; } catch { return ''; }

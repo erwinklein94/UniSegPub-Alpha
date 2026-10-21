@@ -4,11 +4,11 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const codigo = fs.readFileSync(new URL('../js/ui/analytics.js', import.meta.url), 'utf8');
-function ambiente(hostname = 'universosegpub.com.br', pathname = '/produtos.html', consentimento = true) {
+function ambiente(hostname = 'universosegpub.com.br', pathname = '/produtos.html', consentimento = true, search = '') {
   const eventos = {}, scripts = [];
   const autorizacao = { analytics: consentimento };
   const requisicoes = [];
-  const window = { location: { hostname, pathname, origin: 'https://' + hostname },
+  const window = { location: { hostname, pathname, origin: 'https://' + hostname, search },
     USPConsent: { get: () => autorizacao },
     addEventListener: (nome, callback) => { eventos[nome] = callback; },
     localStorage: { getItem: () => null }, sessionStorage: { getItem: () => null, setItem: () => {} },
@@ -46,6 +46,26 @@ test('sem consentimento não carrega GA4, não registra acessos e não mede cliq
   a.autorizacao.analytics = false;
   a.clicar('https://go.hotmart.com/ABC123');
   assert.equal(a.dados().filter(e => e[0] === 'event').length, 0);
+});
+test('campanha conhecida identifica Google CPC após consentimento, sem enviar query ou dados pessoais', () => {
+  const a = ambiente('universosegpub.com.br', '/', false, '?utm_source=google&utm_medium=cpc&utm_campaign=usp_home_100_202610&utm_content=salarios&email=nao-transmitir&gclid=nao-transmitir');
+  assert.equal(a.dados().filter(e => e[0] === 'config').length, 0);
+  a.autorizacao.analytics = true; a.eventos['usp:consent-change']();
+  const config = a.dados().find(e => e[0] === 'config')[2];
+  assert.equal(config.campaign_source, 'google'); assert.equal(config.campaign_medium, 'cpc');
+  assert.equal(config.campaign_name, 'usp_home_100_202610'); assert.equal(config.campaign_content, 'salarios');
+  assert.equal(config.page_location, 'https://universosegpub.com.br/');
+  assert.equal(JSON.stringify(a.dados()).includes('nao-transmitir'), false);
+  assert.equal(JSON.stringify(a.requisicoes).includes('usp_home_100_202610'), false);
+});
+test('rótulos desconhecidos ou adulterados não viram atribuição da campanha', () => {
+  for (const search of ['?utm_source=google&utm_medium=cpc&utm_campaign=email@exemplo.com', '?utm_source=outro&utm_medium=cpc&utm_campaign=usp_home_100_202610']) {
+    const a = ambiente('universosegpub.com.br', '/', true, search);
+    assert.equal(a.dados().find(e => e[0] === 'config')[2].campaign_name, undefined);
+  }
+  const a = ambiente('universosegpub.com.br', '/', true, '?utm_source=google&utm_medium=cpc&utm_campaign=usp_home_100_202610&utm_content=email@exemplo.com');
+  assert.equal(a.dados().find(e => e[0] === 'config')[2].campaign_content, undefined);
+  assert.equal(JSON.stringify(a.dados()).includes('email@exemplo.com'), false);
 });
 test('inicia uma única coleta e não registra conversões de venda na abertura', () => {
   const a = ambiente();
