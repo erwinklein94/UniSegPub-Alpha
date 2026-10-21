@@ -4,24 +4,25 @@ Configuração e textos: [campanha-google-ads-home-100.json](campanha-google-ads
 
 ## Situação em 20/10/2026
 
-A campanha está em preparação no Google Ads e **não foi publicada**. O primeiro anúncio foi preenchido, mas o Google bloqueou o salvamento e exigiu confirmação de identidade. É necessário concluir a confirmação no dispositivo do titular e repetir o salvamento. A conta também tem uma verificação do anunciante pendente, que impede a exibição dos anúncios. A campanha antiga de reparos foi pausada.
+A campanha foi **publicada e programada para 21 a 27/10/2026**, com orçamento total de **R$100**. O painel mostra status **Pendente**, por ainda não ter chegado a data de início. No encerramento da configuração, o gasto e os cliques eram zero. Publicação não significa que os anúncios já estejam sendo exibidos ou tenham aprovação editorial definitiva.
 
-O rascunho foi configurado para Pesquisa, cliques, limite de CPC de R$1, português e pessoas presentes no Brasil. Parceiros de pesquisa, Display, AI Max, personalização automática de texto e expansão da URL final foram desativados. O tipo de orçamento total foi selecionado; **o valor de R$100 ainda precisa ser informado, salvo e conferido antes da publicação**. As datas planejadas são 21 a 27/10/2026; precisam ser revistas se a confirmação ocorrer depois do início.
+A configuração salva usa Pesquisa, Maximizar cliques, limite de CPC de R$1, português e pessoas presentes no Brasil. Parceiros de pesquisa, Display, AI Max, personalização automática de texto e expansão da URL final foram desativados. O cabeçalho do painel confirmou **R$100 (total)** e as datas de início e término. Não aumentar o valor nem prolongar o teste sem nova solicitação.
 
-## Conclusão no Ads
+As tarefas obrigatórias de identificação do anunciante, documentos e declaração sobre anúncios na UE constam como concluídas. O aviso de conta pausada desapareceu após a conclusão. O anunciante público confirmado pelo titular é ERWIN KLEIN. A pergunta adicional sobre quem paga é opcional e ficou sem alteração. A campanha antiga de reparos permanece pausada.
 
-1. Confirmar a identidade na janela de autenticação do Google e salvar novamente o anúncio.
-2. Finalizar os grupos de salários e concursos com os textos e as palavras do JSON. Conferir se os dados preenchidos antes do bloqueio foram preservados.
-3. Usar **Orçamento total da campanha: R$100**, com data de término. O valor total não deve ser colocado em orçamento diário. Se a opção de total não estiver disponível, interromper a publicação até definir uma alternativa que respeite o limite autorizado.
-4. Aplicar as palavras negativas em correspondência de frase, conferir recursos herdados da campanha antiga e evitar telefones ou destinos daquele negócio.
-5. Conferir que todas as URLs finais levam à página inicial, com o grupo correto em `utm_content`. Não criar sitelinks para outros destinos nesta campanha.
-6. Revisar os valores salvos e publicar. Concluir a verificação do anunciante para permitir a exibição. Não declarar a campanha ativa enquanto a conta permanecer pausada pelo Google.
+## Anúncios e segmentação
+
+O teste concentra a veiculação no grupo **Salários e carreiras**, com nove palavras em correspondência de frase ou exata, um anúncio responsivo com dez títulos e quatro descrições, e destino na página inicial. As 14 palavras negativas do JSON foram salvas em correspondência de frase no nível da campanha. Não foram adicionados telefone, sitelinks ou recursos do negócio antigo.
+
+O grupo **Concursos e instituições** foi criado com oito palavras, mas está **pausado**. Sua cópia específica no JSON é uma proposta, não uma descrição do anúncio atualmente salvo, que herdou a cópia de salários. A edição foi bloqueada pela exigência de telefone associada à meta antiga de chamadas. A conta exige ao menos uma meta existente; não foi criada uma conversão falsa nem uma ligação para contornar essa exigência. A campanha usa **Maximizar cliques**, portanto essa meta de relatórios não determina seus lances. O teste não depende do grupo pausado.
+
+Quando houver dados de veiculação, avaliar cliques, CPC, pesquisas acionadas e visitas no GA4. Não há garantia de volume de cliques ou consumo integral do orçamento.
 
 ## Medição no site
 
 O Google Ads atrai visitantes e informa cliques e custo. O GA4 mede as visitas e o uso do site após o consentimento para análise. Os totais das duas ferramentas podem diferir por consentimento, bloqueadores e diferenças de definição entre clique e sessão.
 
-As URLs finais usam `utm_source=google`, `utm_medium=cpc`, `utm_campaign=usp_home_100_202610` e `utm_content=salarios` ou `concursos`. A integração preserva a URL limpa no GA4 e transmite somente esses rótulos controlados. Não envia a query completa, identificadores de clique ou valores arbitrários recebidos pela URL. A mudança não cria eventos de compra ou receita.
+A URL final do anúncio em veiculação programada usa `utm_source=google`, `utm_medium=cpc`, `utm_campaign=usp_home_100_202610` e `utm_content=salarios`. O rótulo `concursos` está preparado para uma futura edição do grupo pausado. A integração preserva a URL limpa no GA4 e transmite somente esses rótulos controlados. Não envia a query completa, identificadores de clique ou valores arbitrários recebidos pela URL. A mudança não cria eventos de compra ou receita.
 
 Validação: `node --test scripts/test-analytics.mjs scripts/test-adsense-consent.mjs` — 14 testes aprovados.
 

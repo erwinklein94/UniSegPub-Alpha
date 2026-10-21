@@ -1,15 +1,11 @@
 {
   "nome": "USP | Página inicial | Pesquisa | R$100",
-  "status": "Rascunho no Google Ads; confirmação de identidade exigida para salvar o anúncio. Ainda não publicada.",
+  "status": "Publicada; Pendente pelo início programado para 21/10/2026. Grupo de salários ativado, grupo de concursos pausado.",
   "inicioPlanejado": "2026-10-21",
   "fimPlanejado": "2026-10-27",
-  "tipoOrcamentoPlanejado": "Orçamento total da campanha",
+  "tipoOrcamentoConfirmado": "Orçamento total da campanha",
   "pendencias": [
-    "Confirmar a identidade na conta Google e repetir o salvamento que foi bloqueado",
-    "Informar e conferir R$100 no orçamento total da campanha",
-    "Concluir e conferir os dois grupos, anúncios e palavras negativas",
-    "Revisar e publicar a campanha",
-    "Concluir a verificação do anunciante exigida pelo Google para permitir exibição"
+    "Aguardar início programado e elegibilidade editorial do anúncio; não houve veiculação no momento da configuração"
   ],
   "destino": "https://universosegpub.com.br/",
   "orcamentoTotalBRL": 100,
@@ -25,6 +21,7 @@
   "grupos": [
     {
       "nome": "Salários e carreiras",
+      "status": "Ativado; veiculação pendente do início da campanha",
       "utmContent": "salarios",
       "palavras": [
         "\"salário polícia militar\"",
@@ -58,6 +55,7 @@
     },
     {
       "nome": "Concursos e instituições",
+      "status": "Pausado; títulos, descrições e utmContent abaixo são proposta. O anúncio salvo herdou a cópia e o utmContent salarios do primeiro grupo; edição bloqueada pela meta antiga de chamadas.",
       "utmContent": "concursos",
       "palavras": [
         "\"concursos policiais\"",
