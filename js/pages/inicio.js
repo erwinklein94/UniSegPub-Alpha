@@ -62,12 +62,13 @@ function atualizarEscolha() {
   uf.disabled = !tipo.value || tipo.value === 'pf' || tipo.value === 'prf';
   if (uf.disabled) uf.value = '';
   const id = instituicaoDaEscolha(tipo.value, uf.value);
+  $('#quick-load').disabled = !id;
   aviso.classList.remove('is-error');
   aviso.textContent = id ? `Consultar: ${INSTITUICOES_INICIO.find(i => i.id === id).nome}.` : 'Selecione a carreira e, quando necessário, a UF.';
 }
 tipo.addEventListener('change', atualizarEscolha);
 uf.addEventListener('change', atualizarEscolha);
-$('#quick-load').disabled = false;
+atualizarEscolha();
 $('#inicio-consulta').addEventListener('submit', evento => {
   evento.preventDefault();
   const id = instituicaoDaEscolha(tipo.value, uf.value);

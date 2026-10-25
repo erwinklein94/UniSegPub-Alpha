@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { INSTITUICOES_INICIO, instituicaoDaEscolha, filtrarInstituicoes, situacaoInicio } from '../js/pages/inicio-modelo.js';
 const dados = JSON.parse(fs.readFileSync('data/inicio/concursos.json', 'utf8'));
-const p = { ...dados.itens[0], revisadoEm: dados.revisadoEm };
+const p = { ...dados.itens.find(i => i.id === 'pcpe-2026'), revisadoEm: dados.revisadoEm };
 
 test('os 110 atalhos apontam para instituições existentes, inclusive as siglas excepcionais', () => {
   assert.equal(INSTITUICOES_INICIO.length, 110);
@@ -35,7 +35,7 @@ test('a home não conserva inscrições abertas sem uma revisão recente ou sem 
   assert.equal(situacaoInicio({ ...p, revisadoEm: '2026-10-18' }, '2026-11-03T12:00:00-03:00').chave, 'revisar');
   assert.equal(situacaoInicio({ ...p, fim: null }, '2026-10-18').chave, 'revisar');
   assert.equal(situacaoInicio({ ...p, inicio: 'inválido' }, '2026-10-18').chave, 'revisar');
-  assert.equal(situacaoInicio({ ...dados.itens[3], revisadoEm: dados.revisadoEm }, '2026-10-18').grupo, 'preparacao');
+  assert.equal(situacaoInicio({ ...p, situacao: 'preparacao', revisadoEm: dados.revisadoEm }, '2026-10-18').grupo, 'preparacao');
 });
 
 test('as cinco notícias e o radar têm fonte, imagem local e dados editoriais rastreáveis', () => {

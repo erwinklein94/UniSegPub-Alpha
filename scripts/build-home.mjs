@@ -21,6 +21,9 @@ for (const [nome, conteudo] of [['NOTICIAS', cards], ['CONCURSOS', rows]]) {
   if (!regex.test(html)) throw new Error('Marcador ausente: ' + nome);
   html = html.replace(regex, (_texto, inicio, fim) => `${inicio}\n${conteudo}\n          ${fim}`);
 }
+const abertas = dados.itens.filter(item => estado(item).grupo === 'abertas').length;
+html = html.replace(/(data-inicio-abertas>)[^<]*/, (_m, inicio) => inicio + abertas);
+html = html.replace(/(Checagem editorial: <time datetime=")[^"]*(">)[^<]*(<\/time>)/, (_m, a, b, c) => a + dados.revisadoEm + b + data(dados.revisadoEm) + c);
 const head = html.indexOf('<head>'), body = html.indexOf('<body '), main = html.indexOf('  <main>');
 const afterMain = html.indexOf('  </main>') + '  </main>'.length;
 const endBody = html.lastIndexOf('</body>');

@@ -145,3 +145,10 @@ html[data-theme="dark"].usp-inicio-2026 .inicio-form-status.is-error { color: #f
   .usp-inicio-2026 .inicio-revelar { opacity: 1; transform: none; }
 }
 @media print { .usp-inicio-2026 .inicio-revelar { opacity: 1; transform: none; } .inicio-progresso { display: none; } }
+
+/* Guias editoriais da página inicial. */
+.usp-inicio-2026 .inicio-guias-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 800px) { .usp-inicio-2026 .inicio-guias-grid { grid-template-columns: 1fr; } }
+
+.usp-inicio-2026 .inicio-guias-grid { gap: 20px; }
+.usp-inicio-2026 .inicio-guias .usp-consulta-card { min-height: 210px; }

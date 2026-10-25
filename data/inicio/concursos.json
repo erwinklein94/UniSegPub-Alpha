@@ -1,6 +1,38 @@
 {
   "itens": [
     {
+      "id": "cbmal-2026",
+      "uf": "AL",
+      "cor": "bombeiros",
+      "fim": "2026-10-26T18:00:00-03:00",
+      "inst": "bmal",
+      "nome": "Corpo de Bombeiros Militar de Alagoas",
+      "tipo": "bombeiros",
+      "banca": "Cebraspe",
+      "etapa": "Edital nº 10, disponibilizado em 22/10, retifica os subitens 4.1 e 8.11.6 do Edital nº 7. Inscrições até 26/10, às 18h.",
+      "fonte": "https://www.cebraspe.org.br/concursos/CBM_AL_26",
+      "prazo": "Até 26/10/2026, às 18h de Brasília",
+      "vagas": "172",
+      "cargos": "Oficial de Estado-Maior e soldado (QPBM/1 e QPBM/2)",
+      "imagem": "img/BOMBEIRO/bmal.webp",
+      "inicio": "2026-09-18T00:00:00-03:00",
+      "resumo": "A reabertura das inscrições termina em 26 de outubro, às 18h de Brasília. A banca publicou em 22/10 uma nova retificação do Edital nº 7; o prazo exibido na página permanece 26/10.",
+      "salario": "Até R$ 11.563,77 na página da banca",
+      "situacao": "inscricoes",
+      "documento": "Edital nº 10 · publicação na banca em 22/10/2026",
+      "fonteNome": "Cebraspe · CBM AL 26",
+      "requisitos": "Conferir requisitos por cargo no edital atualizado.",
+      "instituicao": "CBMAL",
+      "fontesComplementares": [
+        "https://cdn.cebraspe.org.br/concursos/CBM_AL_26/arquivos/DDD0A841AFFD1312402365BFE6FC32D2BD6EB1720A5D5C5BE99BCFC4957FBEBB.pdf"
+      ],
+      "revisadoEm": "2026-10-25",
+      "titulo": "Bombeiros de Alagoas: inscrições até 26 de outubro",
+      "acao": "Ver edital e inscrições",
+      "publicadoEm": "2026-10-22",
+      "imagemAlt": "Brasão do Corpo de Bombeiros Militar de Alagoas em capa editorial ilustrativa"
+    },
+    {
       "id": "pcpe-2026",
       "uf": "PE",
       "cor": "civil",
@@ -89,31 +121,6 @@
       "revisadoEm": "2026-10-25"
     },
     {
-      "id": "pmerj-preparacao",
-      "uf": "RJ",
-      "cor": "previsao",
-      "acao": "Ler comunicado oficial",
-      "nome": "Polícia Militar do Rio de Janeiro",
-      "banca": "Não informada na fonte",
-      "fonte": "https://sepm.rj.gov.br/2026/04/comunicado/",
-      "prazo": "Acompanhar publicação do edital",
-      "vagas": "Não confirmadas neste comunicado",
-      "cargos": "Soldado · preparação do processo",
-      "imagem": "img/MILITAR/pmerj.webp",
-      "resumo": "A SEPM informou tramitação do processo entre a corporação e o governo. O comunicado é de abril: acompanhe novos atos no Diário Oficial, sem confundir preparação com inscrições abertas.",
-      "titulo": "PMERJ: comunicado oficial informa preparação de novo concurso",
-      "situacao": "preparacao",
-      "fonteNome": "SEPM/RJ · comunicado de 06/04/2026",
-      "imagemAlt": "Brasão da Polícia Militar do Rio de Janeiro em capa editorial ilustrativa",
-      "instituicao": "PMERJ",
-      "publicadoEm": "2026-04-06",
-      "notaConferencia": "Registro de preparação baseado no comunicado datado, sem afirmar autorização de vagas, banca ou prazo atual. Não utiliza os números de matérias de terceiros.",
-      "fontesComplementares": [
-        "https://concursos.sepm.rj.gov.br/"
-      ],
-      "revisadoEm": "2026-10-25"
-    },
-    {
       "id": "pcpr-andamento",
       "uf": "PR",
       "cor": "civil",
@@ -131,7 +138,7 @@
       "fonteNome": "FGV Conhecimento · página oficial do concurso",
       "imagemAlt": "Brasão da Polícia Civil do Paraná em capa editorial ilustrativa",
       "instituicao": "PCPR",
-      "publicadoEm": "2026-10-13",
+      "publicadoEm": "2026-10-20",
       "fontesComplementares": [
         "https://www.policiacivil.pr.gov.br/Noticia/PCPR-realiza-concurso-para-mais-de-46-mil-candidatos-em-Curitiba-Londrina-e-Cascavel",
         "https://conhecimento.fgv.br/sites/default/files/concursos/giovanni.pdf"
