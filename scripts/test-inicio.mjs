@@ -32,7 +32,7 @@ test('a data e o horário do edital controlam inscrições futuras, abertas e en
 });
 
 test('a home não conserva inscrições abertas sem uma revisão recente ou sem cronograma', () => {
-  assert.equal(situacaoInicio(p, '2026-11-03T12:00:00-03:00').chave, 'revisar');
+  assert.equal(situacaoInicio({ ...p, revisadoEm: '2026-10-18' }, '2026-11-03T12:00:00-03:00').chave, 'revisar');
   assert.equal(situacaoInicio({ ...p, fim: null }, '2026-10-18').chave, 'revisar');
   assert.equal(situacaoInicio({ ...p, inicio: 'inválido' }, '2026-10-18').chave, 'revisar');
   assert.equal(situacaoInicio({ ...dados.itens[3], revisadoEm: dados.revisadoEm }, '2026-10-18').grupo, 'preparacao');

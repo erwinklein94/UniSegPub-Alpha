@@ -19,7 +19,7 @@ test('PMAL encerrada em 16/10 e CBMAL aberta até 26/10', () => {
   assert.equal(estadoConcurso(bmal,dados.revisadoEm,'2026-10-26T17:59:59-03:00').grupo,'abertas');
 });
 test('dados antigos não continuam como inscrições abertas e futuras não antecipam abertura', () => {
-  assert.equal(resumoConcursos(dados.itens,dados.revisadoEm,'2026-11-03T12:00:00-03:00').abertas,0);
+  assert.equal(resumoConcursos(dados.itens,'2026-10-18','2026-11-03T12:00:00-03:00').abertas,0);
   assert.equal(estadoConcurso(dados.itens[0],dados.revisadoEm,'2026-10-14T12:00:00-03:00').chave,'previsto');
 });
 test('filtros combinam instituição, UF, carreira, situação e busca sem acentos', () => {
